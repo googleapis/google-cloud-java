@@ -50,6 +50,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SiteSearchEngineServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockSiteSearchEngineService mockSiteSearchEngineService;
   private LocalChannelProvider channelProvider;
@@ -58,10 +59,11 @@ public class SiteSearchEngineServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockSiteSearchEngineService = new MockSiteSearchEngineService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockSiteSearchEngineService));
+            Arrays.<MockGrpcService>asList(mockSiteSearchEngineService, mockLocations));
     mockServiceHelper.start();
   }
 

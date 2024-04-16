@@ -80,6 +80,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     AUDIO_INPUT(7),
     EVENT_INPUT(8),
     SUGGESTION_INPUT(12),
+    INTENT_INPUT(13),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -106,6 +107,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           return EVENT_INPUT;
         case 12:
           return SUGGESTION_INPUT;
+        case 13:
+          return INTENT_INPUT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -384,6 +387,57 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+  }
+
+  public static final int INTENT_INPUT_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   *
+   * @return Whether the intentInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntentInput() {
+    return inputCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   *
+   * @return The intentInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.IntentInput getIntentInput() {
+    if (inputCase_ == 13) {
+      return (com.google.cloud.dialogflow.v2beta1.IntentInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder getIntentInputOrBuilder() {
+    if (inputCase_ == 13) {
+      return (com.google.cloud.dialogflow.v2beta1.IntentInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
   }
 
   public static final int REPLY_AUDIO_CONFIG_FIELD_NUMBER = 5;
@@ -873,6 +927,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (inputCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_);
     }
+    if (inputCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.dialogflow.v2beta1.IntentInput) input_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(14, getAssistQueryParams());
     }
@@ -925,6 +982,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_);
+    }
+    if (inputCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.dialogflow.v2beta1.IntentInput) input_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAssistQueryParams());
@@ -988,6 +1050,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 12:
         if (!getSuggestionInput().equals(other.getSuggestionInput())) return false;
         break;
+      case 13:
+        if (!getIntentInput().equals(other.getIntentInput())) return false;
+        break;
       case 0:
       default:
     }
@@ -1044,6 +1109,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 12:
         hash = (37 * hash) + SUGGESTION_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestionInput().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + INTENT_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getIntentInput().hashCode();
         break;
       case 0:
       default:
@@ -1215,6 +1284,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       if (suggestionInputBuilder_ != null) {
         suggestionInputBuilder_.clear();
       }
+      if (intentInputBuilder_ != null) {
+        intentInputBuilder_.clear();
+      }
       replyAudioConfig_ = null;
       if (replyAudioConfigBuilder_ != null) {
         replyAudioConfigBuilder_.dispose();
@@ -1285,37 +1357,37 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         result.participant_ = participant_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.replyAudioConfig_ =
             replyAudioConfigBuilder_ == null ? replyAudioConfig_ : replyAudioConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.queryParams_ =
             queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.assistQueryParams_ =
             assistQueryParamsBuilder_ == null
                 ? assistQueryParams_
                 : assistQueryParamsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.cxParameters_ =
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.cxCurrentPage_ = cxCurrentPage_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.messageSendTime_ =
             messageSendTimeBuilder_ == null ? messageSendTime_ : messageSendTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.requestId_ = requestId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1336,6 +1408,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (inputCase_ == 12 && suggestionInputBuilder_ != null) {
         result.input_ = suggestionInputBuilder_.build();
+      }
+      if (inputCase_ == 13 && intentInputBuilder_ != null) {
+        result.input_ = intentInputBuilder_.build();
       }
     }
 
@@ -1404,7 +1479,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasMessageSendTime()) {
@@ -1412,7 +1487,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getInputCase()) {
@@ -1434,6 +1509,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         case SUGGESTION_INPUT:
           {
             mergeSuggestionInput(other.getSuggestionInput());
+            break;
+          }
+        case INTENT_INPUT:
+          {
+            mergeIntentInput(other.getIntentInput());
             break;
           }
         case INPUT_NOT_SET:
@@ -1477,7 +1557,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getReplyAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -1501,19 +1581,19 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
             case 74:
               {
                 input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getMessageSendTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
@@ -1522,23 +1602,29 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
                 inputCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getIntentInputFieldBuilder().getBuilder(), extensionRegistry);
+                inputCase_ = 13;
+                break;
+              } // case 106
             case 114:
               {
                 input.readMessage(
                     getAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 114
             case 146:
               {
                 input.readMessage(getCxParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 146
             case 162:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 162
             default:
@@ -2537,6 +2623,215 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return suggestionInputBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.IntentInput,
+            com.google.cloud.dialogflow.v2beta1.IntentInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder>
+        intentInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     *
+     * @return Whether the intentInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntentInput() {
+      return inputCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     *
+     * @return The intentInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.IntentInput getIntentInput() {
+      if (intentInputBuilder_ == null) {
+        if (inputCase_ == 13) {
+          return (com.google.cloud.dialogflow.v2beta1.IntentInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 13) {
+          return intentInputBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    public Builder setIntentInput(com.google.cloud.dialogflow.v2beta1.IntentInput value) {
+      if (intentInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        intentInputBuilder_.setMessage(value);
+      }
+      inputCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    public Builder setIntentInput(
+        com.google.cloud.dialogflow.v2beta1.IntentInput.Builder builderForValue) {
+      if (intentInputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        intentInputBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    public Builder mergeIntentInput(com.google.cloud.dialogflow.v2beta1.IntentInput value) {
+      if (intentInputBuilder_ == null) {
+        if (inputCase_ == 13
+            && input_ != com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.IntentInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.IntentInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 13) {
+          intentInputBuilder_.mergeFrom(value);
+        } else {
+          intentInputBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    public Builder clearIntentInput() {
+      if (intentInputBuilder_ == null) {
+        if (inputCase_ == 13) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 13) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        intentInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.IntentInput.Builder getIntentInputBuilder() {
+      return getIntentInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder getIntentInputOrBuilder() {
+      if ((inputCase_ == 13) && (intentInputBuilder_ != null)) {
+        return intentInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 13) {
+          return (com.google.cloud.dialogflow.v2beta1.IntentInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.IntentInput,
+            com.google.cloud.dialogflow.v2beta1.IntentInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder>
+        getIntentInputFieldBuilder() {
+      if (intentInputBuilder_ == null) {
+        if (!(inputCase_ == 13)) {
+          input_ = com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance();
+        }
+        intentInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.IntentInput,
+                com.google.cloud.dialogflow.v2beta1.IntentInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.IntentInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 13;
+      onChanged();
+      return intentInputBuilder_;
+    }
+
     private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig replyAudioConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfig,
@@ -2559,7 +2854,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the replyAudioConfig field is set.
      */
     public boolean hasReplyAudioConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2608,7 +2903,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2632,7 +2927,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2652,7 +2947,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeReplyAudioConfig(
         com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
       if (replyAudioConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && replyAudioConfig_ != null
             && replyAudioConfig_
                 != com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()) {
@@ -2664,7 +2959,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         replyAudioConfigBuilder_.mergeFrom(value);
       }
       if (replyAudioConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2683,7 +2978,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig reply_audio_config = 5;</code>
      */
     public Builder clearReplyAudioConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       replyAudioConfig_ = null;
       if (replyAudioConfigBuilder_ != null) {
         replyAudioConfigBuilder_.dispose();
@@ -2707,7 +3002,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder
         getReplyAudioConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getReplyAudioConfigFieldBuilder().getBuilder();
     }
@@ -2782,7 +3077,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2822,7 +3117,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2842,7 +3137,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2857,7 +3152,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2beta1.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && queryParams_ != null
             && queryParams_
                 != com.google.cloud.dialogflow.v2beta1.QueryParameters.getDefaultInstance()) {
@@ -2869,7 +3164,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         queryParamsBuilder_.mergeFrom(value);
       }
       if (queryParams_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2884,7 +3179,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 9;</code>
      */
     public Builder clearQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -2903,7 +3198,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 9;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryParameters.Builder getQueryParamsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
@@ -2969,7 +3264,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3010,7 +3305,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3030,7 +3325,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3046,7 +3341,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && assistQueryParams_ != null
             && assistQueryParams_
                 != com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()) {
@@ -3058,7 +3353,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         assistQueryParamsBuilder_.mergeFrom(value);
       }
       if (assistQueryParams_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3073,7 +3368,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
      */
     public Builder clearAssistQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       assistQueryParams_ = null;
       if (assistQueryParamsBuilder_ != null) {
         assistQueryParamsBuilder_.dispose();
@@ -3093,7 +3388,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
@@ -3165,7 +3460,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the cxParameters field is set.
      */
     public boolean hasCxParameters() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3215,7 +3510,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3239,7 +3534,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3259,7 +3554,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCxParameters(com.google.protobuf.Struct value) {
       if (cxParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && cxParameters_ != null
             && cxParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getCxParametersBuilder().mergeFrom(value);
@@ -3270,7 +3565,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         cxParametersBuilder_.mergeFrom(value);
       }
       if (cxParameters_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3290,7 +3585,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public Builder clearCxParameters() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       cxParameters_ = null;
       if (cxParametersBuilder_ != null) {
         cxParametersBuilder_.dispose();
@@ -3314,7 +3609,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCxParametersFieldBuilder().getBuilder();
     }
@@ -3473,7 +3768,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3503,7 +3798,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearCxCurrentPage() {
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3538,7 +3833,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3574,7 +3869,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the messageSendTime field is set.
      */
     public boolean hasMessageSendTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3640,7 +3935,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         messageSendTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3672,7 +3967,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         messageSendTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3700,7 +3995,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeMessageSendTime(com.google.protobuf.Timestamp value) {
       if (messageSendTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && messageSendTime_ != null
             && messageSendTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getMessageSendTimeBuilder().mergeFrom(value);
@@ -3711,7 +4006,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         messageSendTimeBuilder_.mergeFrom(value);
       }
       if (messageSendTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3739,7 +4034,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
      */
     public Builder clearMessageSendTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       messageSendTime_ = null;
       if (messageSendTimeBuilder_ != null) {
         messageSendTimeBuilder_.dispose();
@@ -3771,7 +4066,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getMessageSendTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getMessageSendTimeFieldBuilder().getBuilder();
     }
@@ -3913,7 +4208,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3932,7 +4227,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3956,7 +4251,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

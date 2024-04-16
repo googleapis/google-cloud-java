@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
@@ -123,6 +124,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
+  }
+
+  public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: chatCompletionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

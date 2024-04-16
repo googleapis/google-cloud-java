@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The QueryService API is used to manage time series data in Stackdriver
+ * The QueryService API is used to manage time series data in Cloud
  * Monitoring. Time series data is a collection of data points that describes
  * the time-varying values of a metric.
  * </pre>
@@ -128,7 +128,7 @@ public final class QueryServiceGrpc {
    *
    *
    * <pre>
-   * The QueryService API is used to manage time series data in Stackdriver
+   * The QueryService API is used to manage time series data in Cloud
    * Monitoring. Time series data is a collection of data points that describes
    * the time-varying values of a metric.
    * </pre>
@@ -139,7 +139,7 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+     * Queries time series using Monitoring Query Language.
      * </pre>
      */
     default void queryTimeSeries(
@@ -155,7 +155,7 @@ public final class QueryServiceGrpc {
    * Base class for the server implementation of the service QueryService.
    *
    * <pre>
-   * The QueryService API is used to manage time series data in Stackdriver
+   * The QueryService API is used to manage time series data in Cloud
    * Monitoring. Time series data is a collection of data points that describes
    * the time-varying values of a metric.
    * </pre>
@@ -173,7 +173,7 @@ public final class QueryServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service QueryService.
    *
    * <pre>
-   * The QueryService API is used to manage time series data in Stackdriver
+   * The QueryService API is used to manage time series data in Cloud
    * Monitoring. Time series data is a collection of data points that describes
    * the time-varying values of a metric.
    * </pre>
@@ -193,7 +193,7 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+     * Queries time series using Monitoring Query Language.
      * </pre>
      */
     public void queryTimeSeries(
@@ -211,7 +211,7 @@ public final class QueryServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service QueryService.
    *
    * <pre>
-   * The QueryService API is used to manage time series data in Stackdriver
+   * The QueryService API is used to manage time series data in Cloud
    * Monitoring. Time series data is a collection of data points that describes
    * the time-varying values of a metric.
    * </pre>
@@ -232,7 +232,7 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+     * Queries time series using Monitoring Query Language.
      * </pre>
      */
     public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
@@ -246,7 +246,7 @@ public final class QueryServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service QueryService.
    *
    * <pre>
-   * The QueryService API is used to manage time series data in Stackdriver
+   * The QueryService API is used to manage time series data in Cloud
    * Monitoring. Time series data is a collection of data points that describes
    * the time-varying values of a metric.
    * </pre>
@@ -267,7 +267,7 @@ public final class QueryServiceGrpc {
      *
      *
      * <pre>
-     * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+     * Queries time series using Monitoring Query Language.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

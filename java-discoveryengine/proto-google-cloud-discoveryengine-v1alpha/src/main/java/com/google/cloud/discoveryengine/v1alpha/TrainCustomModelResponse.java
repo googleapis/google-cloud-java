@@ -56,6 +56,18 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
         .internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetMetrics();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -200,7 +212,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
    *
    *  * **bad-data**: The training data quality is bad.
    *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-   *  * **in-progress**: Model training is in progress.
+   *  * **in-progress**: Model training job creation is in progress.
+   *  * **training**: Model is actively training.
+   *  * **evaluating**: The model is evaluating trained metrics.
+   *  * **indexing**: The model trained metrics are indexing.
    *  * **ready**: The model is ready for serving.
    * </pre>
    *
@@ -228,7 +243,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
    *
    *  * **bad-data**: The training data quality is bad.
    *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-   *  * **in-progress**: Model training is in progress.
+   *  * **in-progress**: Model training job creation is in progress.
+   *  * **training**: Model is actively training.
+   *  * **evaluating**: The model is evaluating trained metrics.
+   *  * **indexing**: The model trained metrics are indexing.
    *  * **ready**: The model is ready for serving.
    * </pre>
    *
@@ -247,6 +265,105 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int METRICS_FIELD_NUMBER = 4;
+
+  private static final class MetricsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Double>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1alpha.SearchTuningServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_MetricsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.DOUBLE,
+            0D);
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Double> metrics_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Double> internalGetMetrics() {
+    if (metrics_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetricsDefaultEntryHolder.defaultEntry);
+    }
+    return metrics_;
+  }
+
+  public int getMetricsCount() {
+    return internalGetMetrics().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  @java.lang.Override
+  public boolean containsMetrics(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMetrics().getMap().containsKey(key);
+  }
+  /** Use {@link #getMetricsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
+    return getMetricsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
+    return internalGetMetrics().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  @java.lang.Override
+  public double getMetricsOrDefault(java.lang.String key, double defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  @java.lang.Override
+  public double getMetricsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -272,6 +389,8 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelStatus_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelStatus_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetrics(), MetricsDefaultEntryHolder.defaultEntry, 4);
     getUnknownFields().writeTo(output);
   }
 
@@ -289,6 +408,16 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelStatus_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelStatus_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry :
+        internalGetMetrics().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> metrics__ =
+          MetricsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, metrics__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -312,6 +441,7 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
       if (!getErrorConfig().equals(other.getErrorConfig())) return false;
     }
     if (!getModelStatus().equals(other.getModelStatus())) return false;
+    if (!internalGetMetrics().equals(other.internalGetMetrics())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -333,6 +463,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + MODEL_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getModelStatus().hashCode();
+    if (!internalGetMetrics().getMap().isEmpty()) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetrics().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -455,6 +589,28 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
           .internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMetrics();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableMetrics();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -500,6 +656,7 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
         errorConfigBuilder_ = null;
       }
       modelStatus_ = "";
+      internalGetMutableMetrics().clear();
       return this;
     }
 
@@ -560,6 +717,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.modelStatus_ = modelStatus_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metrics_ = internalGetMetrics();
+        result.metrics_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -647,6 +808,8 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      internalGetMutableMetrics().mergeFrom(other.internalGetMetrics());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -697,6 +860,18 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> metrics__ =
+                    input.readMessage(
+                        MetricsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableMetrics()
+                    .getMutableMap()
+                    .put(metrics__.getKey(), metrics__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1255,7 +1430,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
      *
      *  * **bad-data**: The training data quality is bad.
      *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-     *  * **in-progress**: Model training is in progress.
+     *  * **in-progress**: Model training job creation is in progress.
+     *  * **training**: Model is actively training.
+     *  * **evaluating**: The model is evaluating trained metrics.
+     *  * **indexing**: The model trained metrics are indexing.
      *  * **ready**: The model is ready for serving.
      * </pre>
      *
@@ -1282,7 +1460,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
      *
      *  * **bad-data**: The training data quality is bad.
      *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-     *  * **in-progress**: Model training is in progress.
+     *  * **in-progress**: Model training job creation is in progress.
+     *  * **training**: Model is actively training.
+     *  * **evaluating**: The model is evaluating trained metrics.
+     *  * **indexing**: The model trained metrics are indexing.
      *  * **ready**: The model is ready for serving.
      * </pre>
      *
@@ -1309,7 +1490,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
      *
      *  * **bad-data**: The training data quality is bad.
      *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-     *  * **in-progress**: Model training is in progress.
+     *  * **in-progress**: Model training job creation is in progress.
+     *  * **training**: Model is actively training.
+     *  * **evaluating**: The model is evaluating trained metrics.
+     *  * **indexing**: The model trained metrics are indexing.
      *  * **ready**: The model is ready for serving.
      * </pre>
      *
@@ -1335,7 +1519,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
      *
      *  * **bad-data**: The training data quality is bad.
      *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-     *  * **in-progress**: Model training is in progress.
+     *  * **in-progress**: Model training job creation is in progress.
+     *  * **training**: Model is actively training.
+     *  * **evaluating**: The model is evaluating trained metrics.
+     *  * **indexing**: The model trained metrics are indexing.
      *  * **ready**: The model is ready for serving.
      * </pre>
      *
@@ -1357,7 +1544,10 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
      *
      *  * **bad-data**: The training data quality is bad.
      *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-     *  * **in-progress**: Model training is in progress.
+     *  * **in-progress**: Model training job creation is in progress.
+     *  * **training**: Model is actively training.
+     *  * **evaluating**: The model is evaluating trained metrics.
+     *  * **indexing**: The model trained metrics are indexing.
      *  * **ready**: The model is ready for serving.
      * </pre>
      *
@@ -1374,6 +1564,164 @@ public final class TrainCustomModelResponse extends com.google.protobuf.Generate
       modelStatus_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double> metrics_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double> internalGetMetrics() {
+      if (metrics_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(MetricsDefaultEntryHolder.defaultEntry);
+      }
+      return metrics_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
+        internalGetMutableMetrics() {
+      if (metrics_ == null) {
+        metrics_ = com.google.protobuf.MapField.newMapField(MetricsDefaultEntryHolder.defaultEntry);
+      }
+      if (!metrics_.isMutable()) {
+        metrics_ = metrics_.copy();
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return metrics_;
+    }
+
+    public int getMetricsCount() {
+      return internalGetMetrics().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    @java.lang.Override
+    public boolean containsMetrics(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMetrics().getMap().containsKey(key);
+    }
+    /** Use {@link #getMetricsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getMetrics() {
+      return getMetricsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Double> getMetricsMap() {
+      return internalGetMetrics().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    @java.lang.Override
+    public double getMetricsOrDefault(java.lang.String key, double defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    @java.lang.Override
+    public double getMetricsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Double> map = internalGetMetrics().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalGetMutableMetrics().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    public Builder removeMetrics(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMetrics().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Double> getMutableMetrics() {
+      bitField0_ |= 0x00000008;
+      return internalGetMutableMetrics().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    public Builder putMetrics(java.lang.String key, double value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metrics of the trained model.
+     * </pre>
+     *
+     * <code>map&lt;string, double&gt; metrics = 4;</code>
+     */
+    public Builder putAllMetrics(java.util.Map<java.lang.String, java.lang.Double> values) {
+      internalGetMutableMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

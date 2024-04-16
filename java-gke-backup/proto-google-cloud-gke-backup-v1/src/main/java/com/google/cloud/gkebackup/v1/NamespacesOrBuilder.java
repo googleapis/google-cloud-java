@@ -28,10 +28,10 @@ public interface NamespacesOrBuilder
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the namespaces.
    */
@@ -40,10 +40,10 @@ public interface NamespacesOrBuilder
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of namespaces.
    */
@@ -52,10 +52,10 @@ public interface NamespacesOrBuilder
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The namespaces at the given index.
@@ -65,10 +65,10 @@ public interface NamespacesOrBuilder
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the namespaces at the given index.

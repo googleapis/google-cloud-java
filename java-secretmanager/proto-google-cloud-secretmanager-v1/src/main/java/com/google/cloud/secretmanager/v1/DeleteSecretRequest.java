@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
+ * Request message for
+ * [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.DeleteSecretRequest}
@@ -72,7 +73,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+   * Required. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
@@ -98,7 +100,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+   * Required. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
@@ -129,9 +132,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-   * the etag of the currently stored secret object. If the etag is omitted,
-   * the request succeeds.
+   * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+   * request succeeds if it matches the etag of the currently stored secret
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,9 +157,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-   * the etag of the currently stored secret object. If the etag is omitted,
-   * the request succeeds.
+   * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+   * request succeeds if it matches the etag of the currently stored secret
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -349,7 +352,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
+   * Request message for
+   * [SecretManagerService.DeleteSecret][google.cloud.secretmanager.v1.SecretManagerService.DeleteSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.DeleteSecretRequest}
@@ -548,7 +552,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -573,7 +578,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -598,7 +604,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -622,7 +629,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -642,7 +650,8 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -669,9 +678,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-     * the etag of the currently stored secret object. If the etag is omitted,
-     * the request succeeds.
+     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+     * request succeeds if it matches the etag of the currently stored secret
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -693,9 +702,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-     * the etag of the currently stored secret object. If the etag is omitted,
-     * the request succeeds.
+     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+     * request succeeds if it matches the etag of the currently stored secret
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -717,9 +726,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-     * the etag of the currently stored secret object. If the etag is omitted,
-     * the request succeeds.
+     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+     * request succeeds if it matches the etag of the currently stored secret
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -740,9 +749,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-     * the etag of the currently stored secret object. If the etag is omitted,
-     * the request succeeds.
+     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+     * request succeeds if it matches the etag of the currently stored secret
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -759,9 +768,9 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
-     * the etag of the currently stored secret object. If the etag is omitted,
-     * the request succeeds.
+     * Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The
+     * request succeeds if it matches the etag of the currently stored secret
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

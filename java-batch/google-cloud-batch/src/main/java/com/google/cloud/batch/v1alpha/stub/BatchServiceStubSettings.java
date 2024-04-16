@@ -18,6 +18,7 @@ package com.google.cloud.batch.v1alpha.stub;
 
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListResourceAllowancesPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -50,16 +51,23 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
+import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
+import com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetJobRequest;
+import com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetTaskRequest;
 import com.google.cloud.batch.v1alpha.Job;
 import com.google.cloud.batch.v1alpha.ListJobsRequest;
 import com.google.cloud.batch.v1alpha.ListJobsResponse;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse;
 import com.google.cloud.batch.v1alpha.ListTasksRequest;
 import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
+import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -129,6 +137,21 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
   private final PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
       listTasksSettings;
+  private final UnaryCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceSettings;
+  private final UnaryCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceSettings;
+  private final UnaryCallSettings<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceSettings;
+  private final OperationCallSettings<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationSettings;
+  private final PagedCallSettings<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ListResourceAllowancesPagedResponse>
+      listResourceAllowancesSettings;
+  private final UnaryCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -206,6 +229,49 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
+      LIST_RESOURCE_ALLOWANCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListResourceAllowancesRequest injectToken(
+                ListResourceAllowancesRequest payload, String token) {
+              return ListResourceAllowancesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListResourceAllowancesRequest injectPageSize(
+                ListResourceAllowancesRequest payload, int pageSize) {
+              return ListResourceAllowancesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListResourceAllowancesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListResourceAllowancesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ResourceAllowance> extractResources(
+                ListResourceAllowancesResponse payload) {
+              return payload.getResourceAllowancesList() == null
+                  ? ImmutableList.<ResourceAllowance>of()
+                  : payload.getResourceAllowancesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -276,6 +342,33 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ListResourceAllowancesPagedResponse>
+      LIST_RESOURCE_ALLOWANCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListResourceAllowancesRequest,
+              ListResourceAllowancesResponse,
+              ListResourceAllowancesPagedResponse>() {
+            @Override
+            public ApiFuture<ListResourceAllowancesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+                    callable,
+                ListResourceAllowancesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListResourceAllowancesResponse> futureResponse) {
+              PageContext<
+                      ListResourceAllowancesRequest,
+                      ListResourceAllowancesResponse,
+                      ResourceAllowance>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESOURCE_ALLOWANCES_PAGE_STR_DESC, request, context);
+              return ListResourceAllowancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -328,6 +421,45 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
   public PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
       listTasksSettings() {
     return listTasksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createResourceAllowance. */
+  public UnaryCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceSettings() {
+    return createResourceAllowanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getResourceAllowance. */
+  public UnaryCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceSettings() {
+    return getResourceAllowanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceAllowance. */
+  public UnaryCallSettings<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceSettings() {
+    return deleteResourceAllowanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceAllowance. */
+  public OperationCallSettings<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationSettings() {
+    return deleteResourceAllowanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listResourceAllowances. */
+  public PagedCallSettings<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ListResourceAllowancesPagedResponse>
+      listResourceAllowancesSettings() {
+    return listResourceAllowancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateResourceAllowance. */
+  public UnaryCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceSettings() {
+    return updateResourceAllowanceSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -467,6 +599,13 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
     listTasksSettings = settingsBuilder.listTasksSettings().build();
+    createResourceAllowanceSettings = settingsBuilder.createResourceAllowanceSettings().build();
+    getResourceAllowanceSettings = settingsBuilder.getResourceAllowanceSettings().build();
+    deleteResourceAllowanceSettings = settingsBuilder.deleteResourceAllowanceSettings().build();
+    deleteResourceAllowanceOperationSettings =
+        settingsBuilder.deleteResourceAllowanceOperationSettings().build();
+    listResourceAllowancesSettings = settingsBuilder.listResourceAllowancesSettings().build();
+    updateResourceAllowanceSettings = settingsBuilder.updateResourceAllowanceSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -486,6 +625,22 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     private final PagedCallSettings.Builder<
             ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
         listTasksSettings;
+    private final UnaryCallSettings.Builder<CreateResourceAllowanceRequest, ResourceAllowance>
+        createResourceAllowanceSettings;
+    private final UnaryCallSettings.Builder<GetResourceAllowanceRequest, ResourceAllowance>
+        getResourceAllowanceSettings;
+    private final UnaryCallSettings.Builder<DeleteResourceAllowanceRequest, Operation>
+        deleteResourceAllowanceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+        deleteResourceAllowanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListResourceAllowancesRequest,
+            ListResourceAllowancesResponse,
+            ListResourceAllowancesPagedResponse>
+        listResourceAllowancesSettings;
+    private final UnaryCallSettings.Builder<UpdateResourceAllowanceRequest, ResourceAllowance>
+        updateResourceAllowanceSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -548,6 +703,13 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
+      createResourceAllowanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getResourceAllowanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteResourceAllowanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteResourceAllowanceOperationSettings = OperationCallSettings.newBuilder();
+      listResourceAllowancesSettings =
+          PagedCallSettings.newBuilder(LIST_RESOURCE_ALLOWANCES_PAGE_STR_FACT);
+      updateResourceAllowanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -559,6 +721,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               listJobsSettings,
               getTaskSettings,
               listTasksSettings,
+              createResourceAllowanceSettings,
+              getResourceAllowanceSettings,
+              deleteResourceAllowanceSettings,
+              listResourceAllowancesSettings,
+              updateResourceAllowanceSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -574,6 +741,13 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       listJobsSettings = settings.listJobsSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
       listTasksSettings = settings.listTasksSettings.toBuilder();
+      createResourceAllowanceSettings = settings.createResourceAllowanceSettings.toBuilder();
+      getResourceAllowanceSettings = settings.getResourceAllowanceSettings.toBuilder();
+      deleteResourceAllowanceSettings = settings.deleteResourceAllowanceSettings.toBuilder();
+      deleteResourceAllowanceOperationSettings =
+          settings.deleteResourceAllowanceOperationSettings.toBuilder();
+      listResourceAllowancesSettings = settings.listResourceAllowancesSettings.toBuilder();
+      updateResourceAllowanceSettings = settings.updateResourceAllowanceSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -585,6 +759,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               listJobsSettings,
               getTaskSettings,
               listTasksSettings,
+              createResourceAllowanceSettings,
+              getResourceAllowanceSettings,
+              deleteResourceAllowanceSettings,
+              listResourceAllowancesSettings,
+              updateResourceAllowanceSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -645,6 +824,31 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createResourceAllowanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getResourceAllowanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteResourceAllowanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listResourceAllowancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateResourceAllowanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -658,6 +862,30 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
           .deleteJobOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteResourceAllowanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteResourceAllowanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -731,6 +959,45 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     public PagedCallSettings.Builder<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
         listTasksSettings() {
       return listTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createResourceAllowance. */
+    public UnaryCallSettings.Builder<CreateResourceAllowanceRequest, ResourceAllowance>
+        createResourceAllowanceSettings() {
+      return createResourceAllowanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceAllowance. */
+    public UnaryCallSettings.Builder<GetResourceAllowanceRequest, ResourceAllowance>
+        getResourceAllowanceSettings() {
+      return getResourceAllowanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceAllowance. */
+    public UnaryCallSettings.Builder<DeleteResourceAllowanceRequest, Operation>
+        deleteResourceAllowanceSettings() {
+      return deleteResourceAllowanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceAllowance. */
+    public OperationCallSettings.Builder<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+        deleteResourceAllowanceOperationSettings() {
+      return deleteResourceAllowanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceAllowances. */
+    public PagedCallSettings.Builder<
+            ListResourceAllowancesRequest,
+            ListResourceAllowancesResponse,
+            ListResourceAllowancesPagedResponse>
+        listResourceAllowancesSettings() {
+      return listResourceAllowancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateResourceAllowance. */
+    public UnaryCallSettings.Builder<UpdateResourceAllowanceRequest, ResourceAllowance>
+        updateResourceAllowanceSettings() {
+      return updateResourceAllowanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -94,6 +94,51 @@ public class RegionalInventoryServiceClientTest {
             .build();
     mockRegionalInventoryService.addResponse(expectedResponse);
 
+    ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+
+    ListRegionalInventoriesPagedResponse pagedListResponse = client.listRegionalInventories(parent);
+
+    List<RegionalInventory> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRegionalInventoriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRegionalInventoryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRegionalInventoriesRequest actualRequest =
+        ((ListRegionalInventoriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRegionalInventoriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRegionalInventoryService.addException(exception);
+
+    try {
+      ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+      client.listRegionalInventories(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRegionalInventoriesTest2() throws Exception {
+    RegionalInventory responsesElement = RegionalInventory.newBuilder().build();
+    ListRegionalInventoriesResponse expectedResponse =
+        ListRegionalInventoriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRegionalInventories(Arrays.asList(responsesElement))
+            .build();
+    mockRegionalInventoryService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListRegionalInventoriesPagedResponse pagedListResponse = client.listRegionalInventories(parent);
@@ -116,7 +161,7 @@ public class RegionalInventoryServiceClientTest {
   }
 
   @Test
-  public void listRegionalInventoriesExceptionTest() throws Exception {
+  public void listRegionalInventoriesExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockRegionalInventoryService.addException(exception);
 
@@ -146,7 +191,7 @@ public class RegionalInventoryServiceClientTest {
 
     InsertRegionalInventoryRequest request =
         InsertRegionalInventoryRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setRegionalInventory(RegionalInventory.newBuilder().build())
             .build();
 
@@ -174,7 +219,7 @@ public class RegionalInventoryServiceClientTest {
     try {
       InsertRegionalInventoryRequest request =
           InsertRegionalInventoryRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
               .build();
       client.insertRegionalInventory(request);

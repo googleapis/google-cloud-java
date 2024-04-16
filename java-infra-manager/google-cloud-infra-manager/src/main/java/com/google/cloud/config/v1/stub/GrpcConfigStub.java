@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -45,6 +46,7 @@ import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
@@ -54,6 +56,8 @@ import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
@@ -61,6 +65,7 @@ import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -297,6 +302,27 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ExportPreviewResultResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsMethodDescriptor =
+          MethodDescriptor.<ListTerraformVersionsRequest, ListTerraformVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListTerraformVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTerraformVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTerraformVersionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionMethodDescriptor =
+          MethodDescriptor.<GetTerraformVersionRequest, TerraformVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetTerraformVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTerraformVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TerraformVersion.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -390,6 +416,12 @@ public class GrpcConfigStub extends ConfigStub {
       deletePreviewOperationCallable;
   private final UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultCallable;
+  private final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable;
+  private final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable;
+  private final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -652,6 +684,29 @@ public class GrpcConfigStub extends ConfigStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+        listTerraformVersionsTransportSettings =
+            GrpcCallSettings
+                .<ListTerraformVersionsRequest, ListTerraformVersionsResponse>newBuilder()
+                .setMethodDescriptor(listTerraformVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionTransportSettings =
+            GrpcCallSettings.<GetTerraformVersionRequest, TerraformVersion>newBuilder()
+                .setMethodDescriptor(getTerraformVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -826,6 +881,21 @@ public class GrpcConfigStub extends ConfigStub {
         callableFactory.createUnaryCallable(
             exportPreviewResultTransportSettings,
             settings.exportPreviewResultSettings(),
+            clientContext);
+    this.listTerraformVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listTerraformVersionsTransportSettings,
+            settings.listTerraformVersionsSettings(),
+            clientContext);
+    this.listTerraformVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTerraformVersionsTransportSettings,
+            settings.listTerraformVersionsSettings(),
+            clientContext);
+    this.getTerraformVersionCallable =
+        callableFactory.createUnaryCallable(
+            getTerraformVersionTransportSettings,
+            settings.getTerraformVersionSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -1027,6 +1097,23 @@ public class GrpcConfigStub extends ConfigStub {
   public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultCallable() {
     return exportPreviewResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable() {
+    return listTerraformVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable() {
+    return listTerraformVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
+    return getTerraformVersionCallable;
   }
 
   @Override

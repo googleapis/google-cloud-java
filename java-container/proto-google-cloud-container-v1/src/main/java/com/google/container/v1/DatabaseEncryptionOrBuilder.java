@@ -75,4 +75,179 @@ public interface DatabaseEncryptionOrBuilder
    * @return The state.
    */
   com.google.container.v1.DatabaseEncryption.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of etcd encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DatabaseEncryption.CurrentState current_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the currentState field is set.
+   */
+  boolean hasCurrentState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of etcd encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DatabaseEncryption.CurrentState current_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for currentState.
+   */
+  int getCurrentStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of etcd encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DatabaseEncryption.CurrentState current_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The currentState.
+   */
+  com.google.container.v1.DatabaseEncryption.CurrentState getCurrentState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Keys in use by the cluster for decrypting
+   * existing objects, in addition to the key in `key_name`.
+   *
+   * Each item is a CloudKMS key resource.
+   * </pre>
+   *
+   * <code>repeated string decryption_keys = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the decryptionKeys.
+   */
+  java.util.List<java.lang.String> getDecryptionKeysList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Keys in use by the cluster for decrypting
+   * existing objects, in addition to the key in `key_name`.
+   *
+   * Each item is a CloudKMS key resource.
+   * </pre>
+   *
+   * <code>repeated string decryption_keys = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of decryptionKeys.
+   */
+  int getDecryptionKeysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Keys in use by the cluster for decrypting
+   * existing objects, in addition to the key in `key_name`.
+   *
+   * Each item is a CloudKMS key resource.
+   * </pre>
+   *
+   * <code>repeated string decryption_keys = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The decryptionKeys at the given index.
+   */
+  java.lang.String getDecryptionKeys(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Keys in use by the cluster for decrypting
+   * existing objects, in addition to the key in `key_name`.
+   *
+   * Each item is a CloudKMS key resource.
+   * </pre>
+   *
+   * <code>repeated string decryption_keys = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the decryptionKeys at the given index.
+   */
+  com.google.protobuf.ByteString getDecryptionKeysBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Records errors seen during DatabaseEncryption update
+   * operations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.DatabaseEncryption.OperationError last_operation_errors = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.container.v1.DatabaseEncryption.OperationError>
+      getLastOperationErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Records errors seen during DatabaseEncryption update
+   * operations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.DatabaseEncryption.OperationError last_operation_errors = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.DatabaseEncryption.OperationError getLastOperationErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Records errors seen during DatabaseEncryption update
+   * operations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.DatabaseEncryption.OperationError last_operation_errors = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getLastOperationErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Records errors seen during DatabaseEncryption update
+   * operations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.DatabaseEncryption.OperationError last_operation_errors = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.DatabaseEncryption.OperationErrorOrBuilder>
+      getLastOperationErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Records errors seen during DatabaseEncryption update
+   * operations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.DatabaseEncryption.OperationError last_operation_errors = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.DatabaseEncryption.OperationErrorOrBuilder
+      getLastOperationErrorsOrBuilder(int index);
 }

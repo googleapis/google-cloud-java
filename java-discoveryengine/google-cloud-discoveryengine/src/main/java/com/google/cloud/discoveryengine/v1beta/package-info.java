@@ -131,6 +131,60 @@
  * }
  * }</pre>
  *
+ * <p>======================= GroundedGenerationServiceClient =======================
+ *
+ * <p>Service Description: Service for grounded generation.
+ *
+ * <p>Sample for GroundedGenerationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+ *     GroundedGenerationServiceClient.create()) {
+ *   CheckGroundingRequest request =
+ *       CheckGroundingRequest.newBuilder()
+ *           .setGroundingConfig(
+ *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
+ *                   .toString())
+ *           .setAnswerCandidate("answerCandidate-292402331")
+ *           .addAllFacts(new ArrayList<GroundingFact>())
+ *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .build();
+ *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RankServiceClient =======================
+ *
+ * <p>Service Description: Service for ranking text records.
+ *
+ * <p>Sample for RankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RankServiceClient rankServiceClient = RankServiceClient.create()) {
+ *   RankRequest request =
+ *       RankRequest.newBuilder()
+ *           .setRankingConfig(
+ *               RankingConfigName.of("[PROJECT]", "[LOCATION]", "[RANKING_CONFIG]").toString())
+ *           .setModel("model104069929")
+ *           .setTopN(110545924)
+ *           .setQuery("query107944136")
+ *           .addAllRecords(new ArrayList<RankingRecord>())
+ *           .setIgnoreRecordDetailsInResponse(true)
+ *           .build();
+ *   RankResponse response = rankServiceClient.rank(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= RecommendationServiceClient =======================
  *
  * <p>Service Description: Service for making recommendations.
@@ -211,6 +265,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -233,9 +288,37 @@
  * }
  * }</pre>
  *
+ * <p>======================= SearchTuningServiceClient =======================
+ *
+ * <p>Service Description: Service for search tuning.
+ *
+ * <p>Sample for SearchTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+ *   TrainCustomModelRequest request =
+ *       TrainCustomModelRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .setModelType("modelType-2010627581")
+ *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+ *           .build();
+ *   TrainCustomModelResponse response =
+ *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ * }
+ * }</pre>
+ *
  * <p>======================= ServingConfigServiceClient =======================
  *
- * <p>Service Description: Service for modifying ServingConfig.
+ * <p>Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig].
  *
  * <p>Sample for ServingConfigServiceClient:
  *

@@ -111,6 +111,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -183,6 +184,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -547,6 +549,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -615,6 +618,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -683,6 +687,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -713,6 +718,7 @@ public class ChatServiceClientHttpJsonTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -769,6 +775,7 @@ public class ChatServiceClientHttpJsonTest {
               .setDeletionMetadata(DeletionMetadata.newBuilder().build())
               .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
               .addAllAttachedGifs(new ArrayList<AttachedGif>())
+              .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMessage(message, updateMask);

@@ -68,7 +68,7 @@ public interface LocationOrBuilder
    * values can be from 0 to 360, where 0 specifies a heading of due North, 90
    * specifies a heading of due East, and so on. You can use this field only for
    * `DRIVE` and `TWO_WHEELER`
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -85,7 +85,7 @@ public interface LocationOrBuilder
    * values can be from 0 to 360, where 0 specifies a heading of due North, 90
    * specifies a heading of due East, and so on. You can use this field only for
    * `DRIVE` and `TWO_WHEELER`
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -102,7 +102,7 @@ public interface LocationOrBuilder
    * values can be from 0 to 360, where 0 specifies a heading of due North, 90
    * specifies a heading of due East, and so on. You can use this field only for
    * `DRIVE` and `TWO_WHEELER`
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>

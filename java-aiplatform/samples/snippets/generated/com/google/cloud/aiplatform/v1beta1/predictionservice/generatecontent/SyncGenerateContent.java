@@ -24,6 +24,7 @@ import com.google.cloud.aiplatform.v1beta1.GenerationConfig;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.SafetySetting;
 import com.google.cloud.aiplatform.v1beta1.Tool;
+import com.google.cloud.aiplatform.v1beta1.ToolConfig;
 import java.util.ArrayList;
 
 public class SyncGenerateContent {
@@ -43,7 +44,9 @@ public class SyncGenerateContent {
           GenerateContentRequest.newBuilder()
               .setModel("model104069929")
               .addAllContents(new ArrayList<Content>())
+              .setSystemInstruction(Content.newBuilder().build())
               .addAllTools(new ArrayList<Tool>())
+              .setToolConfig(ToolConfig.newBuilder().build())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
               .setGenerationConfig(GenerationConfig.newBuilder().build())
               .build();

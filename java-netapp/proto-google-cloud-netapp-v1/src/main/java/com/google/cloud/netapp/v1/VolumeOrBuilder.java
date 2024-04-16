@@ -170,8 +170,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the Private Service Access allocated range. This is
-   * optional. If not provided, any available range will be chosen.
+   * Output only. This field is not implemented. The values provided in this
+   * field are ignored.
    * </pre>
    *
    * <code>string psa_range = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -183,8 +183,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the Private Service Access allocated range. This is
-   * optional. If not provided, any available range will be chosen.
+   * Output only. This field is not implemented. The values provided in this
+   * field are ignored.
    * </pre>
    *
    * <code>string psa_range = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

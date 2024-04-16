@@ -55,8 +55,8 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
- * managing and querying aspects of a workspace's services. These include the `Service`'s monitored
- * resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
+ * managing and querying aspects of a Metrics Scope's services. These include the `Service`'s
+ * monitored resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -128,7 +128,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListServices</td>
- *      <td><p> List `Service`s for this workspace.</td>
+ *      <td><p> List `Service`s for this Metrics Scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -396,8 +396,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource
-   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
-   *     The format is:
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics
+   *     Scope. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -432,8 +432,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource
-   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
-   *     The format is:
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics
+   *     Scope. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -468,8 +468,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource
-   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
-   *     The format is:
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics
+   *     Scope. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -504,8 +504,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource
-   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent workspace.
-   *     The format is:
+   *     [name](https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics
+   *     Scope. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -695,7 +695,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -715,8 +715,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
-   *     Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics
+   *     Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -730,7 +730,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -750,8 +750,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
-   *     Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics
+   *     Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -765,7 +765,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -785,8 +785,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
-   *     Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics
+   *     Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -800,7 +800,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -820,8 +820,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
-   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring
-   *     Workspace. The formats are:
+   *     [project](https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics
+   *     Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -832,7 +832,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -866,7 +866,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -901,7 +901,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List `Service`s for this workspace.
+   * List `Service`s for this Metrics Scope.
    *
    * <p>Sample code:
    *
@@ -1439,7 +1439,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed SLOs, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     project or a Monitoring Metrics Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1476,7 +1476,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent containing the listed SLOs, either a
-   *     project or a Monitoring Workspace. The formats are:
+   *     project or a Monitoring Metrics Scope. The formats are:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

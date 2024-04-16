@@ -1,0 +1,19 @@
+on:
+  pull_request:
+name: Unmanaged dependency check
+jobs:
+  unmanaged_dependency_check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - name: Install modules
+      shell: bash
+      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+    - name: Unmanaged dependency check
+      uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.28.1
+      with:
+        bom-path: gapic-libraries-bom/pom.xml

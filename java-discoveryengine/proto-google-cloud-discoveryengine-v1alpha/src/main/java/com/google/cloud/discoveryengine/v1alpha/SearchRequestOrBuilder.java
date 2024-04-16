@@ -162,11 +162,15 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Maximum number of
-   * [Document][google.cloud.discoveryengine.v1alpha.Document]s to return. If
-   * unspecified, defaults to a reasonable value. The maximum allowed value is
-   * 100. Values above 100 are coerced to 100.
+   * [Document][google.cloud.discoveryengine.v1alpha.Document]s to return. The
+   * maximum allowed value depends on the data type. Values above the maximum
+   * value are coerced to the maximum value.
    *
-   * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+   * * Websites with basic indexing: Default `10`, Maximum `25`.
+   * * Websites with advanced indexing: Default `25`, Maximum `50`.
+   * * Other: Default `50`, Maximum `100`.
+   *
+   * If this field is negative, an  `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
@@ -233,6 +237,71 @@ public interface SearchRequestOrBuilder
    * @return The offset.
    */
   int getOffset();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec>
+      getDataStoreSpecsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec getDataStoreSpecs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  int getDataStoreSpecsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpecOrBuilder>
+      getDataStoreSpecsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SearchRequest.DataStoreSpecOrBuilder
+      getDataStoreSpecsOrBuilder(int index);
 
   /**
    *
@@ -859,12 +928,14 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Uses the provided embedding to do additional semantic document retrieval.
    * The retrieval is based on the dot product of
-   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
-   * embedding that is provided in
-   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.vector][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.vector]
+   * and the document embedding that is provided in
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path].
    *
-   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
-   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * If
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;
@@ -879,12 +950,14 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Uses the provided embedding to do additional semantic document retrieval.
    * The retrieval is based on the dot product of
-   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
-   * embedding that is provided in
-   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.vector][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.vector]
+   * and the document embedding that is provided in
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path].
    *
-   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
-   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * If
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;
@@ -899,12 +972,14 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Uses the provided embedding to do additional semantic document retrieval.
    * The retrieval is based on the dot product of
-   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
-   * embedding that is provided in
-   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.vector][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.vector]
+   * and the document embedding that is provided in
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path].
    *
-   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
-   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * If
+   * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;
@@ -1127,4 +1202,43 @@ public interface SearchRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Custom fine tuning configs.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 34;
+   * </code>
+   *
+   * @return Whether the customFineTuningSpec field is set.
+   */
+  boolean hasCustomFineTuningSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Custom fine tuning configs.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 34;
+   * </code>
+   *
+   * @return The customFineTuningSpec.
+   */
+  com.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec getCustomFineTuningSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Custom fine tuning configs.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec custom_fine_tuning_spec = 34;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpecOrBuilder
+      getCustomFineTuningSpecOrBuilder();
 }

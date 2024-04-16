@@ -172,9 +172,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -188,7 +188,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public boolean containsDimensions(java.lang.String key) {
@@ -207,9 +208,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -223,7 +224,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
@@ -233,9 +235,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -249,7 +251,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getDimensionsOrDefault(
@@ -266,9 +269,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -282,7 +285,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getDimensionsOrThrow(java.lang.String key) {
@@ -689,18 +693,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Input only. An email address that can be used for quota related
+   * Input only. An email address that can be used for quota related
    * communication between the Google Cloud and the user in case the Google
    * Cloud needs further information to make a decision on whether the user
    * preferred quota can be granted.
    *
+   * The email address is optional for decrease quota preferences. In another
+   * word, QuotaConfig.preferred_value is smaller than the
+   * QuotaDetails.reset_value. It is required for increase quota preferences.
    * The Google account for the email address must have quota update permission
    * for the project, folder or organization this quota preference is for.
    * </pre>
    *
-   * <code>
-   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The contactEmail.
    */
@@ -720,18 +725,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Input only. An email address that can be used for quota related
+   * Input only. An email address that can be used for quota related
    * communication between the Google Cloud and the user in case the Google
    * Cloud needs further information to make a decision on whether the user
    * preferred quota can be granted.
    *
+   * The email address is optional for decrease quota preferences. In another
+   * word, QuotaConfig.preferred_value is smaller than the
+   * QuotaDetails.reset_value. It is required for increase quota preferences.
    * The Google account for the email address must have quota update permission
    * for the project, folder or organization this quota preference is for.
    * </pre>
    *
-   * <code>
-   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The bytes for contactEmail.
    */
@@ -1559,9 +1565,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1575,7 +1581,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public boolean containsDimensions(java.lang.String key) {
@@ -1594,9 +1601,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1610,7 +1617,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
@@ -1620,9 +1628,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1636,7 +1644,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getDimensionsOrDefault(
@@ -1653,9 +1662,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1669,7 +1678,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getDimensionsOrThrow(java.lang.String key) {
@@ -1692,9 +1702,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1708,7 +1718,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder removeDimensions(java.lang.String key) {
       if (key == null) {
@@ -1727,9 +1738,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1743,7 +1754,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder putDimensions(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1760,9 +1772,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1776,7 +1788,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder putAllDimensions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap().putAll(values);
@@ -2899,18 +2912,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Input only. An email address that can be used for quota related
+     * Input only. An email address that can be used for quota related
      * communication between the Google Cloud and the user in case the Google
      * Cloud needs further information to make a decision on whether the user
      * preferred quota can be granted.
      *
+     * The email address is optional for decrease quota preferences. In another
+     * word, QuotaConfig.preferred_value is smaller than the
+     * QuotaDetails.reset_value. It is required for increase quota preferences.
      * The Google account for the email address must have quota update permission
      * for the project, folder or organization this quota preference is for.
      * </pre>
      *
-     * <code>
-     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return The contactEmail.
      */
@@ -2929,18 +2943,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Input only. An email address that can be used for quota related
+     * Input only. An email address that can be used for quota related
      * communication between the Google Cloud and the user in case the Google
      * Cloud needs further information to make a decision on whether the user
      * preferred quota can be granted.
      *
+     * The email address is optional for decrease quota preferences. In another
+     * word, QuotaConfig.preferred_value is smaller than the
+     * QuotaDetails.reset_value. It is required for increase quota preferences.
      * The Google account for the email address must have quota update permission
      * for the project, folder or organization this quota preference is for.
      * </pre>
      *
-     * <code>
-     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return The bytes for contactEmail.
      */
@@ -2959,18 +2974,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Input only. An email address that can be used for quota related
+     * Input only. An email address that can be used for quota related
      * communication between the Google Cloud and the user in case the Google
      * Cloud needs further information to make a decision on whether the user
      * preferred quota can be granted.
      *
+     * The email address is optional for decrease quota preferences. In another
+     * word, QuotaConfig.preferred_value is smaller than the
+     * QuotaDetails.reset_value. It is required for increase quota preferences.
      * The Google account for the email address must have quota update permission
      * for the project, folder or organization this quota preference is for.
      * </pre>
      *
-     * <code>
-     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @param value The contactEmail to set.
      * @return This builder for chaining.
@@ -2988,18 +3004,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Input only. An email address that can be used for quota related
+     * Input only. An email address that can be used for quota related
      * communication between the Google Cloud and the user in case the Google
      * Cloud needs further information to make a decision on whether the user
      * preferred quota can be granted.
      *
+     * The email address is optional for decrease quota preferences. In another
+     * word, QuotaConfig.preferred_value is smaller than the
+     * QuotaDetails.reset_value. It is required for increase quota preferences.
      * The Google account for the email address must have quota update permission
      * for the project, folder or organization this quota preference is for.
      * </pre>
      *
-     * <code>
-     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -3013,18 +3030,19 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Input only. An email address that can be used for quota related
+     * Input only. An email address that can be used for quota related
      * communication between the Google Cloud and the user in case the Google
      * Cloud needs further information to make a decision on whether the user
      * preferred quota can be granted.
      *
+     * The email address is optional for decrease quota preferences. In another
+     * word, QuotaConfig.preferred_value is smaller than the
+     * QuotaDetails.reset_value. It is required for increase quota preferences.
      * The Google account for the email address must have quota update permission
      * for the project, folder or organization this quota preference is for.
      * </pre>
      *
-     * <code>
-     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @param value The bytes for contactEmail to set.
      * @return This builder for chaining.

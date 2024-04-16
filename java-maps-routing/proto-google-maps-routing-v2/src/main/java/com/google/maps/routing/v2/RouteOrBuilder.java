@@ -98,8 +98,8 @@ public interface RouteOrBuilder
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -114,8 +114,8 @@ public interface RouteOrBuilder
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -130,8 +130,8 @@ public interface RouteOrBuilder
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -146,8 +146,8 @@ public interface RouteOrBuilder
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -162,8 +162,8 @@ public interface RouteOrBuilder
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -460,7 +460,7 @@ public interface RouteOrBuilder
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -480,7 +480,7 @@ public interface RouteOrBuilder
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -500,7 +500,7 @@ public interface RouteOrBuilder
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:

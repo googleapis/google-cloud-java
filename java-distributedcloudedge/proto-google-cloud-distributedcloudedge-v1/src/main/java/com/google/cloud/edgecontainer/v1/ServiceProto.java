@@ -53,6 +53,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_UpdateClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_UpgradeClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_UpgradeClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_fieldAccessorTable;
@@ -64,6 +68,14 @@ public final class ServiceProto {
       internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_ListNodePoolsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -120,6 +132,10 @@ public final class ServiceProto {
       internal_static_google_cloud_edgecontainer_v1_DeleteVpnConnectionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_DeleteVpnConnectionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_GetServerConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_GetServerConfigRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -137,37 +153,51 @@ public final class ServiceProto {
           + "cloud/edgecontainer/v1/resources.proto\032#"
           + "google/longrunning/operations.proto\032 goo"
           + "gle/protobuf/field_mask.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\335\001\n\021OperationMeta"
+          + "otobuf/timestamp.proto\"\357\001\n\021OperationMeta"
           + "data\022/\n\013create_time\030\001 \001(\0132\032.google.proto"
           + "buf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.google"
           + ".protobuf.Timestamp\022\016\n\006target\030\003 \001(\t\022\014\n\004v"
           + "erb\030\004 \001(\t\022\026\n\016status_message\030\005 \001(\t\022\036\n\026req"
           + "uested_cancellation\030\006 \001(\010\022\023\n\013api_version"
-          + "\030\007 \001(\t\"\234\001\n\023ListClustersRequest\022<\n\006parent"
-          + "\030\001 \001(\tB,\340A\002\372A&\022$edgecontainer.googleapis"
-          + ".com/Cluster\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030"
-          + "\005 \001(\t\"~\n\024ListClustersResponse\0228\n\010cluster"
-          + "s\030\001 \003(\0132&.google.cloud.edgecontainer.v1."
-          + "Cluster\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unre"
-          + "achable\030\003 \003(\t\"O\n\021GetClusterRequest\022:\n\004na"
-          + "me\030\001 \001(\tB,\340A\002\372A&\n$edgecontainer.googleap"
-          + "is.com/Cluster\"\277\001\n\024CreateClusterRequest\022"
-          + "<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$edgecontainer.g"
-          + "oogleapis.com/Cluster\022\027\n\ncluster_id\030\002 \001("
-          + "\tB\003\340A\002\022<\n\007cluster\030\003 \001(\0132&.google.cloud.e"
-          + "dgecontainer.v1.ClusterB\003\340A\002\022\022\n\nrequest_"
-          + "id\030\004 \001(\t\"\224\001\n\024UpdateClusterRequest\022/\n\013upd"
-          + "ate_mask\030\001 \001(\0132\032.google.protobuf.FieldMa"
-          + "sk\0227\n\007cluster\030\002 \001(\0132&.google.cloud.edgec"
-          + "ontainer.v1.Cluster\022\022\n\nrequest_id\030\003 \001(\t\""
-          + "f\n\024DeleteClusterRequest\022:\n\004name\030\001 \001(\tB,\340"
-          + "A\002\372A&\n$edgecontainer.googleapis.com/Clus"
-          + "ter\022\022\n\nrequest_id\030\002 \001(\t\"[\n\032GenerateAcces"
-          + "sTokenRequest\022=\n\007cluster\030\001 \001(\tB,\340A\002\372A&\n$"
-          + "edgecontainer.googleapis.com/Cluster\"n\n\033"
-          + "GenerateAccessTokenResponse\022\031\n\014access_to"
-          + "ken\030\001 \001(\tB\003\340A\003\0224\n\013expire_time\030\002 \001(\0132\032.go"
+          + "\030\007 \001(\t\022\020\n\010warnings\030\010 \003(\t\"\234\001\n\023ListCluster"
+          + "sRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$edgeco"
+          + "ntainer.googleapis.com/Cluster\022\021\n\tpage_s"
+          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030"
+          + "\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"~\n\024ListClustersR"
+          + "esponse\0228\n\010clusters\030\001 \003(\0132&.google.cloud"
+          + ".edgecontainer.v1.Cluster\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"O\n\021GetCl"
+          + "usterRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$edge"
+          + "container.googleapis.com/Cluster\"\277\001\n\024Cre"
+          + "ateClusterRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A"
+          + "&\022$edgecontainer.googleapis.com/Cluster\022"
+          + "\027\n\ncluster_id\030\002 \001(\tB\003\340A\002\022<\n\007cluster\030\003 \001("
+          + "\0132&.google.cloud.edgecontainer.v1.Cluste"
+          + "rB\003\340A\002\022\022\n\nrequest_id\030\004 \001(\t\"\224\001\n\024UpdateClu"
+          + "sterRequest\022/\n\013update_mask\030\001 \001(\0132\032.googl"
+          + "e.protobuf.FieldMask\0227\n\007cluster\030\002 \001(\0132&."
+          + "google.cloud.edgecontainer.v1.Cluster\022\022\n"
+          + "\nrequest_id\030\003 \001(\t\"\214\002\n\025UpgradeClusterRequ"
+          + "est\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$edgecontainer"
+          + ".googleapis.com/Cluster\022\033\n\016target_versio"
+          + "n\030\002 \001(\tB\003\340A\002\022O\n\010schedule\030\003 \001(\0162=.google."
+          + "cloud.edgecontainer.v1.UpgradeClusterReq"
+          + "uest.Schedule\022\022\n\nrequest_id\030\004 \001(\t\"5\n\010Sch"
+          + "edule\022\030\n\024SCHEDULE_UNSPECIFIED\020\000\022\017\n\013IMMED"
+          + "IATELY\020\001\"f\n\024DeleteClusterRequest\022:\n\004name"
+          + "\030\001 \001(\tB,\340A\002\372A&\n$edgecontainer.googleapis"
+          + ".com/Cluster\022\022\n\nrequest_id\030\002 \001(\t\"[\n\032Gene"
+          + "rateAccessTokenRequest\022=\n\007cluster\030\001 \001(\tB"
+          + ",\340A\002\372A&\n$edgecontainer.googleapis.com/Cl"
+          + "uster\"n\n\033GenerateAccessTokenResponse\022\031\n\014"
+          + "access_token\030\001 \001(\tB\003\340A\003\0224\n\013expire_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"a\n"
+          + " GenerateOfflineCredentialRequest\022=\n\007clu"
+          + "ster\030\001 \001(\tB,\340A\002\372A&\n$edgecontainer.google"
+          + "apis.com/Cluster\"\251\001\n!GenerateOfflineCred"
+          + "entialResponse\022\037\n\022client_certificate\030\001 \001"
+          + "(\tB\003\340A\003\022\027\n\nclient_key\030\002 \001(\tB\003\340A\003\022\024\n\007user"
+          + "_id\030\003 \001(\tB\003\340A\003\0224\n\013expire_time\030\004 \001(\0132\032.go"
           + "ogle.protobuf.TimestampB\003\340A\003\"\236\001\n\024ListNod"
           + "ePoolsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%e"
           + "dgecontainer.googleapis.com/NodePool\022\021\n\t"
@@ -217,103 +247,121 @@ public final class ServiceProto {
           + "nnectionB\003\340A\002\022\022\n\nrequest_id\030\004 \001(\t\"r\n\032Del"
           + "eteVpnConnectionRequest\022@\n\004name\030\001 \001(\tB2\340"
           + "A\002\372A,\n*edgecontainer.googleapis.com/VpnC"
-          + "onnection\022\022\n\nrequest_id\030\002 \001(\t2\337\034\n\rEdgeCo"
-          + "ntainer\022\266\001\n\014ListClusters\0222.google.cloud."
-          + "edgecontainer.v1.ListClustersRequest\0323.g"
-          + "oogle.cloud.edgecontainer.v1.ListCluster"
-          + "sResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent="
-          + "projects/*/locations/*}/clusters\022\243\001\n\nGet"
-          + "Cluster\0220.google.cloud.edgecontainer.v1."
-          + "GetClusterRequest\032&.google.cloud.edgecon"
-          + "tainer.v1.Cluster\";\332A\004name\202\323\344\223\002.\022,/v1/{n"
-          + "ame=projects/*/locations/*/clusters/*}\022\335"
-          + "\001\n\rCreateCluster\0223.google.cloud.edgecont"
-          + "ainer.v1.CreateClusterRequest\032\035.google.l"
-          + "ongrunning.Operation\"x\312A\034\n\007Cluster\022\021Oper"
-          + "ationMetadata\332A\031parent,cluster,cluster_i"
-          + "d\202\323\344\223\0027\",/v1/{parent=projects/*/location"
-          + "s/*}/clusters:\007cluster\022\337\001\n\rUpdateCluster"
-          + "\0223.google.cloud.edgecontainer.v1.UpdateC"
-          + "lusterRequest\032\035.google.longrunning.Opera"
-          + "tion\"z\312A\034\n\007Cluster\022\021OperationMetadata\332A\023"
-          + "cluster,update_mask\202\323\344\223\002?24/v1/{cluster."
-          + "name=projects/*/locations/*/clusters/*}:"
-          + "\007cluster\022\315\001\n\rDeleteCluster\0223.google.clou"
-          + "d.edgecontainer.v1.DeleteClusterRequest\032"
-          + "\035.google.longrunning.Operation\"h\312A*\n\025goo"
-          + "gle.protobuf.Empty\022\021OperationMetadata\332A\004"
-          + "name\202\323\344\223\002.*,/v1/{name=projects/*/locatio"
-          + "ns/*/clusters/*}\022\343\001\n\023GenerateAccessToken"
-          + "\0229.google.cloud.edgecontainer.v1.Generat"
-          + "eAccessTokenRequest\032:.google.cloud.edgec"
-          + "ontainer.v1.GenerateAccessTokenResponse\""
-          + "U\332A\007cluster\202\323\344\223\002E\022C/v1/{cluster=projects"
-          + "/*/locations/*/clusters/*}:generateAcces"
-          + "sToken\022\305\001\n\rListNodePools\0223.google.cloud."
-          + "edgecontainer.v1.ListNodePoolsRequest\0324."
-          + "google.cloud.edgecontainer.v1.ListNodePo"
-          + "olsResponse\"I\332A\006parent\202\323\344\223\002:\0228/v1/{paren"
-          + "t=projects/*/locations/*/clusters/*}/nod"
-          + "ePools\022\262\001\n\013GetNodePool\0221.google.cloud.ed"
-          + "gecontainer.v1.GetNodePoolRequest\032\'.goog"
-          + "le.cloud.edgecontainer.v1.NodePool\"G\332A\004n"
-          + "ame\202\323\344\223\002:\0228/v1/{name=projects/*/location"
-          + "s/*/clusters/*/nodePools/*}\022\363\001\n\016CreateNo"
-          + "dePool\0224.google.cloud.edgecontainer.v1.C"
-          + "reateNodePoolRequest\032\035.google.longrunnin"
-          + "g.Operation\"\213\001\312A\035\n\010NodePool\022\021OperationMe"
-          + "tadata\332A\035parent,node_pool,node_pool_id\202\323"
-          + "\344\223\002E\"8/v1/{parent=projects/*/locations/*"
-          + "/clusters/*}/nodePools:\tnode_pool\022\365\001\n\016Up"
-          + "dateNodePool\0224.google.cloud.edgecontaine"
-          + "r.v1.UpdateNodePoolRequest\032\035.google.long"
-          + "running.Operation\"\215\001\312A\035\n\010NodePool\022\021Opera"
-          + "tionMetadata\332A\025node_pool,update_mask\202\323\344\223"
-          + "\002O2B/v1/{node_pool.name=projects/*/locat"
-          + "ions/*/clusters/*/nodePools/*}:\tnode_poo"
-          + "l\022\333\001\n\016DeleteNodePool\0224.google.cloud.edge"
-          + "container.v1.DeleteNodePoolRequest\032\035.goo"
-          + "gle.longrunning.Operation\"t\312A*\n\025google.p"
-          + "rotobuf.Empty\022\021OperationMetadata\332A\004name\202"
-          + "\323\344\223\002:*8/v1/{name=projects/*/locations/*/"
-          + "clusters/*/nodePools/*}\022\266\001\n\014ListMachines"
-          + "\0222.google.cloud.edgecontainer.v1.ListMac"
-          + "hinesRequest\0323.google.cloud.edgecontaine"
-          + "r.v1.ListMachinesResponse\"=\332A\006parent\202\323\344\223"
-          + "\002.\022,/v1/{parent=projects/*/locations/*}/"
-          + "machines\022\243\001\n\nGetMachine\0220.google.cloud.e"
-          + "dgecontainer.v1.GetMachineRequest\032&.goog"
-          + "le.cloud.edgecontainer.v1.Machine\";\332A\004na"
-          + "me\202\323\344\223\002.\022,/v1/{name=projects/*/locations"
-          + "/*/machines/*}\022\316\001\n\022ListVpnConnections\0228."
-          + "google.cloud.edgecontainer.v1.ListVpnCon"
-          + "nectionsRequest\0329.google.cloud.edgeconta"
-          + "iner.v1.ListVpnConnectionsResponse\"C\332A\006p"
-          + "arent\202\323\344\223\0024\0222/v1/{parent=projects/*/loca"
-          + "tions/*}/vpnConnections\022\273\001\n\020GetVpnConnec"
-          + "tion\0226.google.cloud.edgecontainer.v1.Get"
-          + "VpnConnectionRequest\032,.google.cloud.edge"
-          + "container.v1.VpnConnection\"A\332A\004name\202\323\344\223\002"
-          + "4\0222/v1/{name=projects/*/locations/*/vpnC"
-          + "onnections/*}\022\213\002\n\023CreateVpnConnection\0229."
-          + "google.cloud.edgecontainer.v1.CreateVpnC"
-          + "onnectionRequest\032\035.google.longrunning.Op"
-          + "eration\"\231\001\312A\"\n\rVpnConnection\022\021OperationM"
-          + "etadata\332A\'parent,vpn_connection,vpn_conn"
-          + "ection_id\202\323\344\223\002D\"2/v1/{parent=projects/*/"
-          + "locations/*}/vpnConnections:\016vpn_connect"
-          + "ion\022\337\001\n\023DeleteVpnConnection\0229.google.clo"
-          + "ud.edgecontainer.v1.DeleteVpnConnectionR"
-          + "equest\032\035.google.longrunning.Operation\"n\312"
-          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\0024*2/v1/{name=projects/*/"
-          + "locations/*/vpnConnections/*}\032P\312A\034edgeco"
-          + "ntainer.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB|\n!com.g"
-          + "oogle.cloud.edgecontainer.v1B\014ServicePro"
-          + "toP\001ZGcloud.google.com/go/edgecontainer/"
-          + "apiv1/edgecontainerpb;edgecontainerpbb\006p"
-          + "roto3"
+          + "onnection\022\022\n\nrequest_id\030\002 \001(\t\"Q\n\026GetServ"
+          + "erConfigRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!l"
+          + "ocations.googleapis.com/Location2\373!\n\rEdg"
+          + "eContainer\022\266\001\n\014ListClusters\0222.google.clo"
+          + "ud.edgecontainer.v1.ListClustersRequest\032"
+          + "3.google.cloud.edgecontainer.v1.ListClus"
+          + "tersResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{pare"
+          + "nt=projects/*/locations/*}/clusters\022\243\001\n\n"
+          + "GetCluster\0220.google.cloud.edgecontainer."
+          + "v1.GetClusterRequest\032&.google.cloud.edge"
+          + "container.v1.Cluster\";\332A\004name\202\323\344\223\002.\022,/v1"
+          + "/{name=projects/*/locations/*/clusters/*"
+          + "}\022\335\001\n\rCreateCluster\0223.google.cloud.edgec"
+          + "ontainer.v1.CreateClusterRequest\032\035.googl"
+          + "e.longrunning.Operation\"x\312A\034\n\007Cluster\022\021O"
+          + "perationMetadata\332A\031parent,cluster,cluste"
+          + "r_id\202\323\344\223\0027\",/v1/{parent=projects/*/locat"
+          + "ions/*}/clusters:\007cluster\022\337\001\n\rUpdateClus"
+          + "ter\0223.google.cloud.edgecontainer.v1.Upda"
+          + "teClusterRequest\032\035.google.longrunning.Op"
+          + "eration\"z\312A\034\n\007Cluster\022\021OperationMetadata"
+          + "\332A\023cluster,update_mask\202\323\344\223\002?24/v1/{clust"
+          + "er.name=projects/*/locations/*/clusters/"
+          + "*}:\007cluster\022\344\001\n\016UpgradeCluster\0224.google."
+          + "cloud.edgecontainer.v1.UpgradeClusterReq"
+          + "uest\032\035.google.longrunning.Operation\"}\312A\034"
+          + "\n\007Cluster\022\021OperationMetadata\332A\034name,targ"
+          + "et_version,schedule\202\323\344\223\0029\"4/v1/{name=pro"
+          + "jects/*/locations/*/clusters/*}:upgrade:"
+          + "\001*\022\315\001\n\rDeleteCluster\0223.google.cloud.edge"
+          + "container.v1.DeleteClusterRequest\032\035.goog"
+          + "le.longrunning.Operation\"h\312A*\n\025google.pr"
+          + "otobuf.Empty\022\021OperationMetadata\332A\004name\202\323"
+          + "\344\223\002.*,/v1/{name=projects/*/locations/*/c"
+          + "lusters/*}\022\343\001\n\023GenerateAccessToken\0229.goo"
+          + "gle.cloud.edgecontainer.v1.GenerateAcces"
+          + "sTokenRequest\032:.google.cloud.edgecontain"
+          + "er.v1.GenerateAccessTokenResponse\"U\332A\007cl"
+          + "uster\202\323\344\223\002E\022C/v1/{cluster=projects/*/loc"
+          + "ations/*/clusters/*}:generateAccessToken"
+          + "\022\373\001\n\031GenerateOfflineCredential\022?.google."
+          + "cloud.edgecontainer.v1.GenerateOfflineCr"
+          + "edentialRequest\032@.google.cloud.edgeconta"
+          + "iner.v1.GenerateOfflineCredentialRespons"
+          + "e\"[\332A\007cluster\202\323\344\223\002K\022I/v1/{cluster=projec"
+          + "ts/*/locations/*/clusters/*}:generateOff"
+          + "lineCredential\022\305\001\n\rListNodePools\0223.googl"
+          + "e.cloud.edgecontainer.v1.ListNodePoolsRe"
+          + "quest\0324.google.cloud.edgecontainer.v1.Li"
+          + "stNodePoolsResponse\"I\332A\006parent\202\323\344\223\002:\0228/v"
+          + "1/{parent=projects/*/locations/*/cluster"
+          + "s/*}/nodePools\022\262\001\n\013GetNodePool\0221.google."
+          + "cloud.edgecontainer.v1.GetNodePoolReques"
+          + "t\032\'.google.cloud.edgecontainer.v1.NodePo"
+          + "ol\"G\332A\004name\202\323\344\223\002:\0228/v1/{name=projects/*/"
+          + "locations/*/clusters/*/nodePools/*}\022\363\001\n\016"
+          + "CreateNodePool\0224.google.cloud.edgecontai"
+          + "ner.v1.CreateNodePoolRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\213\001\312A\035\n\010NodePool\022\021Ope"
+          + "rationMetadata\332A\035parent,node_pool,node_p"
+          + "ool_id\202\323\344\223\002E\"8/v1/{parent=projects/*/loc"
+          + "ations/*/clusters/*}/nodePools:\tnode_poo"
+          + "l\022\365\001\n\016UpdateNodePool\0224.google.cloud.edge"
+          + "container.v1.UpdateNodePoolRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\215\001\312A\035\n\010NodePoo"
+          + "l\022\021OperationMetadata\332A\025node_pool,update_"
+          + "mask\202\323\344\223\002O2B/v1/{node_pool.name=projects"
+          + "/*/locations/*/clusters/*/nodePools/*}:\t"
+          + "node_pool\022\333\001\n\016DeleteNodePool\0224.google.cl"
+          + "oud.edgecontainer.v1.DeleteNodePoolReque"
+          + "st\032\035.google.longrunning.Operation\"t\312A*\n\025"
+          + "google.protobuf.Empty\022\021OperationMetadata"
+          + "\332A\004name\202\323\344\223\002:*8/v1/{name=projects/*/loca"
+          + "tions/*/clusters/*/nodePools/*}\022\266\001\n\014List"
+          + "Machines\0222.google.cloud.edgecontainer.v1"
+          + ".ListMachinesRequest\0323.google.cloud.edge"
+          + "container.v1.ListMachinesResponse\"=\332A\006pa"
+          + "rent\202\323\344\223\002.\022,/v1/{parent=projects/*/locat"
+          + "ions/*}/machines\022\243\001\n\nGetMachine\0220.google"
+          + ".cloud.edgecontainer.v1.GetMachineReques"
+          + "t\032&.google.cloud.edgecontainer.v1.Machin"
+          + "e\";\332A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/l"
+          + "ocations/*/machines/*}\022\316\001\n\022ListVpnConnec"
+          + "tions\0228.google.cloud.edgecontainer.v1.Li"
+          + "stVpnConnectionsRequest\0329.google.cloud.e"
+          + "dgecontainer.v1.ListVpnConnectionsRespon"
+          + "se\"C\332A\006parent\202\323\344\223\0024\0222/v1/{parent=project"
+          + "s/*/locations/*}/vpnConnections\022\273\001\n\020GetV"
+          + "pnConnection\0226.google.cloud.edgecontaine"
+          + "r.v1.GetVpnConnectionRequest\032,.google.cl"
+          + "oud.edgecontainer.v1.VpnConnection\"A\332A\004n"
+          + "ame\202\323\344\223\0024\0222/v1/{name=projects/*/location"
+          + "s/*/vpnConnections/*}\022\213\002\n\023CreateVpnConne"
+          + "ction\0229.google.cloud.edgecontainer.v1.Cr"
+          + "eateVpnConnectionRequest\032\035.google.longru"
+          + "nning.Operation\"\231\001\312A\"\n\rVpnConnection\022\021Op"
+          + "erationMetadata\332A\'parent,vpn_connection,"
+          + "vpn_connection_id\202\323\344\223\002D\"2/v1/{parent=pro"
+          + "jects/*/locations/*}/vpnConnections:\016vpn"
+          + "_connection\022\337\001\n\023DeleteVpnConnection\0229.go"
+          + "ogle.cloud.edgecontainer.v1.DeleteVpnCon"
+          + "nectionRequest\032\035.google.longrunning.Oper"
+          + "ation\"n\312A*\n\025google.protobuf.Empty\022\021Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\0024*2/v1/{name=pro"
+          + "jects/*/locations/*/vpnConnections/*}\022\264\001"
+          + "\n\017GetServerConfig\0225.google.cloud.edgecon"
+          + "tainer.v1.GetServerConfigRequest\032+.googl"
+          + "e.cloud.edgecontainer.v1.ServerConfig\"=\332"
+          + "A\004name\202\323\344\223\0020\022./v1/{name=projects/*/locat"
+          + "ions/*}/serverConfig\032P\312A\034edgecontainer.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformB|\n!com.google.clo"
+          + "ud.edgecontainer.v1B\014ServiceProtoP\001ZGclo"
+          + "ud.google.com/go/edgecontainer/apiv1/edg"
+          + "econtainerpb;edgecontainerpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -341,6 +389,7 @@ public final class ServiceProto {
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
+              "Warnings",
             });
     internal_static_google_cloud_edgecontainer_v1_ListClustersRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -382,8 +431,16 @@ public final class ServiceProto {
             new java.lang.String[] {
               "UpdateMask", "Cluster", "RequestId",
             });
-    internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_descriptor =
+    internal_static_google_cloud_edgecontainer_v1_UpgradeClusterRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_edgecontainer_v1_UpgradeClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_UpgradeClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "TargetVersion", "Schedule", "RequestId",
+            });
+    internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_DeleteClusterRequest_descriptor,
@@ -391,7 +448,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenRequest_descriptor,
@@ -399,15 +456,31 @@ public final class ServiceProto {
               "Cluster",
             });
     internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_GenerateAccessTokenResponse_descriptor,
             new java.lang.String[] {
               "AccessToken", "ExpireTime",
             });
+    internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialRequest_descriptor,
+            new java.lang.String[] {
+              "Cluster",
+            });
+    internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_GenerateOfflineCredentialResponse_descriptor,
+            new java.lang.String[] {
+              "ClientCertificate", "ClientKey", "UserId", "ExpireTime",
+            });
     internal_static_google_cloud_edgecontainer_v1_ListNodePoolsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_edgecontainer_v1_ListNodePoolsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListNodePoolsRequest_descriptor,
@@ -415,7 +488,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_edgecontainer_v1_ListNodePoolsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_edgecontainer_v1_ListNodePoolsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListNodePoolsResponse_descriptor,
@@ -423,7 +496,7 @@ public final class ServiceProto {
               "NodePools", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_edgecontainer_v1_GetNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_edgecontainer_v1_GetNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_GetNodePoolRequest_descriptor,
@@ -431,7 +504,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_edgecontainer_v1_CreateNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_edgecontainer_v1_CreateNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_CreateNodePoolRequest_descriptor,
@@ -439,7 +512,7 @@ public final class ServiceProto {
               "Parent", "NodePoolId", "NodePool", "RequestId",
             });
     internal_static_google_cloud_edgecontainer_v1_UpdateNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_edgecontainer_v1_UpdateNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_UpdateNodePoolRequest_descriptor,
@@ -447,7 +520,7 @@ public final class ServiceProto {
               "UpdateMask", "NodePool", "RequestId",
             });
     internal_static_google_cloud_edgecontainer_v1_DeleteNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_edgecontainer_v1_DeleteNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_DeleteNodePoolRequest_descriptor,
@@ -455,7 +528,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_edgecontainer_v1_ListMachinesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_edgecontainer_v1_ListMachinesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListMachinesRequest_descriptor,
@@ -463,7 +536,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_edgecontainer_v1_ListMachinesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_edgecontainer_v1_ListMachinesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListMachinesResponse_descriptor,
@@ -471,7 +544,7 @@ public final class ServiceProto {
               "Machines", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_edgecontainer_v1_GetMachineRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_edgecontainer_v1_GetMachineRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_GetMachineRequest_descriptor,
@@ -479,7 +552,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsRequest_descriptor,
@@ -487,7 +560,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ListVpnConnectionsResponse_descriptor,
@@ -495,7 +568,7 @@ public final class ServiceProto {
               "VpnConnections", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_edgecontainer_v1_GetVpnConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_edgecontainer_v1_GetVpnConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_GetVpnConnectionRequest_descriptor,
@@ -503,7 +576,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_edgecontainer_v1_CreateVpnConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_edgecontainer_v1_CreateVpnConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_CreateVpnConnectionRequest_descriptor,
@@ -511,12 +584,20 @@ public final class ServiceProto {
               "Parent", "VpnConnectionId", "VpnConnection", "RequestId",
             });
     internal_static_google_cloud_edgecontainer_v1_DeleteVpnConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_edgecontainer_v1_DeleteVpnConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_DeleteVpnConnectionRequest_descriptor,
             new java.lang.String[] {
               "Name", "RequestId",
+            });
+    internal_static_google_cloud_edgecontainer_v1_GetServerConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_edgecontainer_v1_GetServerConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_GetServerConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -531,7 +531,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Pauses the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -564,7 +564,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if [solution_type][] is
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -698,7 +699,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Pauses the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -735,7 +736,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if [solution_type][] is
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -838,7 +840,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Pauses the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -867,7 +869,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if [solution_type][] is
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -972,7 +975,7 @@ public final class EngineServiceGrpc {
      *
      * <pre>
      * Pauses the training of an existing engine. Only applicable if
-     * [solution_type][] is
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */
@@ -1003,7 +1006,8 @@ public final class EngineServiceGrpc {
      *
      *
      * <pre>
-     * Tunes an existing engine. Only applicable if [solution_type][] is
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      */

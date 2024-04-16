@@ -41,6 +41,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
   private DropInfo() {
     cause_ = 0;
     resourceUri_ = "";
+    sourceIp_ = "";
+    destinationIp_ = "";
+    region_ = "";
   }
 
   @java.lang.Override
@@ -122,7 +125,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Dropped due to no routes.
+     * Dropped due to no matching routes.
      * </pre>
      *
      * <code>NO_ROUTE = 4;</code>
@@ -144,12 +147,114 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Packet is sent to a wrong (unintended) network. Example: you trace a
      * packet from VM1:Network1 to VM2:Network2, however, the route configured
-     * in Network1 sends the packet destined for VM2's IP addresss to Network3.
+     * in Network1 sends the packet destined for VM2's IP address to Network3.
      * </pre>
      *
      * <code>ROUTE_WRONG_NETWORK = 6;</code>
      */
     ROUTE_WRONG_NETWORK(6),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop IP address cannot be resolved to a GCP resource.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_IP_ADDRESS_NOT_RESOLVED = 42;</code>
+     */
+    ROUTE_NEXT_HOP_IP_ADDRESS_NOT_RESOLVED(42),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop resource is not found.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_RESOURCE_NOT_FOUND = 43;</code>
+     */
+    ROUTE_NEXT_HOP_RESOURCE_NOT_FOUND(43),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop instance doesn't have a NIC in the route's network.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK = 49;</code>
+     */
+    ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK(49),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop IP address is not a primary IP address of the next hop
+     * instance.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_INSTANCE_NON_PRIMARY_IP = 50;</code>
+     */
+    ROUTE_NEXT_HOP_INSTANCE_NON_PRIMARY_IP(50),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop forwarding rule doesn't match next hop IP address.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH = 51;</code>
+     */
+    ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH(51),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop VPN tunnel is down (does not have valid IKE SAs).
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED = 52;</code>
+     */
+    ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED(52),
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop forwarding rule type is invalid (it's not a forwarding
+     * rule of the internal passthrough load balancer).
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID = 53;</code>
+     */
+    ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID(53),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the Internet to the private IPv6 address.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
+     */
+    NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS(44),
+    /**
+     *
+     *
+     * <pre>
+     * The packet does not match a policy-based VPN tunnel local selector.
+     * </pre>
+     *
+     * <code>VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH = 45;</code>
+     */
+    VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH(45),
+    /**
+     *
+     *
+     * <pre>
+     * The packet does not match a policy-based VPN tunnel remote selector.
+     * </pre>
+     *
+     * <code>VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH = 46;</code>
+     */
+    VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH(46),
     /**
      *
      *
@@ -165,12 +270,24 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance with only an internal IP address tries to access Google API and
-     * services, but private Google access is not enabled.
+     * services, but private Google access is not enabled in the subnet.
      * </pre>
      *
      * <code>PRIVATE_GOOGLE_ACCESS_DISALLOWED = 8;</code>
      */
     PRIVATE_GOOGLE_ACCESS_DISALLOWED(8),
+    /**
+     *
+     *
+     * <pre>
+     * Source endpoint tries to access Google API and services through the VPN
+     * tunnel to another network, but Private Google Access needs to be enabled
+     * in the source endpoint network.
+     * </pre>
+     *
+     * <code>PRIVATE_GOOGLE_ACCESS_VIA_VPN_TUNNEL_UNSUPPORTED = 47;</code>
+     */
+    PRIVATE_GOOGLE_ACCESS_VIA_VPN_TUNNEL_UNSUPPORTED(47),
     /**
      *
      *
@@ -206,17 +323,6 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FORWARDING_RULE_MISMATCH = 11;</code>
      */
     FORWARDING_RULE_MISMATCH(11),
-    /**
-     *
-     *
-     * <pre>
-     * Packet could be dropped because it was sent from a different region
-     * to a regional forwarding without global access.
-     * </pre>
-     *
-     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
-     */
-    FORWARDING_RULE_REGION_MISMATCH(25),
     /**
      *
      *
@@ -477,6 +583,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    FORWARDING_RULE_REGION_MISMATCH(25),
+    /**
+     *
+     *
+     * <pre>
      * The Private Service Connect endpoint is in a project that is not approved
      * to connect to the service.
      * </pre>
@@ -484,6 +601,87 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
      */
     PSC_CONNECTION_NOT_ACCEPTED(26),
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect endpoint over the
+     * peering, but [it's not
+     * supported](https://cloud.google.com/vpc/docs/configure-private-service-connect-services#on-premises).
+     * </pre>
+     *
+     * <code>PSC_ENDPOINT_ACCESSED_FROM_PEERED_NETWORK = 41;</code>
+     */
+    PSC_ENDPOINT_ACCESSED_FROM_PEERED_NETWORK(41),
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group), but the producer PSC forwarding rule does not have
+     * global access enabled.
+     * </pre>
+     *
+     * <code>PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS = 48;</code>
+     */
+    PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS(48),
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group), but the producer PSC forwarding rule has multiple ports
+     * specified.
+     * </pre>
+     *
+     * <code>PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS = 54;</code>
+     */
+    PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS(54),
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group) targeting a Cloud SQL service attachment, but this
+     * configuration is not supported.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_PSC_NEG_UNSUPPORTED = 58;</code>
+     */
+    CLOUD_SQL_PSC_NEG_UNSUPPORTED(58),
+    /**
+     *
+     *
+     * <pre>
+     * No NAT subnets are defined for the PSC service attachment.
+     * </pre>
+     *
+     * <code>NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT = 57;</code>
+     */
+    NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT(57),
+    /**
+     *
+     *
+     * <pre>
+     * The packet sent from the hybrid NEG proxy matches a non-dynamic route,
+     * but such a configuration is not supported.
+     * </pre>
+     *
+     * <code>HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED = 55;</code>
+     */
+    HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED(55),
+    /**
+     *
+     *
+     * <pre>
+     * The packet sent from the hybrid NEG proxy matches a dynamic route with a
+     * next hop in a different region, but such a configuration is not
+     * supported.
+     * </pre>
+     *
+     * <code>HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED = 56;</code>
+     */
+    HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED(56),
     /**
      *
      *
@@ -515,6 +713,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER_HAS_NO_PROXY_SUBNET = 39;</code>
      */
     LOAD_BALANCER_HAS_NO_PROXY_SUBNET(39),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent to Cloud Nat without active NAT IPs.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_NO_ADDRESSES = 40;</code>
+     */
+    CLOUD_NAT_NO_ADDRESSES(40),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is stuck in a routing loop.
+     * </pre>
+     *
+     * <code>ROUTING_LOOP = 59;</code>
+     */
+    ROUTING_LOOP(59),
     UNRECOGNIZED(-1),
     ;
 
@@ -566,7 +784,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Dropped due to no routes.
+     * Dropped due to no matching routes.
      * </pre>
      *
      * <code>NO_ROUTE = 4;</code>
@@ -588,12 +806,114 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Packet is sent to a wrong (unintended) network. Example: you trace a
      * packet from VM1:Network1 to VM2:Network2, however, the route configured
-     * in Network1 sends the packet destined for VM2's IP addresss to Network3.
+     * in Network1 sends the packet destined for VM2's IP address to Network3.
      * </pre>
      *
      * <code>ROUTE_WRONG_NETWORK = 6;</code>
      */
     public static final int ROUTE_WRONG_NETWORK_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop IP address cannot be resolved to a GCP resource.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_IP_ADDRESS_NOT_RESOLVED = 42;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_IP_ADDRESS_NOT_RESOLVED_VALUE = 42;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop resource is not found.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_RESOURCE_NOT_FOUND = 43;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_RESOURCE_NOT_FOUND_VALUE = 43;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop instance doesn't have a NIC in the route's network.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK = 49;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK_VALUE = 49;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop IP address is not a primary IP address of the next hop
+     * instance.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_INSTANCE_NON_PRIMARY_IP = 50;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_INSTANCE_NON_PRIMARY_IP_VALUE = 50;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop forwarding rule doesn't match next hop IP address.
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH = 51;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH_VALUE = 51;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop VPN tunnel is down (does not have valid IKE SAs).
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED = 52;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED_VALUE = 52;
+    /**
+     *
+     *
+     * <pre>
+     * Route's next hop forwarding rule type is invalid (it's not a forwarding
+     * rule of the internal passthrough load balancer).
+     * </pre>
+     *
+     * <code>ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID = 53;</code>
+     */
+    public static final int ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID_VALUE = 53;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the Internet to the private IPv6 address.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
+     */
+    public static final int NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
+     * The packet does not match a policy-based VPN tunnel local selector.
+     * </pre>
+     *
+     * <code>VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH = 45;</code>
+     */
+    public static final int VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH_VALUE = 45;
+    /**
+     *
+     *
+     * <pre>
+     * The packet does not match a policy-based VPN tunnel remote selector.
+     * </pre>
+     *
+     * <code>VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH = 46;</code>
+     */
+    public static final int VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH_VALUE = 46;
     /**
      *
      *
@@ -609,12 +929,24 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance with only an internal IP address tries to access Google API and
-     * services, but private Google access is not enabled.
+     * services, but private Google access is not enabled in the subnet.
      * </pre>
      *
      * <code>PRIVATE_GOOGLE_ACCESS_DISALLOWED = 8;</code>
      */
     public static final int PRIVATE_GOOGLE_ACCESS_DISALLOWED_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Source endpoint tries to access Google API and services through the VPN
+     * tunnel to another network, but Private Google Access needs to be enabled
+     * in the source endpoint network.
+     * </pre>
+     *
+     * <code>PRIVATE_GOOGLE_ACCESS_VIA_VPN_TUNNEL_UNSUPPORTED = 47;</code>
+     */
+    public static final int PRIVATE_GOOGLE_ACCESS_VIA_VPN_TUNNEL_UNSUPPORTED_VALUE = 47;
     /**
      *
      *
@@ -650,17 +982,6 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FORWARDING_RULE_MISMATCH = 11;</code>
      */
     public static final int FORWARDING_RULE_MISMATCH_VALUE = 11;
-    /**
-     *
-     *
-     * <pre>
-     * Packet could be dropped because it was sent from a different region
-     * to a regional forwarding without global access.
-     * </pre>
-     *
-     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
-     */
-    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
     /**
      *
      *
@@ -921,6 +1242,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
      * The Private Service Connect endpoint is in a project that is not approved
      * to connect to the service.
      * </pre>
@@ -928,6 +1260,87 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
      */
     public static final int PSC_CONNECTION_NOT_ACCEPTED_VALUE = 26;
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect endpoint over the
+     * peering, but [it's not
+     * supported](https://cloud.google.com/vpc/docs/configure-private-service-connect-services#on-premises).
+     * </pre>
+     *
+     * <code>PSC_ENDPOINT_ACCESSED_FROM_PEERED_NETWORK = 41;</code>
+     */
+    public static final int PSC_ENDPOINT_ACCESSED_FROM_PEERED_NETWORK_VALUE = 41;
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group), but the producer PSC forwarding rule does not have
+     * global access enabled.
+     * </pre>
+     *
+     * <code>PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS = 48;</code>
+     */
+    public static final int PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS_VALUE = 48;
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group), but the producer PSC forwarding rule has multiple ports
+     * specified.
+     * </pre>
+     *
+     * <code>PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS = 54;</code>
+     */
+    public static final int PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS_VALUE = 54;
+    /**
+     *
+     *
+     * <pre>
+     * The packet is sent to the Private Service Connect backend (network
+     * endpoint group) targeting a Cloud SQL service attachment, but this
+     * configuration is not supported.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_PSC_NEG_UNSUPPORTED = 58;</code>
+     */
+    public static final int CLOUD_SQL_PSC_NEG_UNSUPPORTED_VALUE = 58;
+    /**
+     *
+     *
+     * <pre>
+     * No NAT subnets are defined for the PSC service attachment.
+     * </pre>
+     *
+     * <code>NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT = 57;</code>
+     */
+    public static final int NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT_VALUE = 57;
+    /**
+     *
+     *
+     * <pre>
+     * The packet sent from the hybrid NEG proxy matches a non-dynamic route,
+     * but such a configuration is not supported.
+     * </pre>
+     *
+     * <code>HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED = 55;</code>
+     */
+    public static final int HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED_VALUE = 55;
+    /**
+     *
+     *
+     * <pre>
+     * The packet sent from the hybrid NEG proxy matches a dynamic route with a
+     * next hop in a different region, but such a configuration is not
+     * supported.
+     * </pre>
+     *
+     * <code>HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED = 56;</code>
+     */
+    public static final int HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED_VALUE = 56;
     /**
      *
      *
@@ -959,6 +1372,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER_HAS_NO_PROXY_SUBNET = 39;</code>
      */
     public static final int LOAD_BALANCER_HAS_NO_PROXY_SUBNET_VALUE = 39;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent to Cloud Nat without active NAT IPs.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_NO_ADDRESSES = 40;</code>
+     */
+    public static final int CLOUD_NAT_NO_ADDRESSES_VALUE = 40;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is stuck in a routing loop.
+     * </pre>
+     *
+     * <code>ROUTING_LOOP = 59;</code>
+     */
+    public static final int ROUTING_LOOP_VALUE = 59;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -998,18 +1431,38 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return ROUTE_BLACKHOLE;
         case 6:
           return ROUTE_WRONG_NETWORK;
+        case 42:
+          return ROUTE_NEXT_HOP_IP_ADDRESS_NOT_RESOLVED;
+        case 43:
+          return ROUTE_NEXT_HOP_RESOURCE_NOT_FOUND;
+        case 49:
+          return ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK;
+        case 50:
+          return ROUTE_NEXT_HOP_INSTANCE_NON_PRIMARY_IP;
+        case 51:
+          return ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH;
+        case 52:
+          return ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED;
+        case 53:
+          return ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID;
+        case 44:
+          return NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS;
+        case 45:
+          return VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH;
+        case 46:
+          return VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH;
         case 7:
           return PRIVATE_TRAFFIC_TO_INTERNET;
         case 8:
           return PRIVATE_GOOGLE_ACCESS_DISALLOWED;
+        case 47:
+          return PRIVATE_GOOGLE_ACCESS_VIA_VPN_TUNNEL_UNSUPPORTED;
         case 9:
           return NO_EXTERNAL_ADDRESS;
         case 10:
           return UNKNOWN_INTERNAL_ADDRESS;
         case 11:
           return FORWARDING_RULE_MISMATCH;
-        case 25:
-          return FORWARDING_RULE_REGION_MISMATCH;
         case 12:
           return FORWARDING_RULE_NO_INSTANCES;
         case 13:
@@ -1056,14 +1509,34 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return VPC_CONNECTOR_NOT_SET;
         case 24:
           return VPC_CONNECTOR_NOT_RUNNING;
+        case 25:
+          return FORWARDING_RULE_REGION_MISMATCH;
         case 26:
           return PSC_CONNECTION_NOT_ACCEPTED;
+        case 41:
+          return PSC_ENDPOINT_ACCESSED_FROM_PEERED_NETWORK;
+        case 48:
+          return PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS;
+        case 54:
+          return PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS;
+        case 58:
+          return CLOUD_SQL_PSC_NEG_UNSUPPORTED;
+        case 57:
+          return NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT;
+        case 55:
+          return HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED;
+        case 56:
+          return HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED;
         case 29:
           return CLOUD_RUN_REVISION_NOT_READY;
         case 37:
           return DROPPED_INSIDE_PSC_SERVICE_PRODUCER;
         case 39:
           return LOAD_BALANCER_HAS_NO_PROXY_SUBNET;
+        case 40:
+          return CLOUD_NAT_NO_ADDRESSES;
+        case 59:
+          return ROUTING_LOOP;
         default:
           return null;
       }
@@ -1205,6 +1678,159 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_IP_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceIp_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string source_ip = 3;</code>
+   *
+   * @return The sourceIp.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceIp() {
+    java.lang.Object ref = sourceIp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceIp_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string source_ip = 3;</code>
+   *
+   * @return The bytes for sourceIp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceIpBytes() {
+    java.lang.Object ref = sourceIp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceIp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESTINATION_IP_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationIp_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Destination IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string destination_ip = 4;</code>
+   *
+   * @return The destinationIp.
+   */
+  @java.lang.Override
+  public java.lang.String getDestinationIp() {
+    java.lang.Object ref = destinationIp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      destinationIp_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Destination IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string destination_ip = 4;</code>
+   *
+   * @return The bytes for destinationIp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDestinationIpBytes() {
+    java.lang.Object ref = destinationIp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      destinationIp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Region of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string region = 5;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string region = 5;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1226,6 +1852,15 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceIp_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationIp_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, destinationIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, region_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1241,6 +1876,15 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceIp_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationIp_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, destinationIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, region_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1260,6 +1904,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (cause_ != other.cause_) return false;
     if (!getResourceUri().equals(other.getResourceUri())) return false;
+    if (!getSourceIp().equals(other.getSourceIp())) return false;
+    if (!getDestinationIp().equals(other.getDestinationIp())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1275,6 +1922,12 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + cause_;
     hash = (37 * hash) + RESOURCE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getResourceUri().hashCode();
+    hash = (37 * hash) + SOURCE_IP_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceIp().hashCode();
+    hash = (37 * hash) + DESTINATION_IP_FIELD_NUMBER;
+    hash = (53 * hash) + getDestinationIp().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1416,6 +2069,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       cause_ = 0;
       resourceUri_ = "";
+      sourceIp_ = "";
+      destinationIp_ = "";
+      region_ = "";
       return this;
     }
 
@@ -1457,6 +2113,15 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceUri_ = resourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceIp_ = sourceIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.destinationIp_ = destinationIp_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.region_ = region_;
       }
     }
 
@@ -1513,6 +2178,21 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getSourceIp().isEmpty()) {
+        sourceIp_ = other.sourceIp_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getDestinationIp().isEmpty()) {
+        destinationIp_ = other.destinationIp_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1551,6 +2231,24 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                sourceIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                destinationIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1764,6 +2462,324 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       resourceUri_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string source_ip = 3;</code>
+     *
+     * @return The sourceIp.
+     */
+    public java.lang.String getSourceIp() {
+      java.lang.Object ref = sourceIp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceIp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string source_ip = 3;</code>
+     *
+     * @return The bytes for sourceIp.
+     */
+    public com.google.protobuf.ByteString getSourceIpBytes() {
+      java.lang.Object ref = sourceIp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string source_ip = 3;</code>
+     *
+     * @param value The sourceIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceIp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceIp_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string source_ip = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceIp() {
+      sourceIp_ = getDefaultInstance().getSourceIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string source_ip = 3;</code>
+     *
+     * @param value The bytes for sourceIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceIpBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceIp_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object destinationIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Destination IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string destination_ip = 4;</code>
+     *
+     * @return The destinationIp.
+     */
+    public java.lang.String getDestinationIp() {
+      java.lang.Object ref = destinationIp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destinationIp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string destination_ip = 4;</code>
+     *
+     * @return The bytes for destinationIp.
+     */
+    public com.google.protobuf.ByteString getDestinationIpBytes() {
+      java.lang.Object ref = destinationIp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destinationIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string destination_ip = 4;</code>
+     *
+     * @param value The destinationIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationIp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      destinationIp_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string destination_ip = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestinationIp() {
+      destinationIp_ = getDefaultInstance().getDestinationIp();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination IP address of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string destination_ip = 4;</code>
+     *
+     * @param value The bytes for destinationIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationIpBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      destinationIp_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Region of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region of the dropped packet (if relevant).
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.45.0 (2024-04-04)
+
+* No change
+
+
+## 3.43.0 (2024-03-28)
+
+* No change
+
+
+## 3.42.0 (2024-03-22)
+
+### Features
+
+* add RPCs for getting and listing project, table, and column data profiles ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* Update urls to reflect branding change to Sensitive Data Protection ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 3.41.0 (2024-03-06)
 
 * No change

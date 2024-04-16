@@ -71,7 +71,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * </pre>
    *
    * <code>
@@ -96,7 +98,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * </pre>
    *
    * <code>
@@ -466,7 +470,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Discovered Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
      * </pre>
      *
      * <code>
@@ -490,7 +496,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Discovered Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
      * </pre>
      *
      * <code>
@@ -514,7 +522,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Discovered Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
      * </pre>
      *
      * <code>
@@ -537,7 +547,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Discovered Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
      * </pre>
      *
      * <code>
@@ -556,7 +568,9 @@ public final class GetDiscoveredWorkloadRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Discovered Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
      * </pre>
      *
      * <code>

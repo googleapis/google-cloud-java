@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1.stub;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -46,9 +47,12 @@ import com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest;
 import com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse;
 import com.google.cloud.edgecontainer.v1.GetClusterRequest;
 import com.google.cloud.edgecontainer.v1.GetMachineRequest;
 import com.google.cloud.edgecontainer.v1.GetNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.GetServerConfigRequest;
 import com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersResponse;
@@ -61,9 +65,15 @@ import com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse;
 import com.google.cloud.edgecontainer.v1.Machine;
 import com.google.cloud.edgecontainer.v1.NodePool;
 import com.google.cloud.edgecontainer.v1.OperationMetadata;
+import com.google.cloud.edgecontainer.v1.ServerConfig;
 import com.google.cloud.edgecontainer.v1.UpdateClusterRequest;
 import com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.UpgradeClusterRequest;
 import com.google.cloud.edgecontainer.v1.VpnConnection;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -249,6 +259,46 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpgradeClusterRequest, Operation>
+      upgradeClusterMethodDescriptor =
+          ApiMethodDescriptor.<UpgradeClusterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/UpgradeCluster")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpgradeClusterRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*}:upgrade",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpgradeClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpgradeClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpgradeClusterRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteClusterRequest, Operation>
       deleteClusterMethodDescriptor =
           ApiMethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
@@ -317,6 +367,43 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateAccessTokenResponse>newBuilder()
                       .setDefaultInstance(GenerateAccessTokenResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.edgecontainer.v1.EdgeContainer/GenerateOfflineCredential")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateOfflineCredentialRequest>newBuilder()
+                      .setPath(
+                          "/v1/{cluster=projects/*/locations/*/clusters/*}:generateOfflineCredential",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateOfflineCredentialRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "cluster", request.getCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateOfflineCredentialRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateOfflineCredentialResponse>newBuilder()
+                      .setDefaultInstance(GenerateOfflineCredentialResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -740,6 +827,108 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GetServerConfigRequest, ServerConfig>
+      getServerConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetServerConfigRequest, ServerConfig>newBuilder()
+              .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetServerConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetServerConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}/serverConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServerConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServerConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ServerConfig>newBuilder()
+                      .setDefaultInstance(ServerConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
@@ -750,11 +939,16 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable;
+  private final OperationCallable<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
+  private final UnaryCallable<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialCallable;
   private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable;
   private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsPagedResponse>
       listNodePoolsPagedCallable;
@@ -783,6 +977,11 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
   private final UnaryCallable<DeleteVpnConnectionRequest, Operation> deleteVpnConnectionCallable;
   private final OperationCallable<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationCallable;
+  private final UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -898,6 +1097,17 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpgradeClusterRequest, Operation> upgradeClusterTransportSettings =
+        HttpJsonCallSettings.<UpgradeClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -914,6 +1124,19 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
             HttpJsonCallSettings
                 .<GenerateAccessTokenRequest, GenerateAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAccessTokenMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("cluster", String.valueOf(request.getCluster()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+        generateOfflineCredentialTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>newBuilder()
+                .setMethodDescriptor(generateOfflineCredentialMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -1047,6 +1270,40 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
+        HttpJsonCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
+            .setMethodDescriptor(getServerConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -1075,6 +1332,15 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.upgradeClusterCallable =
+        callableFactory.createUnaryCallable(
+            upgradeClusterTransportSettings, settings.upgradeClusterSettings(), clientContext);
+    this.upgradeClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeClusterTransportSettings,
+            settings.upgradeClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
@@ -1088,6 +1354,11 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
         callableFactory.createUnaryCallable(
             generateAccessTokenTransportSettings,
             settings.generateAccessTokenSettings(),
+            clientContext);
+    this.generateOfflineCredentialCallable =
+        callableFactory.createUnaryCallable(
+            generateOfflineCredentialTransportSettings,
+            settings.generateOfflineCredentialSettings(),
             clientContext);
     this.listNodePoolsCallable =
         callableFactory.createUnaryCallable(
@@ -1169,6 +1440,18 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
             settings.deleteVpnConnectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getServerConfigCallable =
+        callableFactory.createUnaryCallable(
+            getServerConfigTransportSettings, settings.getServerConfigSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1181,8 +1464,10 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
     methodDescriptors.add(getClusterMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
     methodDescriptors.add(updateClusterMethodDescriptor);
+    methodDescriptors.add(upgradeClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(generateAccessTokenMethodDescriptor);
+    methodDescriptors.add(generateOfflineCredentialMethodDescriptor);
     methodDescriptors.add(listNodePoolsMethodDescriptor);
     methodDescriptors.add(getNodePoolMethodDescriptor);
     methodDescriptors.add(createNodePoolMethodDescriptor);
@@ -1194,6 +1479,9 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
     methodDescriptors.add(getVpnConnectionMethodDescriptor);
     methodDescriptors.add(createVpnConnectionMethodDescriptor);
     methodDescriptors.add(deleteVpnConnectionMethodDescriptor);
+    methodDescriptors.add(getServerConfigMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1239,6 +1527,17 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
   }
 
   @Override
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return upgradeClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return upgradeClusterOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -1253,6 +1552,12 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialCallable() {
+    return generateOfflineCredentialCallable;
   }
 
   @Override
@@ -1356,6 +1661,27 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
   public OperationCallable<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationCallable() {
     return deleteVpnConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
+    return getServerConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

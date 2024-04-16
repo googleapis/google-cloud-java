@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.44.0 (2024-04-04)
+
+* No change
+
+
+## 2.42.0 (2024-03-28)
+
+### Features
+
+* add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
+## 2.41.0 (2024-03-22)
+
+### Features
+
+* add API to enable/disable secret manager csi component on GKE clusters ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* add API to enable/disable secret manager csi component on GKE clusters ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* add optional secondary_boot_disk_update_strategy field to NodePool API ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* add optional secondary_boot_disk_update_strategy field to NodePool API ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* add secondary boot disks field to NodePool API ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* allow existing clusters to enable multi-networking ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+
+
+
 ## 2.40.0 (2024-03-06)
 
 ### Features

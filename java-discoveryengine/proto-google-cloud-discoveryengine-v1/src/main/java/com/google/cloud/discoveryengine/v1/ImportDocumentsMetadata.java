@@ -194,6 +194,24 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     return failureCount_;
   }
 
+  public static final int TOTAL_COUNT_FIELD_NUMBER = 5;
+  private long totalCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Total count of entries that were processed.
+   * </pre>
+   *
+   * <code>int64 total_count = 5;</code>
+   *
+   * @return The totalCount.
+   */
+  @java.lang.Override
+  public long getTotalCount() {
+    return totalCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -220,6 +238,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     if (failureCount_ != 0L) {
       output.writeInt64(4, failureCount_);
     }
+    if (totalCount_ != 0L) {
+      output.writeInt64(5, totalCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -240,6 +261,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     }
     if (failureCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, failureCount_);
+    }
+    if (totalCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, totalCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -267,6 +291,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     }
     if (getSuccessCount() != other.getSuccessCount()) return false;
     if (getFailureCount() != other.getFailureCount()) return false;
+    if (getTotalCount() != other.getTotalCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,6 +315,8 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSuccessCount());
     hash = (37 * hash) + FAILURE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailureCount());
+    hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -453,6 +480,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       successCount_ = 0L;
       failureCount_ = 0L;
+      totalCount_ = 0L;
       return this;
     }
 
@@ -503,6 +531,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.failureCount_ = failureCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.totalCount_ = totalCount_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -565,6 +596,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       if (other.getFailureCount() != 0L) {
         setFailureCount(other.getFailureCount());
       }
+      if (other.getTotalCount() != 0L) {
+        setTotalCount(other.getTotalCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -615,6 +649,12 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                totalCount_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1115,6 +1155,59 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     public Builder clearFailureCount() {
       bitField0_ = (bitField0_ & ~0x00000008);
       failureCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Total count of entries that were processed.
+     * </pre>
+     *
+     * <code>int64 total_count = 5;</code>
+     *
+     * @return The totalCount.
+     */
+    @java.lang.Override
+    public long getTotalCount() {
+      return totalCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total count of entries that were processed.
+     * </pre>
+     *
+     * <code>int64 total_count = 5;</code>
+     *
+     * @param value The totalCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalCount(long value) {
+
+      totalCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total count of entries that were processed.
+     * </pre>
+     *
+     * <code>int64 total_count = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      totalCount_ = 0L;
       onChanged();
       return this;
     }

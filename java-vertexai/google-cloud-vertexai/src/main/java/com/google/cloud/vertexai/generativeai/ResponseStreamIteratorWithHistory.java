@@ -46,7 +46,7 @@ public class ResponseStreamIteratorWithHistory<GenerateContentResponse>
     return nextItem;
   }
 
-  /** Retrieve all the chunks in a stream of responses. */
+  /** Retrieves all the chunks in a stream of responses. */
   public List<GenerateContentResponse> getHistory() {
     return history;
   }

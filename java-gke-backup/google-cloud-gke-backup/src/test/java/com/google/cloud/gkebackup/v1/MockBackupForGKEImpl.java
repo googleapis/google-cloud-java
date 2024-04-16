@@ -562,4 +562,26 @@ public class MockBackupForGKEImpl extends BackupForGKEImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getBackupIndexDownloadUrl(
+      GetBackupIndexDownloadUrlRequest request,
+      StreamObserver<GetBackupIndexDownloadUrlResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GetBackupIndexDownloadUrlResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GetBackupIndexDownloadUrlResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackupIndexDownloadUrl, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GetBackupIndexDownloadUrlResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

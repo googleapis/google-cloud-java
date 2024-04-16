@@ -1610,4 +1610,98 @@ public interface NodeConfigOrBuilder
    * @return The enableConfidentialStorage.
    */
   boolean getEnableConfidentialStorage();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<com.google.container.v1.SecondaryBootDisk> getSecondaryBootDisksList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1.SecondaryBootDisk getSecondaryBootDisks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  int getSecondaryBootDisksCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<? extends com.google.container.v1.SecondaryBootDiskOrBuilder>
+      getSecondaryBootDisksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1.SecondaryBootDiskOrBuilder getSecondaryBootDisksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Secondary boot disk update strategy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.SecondaryBootDiskUpdateStrategy secondary_boot_disk_update_strategy = 50;
+   * </code>
+   *
+   * @return Whether the secondaryBootDiskUpdateStrategy field is set.
+   */
+  boolean hasSecondaryBootDiskUpdateStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Secondary boot disk update strategy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.SecondaryBootDiskUpdateStrategy secondary_boot_disk_update_strategy = 50;
+   * </code>
+   *
+   * @return The secondaryBootDiskUpdateStrategy.
+   */
+  com.google.container.v1.SecondaryBootDiskUpdateStrategy getSecondaryBootDiskUpdateStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Secondary boot disk update strategy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.SecondaryBootDiskUpdateStrategy secondary_boot_disk_update_strategy = 50;
+   * </code>
+   */
+  com.google.container.v1.SecondaryBootDiskUpdateStrategyOrBuilder
+      getSecondaryBootDiskUpdateStrategyOrBuilder();
 }

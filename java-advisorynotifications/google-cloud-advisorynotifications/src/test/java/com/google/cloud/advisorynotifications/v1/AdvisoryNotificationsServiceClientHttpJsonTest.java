@@ -290,13 +290,14 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void getSettingsTest() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
-    SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+    SettingsName name = SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
 
     Settings actualResponse = client.getSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -324,7 +325,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+      SettingsName name = SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
       client.getSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -336,7 +337,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void getSettingsTest2() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -382,7 +384,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void updateSettingsTest() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -390,7 +393,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
 
     Settings settings =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -423,7 +427,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     try {
       Settings settings =
           Settings.newBuilder()
-              .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setName(
+                  SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
               .setEtag("etag3123477")
               .build();

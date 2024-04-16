@@ -114,6 +114,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATASTORE_KEY_FIELD_NUMBER = 2;
   /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
    *
    * @return Whether the datastoreKey field is set.
@@ -123,6 +129,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 2;
   }
   /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
    *
    * @return The datastoreKey.
@@ -134,7 +146,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DatastoreKeyOrBuilder getDatastoreKeyOrBuilder() {
     if (typeCase_ == 2) {
@@ -145,6 +165,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BIG_QUERY_KEY_FIELD_NUMBER = 3;
   /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
    *
    * @return Whether the bigQueryKey field is set.
@@ -154,6 +180,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 3;
   }
   /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
    *
    * @return The bigQueryKey.
@@ -165,7 +197,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
   }
-  /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   */
   @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder() {
     if (typeCase_ == 3) {
@@ -701,6 +741,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DatastoreKeyOrBuilder>
         datastoreKeyBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
      *
      * @return Whether the datastoreKey field is set.
@@ -710,6 +756,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 2;
     }
     /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
      *
      * @return The datastoreKey.
@@ -728,7 +780,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     public Builder setDatastoreKey(com.google.privacy.dlp.v2.DatastoreKey value) {
       if (datastoreKeyBuilder_ == null) {
         if (value == null) {
@@ -742,7 +802,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     public Builder setDatastoreKey(com.google.privacy.dlp.v2.DatastoreKey.Builder builderForValue) {
       if (datastoreKeyBuilder_ == null) {
         type_ = builderForValue.build();
@@ -753,7 +821,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     public Builder mergeDatastoreKey(com.google.privacy.dlp.v2.DatastoreKey value) {
       if (datastoreKeyBuilder_ == null) {
         if (typeCase_ == 2
@@ -777,7 +853,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     public Builder clearDatastoreKey() {
       if (datastoreKeyBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -794,11 +878,27 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     public com.google.privacy.dlp.v2.DatastoreKey.Builder getDatastoreKeyBuilder() {
       return getDatastoreKeyFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     @java.lang.Override
     public com.google.privacy.dlp.v2.DatastoreKeyOrBuilder getDatastoreKeyOrBuilder() {
       if ((typeCase_ == 2) && (datastoreKeyBuilder_ != null)) {
@@ -810,7 +910,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DatastoreKey,
             com.google.privacy.dlp.v2.DatastoreKey.Builder,
@@ -839,6 +947,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.BigQueryKeyOrBuilder>
         bigQueryKeyBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
      *
      * @return Whether the bigQueryKey field is set.
@@ -848,6 +962,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
      *
      * @return The bigQueryKey.
@@ -866,7 +986,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     public Builder setBigQueryKey(com.google.privacy.dlp.v2.BigQueryKey value) {
       if (bigQueryKeyBuilder_ == null) {
         if (value == null) {
@@ -880,7 +1008,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     public Builder setBigQueryKey(com.google.privacy.dlp.v2.BigQueryKey.Builder builderForValue) {
       if (bigQueryKeyBuilder_ == null) {
         type_ = builderForValue.build();
@@ -891,7 +1027,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     public Builder mergeBigQueryKey(com.google.privacy.dlp.v2.BigQueryKey value) {
       if (bigQueryKeyBuilder_ == null) {
         if (typeCase_ == 3 && type_ != com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance()) {
@@ -914,7 +1058,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     public Builder clearBigQueryKey() {
       if (bigQueryKeyBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -931,11 +1083,27 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     public com.google.privacy.dlp.v2.BigQueryKey.Builder getBigQueryKeyBuilder() {
       return getBigQueryKeyFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder() {
       if ((typeCase_ == 3) && (bigQueryKeyBuilder_ != null)) {
@@ -947,7 +1115,15 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
       }
     }
-    /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Datastore key
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryKey,
             com.google.privacy.dlp.v2.BigQueryKey.Builder,

@@ -868,10 +868,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Users to be added to the Built-in Backup Operator active directory group.
+   * Optional. Users to be added to the Built-in Backup Operator active
+   * directory group.
    * </pre>
    *
-   * <code>repeated string backup_operators = 12;</code>
+   * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the backupOperators.
    */
@@ -882,10 +883,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Users to be added to the Built-in Backup Operator active directory group.
+   * Optional. Users to be added to the Built-in Backup Operator active
+   * directory group.
    * </pre>
    *
-   * <code>repeated string backup_operators = 12;</code>
+   * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of backupOperators.
    */
@@ -896,10 +898,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Users to be added to the Built-in Backup Operator active directory group.
+   * Optional. Users to be added to the Built-in Backup Operator active
+   * directory group.
    * </pre>
    *
-   * <code>repeated string backup_operators = 12;</code>
+   * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The backupOperators at the given index.
@@ -911,10 +914,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Users to be added to the Built-in Backup Operator active directory group.
+   * Optional. Users to be added to the Built-in Backup Operator active
+   * directory group.
    * </pre>
    *
-   * <code>repeated string backup_operators = 12;</code>
+   * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the backupOperators at the given index.
@@ -932,10 +936,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Domain users to be given the SeSecurityPrivilege.
+   * Optional. Domain users to be given the SeSecurityPrivilege.
    * </pre>
    *
-   * <code>repeated string security_operators = 13;</code>
+   * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the securityOperators.
    */
@@ -946,10 +950,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Domain users to be given the SeSecurityPrivilege.
+   * Optional. Domain users to be given the SeSecurityPrivilege.
    * </pre>
    *
-   * <code>repeated string security_operators = 13;</code>
+   * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of securityOperators.
    */
@@ -960,10 +964,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Domain users to be given the SeSecurityPrivilege.
+   * Optional. Domain users to be given the SeSecurityPrivilege.
    * </pre>
    *
-   * <code>repeated string security_operators = 13;</code>
+   * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The securityOperators at the given index.
@@ -975,10 +979,10 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Domain users to be given the SeSecurityPrivilege.
+   * Optional. Domain users to be given the SeSecurityPrivilege.
    * </pre>
    *
-   * <code>repeated string security_operators = 13;</code>
+   * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the securityOperators at the given index.
@@ -3487,10 +3491,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the backupOperators.
      */
@@ -3502,10 +3507,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of backupOperators.
      */
@@ -3516,10 +3522,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The backupOperators at the given index.
@@ -3531,10 +3538,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the backupOperators at the given index.
@@ -3546,10 +3554,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The backupOperators to set.
@@ -3569,10 +3578,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The backupOperators to add.
      * @return This builder for chaining.
@@ -3591,10 +3601,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The backupOperators to add.
      * @return This builder for chaining.
@@ -3610,10 +3621,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3628,10 +3640,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Users to be added to the Built-in Backup Operator active directory group.
+     * Optional. Users to be added to the Built-in Backup Operator active
+     * directory group.
      * </pre>
      *
-     * <code>repeated string backup_operators = 12;</code>
+     * <code>repeated string backup_operators = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the backupOperators to add.
      * @return This builder for chaining.
@@ -3661,10 +3674,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the securityOperators.
      */
@@ -3676,10 +3690,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of securityOperators.
      */
@@ -3690,10 +3705,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The securityOperators at the given index.
@@ -3705,10 +3721,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the securityOperators at the given index.
@@ -3720,10 +3737,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The securityOperators to set.
@@ -3743,10 +3761,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The securityOperators to add.
      * @return This builder for chaining.
@@ -3765,10 +3784,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The securityOperators to add.
      * @return This builder for chaining.
@@ -3784,10 +3804,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3802,10 +3823,11 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Domain users to be given the SeSecurityPrivilege.
+     * Optional. Domain users to be given the SeSecurityPrivilege.
      * </pre>
      *
-     * <code>repeated string security_operators = 13;</code>
+     * <code>repeated string security_operators = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the securityOperators to add.
      * @return This builder for chaining.

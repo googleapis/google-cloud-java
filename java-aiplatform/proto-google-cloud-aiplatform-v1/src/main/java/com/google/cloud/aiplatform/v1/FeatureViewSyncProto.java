@@ -32,6 +32,10 @@ public final class FeatureViewSyncProto {
       internal_static_google_cloud_aiplatform_v1_FeatureViewSync_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FeatureViewSync_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewSync_SyncSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewSync_SyncSummary_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -46,22 +50,26 @@ public final class FeatureViewSyncProto {
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032\037google/protobuf/ti"
           + "mestamp.proto\032\027google/rpc/status.proto\032\032"
-          + "google/type/interval.proto\"\375\002\n\017FeatureVi"
+          + "google/type/interval.proto\"\222\004\n\017FeatureVi"
           + "ewSync\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_time"
           + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
           + ",\n\010run_time\030\005 \001(\0132\025.google.type.Interval"
           + "B\003\340A\003\022-\n\014final_status\030\004 \001(\0132\022.google.rpc"
-          + ".StatusB\003\340A\003:\303\001\352A\277\001\n)aiplatform.googleap"
-          + "is.com/FeatureViewSync\022\221\001projects/{proje"
-          + "ct}/locations/{location}/featureOnlineSt"
-          + "ores/{feature_online_store}/featureViews"
-          + "/{feature_view}/featureViewSyncs/feature"
-          + "_view_syncB\322\001\n\036com.google.cloud.aiplatfo"
-          + "rm.v1B\024FeatureViewSyncProtoP\001Z>cloud.goo"
-          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
-          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
-          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
-          + "::Cloud::Aiplatform::V1b\006proto3"
+          + ".StatusB\003\340A\003\022R\n\014sync_summary\030\006 \001(\01327.goo"
+          + "gle.cloud.aiplatform.v1.FeatureViewSync."
+          + "SyncSummaryB\003\340A\003\032?\n\013SyncSummary\022\027\n\nrow_s"
+          + "ynced\030\001 \001(\003B\003\340A\003\022\027\n\ntotal_slot\030\002 \001(\003B\003\340A"
+          + "\003:\303\001\352A\277\001\n)aiplatform.googleapis.com/Feat"
+          + "ureViewSync\022\221\001projects/{project}/locatio"
+          + "ns/{location}/featureOnlineStores/{featu"
+          + "re_online_store}/featureViews/{feature_v"
+          + "iew}/featureViewSyncs/feature_view_syncB"
+          + "\322\001\n\036com.google.cloud.aiplatform.v1B\024Feat"
+          + "ureViewSyncProtoP\001Z>cloud.google.com/go/"
+          + "aiplatform/apiv1/aiplatformpb;aiplatform"
+          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::Ai"
+          + "platform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,7 +87,17 @@ public final class FeatureViewSyncProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FeatureViewSync_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "RunTime", "FinalStatus",
+              "Name", "CreateTime", "RunTime", "FinalStatus", "SyncSummary",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewSync_SyncSummary_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureViewSync_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewSync_SyncSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewSync_SyncSummary_descriptor,
+            new java.lang.String[] {
+              "RowSynced", "TotalSlot",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

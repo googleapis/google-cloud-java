@@ -38,8 +38,8 @@ public final class QueryServiceProto {
     java.lang.String[] descriptorData = {
       "\n(google/monitoring/v3/query_service.pro"
           + "to\022\024google.monitoring.v3\032\034google/api/ann"
-          + "otations.proto\032)google/monitoring/v3/met"
-          + "ric_service.proto\032\027google/api/client.pro"
+          + "otations.proto\032\027google/api/client.proto\032"
+          + ")google/monitoring/v3/metric_service.pro"
           + "to2\336\002\n\014QueryService\022\241\001\n\017QueryTimeSeries\022"
           + ",.google.monitoring.v3.QueryTimeSeriesRe"
           + "quest\032-.google.monitoring.v3.QueryTimeSe"
@@ -61,8 +61,8 @@ public final class QueryServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.monitoring.v3.MetricServiceProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              com.google.monitoring.v3.MetricServiceProto.getDescriptor(),
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -72,8 +72,8 @@ public final class QueryServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.monitoring.v3.MetricServiceProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.monitoring.v3.MetricServiceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,18 +19,35 @@ on:
     - main
   pull_request:
 name: generation diff
+env:
+  library_generation_image_tag: latest
+  repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - name: setup docker environment
+      shell: bash
+      run: |
+        # we create a volume pointing to `pwd` (google-cloud-java) that will
+        # be referenced by the container and its children
+        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
+          docker volume rm repo-google-cloud-java
+        fi
+        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: Generate root pom.xml file
+      shell: bash
       run: |
-        bash generation/generate_root_pom.sh
-    - name: Apply versions from versions.txt files
-      run: |
-        bash generation/apply_current_versions.sh
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python /src/cli/generate_monorepo_root_pom.py generate --repository-path=/workspace/google-cloud-java
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
@@ -38,21 +55,35 @@ jobs:
     # gapic-libraries-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - name: setup docker environment
+      shell: bash
+      run: |
+        # we create a volume pointing to `pwd` (google-cloud-java) that will
+        # be referenced by the container and its children
+        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
+          docker volume rm repo-google-cloud-java
+        fi
+        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: Generate gapic-libraries-bom/pom.xml
+      shell: bash
       run: |
-        bash generation/generate_gapic_bom.sh
-    - name: Apply versions from versions.txt files
-      run: |
-        bash generation/apply_current_versions.sh
-    - name: Fail if there's any difference (To fix, run generation/apply_current_versions.sh)
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python /src/cli/generate_monorepo_gapic_bom.py generate --repository-path=/workspace/google-cloud-java --versions-file=/workspace/google-cloud-java/versions.txt
+    - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
   owlbot-py:
     # applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
@@ -60,11 +91,11 @@ jobs:
         run: git --no-pager diff --exit-code
 
   owlbot-yaml:
-    # Each module's .Owlbot.yaml config is configured according to set_owlbot_config.sh
+    # Each module's .Owlbot-hermetic.yaml config is configured according to set_owlbot_config.sh
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Check if .Owlbot.yaml files are correctly configured
+      - uses: actions/checkout@v4
+      - name: Check if .Owlbot-hermetic.yaml files are correctly configured
         run: |
           bash generation/set_owlbot_config.sh
       - name: Fail if there's any difference (To fix, run generation/set_owlbot_config.sh)
@@ -74,7 +105,7 @@ jobs:
     # Generated files should not match .gitignore
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: checking any files matching gitignore
       # By default, GitHub Actions's bash has '-e' option to fail immediately
       # upon non-zero exit code. Not using it here to catch the exit code 1.
@@ -97,7 +128,7 @@ jobs:
     # Parent handles config for child modules
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Apply consolidate_config.sh
         run: |
           bash generation/consolidate_config.sh
@@ -108,7 +139,7 @@ jobs:
     # Ensure generate-readme.py runs fine
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       # These parameters should match ones in readme.yaml
       with:
@@ -120,7 +151,7 @@ jobs:
   group_id_check_for_maps_libraries:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install Maps modules
       run: |
         IncludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
@@ -148,7 +179,7 @@ jobs:
   package_name_check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Ensure no new invalid package name in Java files
       shell: bash
       run: |

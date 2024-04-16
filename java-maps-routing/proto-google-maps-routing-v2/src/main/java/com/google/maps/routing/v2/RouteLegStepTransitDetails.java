@@ -213,7 +213,7 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Details about the transit stops for the `RouteLegStep`
+   * Details about the transit stops for the `RouteLegStep`.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails}
@@ -672,7 +672,7 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Details about the transit stops for the `RouteLegStep`
+     * Details about the transit stops for the `RouteLegStep`.
      * </pre>
      *
      * Protobuf type {@code google.maps.routing.v2.RouteLegStepTransitDetails.TransitStopDetails}
@@ -1829,7 +1829,7 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Localized descriptions of values for RouteTransitDetails.
+   * Localized descriptions of values for `RouteTransitDetails`.
    * </pre>
    *
    * Protobuf type {@code
@@ -2178,7 +2178,7 @@ public final class RouteLegStepTransitDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Localized descriptions of values for RouteTransitDetails.
+     * Localized descriptions of values for `RouteTransitDetails`.
      * </pre>
      *
      * Protobuf type {@code

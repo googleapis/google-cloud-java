@@ -36,7 +36,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3038
+   *     google/container/v1/cluster_service.proto;l=3051
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3038
+   *     google/container/v1/cluster_service.proto;l=3051
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3044
+   *     google/container/v1/cluster_service.proto;l=3057
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3044
+   *     google/container/v1/cluster_service.proto;l=3057
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

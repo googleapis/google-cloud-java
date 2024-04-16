@@ -114,7 +114,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -128,7 +128,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -142,7 +142,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -153,8 +153,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -166,8 +166,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -179,8 +179,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -319,7 +319,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -336,7 +336,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -353,7 +353,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Duration taking traffic conditions into consideration, represented in
      * text form. Note: If you did not request traffic information, this value
-     * will be the same value as static_duration.
+     * will be the same value as `static_duration`.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -369,8 +369,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -385,8 +385,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -403,8 +403,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration without taking traffic conditions into
-     * consideration, represented in text form.
+     * Duration without taking traffic conditions into consideration,
+     * represented in text form.
      * </pre>
      *
      * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1127,7 +1127,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1143,7 +1143,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1163,7 +1163,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1187,7 +1187,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1208,7 +1208,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1237,7 +1237,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1258,7 +1258,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1274,7 +1274,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1292,7 +1292,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Duration taking traffic conditions into consideration, represented in
        * text form. Note: If you did not request traffic information, this value
-       * will be the same value as static_duration.
+       * will be the same value as `static_duration`.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1324,8 +1324,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1339,8 +1339,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1360,8 +1360,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1383,8 +1383,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1403,8 +1403,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1431,8 +1431,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1451,8 +1451,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1466,8 +1466,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1485,8 +1485,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration without taking traffic conditions into
-       * consideration, represented in text form.
+       * Duration without taking traffic conditions into consideration,
+       * represented in text form.
        * </pre>
        *
        * <code>.google.type.LocalizedText static_duration = 3;</code>
@@ -1871,8 +1871,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -1890,8 +1890,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -1910,8 +1910,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -1929,8 +1929,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -1948,8 +1948,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
-   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-   * intermediate waypoints has only one leg. A route that includes one
+   * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+   * no intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
    * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -2360,7 +2360,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -2383,7 +2383,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -2405,7 +2405,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If you set
-   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
    * to true, this field contains the optimized ordering of intermediate
    * waypoints. Otherwise, this field is empty.
    * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -3627,8 +3627,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3649,8 +3649,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3671,8 +3671,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3693,8 +3693,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3721,8 +3721,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3746,8 +3746,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3774,8 +3774,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3802,8 +3802,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3827,8 +3827,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3852,8 +3852,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3878,8 +3878,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3903,8 +3903,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3928,8 +3928,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3946,8 +3946,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3968,8 +3968,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -3991,8 +3991,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -4010,8 +4010,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -4029,8 +4029,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
-     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
-     * intermediate waypoints has only one leg. A route that includes one
+     * [`Waypoints`][google.maps.routing.v2.Waypoint]. For example, a route with
+     * no intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
      * order of waypoints from `origin` to `intermediates` to `destination`.
@@ -5379,7 +5379,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5402,7 +5402,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5424,7 +5424,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5447,7 +5447,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5476,7 +5476,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5504,7 +5504,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:
@@ -5533,7 +5533,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If you set
-     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * [`optimize_waypoint_order`][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
      * to true, this field contains the optimized ordering of intermediate
      * waypoints. Otherwise, this field is empty.
      * For example, if you give an input of Origin: LA; Intermediate waypoints:

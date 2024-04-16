@@ -33,6 +33,7 @@ import com.google.cloud.discoveryengine.v1alpha.stub.DocumentServiceStubSettings
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -137,6 +138,10 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateDocument(UpdateDocumentRequest request)
  *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDocument(Document document, FieldMask updateMask)
+ *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateDocumentCallable()
@@ -192,6 +197,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> purgeDocumentsOperationCallable()
  *           <li><p> purgeDocumentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProcessedDocument</td>
+ *      <td><p> Gets the parsed layout information for a [Document][google.cloud.discoveryengine.v1alpha.Document].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProcessedDocument(GetProcessedDocumentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProcessedDocument(DocumentName name)
+ *           <li><p> getProcessedDocument(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProcessedDocumentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -829,10 +853,48 @@ public class DocumentServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Document response = documentServiceClient.updateDocument(document, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param document Required. The document to update/create.
+   *     <p>If the caller does not have permission to update the
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], regardless of whether or not it
+   *     exists, a `PERMISSION_DENIED` error is returned.
+   *     <p>If the [Document][google.cloud.discoveryengine.v1alpha.Document] to update does not
+   *     exist and
+   *     [allow_missing][google.cloud.discoveryengine.v1alpha.UpdateDocumentRequest.allow_missing]
+   *     is not set, a `NOT_FOUND` error is returned.
+   * @param updateMask Indicates which fields in the provided imported 'document' to update. If not
+   *     set, will by default update all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Document updateDocument(Document document, FieldMask updateMask) {
+    UpdateDocumentRequest request =
+        UpdateDocumentRequest.newBuilder().setDocument(document).setUpdateMask(updateMask).build();
+    return updateDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [Document][google.cloud.discoveryengine.v1alpha.Document].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   UpdateDocumentRequest request =
    *       UpdateDocumentRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Document response = documentServiceClient.updateDocument(request);
    * }
@@ -862,6 +924,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *       UpdateDocumentRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Document> future =
    *       documentServiceClient.updateDocumentCallable().futureCall(request);
@@ -1031,6 +1094,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
    *           .build();
@@ -1070,6 +1134,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
    *           .build();
@@ -1110,6 +1175,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
    *           .build();
@@ -1158,6 +1224,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   PurgeDocumentsResponse response = documentServiceClient.purgeDocumentsAsync(request).get();
@@ -1206,6 +1273,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> future =
@@ -1255,6 +1323,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setFilter("filter-1274492040")
+   *           .setErrorConfig(PurgeErrorConfig.newBuilder().build())
    *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1266,6 +1335,148 @@ public class DocumentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
     return stub.purgeDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the parsed layout information for a
+   * [Document][google.cloud.discoveryengine.v1alpha.Document].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   DocumentName name =
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+   *   ProcessedDocument response = documentServiceClient.getProcessedDocument(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full resource name of
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     <p>If the caller does not have permission to access the
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], regardless of whether or not it
+   *     exists, a `PERMISSION_DENIED` error is returned.
+   *     <p>If the requested [Document][google.cloud.discoveryengine.v1alpha.Document] does not
+   *     exist, a `NOT_FOUND` error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessedDocument getProcessedDocument(DocumentName name) {
+    GetProcessedDocumentRequest request =
+        GetProcessedDocumentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProcessedDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the parsed layout information for a
+   * [Document][google.cloud.discoveryengine.v1alpha.Document].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String name =
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+   *           .toString();
+   *   ProcessedDocument response = documentServiceClient.getProcessedDocument(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full resource name of
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     <p>If the caller does not have permission to access the
+   *     [Document][google.cloud.discoveryengine.v1alpha.Document], regardless of whether or not it
+   *     exists, a `PERMISSION_DENIED` error is returned.
+   *     <p>If the requested [Document][google.cloud.discoveryengine.v1alpha.Document] does not
+   *     exist, a `NOT_FOUND` error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessedDocument getProcessedDocument(String name) {
+    GetProcessedDocumentRequest request =
+        GetProcessedDocumentRequest.newBuilder().setName(name).build();
+    return getProcessedDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the parsed layout information for a
+   * [Document][google.cloud.discoveryengine.v1alpha.Document].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   GetProcessedDocumentRequest request =
+   *       GetProcessedDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   ProcessedDocument response = documentServiceClient.getProcessedDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessedDocument getProcessedDocument(GetProcessedDocumentRequest request) {
+    return getProcessedDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the parsed layout information for a
+   * [Document][google.cloud.discoveryengine.v1alpha.Document].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   GetProcessedDocumentRequest request =
+   *       GetProcessedDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ProcessedDocument> future =
+   *       documentServiceClient.getProcessedDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessedDocument response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentCallable() {
+    return stub.getProcessedDocumentCallable();
   }
 
   @Override

@@ -23,7 +23,7 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * The tier of service for a Workspace. Please see the
+ * The tier of service for a Metrics Scope. Please see the
  * [service tiers
  * documentation](https://cloud.google.com/monitoring/workspaces/tiers) for more
  * details.
@@ -48,7 +48,7 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Stackdriver Basic tier, a free tier of service that provides basic
+   * The Cloud Monitoring Basic tier, a free tier of service that provides basic
    * features, a moderate allotment of logs, and access to built-in metrics.
    * A number of features are not available in this tier. For more details,
    * see [the service tiers
@@ -62,10 +62,10 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Stackdriver Premium tier, a higher, more expensive tier of service
-   * that provides access to all Stackdriver features, lets you use Stackdriver
-   * with AWS accounts, and has a larger allotments for logs and metrics. For
-   * more details, see [the service tiers
+   * The Cloud Monitoring Premium tier, a higher, more expensive tier of service
+   * that provides access to all Cloud Monitoring features, lets you use Cloud
+   * Monitoring with AWS accounts, and has a larger allotments for logs and
+   * metrics. For more details, see [the service tiers
    * documentation](https://cloud.google.com/monitoring/workspaces/tiers).
    * </pre>
    *
@@ -90,7 +90,7 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Stackdriver Basic tier, a free tier of service that provides basic
+   * The Cloud Monitoring Basic tier, a free tier of service that provides basic
    * features, a moderate allotment of logs, and access to built-in metrics.
    * A number of features are not available in this tier. For more details,
    * see [the service tiers
@@ -104,10 +104,10 @@ public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Stackdriver Premium tier, a higher, more expensive tier of service
-   * that provides access to all Stackdriver features, lets you use Stackdriver
-   * with AWS accounts, and has a larger allotments for logs and metrics. For
-   * more details, see [the service tiers
+   * The Cloud Monitoring Premium tier, a higher, more expensive tier of service
+   * that provides access to all Cloud Monitoring features, lets you use Cloud
+   * Monitoring with AWS accounts, and has a larger allotments for logs and
+   * metrics. For more details, see [the service tiers
    * documentation](https://cloud.google.com/monitoring/workspaces/tiers).
    * </pre>
    *

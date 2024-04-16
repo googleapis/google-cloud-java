@@ -28,7 +28,7 @@ public interface FinishDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the DlpJob resource to be cancelled.
+   * Required. The name of the DlpJob resource to be finished.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface FinishDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the DlpJob resource to be cancelled.
+   * Required. The name of the DlpJob resource to be finished.
    * </pre>
    *
    * <code>

@@ -74,7 +74,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to list Applications on.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -99,7 +100,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to list Applications on.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -199,7 +201,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,7 +224,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -250,7 +252,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -273,7 +275,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -734,7 +736,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to list Applications on.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -758,7 +761,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to list Applications on.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -782,7 +786,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to list Applications on.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -805,7 +810,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to list Applications on.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -824,7 +830,8 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to list Applications on.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -1012,7 +1019,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Filtering results
+     * Optional. Filtering results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1034,7 +1041,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Filtering results
+     * Optional. Filtering results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1056,7 +1063,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Filtering results
+     * Optional. Filtering results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1077,7 +1084,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Filtering results
+     * Optional. Filtering results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1094,7 +1101,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Filtering results
+     * Optional. Filtering results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1118,7 +1125,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results
+     * Optional. Hint for how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1140,7 +1147,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results
+     * Optional. Hint for how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1162,7 +1169,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results
+     * Optional. Hint for how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1183,7 +1190,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results
+     * Optional. Hint for how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1200,7 +1207,7 @@ public final class ListApplicationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Hint for how to order the results
+     * Optional. Hint for how to order the results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -213,10 +213,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Description of the storage pool
+   * Optional. Description of the storage pool
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -225,10 +225,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Description of the storage pool
+   * Optional. Description of the storage pool
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -238,20 +238,20 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Optional. Labels as key value pairs
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 10;</code>
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Optional. Labels as key value pairs
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 10;</code>
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -261,20 +261,20 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Optional. Labels as key value pairs
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 10;</code>
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Optional. Labels as key value pairs
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 10;</code>
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -285,10 +285,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Optional. Labels as key value pairs
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 10;</code>
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -327,10 +327,13 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Specifies the Active Directory to be used for creating a SMB volume.
+   * Optional. Specifies the Active Directory to be used for creating a SMB
+   * volume.
    * </pre>
    *
-   * <code>string active_directory = 12 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string active_directory = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The activeDirectory.
    */
@@ -339,10 +342,13 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Specifies the Active Directory to be used for creating a SMB volume.
+   * Optional. Specifies the Active Directory to be used for creating a SMB
+   * volume.
    * </pre>
    *
-   * <code>string active_directory = 12 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string active_directory = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for activeDirectory.
    */
@@ -352,10 +358,12 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Specifies the KMS config to be used for volume encryption.
+   * Optional. Specifies the KMS config to be used for volume encryption.
    * </pre>
    *
-   * <code>string kms_config = 13 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_config = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsConfig.
    */
@@ -364,10 +372,12 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Specifies the KMS config to be used for volume encryption.
+   * Optional. Specifies the KMS config to be used for volume encryption.
    * </pre>
    *
-   * <code>string kms_config = 13 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_config = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsConfig.
    */
@@ -377,10 +387,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Flag indicating if the pool is NFS LDAP enabled or not.
+   * Optional. Flag indicating if the pool is NFS LDAP enabled or not.
    * </pre>
    *
-   * <code>bool ldap_enabled = 14;</code>
+   * <code>bool ldap_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ldapEnabled.
    */
@@ -390,11 +400,11 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Name of the Private Service Access allocated range. If
-   * not provided, any available range will be chosen.
+   * Optional. This field is not implemented. The values provided in this field
+   * are ignored.
    * </pre>
    *
-   * <code>string psa_range = 15;</code>
+   * <code>string psa_range = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The psaRange.
    */
@@ -403,11 +413,11 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Name of the Private Service Access allocated range. If
-   * not provided, any available range will be chosen.
+   * Optional. This field is not implemented. The values provided in this field
+   * are ignored.
    * </pre>
    *
-   * <code>string psa_range = 15;</code>
+   * <code>string psa_range = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for psaRange.
    */
@@ -453,7 +463,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=222
+   *     google/cloud/netapp/v1/storage_pool.proto;l=230
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Deprecated
@@ -469,7 +479,7 @@ public interface StoragePoolOrBuilder
    * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
-   *     google/cloud/netapp/v1/storage_pool.proto;l=222
+   *     google/cloud/netapp/v1/storage_pool.proto;l=230
    * @return The globalAccessAllowed.
    */
   @java.lang.Deprecated

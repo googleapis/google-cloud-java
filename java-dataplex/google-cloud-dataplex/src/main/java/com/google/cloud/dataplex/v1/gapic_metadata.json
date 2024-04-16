@@ -5,6 +5,87 @@
   "protoPackage": "google.cloud.dataplex.v1",
   "libraryPackage": "com.google.cloud.dataplex.v1",
   "services": {
+    "CatalogService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CatalogServiceClient",
+          "rpcs": {
+            "CreateAspectType": {
+              "methods": ["createAspectTypeAsync", "createAspectTypeAsync", "createAspectTypeAsync", "createAspectTypeOperationCallable", "createAspectTypeCallable"]
+            },
+            "CreateEntry": {
+              "methods": ["createEntry", "createEntry", "createEntry", "createEntryCallable"]
+            },
+            "CreateEntryGroup": {
+              "methods": ["createEntryGroupAsync", "createEntryGroupAsync", "createEntryGroupAsync", "createEntryGroupOperationCallable", "createEntryGroupCallable"]
+            },
+            "CreateEntryType": {
+              "methods": ["createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeOperationCallable", "createEntryTypeCallable"]
+            },
+            "DeleteAspectType": {
+              "methods": ["deleteAspectTypeAsync", "deleteAspectTypeAsync", "deleteAspectTypeAsync", "deleteAspectTypeOperationCallable", "deleteAspectTypeCallable"]
+            },
+            "DeleteEntry": {
+              "methods": ["deleteEntry", "deleteEntry", "deleteEntry", "deleteEntryCallable"]
+            },
+            "DeleteEntryGroup": {
+              "methods": ["deleteEntryGroupAsync", "deleteEntryGroupAsync", "deleteEntryGroupAsync", "deleteEntryGroupOperationCallable", "deleteEntryGroupCallable"]
+            },
+            "DeleteEntryType": {
+              "methods": ["deleteEntryTypeAsync", "deleteEntryTypeAsync", "deleteEntryTypeAsync", "deleteEntryTypeOperationCallable", "deleteEntryTypeCallable"]
+            },
+            "GetAspectType": {
+              "methods": ["getAspectType", "getAspectType", "getAspectType", "getAspectTypeCallable"]
+            },
+            "GetEntry": {
+              "methods": ["getEntry", "getEntry", "getEntry", "getEntryCallable"]
+            },
+            "GetEntryGroup": {
+              "methods": ["getEntryGroup", "getEntryGroup", "getEntryGroup", "getEntryGroupCallable"]
+            },
+            "GetEntryType": {
+              "methods": ["getEntryType", "getEntryType", "getEntryType", "getEntryTypeCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAspectTypes": {
+              "methods": ["listAspectTypes", "listAspectTypes", "listAspectTypes", "listAspectTypesPagedCallable", "listAspectTypesCallable"]
+            },
+            "ListEntries": {
+              "methods": ["listEntries", "listEntries", "listEntries", "listEntriesPagedCallable", "listEntriesCallable"]
+            },
+            "ListEntryGroups": {
+              "methods": ["listEntryGroups", "listEntryGroups", "listEntryGroups", "listEntryGroupsPagedCallable", "listEntryGroupsCallable"]
+            },
+            "ListEntryTypes": {
+              "methods": ["listEntryTypes", "listEntryTypes", "listEntryTypes", "listEntryTypesPagedCallable", "listEntryTypesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "LookupEntry": {
+              "methods": ["lookupEntry", "lookupEntryCallable"]
+            },
+            "SearchEntries": {
+              "methods": ["searchEntries", "searchEntries", "searchEntriesPagedCallable", "searchEntriesCallable"]
+            },
+            "UpdateAspectType": {
+              "methods": ["updateAspectTypeAsync", "updateAspectTypeAsync", "updateAspectTypeOperationCallable", "updateAspectTypeCallable"]
+            },
+            "UpdateEntry": {
+              "methods": ["updateEntry", "updateEntry", "updateEntryCallable"]
+            },
+            "UpdateEntryGroup": {
+              "methods": ["updateEntryGroupAsync", "updateEntryGroupAsync", "updateEntryGroupOperationCallable", "updateEntryGroupCallable"]
+            },
+            "UpdateEntryType": {
+              "methods": ["updateEntryTypeAsync", "updateEntryTypeAsync", "updateEntryTypeOperationCallable", "updateEntryTypeCallable"]
+            }
+          }
+        }
+      }
+    },
     "ContentService": {
       "clients": {
         "grpc": {
@@ -114,6 +195,9 @@
             },
             "DeleteDataScan": {
               "methods": ["deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanOperationCallable", "deleteDataScanCallable"]
+            },
+            "GenerateDataQualityRules": {
+              "methods": ["generateDataQualityRules", "generateDataQualityRules", "generateDataQualityRulesCallable"]
             },
             "GetDataScan": {
               "methods": ["getDataScan", "getDataScan", "getDataScan", "getDataScanCallable"]

@@ -28,7 +28,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the custom module.
+   * Identifier. The resource name of the custom module.
    * Its format is
    * "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}",
    * or
@@ -37,7 +37,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -46,7 +46,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the custom module.
+   * Identifier. The resource name of the custom module.
    * Its format is
    * "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}",
    * or
@@ -55,7 +55,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    * "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

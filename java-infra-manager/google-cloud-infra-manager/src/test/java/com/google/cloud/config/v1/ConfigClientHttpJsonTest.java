@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -219,6 +220,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -277,6 +281,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -335,6 +342,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +413,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -471,6 +484,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -497,6 +513,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -543,6 +562,9 @@ public class ConfigClientHttpJsonTest {
               .setServiceAccount("serviceAccount1079137720")
               .setImportExistingResources(true)
               .setWorkerPool("workerPool-384405318")
+              .setTfVersionConstraint("tfVersionConstraint-1530231677")
+              .setTfVersion("tfVersion182968838")
+              .setQuotaValidation(QuotaValidation.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeploymentAsync(deployment, updateMask).get();
@@ -570,6 +592,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -633,6 +658,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -794,6 +822,10 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidationResults("quotaValidationResults-1396407899")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -850,6 +882,10 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidationResults("quotaValidationResults-1396407899")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1380,6 +1416,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1443,6 +1482,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1506,6 +1548,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1571,6 +1616,9 @@ public class ConfigClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2219,6 +2267,208 @@ public class ConfigClientHttpJsonTest {
               .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
               .build();
       client.exportPreviewResult(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTerraformVersionsTest() throws Exception {
+    TerraformVersion responsesElement = TerraformVersion.newBuilder().build();
+    ListTerraformVersionsResponse expectedResponse =
+        ListTerraformVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTerraformVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListTerraformVersionsPagedResponse pagedListResponse = client.listTerraformVersions(parent);
+
+    List<TerraformVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTerraformVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTerraformVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listTerraformVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTerraformVersionsTest2() throws Exception {
+    TerraformVersion responsesElement = TerraformVersion.newBuilder().build();
+    ListTerraformVersionsResponse expectedResponse =
+        ListTerraformVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTerraformVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListTerraformVersionsPagedResponse pagedListResponse = client.listTerraformVersions(parent);
+
+    List<TerraformVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTerraformVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTerraformVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listTerraformVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTerraformVersionTest() throws Exception {
+    TerraformVersion expectedResponse =
+        TerraformVersion.newBuilder()
+            .setName(
+                TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+                    .toString())
+            .setSupportTime(Timestamp.newBuilder().build())
+            .setDeprecateTime(Timestamp.newBuilder().build())
+            .setObsoleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TerraformVersionName name =
+        TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]");
+
+    TerraformVersion actualResponse = client.getTerraformVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTerraformVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TerraformVersionName name =
+          TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]");
+      client.getTerraformVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTerraformVersionTest2() throws Exception {
+    TerraformVersion expectedResponse =
+        TerraformVersion.newBuilder()
+            .setName(
+                TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+                    .toString())
+            .setSupportTime(Timestamp.newBuilder().build())
+            .setDeprecateTime(Timestamp.newBuilder().build())
+            .setObsoleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7557/locations/location-7557/terraformVersions/terraformVersion-7557";
+
+    TerraformVersion actualResponse = client.getTerraformVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTerraformVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7557/locations/location-7557/terraformVersions/terraformVersion-7557";
+      client.getTerraformVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

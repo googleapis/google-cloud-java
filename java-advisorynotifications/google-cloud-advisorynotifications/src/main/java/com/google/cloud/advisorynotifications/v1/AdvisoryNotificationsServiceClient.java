@@ -277,7 +277,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent, which owns this collection of notifications. Must be of the
    *     form "organizations/{organization}/locations/{location}" or
-   *     "projects/{project}/locations/{location}"
+   *     "projects/{project}/locations/{location}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationsPagedResponse listNotifications(LocationName parent) {
@@ -313,7 +313,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent, which owns this collection of notifications. Must be of the
    *     form "organizations/{organization}/locations/{location}" or
-   *     "projects/{project}/locations/{location}"
+   *     "projects/{project}/locations/{location}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationsPagedResponse listNotifications(String parent) {
@@ -587,13 +587,14 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
-   *   SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+   *   SettingsName name = SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
    *   Settings response = advisoryNotificationsServiceClient.getSettings(name);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the settings to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/settings.
+   *     organizations/{organization}/locations/{location}/settings or
+   *     projects/{projects}/locations/{location}/settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Settings getSettings(SettingsName name) {
@@ -616,13 +617,15 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
-   *   String name = SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   String name =
+   *       SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString();
    *   Settings response = advisoryNotificationsServiceClient.getSettings(name);
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the settings to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/settings.
+   *     organizations/{organization}/locations/{location}/settings or
+   *     projects/{projects}/locations/{location}/settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Settings getSettings(String name) {
@@ -646,7 +649,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     AdvisoryNotificationsServiceClient.create()) {
    *   GetSettingsRequest request =
    *       GetSettingsRequest.newBuilder()
-   *           .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setName(
+   *               SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+   *                   .toString())
    *           .build();
    *   Settings response = advisoryNotificationsServiceClient.getSettings(request);
    * }
@@ -675,7 +680,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     AdvisoryNotificationsServiceClient.create()) {
    *   GetSettingsRequest request =
    *       GetSettingsRequest.newBuilder()
-   *           .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setName(
+   *               SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Settings> future =
    *       advisoryNotificationsServiceClient.getSettingsCallable().futureCall(request);

@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.39.0 (2024-04-04)
+
+* No change
+
+
+## 1.37.0 (2024-03-28)
+
+* No change
+
+
+## 1.36.0 (2024-03-22)
+
+### Features
+
+* added client side library for the followings: ([d514d9a](https://github.com/googleapis/google-cloud-java/commit/d514d9a31c38829bca636af5f1d94e7143e4db5c))
+
+
+
 ## 1.35.0 (2024-03-06)
 
 * No change

@@ -459,8 +459,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -548,8 +550,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3924,8 +3928,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4015,8 +4021,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4104,8 +4112,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4193,8 +4203,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4484,6 +4496,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setExternalUid("externalUid-1153085307")
             .setStatus("status-892481550")
             .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .setCaseUri("caseUri554877980")
+            .setCasePriority("casePriority1589324020")
+            .setCaseSla(Timestamp.newBuilder().build())
+            .setCaseCreateTime(Timestamp.newBuilder().build())
+            .setCaseCloseTime(Timestamp.newBuilder().build())
+            .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4495,6 +4513,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setExternalUid("externalUid-1153085307")
             .setStatus("status-892481550")
             .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .setCaseUri("caseUri554877980")
+            .setCasePriority("casePriority1589324020")
+            .setCaseSla(Timestamp.newBuilder().build())
+            .setCaseCreateTime(Timestamp.newBuilder().build())
+            .setCaseCloseTime(Timestamp.newBuilder().build())
+            .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4532,6 +4556,12 @@ public class SecurityCenterClientHttpJsonTest {
               .setExternalUid("externalUid-1153085307")
               .setStatus("status-892481550")
               .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+              .setCaseUri("caseUri554877980")
+              .setCasePriority("casePriority1589324020")
+              .setCaseSla(Timestamp.newBuilder().build())
+              .setCaseCreateTime(Timestamp.newBuilder().build())
+              .setCaseCloseTime(Timestamp.newBuilder().build())
+              .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateExternalSystem(externalSystem, updateMask);
@@ -4585,8 +4615,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4632,8 +4664,10 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setNotebook(Notebook.newBuilder().build())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -4704,8 +4738,10 @@ public class SecurityCenterClientHttpJsonTest {
               .addAllOrgPolicies(new ArrayList<OrgPolicy>())
               .setApplication(Application.newBuilder().build())
               .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+              .setSecurityPosture(SecurityPosture.newBuilder().build())
               .addAllLogEntries(new ArrayList<LogEntry>())
               .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+              .setNotebook(Notebook.newBuilder().build())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

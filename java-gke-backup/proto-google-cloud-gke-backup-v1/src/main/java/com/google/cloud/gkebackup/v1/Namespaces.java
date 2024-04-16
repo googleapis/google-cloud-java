@@ -72,10 +72,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the namespaces.
    */
@@ -86,10 +86,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of namespaces.
    */
@@ -100,10 +100,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The namespaces at the given index.
@@ -115,10 +115,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
-   * <code>repeated string namespaces = 1;</code>
+   * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the namespaces at the given index.
@@ -494,10 +494,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the namespaces.
      */
@@ -509,10 +509,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of namespaces.
      */
@@ -523,10 +523,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The namespaces at the given index.
@@ -538,10 +538,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the namespaces at the given index.
@@ -553,10 +553,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The namespaces to set.
@@ -576,10 +576,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The namespaces to add.
      * @return This builder for chaining.
@@ -598,10 +598,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The namespaces to add.
      * @return This builder for chaining.
@@ -617,10 +617,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -635,10 +635,10 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of Kubernetes Namespaces
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the namespaces to add.
      * @return This builder for chaining.

@@ -81,6 +81,1062 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.Flow.Builder.class);
   }
 
+  public interface MultiLanguageSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable multi-language detection for this flow. This can be set
+     * only if [agent level multi language
+     * setting][Agent.enable_multi_language_training] is enabled.
+     * </pre>
+     *
+     * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableMultiLanguageDetection.
+     */
+    boolean getEnableMultiLanguageDetection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the supportedResponseLanguageCodes.
+     */
+    java.util.List<java.lang.String> getSupportedResponseLanguageCodesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of supportedResponseLanguageCodes.
+     */
+    int getSupportedResponseLanguageCodesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedResponseLanguageCodes at the given index.
+     */
+    java.lang.String getSupportedResponseLanguageCodes(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedResponseLanguageCodes at the given index.
+     */
+    com.google.protobuf.ByteString getSupportedResponseLanguageCodesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for multi-lingual agents.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings}
+   */
+  public static final class MultiLanguageSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)
+      MultiLanguageSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MultiLanguageSettings.newBuilder() to construct.
+    private MultiLanguageSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MultiLanguageSettings() {
+      supportedResponseLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MultiLanguageSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Flow_MultiLanguageSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Flow_MultiLanguageSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder.class);
+    }
+
+    public static final int ENABLE_MULTI_LANGUAGE_DETECTION_FIELD_NUMBER = 1;
+    private boolean enableMultiLanguageDetection_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable multi-language detection for this flow. This can be set
+     * only if [agent level multi language
+     * setting][Agent.enable_multi_language_training] is enabled.
+     * </pre>
+     *
+     * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableMultiLanguageDetection.
+     */
+    @java.lang.Override
+    public boolean getEnableMultiLanguageDetection() {
+      return enableMultiLanguageDetection_;
+    }
+
+    public static final int SUPPORTED_RESPONSE_LANGUAGE_CODES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList supportedResponseLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the supportedResponseLanguageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getSupportedResponseLanguageCodesList() {
+      return supportedResponseLanguageCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of supportedResponseLanguageCodes.
+     */
+    public int getSupportedResponseLanguageCodesCount() {
+      return supportedResponseLanguageCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedResponseLanguageCodes at the given index.
+     */
+    public java.lang.String getSupportedResponseLanguageCodes(int index) {
+      return supportedResponseLanguageCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Agent will respond in the detected language if the detected
+     * language code is in the supported resolved languages for this flow. This
+     * will be used only if multi-language training is enabled in the
+     * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+     * and multi-language detection is enabled in the
+     * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+     * The supported languages must be a subset of the languages supported by
+     * the agent.
+     * </pre>
+     *
+     * <code>
+     * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedResponseLanguageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getSupportedResponseLanguageCodesBytes(int index) {
+      return supportedResponseLanguageCodes_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableMultiLanguageDetection_ != false) {
+        output.writeBool(1, enableMultiLanguageDetection_);
+      }
+      for (int i = 0; i < supportedResponseLanguageCodes_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 2, supportedResponseLanguageCodes_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableMultiLanguageDetection_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableMultiLanguageDetection_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < supportedResponseLanguageCodes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(supportedResponseLanguageCodes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSupportedResponseLanguageCodesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings) obj;
+
+      if (getEnableMultiLanguageDetection() != other.getEnableMultiLanguageDetection())
+        return false;
+      if (!getSupportedResponseLanguageCodesList()
+          .equals(other.getSupportedResponseLanguageCodesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMultiLanguageDetection());
+      if (getSupportedResponseLanguageCodesCount() > 0) {
+        hash = (37 * hash) + SUPPORTED_RESPONSE_LANGUAGE_CODES_FIELD_NUMBER;
+        hash = (53 * hash) + getSupportedResponseLanguageCodesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for multi-lingual agents.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Flow_MultiLanguageSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Flow_MultiLanguageSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enableMultiLanguageDetection_ = false;
+        supportedResponseLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Flow_MultiLanguageSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableMultiLanguageDetection_ = enableMultiLanguageDetection_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          supportedResponseLanguageCodes_.makeImmutable();
+          result.supportedResponseLanguageCodes_ = supportedResponseLanguageCodes_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+                .getDefaultInstance()) return this;
+        if (other.getEnableMultiLanguageDetection() != false) {
+          setEnableMultiLanguageDetection(other.getEnableMultiLanguageDetection());
+        }
+        if (!other.supportedResponseLanguageCodes_.isEmpty()) {
+          if (supportedResponseLanguageCodes_.isEmpty()) {
+            supportedResponseLanguageCodes_ = other.supportedResponseLanguageCodes_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureSupportedResponseLanguageCodesIsMutable();
+            supportedResponseLanguageCodes_.addAll(other.supportedResponseLanguageCodes_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enableMultiLanguageDetection_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureSupportedResponseLanguageCodesIsMutable();
+                  supportedResponseLanguageCodes_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enableMultiLanguageDetection_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable multi-language detection for this flow. This can be set
+       * only if [agent level multi language
+       * setting][Agent.enable_multi_language_training] is enabled.
+       * </pre>
+       *
+       * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableMultiLanguageDetection.
+       */
+      @java.lang.Override
+      public boolean getEnableMultiLanguageDetection() {
+        return enableMultiLanguageDetection_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable multi-language detection for this flow. This can be set
+       * only if [agent level multi language
+       * setting][Agent.enable_multi_language_training] is enabled.
+       * </pre>
+       *
+       * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableMultiLanguageDetection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableMultiLanguageDetection(boolean value) {
+
+        enableMultiLanguageDetection_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable multi-language detection for this flow. This can be set
+       * only if [agent level multi language
+       * setting][Agent.enable_multi_language_training] is enabled.
+       * </pre>
+       *
+       * <code>bool enable_multi_language_detection = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableMultiLanguageDetection() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableMultiLanguageDetection_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList supportedResponseLanguageCodes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureSupportedResponseLanguageCodesIsMutable() {
+        if (!supportedResponseLanguageCodes_.isModifiable()) {
+          supportedResponseLanguageCodes_ =
+              new com.google.protobuf.LazyStringArrayList(supportedResponseLanguageCodes_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the supportedResponseLanguageCodes.
+       */
+      public com.google.protobuf.ProtocolStringList getSupportedResponseLanguageCodesList() {
+        supportedResponseLanguageCodes_.makeImmutable();
+        return supportedResponseLanguageCodes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of supportedResponseLanguageCodes.
+       */
+      public int getSupportedResponseLanguageCodesCount() {
+        return supportedResponseLanguageCodes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The supportedResponseLanguageCodes at the given index.
+       */
+      public java.lang.String getSupportedResponseLanguageCodes(int index) {
+        return supportedResponseLanguageCodes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the supportedResponseLanguageCodes at the given index.
+       */
+      public com.google.protobuf.ByteString getSupportedResponseLanguageCodesBytes(int index) {
+        return supportedResponseLanguageCodes_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The supportedResponseLanguageCodes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSupportedResponseLanguageCodes(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSupportedResponseLanguageCodesIsMutable();
+        supportedResponseLanguageCodes_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The supportedResponseLanguageCodes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSupportedResponseLanguageCodes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSupportedResponseLanguageCodesIsMutable();
+        supportedResponseLanguageCodes_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The supportedResponseLanguageCodes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSupportedResponseLanguageCodes(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSupportedResponseLanguageCodesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, supportedResponseLanguageCodes_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSupportedResponseLanguageCodes() {
+        supportedResponseLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Agent will respond in the detected language if the detected
+       * language code is in the supported resolved languages for this flow. This
+       * will be used only if multi-language training is enabled in the
+       * [agent][google.cloud.dialogflow.cx.v3beta1.Agent.enable_multi_language_training]
+       * and multi-language detection is enabled in the
+       * [flow][google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.enable_multi_language_detection].
+       * The supported languages must be a subset of the languages supported by
+       * the agent.
+       * </pre>
+       *
+       * <code>
+       * repeated string supported_response_language_codes = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the supportedResponseLanguageCodes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSupportedResponseLanguageCodesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureSupportedResponseLanguageCodesIsMutable();
+        supportedResponseLanguageCodes_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MultiLanguageSettings> PARSER =
+        new com.google.protobuf.AbstractParser<MultiLanguageSettings>() {
+          @java.lang.Override
+          public MultiLanguageSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MultiLanguageSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MultiLanguageSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -806,6 +1862,64 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         : knowledgeConnectorSettings_;
   }
 
+  public static final int MULTI_LANGUAGE_SETTINGS_FIELD_NUMBER = 28;
+  private com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multiLanguageSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiLanguageSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiLanguageSettings() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiLanguageSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+      getMultiLanguageSettings() {
+    return multiLanguageSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.getDefaultInstance()
+        : multiLanguageSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder
+      getMultiLanguageSettingsOrBuilder() {
+    return multiLanguageSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.getDefaultInstance()
+        : multiLanguageSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -847,6 +1961,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(18, getKnowledgeConnectorSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(28, getMultiLanguageSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -891,6 +2008,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getKnowledgeConnectorSettings());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getMultiLanguageSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -925,6 +2046,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasKnowledgeConnectorSettings()) {
       if (!getKnowledgeConnectorSettings().equals(other.getKnowledgeConnectorSettings()))
         return false;
+    }
+    if (hasMultiLanguageSettings() != other.hasMultiLanguageSettings()) return false;
+    if (hasMultiLanguageSettings()) {
+      if (!getMultiLanguageSettings().equals(other.getMultiLanguageSettings())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -966,6 +2091,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasKnowledgeConnectorSettings()) {
       hash = (37 * hash) + KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getKnowledgeConnectorSettings().hashCode();
+    }
+    if (hasMultiLanguageSettings()) {
+      hash = (37 * hash) + MULTI_LANGUAGE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiLanguageSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1125,6 +2254,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         getNluSettingsFieldBuilder();
         getAdvancedSettingsFieldBuilder();
         getKnowledgeConnectorSettingsFieldBuilder();
+        getMultiLanguageSettingsFieldBuilder();
       }
     }
 
@@ -1164,6 +2294,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (knowledgeConnectorSettingsBuilder_ != null) {
         knowledgeConnectorSettingsBuilder_.dispose();
         knowledgeConnectorSettingsBuilder_ = null;
+      }
+      multiLanguageSettings_ = null;
+      if (multiLanguageSettingsBuilder_ != null) {
+        multiLanguageSettingsBuilder_.dispose();
+        multiLanguageSettingsBuilder_ = null;
       }
       return this;
     }
@@ -1253,6 +2388,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 ? knowledgeConnectorSettings_
                 : knowledgeConnectorSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.multiLanguageSettings_ =
+            multiLanguageSettingsBuilder_ == null
+                ? multiLanguageSettings_
+                : multiLanguageSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1390,6 +2532,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (other.hasKnowledgeConnectorSettings()) {
         mergeKnowledgeConnectorSettings(other.getKnowledgeConnectorSettings());
       }
+      if (other.hasMultiLanguageSettings()) {
+        mergeMultiLanguageSettings(other.getMultiLanguageSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1489,6 +2634,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 146
+            case 226:
+              {
+                input.readMessage(
+                    getMultiLanguageSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3970,6 +5122,218 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         knowledgeConnectorSettings_ = null;
       }
       return knowledgeConnectorSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        multiLanguageSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder>
+        multiLanguageSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiLanguageSettings field is set.
+     */
+    public boolean hasMultiLanguageSettings() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiLanguageSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+        getMultiLanguageSettings() {
+      if (multiLanguageSettingsBuilder_ == null) {
+        return multiLanguageSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.getDefaultInstance()
+            : multiLanguageSettings_;
+      } else {
+        return multiLanguageSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiLanguageSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings value) {
+      if (multiLanguageSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiLanguageSettings_ = value;
+      } else {
+        multiLanguageSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiLanguageSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder builderForValue) {
+      if (multiLanguageSettingsBuilder_ == null) {
+        multiLanguageSettings_ = builderForValue.build();
+      } else {
+        multiLanguageSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMultiLanguageSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings value) {
+      if (multiLanguageSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && multiLanguageSettings_ != null
+            && multiLanguageSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings
+                    .getDefaultInstance()) {
+          getMultiLanguageSettingsBuilder().mergeFrom(value);
+        } else {
+          multiLanguageSettings_ = value;
+        }
+      } else {
+        multiLanguageSettingsBuilder_.mergeFrom(value);
+      }
+      if (multiLanguageSettings_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMultiLanguageSettings() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      multiLanguageSettings_ = null;
+      if (multiLanguageSettingsBuilder_ != null) {
+        multiLanguageSettingsBuilder_.dispose();
+        multiLanguageSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder
+        getMultiLanguageSettingsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getMultiLanguageSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder
+        getMultiLanguageSettingsOrBuilder() {
+      if (multiLanguageSettingsBuilder_ != null) {
+        return multiLanguageSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return multiLanguageSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.getDefaultInstance()
+            : multiLanguageSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Multi-lingual agent settings for this flow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder>
+        getMultiLanguageSettingsFieldBuilder() {
+      if (multiLanguageSettingsBuilder_ == null) {
+        multiLanguageSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder>(
+                getMultiLanguageSettings(), getParentForChildren(), isClean());
+        multiLanguageSettings_ = null;
+      }
+      return multiLanguageSettingsBuilder_;
     }
 
     @java.lang.Override

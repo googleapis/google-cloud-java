@@ -650,6 +650,69 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      * @return The bytes for summaryText.
      */
     com.google.protobuf.ByteString getSummaryTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getTextSectionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsTextSections(java.lang.String key);
+    /** Use {@link #getTextSectionsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getTextSections();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getTextSectionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getTextSectionsOrThrow(java.lang.String key);
   }
   /**
    *
@@ -684,6 +747,18 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.AnswerRecordsProto
           .internal_static_google_cloud_dialogflow_v2beta1_AgentAssistantFeedback_SummarizationFeedback_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetTextSections();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -850,6 +925,114 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
     }
 
+    public static final int TEXT_SECTIONS_FIELD_NUMBER = 4;
+
+    private static final class TextSectionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.dialogflow.v2beta1.AnswerRecordsProto
+                  .internal_static_google_cloud_dialogflow_v2beta1_AgentAssistantFeedback_SummarizationFeedback_TextSectionsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> textSections_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetTextSections() {
+      if (textSections_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            TextSectionsDefaultEntryHolder.defaultEntry);
+      }
+      return textSections_;
+    }
+
+    public int getTextSectionsCount() {
+      return internalGetTextSections().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTextSections(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTextSections().getMap().containsKey(key);
+    }
+    /** Use {@link #getTextSectionsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
+      return getTextSectionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
+      return internalGetTextSections().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTextSectionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actual text sections of submitted summary.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTextSectionsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -873,6 +1056,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, summaryText_);
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetTextSections(), TextSectionsDefaultEntryHolder.defaultEntry, 4);
       getUnknownFields().writeTo(output);
     }
 
@@ -890,6 +1075,16 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, summaryText_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetTextSections().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> textSections__ =
+            TextSectionsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, textSections__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -918,6 +1113,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         if (!getSubmitTimestamp().equals(other.getSubmitTimestamp())) return false;
       }
       if (!getSummaryText().equals(other.getSummaryText())) return false;
+      if (!internalGetTextSections().equals(other.internalGetTextSections())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -939,6 +1135,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       hash = (37 * hash) + SUMMARY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getSummaryText().hashCode();
+      if (!internalGetTextSections().getMap().isEmpty()) {
+        hash = (37 * hash) + TEXT_SECTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetTextSections().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1068,6 +1268,28 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             .internal_static_google_cloud_dialogflow_v2beta1_AgentAssistantFeedback_SummarizationFeedback_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetTextSections();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableTextSections();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1113,6 +1335,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           submitTimestampBuilder_ = null;
         }
         summaryText_ = "";
+        internalGetMutableTextSections().clear();
         return this;
       }
 
@@ -1169,6 +1392,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.summaryText_ = summaryText_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.textSections_ = internalGetTextSections();
+          result.textSections_.makeImmutable();
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1238,6 +1465,8 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        internalGetMutableTextSections().mergeFrom(other.internalGetTextSections());
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1284,6 +1513,18 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> textSections__ =
+                      input.readMessage(
+                          TextSectionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableTextSections()
+                      .getMutableMap()
+                      .put(textSections__.getKey(), textSections__.getValue());
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1776,6 +2017,186 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         summaryText_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> textSections_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetTextSections() {
+        if (textSections_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              TextSectionsDefaultEntryHolder.defaultEntry);
+        }
+        return textSections_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableTextSections() {
+        if (textSections_ == null) {
+          textSections_ =
+              com.google.protobuf.MapField.newMapField(TextSectionsDefaultEntryHolder.defaultEntry);
+        }
+        if (!textSections_.isMutable()) {
+          textSections_ = textSections_.copy();
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return textSections_;
+      }
+
+      public int getTextSectionsCount() {
+        return internalGetTextSections().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsTextSections(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetTextSections().getMap().containsKey(key);
+      }
+      /** Use {@link #getTextSectionsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
+        return getTextSectionsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
+        return internalGetTextSections().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getTextSectionsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getTextSectionsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearTextSections() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableTextSections().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeTextSections(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableTextSections().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableTextSections() {
+        bitField0_ |= 0x00000008;
+        return internalGetMutableTextSections().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putTextSections(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableTextSections().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Actual text sections of submitted summary.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; text_sections = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllTextSections(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableTextSections().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 

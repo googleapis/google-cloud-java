@@ -61,6 +61,30 @@ public final class BatchProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1alpha_GetTaskRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_CreateResourceAllowanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_CreateResourceAllowanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_GetResourceAllowanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_GetResourceAllowanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_DeleteResourceAllowanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_DeleteResourceAllowanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_UpdateResourceAllowanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_UpdateResourceAllowanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_batch_v1alpha_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1alpha_OperationMetadata_fieldAccessorTable;
@@ -79,38 +103,65 @@ public final class BatchProto {
           + "oto\032\037google/api/field_behavior.proto\032\033go"
           + "ogle/api/field_info.proto\032\031google/api/re"
           + "source.proto\032$google/cloud/batch/v1alpha"
-          + "/job.proto\032%google/cloud/batch/v1alpha/t"
-          + "ask.proto\032#google/longrunning/operations"
-          + ".proto\032\033google/protobuf/empty.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\"\240\001\n\020CreateJ"
-          + "obRequest\0220\n\006parent\030\001 \001(\tB \340A\002\372A\032\022\030batch"
-          + ".googleapis.com/Job\022\016\n\006job_id\030\002 \001(\t\0221\n\003j"
-          + "ob\030\003 \001(\0132\037.google.cloud.batch.v1alpha.Jo"
-          + "bB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"?\n\rGetJo"
-          + "bRequest\022.\n\004name\030\001 \001(\tB \340A\002\372A\032\n\030batch.go"
-          + "ogleapis.com/Job\"N\n\020DeleteJobRequest\022\014\n\004"
-          + "name\030\001 \001(\t\022\023\n\006reason\030\002 \001(\tB\003\340A\001\022\027\n\nreque"
-          + "st_id\030\004 \001(\tB\003\340A\001\"o\n\017ListJobsRequest\022\016\n\006p"
-          + "arent\030\001 \001(\t\022\016\n\006filter\030\004 \001(\t\022\025\n\010order_by\030"
-          + "\005 \001(\tB\003\340A\001\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
-          + "ken\030\003 \001(\t\"o\n\020ListJobsResponse\022-\n\004jobs\030\001 "
-          + "\003(\0132\037.google.cloud.batch.v1alpha.Job\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003"
-          + "(\t\"\223\001\n\020ListTasksRequest\0226\n\006parent\030\001 \001(\tB"
-          + "&\340A\002\372A \n\036batch.googleapis.com/TaskGroup\022"
-          + "\016\n\006filter\030\002 \001(\t\022\020\n\010order_by\030\005 \001(\t\022\021\n\tpag"
-          + "e_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"r\n\021List"
-          + "TasksResponse\022/\n\005tasks\030\001 \003(\0132 .google.cl"
-          + "oud.batch.v1alpha.Task\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"A\n\016GetTaskR"
-          + "equest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031batch.goog"
-          + "leapis.com/Task\"\200\002\n\021OperationMetadata\0224\n"
+          + "/job.proto\0323google/cloud/batch/v1alpha/r"
+          + "esource_allowance.proto\032%google/cloud/ba"
+          + "tch/v1alpha/task.proto\032#google/longrunni"
+          + "ng/operations.proto\032\033google/protobuf/emp"
+          + "ty.proto\032 google/protobuf/field_mask.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\240\001\n\020"
+          + "CreateJobRequest\0220\n\006parent\030\001 \001(\tB \340A\002\372A\032"
+          + "\022\030batch.googleapis.com/Job\022\016\n\006job_id\030\002 \001"
+          + "(\t\0221\n\003job\030\003 \001(\0132\037.google.cloud.batch.v1a"
+          + "lpha.JobB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"?"
+          + "\n\rGetJobRequest\022.\n\004name\030\001 \001(\tB \340A\002\372A\032\n\030b"
+          + "atch.googleapis.com/Job\"N\n\020DeleteJobRequ"
+          + "est\022\014\n\004name\030\001 \001(\t\022\023\n\006reason\030\002 \001(\tB\003\340A\001\022\027"
+          + "\n\nrequest_id\030\004 \001(\tB\003\340A\001\"o\n\017ListJobsReque"
+          + "st\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\004 \001(\t\022\025\n\010or"
+          + "der_by\030\005 \001(\tB\003\340A\001\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"o\n\020ListJobsResponse\022-\n\004"
+          + "jobs\030\001 \003(\0132\037.google.cloud.batch.v1alpha."
+          + "Job\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreacha"
+          + "ble\030\003 \003(\t\"\223\001\n\020ListTasksRequest\0226\n\006parent"
+          + "\030\001 \001(\tB&\340A\002\372A \n\036batch.googleapis.com/Tas"
+          + "kGroup\022\016\n\006filter\030\002 \001(\t\022\020\n\010order_by\030\005 \001(\t"
+          + "\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\""
+          + "r\n\021ListTasksResponse\022/\n\005tasks\030\001 \003(\0132 .go"
+          + "ogle.cloud.batch.v1alpha.Task\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"A\n\016G"
+          + "etTaskRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031bat"
+          + "ch.googleapis.com/Task\"\360\001\n\036CreateResourc"
+          + "eAllowanceRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A"
+          + "(\022&batch.googleapis.com/ResourceAllowanc"
+          + "e\022\035\n\025resource_allowance_id\030\002 \001(\t\022N\n\022reso"
+          + "urce_allowance\030\003 \001(\0132-.google.cloud.batc"
+          + "h.v1alpha.ResourceAllowanceB\003\340A\002\022\037\n\nrequ"
+          + "est_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"[\n\033GetResource"
+          + "AllowanceRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&"
+          + "batch.googleapis.com/ResourceAllowance\"\224"
+          + "\001\n\036DeleteResourceAllowanceRequest\022<\n\004nam"
+          + "e\030\001 \001(\tB.\340A\002\372A(\n&batch.googleapis.com/Re"
+          + "sourceAllowance\022\023\n\006reason\030\002 \001(\tB\003\340A\001\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\220\001\n\035ListRe"
+          + "sourceAllowancesRequest\022>\n\006parent\030\001 \001(\tB"
+          + ".\340A\002\372A(\022&batch.googleapis.com/ResourceAl"
+          + "lowance\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_"
+          + "token\030\003 \001(\tB\003\340A\001\"\232\001\n\036ListResourceAllowan"
+          + "cesResponse\022J\n\023resource_allowances\030\001 \003(\013"
+          + "2-.google.cloud.batch.v1alpha.ResourceAl"
+          + "lowance\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unre"
+          + "achable\030\003 \003(\t\"\307\001\n\036UpdateResourceAllowanc"
+          + "eRequest\022N\n\022resource_allowance\030\001 \001(\0132-.g"
+          + "oogle.cloud.batch.v1alpha.ResourceAllowa"
+          + "nceB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.p"
+          + "rotobuf.FieldMaskB\003\340A\002\022\037\n\nrequest_id\030\003 \001"
+          + "(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\200\002\n\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.Tim"
           + "estampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.p"
           + "rotobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003"
           + "\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message"
           + "\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancellation\030\006 "
-          + "\001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\0032\221\t\n\014B"
+          + "\001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\0032\362\022\n\014B"
           + "atchService\022\252\001\n\tCreateJob\022,.google.cloud"
           + ".batch.v1alpha.CreateJobRequest\032\037.google"
           + ".cloud.batch.v1alpha.Job\"N\332A\021parent,job,"
@@ -138,14 +189,45 @@ public final class BatchProto {
           + "\032-.google.cloud.batch.v1alpha.ListTasksR"
           + "esponse\"S\332A\006parent\202\323\344\223\002D\022B/v1alpha/{pare"
           + "nt=projects/*/locations/*/jobs/*/taskGro"
-          + "ups/*}/tasks\032H\312A\024batch.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\304\001\n\036com.google.cloud.batch.v1alph"
-          + "aB\nBatchProtoP\001Z4cloud.google.com/go/bat"
-          + "ch/apiv1alpha/batchpb;batchpb\242\002\003GCB\252\002\032Go"
-          + "ogle.Cloud.Batch.V1Alpha\312\002\032Google\\Cloud\\"
-          + "Batch\\V1alpha\352\002\035Google::Cloud::Batch::V1"
-          + "alphab\006proto3"
+          + "ups/*}/tasks\022\220\002\n\027CreateResourceAllowance"
+          + "\022:.google.cloud.batch.v1alpha.CreateReso"
+          + "urceAllowanceRequest\032-.google.cloud.batc"
+          + "h.v1alpha.ResourceAllowance\"\211\001\332A/parent,"
+          + "resource_allowance,resource_allowance_id"
+          + "\202\323\344\223\002Q\";/v1alpha/{parent=projects/*/loca"
+          + "tions/*}/resourceAllowances:\022resource_al"
+          + "lowance\022\312\001\n\024GetResourceAllowance\0227.googl"
+          + "e.cloud.batch.v1alpha.GetResourceAllowan"
+          + "ceRequest\032-.google.cloud.batch.v1alpha.R"
+          + "esourceAllowance\"J\332A\004name\202\323\344\223\002=\022;/v1alph"
+          + "a/{name=projects/*/locations/*/resourceA"
+          + "llowances/*}\022\211\002\n\027DeleteResourceAllowance"
+          + "\022:.google.cloud.batch.v1alpha.DeleteReso"
+          + "urceAllowanceRequest\032\035.google.longrunnin"
+          + "g.Operation\"\222\001\312AE\n\025google.protobuf.Empty"
+          + "\022,google.cloud.batch.v1alpha.OperationMe"
+          + "tadata\332A\004name\202\323\344\223\002=*;/v1alpha/{name=proj"
+          + "ects/*/locations/*/resourceAllowances/*}"
+          + "\022\335\001\n\026ListResourceAllowances\0229.google.clo"
+          + "ud.batch.v1alpha.ListResourceAllowancesR"
+          + "equest\032:.google.cloud.batch.v1alpha.List"
+          + "ResourceAllowancesResponse\"L\332A\006parent\202\323\344"
+          + "\223\002=\022;/v1alpha/{parent=projects/*/locatio"
+          + "ns/*}/resourceAllowances\022\222\002\n\027UpdateResou"
+          + "rceAllowance\022:.google.cloud.batch.v1alph"
+          + "a.UpdateResourceAllowanceRequest\032-.googl"
+          + "e.cloud.batch.v1alpha.ResourceAllowance\""
+          + "\213\001\332A\036resource_allowance,update_mask\202\323\344\223\002"
+          + "d2N/v1alpha/{resource_allowance.name=pro"
+          + "jects/*/locations/*/resourceAllowances/*"
+          + "}:\022resource_allowance\032H\312A\024batch.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformB\304\001\n\036com.google.cloud.bat"
+          + "ch.v1alphaB\nBatchProtoP\001Z4cloud.google.c"
+          + "om/go/batch/apiv1alpha/batchpb;batchpb\242\002"
+          + "\003GCB\252\002\032Google.Cloud.Batch.V1Alpha\312\002\032Goog"
+          + "le\\Cloud\\Batch\\V1alpha\352\002\035Google::Cloud::"
+          + "Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,9 +239,11 @@ public final class BatchProto {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.batch.v1alpha.JobProto.getDescriptor(),
+              com.google.cloud.batch.v1alpha.ResourceAllowanceProto.getDescriptor(),
               com.google.cloud.batch.v1alpha.TaskProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_batch_v1alpha_CreateJobRequest_descriptor =
@@ -226,8 +310,56 @@ public final class BatchProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_batch_v1alpha_OperationMetadata_descriptor =
+    internal_static_google_cloud_batch_v1alpha_CreateResourceAllowanceRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_batch_v1alpha_CreateResourceAllowanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_CreateResourceAllowanceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ResourceAllowanceId", "ResourceAllowance", "RequestId",
+            });
+    internal_static_google_cloud_batch_v1alpha_GetResourceAllowanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_batch_v1alpha_GetResourceAllowanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_GetResourceAllowanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_batch_v1alpha_DeleteResourceAllowanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_batch_v1alpha_DeleteResourceAllowanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_DeleteResourceAllowanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Reason", "RequestId",
+            });
+    internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_ListResourceAllowancesResponse_descriptor,
+            new java.lang.String[] {
+              "ResourceAllowances", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_batch_v1alpha_UpdateResourceAllowanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_batch_v1alpha_UpdateResourceAllowanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_UpdateResourceAllowanceRequest_descriptor,
+            new java.lang.String[] {
+              "ResourceAllowance", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_batch_v1alpha_OperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_batch_v1alpha_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1alpha_OperationMetadata_descriptor,
@@ -244,6 +376,7 @@ public final class BatchProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
@@ -257,9 +390,11 @@ public final class BatchProto {
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.batch.v1alpha.JobProto.getDescriptor();
+    com.google.cloud.batch.v1alpha.ResourceAllowanceProto.getDescriptor();
     com.google.cloud.batch.v1alpha.TaskProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -703,6 +703,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Enable audio redaction if it is true.
+     * Note that this only redacts end-user audio data;
+     * Synthesised audio from the virtual agent is not redacted.
      * </pre>
      *
      * <code>bool enable_audio_redaction = 3;</code>
@@ -1091,6 +1093,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Enable audio redaction if it is true.
+     * Note that this only redacts end-user audio data;
+     * Synthesised audio from the virtual agent is not redacted.
      * </pre>
      *
      * <code>bool enable_audio_redaction = 3;</code>
@@ -1827,6 +1831,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Enable audio redaction if it is true.
+       * Note that this only redacts end-user audio data;
+       * Synthesised audio from the virtual agent is not redacted.
        * </pre>
        *
        * <code>bool enable_audio_redaction = 3;</code>
@@ -1842,6 +1848,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Enable audio redaction if it is true.
+       * Note that this only redacts end-user audio data;
+       * Synthesised audio from the virtual agent is not redacted.
        * </pre>
        *
        * <code>bool enable_audio_redaction = 3;</code>
@@ -1861,6 +1869,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Enable audio redaction if it is true.
+       * Note that this only redacts end-user audio data;
+       * Synthesised audio from the virtual agent is not redacted.
        * </pre>
        *
        * <code>bool enable_audio_redaction = 3;</code>
@@ -3066,6 +3076,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * for Agent Assist traffic), higher value will be ignored and use default.
    * Setting a value higher than that has no effect. A missing value or
    * setting to 0 also means we use default TTL.
+   * When data retention configuration is changed, it only applies to the data
+   * created after the change; the TTL of existing data created before the
+   * change stays intact.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -3087,6 +3100,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * for Agent Assist traffic), higher value will be ignored and use default.
    * Setting a value higher than that has no effect. A missing value or
    * setting to 0 also means we use default TTL.
+   * When data retention configuration is changed, it only applies to the data
+   * created after the change; the TTL of existing data created before the
+   * change stays intact.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -5038,6 +5054,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * for Agent Assist traffic), higher value will be ignored and use default.
      * Setting a value higher than that has no effect. A missing value or
      * setting to 0 also means we use default TTL.
+     * When data retention configuration is changed, it only applies to the data
+     * created after the change; the TTL of existing data created before the
+     * change stays intact.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -5058,6 +5077,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * for Agent Assist traffic), higher value will be ignored and use default.
      * Setting a value higher than that has no effect. A missing value or
      * setting to 0 also means we use default TTL.
+     * When data retention configuration is changed, it only applies to the data
+     * created after the change; the TTL of existing data created before the
+     * change stays intact.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -5081,6 +5103,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * for Agent Assist traffic), higher value will be ignored and use default.
      * Setting a value higher than that has no effect. A missing value or
      * setting to 0 also means we use default TTL.
+     * When data retention configuration is changed, it only applies to the data
+     * created after the change; the TTL of existing data created before the
+     * change stays intact.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -5106,6 +5131,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * for Agent Assist traffic), higher value will be ignored and use default.
      * Setting a value higher than that has no effect. A missing value or
      * setting to 0 also means we use default TTL.
+     * When data retention configuration is changed, it only applies to the data
+     * created after the change; the TTL of existing data created before the
+     * change stays intact.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>

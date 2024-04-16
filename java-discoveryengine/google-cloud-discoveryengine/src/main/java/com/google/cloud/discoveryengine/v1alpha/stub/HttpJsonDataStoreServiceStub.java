@@ -40,10 +40,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDataStoreRequest;
 import com.google.cloud.discoveryengine.v1alpha.DataStore;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreMetadata;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig;
 import com.google.cloud.discoveryengine.v1alpha.GetDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -281,6 +284,94 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DataStoreService/GetDocumentProcessingConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDocumentProcessingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/dataStores/*/documentProcessingConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDocumentProcessingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/documentProcessingConfig}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDocumentProcessingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DocumentProcessingConfig>newBuilder()
+                      .setDefaultInstance(DocumentProcessingConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DataStoreService/UpdateDocumentProcessingConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDocumentProcessingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{documentProcessingConfig.name=projects/*/locations/*/dataStores/*/documentProcessingConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDocumentProcessingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "documentProcessingConfig.name",
+                                request.getDocumentProcessingConfig().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{documentProcessingConfig.name=projects/*/locations/*/collections/*/dataStores/*/documentProcessingConfig}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDocumentProcessingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "documentProcessingConfig",
+                                      request.getDocumentProcessingConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DocumentProcessingConfig>newBuilder()
+                      .setDefaultInstance(DocumentProcessingConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateDataStoreRequest, Operation> createDataStoreCallable;
   private final OperationCallable<CreateDataStoreRequest, DataStore, CreateDataStoreMetadata>
       createDataStoreOperationCallable;
@@ -292,6 +383,10 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
   private final OperationCallable<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
       deleteDataStoreOperationCallable;
   private final UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable;
+  private final UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable;
+  private final UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -400,6 +495,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1alpha/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/evaluations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -537,6 +637,34 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        getDocumentProcessingConfigTransportSettings =
+            HttpJsonCallSettings
+                .<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+                .setMethodDescriptor(getDocumentProcessingConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        updateDocumentProcessingConfigTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+                .setMethodDescriptor(updateDocumentProcessingConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "document_processing_config.name",
+                          String.valueOf(request.getDocumentProcessingConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createDataStoreCallable =
         callableFactory.createUnaryCallable(
@@ -568,6 +696,16 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
     this.updateDataStoreCallable =
         callableFactory.createUnaryCallable(
             updateDataStoreTransportSettings, settings.updateDataStoreSettings(), clientContext);
+    this.getDocumentProcessingConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDocumentProcessingConfigTransportSettings,
+            settings.getDocumentProcessingConfigSettings(),
+            clientContext);
+    this.updateDocumentProcessingConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDocumentProcessingConfigTransportSettings,
+            settings.updateDocumentProcessingConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -581,6 +719,8 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
     methodDescriptors.add(listDataStoresMethodDescriptor);
     methodDescriptors.add(deleteDataStoreMethodDescriptor);
     methodDescriptors.add(updateDataStoreMethodDescriptor);
+    methodDescriptors.add(getDocumentProcessingConfigMethodDescriptor);
+    methodDescriptors.add(updateDocumentProcessingConfigMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -629,6 +769,18 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
   @Override
   public UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     return updateDataStoreCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable() {
+    return getDocumentProcessingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable() {
+    return updateDocumentProcessingConfigCallable;
   }
 
   @Override

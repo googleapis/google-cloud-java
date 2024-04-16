@@ -610,4 +610,18 @@ public interface ConnectivityTestOrBuilder
    * </code>
    */
   com.google.cloud.networkmanagement.v1beta1.ProbingDetailsOrBuilder getProbingDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the test should skip firewall checking.
+   * If not provided, we assume false.
+   * </pre>
+   *
+   * <code>bool bypass_firewall_checks = 17;</code>
+   *
+   * @return The bypassFirewallChecks.
+   */
+  boolean getBypassFirewallChecks();
 }

@@ -138,6 +138,101 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MAXIMUM_LIFETIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Duration maximumLifetime_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maximumLifetime field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaximumLifetime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maximumLifetime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMaximumLifetime() {
+    return maximumLifetime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maximumLifetime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMaximumLifetimeOrBuilder() {
+    return maximumLifetime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maximumLifetime_;
+  }
+
   public static final int PREDEFINED_VALUES_FIELD_NUMBER = 2;
   private com.google.cloud.security.privateca.v1.X509Parameters predefinedValues_;
   /**
@@ -163,7 +258,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasPredefinedValues() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -240,7 +335,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasIdentityConstraints() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -321,7 +416,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasPassthroughExtensions() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -467,7 +562,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -522,7 +617,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -678,26 +773,29 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getPredefinedValues());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getIdentityConstraints());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getPassthroughExtensions());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getCreateTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(7, getUpdateTime());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(9, getMaximumLifetime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -710,23 +808,23 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPredefinedValues());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getIdentityConstraints());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPassthroughExtensions());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCreateTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -738,6 +836,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMaximumLifetime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -756,6 +857,10 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         (com.google.cloud.security.privateca.v1.CertificateTemplate) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasMaximumLifetime() != other.hasMaximumLifetime()) return false;
+    if (hasMaximumLifetime()) {
+      if (!getMaximumLifetime().equals(other.getMaximumLifetime())) return false;
+    }
     if (hasPredefinedValues() != other.hasPredefinedValues()) return false;
     if (hasPredefinedValues()) {
       if (!getPredefinedValues().equals(other.getPredefinedValues())) return false;
@@ -791,6 +896,10 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasMaximumLifetime()) {
+      hash = (37 * hash) + MAXIMUM_LIFETIME_FIELD_NUMBER;
+      hash = (53 * hash) + getMaximumLifetime().hashCode();
+    }
     if (hasPredefinedValues()) {
       hash = (37 * hash) + PREDEFINED_VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getPredefinedValues().hashCode();
@@ -982,6 +1091,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMaximumLifetimeFieldBuilder();
         getPredefinedValuesFieldBuilder();
         getIdentityConstraintsFieldBuilder();
         getPassthroughExtensionsFieldBuilder();
@@ -995,6 +1105,11 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      maximumLifetime_ = null;
+      if (maximumLifetimeBuilder_ != null) {
+        maximumLifetimeBuilder_.dispose();
+        maximumLifetimeBuilder_ = null;
+      }
       predefinedValues_ = null;
       if (predefinedValuesBuilder_ != null) {
         predefinedValuesBuilder_.dispose();
@@ -1063,36 +1178,41 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.predefinedValues_ =
-            predefinedValuesBuilder_ == null ? predefinedValues_ : predefinedValuesBuilder_.build();
+        result.maximumLifetime_ =
+            maximumLifetimeBuilder_ == null ? maximumLifetime_ : maximumLifetimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.predefinedValues_ =
+            predefinedValuesBuilder_ == null ? predefinedValues_ : predefinedValuesBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.identityConstraints_ =
             identityConstraintsBuilder_ == null
                 ? identityConstraints_
                 : identityConstraintsBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.passthroughExtensions_ =
             passthroughExtensionsBuilder_ == null
                 ? passthroughExtensions_
                 : passthroughExtensionsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.description_ = description_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
@@ -1150,6 +1270,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasMaximumLifetime()) {
+        mergeMaximumLifetime(other.getMaximumLifetime());
+      }
       if (other.hasPredefinedValues()) {
         mergePredefinedValues(other.getPredefinedValues());
       }
@@ -1161,7 +1284,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1171,7 +1294,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1208,39 +1331,39 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getPredefinedValuesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getPassthroughExtensionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -1252,9 +1375,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getMaximumLifetimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1400,6 +1529,335 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private com.google.protobuf.Duration maximumLifetime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maximumLifetimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maximumLifetime field is set.
+     */
+    public boolean hasMaximumLifetime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maximumLifetime.
+     */
+    public com.google.protobuf.Duration getMaximumLifetime() {
+      if (maximumLifetimeBuilder_ == null) {
+        return maximumLifetime_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maximumLifetime_;
+      } else {
+        return maximumLifetimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaximumLifetime(com.google.protobuf.Duration value) {
+      if (maximumLifetimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maximumLifetime_ = value;
+      } else {
+        maximumLifetimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaximumLifetime(com.google.protobuf.Duration.Builder builderForValue) {
+      if (maximumLifetimeBuilder_ == null) {
+        maximumLifetime_ = builderForValue.build();
+      } else {
+        maximumLifetimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaximumLifetime(com.google.protobuf.Duration value) {
+      if (maximumLifetimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && maximumLifetime_ != null
+            && maximumLifetime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaximumLifetimeBuilder().mergeFrom(value);
+        } else {
+          maximumLifetime_ = value;
+        }
+      } else {
+        maximumLifetimeBuilder_.mergeFrom(value);
+      }
+      if (maximumLifetime_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaximumLifetime() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      maximumLifetime_ = null;
+      if (maximumLifetimeBuilder_ != null) {
+        maximumLifetimeBuilder_.dispose();
+        maximumLifetimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getMaximumLifetimeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getMaximumLifetimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaximumLifetimeOrBuilder() {
+      if (maximumLifetimeBuilder_ != null) {
+        return maximumLifetimeBuilder_.getMessageOrBuilder();
+      } else {
+        return maximumLifetime_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maximumLifetime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+     * this template. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * specifies a
+     * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+     * the minimum of the two durations will be the maximum lifetime for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated
+     *  to match it.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getMaximumLifetimeFieldBuilder() {
+      if (maximumLifetimeBuilder_ == null) {
+        maximumLifetimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaximumLifetime(), getParentForChildren(), isClean());
+        maximumLifetime_ = null;
+      }
+      return maximumLifetimeBuilder_;
+    }
+
     private com.google.cloud.security.privateca.v1.X509Parameters predefinedValues_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.security.privateca.v1.X509Parameters,
@@ -1428,7 +1886,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the predefinedValues field is set.
      */
     public boolean hasPredefinedValues() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1489,7 +1947,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         predefinedValuesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1519,7 +1977,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         predefinedValuesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1545,7 +2003,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergePredefinedValues(
         com.google.cloud.security.privateca.v1.X509Parameters value) {
       if (predefinedValuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && predefinedValues_ != null
             && predefinedValues_
                 != com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()) {
@@ -1557,7 +2015,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         predefinedValuesBuilder_.mergeFrom(value);
       }
       if (predefinedValues_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1582,7 +2040,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPredefinedValues() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       predefinedValues_ = null;
       if (predefinedValuesBuilder_ != null) {
         predefinedValuesBuilder_.dispose();
@@ -1612,7 +2070,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.X509Parameters.Builder
         getPredefinedValuesBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPredefinedValuesFieldBuilder().getBuilder();
     }
@@ -1705,7 +2163,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the identityConstraints field is set.
      */
     public boolean hasIdentityConstraints() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1758,7 +2216,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         identityConstraintsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1784,7 +2242,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         identityConstraintsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1805,7 +2263,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergeIdentityConstraints(
         com.google.cloud.security.privateca.v1.CertificateIdentityConstraints value) {
       if (identityConstraintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && identityConstraints_ != null
             && identityConstraints_
                 != com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
@@ -1818,7 +2276,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         identityConstraintsBuilder_.mergeFrom(value);
       }
       if (identityConstraints_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1838,7 +2296,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearIdentityConstraints() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       identityConstraints_ = null;
       if (identityConstraintsBuilder_ != null) {
         identityConstraintsBuilder_.dispose();
@@ -1863,7 +2321,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
         getIdentityConstraintsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getIdentityConstraintsFieldBuilder().getBuilder();
     }
@@ -1960,7 +2418,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the passthroughExtensions field is set.
      */
     public boolean hasPassthroughExtensions() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2039,7 +2497,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         passthroughExtensionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2078,7 +2536,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         passthroughExtensionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2112,7 +2570,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     public Builder mergePassthroughExtensions(
         com.google.cloud.security.privateca.v1.CertificateExtensionConstraints value) {
       if (passthroughExtensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && passthroughExtensions_ != null
             && passthroughExtensions_
                 != com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
@@ -2125,7 +2583,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         passthroughExtensionsBuilder_.mergeFrom(value);
       }
       if (passthroughExtensions_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2158,7 +2616,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPassthroughExtensions() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       passthroughExtensions_ = null;
       if (passthroughExtensionsBuilder_ != null) {
         passthroughExtensionsBuilder_.dispose();
@@ -2196,7 +2654,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
         getPassthroughExtensionsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPassthroughExtensionsFieldBuilder().getBuilder();
     }
@@ -2347,7 +2805,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2365,7 +2823,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2388,7 +2846,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2415,7 +2873,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2463,7 +2921,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2486,7 +2944,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2505,7 +2963,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2516,7 +2974,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2535,7 +2993,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2558,7 +3016,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2636,7 +3094,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2684,7 +3142,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2707,7 +3165,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2726,7 +3184,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2737,7 +3195,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2756,7 +3214,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2779,7 +3237,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2852,7 +3310,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return labels_;
     }
@@ -2937,7 +3395,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2960,7 +3418,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2980,7 +3438,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2994,7 +3452,7 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
 

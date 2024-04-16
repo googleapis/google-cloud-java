@@ -1,0 +1,27 @@
+name: Hermetic library generation upon generation config change through pull requests
+on:
+  pull_request:
+    types:
+      - synchronize
+    paths:
+      - generation_config.yaml
+jobs:
+  library_generation:
+    runs-on: ubuntu-latest
+    env:
+      library_generation_image_tag: latest
+      repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+    - name: get baseline generation config
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.base_ref }}
+        path: baseline
+        sparse-checkout: generation_config.yaml
+    - name: diff
+      shell: bash
+      run: |
+        diff generation_config.yaml baseline/generation_config.yaml

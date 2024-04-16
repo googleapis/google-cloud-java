@@ -59,12 +59,12 @@ public interface DeleteBackupRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
    * request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -73,12 +73,12 @@ public interface DeleteBackupRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
    * request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -88,12 +88,12 @@ public interface DeleteBackupRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, any VolumeBackups below this Backup will also be deleted.
-   * Otherwise, the request will only succeed if the Backup has no
+   * Optional. If set to true, any VolumeBackups below this Backup will also be
+   * deleted. Otherwise, the request will only succeed if the Backup has no
    * VolumeBackups.
    * </pre>
    *
-   * <code>bool force = 3;</code>
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */

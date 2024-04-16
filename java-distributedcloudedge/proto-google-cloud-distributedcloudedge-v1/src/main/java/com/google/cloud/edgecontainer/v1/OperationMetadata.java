@@ -43,6 +43,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     verb_ = "";
     statusMessage_ = "";
     apiVersion_ = "";
+    warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -320,8 +321,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Identifies whether the user has requested cancellation of the operation.
    * Operations that have successfully been cancelled have [Operation.error][]
-   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * corresponding to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6;</code>
@@ -384,6 +385,74 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int WARNINGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList warnings_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @return A list containing the warnings.
+   */
+  public com.google.protobuf.ProtocolStringList getWarningsList() {
+    return warnings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @return The count of warnings.
+   */
+  public int getWarningsCount() {
+    return warnings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The warnings at the given index.
+   */
+  public java.lang.String getWarnings(int index) {
+    return warnings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the warnings at the given index.
+   */
+  public com.google.protobuf.ByteString getWarningsBytes(int index) {
+    return warnings_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -419,6 +488,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiVersion_);
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, warnings_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -449,6 +521,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersion_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < warnings_.size(); i++) {
+        dataSize += computeStringSizeNoTag(warnings_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getWarningsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -478,6 +558,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getStatusMessage().equals(other.getStatusMessage())) return false;
     if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getApiVersion().equals(other.getApiVersion())) return false;
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -507,6 +588,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
     hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getApiVersion().hashCode();
+    if (getWarningsCount() > 0) {
+      hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWarningsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -671,6 +756,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       statusMessage_ = "";
       requestedCancellation_ = false;
       apiVersion_ = "";
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -730,6 +816,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiVersion_ = apiVersion_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        warnings_.makeImmutable();
+        result.warnings_ = warnings_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -809,6 +899,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.warnings_.isEmpty()) {
+        if (warnings_.isEmpty()) {
+          warnings_ = other.warnings_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureWarningsIsMutable();
+          warnings_.addAll(other.warnings_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -877,6 +977,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureWarningsIsMutable();
+                warnings_.add(s);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1587,8 +1694,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation of the operation.
      * Operations that have successfully been cancelled have [Operation.error][]
-     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>
@@ -1605,8 +1712,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation of the operation.
      * Operations that have successfully been cancelled have [Operation.error][]
-     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>
@@ -1627,8 +1734,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation of the operation.
      * Operations that have successfully been cancelled have [Operation.error][]
-     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>
@@ -1744,6 +1851,189 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       apiVersion_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList warnings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureWarningsIsMutable() {
+      if (!warnings_.isModifiable()) {
+        warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @return A list containing the warnings.
+     */
+    public com.google.protobuf.ProtocolStringList getWarningsList() {
+      warnings_.makeImmutable();
+      return warnings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @return The count of warnings.
+     */
+    public int getWarningsCount() {
+      return warnings_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The warnings at the given index.
+     */
+    public java.lang.String getWarnings(int index) {
+      return warnings_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the warnings at the given index.
+     */
+    public com.google.protobuf.ByteString getWarningsBytes(int index) {
+      return warnings_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The warnings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWarnings(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWarningsIsMutable();
+      warnings_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param value The warnings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWarnings(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWarningsIsMutable();
+      warnings_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param values The warnings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWarnings(java.lang.Iterable<java.lang.String> values) {
+      ensureWarningsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWarnings() {
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Warnings that do not block the operation, but still hold relevant
+     * information for the end user to receive.
+     * </pre>
+     *
+     * <code>repeated string warnings = 8;</code>
+     *
+     * @param value The bytes of the warnings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWarningsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureWarningsIsMutable();
+      warnings_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

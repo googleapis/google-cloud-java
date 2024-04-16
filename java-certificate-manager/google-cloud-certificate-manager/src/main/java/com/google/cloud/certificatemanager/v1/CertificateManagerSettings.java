@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -339,6 +340,54 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
       deleteCertificateIssuanceConfigOperationSettings() {
     return ((CertificateManagerStubSettings) getStubSettings())
         .deleteCertificateIssuanceConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTrustConfigs. */
+  public PagedCallSettings<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      listTrustConfigsSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings()).listTrustConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTrustConfig. */
+  public UnaryCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings()).getTrustConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public UnaryCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings()).createTrustConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public OperationCallSettings<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .createTrustConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public UnaryCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings()).updateTrustConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public OperationCallSettings<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .updateTrustConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public UnaryCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings()).deleteTrustConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public OperationCallSettings<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .deleteTrustConfigOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -710,6 +759,54 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings() {
       return getStubSettingsBuilder().deleteCertificateIssuanceConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTrustConfigs. */
+    public PagedCallSettings.Builder<
+            ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+        listTrustConfigsSettings() {
+      return getStubSettingsBuilder().listTrustConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTrustConfig. */
+    public UnaryCallSettings.Builder<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+      return getStubSettingsBuilder().getTrustConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public UnaryCallSettings.Builder<CreateTrustConfigRequest, Operation>
+        createTrustConfigSettings() {
+      return getStubSettingsBuilder().createTrustConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public OperationCallSettings.Builder<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+        createTrustConfigOperationSettings() {
+      return getStubSettingsBuilder().createTrustConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public UnaryCallSettings.Builder<UpdateTrustConfigRequest, Operation>
+        updateTrustConfigSettings() {
+      return getStubSettingsBuilder().updateTrustConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public OperationCallSettings.Builder<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+        updateTrustConfigOperationSettings() {
+      return getStubSettingsBuilder().updateTrustConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public UnaryCallSettings.Builder<DeleteTrustConfigRequest, Operation>
+        deleteTrustConfigSettings() {
+      return getStubSettingsBuilder().deleteTrustConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public OperationCallSettings.Builder<DeleteTrustConfigRequest, Empty, OperationMetadata>
+        deleteTrustConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteTrustConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

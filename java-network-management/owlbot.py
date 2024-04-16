@@ -15,9 +15,52 @@
 import synthtool as s
 from synthtool.languages import java
 
+v1_file_name = "owl-bot-staging/v1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java"
+v1beta1_file_name = "owl-bot-staging/v1beta1/google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java"
+
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
+    s.replace(
+        v1_file_name,
+        r'^import org.junit.Test;',
+        'import org.junit.Ignore;\nimport org.junit.Test;'
+    )
+    s.replace(
+        v1_file_name,
+        r"\s+@Test\n\s+public void setIamPolicyTest\(\) throws Exception.*",
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void setIamPolicyTest() throws Exception {'
+    )
+    s.replace(
+        v1_file_name,
+        r'\s+@Test\n\s+public void getIamPolicyTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void getIamPolicyTest() throws Exception {'
+    )
+    s.replace(
+        v1_file_name,
+        r'\s+@Test\n\s+public void testIamPermissionsTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void testIamPermissionsTest() throws Exception {'
+    )
+    s.replace(
+        v1beta1_file_name,
+        r'^import org.junit.Test;',
+        'import org.junit.Ignore;\nimport org.junit.Test;'
+    )
+    s.replace(
+        v1beta1_file_name,
+        r"\s+@Test\n\s+public void setIamPolicyTest\(\) throws Exception.*",
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void setIamPolicyTest() throws Exception {'
+    )
+    s.replace(
+        v1beta1_file_name,
+        r'\s+@Test\n\s+public void getIamPolicyTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void getIamPolicyTest() throws Exception {'
+    )
+    s.replace(
+        v1beta1_file_name,
+        r'\s+@Test\n\s+public void testIamPermissionsTest\(\) throws Exception.*',
+        '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void testIamPermissionsTest() throws Exception {'
+    )
     s.move(library)
 
 s.remove_staging_dirs()

@@ -19,6 +19,47 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AclConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Acl Configuration.
+ *
+ * <p>Sample for AclConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AclConfigServiceClient aclConfigServiceClient = AclConfigServiceClient.create()) {
+ *   UpdateAclConfigRequest request =
+ *       UpdateAclConfigRequest.newBuilder().setAclConfig(AclConfig.newBuilder().build()).build();
+ *   AclConfig response = aclConfigServiceClient.updateAclConfig(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ChunkServiceClient =======================
+ *
+ * <p>Service Description: Service for displaying processed
+ * [Chunk][google.cloud.discoveryengine.v1alpha.Chunk] information of the customer's unstructured
+ * data.
+ *
+ * <p>Sample for ChunkServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ChunkServiceClient chunkServiceClient = ChunkServiceClient.create()) {
+ *   ChunkName name =
+ *       ChunkName.ofProjectLocationDataStoreBranchDocumentChunkName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]", "[CHUNK]");
+ *   Chunk response = chunkServiceClient.getChunk(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CompletionServiceClient =======================
  *
  * <p>Service Description: Service for Auto-Completion.
@@ -131,6 +172,102 @@
  * }
  * }</pre>
  *
+ * <p>======================= EstimateBillingServiceClient =======================
+ *
+ * <p>Service Description: Service for managing billing estimations resources.
+ *
+ * <p>Sample for EstimateBillingServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EstimateBillingServiceClient estimateBillingServiceClient =
+ *     EstimateBillingServiceClient.create()) {
+ *   EstimateDataSizeRequest request =
+ *       EstimateDataSizeRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .build();
+ *   EstimateDataSizeResponse response =
+ *       estimateBillingServiceClient.estimateDataSizeAsync(request).get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= GroundedGenerationServiceClient =======================
+ *
+ * <p>Service Description: Service for grounded generation.
+ *
+ * <p>Sample for GroundedGenerationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+ *     GroundedGenerationServiceClient.create()) {
+ *   CheckGroundingRequest request =
+ *       CheckGroundingRequest.newBuilder()
+ *           .setGroundingConfig(
+ *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
+ *                   .toString())
+ *           .setAnswerCandidate("answerCandidate-292402331")
+ *           .addAllFacts(new ArrayList<GroundingFact>())
+ *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .build();
+ *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ProjectServiceClient =======================
+ *
+ * <p>Service Description: Service for operations on the
+ * [Project][google.cloud.discoveryengine.v1alpha.Project].
+ *
+ * <p>Sample for ProjectServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectServiceClient projectServiceClient = ProjectServiceClient.create()) {
+ *   ProjectName name = ProjectName.of("[PROJECT]");
+ *   Project response = projectServiceClient.getProject(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RankServiceClient =======================
+ *
+ * <p>Service Description: Service for ranking text records.
+ *
+ * <p>Sample for RankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RankServiceClient rankServiceClient = RankServiceClient.create()) {
+ *   RankRequest request =
+ *       RankRequest.newBuilder()
+ *           .setRankingConfig(
+ *               RankingConfigName.of("[PROJECT]", "[LOCATION]", "[RANKING_CONFIG]").toString())
+ *           .setModel("model104069929")
+ *           .setTopN(110545924)
+ *           .setQuery("query107944136")
+ *           .addAllRecords(new ArrayList<RankingRecord>())
+ *           .setIgnoreRecordDetailsInResponse(true)
+ *           .build();
+ *   RankResponse response = rankServiceClient.rank(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= RecommendationServiceClient =======================
  *
  * <p>Service Description: Service for making recommendations.
@@ -211,6 +348,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -226,6 +364,7 @@
  *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -257,6 +396,28 @@
  *           .build();
  *   TrainCustomModelResponse response =
  *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServingConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
+ *
+ * <p>Sample for ServingConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ServingConfigServiceClient servingConfigServiceClient =
+ *     ServingConfigServiceClient.create()) {
+ *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   ServingConfig response =
+ *       servingConfigServiceClient.updateServingConfig(servingConfig, updateMask);
  * }
  * }</pre>
  *

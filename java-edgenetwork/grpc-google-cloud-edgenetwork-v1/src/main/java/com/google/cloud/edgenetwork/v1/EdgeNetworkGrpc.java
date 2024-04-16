@@ -1289,9 +1289,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Lists Zones in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listZones(
         com.google.cloud.edgenetwork.v1.ListZonesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.edgenetwork.v1.ListZonesResponse>
@@ -1303,9 +1305,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Gets details of a single Zone.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getZone(
         com.google.cloud.edgenetwork.v1.GetZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.edgenetwork.v1.Zone> responseObserver) {
@@ -1704,9 +1708,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Lists Zones in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listZones(
         com.google.cloud.edgenetwork.v1.ListZonesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.edgenetwork.v1.ListZonesResponse>
@@ -1719,9 +1725,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Gets details of a single Zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getZone(
         com.google.cloud.edgenetwork.v1.GetZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.edgenetwork.v1.Zone> responseObserver) {
@@ -2142,9 +2150,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Lists Zones in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.edgenetwork.v1.ListZonesResponse listZones(
         com.google.cloud.edgenetwork.v1.ListZonesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2155,9 +2165,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Gets details of a single Zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.edgenetwork.v1.Zone getZone(
         com.google.cloud.edgenetwork.v1.GetZoneRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2505,9 +2517,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Lists Zones in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.edgenetwork.v1.ListZonesResponse>
         listZones(com.google.cloud.edgenetwork.v1.ListZonesRequest request) {
@@ -2519,9 +2533,11 @@ public final class EdgeNetworkGrpc {
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * Gets details of a single Zone.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.edgenetwork.v1.Zone>
         getZone(com.google.cloud.edgenetwork.v1.GetZoneRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

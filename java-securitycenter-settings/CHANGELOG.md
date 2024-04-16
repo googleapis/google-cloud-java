@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.44.0 (2024-04-04)
+
+* No change
+
+
+## 0.42.0 (2024-03-28)
+
+### Features
+
+* Add Notebook field to finding's list of attributes ([11b0068](https://github.com/googleapis/google-cloud-java/commit/11b006884eb99a9426cc06c25f1689a7708d4869))
+
+
+
+## 0.41.0 (2024-03-22)
+
+### Features
+
+* Add security_posture, external_system.case_uri, external_system.case_priority, external_system.case_sla, external_system.case_create_time, external_system.case_close_time, and external_system.ticket_info to finding's list of attributes ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* Added security center api V2 client library ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 0.40.0 (2024-03-06)
 
 ### Features

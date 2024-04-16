@@ -167,6 +167,64 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> PauseEngine</td>
+ *      <td><p> Pauses the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> pauseEngine(PauseEngineRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> pauseEngine(EngineName name)
+ *           <li><p> pauseEngine(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> pauseEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResumeEngine</td>
+ *      <td><p> Resumes the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeEngine(ResumeEngineRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> resumeEngine(EngineName name)
+ *           <li><p> resumeEngine(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TuneEngine</td>
+ *      <td><p> Tunes an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> tuneEngineAsync(TuneEngineRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> tuneEngineAsync(EngineName name)
+ *           <li><p> tuneEngineAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> tuneEngineOperationCallable()
+ *           <li><p> tuneEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1002,6 +1060,401 @@ public class EngineServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable() {
     return stub.listEnginesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Engine response = engineServiceClient.pauseEngine(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the engine to pause. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine pauseEngine(EngineName name) {
+    PauseEngineRequest request =
+        PauseEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return pauseEngine(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString();
+   *   Engine response = engineServiceClient.pauseEngine(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the engine to pause. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine pauseEngine(String name) {
+    PauseEngineRequest request = PauseEngineRequest.newBuilder().setName(name).build();
+    return pauseEngine(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   PauseEngineRequest request =
+   *       PauseEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   Engine response = engineServiceClient.pauseEngine(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine pauseEngine(PauseEngineRequest request) {
+    return pauseEngineCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   PauseEngineRequest request =
+   *       PauseEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   ApiFuture<Engine> future = engineServiceClient.pauseEngineCallable().futureCall(request);
+   *   // Do something.
+   *   Engine response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable() {
+    return stub.pauseEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Engine response = engineServiceClient.resumeEngine(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the engine to resume. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine resumeEngine(EngineName name) {
+    ResumeEngineRequest request =
+        ResumeEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return resumeEngine(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString();
+   *   Engine response = engineServiceClient.resumeEngine(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the engine to resume. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine resumeEngine(String name) {
+    ResumeEngineRequest request = ResumeEngineRequest.newBuilder().setName(name).build();
+    return resumeEngine(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResumeEngineRequest request =
+   *       ResumeEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   Engine response = engineServiceClient.resumeEngine(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Engine resumeEngine(ResumeEngineRequest request) {
+    return resumeEngineCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResumeEngineRequest request =
+   *       ResumeEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   ApiFuture<Engine> future = engineServiceClient.resumeEngineCallable().futureCall(request);
+   *   // Do something.
+   *   Engine response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable() {
+    return stub.resumeEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   TuneEngineResponse response = engineServiceClient.tuneEngineAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the engine to tune. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(
+      EngineName name) {
+    TuneEngineRequest request =
+        TuneEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return tuneEngineAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString();
+   *   TuneEngineResponse response = engineServiceClient.tuneEngineAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the engine to tune. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(
+      String name) {
+    TuneEngineRequest request = TuneEngineRequest.newBuilder().setName(name).build();
+    return tuneEngineAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   TuneEngineRequest request =
+   *       TuneEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   TuneEngineResponse response = engineServiceClient.tuneEngineAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(
+      TuneEngineRequest request) {
+    return tuneEngineOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   TuneEngineRequest request =
+   *       TuneEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   OperationFuture<TuneEngineResponse, TuneEngineMetadata> future =
+   *       engineServiceClient.tuneEngineOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TuneEngineResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable() {
+    return stub.tuneEngineOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   TuneEngineRequest request =
+   *       TuneEngineRequest.newBuilder()
+   *           .setName(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = engineServiceClient.tuneEngineCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
+    return stub.tuneEngineCallable();
   }
 
   @Override

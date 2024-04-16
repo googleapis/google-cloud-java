@@ -30,6 +30,11 @@ import com.google.cloud.discoveryengine.v1beta.Engine;
 import com.google.cloud.discoveryengine.v1beta.GetEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesResponse;
+import com.google.cloud.discoveryengine.v1beta.PauseEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -86,6 +91,23 @@ public abstract class EngineServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable() {
     throw new UnsupportedOperationException("Not implemented: listEnginesCallable()");
+  }
+
+  public UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable() {
+    throw new UnsupportedOperationException("Not implemented: pauseEngineCallable()");
+  }
+
+  public UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeEngineCallable()");
+  }
+
+  public OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: tuneEngineOperationCallable()");
+  }
+
+  public UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
+    throw new UnsupportedOperationException("Not implemented: tuneEngineCallable()");
   }
 
   @Override

@@ -835,10 +835,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * The PEM encoded CA certificate chains of all certificate authorities in
+   * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+   * DISABLED, or STAGED states.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;
@@ -853,10 +852,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * The PEM encoded CA certificate chains of all certificate authorities in
+   * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+   * DISABLED, or STAGED states.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;
@@ -872,10 +870,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * The PEM encoded CA certificate chains of all certificate authorities in
+   * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+   * DISABLED, or STAGED states.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;
@@ -889,10 +886,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * The PEM encoded CA certificate chains of all certificate authorities in
+   * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+   * DISABLED, or STAGED states.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;
@@ -907,10 +903,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all
-   * [ACTIVE][CertificateAuthority.State.ACTIVE]
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * The PEM encoded CA certificate chains of all certificate authorities in
+   * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+   * DISABLED, or STAGED states.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain ca_certs = 1;
@@ -1338,10 +1333,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1360,10 +1354,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1381,10 +1374,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1403,10 +1395,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1431,10 +1422,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1458,10 +1448,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1486,10 +1475,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1514,10 +1502,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1540,10 +1527,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1567,10 +1553,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1594,10 +1579,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1618,10 +1602,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1642,10 +1625,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1660,10 +1642,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1682,10 +1663,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1706,10 +1686,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1727,10 +1706,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>
@@ -1749,10 +1727,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The PEM encoded CA certificate chains of all
-     * [ACTIVE][CertificateAuthority.State.ACTIVE]
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The PEM encoded CA certificate chains of all certificate authorities in
+     * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      *
      * <code>

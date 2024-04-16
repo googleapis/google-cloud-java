@@ -130,18 +130,4 @@ public interface CreatePipelineJobRequestOrBuilder
    * @return The bytes for pipelineJobId.
    */
   com.google.protobuf.ByteString getPipelineJobIdBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether to do component level validations before job creation.
-   * Currently we only support Google First Party Component/Pipelines.
-   * </pre>
-   *
-   * <code>bool preflight_validations = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The preflightValidations.
-   */
-  boolean getPreflightValidations();
 }

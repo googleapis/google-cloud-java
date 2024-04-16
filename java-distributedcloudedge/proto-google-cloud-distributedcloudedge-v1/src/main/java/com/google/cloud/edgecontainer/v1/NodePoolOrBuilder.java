@@ -260,8 +260,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -275,8 +275,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -290,8 +290,8 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -300,4 +300,70 @@ public interface NodePoolOrBuilder
    */
   com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryptionOrBuilder
       getLocalDiskEncryptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The lowest release version among all worker nodes.
+   * </pre>
+   *
+   * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The nodeVersion.
+   */
+  java.lang.String getNodeVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The lowest release version among all worker nodes.
+   * </pre>
+   *
+   * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for nodeVersion.
+   */
+  com.google.protobuf.ByteString getNodeVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeConfig field is set.
+   */
+  boolean hasNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeConfig.
+   */
+  com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder getNodeConfigOrBuilder();
 }

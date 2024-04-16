@@ -249,6 +249,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     return labels_;
   }
 
+  @java.lang.Deprecated
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
@@ -256,12 +257,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -278,12 +281,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -291,12 +296,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public /* nullable */ java.lang.String getLabelsOrDefault(
       java.lang.String key,
       /* nullable */
@@ -311,12 +318,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -336,14 +345,18 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * The deployment layout type.
    * </pre>
    *
-   * <code>string layout_name = 5;</code>
+   * <code>string layout_name = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+   *     google/cloud/edgenetwork/v1/resources.proto;l=79
    * @return The layoutName.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getLayoutName() {
     java.lang.Object ref = layoutName_;
     if (ref instanceof java.lang.String) {
@@ -359,14 +372,18 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * The deployment layout type.
    * </pre>
    *
-   * <code>string layout_name = 5;</code>
+   * <code>string layout_name = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+   *     google/cloud/edgenetwork/v1/resources.proto;l=79
    * @return The bytes for layoutName.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getLayoutNameBytes() {
     java.lang.Object ref = layoutName_;
     if (ref instanceof java.lang.String) {
@@ -1389,6 +1406,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
@@ -1396,6 +1414,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return labels_;
     }
 
+    @java.lang.Deprecated
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
       if (labels_ == null) {
@@ -1409,6 +1428,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return labels_;
     }
 
+    @java.lang.Deprecated
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
@@ -1416,12 +1436,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1438,12 +1460,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1451,12 +1475,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public /* nullable */ java.lang.String getLabelsOrDefault(
         java.lang.String key,
         /* nullable */
@@ -1471,12 +1497,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1488,6 +1516,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    @java.lang.Deprecated
     public Builder clearLabels() {
       bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
@@ -1497,11 +1526,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1519,11 +1550,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1539,11 +1572,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels as key value pairs
+     * Deprecated: not implemented.
+     * Labels as key value pairs.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000008;
@@ -1555,13 +1590,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * The deployment layout type.
      * </pre>
      *
-     * <code>string layout_name = 5;</code>
+     * <code>string layout_name = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+     *     google/cloud/edgenetwork/v1/resources.proto;l=79
      * @return The layoutName.
      */
+    @java.lang.Deprecated
     public java.lang.String getLayoutName() {
       java.lang.Object ref = layoutName_;
       if (!(ref instanceof java.lang.String)) {
@@ -1577,13 +1616,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * The deployment layout type.
      * </pre>
      *
-     * <code>string layout_name = 5;</code>
+     * <code>string layout_name = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+     *     google/cloud/edgenetwork/v1/resources.proto;l=79
      * @return The bytes for layoutName.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getLayoutNameBytes() {
       java.lang.Object ref = layoutName_;
       if (ref instanceof String) {
@@ -1599,14 +1642,18 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * The deployment layout type.
      * </pre>
      *
-     * <code>string layout_name = 5;</code>
+     * <code>string layout_name = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+     *     google/cloud/edgenetwork/v1/resources.proto;l=79
      * @param value The layoutName to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setLayoutName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1620,13 +1667,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * The deployment layout type.
      * </pre>
      *
-     * <code>string layout_name = 5;</code>
+     * <code>string layout_name = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+     *     google/cloud/edgenetwork/v1/resources.proto;l=79
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearLayoutName() {
       layoutName_ = getDefaultInstance().getLayoutName();
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1637,14 +1688,18 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: not implemented.
      * The deployment layout type.
      * </pre>
      *
-     * <code>string layout_name = 5;</code>
+     * <code>string layout_name = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+     *     google/cloud/edgenetwork/v1/resources.proto;l=79
      * @param value The bytes for layoutName to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setLayoutNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

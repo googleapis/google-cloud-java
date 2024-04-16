@@ -43,6 +43,7 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     hostedNode_ = "";
     zone_ = "";
+    version_ = "";
   }
 
   @java.lang.Override
@@ -346,6 +347,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
    * hosting e.g.
    * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
    * Or empty if the machine is not assigned to assume the role of a node.
+   *
+   * For control plane nodes hosted on edge machines, this will return
+   * the following format:
+   *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
    * </pre>
    *
    * <code>string hosted_node = 5;</code>
@@ -372,6 +377,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
    * hosting e.g.
    * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
    * Or empty if the machine is not assigned to assume the role of a node.
+   *
+   * For control plane nodes hosted on edge machines, this will return
+   * the following format:
+   *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
    * </pre>
    *
    * <code>string hosted_node = 5;</code>
@@ -442,14 +451,65 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int VERSION_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The software version of the machine.
+   * </pre>
+   *
+   * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The software version of the machine.
+   * </pre>
+   *
+   * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISABLED_FIELD_NUMBER = 8;
   private boolean disabled_ = false;
   /**
    *
    *
    * <pre>
-   * Output only. Whether the machine is disabled. If disabled, the machine is unable to
-   * enter service.
+   * Output only. Whether the machine is disabled. If disabled, the machine is
+   * unable to enter service.
    * </pre>
    *
    * <code>bool disabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -492,6 +552,9 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, zone_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
+    }
     if (disabled_ != false) {
       output.writeBool(8, disabled_);
     }
@@ -529,6 +592,9 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, zone_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
+    }
     if (disabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, disabled_);
     }
@@ -560,6 +626,7 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getHostedNode().equals(other.getHostedNode())) return false;
     if (!getZone().equals(other.getZone())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (getDisabled() != other.getDisabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -590,6 +657,8 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getHostedNode().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -778,6 +847,7 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       hostedNode_ = "";
       zone_ = "";
+      version_ = "";
       disabled_ = false;
       return this;
     }
@@ -838,6 +908,9 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
         result.zone_ = zone_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.disabled_ = disabled_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -911,6 +984,11 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (other.getDisabled() != false) {
         setDisabled(other.getDisabled());
       }
@@ -982,10 +1060,16 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                version_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             case 64:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             default:
@@ -1701,6 +1785,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * hosting e.g.
      * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
      * Or empty if the machine is not assigned to assume the role of a node.
+     *
+     * For control plane nodes hosted on edge machines, this will return
+     * the following format:
+     *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
      * </pre>
      *
      * <code>string hosted_node = 5;</code>
@@ -1726,6 +1814,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * hosting e.g.
      * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
      * Or empty if the machine is not assigned to assume the role of a node.
+     *
+     * For control plane nodes hosted on edge machines, this will return
+     * the following format:
+     *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
      * </pre>
      *
      * <code>string hosted_node = 5;</code>
@@ -1751,6 +1843,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * hosting e.g.
      * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
      * Or empty if the machine is not assigned to assume the role of a node.
+     *
+     * For control plane nodes hosted on edge machines, this will return
+     * the following format:
+     *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
      * </pre>
      *
      * <code>string hosted_node = 5;</code>
@@ -1775,6 +1871,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * hosting e.g.
      * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
      * Or empty if the machine is not assigned to assume the role of a node.
+     *
+     * For control plane nodes hosted on edge machines, this will return
+     * the following format:
+     *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
      * </pre>
      *
      * <code>string hosted_node = 5;</code>
@@ -1795,6 +1895,10 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * hosting e.g.
      * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
      * Or empty if the machine is not assigned to assume the role of a node.
+     *
+     * For control plane nodes hosted on edge machines, this will return
+     * the following format:
+     *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
      * </pre>
      *
      * <code>string hosted_node = 5;</code>
@@ -1919,13 +2023,119 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The software version of the machine.
+     * </pre>
+     *
+     * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The software version of the machine.
+     * </pre>
+     *
+     * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The software version of the machine.
+     * </pre>
+     *
+     * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      version_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The software version of the machine.
+     * </pre>
+     *
+     * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+      version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The software version of the machine.
+     * </pre>
+     *
+     * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      version_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private boolean disabled_;
     /**
      *
      *
      * <pre>
-     * Output only. Whether the machine is disabled. If disabled, the machine is unable to
-     * enter service.
+     * Output only. Whether the machine is disabled. If disabled, the machine is
+     * unable to enter service.
      * </pre>
      *
      * <code>bool disabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1940,8 +2150,8 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether the machine is disabled. If disabled, the machine is unable to
-     * enter service.
+     * Output only. Whether the machine is disabled. If disabled, the machine is
+     * unable to enter service.
      * </pre>
      *
      * <code>bool disabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1952,7 +2162,7 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1960,8 +2170,8 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether the machine is disabled. If disabled, the machine is unable to
-     * enter service.
+     * Output only. Whether the machine is disabled. If disabled, the machine is
+     * unable to enter service.
      * </pre>
      *
      * <code>bool disabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1969,7 +2179,7 @@ public final class Machine extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       disabled_ = false;
       onChanged();
       return this;

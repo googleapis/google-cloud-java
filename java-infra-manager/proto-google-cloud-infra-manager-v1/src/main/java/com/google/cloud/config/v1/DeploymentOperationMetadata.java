@@ -186,6 +186,26 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>FAILED = 10;</code>
      */
     FAILED(10),
+    /**
+     *
+     *
+     * <pre>
+     * Validating the provided repository.
+     * </pre>
+     *
+     * <code>VALIDATING_REPOSITORY = 11;</code>
+     */
+    VALIDATING_REPOSITORY(11),
+    /**
+     *
+     *
+     * <pre>
+     * Running quota validation
+     * </pre>
+     *
+     * <code>RUNNING_QUOTA_VALIDATION = 12;</code>
+     */
+    RUNNING_QUOTA_VALIDATION(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -300,6 +320,26 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>FAILED = 10;</code>
      */
     public static final int FAILED_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Validating the provided repository.
+     * </pre>
+     *
+     * <code>VALIDATING_REPOSITORY = 11;</code>
+     */
+    public static final int VALIDATING_REPOSITORY_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Running quota validation
+     * </pre>
+     *
+     * <code>RUNNING_QUOTA_VALIDATION = 12;</code>
+     */
+    public static final int RUNNING_QUOTA_VALIDATION_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -347,6 +387,10 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
           return SUCCEEDED;
         case 10:
           return FAILED;
+        case 11:
+          return VALIDATING_REPOSITORY;
+        case 12:
+          return RUNNING_QUOTA_VALIDATION;
         default:
           return null;
       }

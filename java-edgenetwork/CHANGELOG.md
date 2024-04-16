@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.9.0 (2024-04-04)
+
+* No change
+
+
+## 0.7.0 (2024-03-28)
+
+* No change
+
+
+## 0.6.0 (2024-03-22)
+
+### Features
+
+* deprecate unimplemented Zone fields and methods ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+
+
+
 ## 0.5.0 (2024-03-06)
 
 * No change

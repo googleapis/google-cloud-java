@@ -840,6 +840,10 @@ message NodeConfig {
 
   // List of secondary boot disks attached to the nodes.
   repeated SecondaryBootDisk secondary_boot_disks = 48;
+
+  // Secondary boot disk update strategy.
+  optional SecondaryBootDiskUpdateStrategy secondary_boot_disk_update_strategy =
+      50;
 }
 
 // Specifies options for controlling advanced machine features.
@@ -2284,6 +2288,9 @@ message Cluster {
 
   // GKE Enterprise Configuration.
   EnterpriseConfig enterprise_config = 149;
+
+  // Secret CSI driver configuration.
+  SecretManagerConfig secret_manager_config = 150;
 }
 
 // Kubernetes open source beta apis enabled on the cluster.
@@ -2658,12 +2665,21 @@ message ClusterUpdate {
   // Google Compute Engine hosts.
   HostMaintenancePolicy desired_host_maintenance_policy = 132;
 
+  // Enable/Disable Multi-Networking for the cluster
+  optional bool desired_enable_multi_networking = 135;
+
   // The desired resource manager tags that apply to all auto-provisioned node
   // pools in autopilot clusters and node auto-provisioning enabled clusters.
   ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
 
   // Specify the details of in-transit encryption.
   optional InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+
+  // Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+  optional bool desired_enable_cilium_clusterwide_network_policy = 138;
+
+  // Enable/Disable Secret Manager Config.
+  optional SecretManagerConfig desired_secret_manager_config = 139;
 }
 
 // AdditionalPodRangesConfig is the configuration for additional pod secondary
@@ -4979,6 +4995,9 @@ message NetworkConfig {
 
   // Specify the details of in-transit encryption.
   optional InTransitEncryptionConfig in_transit_encryption_config = 20;
+
+  // Whether CiliumClusterWideNetworkPolicy is enabled on this cluster.
+  optional bool enable_cilium_clusterwide_network_policy = 21;
 }
 
 // GatewayAPIConfig contains the desired config of Gateway API on this cluster.
@@ -5246,12 +5265,68 @@ message DatabaseEncryption {
     DECRYPTED = 2;
   }
 
+  // Current State of etcd encryption.
+  enum CurrentState {
+    // Should never be set
+    CURRENT_STATE_UNSPECIFIED = 0;
+
+    // Secrets in etcd are encrypted.
+    CURRENT_STATE_ENCRYPTED = 7;
+
+    // Secrets in etcd are stored in plain text (at etcd level) - this is
+    // unrelated to Compute Engine level full disk encryption.
+    CURRENT_STATE_DECRYPTED = 2;
+
+    // Encryption (or re-encryption with a different CloudKMS key)
+    // of Secrets is in progress.
+    CURRENT_STATE_ENCRYPTION_PENDING = 3;
+
+    // Encryption (or re-encryption with a different CloudKMS key) of Secrets in
+    // etcd encountered an error.
+    CURRENT_STATE_ENCRYPTION_ERROR = 4;
+
+    // De-crypting Secrets to plain text in etcd is in progress.
+    CURRENT_STATE_DECRYPTION_PENDING = 5;
+
+    // De-crypting Secrets to plain text in etcd encountered an error.
+    CURRENT_STATE_DECRYPTION_ERROR = 6;
+  }
+
+  // OperationError records errors seen from CloudKMS keys
+  // encountered during updates to DatabaseEncryption configuration.
+  message OperationError {
+    // CloudKMS key resource that had the error.
+    string key_name = 1;
+
+    // Description of the error seen during the operation.
+    string error_message = 2;
+
+    // Time when the CloudKMS error was seen.
+    google.protobuf.Timestamp timestamp = 3;
+  }
+
   // Name of CloudKMS key to use for the encryption of secrets in etcd.
   // Ex. projects/my-project/locations/global/keyRings/my-ring/cryptoKeys/my-key
   string key_name = 1;
 
   // The desired state of etcd encryption.
   State state = 2;
+
+  // Output only. The current state of etcd encryption.
+  optional CurrentState current_state = 3
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Keys in use by the cluster for decrypting
+  // existing objects, in addition to the key in `key_name`.
+  //
+  // Each item is a CloudKMS key resource.
+  repeated string decryption_keys = 4
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Records errors seen during DatabaseEncryption update
+  // operations.
+  repeated OperationError last_operation_errors = 5
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Configuration for exporting cluster resource usages.
@@ -5942,6 +6017,12 @@ message EnterpriseConfig {
   ClusterTier cluster_tier = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
+// SecretManagerConfig is config for secret manager enablement.
+message SecretManagerConfig {
+  // Whether the cluster is configured to use secret manager CSI component.
+  optional bool enabled = 1;
+}
+
 // SecondaryBootDisk represents a persistent disk attached to a node
 // with special configurations based on its mode.
 message SecondaryBootDisk {
@@ -5975,3 +6056,7 @@ enum InTransitEncryptionConfig {
   // Data in-transit is encrypted using inter-node transparent encryption.
   IN_TRANSIT_ENCRYPTION_INTER_NODE_TRANSPARENT = 2;
 }
+
+// SecondaryBootDiskUpdateStrategy is a placeholder which will be extended
+// in the future to define different options for updating secondary boot disks.
+message SecondaryBootDiskUpdateStrategy {}

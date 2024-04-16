@@ -73,4 +73,29 @@ public interface DeliverInfoOrBuilder
    * @return The bytes for resourceUri.
    */
   com.google.protobuf.ByteString getResourceUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the target (if applicable).
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the target (if applicable).
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString getIpAddressBytes();
 }

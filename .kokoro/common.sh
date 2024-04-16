@@ -173,6 +173,26 @@ function run_graalvm_tests() {
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
 }
 
+function generate_graalvm_presubmit_modules_list() {
+  modules_assigned_list=()
+  generate_modified_modules_list
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 10 ]]; then
+    # If only a few modules have been modified, focus presubmit testing only on them.
+    module_list=$(
+      IFS=,
+      echo "${modified_module_list[*]}"
+    )
+  else
+    # If no modules have been modified or if too many have been modified, just test the modules
+    # specified in the MAVEN_MODULES env var.
+    if [ -z "${MAVEN_MODULES}" ]; then
+      echo "MAVEN_MODULES not defined in environment."
+      exit 1
+    fi
+    module_list=${MAVEN_MODULES}
+  fi
+}
+
 function generate_graalvm_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list

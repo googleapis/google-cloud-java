@@ -16,15 +16,18 @@
 
 package com.google.cloud.vertexai.generativeai;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.Part;
+import com.google.common.base.Strings;
 
 /** Helper class to create content. */
 public class ContentMaker {
-  private static String role = "user";
+  private static final String DEFAULT_ROLE = "user";
 
   /**
-   * Create a ContentMakerForRole for a given role.
+   * Creates a ContentMakerForRole for a given role.
    *
    * @param role Currently accepted role values are: "user", "model". No need to call forRole for
    *     the "user" role since it's the default role.
@@ -34,6 +37,7 @@ public class ContentMaker {
   }
 
   private static Content fromStringWithRole(String role, String text) {
+    checkArgument(!Strings.isNullOrEmpty(text), "text message can't be null or empty.");
     return Content.newBuilder().addParts(Part.newBuilder().setText(text)).setRole(role).build();
   }
 
@@ -53,7 +57,7 @@ public class ContentMaker {
   }
 
   /**
-   * Create a content from a string, assuming the role is "user".
+   * Creates a content from a string, assuming the role is "user".
    *
    * <p>The resulting content will contain one single {@link com.google.cloud.vertexai.api.Part}
    * with its text field set.
@@ -61,11 +65,11 @@ public class ContentMaker {
    * <p>To create a text content for "model", use `ContentMaker.forRole("model").fromString(text);
    */
   public static Content fromString(String text) {
-    return fromStringWithRole(role, text);
+    return fromStringWithRole(DEFAULT_ROLE, text);
   }
 
   /**
-   * Create a content from an array of Objects, assuming the role is "user".
+   * Creates a content from an array of Objects, assuming the role is "user".
    *
    * <p>The resulting content can contain multiple {@link com.google.cloud.vertexai.api.Part}s. Each
    * element in the array becomes one part.
@@ -76,8 +80,9 @@ public class ContentMaker {
    *     could be either a single String or a Part. When it's a single string, it's converted to a
    *     {@link com.google.cloud.vertexai.api.Part} that has the Text field set.
    */
+  // TODO(b/333097480) Deprecate ContentMakerForRole
   public static Content fromMultiModalData(Object... multiModalData) {
-    return fromMultiModalDataWithRole(role, multiModalData);
+    return fromMultiModalDataWithRole(DEFAULT_ROLE, multiModalData);
   }
 
   /**
@@ -91,7 +96,7 @@ public class ContentMaker {
     }
 
     /**
-     * Create a content from a string.
+     * Creates a content from a string.
      *
      * @param text a string which will be converted to a {@link com.google.cloud.vertexai.api.Part}
      *     with its text field set.
@@ -101,7 +106,7 @@ public class ContentMaker {
     }
 
     /**
-     * Create a content from an array of Objects.
+     * Creates a content from an array of Objects.
      *
      * @param multiModalData an array which contains the actual payload of each part. The element
      *     could be either a single String or a Part. When it's a single string, it's converted to a

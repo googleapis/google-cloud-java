@@ -29,7 +29,7 @@ public interface ConnectivityTestOrBuilder
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,7 +42,7 @@ public interface ConnectivityTestOrBuilder
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -610,4 +610,18 @@ public interface ConnectivityTestOrBuilder
    * </code>
    */
   com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder getProbingDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the test should skip firewall checking.
+   * If not provided, we assume false.
+   * </pre>
+   *
+   * <code>bool bypass_firewall_checks = 17;</code>
+   *
+   * @return The bypassFirewallChecks.
+   */
+  boolean getBypassFirewallChecks();
 }

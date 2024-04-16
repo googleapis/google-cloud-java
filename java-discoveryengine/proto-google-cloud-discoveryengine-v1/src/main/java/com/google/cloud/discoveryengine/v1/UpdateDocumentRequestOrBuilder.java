@@ -106,4 +106,42 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The allowMissing.
    */
   boolean getAllowMissing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported 'document' to update. If
+   * not set, will by default update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported 'document' to update. If
+   * not set, will by default update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported 'document' to update. If
+   * not set, will by default update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

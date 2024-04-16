@@ -28,6 +28,47 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The persistentResourceId.
+   */
+  java.lang.String getPersistentResourceId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for persistentResourceId.
+   */
+  com.google.protobuf.ByteString getPersistentResourceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The spec of the worker pools including machine type and Docker
    * image. All worker pools except the first one are optional and can be
    * skipped by providing an empty value.

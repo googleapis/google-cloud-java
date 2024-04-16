@@ -83,7 +83,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Place provides very expensive service s.
+   * Place provides very expensive services.
    * </pre>
    *
    * <code>PRICE_LEVEL_VERY_EXPENSIVE = 5;</code>
@@ -146,7 +146,7 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Place provides very expensive service s.
+   * Place provides very expensive services.
    * </pre>
    *
    * <code>PRICE_LEVEL_VERY_EXPENSIVE = 5;</code>

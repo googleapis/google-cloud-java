@@ -1910,9 +1910,8 @@ public final class CertificateAuthorityServiceGrpc {
      * <pre>
      * FetchCaCerts returns the current trust anchor for the
      * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * certificate chains for all certificate authorities in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      */
     default void fetchCaCerts(
@@ -2461,9 +2460,8 @@ public final class CertificateAuthorityServiceGrpc {
      * <pre>
      * FetchCaCerts returns the current trust anchor for the
      * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * certificate chains for all certificate authorities in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      */
     public void fetchCaCerts(
@@ -2944,9 +2942,8 @@ public final class CertificateAuthorityServiceGrpc {
      * <pre>
      * FetchCaCerts returns the current trust anchor for the
      * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * certificate chains for all certificate authorities in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.FetchCaCertsResponse fetchCaCerts(
@@ -3414,9 +3411,8 @@ public final class CertificateAuthorityServiceGrpc {
      * <pre>
      * FetchCaCerts returns the current trust anchor for the
      * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * certificate chains for all certificate authorities in the ENABLED,
+     * DISABLED, or STAGED states.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

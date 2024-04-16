@@ -311,6 +311,16 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>FASTLY = 3;</code>
      */
     FASTLY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Cloudflare
+     * </pre>
+     *
+     * <code>CLOUDFLARE = 4;</code>
+     */
+    CLOUDFLARE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -344,6 +354,16 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>FASTLY = 3;</code>
      */
     public static final int FASTLY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Cloudflare
+     * </pre>
+     *
+     * <code>CLOUDFLARE = 4;</code>
+     */
+    public static final int CLOUDFLARE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -375,6 +395,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
           return CA;
         case 3:
           return FASTLY;
+        case 4:
+          return CLOUDFLARE;
         default:
           return null;
       }

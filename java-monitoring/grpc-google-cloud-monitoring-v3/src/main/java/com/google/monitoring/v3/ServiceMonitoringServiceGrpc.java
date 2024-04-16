@@ -22,9 +22,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
- * managing and querying aspects of a workspace's services. These include the
- * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
- * of categorized Health Metrics.
+ * managing and querying aspects of a Metrics Scope's services. These include
+ * the `Service`'s monitored resources, its Service-Level Objectives, and a
+ * taxonomy of categorized Health Metrics.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -558,9 +558,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public interface AsyncService {
@@ -596,7 +596,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     default void listServices(
@@ -715,9 +715,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public abstract static class ServiceMonitoringServiceImplBase
@@ -734,9 +734,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceStub
@@ -785,7 +785,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public void listServices(
@@ -920,9 +920,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceBlockingStub
@@ -968,7 +968,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public com.google.monitoring.v3.ListServicesResponse listServices(
@@ -1075,9 +1075,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceFutureStub
@@ -1123,7 +1123,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

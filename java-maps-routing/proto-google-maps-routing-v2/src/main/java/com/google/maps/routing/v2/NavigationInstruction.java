@@ -24,7 +24,7 @@ package com.google.maps.routing.v2;
  *
  * <pre>
  * Encapsulates navigation instructions for a
- * [RouteLegStep][google.maps.routing.v2.RouteLegStep]
+ * [`RouteLegStep`][google.maps.routing.v2.RouteLegStep].
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.NavigationInstruction}
@@ -71,8 +71,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Encapsulates the navigation instructions for the current step (e.g., turn
-   * left, merge, straight, etc.). This field determines which icon to display.
+   * Encapsulates the navigation instructions for the current step (for example,
+   * turn left, merge, or straight). This field determines which icon to
+   * display.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -87,8 +88,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Encapsulates the navigation instructions for the current step (e.g., turn
-   * left, merge, straight, etc.). This field determines which icon to display.
+   * Encapsulates the navigation instructions for the current step (for example,
+   * turn left, merge, or straight). This field determines which icon to
+   * display.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -326,7 +328,7 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Encapsulates navigation instructions for a
-   * [RouteLegStep][google.maps.routing.v2.RouteLegStep]
+   * [`RouteLegStep`][google.maps.routing.v2.RouteLegStep].
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.NavigationInstruction}
@@ -523,8 +525,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Encapsulates the navigation instructions for the current step (e.g., turn
-     * left, merge, straight, etc.). This field determines which icon to display.
+     * Encapsulates the navigation instructions for the current step (for example,
+     * turn left, merge, or straight). This field determines which icon to
+     * display.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -539,8 +542,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Encapsulates the navigation instructions for the current step (e.g., turn
-     * left, merge, straight, etc.). This field determines which icon to display.
+     * Encapsulates the navigation instructions for the current step (for example,
+     * turn left, merge, or straight). This field determines which icon to
+     * display.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -558,8 +562,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Encapsulates the navigation instructions for the current step (e.g., turn
-     * left, merge, straight, etc.). This field determines which icon to display.
+     * Encapsulates the navigation instructions for the current step (for example,
+     * turn left, merge, or straight). This field determines which icon to
+     * display.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -576,8 +581,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Encapsulates the navigation instructions for the current step (e.g., turn
-     * left, merge, straight, etc.). This field determines which icon to display.
+     * Encapsulates the navigation instructions for the current step (for example,
+     * turn left, merge, or straight). This field determines which icon to
+     * display.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -598,8 +604,9 @@ public final class NavigationInstruction extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Encapsulates the navigation instructions for the current step (e.g., turn
-     * left, merge, straight, etc.). This field determines which icon to display.
+     * Encapsulates the navigation instructions for the current step (for example,
+     * turn left, merge, or straight). This field determines which icon to
+     * display.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>

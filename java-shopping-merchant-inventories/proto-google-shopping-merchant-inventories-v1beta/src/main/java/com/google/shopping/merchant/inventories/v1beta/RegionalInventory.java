@@ -154,13 +154,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. ID of the region for this
+   * Required. Immutable. ID of the region for this
    * `RegionalInventory` resource. See the [Regional availability and
    * pricing](https://support.google.com/merchants/answer/9698880) for more
    * details.
    * </pre>
    *
-   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The region.
    */
@@ -180,13 +182,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. ID of the region for this
+   * Required. Immutable. ID of the region for this
    * `RegionalInventory` resource. See the [Regional availability and
    * pricing](https://support.google.com/merchants/answer/9698880) for more
    * details.
    * </pre>
    *
-   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for region.
    */
@@ -1301,13 +1305,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the region for this
+     * Required. Immutable. ID of the region for this
      * `RegionalInventory` resource. See the [Regional availability and
      * pricing](https://support.google.com/merchants/answer/9698880) for more
      * details.
      * </pre>
      *
-     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The region.
      */
@@ -1326,13 +1332,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the region for this
+     * Required. Immutable. ID of the region for this
      * `RegionalInventory` resource. See the [Regional availability and
      * pricing](https://support.google.com/merchants/answer/9698880) for more
      * details.
      * </pre>
      *
-     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for region.
      */
@@ -1351,13 +1359,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the region for this
+     * Required. Immutable. ID of the region for this
      * `RegionalInventory` resource. See the [Regional availability and
      * pricing](https://support.google.com/merchants/answer/9698880) for more
      * details.
      * </pre>
      *
-     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The region to set.
      * @return This builder for chaining.
@@ -1375,13 +1385,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the region for this
+     * Required. Immutable. ID of the region for this
      * `RegionalInventory` resource. See the [Regional availability and
      * pricing](https://support.google.com/merchants/answer/9698880) for more
      * details.
      * </pre>
      *
-     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1395,13 +1407,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the region for this
+     * Required. Immutable. ID of the region for this
      * `RegionalInventory` resource. See the [Regional availability and
      * pricing](https://support.google.com/merchants/answer/9698880) for more
      * details.
      * </pre>
      *
-     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for region to set.
      * @return This builder for chaining.

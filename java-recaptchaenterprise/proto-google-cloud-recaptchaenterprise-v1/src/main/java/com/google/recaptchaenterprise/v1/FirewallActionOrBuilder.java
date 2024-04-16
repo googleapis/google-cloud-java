@@ -104,6 +104,52 @@ public interface FirewallActionOrBuilder
    *
    *
    * <pre>
+   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * returned by the site backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction include_recaptcha_script = 6;
+   * </code>
+   *
+   * @return Whether the includeRecaptchaScript field is set.
+   */
+  boolean hasIncludeRecaptchaScript();
+  /**
+   *
+   *
+   * <pre>
+   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * returned by the site backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction include_recaptcha_script = 6;
+   * </code>
+   *
+   * @return The includeRecaptchaScript.
+   */
+  com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction
+      getIncludeRecaptchaScript();
+  /**
+   *
+   *
+   * <pre>
+   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * returned by the site backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptAction include_recaptcha_script = 6;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FirewallAction.IncludeRecaptchaScriptActionOrBuilder
+      getIncludeRecaptchaScriptOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * This action will redirect the request to a ReCaptcha interstitial to
    * attach a token.
    * </pre>

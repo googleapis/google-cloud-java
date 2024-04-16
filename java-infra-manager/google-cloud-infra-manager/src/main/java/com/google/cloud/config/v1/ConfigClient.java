@@ -473,6 +473,45 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListTerraformVersions</td>
+ *      <td><p> Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTerraformVersions(ListTerraformVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTerraformVersions(LocationName parent)
+ *           <li><p> listTerraformVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTerraformVersionsPagedCallable()
+ *           <li><p> listTerraformVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTerraformVersion</td>
+ *      <td><p> Gets details about a [TerraformVersion][google.cloud.config.v1.TerraformVersion].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTerraformVersion(GetTerraformVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTerraformVersion(TerraformVersionName name)
+ *           <li><p> getTerraformVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTerraformVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -3387,6 +3426,306 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and
+   * location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (TerraformVersion element : configClient.listTerraformVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the TerraformVersions are listed. The
+   *     parent value is in the format: 'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTerraformVersionsPagedResponse listTerraformVersions(LocationName parent) {
+    ListTerraformVersionsRequest request =
+        ListTerraformVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTerraformVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and
+   * location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (TerraformVersion element : configClient.listTerraformVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the TerraformVersions are listed. The
+   *     parent value is in the format: 'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTerraformVersionsPagedResponse listTerraformVersions(String parent) {
+    ListTerraformVersionsRequest request =
+        ListTerraformVersionsRequest.newBuilder().setParent(parent).build();
+    return listTerraformVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and
+   * location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListTerraformVersionsRequest request =
+   *       ListTerraformVersionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (TerraformVersion element : configClient.listTerraformVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTerraformVersionsPagedResponse listTerraformVersions(
+      ListTerraformVersionsRequest request) {
+    return listTerraformVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and
+   * location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListTerraformVersionsRequest request =
+   *       ListTerraformVersionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<TerraformVersion> future =
+   *       configClient.listTerraformVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TerraformVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable() {
+    return stub.listTerraformVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a given project and
+   * location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListTerraformVersionsRequest request =
+   *       ListTerraformVersionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListTerraformVersionsResponse response =
+   *         configClient.listTerraformVersionsCallable().call(request);
+   *     for (TerraformVersion element : response.getTerraformVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable() {
+    return stub.listTerraformVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   TerraformVersionName name =
+   *       TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]");
+   *   TerraformVersion response = configClient.getTerraformVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the TerraformVersion. Format:
+   *     'projects/{project_id}/locations/{location}/terraformVersions/{terraform_version}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerraformVersion getTerraformVersion(TerraformVersionName name) {
+    GetTerraformVersionRequest request =
+        GetTerraformVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getTerraformVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]").toString();
+   *   TerraformVersion response = configClient.getTerraformVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the TerraformVersion. Format:
+   *     'projects/{project_id}/locations/{location}/terraformVersions/{terraform_version}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerraformVersion getTerraformVersion(String name) {
+    GetTerraformVersionRequest request =
+        GetTerraformVersionRequest.newBuilder().setName(name).build();
+    return getTerraformVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetTerraformVersionRequest request =
+   *       GetTerraformVersionRequest.newBuilder()
+   *           .setName(
+   *               TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   TerraformVersion response = configClient.getTerraformVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerraformVersion getTerraformVersion(GetTerraformVersionRequest request) {
+    return getTerraformVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetTerraformVersionRequest request =
+   *       GetTerraformVersionRequest.newBuilder()
+   *           .setName(
+   *               TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TerraformVersion> future =
+   *       configClient.getTerraformVersionCallable().futureCall(request);
+   *   // Do something.
+   *   TerraformVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionCallable() {
+    return stub.getTerraformVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -4061,6 +4400,90 @@ public class ConfigClient implements BackgroundResource {
     protected ListPreviewsFixedSizeCollection createCollection(
         List<ListPreviewsPage> pages, int collectionSize) {
       return new ListPreviewsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTerraformVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          TerraformVersion,
+          ListTerraformVersionsPage,
+          ListTerraformVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListTerraformVersionsPagedResponse> createAsync(
+        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+            context,
+        ApiFuture<ListTerraformVersionsResponse> futureResponse) {
+      ApiFuture<ListTerraformVersionsPage> futurePage =
+          ListTerraformVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTerraformVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTerraformVersionsPagedResponse(ListTerraformVersionsPage page) {
+      super(page, ListTerraformVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTerraformVersionsPage
+      extends AbstractPage<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          TerraformVersion,
+          ListTerraformVersionsPage> {
+
+    private ListTerraformVersionsPage(
+        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+            context,
+        ListTerraformVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTerraformVersionsPage createEmptyPage() {
+      return new ListTerraformVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListTerraformVersionsPage createPage(
+        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+            context,
+        ListTerraformVersionsResponse response) {
+      return new ListTerraformVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTerraformVersionsPage> createPageAsync(
+        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+            context,
+        ApiFuture<ListTerraformVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTerraformVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          TerraformVersion,
+          ListTerraformVersionsPage,
+          ListTerraformVersionsFixedSizeCollection> {
+
+    private ListTerraformVersionsFixedSizeCollection(
+        List<ListTerraformVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTerraformVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListTerraformVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTerraformVersionsFixedSizeCollection createCollection(
+        List<ListTerraformVersionsPage> pages, int collectionSize) {
+      return new ListTerraformVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

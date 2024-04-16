@@ -534,8 +534,29 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public interface QuotaFailureOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure)
-        com.google.protobuf.MessageOrBuilder {}
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * This number is an estimation on how much total quota this project needs
+       * to successfully complete indexing.
+       * </pre>
+       *
+       * <code>int64 total_required_quota = 1;</code>
+       *
+       * @return The totalRequiredQuota.
+       */
+      long getTotalRequiredQuota();
+    }
     /**
+     *
+     *
+     * <pre>
+     * Failed due to insufficient quota.
+     * </pre>
+     *
      * Protobuf type {@code
      * google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure}
      */
@@ -574,6 +595,25 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
                     .Builder.class);
       }
 
+      public static final int TOTAL_REQUIRED_QUOTA_FIELD_NUMBER = 1;
+      private long totalRequiredQuota_ = 0L;
+      /**
+       *
+       *
+       * <pre>
+       * This number is an estimation on how much total quota this project needs
+       * to successfully complete indexing.
+       * </pre>
+       *
+       * <code>int64 total_required_quota = 1;</code>
+       *
+       * @return The totalRequiredQuota.
+       */
+      @java.lang.Override
+      public long getTotalRequiredQuota() {
+        return totalRequiredQuota_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -588,6 +628,9 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (totalRequiredQuota_ != 0L) {
+          output.writeInt64(1, totalRequiredQuota_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -597,6 +640,9 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
+        if (totalRequiredQuota_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, totalRequiredQuota_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -615,6 +661,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure other =
             (com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure) obj;
 
+        if (getTotalRequiredQuota() != other.getTotalRequiredQuota()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -626,6 +673,8 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TOTAL_REQUIRED_QUOTA_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalRequiredQuota());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -738,6 +787,12 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return builder;
       }
       /**
+       *
+       *
+       * <pre>
+       * Failed due to insufficient quota.
+       * </pre>
+       *
        * Protobuf type {@code
        * google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure}
        */
@@ -774,6 +829,8 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
+          totalRequiredQuota_ = 0L;
           return this;
         }
 
@@ -807,8 +864,19 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure result =
               new com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure(
                   this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.totalRequiredQuota_ = totalRequiredQuota_;
+          }
         }
 
         @java.lang.Override
@@ -865,6 +933,9 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           if (other
               == com.google.cloud.discoveryengine.v1alpha.TargetSite.FailureReason.QuotaFailure
                   .getDefaultInstance()) return this;
+          if (other.getTotalRequiredQuota() != 0L) {
+            setTotalRequiredQuota(other.getTotalRequiredQuota());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -891,6 +962,12 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
                 case 0:
                   done = true;
                   break;
+                case 8:
+                  {
+                    totalRequiredQuota_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -905,6 +982,64 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           } finally {
             onChanged();
           } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private long totalRequiredQuota_;
+        /**
+         *
+         *
+         * <pre>
+         * This number is an estimation on how much total quota this project needs
+         * to successfully complete indexing.
+         * </pre>
+         *
+         * <code>int64 total_required_quota = 1;</code>
+         *
+         * @return The totalRequiredQuota.
+         */
+        @java.lang.Override
+        public long getTotalRequiredQuota() {
+          return totalRequiredQuota_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This number is an estimation on how much total quota this project needs
+         * to successfully complete indexing.
+         * </pre>
+         *
+         * <code>int64 total_required_quota = 1;</code>
+         *
+         * @param value The totalRequiredQuota to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTotalRequiredQuota(long value) {
+
+          totalRequiredQuota_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This number is an estimation on how much total quota this project needs
+         * to successfully complete indexing.
+         * </pre>
+         *
+         * <code>int64 total_required_quota = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTotalRequiredQuota() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          totalRequiredQuota_ = 0L;
+          onChanged();
           return this;
         }
 
@@ -1930,7 +2065,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the target site, e.g. whether the site is to be included or
+   * The type of the target site, e.g., whether the site is to be included or
    * excluded.
    * </pre>
    *
@@ -1946,7 +2081,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the target site, e.g. whether the site is to be included or
+   * The type of the target site, e.g., whether the site is to be included or
    * excluded.
    * </pre>
    *
@@ -3063,7 +3198,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the target site, e.g. whether the site is to be included or
+     * The type of the target site, e.g., whether the site is to be included or
      * excluded.
      * </pre>
      *
@@ -3079,7 +3214,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the target site, e.g. whether the site is to be included or
+     * The type of the target site, e.g., whether the site is to be included or
      * excluded.
      * </pre>
      *
@@ -3098,7 +3233,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the target site, e.g. whether the site is to be included or
+     * The type of the target site, e.g., whether the site is to be included or
      * excluded.
      * </pre>
      *
@@ -3118,7 +3253,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the target site, e.g. whether the site is to be included or
+     * The type of the target site, e.g., whether the site is to be included or
      * excluded.
      * </pre>
      *
@@ -3140,7 +3275,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the target site, e.g. whether the site is to be included or
+     * The type of the target site, e.g., whether the site is to be included or
      * excluded.
      * </pre>
      *

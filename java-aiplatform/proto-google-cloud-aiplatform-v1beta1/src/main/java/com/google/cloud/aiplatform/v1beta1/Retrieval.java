@@ -71,6 +71,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VERTEX_AI_SEARCH(2),
+    VERTEX_RAG_STORE(4),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -91,6 +92,8 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 2:
           return VERTEX_AI_SEARCH;
+        case 4:
+          return VERTEX_RAG_STORE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -158,6 +161,60 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.VertexAISearch.getDefaultInstance();
   }
 
+  public static final int VERTEX_RAG_STORE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return Whether the vertexRagStore field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexRagStore() {
+    return sourceCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return The vertexRagStore.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexRagStore getVertexRagStore() {
+    if (sourceCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder getVertexRagStoreOrBuilder() {
+    if (sourceCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+  }
+
   public static final int DISABLE_ATTRIBUTION_FIELD_NUMBER = 3;
   private boolean disableAttribution_ = false;
   /**
@@ -198,6 +255,9 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     if (disableAttribution_ != false) {
       output.writeBool(3, disableAttribution_);
     }
+    if (sourceCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -214,6 +274,11 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     }
     if (disableAttribution_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, disableAttribution_);
+    }
+    if (sourceCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -237,6 +302,9 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getVertexAiSearch().equals(other.getVertexAiSearch())) return false;
         break;
+      case 4:
+        if (!getVertexRagStore().equals(other.getVertexRagStore())) return false;
+        break;
       case 0:
       default:
     }
@@ -257,6 +325,10 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + VERTEX_AI_SEARCH_FIELD_NUMBER;
         hash = (53 * hash) + getVertexAiSearch().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + VERTEX_RAG_STORE_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexRagStore().hashCode();
         break;
       case 0:
       default:
@@ -403,6 +475,9 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       if (vertexAiSearchBuilder_ != null) {
         vertexAiSearchBuilder_.clear();
       }
+      if (vertexRagStoreBuilder_ != null) {
+        vertexRagStoreBuilder_.clear();
+      }
       disableAttribution_ = false;
       sourceCase_ = 0;
       source_ = null;
@@ -443,7 +518,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Retrieval result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.disableAttribution_ = disableAttribution_;
       }
     }
@@ -453,6 +528,9 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       result.source_ = this.source_;
       if (sourceCase_ == 2 && vertexAiSearchBuilder_ != null) {
         result.source_ = vertexAiSearchBuilder_.build();
+      }
+      if (sourceCase_ == 4 && vertexRagStoreBuilder_ != null) {
+        result.source_ = vertexRagStoreBuilder_.build();
       }
     }
 
@@ -510,6 +588,11 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
             mergeVertexAiSearch(other.getVertexAiSearch());
             break;
           }
+        case VERTEX_RAG_STORE:
+          {
+            mergeVertexRagStore(other.getVertexRagStore());
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -550,9 +633,15 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 disableAttribution_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(getVertexRagStoreFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -796,6 +885,225 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
       return vertexAiSearchBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder>
+        vertexRagStoreBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     *
+     * @return Whether the vertexRagStore field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexRagStore() {
+      return sourceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     *
+     * @return The vertexRagStore.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore getVertexRagStore() {
+      if (vertexRagStoreBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 4) {
+          return vertexRagStoreBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    public Builder setVertexRagStore(com.google.cloud.aiplatform.v1beta1.VertexRagStore value) {
+      if (vertexRagStoreBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        vertexRagStoreBuilder_.setMessage(value);
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    public Builder setVertexRagStore(
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder builderForValue) {
+      if (vertexRagStoreBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexRagStoreBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    public Builder mergeVertexRagStore(com.google.cloud.aiplatform.v1beta1.VertexRagStore value) {
+      if (vertexRagStoreBuilder_ == null) {
+        if (sourceCase_ == 4
+            && source_ != com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.aiplatform.v1beta1.VertexRagStore.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 4) {
+          vertexRagStoreBuilder_.mergeFrom(value);
+        } else {
+          vertexRagStoreBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    public Builder clearVertexRagStore() {
+      if (vertexRagStoreBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        vertexRagStoreBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder getVertexRagStoreBuilder() {
+      return getVertexRagStoreFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder
+        getVertexRagStoreOrBuilder() {
+      if ((sourceCase_ == 4) && (vertexRagStoreBuilder_ != null)) {
+        return vertexRagStoreBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to use data source powered by Vertex RAG store.
+     * User data is uploaded via the VertexRagDataService.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder>
+        getVertexRagStoreFieldBuilder() {
+      if (vertexRagStoreBuilder_ == null) {
+        if (!(sourceCase_ == 4)) {
+          source_ = com.google.cloud.aiplatform.v1beta1.VertexRagStore.getDefaultInstance();
+        }
+        vertexRagStoreBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore,
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder,
+                com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.VertexRagStore) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 4;
+      onChanged();
+      return vertexRagStoreBuilder_;
+    }
+
     private boolean disableAttribution_;
     /**
      *
@@ -831,7 +1139,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableAttribution(boolean value) {
 
       disableAttribution_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -849,7 +1157,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableAttribution() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       disableAttribution_ = false;
       onChanged();
       return this;

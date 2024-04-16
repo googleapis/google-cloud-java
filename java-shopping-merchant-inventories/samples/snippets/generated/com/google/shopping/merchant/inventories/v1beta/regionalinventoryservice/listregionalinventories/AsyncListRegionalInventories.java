@@ -19,6 +19,7 @@ package com.google.shopping.merchant.inventories.v1beta.samples;
 // [START merchantapi_v1beta_generated_RegionalInventoryService_ListRegionalInventories_async]
 import com.google.api.core.ApiFuture;
 import com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesRequest;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventory;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceClient;
 
@@ -38,7 +39,7 @@ public class AsyncListRegionalInventories {
         RegionalInventoryServiceClient.create()) {
       ListRegionalInventoriesRequest request =
           ListRegionalInventoriesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

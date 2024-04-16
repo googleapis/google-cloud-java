@@ -28,8 +28,8 @@ public interface CloudStoragePathOrBuilder
    *
    *
    * <pre>
-   * A url representing a file or path (no wildcards) in Cloud Storage.
-   * Example: gs://[BUCKET_NAME]/dictionary.txt
+   * A URL representing a file or path (no wildcards) in Cloud Storage.
+   * Example: `gs://[BUCKET_NAME]/dictionary.txt`
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -41,8 +41,8 @@ public interface CloudStoragePathOrBuilder
    *
    *
    * <pre>
-   * A url representing a file or path (no wildcards) in Cloud Storage.
-   * Example: gs://[BUCKET_NAME]/dictionary.txt
+   * A URL representing a file or path (no wildcards) in Cloud Storage.
+   * Example: `gs://[BUCKET_NAME]/dictionary.txt`
    * </pre>
    *
    * <code>string path = 1;</code>

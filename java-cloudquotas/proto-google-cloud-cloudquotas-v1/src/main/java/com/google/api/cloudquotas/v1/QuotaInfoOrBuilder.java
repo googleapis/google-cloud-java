@@ -461,15 +461,9 @@ public interface QuotaInfoOrBuilder
    *
    *
    * <pre>
-   * URI to the page where the user can request more quotas for the cloud
-   * service, such as
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0={email}&amp;entry_1={id}.
-   * Google Developers Console UI replace {email} with the current
-   * user's e-mail, {id} with the current project number, or organization ID
-   * with "organizations/" prefix. For example,
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0=johndoe&#64;gmail.com&amp;entry_1=25463754,
-   * or
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0=johndoe&#64;gmail.com&amp;entry_1=organizations/26474422.
+   * URI to the page where users can request more quota for the cloud
+   * service—for example,
+   * https://console.cloud.google.com/iam-admin/quotas.
    * </pre>
    *
    * <code>string service_request_quota_uri = 17;</code>
@@ -481,15 +475,9 @@ public interface QuotaInfoOrBuilder
    *
    *
    * <pre>
-   * URI to the page where the user can request more quotas for the cloud
-   * service, such as
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0={email}&amp;entry_1={id}.
-   * Google Developers Console UI replace {email} with the current
-   * user's e-mail, {id} with the current project number, or organization ID
-   * with "organizations/" prefix. For example,
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0=johndoe&#64;gmail.com&amp;entry_1=25463754,
-   * or
-   * https://docs.google.com/spreadsheet/viewform?formkey=abc123&amp;entry_0=johndoe&#64;gmail.com&amp;entry_1=organizations/26474422.
+   * URI to the page where users can request more quota for the cloud
+   * service—for example,
+   * https://console.cloud.google.com/iam-admin/quotas.
    * </pre>
    *
    * <code>string service_request_quota_uri = 17;</code>

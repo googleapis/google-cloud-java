@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.edgecontainer.v1.stub.HttpJsonEdgeContainerStub;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -38,6 +43,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -198,8 +204,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -252,8 +269,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -306,8 +334,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -369,8 +408,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -432,8 +482,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -454,8 +515,19 @@ public class EdgeContainerClientHttpJsonTest {
             .setAuthorization(Authorization.newBuilder().build())
             .setDefaultMaxPodsPerNode(-1433236452)
             .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -496,11 +568,170 @@ public class EdgeContainerClientHttpJsonTest {
               .setAuthorization(Authorization.newBuilder().build())
               .setDefaultMaxPodsPerNode(-1433236452)
               .setEndpoint("endpoint1741102485")
+              .setPort(3446913)
               .setClusterCaCertificate("clusterCaCertificate-683492737")
               .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+              .setControlPlaneVersion("controlPlaneVersion648040665")
+              .setNodeVersion("nodeVersion1155309686")
+              .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+              .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+              .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+              .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+              .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+              .setTargetVersion("targetVersion-1639412217")
+              .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+              .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFleet(Fleet.newBuilder().build())
+            .setNetworking(ClusterNetworking.newBuilder().build())
+            .setAuthorization(Authorization.newBuilder().build())
+            .setDefaultMaxPodsPerNode(-1433236452)
+            .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
+            .setClusterCaCertificate("clusterCaCertificate-683492737")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    String targetVersion = "targetVersion-1639412217";
+    UpgradeClusterRequest.Schedule schedule = UpgradeClusterRequest.Schedule.forNumber(0);
+
+    Cluster actualResponse = client.upgradeClusterAsync(name, targetVersion, schedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      String targetVersion = "targetVersion-1639412217";
+      UpgradeClusterRequest.Schedule schedule = UpgradeClusterRequest.Schedule.forNumber(0);
+      client.upgradeClusterAsync(name, targetVersion, schedule).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest2() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFleet(Fleet.newBuilder().build())
+            .setNetworking(ClusterNetworking.newBuilder().build())
+            .setAuthorization(Authorization.newBuilder().build())
+            .setDefaultMaxPodsPerNode(-1433236452)
+            .setEndpoint("endpoint1741102485")
+            .setPort(3446913)
+            .setClusterCaCertificate("clusterCaCertificate-683492737")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setControlPlaneVersion("controlPlaneVersion648040665")
+            .setNodeVersion("nodeVersion1155309686")
+            .setControlPlane(Cluster.ControlPlane.newBuilder().build())
+            .setSystemAddonsConfig(Cluster.SystemAddonsConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv4AddressPools(new ArrayList<String>())
+            .setControlPlaneEncryption(Cluster.ControlPlaneEncryption.newBuilder().build())
+            .addAllMaintenanceEvents(new ArrayList<Cluster.MaintenanceEvent>())
+            .setTargetVersion("targetVersion-1639412217")
+            .setSurvivabilityConfig(Cluster.SurvivabilityConfig.newBuilder().build())
+            .addAllExternalLoadBalancerIpv6AddressPools(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    String targetVersion = "targetVersion-1639412217";
+    UpgradeClusterRequest.Schedule schedule = UpgradeClusterRequest.Schedule.forNumber(0);
+
+    Cluster actualResponse = client.upgradeClusterAsync(name, targetVersion, schedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      String targetVersion = "targetVersion-1639412217";
+      UpgradeClusterRequest.Schedule schedule = UpgradeClusterRequest.Schedule.forNumber(0);
+      client.upgradeClusterAsync(name, targetVersion, schedule).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -687,6 +918,100 @@ public class EdgeContainerClientHttpJsonTest {
   }
 
   @Test
+  public void generateOfflineCredentialTest() throws Exception {
+    GenerateOfflineCredentialResponse expectedResponse =
+        GenerateOfflineCredentialResponse.newBuilder()
+            .setClientCertificate("clientCertificate592328908")
+            .setClientKey("clientKey-1904108908")
+            .setUserId("userId-836030906")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    GenerateOfflineCredentialResponse actualResponse = client.generateOfflineCredential(cluster);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateOfflineCredentialExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.generateOfflineCredential(cluster);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateOfflineCredentialTest2() throws Exception {
+    GenerateOfflineCredentialResponse expectedResponse =
+        GenerateOfflineCredentialResponse.newBuilder()
+            .setClientCertificate("clientCertificate592328908")
+            .setClientKey("clientKey-1904108908")
+            .setUserId("userId-836030906")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+
+    GenerateOfflineCredentialResponse actualResponse = client.generateOfflineCredential(cluster);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateOfflineCredentialExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+      client.generateOfflineCredential(cluster);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listNodePoolsTest() throws Exception {
     NodePool responsesElement = NodePool.newBuilder().build();
     ListNodePoolsResponse expectedResponse =
@@ -799,6 +1124,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -851,6 +1178,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -905,6 +1234,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -966,6 +1297,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1027,6 +1360,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1047,6 +1382,8 @@ public class EdgeContainerClientHttpJsonTest {
             .setNodeCount(1539922066)
             .setMachineFilter("machineFilter427190943")
             .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+            .setNodeVersion("nodeVersion1155309686")
+            .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1087,6 +1424,8 @@ public class EdgeContainerClientHttpJsonTest {
               .setNodeCount(1539922066)
               .setMachineFilter("machineFilter427190943")
               .setLocalDiskEncryption(NodePool.LocalDiskEncryption.newBuilder().build())
+              .setNodeVersion("nodeVersion1155309686")
+              .setNodeConfig(NodePool.NodeConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodePoolAsync(nodePool, updateMask).get();
@@ -1297,6 +1636,7 @@ public class EdgeContainerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setHostedNode("hostedNode-604250391")
             .setZone("zone3744684")
+            .setVersion("version351608024")
             .setDisabled(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1347,6 +1687,7 @@ public class EdgeContainerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setHostedNode("hostedNode-604250391")
             .setZone("zone3744684")
+            .setVersion("version351608024")
             .setDisabled(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1500,6 +1841,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setVpc("vpc116969")
             .setVpcProject(VpnConnection.VpcProject.newBuilder().build())
             .setEnableHighAvailability(true)
+            .setRouter("router-925132983")
             .setDetails(VpnConnection.Details.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1553,6 +1895,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setVpc("vpc116969")
             .setVpcProject(VpnConnection.VpcProject.newBuilder().build())
             .setEnableHighAvailability(true)
+            .setRouter("router-925132983")
             .setDetails(VpnConnection.Details.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1607,6 +1950,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setVpc("vpc116969")
             .setVpcProject(VpnConnection.VpcProject.newBuilder().build())
             .setEnableHighAvailability(true)
+            .setRouter("router-925132983")
             .setDetails(VpnConnection.Details.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1670,6 +2014,7 @@ public class EdgeContainerClientHttpJsonTest {
             .setVpc("vpc116969")
             .setVpcProject(VpnConnection.VpcProject.newBuilder().build())
             .setEnableHighAvailability(true)
+            .setRouter("router-925132983")
             .setDetails(VpnConnection.Details.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1808,6 +2153,214 @@ public class EdgeContainerClientHttpJsonTest {
       client.deleteVpnConnectionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getServerConfigTest() throws Exception {
+    ServerConfig expectedResponse =
+        ServerConfig.newBuilder()
+            .putAllChannels(new HashMap<String, ChannelConfig>())
+            .addAllVersions(new ArrayList<Version>())
+            .setDefaultVersion("defaultVersion-1939242153")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ServerConfig actualResponse = client.getServerConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getServerConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.getServerConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getServerConfigTest2() throws Exception {
+    ServerConfig expectedResponse =
+        ServerConfig.newBuilder()
+            .putAllChannels(new HashMap<String, ChannelConfig>())
+            .addAllVersions(new ArrayList<Version>())
+            .setDefaultVersion("defaultVersion-1939242153")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-9062/locations/location-9062";
+
+    ServerConfig actualResponse = client.getServerConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getServerConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9062/locations/location-9062";
+      client.getServerConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

@@ -282,8 +282,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -295,8 +294,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -308,8 +306,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -322,8 +319,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -432,8 +428,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -447,8 +442,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -462,8 +456,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -478,8 +471,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -996,8 +988,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1013,8 +1004,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1029,8 +1019,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1046,8 +1035,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1063,8 +1051,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1088,8 +1075,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1112,8 +1098,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1133,8 +1118,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1153,8 +1137,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1933,6 +1916,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface VectorSearchConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig)
@@ -2128,9 +2112,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Column of crowding. This column contains crowding attribute
-     * which is a constraint on a neighbor list produced by nearest neighbor
-     * search requiring that no more than some value k' of the k neighbors
-     * returned have the same value of crowding_attribute.
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
      * </pre>
      *
      * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2143,9 +2132,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Column of crowding. This column contains crowding attribute
-     * which is a constraint on a neighbor list produced by nearest neighbor
-     * search requiring that no more than some value k' of the k neighbors
-     * returned have the same value of crowding_attribute.
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
      * </pre>
      *
      * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2218,11 +2212,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for vector search.
+   * Deprecated. Use
+   * [IndexConfig][google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig]
+   * instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig}
    */
+  @java.lang.Deprecated
   public static final class VectorSearchConfig extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig)
@@ -3882,9 +3879,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Column of crowding. This column contains crowding attribute
-     * which is a constraint on a neighbor list produced by nearest neighbor
-     * search requiring that no more than some value k' of the k neighbors
-     * returned have the same value of crowding_attribute.
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
      * </pre>
      *
      * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3908,9 +3910,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Column of crowding. This column contains crowding attribute
-     * which is a constraint on a neighbor list produced by nearest neighbor
-     * search requiring that no more than some value k' of the k neighbors
-     * returned have the same value of crowding_attribute.
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
      * </pre>
      *
      * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4280,7 +4287,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for vector search.
+     * Deprecated. Use
+     * [IndexConfig][google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig]
+     * instead.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig}
@@ -5463,9 +5472,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Column of crowding. This column contains crowding attribute
-       * which is a constraint on a neighbor list produced by nearest neighbor
-       * search requiring that no more than some value k' of the k neighbors
-       * returned have the same value of crowding_attribute.
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
        * </pre>
        *
        * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5488,9 +5502,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Column of crowding. This column contains crowding attribute
-       * which is a constraint on a neighbor list produced by nearest neighbor
-       * search requiring that no more than some value k' of the k neighbors
-       * returned have the same value of crowding_attribute.
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
        * </pre>
        *
        * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5513,9 +5532,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Column of crowding. This column contains crowding attribute
-       * which is a constraint on a neighbor list produced by nearest neighbor
-       * search requiring that no more than some value k' of the k neighbors
-       * returned have the same value of crowding_attribute.
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
        * </pre>
        *
        * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5537,9 +5561,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Column of crowding. This column contains crowding attribute
-       * which is a constraint on a neighbor list produced by nearest neighbor
-       * search requiring that no more than some value k' of the k neighbors
-       * returned have the same value of crowding_attribute.
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
        * </pre>
        *
        * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5557,9 +5586,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Column of crowding. This column contains crowding attribute
-       * which is a constraint on a neighbor list produced by nearest neighbor
-       * search requiring that no more than some value k' of the k neighbors
-       * returned have the same value of crowding_attribute.
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
        * </pre>
        *
        * <code>string crowding_column = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5825,6 +5859,3906 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface IndexConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the treeAhConfig field is set.
+     */
+    boolean hasTreeAhConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The treeAhConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig getTreeAhConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder
+        getTreeAhConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bruteForceConfig field is set.
+     */
+    boolean hasBruteForceConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bruteForceConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+        getBruteForceConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder
+        getBruteForceConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of embedding. This column contains the source data to
+     * create index for vector search. embedding_column must be set when using
+     * vector search.
+     * </pre>
+     *
+     * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The embeddingColumn.
+     */
+    java.lang.String getEmbeddingColumn();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of embedding. This column contains the source data to
+     * create index for vector search. embedding_column must be set when using
+     * vector search.
+     * </pre>
+     *
+     * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for embeddingColumn.
+     */
+    com.google.protobuf.ByteString getEmbeddingColumnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the filterColumns.
+     */
+    java.util.List<java.lang.String> getFilterColumnsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of filterColumns.
+     */
+    int getFilterColumnsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The filterColumns at the given index.
+     */
+    java.lang.String getFilterColumns(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the filterColumns at the given index.
+     */
+    com.google.protobuf.ByteString getFilterColumnsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of crowding. This column contains crowding attribute
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
+     * </pre>
+     *
+     * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The crowdingColumn.
+     */
+    java.lang.String getCrowdingColumn();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of crowding. This column contains crowding attribute
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
+     * </pre>
+     *
+     * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for crowdingColumn.
+     */
+    com.google.protobuf.ByteString getCrowdingColumnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of dimensions of the input embedding.
+     * </pre>
+     *
+     * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the embeddingDimension field is set.
+     */
+    boolean hasEmbeddingDimension();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of dimensions of the input embedding.
+     * </pre>
+     *
+     * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The embeddingDimension.
+     */
+    int getEmbeddingDimension();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distance measure used in nearest neighbor search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for distanceMeasureType.
+     */
+    int getDistanceMeasureTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distance measure used in nearest neighbor search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The distanceMeasureType.
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+        getDistanceMeasureType();
+
+    com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.AlgorithmConfigCase
+        getAlgorithmConfigCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for vector indexing.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig}
+   */
+  public static final class IndexConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)
+      IndexConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IndexConfig.newBuilder() to construct.
+    private IndexConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IndexConfig() {
+      embeddingColumn_ = "";
+      filterColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      crowdingColumn_ = "";
+      distanceMeasureType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IndexConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance measure used in nearest neighbor search.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType}
+     */
+    public enum DistanceMeasureType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Should not be set.
+       * </pre>
+       *
+       * <code>DISTANCE_MEASURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      DISTANCE_MEASURE_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Euclidean (L_2) Distance.
+       * </pre>
+       *
+       * <code>SQUARED_L2_DISTANCE = 1;</code>
+       */
+      SQUARED_L2_DISTANCE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Cosine Distance. Defined as 1 - cosine similarity.
+       *
+       * We strongly suggest using DOT_PRODUCT_DISTANCE + UNIT_L2_NORM instead
+       * of COSINE distance. Our algorithms have been more optimized for
+       * DOT_PRODUCT distance which, when combined with UNIT_L2_NORM, is
+       * mathematically equivalent to COSINE distance and results in the same
+       * ranking.
+       * </pre>
+       *
+       * <code>COSINE_DISTANCE = 2;</code>
+       */
+      COSINE_DISTANCE(2),
+      /**
+       *
+       *
+       * <pre>
+       * Dot Product Distance. Defined as a negative of the dot product.
+       * </pre>
+       *
+       * <code>DOT_PRODUCT_DISTANCE = 3;</code>
+       */
+      DOT_PRODUCT_DISTANCE(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Should not be set.
+       * </pre>
+       *
+       * <code>DISTANCE_MEASURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int DISTANCE_MEASURE_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Euclidean (L_2) Distance.
+       * </pre>
+       *
+       * <code>SQUARED_L2_DISTANCE = 1;</code>
+       */
+      public static final int SQUARED_L2_DISTANCE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Cosine Distance. Defined as 1 - cosine similarity.
+       *
+       * We strongly suggest using DOT_PRODUCT_DISTANCE + UNIT_L2_NORM instead
+       * of COSINE distance. Our algorithms have been more optimized for
+       * DOT_PRODUCT distance which, when combined with UNIT_L2_NORM, is
+       * mathematically equivalent to COSINE distance and results in the same
+       * ranking.
+       * </pre>
+       *
+       * <code>COSINE_DISTANCE = 2;</code>
+       */
+      public static final int COSINE_DISTANCE_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Dot Product Distance. Defined as a negative of the dot product.
+       * </pre>
+       *
+       * <code>DOT_PRODUCT_DISTANCE = 3;</code>
+       */
+      public static final int DOT_PRODUCT_DISTANCE_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DistanceMeasureType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DistanceMeasureType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DISTANCE_MEASURE_TYPE_UNSPECIFIED;
+          case 1:
+            return SQUARED_L2_DISTANCE;
+          case 2:
+            return COSINE_DISTANCE;
+          case 3:
+            return DOT_PRODUCT_DISTANCE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DistanceMeasureType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DistanceMeasureType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DistanceMeasureType>() {
+                public DistanceMeasureType findValueByNumber(int number) {
+                  return DistanceMeasureType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DistanceMeasureType[] VALUES = values();
+
+      public static DistanceMeasureType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DistanceMeasureType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType)
+    }
+
+    public interface BruteForceConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for using brute force search.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig}
+     */
+    public static final class BruteForceConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+        BruteForceConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BruteForceConfig.newBuilder() to construct.
+      private BruteForceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BruteForceConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BruteForceConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_BruteForceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_BruteForceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.Builder
+                    .class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig other =
+            (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration options for using brute force search.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_BruteForceConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_BruteForceConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                      .class,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_BruteForceConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+            build() {
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig result =
+              new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig(
+                  this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+      private static final com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+              .BruteForceConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BruteForceConfig> PARSER =
+          new com.google.protobuf.AbstractParser<BruteForceConfig>() {
+            @java.lang.Override
+            public BruteForceConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BruteForceConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BruteForceConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface TreeAHConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of embeddings on each leaf node. The default value is
+       * 1000 if not set.
+       * </pre>
+       *
+       * <code>
+       * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the leafNodeEmbeddingCount field is set.
+       */
+      boolean hasLeafNodeEmbeddingCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of embeddings on each leaf node. The default value is
+       * 1000 if not set.
+       * </pre>
+       *
+       * <code>
+       * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The leafNodeEmbeddingCount.
+       */
+      long getLeafNodeEmbeddingCount();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for the tree-AH algorithm.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig}
+     */
+    public static final class TreeAHConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+        TreeAHConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TreeAHConfig.newBuilder() to construct.
+      private TreeAHConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TreeAHConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TreeAHConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_TreeAHConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_TreeAHConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int LEAF_NODE_EMBEDDING_COUNT_FIELD_NUMBER = 1;
+      private long leafNodeEmbeddingCount_ = 0L;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of embeddings on each leaf node. The default value is
+       * 1000 if not set.
+       * </pre>
+       *
+       * <code>
+       * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the leafNodeEmbeddingCount field is set.
+       */
+      @java.lang.Override
+      public boolean hasLeafNodeEmbeddingCount() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of embeddings on each leaf node. The default value is
+       * 1000 if not set.
+       * </pre>
+       *
+       * <code>
+       * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The leafNodeEmbeddingCount.
+       */
+      @java.lang.Override
+      public long getLeafNodeEmbeddingCount() {
+        return leafNodeEmbeddingCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeInt64(1, leafNodeEmbeddingCount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt64Size(1, leafNodeEmbeddingCount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig other =
+            (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig) obj;
+
+        if (hasLeafNodeEmbeddingCount() != other.hasLeafNodeEmbeddingCount()) return false;
+        if (hasLeafNodeEmbeddingCount()) {
+          if (getLeafNodeEmbeddingCount() != other.getLeafNodeEmbeddingCount()) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasLeafNodeEmbeddingCount()) {
+          hash = (37 * hash) + LEAF_NODE_EMBEDDING_COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLeafNodeEmbeddingCount());
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration options for the tree-AH algorithm.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_TreeAHConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_TreeAHConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.class,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          leafNodeEmbeddingCount_ = 0L;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_TreeAHConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig build() {
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig result =
+              new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.leafNodeEmbeddingCount_ = leafNodeEmbeddingCount_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+                  .getDefaultInstance()) return this;
+          if (other.hasLeafNodeEmbeddingCount()) {
+            setLeafNodeEmbeddingCount(other.getLeafNodeEmbeddingCount());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    leafNodeEmbeddingCount_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private long leafNodeEmbeddingCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Number of embeddings on each leaf node. The default value is
+         * 1000 if not set.
+         * </pre>
+         *
+         * <code>
+         * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the leafNodeEmbeddingCount field is set.
+         */
+        @java.lang.Override
+        public boolean hasLeafNodeEmbeddingCount() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Number of embeddings on each leaf node. The default value is
+         * 1000 if not set.
+         * </pre>
+         *
+         * <code>
+         * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The leafNodeEmbeddingCount.
+         */
+        @java.lang.Override
+        public long getLeafNodeEmbeddingCount() {
+          return leafNodeEmbeddingCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Number of embeddings on each leaf node. The default value is
+         * 1000 if not set.
+         * </pre>
+         *
+         * <code>
+         * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The leafNodeEmbeddingCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLeafNodeEmbeddingCount(long value) {
+
+          leafNodeEmbeddingCount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Number of embeddings on each leaf node. The default value is
+         * 1000 if not set.
+         * </pre>
+         *
+         * <code>
+         * optional int64 leaf_node_embedding_count = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLeafNodeEmbeddingCount() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          leafNodeEmbeddingCount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+      private static final com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TreeAHConfig> PARSER =
+          new com.google.protobuf.AbstractParser<TreeAHConfig>() {
+            @java.lang.Override
+            public TreeAHConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TreeAHConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TreeAHConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    private int algorithmConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object algorithmConfig_;
+
+    public enum AlgorithmConfigCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      TREE_AH_CONFIG(6),
+      BRUTE_FORCE_CONFIG(7),
+      ALGORITHMCONFIG_NOT_SET(0);
+      private final int value;
+
+      private AlgorithmConfigCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AlgorithmConfigCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static AlgorithmConfigCase forNumber(int value) {
+        switch (value) {
+          case 6:
+            return TREE_AH_CONFIG;
+          case 7:
+            return BRUTE_FORCE_CONFIG;
+          case 0:
+            return ALGORITHMCONFIG_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public AlgorithmConfigCase getAlgorithmConfigCase() {
+      return AlgorithmConfigCase.forNumber(algorithmConfigCase_);
+    }
+
+    public static final int TREE_AH_CONFIG_FIELD_NUMBER = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the treeAhConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasTreeAhConfig() {
+      return algorithmConfigCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The treeAhConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+        getTreeAhConfig() {
+      if (algorithmConfigCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+            algorithmConfig_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+     * + Asymmetric Hashing). Please refer to this paper for more details:
+     * https://arxiv.org/abs/1908.10396
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder
+        getTreeAhConfigOrBuilder() {
+      if (algorithmConfigCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+            algorithmConfig_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          .getDefaultInstance();
+    }
+
+    public static final int BRUTE_FORCE_CONFIG_FIELD_NUMBER = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bruteForceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBruteForceConfig() {
+      return algorithmConfigCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bruteForceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+        getBruteForceConfig() {
+      if (algorithmConfigCase_ == 7) {
+        return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+            algorithmConfig_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for using brute force search, which
+     * simply implements the standard linear search in the database for each
+     * query. It is primarily meant for benchmarking and to generate the
+     * ground truth for approximate search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder
+        getBruteForceConfigOrBuilder() {
+      if (algorithmConfigCase_ == 7) {
+        return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+            algorithmConfig_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          .getDefaultInstance();
+    }
+
+    public static final int EMBEDDING_COLUMN_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object embeddingColumn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of embedding. This column contains the source data to
+     * create index for vector search. embedding_column must be set when using
+     * vector search.
+     * </pre>
+     *
+     * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The embeddingColumn.
+     */
+    @java.lang.Override
+    public java.lang.String getEmbeddingColumn() {
+      java.lang.Object ref = embeddingColumn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        embeddingColumn_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of embedding. This column contains the source data to
+     * create index for vector search. embedding_column must be set when using
+     * vector search.
+     * </pre>
+     *
+     * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for embeddingColumn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEmbeddingColumnBytes() {
+      java.lang.Object ref = embeddingColumn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        embeddingColumn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILTER_COLUMNS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList filterColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the filterColumns.
+     */
+    public com.google.protobuf.ProtocolStringList getFilterColumnsList() {
+      return filterColumns_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of filterColumns.
+     */
+    public int getFilterColumnsCount() {
+      return filterColumns_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The filterColumns at the given index.
+     */
+    public java.lang.String getFilterColumns(int index) {
+      return filterColumns_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Columns of features that're used to filter vector search
+     * results.
+     * </pre>
+     *
+     * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the filterColumns at the given index.
+     */
+    public com.google.protobuf.ByteString getFilterColumnsBytes(int index) {
+      return filterColumns_.getByteString(index);
+    }
+
+    public static final int CROWDING_COLUMN_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object crowdingColumn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of crowding. This column contains crowding attribute
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
+     * </pre>
+     *
+     * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The crowdingColumn.
+     */
+    @java.lang.Override
+    public java.lang.String getCrowdingColumn() {
+      java.lang.Object ref = crowdingColumn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        crowdingColumn_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Column of crowding. This column contains crowding attribute
+     * which is a constraint on a neighbor list produced by
+     * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+     * to diversify search results. If
+     * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+     * is set to K in
+     * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+     * it's guaranteed that no more than K entities of the same crowding
+     * attribute are returned in the response.
+     * </pre>
+     *
+     * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for crowdingColumn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCrowdingColumnBytes() {
+      java.lang.Object ref = crowdingColumn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        crowdingColumn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMBEDDING_DIMENSION_FIELD_NUMBER = 4;
+    private int embeddingDimension_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of dimensions of the input embedding.
+     * </pre>
+     *
+     * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the embeddingDimension field is set.
+     */
+    @java.lang.Override
+    public boolean hasEmbeddingDimension() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of dimensions of the input embedding.
+     * </pre>
+     *
+     * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The embeddingDimension.
+     */
+    @java.lang.Override
+    public int getEmbeddingDimension() {
+      return embeddingDimension_;
+    }
+
+    public static final int DISTANCE_MEASURE_TYPE_FIELD_NUMBER = 5;
+    private int distanceMeasureType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distance measure used in nearest neighbor search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for distanceMeasureType.
+     */
+    @java.lang.Override
+    public int getDistanceMeasureTypeValue() {
+      return distanceMeasureType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The distance measure used in nearest neighbor search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The distanceMeasureType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+        getDistanceMeasureType() {
+      com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType result =
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType.forNumber(
+              distanceMeasureType_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embeddingColumn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, embeddingColumn_);
+      }
+      for (int i = 0; i < filterColumns_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filterColumns_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crowdingColumn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, crowdingColumn_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(4, embeddingDimension_);
+      }
+      if (distanceMeasureType_
+          != com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+              .DISTANCE_MEASURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, distanceMeasureType_);
+      }
+      if (algorithmConfigCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                algorithmConfig_);
+      }
+      if (algorithmConfigCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                algorithmConfig_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embeddingColumn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, embeddingColumn_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < filterColumns_.size(); i++) {
+          dataSize += computeStringSizeNoTag(filterColumns_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFilterColumnsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crowdingColumn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, crowdingColumn_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, embeddingDimension_);
+      }
+      if (distanceMeasureType_
+          != com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+              .DISTANCE_MEASURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, distanceMeasureType_);
+      }
+      if (algorithmConfigCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                    algorithmConfig_);
+      }
+      if (algorithmConfigCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                    algorithmConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig) obj;
+
+      if (!getEmbeddingColumn().equals(other.getEmbeddingColumn())) return false;
+      if (!getFilterColumnsList().equals(other.getFilterColumnsList())) return false;
+      if (!getCrowdingColumn().equals(other.getCrowdingColumn())) return false;
+      if (hasEmbeddingDimension() != other.hasEmbeddingDimension()) return false;
+      if (hasEmbeddingDimension()) {
+        if (getEmbeddingDimension() != other.getEmbeddingDimension()) return false;
+      }
+      if (distanceMeasureType_ != other.distanceMeasureType_) return false;
+      if (!getAlgorithmConfigCase().equals(other.getAlgorithmConfigCase())) return false;
+      switch (algorithmConfigCase_) {
+        case 6:
+          if (!getTreeAhConfig().equals(other.getTreeAhConfig())) return false;
+          break;
+        case 7:
+          if (!getBruteForceConfig().equals(other.getBruteForceConfig())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMBEDDING_COLUMN_FIELD_NUMBER;
+      hash = (53 * hash) + getEmbeddingColumn().hashCode();
+      if (getFilterColumnsCount() > 0) {
+        hash = (37 * hash) + FILTER_COLUMNS_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterColumnsList().hashCode();
+      }
+      hash = (37 * hash) + CROWDING_COLUMN_FIELD_NUMBER;
+      hash = (53 * hash) + getCrowdingColumn().hashCode();
+      if (hasEmbeddingDimension()) {
+        hash = (37 * hash) + EMBEDDING_DIMENSION_FIELD_NUMBER;
+        hash = (53 * hash) + getEmbeddingDimension();
+      }
+      hash = (37 * hash) + DISTANCE_MEASURE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + distanceMeasureType_;
+      switch (algorithmConfigCase_) {
+        case 6:
+          hash = (37 * hash) + TREE_AH_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getTreeAhConfig().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + BRUTE_FORCE_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getBruteForceConfig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for vector indexing.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (treeAhConfigBuilder_ != null) {
+          treeAhConfigBuilder_.clear();
+        }
+        if (bruteForceConfigBuilder_ != null) {
+          bruteForceConfigBuilder_.clear();
+        }
+        embeddingColumn_ = "";
+        filterColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        crowdingColumn_ = "";
+        embeddingDimension_ = 0;
+        distanceMeasureType_ = 0;
+        algorithmConfigCase_ = 0;
+        algorithmConfig_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_IndexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.embeddingColumn_ = embeddingColumn_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          filterColumns_.makeImmutable();
+          result.filterColumns_ = filterColumns_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.crowdingColumn_ = crowdingColumn_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.embeddingDimension_ = embeddingDimension_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.distanceMeasureType_ = distanceMeasureType_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig result) {
+        result.algorithmConfigCase_ = algorithmConfigCase_;
+        result.algorithmConfig_ = this.algorithmConfig_;
+        if (algorithmConfigCase_ == 6 && treeAhConfigBuilder_ != null) {
+          result.algorithmConfig_ = treeAhConfigBuilder_.build();
+        }
+        if (algorithmConfigCase_ == 7 && bruteForceConfigBuilder_ != null) {
+          result.algorithmConfig_ = bruteForceConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance())
+          return this;
+        if (!other.getEmbeddingColumn().isEmpty()) {
+          embeddingColumn_ = other.embeddingColumn_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.filterColumns_.isEmpty()) {
+          if (filterColumns_.isEmpty()) {
+            filterColumns_ = other.filterColumns_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureFilterColumnsIsMutable();
+            filterColumns_.addAll(other.filterColumns_);
+          }
+          onChanged();
+        }
+        if (!other.getCrowdingColumn().isEmpty()) {
+          crowdingColumn_ = other.crowdingColumn_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.hasEmbeddingDimension()) {
+          setEmbeddingDimension(other.getEmbeddingDimension());
+        }
+        if (other.distanceMeasureType_ != 0) {
+          setDistanceMeasureTypeValue(other.getDistanceMeasureTypeValue());
+        }
+        switch (other.getAlgorithmConfigCase()) {
+          case TREE_AH_CONFIG:
+            {
+              mergeTreeAhConfig(other.getTreeAhConfig());
+              break;
+            }
+          case BRUTE_FORCE_CONFIG:
+            {
+              mergeBruteForceConfig(other.getBruteForceConfig());
+              break;
+            }
+          case ALGORITHMCONFIG_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  embeddingColumn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFilterColumnsIsMutable();
+                  filterColumns_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  crowdingColumn_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  embeddingDimension_ = input.readInt32();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  distanceMeasureType_ = input.readEnum();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 40
+              case 50:
+                {
+                  input.readMessage(getTreeAhConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  algorithmConfigCase_ = 6;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getBruteForceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  algorithmConfigCase_ = 7;
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int algorithmConfigCase_ = 0;
+      private java.lang.Object algorithmConfig_;
+
+      public AlgorithmConfigCase getAlgorithmConfigCase() {
+        return AlgorithmConfigCase.forNumber(algorithmConfigCase_);
+      }
+
+      public Builder clearAlgorithmConfig() {
+        algorithmConfigCase_ = 0;
+        algorithmConfig_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder>
+          treeAhConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the treeAhConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasTreeAhConfig() {
+        return algorithmConfigCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The treeAhConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+          getTreeAhConfig() {
+        if (treeAhConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                algorithmConfig_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+              .getDefaultInstance();
+        } else {
+          if (algorithmConfigCase_ == 6) {
+            return treeAhConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTreeAhConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig value) {
+        if (treeAhConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          algorithmConfig_ = value;
+          onChanged();
+        } else {
+          treeAhConfigBuilder_.setMessage(value);
+        }
+        algorithmConfigCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTreeAhConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder
+              builderForValue) {
+        if (treeAhConfigBuilder_ == null) {
+          algorithmConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          treeAhConfigBuilder_.setMessage(builderForValue.build());
+        }
+        algorithmConfigCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTreeAhConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig value) {
+        if (treeAhConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 6
+              && algorithmConfig_
+                  != com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+                      .getDefaultInstance()) {
+            algorithmConfig_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                            algorithmConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            algorithmConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (algorithmConfigCase_ == 6) {
+            treeAhConfigBuilder_.mergeFrom(value);
+          } else {
+            treeAhConfigBuilder_.setMessage(value);
+          }
+        }
+        algorithmConfigCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTreeAhConfig() {
+        if (treeAhConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 6) {
+            algorithmConfigCase_ = 0;
+            algorithmConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (algorithmConfigCase_ == 6) {
+            algorithmConfigCase_ = 0;
+            algorithmConfig_ = null;
+          }
+          treeAhConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder
+          getTreeAhConfigBuilder() {
+        return getTreeAhConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder
+          getTreeAhConfigOrBuilder() {
+        if ((algorithmConfigCase_ == 6) && (treeAhConfigBuilder_ != null)) {
+          return treeAhConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (algorithmConfigCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                algorithmConfig_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for the tree-AH algorithm (Shallow tree
+       * + Asymmetric Hashing). Please refer to this paper for more details:
+       * https://arxiv.org/abs/1908.10396
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig tree_ah_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfigOrBuilder>
+          getTreeAhConfigFieldBuilder() {
+        if (treeAhConfigBuilder_ == null) {
+          if (!(algorithmConfigCase_ == 6)) {
+            algorithmConfig_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig
+                    .getDefaultInstance();
+          }
+          treeAhConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+                      .TreeAHConfigOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.TreeAHConfig)
+                      algorithmConfig_,
+                  getParentForChildren(),
+                  isClean());
+          algorithmConfig_ = null;
+        }
+        algorithmConfigCase_ = 6;
+        onChanged();
+        return treeAhConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder>
+          bruteForceConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the bruteForceConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasBruteForceConfig() {
+        return algorithmConfigCase_ == 7;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bruteForceConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+          getBruteForceConfig() {
+        if (bruteForceConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 7) {
+            return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                algorithmConfig_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+              .getDefaultInstance();
+        } else {
+          if (algorithmConfigCase_ == 7) {
+            return bruteForceConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBruteForceConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig value) {
+        if (bruteForceConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          algorithmConfig_ = value;
+          onChanged();
+        } else {
+          bruteForceConfigBuilder_.setMessage(value);
+        }
+        algorithmConfigCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBruteForceConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.Builder
+              builderForValue) {
+        if (bruteForceConfigBuilder_ == null) {
+          algorithmConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          bruteForceConfigBuilder_.setMessage(builderForValue.build());
+        }
+        algorithmConfigCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeBruteForceConfig(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig value) {
+        if (bruteForceConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 7
+              && algorithmConfig_
+                  != com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                      .getDefaultInstance()) {
+            algorithmConfig_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+                                .BruteForceConfig)
+                            algorithmConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            algorithmConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (algorithmConfigCase_ == 7) {
+            bruteForceConfigBuilder_.mergeFrom(value);
+          } else {
+            bruteForceConfigBuilder_.setMessage(value);
+          }
+        }
+        algorithmConfigCase_ = 7;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBruteForceConfig() {
+        if (bruteForceConfigBuilder_ == null) {
+          if (algorithmConfigCase_ == 7) {
+            algorithmConfigCase_ = 0;
+            algorithmConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (algorithmConfigCase_ == 7) {
+            algorithmConfigCase_ = 0;
+            algorithmConfig_ = null;
+          }
+          bruteForceConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.Builder
+          getBruteForceConfigBuilder() {
+        return getBruteForceConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder
+          getBruteForceConfigOrBuilder() {
+        if ((algorithmConfigCase_ == 7) && (bruteForceConfigBuilder_ != null)) {
+          return bruteForceConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (algorithmConfigCase_ == 7) {
+            return (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                algorithmConfig_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration options for using brute force search, which
+       * simply implements the standard linear search in the database for each
+       * query. It is primarily meant for benchmarking and to generate the
+       * ground truth for approximate search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig brute_force_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfigOrBuilder>
+          getBruteForceConfigFieldBuilder() {
+        if (bruteForceConfigBuilder_ == null) {
+          if (!(algorithmConfigCase_ == 7)) {
+            algorithmConfig_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                    .getDefaultInstance();
+          }
+          bruteForceConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+                      .BruteForceConfigOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.BruteForceConfig)
+                      algorithmConfig_,
+                  getParentForChildren(),
+                  isClean());
+          algorithmConfig_ = null;
+        }
+        algorithmConfigCase_ = 7;
+        onChanged();
+        return bruteForceConfigBuilder_;
+      }
+
+      private java.lang.Object embeddingColumn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of embedding. This column contains the source data to
+       * create index for vector search. embedding_column must be set when using
+       * vector search.
+       * </pre>
+       *
+       * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The embeddingColumn.
+       */
+      public java.lang.String getEmbeddingColumn() {
+        java.lang.Object ref = embeddingColumn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          embeddingColumn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of embedding. This column contains the source data to
+       * create index for vector search. embedding_column must be set when using
+       * vector search.
+       * </pre>
+       *
+       * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for embeddingColumn.
+       */
+      public com.google.protobuf.ByteString getEmbeddingColumnBytes() {
+        java.lang.Object ref = embeddingColumn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          embeddingColumn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of embedding. This column contains the source data to
+       * create index for vector search. embedding_column must be set when using
+       * vector search.
+       * </pre>
+       *
+       * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The embeddingColumn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmbeddingColumn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        embeddingColumn_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of embedding. This column contains the source data to
+       * create index for vector search. embedding_column must be set when using
+       * vector search.
+       * </pre>
+       *
+       * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEmbeddingColumn() {
+        embeddingColumn_ = getDefaultInstance().getEmbeddingColumn();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of embedding. This column contains the source data to
+       * create index for vector search. embedding_column must be set when using
+       * vector search.
+       * </pre>
+       *
+       * <code>string embedding_column = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for embeddingColumn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmbeddingColumnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        embeddingColumn_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList filterColumns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFilterColumnsIsMutable() {
+        if (!filterColumns_.isModifiable()) {
+          filterColumns_ = new com.google.protobuf.LazyStringArrayList(filterColumns_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the filterColumns.
+       */
+      public com.google.protobuf.ProtocolStringList getFilterColumnsList() {
+        filterColumns_.makeImmutable();
+        return filterColumns_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of filterColumns.
+       */
+      public int getFilterColumnsCount() {
+        return filterColumns_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The filterColumns at the given index.
+       */
+      public java.lang.String getFilterColumns(int index) {
+        return filterColumns_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the filterColumns at the given index.
+       */
+      public com.google.protobuf.ByteString getFilterColumnsBytes(int index) {
+        return filterColumns_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The filterColumns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilterColumns(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilterColumnsIsMutable();
+        filterColumns_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The filterColumns to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFilterColumns(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilterColumnsIsMutable();
+        filterColumns_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The filterColumns to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFilterColumns(java.lang.Iterable<java.lang.String> values) {
+        ensureFilterColumnsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filterColumns_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilterColumns() {
+        filterColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Columns of features that're used to filter vector search
+       * results.
+       * </pre>
+       *
+       * <code>repeated string filter_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the filterColumns to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFilterColumnsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFilterColumnsIsMutable();
+        filterColumns_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object crowdingColumn_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of crowding. This column contains crowding attribute
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
+       * </pre>
+       *
+       * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The crowdingColumn.
+       */
+      public java.lang.String getCrowdingColumn() {
+        java.lang.Object ref = crowdingColumn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          crowdingColumn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of crowding. This column contains crowding attribute
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
+       * </pre>
+       *
+       * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for crowdingColumn.
+       */
+      public com.google.protobuf.ByteString getCrowdingColumnBytes() {
+        java.lang.Object ref = crowdingColumn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          crowdingColumn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of crowding. This column contains crowding attribute
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
+       * </pre>
+       *
+       * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The crowdingColumn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCrowdingColumn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        crowdingColumn_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of crowding. This column contains crowding attribute
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
+       * </pre>
+       *
+       * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCrowdingColumn() {
+        crowdingColumn_ = getDefaultInstance().getCrowdingColumn();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Column of crowding. This column contains crowding attribute
+       * which is a constraint on a neighbor list produced by
+       * [FeatureOnlineStoreService.SearchNearestEntities][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.SearchNearestEntities]
+       * to diversify search results. If
+       * [NearestNeighborQuery.per_crowding_attribute_neighbor_count][google.cloud.aiplatform.v1beta1.NearestNeighborQuery.per_crowding_attribute_neighbor_count]
+       * is set to K in
+       * [SearchNearestEntitiesRequest][google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest],
+       * it's guaranteed that no more than K entities of the same crowding
+       * attribute are returned in the response.
+       * </pre>
+       *
+       * <code>string crowding_column = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for crowdingColumn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCrowdingColumnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        crowdingColumn_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private int embeddingDimension_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of dimensions of the input embedding.
+       * </pre>
+       *
+       * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the embeddingDimension field is set.
+       */
+      @java.lang.Override
+      public boolean hasEmbeddingDimension() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of dimensions of the input embedding.
+       * </pre>
+       *
+       * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The embeddingDimension.
+       */
+      @java.lang.Override
+      public int getEmbeddingDimension() {
+        return embeddingDimension_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of dimensions of the input embedding.
+       * </pre>
+       *
+       * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The embeddingDimension to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmbeddingDimension(int value) {
+
+        embeddingDimension_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of dimensions of the input embedding.
+       * </pre>
+       *
+       * <code>optional int32 embedding_dimension = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEmbeddingDimension() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        embeddingDimension_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int distanceMeasureType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The distance measure used in nearest neighbor search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for distanceMeasureType.
+       */
+      @java.lang.Override
+      public int getDistanceMeasureTypeValue() {
+        return distanceMeasureType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The distance measure used in nearest neighbor search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for distanceMeasureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDistanceMeasureTypeValue(int value) {
+        distanceMeasureType_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The distance measure used in nearest neighbor search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The distanceMeasureType.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+          getDistanceMeasureType() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType result =
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+                .forNumber(distanceMeasureType_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The distance measure used in nearest neighbor search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The distanceMeasureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDistanceMeasureType(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        distanceMeasureType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The distance measure used in nearest neighbor search.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.DistanceMeasureType distance_measure_type = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDistanceMeasureType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        distanceMeasureType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IndexConfig> PARSER =
+        new com.google.protobuf.AbstractParser<IndexConfig>() {
+          @java.lang.Override
+          public IndexConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IndexConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IndexConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface FeatureRegistrySourceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource)
@@ -5898,6 +9832,31 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource.FeatureGroupOrBuilder
         getFeatureGroupsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectNumber field is set.
+     */
+    boolean hasProjectNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectNumber.
+     */
+    long getProjectNumber();
   }
   /**
    *
@@ -6971,6 +10930,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    private int bitField0_;
     public static final int FEATURE_GROUPS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -7062,6 +11022,39 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       return featureGroups_.get(index);
     }
 
+    public static final int PROJECT_NUMBER_FIELD_NUMBER = 2;
+    private long projectNumber_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectNumber field is set.
+     */
+    @java.lang.Override
+    public boolean hasProjectNumber() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectNumber.
+     */
+    @java.lang.Override
+    public long getProjectNumber() {
+      return projectNumber_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7079,6 +11072,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < featureGroups_.size(); i++) {
         output.writeMessage(1, featureGroups_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(2, projectNumber_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7090,6 +11086,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       for (int i = 0; i < featureGroups_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, featureGroups_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, projectNumber_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7108,6 +11107,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource) obj;
 
       if (!getFeatureGroupsList().equals(other.getFeatureGroupsList())) return false;
+      if (hasProjectNumber() != other.hasProjectNumber()) return false;
+      if (hasProjectNumber()) {
+        if (getProjectNumber() != other.getProjectNumber()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7122,6 +11125,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (getFeatureGroupsCount() > 0) {
         hash = (37 * hash) + FEATURE_GROUPS_FIELD_NUMBER;
         hash = (53 * hash) + getFeatureGroupsList().hashCode();
+      }
+      if (hasProjectNumber()) {
+        hash = (37 * hash) + PROJECT_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProjectNumber());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -7276,6 +11283,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           featureGroupsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        projectNumber_ = 0L;
         return this;
       }
 
@@ -7330,6 +11338,12 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectNumber_ = projectNumber_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -7411,6 +11425,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasProjectNumber()) {
+          setProjectNumber(other.getProjectNumber());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7453,6 +11470,12 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 16:
+                {
+                  projectNumber_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7908,6 +11931,74 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           featureGroups_ = null;
         }
         return featureGroupsBuilder_;
+      }
+
+      private long projectNumber_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the projectNumber field is set.
+       */
+      @java.lang.Override
+      public boolean hasProjectNumber() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The projectNumber.
+       */
+      @java.lang.Override
+      public long getProjectNumber() {
+        return projectNumber_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The projectNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectNumber(long value) {
+
+        projectNumber_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectNumber() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        projectNumber_ = 0L;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -8562,19 +12653,21 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasVectorSearchConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -8582,19 +12675,21 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
    * @return The vectorSearchConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig
       getVectorSearchConfig() {
     return vectorSearchConfig_ == null
@@ -8605,22 +12700,88 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
       getVectorSearchConfigOrBuilder() {
     return vectorSearchConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig.getDefaultInstance()
         : vectorSearchConfig_;
+  }
+
+  public static final int INDEX_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig indexConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the indexConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The indexConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig getIndexConfig() {
+    return indexConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance()
+        : indexConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder
+      getIndexConfigOrBuilder() {
+    return indexConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance()
+        : indexConfig_;
   }
 
   public static final int SERVICE_AGENT_TYPE_FIELD_NUMBER = 14;
@@ -8781,6 +12942,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(14, serviceAgentType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(15, getIndexConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8837,6 +13001,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, serviceAgentType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getIndexConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8871,6 +13038,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (hasVectorSearchConfig() != other.hasVectorSearchConfig()) return false;
     if (hasVectorSearchConfig()) {
       if (!getVectorSearchConfig().equals(other.getVectorSearchConfig())) return false;
+    }
+    if (hasIndexConfig() != other.hasIndexConfig()) return false;
+    if (hasIndexConfig()) {
+      if (!getIndexConfig().equals(other.getIndexConfig())) return false;
     }
     if (serviceAgentType_ != other.serviceAgentType_) return false;
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
@@ -8919,6 +13090,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (hasVectorSearchConfig()) {
       hash = (37 * hash) + VECTOR_SEARCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getVectorSearchConfig().hashCode();
+    }
+    if (hasIndexConfig()) {
+      hash = (37 * hash) + INDEX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexConfig().hashCode();
     }
     hash = (37 * hash) + SERVICE_AGENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + serviceAgentType_;
@@ -9103,6 +13278,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getSyncConfigFieldBuilder();
         getVectorSearchConfigFieldBuilder();
+        getIndexConfigFieldBuilder();
       }
     }
 
@@ -9138,6 +13314,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (vectorSearchConfigBuilder_ != null) {
         vectorSearchConfigBuilder_.dispose();
         vectorSearchConfigBuilder_ = null;
+      }
+      indexConfig_ = null;
+      if (indexConfigBuilder_ != null) {
+        indexConfigBuilder_.dispose();
+        indexConfigBuilder_ = null;
       }
       serviceAgentType_ = 0;
       serviceAccountEmail_ = "";
@@ -9211,9 +13392,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.serviceAgentType_ = serviceAgentType_;
+        result.indexConfig_ =
+            indexConfigBuilder_ == null ? indexConfig_ : indexConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.serviceAgentType_ = serviceAgentType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.serviceAccountEmail_ = serviceAccountEmail_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -9300,12 +13486,15 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (other.hasVectorSearchConfig()) {
         mergeVectorSearchConfig(other.getVectorSearchConfig());
       }
+      if (other.hasIndexConfig()) {
+        mergeIndexConfig(other.getIndexConfig());
+      }
       if (other.serviceAgentType_ != 0) {
         setServiceAgentTypeValue(other.getServiceAgentTypeValue());
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -9415,15 +13604,21 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 112:
               {
                 serviceAgentType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 112
+            case 122:
+              {
+                input.readMessage(getIndexConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11030,18 +15225,20 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
      * @return Whether the vectorSearchConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasVectorSearchConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
@@ -11049,18 +15246,20 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
      * @return The vectorSearchConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig
         getVectorSearchConfig() {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11076,16 +15275,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig value) {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11104,16 +15303,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig.Builder
             builderForValue) {
@@ -11130,16 +15329,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig value) {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11165,16 +15364,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearVectorSearchConfig() {
       bitField0_ = (bitField0_ & ~0x00000100);
       vectorSearchConfig_ = null;
@@ -11189,16 +15388,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig.Builder
         getVectorSearchConfigBuilder() {
       bitField0_ |= 0x00000100;
@@ -11209,16 +15408,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
         getVectorSearchConfigOrBuilder() {
       if (vectorSearchConfigBuilder_ != null) {
@@ -11234,14 +15433,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -11259,6 +15457,243 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         vectorSearchConfig_ = null;
       }
       return vectorSearchConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig indexConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder>
+        indexConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the indexConfig field is set.
+     */
+    public boolean hasIndexConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The indexConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig getIndexConfig() {
+      if (indexConfigBuilder_ == null) {
+        return indexConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance()
+            : indexConfig_;
+      } else {
+        return indexConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIndexConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig value) {
+      if (indexConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexConfig_ = value;
+      } else {
+        indexConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIndexConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder builderForValue) {
+      if (indexConfigBuilder_ == null) {
+        indexConfig_ = builderForValue.build();
+      } else {
+        indexConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIndexConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig value) {
+      if (indexConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && indexConfig_ != null
+            && indexConfig_
+                != com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig
+                    .getDefaultInstance()) {
+          getIndexConfigBuilder().mergeFrom(value);
+        } else {
+          indexConfig_ = value;
+        }
+      } else {
+        indexConfigBuilder_.mergeFrom(value);
+      }
+      if (indexConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIndexConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      indexConfig_ = null;
+      if (indexConfigBuilder_ != null) {
+        indexConfigBuilder_.dispose();
+        indexConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder
+        getIndexConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getIndexConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder
+        getIndexConfigOrBuilder() {
+      if (indexConfigBuilder_ != null) {
+        return indexConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return indexConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance()
+            : indexConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for index preparation for vector search. It
+     * contains the required configurations to create an index from source data,
+     * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+     * performed during online serving.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder>
+        getIndexConfigFieldBuilder() {
+      if (indexConfigBuilder_ == null) {
+        indexConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder>(
+                getIndexConfig(), getParentForChildren(), isClean());
+        indexConfig_ = null;
+      }
+      return indexConfigBuilder_;
     }
 
     private int serviceAgentType_ = 0;
@@ -11305,7 +15740,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setServiceAgentTypeValue(int value) {
       serviceAgentType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11360,7 +15795,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       serviceAgentType_ = value.getNumber();
       onChanged();
       return this;
@@ -11384,7 +15819,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAgentType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       serviceAgentType_ = 0;
       onChanged();
       return this;
@@ -11458,7 +15893,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11477,7 +15912,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccountEmail() {
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -11501,7 +15936,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

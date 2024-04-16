@@ -176,6 +176,16 @@ public final class PreviewOperationMetadata extends com.google.protobuf.Generate
      * <code>FAILED = 9;</code>
      */
     FAILED(9),
+    /**
+     *
+     *
+     * <pre>
+     * Validating the provided repository.
+     * </pre>
+     *
+     * <code>VALIDATING_REPOSITORY = 10;</code>
+     */
+    VALIDATING_REPOSITORY(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -280,6 +290,16 @@ public final class PreviewOperationMetadata extends com.google.protobuf.Generate
      * <code>FAILED = 9;</code>
      */
     public static final int FAILED_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Validating the provided repository.
+     * </pre>
+     *
+     * <code>VALIDATING_REPOSITORY = 10;</code>
+     */
+    public static final int VALIDATING_REPOSITORY_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -325,6 +345,8 @@ public final class PreviewOperationMetadata extends com.google.protobuf.Generate
           return SUCCEEDED;
         case 9:
           return FAILED;
+        case 10:
+          return VALIDATING_REPOSITORY;
         default:
           return null;
       }

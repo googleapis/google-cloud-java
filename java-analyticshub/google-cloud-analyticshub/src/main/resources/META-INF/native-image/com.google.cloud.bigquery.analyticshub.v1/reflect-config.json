@@ -801,6 +801,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.bigquery.analyticshub.v1.Listing$BigQueryDatasetSource$SelectedResource",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.bigquery.analyticshub.v1.Listing$BigQueryDatasetSource$SelectedResource$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.bigquery.analyticshub.v1.Listing$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

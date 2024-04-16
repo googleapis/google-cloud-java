@@ -277,7 +277,7 @@ public final class RecrawlUrisResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Details about why crawling failed for a particular CorpusType, e.g.
+     * Details about why crawling failed for a particular CorpusType, e.g.,
      * DESKTOP and MOBILE crawling may fail for different reasons.
      * </pre>
      *
@@ -789,7 +789,7 @@ public final class RecrawlUrisResponse extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Details about why crawling failed for a particular CorpusType, e.g.
+       * Details about why crawling failed for a particular CorpusType, e.g.,
        * DESKTOP and MOBILE crawling may fail for different reasons.
        * </pre>
        *

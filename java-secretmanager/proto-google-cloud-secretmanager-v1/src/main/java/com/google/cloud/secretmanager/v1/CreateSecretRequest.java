@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
+ * Request message for
+ * [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.CreateSecretRequest}
@@ -187,7 +188,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>
@@ -204,7 +206,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>
@@ -223,7 +226,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>
@@ -424,7 +428,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
+   * Request message for
+   * [SecretManagerService.CreateSecret][google.cloud.secretmanager.v1.SecretManagerService.CreateSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.CreateSecretRequest}
@@ -904,7 +909,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -920,7 +926,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -942,7 +949,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -966,7 +974,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -987,7 +996,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -1016,7 +1026,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -1037,7 +1048,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -1053,7 +1065,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>
@@ -1073,7 +1086,8 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+     * field values.
      * </pre>
      *
      * <code>

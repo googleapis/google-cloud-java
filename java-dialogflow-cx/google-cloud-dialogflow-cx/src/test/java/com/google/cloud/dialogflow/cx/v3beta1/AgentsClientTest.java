@@ -202,12 +202,14 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -261,12 +263,14 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -320,12 +324,14 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -382,12 +388,14 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -444,12 +452,14 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

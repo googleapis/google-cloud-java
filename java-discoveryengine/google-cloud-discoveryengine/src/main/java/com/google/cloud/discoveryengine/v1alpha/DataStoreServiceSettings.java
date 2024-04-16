@@ -119,6 +119,19 @@ public class DataStoreServiceSettings extends ClientSettings<DataStoreServiceSet
     return ((DataStoreServiceStubSettings) getStubSettings()).updateDataStoreSettings();
   }
 
+  /** Returns the object with the settings used for calls to getDocumentProcessingConfig. */
+  public UnaryCallSettings<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigSettings() {
+    return ((DataStoreServiceStubSettings) getStubSettings()).getDocumentProcessingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDocumentProcessingConfig. */
+  public UnaryCallSettings<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigSettings() {
+    return ((DataStoreServiceStubSettings) getStubSettings())
+        .updateDocumentProcessingConfigSettings();
+  }
+
   public static final DataStoreServiceSettings create(DataStoreServiceStubSettings stub)
       throws IOException {
     return new DataStoreServiceSettings.Builder(stub.toBuilder()).build();
@@ -268,6 +281,19 @@ public class DataStoreServiceSettings extends ClientSettings<DataStoreServiceSet
     /** Returns the builder for the settings used for calls to updateDataStore. */
     public UnaryCallSettings.Builder<UpdateDataStoreRequest, DataStore> updateDataStoreSettings() {
       return getStubSettingsBuilder().updateDataStoreSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDocumentProcessingConfig. */
+    public UnaryCallSettings.Builder<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        getDocumentProcessingConfigSettings() {
+      return getStubSettingsBuilder().getDocumentProcessingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDocumentProcessingConfig. */
+    public UnaryCallSettings.Builder<
+            UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        updateDocumentProcessingConfigSettings() {
+      return getStubSettingsBuilder().updateDocumentProcessingConfigSettings();
     }
 
     @Override

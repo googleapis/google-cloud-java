@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -35,6 +36,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.edgecontainer.v1.stub.EdgeContainerStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -113,6 +118,17 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
     return ((EdgeContainerStubSettings) getStubSettings()).updateClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).upgradeClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public OperationCallSettings<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).upgradeClusterOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return ((EdgeContainerStubSettings) getStubSettings()).deleteClusterSettings();
@@ -128,6 +144,12 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
   public UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenSettings() {
     return ((EdgeContainerStubSettings) getStubSettings()).generateAccessTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateOfflineCredential. */
+  public UnaryCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).generateOfflineCredentialSettings();
   }
 
   /** Returns the object with the settings used for calls to listNodePools. */
@@ -217,6 +239,22 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
   public OperationCallSettings<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationSettings() {
     return ((EdgeContainerStubSettings) getStubSettings()).deleteVpnConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getServerConfig. */
+  public UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).getServerConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EdgeContainerStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final EdgeContainerSettings create(EdgeContainerStubSettings stub)
@@ -365,6 +403,17 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
       return getStubSettingsBuilder().updateClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public UnaryCallSettings.Builder<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+      return getStubSettingsBuilder().upgradeClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public OperationCallSettings.Builder<UpgradeClusterRequest, Cluster, OperationMetadata>
+        upgradeClusterOperationSettings() {
+      return getStubSettingsBuilder().upgradeClusterOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
       return getStubSettingsBuilder().deleteClusterSettings();
@@ -380,6 +429,13 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
     public UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings() {
       return getStubSettingsBuilder().generateAccessTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateOfflineCredential. */
+    public UnaryCallSettings.Builder<
+            GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+        generateOfflineCredentialSettings() {
+      return getStubSettingsBuilder().generateOfflineCredentialSettings();
     }
 
     /** Returns the builder for the settings used for calls to listNodePools. */
@@ -475,6 +531,24 @@ public class EdgeContainerSettings extends ClientSettings<EdgeContainerSettings>
     public OperationCallSettings.Builder<DeleteVpnConnectionRequest, Empty, OperationMetadata>
         deleteVpnConnectionOperationSettings() {
       return getStubSettingsBuilder().deleteVpnConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getServerConfig. */
+    public UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
+        getServerConfigSettings() {
+      return getStubSettingsBuilder().getServerConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

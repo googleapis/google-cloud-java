@@ -1581,8 +1581,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    RelatedAccountGroupName project =
-        RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+    ProjectName project = ProjectName.of("[PROJECT]");
     ByteString hashedAccountId = ByteString.EMPTY;
 
     SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
@@ -1614,8 +1613,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      RelatedAccountGroupName project =
-          RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+      ProjectName project = ProjectName.of("[PROJECT]");
       ByteString hashedAccountId = ByteString.EMPTY;
       client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
       Assert.fail("No exception raised");

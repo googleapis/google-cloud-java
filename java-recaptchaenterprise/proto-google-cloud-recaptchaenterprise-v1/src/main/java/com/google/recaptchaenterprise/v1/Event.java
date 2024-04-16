@@ -243,7 +243,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * this event.
    * </pre>
    *
-   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The userIpAddress.
    */
@@ -267,7 +269,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * this event.
    * </pre>
    *
-   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for userIpAddress.
    */
@@ -354,7 +358,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=676
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
    * @return The hashedAccountId.
    */
   @java.lang.Override
@@ -1745,7 +1749,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * this event.
      * </pre>
      *
-     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The userIpAddress.
      */
@@ -1768,7 +1774,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * this event.
      * </pre>
      *
-     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for userIpAddress.
      */
@@ -1791,7 +1799,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * this event.
      * </pre>
      *
-     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The userIpAddress to set.
      * @return This builder for chaining.
@@ -1813,7 +1823,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * this event.
      * </pre>
      *
-     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1831,7 +1843,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * this event.
      * </pre>
      *
-     * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for userIpAddress to set.
      * @return This builder for chaining.
@@ -1978,7 +1992,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=676
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
      * @return The hashedAccountId.
      */
     @java.lang.Override
@@ -2000,7 +2014,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=676
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
@@ -2028,7 +2042,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=676
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

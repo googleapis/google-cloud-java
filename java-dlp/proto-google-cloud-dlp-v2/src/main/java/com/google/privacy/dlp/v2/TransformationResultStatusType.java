@@ -31,7 +31,15 @@ package com.google.privacy.dlp.v2;
  * Protobuf enum {@code google.privacy.dlp.v2.TransformationResultStatusType}
  */
 public enum TransformationResultStatusType implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>STATE_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>STATE_TYPE_UNSPECIFIED = 0;</code>
+   */
   STATE_TYPE_UNSPECIFIED(0),
   /**
    *
@@ -81,7 +89,15 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>STATE_TYPE_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>STATE_TYPE_UNSPECIFIED = 0;</code>
+   */
   public static final int STATE_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    *

@@ -43,6 +43,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     domain_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -76,6 +77,169 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.certificatemanager.v1.DnsAuthorization.class,
             com.google.cloud.certificatemanager.v1.DnsAuthorization.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DnsAuthorization type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.certificatemanager.v1.DnsAuthorization.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Type is unspecified.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * FIXED_RECORD DNS authorization uses DNS-01 validation method.
+     * </pre>
+     *
+     * <code>FIXED_RECORD = 1;</code>
+     */
+    FIXED_RECORD(1),
+    /**
+     *
+     *
+     * <pre>
+     * PER_PROJECT_RECORD DNS authorization allows for independent management
+     * of Google-managed certificates with DNS authorization across multiple
+     * projects.
+     * </pre>
+     *
+     * <code>PER_PROJECT_RECORD = 2;</code>
+     */
+    PER_PROJECT_RECORD(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type is unspecified.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * FIXED_RECORD DNS authorization uses DNS-01 validation method.
+     * </pre>
+     *
+     * <code>FIXED_RECORD = 1;</code>
+     */
+    public static final int FIXED_RECORD_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * PER_PROJECT_RECORD DNS authorization allows for independent management
+     * of Google-managed certificates with DNS authorization across multiple
+     * projects.
+     * </pre>
+     *
+     * <code>PER_PROJECT_RECORD = 2;</code>
+     */
+    public static final int PER_PROJECT_RECORD_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return FIXED_RECORD;
+        case 2:
+          return PER_PROJECT_RECORD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.certificatemanager.v1.DnsAuthorization.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.certificatemanager.v1.DnsAuthorization.Type)
   }
 
   public interface DnsResourceRecordOrBuilder
@@ -1611,6 +1775,51 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         : dnsResourceRecord_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 11;
+  private int type_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Type of DnsAuthorization. If unset during resource creation the
+   * following default will be used:
+   * - in location global: FIXED_RECORD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Type of DnsAuthorization. If unset during resource creation the
+   * following default will be used:
+   * - in location global: FIXED_RECORD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.certificatemanager.v1.DnsAuthorization.Type getType() {
+    com.google.cloud.certificatemanager.v1.DnsAuthorization.Type result =
+        com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.forNumber(type_);
+    return result == null
+        ? com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1644,6 +1853,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10, getDnsResourceRecord());
+    }
+    if (type_
+        != com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1682,6 +1896,11 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDnsResourceRecord());
     }
+    if (type_
+        != com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1714,6 +1933,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     if (hasDnsResourceRecord()) {
       if (!getDnsResourceRecord().equals(other.getDnsResourceRecord())) return false;
     }
+    if (type_ != other.type_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1747,6 +1967,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DNS_RESOURCE_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getDnsResourceRecord().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1940,6 +2162,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         dnsResourceRecordBuilder_.dispose();
         dnsResourceRecordBuilder_ = null;
       }
+      type_ = 0;
       return this;
     }
 
@@ -2004,6 +2227,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
                 ? dnsResourceRecord_
                 : dnsResourceRecordBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.type_ = type_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2080,6 +2306,9 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (other.hasDnsResourceRecord()) {
         mergeDnsResourceRecord(other.getDnsResourceRecord());
       }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2155,6 +2384,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 82
+            case 88:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3318,6 +3553,118 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         dnsResourceRecord_ = null;
       }
       return dnsResourceRecordBuilder_;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Type of DnsAuthorization. If unset during resource creation the
+     * following default will be used:
+     * - in location global: FIXED_RECORD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Type of DnsAuthorization. If unset during resource creation the
+     * following default will be used:
+     * - in location global: FIXED_RECORD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Type of DnsAuthorization. If unset during resource creation the
+     * following default will be used:
+     * - in location global: FIXED_RECORD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.certificatemanager.v1.DnsAuthorization.Type getType() {
+      com.google.cloud.certificatemanager.v1.DnsAuthorization.Type result =
+          com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Type of DnsAuthorization. If unset during resource creation the
+     * following default will be used:
+     * - in location global: FIXED_RECORD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.certificatemanager.v1.DnsAuthorization.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Type of DnsAuthorization. If unset during resource creation the
+     * following default will be used:
+     * - in location global: FIXED_RECORD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      type_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

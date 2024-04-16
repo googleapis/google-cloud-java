@@ -72,12 +72,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the subject field is set.
@@ -87,12 +87,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The subject.
@@ -102,12 +102,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.security.privateca.v1.SubjectOrBuilder getSubjectOrBuilder();
@@ -203,12 +203,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the subject field is set.
@@ -221,12 +221,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The subject.
@@ -241,12 +241,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name,
+     * Optional. Contains distinguished name fields such as the common name,
      * location and organization.
      * </pre>
      *
      * <code>
-     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -737,12 +737,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the subject field is set.
@@ -754,12 +754,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The subject.
@@ -777,12 +777,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setSubject(com.google.cloud.security.privateca.v1.Subject value) {
@@ -802,12 +802,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setSubject(
@@ -825,12 +825,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder mergeSubject(com.google.cloud.security.privateca.v1.Subject value) {
@@ -855,12 +855,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearSubject() {
@@ -877,12 +877,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.security.privateca.v1.Subject.Builder getSubjectBuilder() {
@@ -894,12 +894,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.security.privateca.v1.SubjectOrBuilder getSubjectOrBuilder() {
@@ -915,12 +915,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name,
+       * Optional. Contains distinguished name fields such as the common name,
        * location and organization.
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.security.privateca.v1.Subject subject = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1217,6 +1217,666 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface KeyIdOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.security.privateca.v1.CertificateConfig.KeyId)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
+     * </pre>
+     *
+     * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The keyId.
+     */
+    java.lang.String getKeyId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
+     * </pre>
+     *
+     * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for keyId.
+     */
+    com.google.protobuf.ByteString getKeyIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A KeyId identifies a specific public key, usually by hashing the public
+   * key.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.security.privateca.v1.CertificateConfig.KeyId}
+   */
+  public static final class KeyId extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CertificateConfig.KeyId)
+      KeyIdOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use KeyId.newBuilder() to construct.
+    private KeyId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KeyId() {
+      keyId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KeyId();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_CertificateConfig_KeyId_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_CertificateConfig_KeyId_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.class,
+              com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder.class);
+    }
+
+    public static final int KEY_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object keyId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
+     * </pre>
+     *
+     * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The keyId.
+     */
+    @java.lang.Override
+    public java.lang.String getKeyId() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
+     * </pre>
+     *
+     * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for keyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKeyIdBytes() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        keyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.security.privateca.v1.CertificateConfig.KeyId)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.security.privateca.v1.CertificateConfig.KeyId other =
+          (com.google.cloud.security.privateca.v1.CertificateConfig.KeyId) obj;
+
+      if (!getKeyId().equals(other.getKeyId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A KeyId identifies a specific public key, usually by hashing the public
+     * key.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.security.privateca.v1.CertificateConfig.KeyId}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.security.privateca.v1.CertificateConfig.KeyId)
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateConfig_KeyId_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateConfig_KeyId_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.class,
+                com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder.class);
+      }
+
+      // Construct using com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        keyId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateConfig_KeyId_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId
+          getDefaultInstanceForType() {
+        return com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId build() {
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId buildPartial() {
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId result =
+            new com.google.cloud.security.privateca.v1.CertificateConfig.KeyId(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.CertificateConfig.KeyId result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.keyId_ = keyId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.security.privateca.v1.CertificateConfig.KeyId) {
+          return mergeFrom((com.google.cloud.security.privateca.v1.CertificateConfig.KeyId) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.security.privateca.v1.CertificateConfig.KeyId other) {
+        if (other
+            == com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance())
+          return this;
+        if (!other.getKeyId().isEmpty()) {
+          keyId_ = other.keyId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  keyId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object keyId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
+       * </pre>
+       *
+       * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The keyId.
+       */
+      public java.lang.String getKeyId() {
+        java.lang.Object ref = keyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          keyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
+       * </pre>
+       *
+       * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for keyId.
+       */
+      public com.google.protobuf.ByteString getKeyIdBytes() {
+        java.lang.Object ref = keyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          keyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
+       * </pre>
+       *
+       * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The keyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        keyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
+       * </pre>
+       *
+       * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyId() {
+        keyId_ = getDefaultInstance().getKeyId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
+       * </pre>
+       *
+       * <code>string key_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for keyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        keyId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.security.privateca.v1.CertificateConfig.KeyId)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.security.privateca.v1.CertificateConfig.KeyId)
+    private static final com.google.cloud.security.privateca.v1.CertificateConfig.KeyId
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.security.privateca.v1.CertificateConfig.KeyId();
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateConfig.KeyId
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KeyId> PARSER =
+        new com.google.protobuf.AbstractParser<KeyId>() {
+          @java.lang.Override
+          public KeyId parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KeyId> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KeyId> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SUBJECT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.security.privateca.v1.CertificateConfig.SubjectConfig subjectConfig_;
@@ -1416,6 +2076,72 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         : publicKey_;
   }
 
+  public static final int SUBJECT_KEY_ID_FIELD_NUMBER = 4;
+  private com.google.cloud.security.privateca.v1.CertificateConfig.KeyId subjectKeyId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specified this provides a custom SKI to be used in the
+   * certificate. This should only be used to maintain a SKI of an existing CA
+   * originally created outside CA service, which was not generated using method
+   * (1) described in RFC 5280 section 4.2.1.2.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the subjectKeyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubjectKeyId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specified this provides a custom SKI to be used in the
+   * certificate. This should only be used to maintain a SKI of an existing CA
+   * originally created outside CA service, which was not generated using method
+   * (1) described in RFC 5280 section 4.2.1.2.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The subjectKeyId.
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId getSubjectKeyId() {
+    return subjectKeyId_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance()
+        : subjectKeyId_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specified this provides a custom SKI to be used in the
+   * certificate. This should only be used to maintain a SKI of an existing CA
+   * originally created outside CA service, which was not generated using method
+   * (1) described in RFC 5280 section 4.2.1.2.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder
+      getSubjectKeyIdOrBuilder() {
+    return subjectKeyId_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance()
+        : subjectKeyId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1439,6 +2165,9 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getPublicKey());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(4, getSubjectKeyId());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1456,6 +2185,9 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPublicKey());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSubjectKeyId());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1485,6 +2217,10 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     if (hasPublicKey()) {
       if (!getPublicKey().equals(other.getPublicKey())) return false;
     }
+    if (hasSubjectKeyId() != other.hasSubjectKeyId()) return false;
+    if (hasSubjectKeyId()) {
+      if (!getSubjectKeyId().equals(other.getSubjectKeyId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1507,6 +2243,10 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
     if (hasPublicKey()) {
       hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getPublicKey().hashCode();
+    }
+    if (hasSubjectKeyId()) {
+      hash = (37 * hash) + SUBJECT_KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubjectKeyId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1654,6 +2394,7 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         getSubjectConfigFieldBuilder();
         getX509ConfigFieldBuilder();
         getPublicKeyFieldBuilder();
+        getSubjectKeyIdFieldBuilder();
       }
     }
 
@@ -1675,6 +2416,11 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       if (publicKeyBuilder_ != null) {
         publicKeyBuilder_.dispose();
         publicKeyBuilder_ = null;
+      }
+      subjectKeyId_ = null;
+      if (subjectKeyIdBuilder_ != null) {
+        subjectKeyIdBuilder_.dispose();
+        subjectKeyIdBuilder_ = null;
       }
       return this;
     }
@@ -1725,6 +2471,11 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.publicKey_ = publicKeyBuilder_ == null ? publicKey_ : publicKeyBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.subjectKeyId_ =
+            subjectKeyIdBuilder_ == null ? subjectKeyId_ : subjectKeyIdBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1784,6 +2535,9 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasPublicKey()) {
         mergePublicKey(other.getPublicKey());
       }
+      if (other.hasSubjectKeyId()) {
+        mergeSubjectKeyId(other.getSubjectKeyId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1828,6 +2582,12 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getSubjectKeyIdFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2550,6 +3310,243 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
         publicKey_ = null;
       }
       return publicKeyBuilder_;
+    }
+
+    private com.google.cloud.security.privateca.v1.CertificateConfig.KeyId subjectKeyId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyId,
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder,
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder>
+        subjectKeyIdBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the subjectKeyId field is set.
+     */
+    public boolean hasSubjectKeyId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The subjectKeyId.
+     */
+    public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId getSubjectKeyId() {
+      if (subjectKeyIdBuilder_ == null) {
+        return subjectKeyId_ == null
+            ? com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance()
+            : subjectKeyId_;
+      } else {
+        return subjectKeyIdBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSubjectKeyId(
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId value) {
+      if (subjectKeyIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        subjectKeyId_ = value;
+      } else {
+        subjectKeyIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSubjectKeyId(
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder builderForValue) {
+      if (subjectKeyIdBuilder_ == null) {
+        subjectKeyId_ = builderForValue.build();
+      } else {
+        subjectKeyIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSubjectKeyId(
+        com.google.cloud.security.privateca.v1.CertificateConfig.KeyId value) {
+      if (subjectKeyIdBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && subjectKeyId_ != null
+            && subjectKeyId_
+                != com.google.cloud.security.privateca.v1.CertificateConfig.KeyId
+                    .getDefaultInstance()) {
+          getSubjectKeyIdBuilder().mergeFrom(value);
+        } else {
+          subjectKeyId_ = value;
+        }
+      } else {
+        subjectKeyIdBuilder_.mergeFrom(value);
+      }
+      if (subjectKeyId_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSubjectKeyId() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      subjectKeyId_ = null;
+      if (subjectKeyIdBuilder_ != null) {
+        subjectKeyIdBuilder_.dispose();
+        subjectKeyIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder
+        getSubjectKeyIdBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getSubjectKeyIdFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder
+        getSubjectKeyIdOrBuilder() {
+      if (subjectKeyIdBuilder_ != null) {
+        return subjectKeyIdBuilder_.getMessageOrBuilder();
+      } else {
+        return subjectKeyId_ == null
+            ? com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.getDefaultInstance()
+            : subjectKeyId_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified this provides a custom SKI to be used in the
+     * certificate. This should only be used to maintain a SKI of an existing CA
+     * originally created outside CA service, which was not generated using method
+     * (1) described in RFC 5280 section 4.2.1.2.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateConfig.KeyId subject_key_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyId,
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder,
+            com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder>
+        getSubjectKeyIdFieldBuilder() {
+      if (subjectKeyIdBuilder_ == null) {
+        subjectKeyIdBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.CertificateConfig.KeyId,
+                com.google.cloud.security.privateca.v1.CertificateConfig.KeyId.Builder,
+                com.google.cloud.security.privateca.v1.CertificateConfig.KeyIdOrBuilder>(
+                getSubjectKeyId(), getParentForChildren(), isClean());
+        subjectKeyId_ = null;
+      }
+      return subjectKeyIdBuilder_;
     }
 
     @java.lang.Override

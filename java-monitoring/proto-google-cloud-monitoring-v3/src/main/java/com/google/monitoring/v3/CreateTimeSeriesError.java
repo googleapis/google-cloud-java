@@ -74,7 +74,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=445
+   *     google/monitoring/v3/metric_service.proto;l=464
    * @return Whether the timeSeries field is set.
    */
   @java.lang.Override
@@ -92,7 +92,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=445
+   *     google/monitoring/v3/metric_service.proto;l=464
    * @return The timeSeries.
    */
   @java.lang.Override
@@ -131,7 +131,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=448
+   *     google/monitoring/v3/metric_service.proto;l=467
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -149,7 +149,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=448
+   *     google/monitoring/v3/metric_service.proto;l=467
    * @return The status.
    */
   @java.lang.Override
@@ -581,7 +581,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-     *     google/monitoring/v3/metric_service.proto;l=445
+     *     google/monitoring/v3/metric_service.proto;l=464
      * @return Whether the timeSeries field is set.
      */
     @java.lang.Deprecated
@@ -598,7 +598,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-     *     google/monitoring/v3/metric_service.proto;l=445
+     *     google/monitoring/v3/metric_service.proto;l=464
      * @return The timeSeries.
      */
     @java.lang.Deprecated
@@ -776,7 +776,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-     *     google/monitoring/v3/metric_service.proto;l=448
+     *     google/monitoring/v3/metric_service.proto;l=467
      * @return Whether the status field is set.
      */
     @java.lang.Deprecated
@@ -793,7 +793,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-     *     google/monitoring/v3/metric_service.proto;l=448
+     *     google/monitoring/v3/metric_service.proto;l=467
      * @return The status.
      */
     @java.lang.Deprecated

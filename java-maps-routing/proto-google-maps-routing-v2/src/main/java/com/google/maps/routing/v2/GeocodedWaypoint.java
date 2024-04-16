@@ -160,8 +160,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type(s) of the result, in the form of zero or more type tags.
-   * Supported types:
-   * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+   * Supported types: [Address types and address component
+   * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
    * </pre>
    *
    * <code>repeated string type = 3;</code>
@@ -176,8 +176,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type(s) of the result, in the form of zero or more type tags.
-   * Supported types:
-   * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+   * Supported types: [Address types and address component
+   * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
    * </pre>
    *
    * <code>repeated string type = 3;</code>
@@ -192,8 +192,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type(s) of the result, in the form of zero or more type tags.
-   * Supported types:
-   * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+   * Supported types: [Address types and address component
+   * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
    * </pre>
    *
    * <code>repeated string type = 3;</code>
@@ -209,8 +209,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type(s) of the result, in the form of zero or more type tags.
-   * Supported types:
-   * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+   * Supported types: [Address types and address component
+   * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
    * </pre>
    *
    * <code>repeated string type = 3;</code>
@@ -1044,8 +1044,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1061,8 +1061,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1077,8 +1077,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1094,8 +1094,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1111,8 +1111,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1136,8 +1136,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1160,8 +1160,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1181,8 +1181,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>
@@ -1201,8 +1201,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type(s) of the result, in the form of zero or more type tags.
-     * Supported types:
-     * https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types
+     * Supported types: [Address types and address component
+     * types](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#Types).
      * </pre>
      *
      * <code>repeated string type = 3;</code>

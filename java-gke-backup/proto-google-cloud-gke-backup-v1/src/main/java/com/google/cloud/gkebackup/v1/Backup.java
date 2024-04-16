@@ -27,7 +27,6 @@ package com.google.cloud.gkebackup.v1;
  * some portion of the state of a GKE cluster, the record of the backup
  * operation itself, and an anchor for the underlying artifacts that
  * comprise the Backup (the config backup and VolumeBackups).
- * Next id: 28
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.Backup}
@@ -322,7 +321,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source cluster from which this Backup was created.
+     * Output only. The source cluster from which this Backup was created.
      * Valid formats:
      *
      *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -332,7 +331,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
      *
-     * <code>string cluster = 1;</code>
+     * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The cluster.
      */
@@ -341,7 +340,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source cluster from which this Backup was created.
+     * Output only. The source cluster from which this Backup was created.
      * Valid formats:
      *
      *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -351,7 +350,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
      *
-     * <code>string cluster = 1;</code>
+     * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for cluster.
      */
@@ -361,10 +360,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Kubernetes server version of the source cluster.
+     * Output only. The Kubernetes server version of the source cluster.
      * </pre>
      *
-     * <code>string k8s_version = 2;</code>
+     * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The k8sVersion.
      */
@@ -373,10 +372,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Kubernetes server version of the source cluster.
+     * Output only. The Kubernetes server version of the source cluster.
      * </pre>
      *
-     * <code>string k8s_version = 2;</code>
+     * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for k8sVersion.
      */
@@ -386,20 +385,26 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     int getBackupCrdVersionsCount();
     /**
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     boolean containsBackupCrdVersions(java.lang.String key);
     /** Use {@link #getBackupCrdVersionsMap()} instead. */
@@ -409,20 +414,26 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getBackupCrdVersionsMap();
     /**
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     /* nullable */
     java.lang.String getBackupCrdVersionsOrDefault(
@@ -433,10 +444,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     java.lang.String getBackupCrdVersionsOrThrow(java.lang.String key);
 
@@ -444,10 +458,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the gkeVersion field is set.
      */
@@ -456,10 +470,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The gkeVersion.
      */
@@ -468,10 +482,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for gkeVersion.
      */
@@ -481,10 +495,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the anthosVersion field is set.
      */
@@ -493,10 +507,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The anthosVersion.
      */
@@ -505,10 +519,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for anthosVersion.
      */
@@ -631,7 +645,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source cluster from which this Backup was created.
+     * Output only. The source cluster from which this Backup was created.
      * Valid formats:
      *
      *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -641,7 +655,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
      *
-     * <code>string cluster = 1;</code>
+     * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The cluster.
      */
@@ -661,7 +675,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source cluster from which this Backup was created.
+     * Output only. The source cluster from which this Backup was created.
      * Valid formats:
      *
      *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -671,7 +685,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
      *
-     * <code>string cluster = 1;</code>
+     * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for cluster.
      */
@@ -696,10 +710,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Kubernetes server version of the source cluster.
+     * Output only. The Kubernetes server version of the source cluster.
      * </pre>
      *
-     * <code>string k8s_version = 2;</code>
+     * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The k8sVersion.
      */
@@ -719,10 +733,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Kubernetes server version of the source cluster.
+     * Output only. The Kubernetes server version of the source cluster.
      * </pre>
      *
-     * <code>string k8s_version = 2;</code>
+     * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for k8sVersion.
      */
@@ -771,10 +785,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public boolean containsBackupCrdVersions(java.lang.String key) {
@@ -793,10 +810,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getBackupCrdVersionsMap() {
@@ -806,10 +826,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getBackupCrdVersionsOrDefault(
@@ -827,10 +850,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of the Backup for GKE CRD versions found in the cluster.
+     * Output only. A list of the Backup for GKE CRD versions found in the
+     * cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+     * <code>
+     * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getBackupCrdVersionsOrThrow(java.lang.String key) {
@@ -850,10 +876,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the gkeVersion field is set.
      */
@@ -864,10 +890,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The gkeVersion.
      */
@@ -891,10 +917,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE version
+     * Output only. GKE version
      * </pre>
      *
-     * <code>string gke_version = 4;</code>
+     * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for gkeVersion.
      */
@@ -920,10 +946,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the anthosVersion field is set.
      */
@@ -934,10 +960,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The anthosVersion.
      */
@@ -961,10 +987,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Anthos version
+     * Output only. Anthos version
      * </pre>
      *
-     * <code>string anthos_version = 5;</code>
+     * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for anthosVersion.
      */
@@ -1515,7 +1541,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The source cluster from which this Backup was created.
+       * Output only. The source cluster from which this Backup was created.
        * Valid formats:
        *
        *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -1525,7 +1551,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
        *
-       * <code>string cluster = 1;</code>
+       * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The cluster.
        */
@@ -1544,7 +1570,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The source cluster from which this Backup was created.
+       * Output only. The source cluster from which this Backup was created.
        * Valid formats:
        *
        *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -1554,7 +1580,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
        *
-       * <code>string cluster = 1;</code>
+       * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for cluster.
        */
@@ -1573,7 +1599,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The source cluster from which this Backup was created.
+       * Output only. The source cluster from which this Backup was created.
        * Valid formats:
        *
        *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -1583,7 +1609,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
        *
-       * <code>string cluster = 1;</code>
+       * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The cluster to set.
        * @return This builder for chaining.
@@ -1601,7 +1627,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The source cluster from which this Backup was created.
+       * Output only. The source cluster from which this Backup was created.
        * Valid formats:
        *
        *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -1611,7 +1637,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
        *
-       * <code>string cluster = 1;</code>
+       * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1625,7 +1651,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The source cluster from which this Backup was created.
+       * Output only. The source cluster from which this Backup was created.
        * Valid formats:
        *
        *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
@@ -1635,7 +1661,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
        *
-       * <code>string cluster = 1;</code>
+       * <code>string cluster = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for cluster to set.
        * @return This builder for chaining.
@@ -1656,10 +1682,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Kubernetes server version of the source cluster.
+       * Output only. The Kubernetes server version of the source cluster.
        * </pre>
        *
-       * <code>string k8s_version = 2;</code>
+       * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The k8sVersion.
        */
@@ -1678,10 +1704,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Kubernetes server version of the source cluster.
+       * Output only. The Kubernetes server version of the source cluster.
        * </pre>
        *
-       * <code>string k8s_version = 2;</code>
+       * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for k8sVersion.
        */
@@ -1700,10 +1726,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Kubernetes server version of the source cluster.
+       * Output only. The Kubernetes server version of the source cluster.
        * </pre>
        *
-       * <code>string k8s_version = 2;</code>
+       * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The k8sVersion to set.
        * @return This builder for chaining.
@@ -1721,10 +1747,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Kubernetes server version of the source cluster.
+       * Output only. The Kubernetes server version of the source cluster.
        * </pre>
        *
-       * <code>string k8s_version = 2;</code>
+       * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1738,10 +1764,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Kubernetes server version of the source cluster.
+       * Output only. The Kubernetes server version of the source cluster.
        * </pre>
        *
-       * <code>string k8s_version = 2;</code>
+       * <code>string k8s_version = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for k8sVersion to set.
        * @return This builder for chaining.
@@ -1790,10 +1816,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       @java.lang.Override
       public boolean containsBackupCrdVersions(java.lang.String key) {
@@ -1812,10 +1841,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getBackupCrdVersionsMap() {
@@ -1825,10 +1857,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       @java.lang.Override
       public /* nullable */ java.lang.String getBackupCrdVersionsOrDefault(
@@ -1846,10 +1881,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       @java.lang.Override
       public java.lang.String getBackupCrdVersionsOrThrow(java.lang.String key) {
@@ -1873,10 +1911,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder removeBackupCrdVersions(java.lang.String key) {
         if (key == null) {
@@ -1895,10 +1936,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder putBackupCrdVersions(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -1915,10 +1959,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of the Backup for GKE CRD versions found in the cluster.
+       * Output only. A list of the Backup for GKE CRD versions found in the
+       * cluster.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; backup_crd_versions = 3;</code>
+       * <code>
+       * map&lt;string, string&gt; backup_crd_versions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder putAllBackupCrdVersions(
           java.util.Map<java.lang.String, java.lang.String> values) {
@@ -1931,10 +1978,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return Whether the gkeVersion field is set.
        */
@@ -1946,10 +1993,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The gkeVersion.
        */
@@ -1974,10 +2021,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for gkeVersion.
        */
@@ -2002,10 +2049,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The gkeVersion to set.
        * @return This builder for chaining.
@@ -2023,10 +2070,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2042,10 +2089,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GKE version
+       * Output only. GKE version
        * </pre>
        *
-       * <code>string gke_version = 4;</code>
+       * <code>string gke_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for gkeVersion to set.
        * @return This builder for chaining.
@@ -2065,10 +2112,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return Whether the anthosVersion field is set.
        */
@@ -2080,10 +2127,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The anthosVersion.
        */
@@ -2108,10 +2155,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for anthosVersion.
        */
@@ -2136,10 +2183,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The anthosVersion to set.
        * @return This builder for chaining.
@@ -2157,10 +2204,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2176,10 +2223,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Anthos version
+       * Output only. Anthos version
        * </pre>
        *
-       * <code>string anthos_version = 5;</code>
+       * <code>string anthos_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for anthosVersion to set.
        * @return This builder for chaining.
@@ -2566,10 +2613,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -2588,10 +2635,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2601,10 +2648,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2621,10 +2668,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2644,9 +2691,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Minimum age for this Backup (in days). If this field is set to a non-zero
-   * value, the Backup will be "locked" against deletion (either manual or
-   * automatic deletion) for the number of days provided (measured from the
+   * Optional. Minimum age for this Backup (in days). If this field is set to a
+   * non-zero value, the Backup will be "locked" against deletion (either manual
+   * or automatic deletion) for the number of days provided (measured from the
    * creation time of the Backup).  MUST be an integer value between 0-90
    * (inclusive).
    *
@@ -2656,7 +2703,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * (either at creation time or in a subsequent update).
    * </pre>
    *
-   * <code>int32 delete_lock_days = 7;</code>
+   * <code>int32 delete_lock_days = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deleteLockDays.
    */
@@ -2733,8 +2780,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The age (in days) after which this Backup will be automatically deleted.
-   * Must be an integer value &gt;= 0:
+   * Optional. The age (in days) after which this Backup will be automatically
+   * deleted. Must be an integer value &gt;= 0:
    *
    * - If 0, no automatic deletion will occur for this Backup.
    * - If not 0, this must be &gt;=
@@ -2748,7 +2795,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * value.
    * </pre>
    *
-   * <code>int32 retain_days = 9;</code>
+   * <code>int32 retain_days = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The retainDays.
    */
@@ -3418,10 +3465,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this Backup.
+   * Optional. User specified descriptive string for this Backup.
    * </pre>
    *
-   * <code>string description = 25;</code>
+   * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -3441,10 +3488,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this Backup.
+   * Optional. User specified descriptive string for this Backup.
    * </pre>
    *
-   * <code>string description = 25;</code>
+   * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -3967,7 +4014,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * some portion of the state of a GKE cluster, the record of the backup
    * operation itself, and an anchor for the underlying artifacts that
    * comprise the Backup (the config backup and VolumeBackups).
-   * Next id: 28
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.Backup}
@@ -5331,10 +5377,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -5353,10 +5399,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -5366,10 +5412,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -5386,10 +5432,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -5412,10 +5458,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -5434,10 +5480,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -5454,10 +5500,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -5470,9 +5516,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum age for this Backup (in days). If this field is set to a non-zero
-     * value, the Backup will be "locked" against deletion (either manual or
-     * automatic deletion) for the number of days provided (measured from the
+     * Optional. Minimum age for this Backup (in days). If this field is set to a
+     * non-zero value, the Backup will be "locked" against deletion (either manual
+     * or automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
      *
@@ -5482,7 +5528,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * (either at creation time or in a subsequent update).
      * </pre>
      *
-     * <code>int32 delete_lock_days = 7;</code>
+     * <code>int32 delete_lock_days = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The deleteLockDays.
      */
@@ -5494,9 +5540,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum age for this Backup (in days). If this field is set to a non-zero
-     * value, the Backup will be "locked" against deletion (either manual or
-     * automatic deletion) for the number of days provided (measured from the
+     * Optional. Minimum age for this Backup (in days). If this field is set to a
+     * non-zero value, the Backup will be "locked" against deletion (either manual
+     * or automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
      *
@@ -5506,7 +5552,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * (either at creation time or in a subsequent update).
      * </pre>
      *
-     * <code>int32 delete_lock_days = 7;</code>
+     * <code>int32 delete_lock_days = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The deleteLockDays to set.
      * @return This builder for chaining.
@@ -5522,9 +5568,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum age for this Backup (in days). If this field is set to a non-zero
-     * value, the Backup will be "locked" against deletion (either manual or
-     * automatic deletion) for the number of days provided (measured from the
+     * Optional. Minimum age for this Backup (in days). If this field is set to a
+     * non-zero value, the Backup will be "locked" against deletion (either manual
+     * or automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
      *
@@ -5534,7 +5580,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * (either at creation time or in a subsequent update).
      * </pre>
      *
-     * <code>int32 delete_lock_days = 7;</code>
+     * <code>int32 delete_lock_days = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5771,8 +5817,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The age (in days) after which this Backup will be automatically deleted.
-     * Must be an integer value &gt;= 0:
+     * Optional. The age (in days) after which this Backup will be automatically
+     * deleted. Must be an integer value &gt;= 0:
      *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;=
@@ -5786,7 +5832,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * value.
      * </pre>
      *
-     * <code>int32 retain_days = 9;</code>
+     * <code>int32 retain_days = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The retainDays.
      */
@@ -5798,8 +5844,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The age (in days) after which this Backup will be automatically deleted.
-     * Must be an integer value &gt;= 0:
+     * Optional. The age (in days) after which this Backup will be automatically
+     * deleted. Must be an integer value &gt;= 0:
      *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;=
@@ -5813,7 +5859,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * value.
      * </pre>
      *
-     * <code>int32 retain_days = 9;</code>
+     * <code>int32 retain_days = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The retainDays to set.
      * @return This builder for chaining.
@@ -5829,8 +5875,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The age (in days) after which this Backup will be automatically deleted.
-     * Must be an integer value &gt;= 0:
+     * Optional. The age (in days) after which this Backup will be automatically
+     * deleted. Must be an integer value &gt;= 0:
      *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;=
@@ -5844,7 +5890,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * value.
      * </pre>
      *
-     * <code>int32 retain_days = 9;</code>
+     * <code>int32 retain_days = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7916,10 +7962,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this Backup.
+     * Optional. User specified descriptive string for this Backup.
      * </pre>
      *
-     * <code>string description = 25;</code>
+     * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -7938,10 +7984,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this Backup.
+     * Optional. User specified descriptive string for this Backup.
      * </pre>
      *
-     * <code>string description = 25;</code>
+     * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -7960,10 +8006,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this Backup.
+     * Optional. User specified descriptive string for this Backup.
      * </pre>
      *
-     * <code>string description = 25;</code>
+     * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -7981,10 +8027,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this Backup.
+     * Optional. User specified descriptive string for this Backup.
      * </pre>
      *
-     * <code>string description = 25;</code>
+     * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7998,10 +8044,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this Backup.
+     * Optional. User specified descriptive string for this Backup.
      * </pre>
      *
-     * <code>string description = 25;</code>
+     * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.

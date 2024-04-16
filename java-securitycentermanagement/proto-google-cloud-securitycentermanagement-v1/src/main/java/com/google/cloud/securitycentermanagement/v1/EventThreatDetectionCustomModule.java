@@ -275,7 +275,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Immutable. The resource name of the ETD custom module.
+   * Identifier. The resource name of the ETD custom module.
    *
    * Its format is:
    *
@@ -284,7 +284,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -304,7 +304,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Immutable. The resource name of the ETD custom module.
+   * Identifier. The resource name of the ETD custom module.
    *
    * Its format is:
    *
@@ -313,7 +313,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1337,7 +1337,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Immutable. The resource name of the ETD custom module.
+     * Identifier. The resource name of the ETD custom module.
      *
      * Its format is:
      *
@@ -1346,7 +1346,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1365,7 +1365,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Immutable. The resource name of the ETD custom module.
+     * Identifier. The resource name of the ETD custom module.
      *
      * Its format is:
      *
@@ -1374,7 +1374,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1393,7 +1393,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Immutable. The resource name of the ETD custom module.
+     * Identifier. The resource name of the ETD custom module.
      *
      * Its format is:
      *
@@ -1402,7 +1402,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1420,7 +1420,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Immutable. The resource name of the ETD custom module.
+     * Identifier. The resource name of the ETD custom module.
      *
      * Its format is:
      *
@@ -1429,7 +1429,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1443,7 +1443,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Immutable. The resource name of the ETD custom module.
+     * Identifier. The resource name of the ETD custom module.
      *
      * Its format is:
      *
@@ -1452,7 +1452,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *   * "projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}".
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

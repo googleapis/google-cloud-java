@@ -28,7 +28,8 @@ public interface ListVpnConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location, which owns this collection of VPN connections.
+   * Required. The parent location, which owns this collection of VPN
+   * connections.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface ListVpnConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location, which owns this collection of VPN connections.
+   * Required. The parent location, which owns this collection of VPN
+   * connections.
    * </pre>
    *
    * <code>

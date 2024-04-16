@@ -244,6 +244,7 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -311,6 +312,7 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -554,6 +556,7 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -884,6 +887,7 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -954,6 +958,7 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

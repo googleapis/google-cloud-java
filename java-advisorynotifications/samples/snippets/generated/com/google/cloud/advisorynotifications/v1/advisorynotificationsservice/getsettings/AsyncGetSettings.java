@@ -39,7 +39,9 @@ public class AsyncGetSettings {
         AdvisoryNotificationsServiceClient.create()) {
       GetSettingsRequest request =
           GetSettingsRequest.newBuilder()
-              .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setName(
+                  SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .build();
       ApiFuture<Settings> future =
           advisoryNotificationsServiceClient.getSettingsCallable().futureCall(request);

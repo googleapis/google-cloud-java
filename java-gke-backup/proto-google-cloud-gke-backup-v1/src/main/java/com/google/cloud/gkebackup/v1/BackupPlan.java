@@ -46,6 +46,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     state_ = 0;
     stateReason_ = "";
+    rpoRiskReason_ = "";
   }
 
   @java.lang.Override
@@ -335,7 +336,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum age for Backups created via this BackupPlan (in days).
+     * Optional. Minimum age for Backups created via this BackupPlan (in days).
      * This field MUST be an integer value between 0-90 (inclusive).
      * A Backup created under this BackupPlan will NOT be deletable until it
      * reaches Backup's (create_time + backup_delete_lock_days).
@@ -346,7 +347,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Default: 0 (no delete blocking)
      * </pre>
      *
-     * <code>int32 backup_delete_lock_days = 1;</code>
+     * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The backupDeleteLockDays.
      */
@@ -356,27 +357,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default maximum age of a Backup created via this BackupPlan.
-     * This field MUST be an integer value &gt;= 0 and &lt;= 365.
-     * If specified, a Backup created under this BackupPlan will be
-     * automatically deleted after its age reaches (create_time +
-     * backup_retain_days).
-     * If not specified, Backups created under this BackupPlan will NOT be
-     * subject to automatic deletion.
-     * Updating this field does NOT affect existing Backups under it. Backups
-     * created AFTER a successful update will automatically pick up the new
-     * value.
-     * NOTE: backup_retain_days must be &gt;=
+     * Optional. The default maximum age of a Backup created via this
+     * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+     * specified, a Backup created under this BackupPlan will be automatically
+     * deleted after its age reaches (create_time + backup_retain_days). If not
+     * specified, Backups created under this BackupPlan will NOT be subject to
+     * automatic deletion. Updating this field does NOT affect existing Backups
+     * under it. Backups created AFTER a successful update will automatically
+     * pick up the new value. NOTE: backup_retain_days must be &gt;=
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
      * If
      * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
      * is defined, then this must be
-     * &lt;= 360 * the creation interval.
+     * &lt;= 360 * the creation interval. If
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config] is
+     * defined, then this must be
+     * &lt;= 360 * [target_rpo_minutes][Schedule.rpo_config.target_rpo_minutes] /
+     * (1440minutes/day).
      *
      * Default: 0 (no automatic deletion)
      * </pre>
      *
-     * <code>int32 backup_retain_days = 2;</code>
+     * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The backupRetainDays.
      */
@@ -386,14 +388,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag denotes whether the retention policy of this BackupPlan is
-     * locked.  If set to True, no further update is allowed on this policy,
-     * including the `locked` field itself.
+     * Optional. This flag denotes whether the retention policy of this
+     * BackupPlan is locked.  If set to True, no further update is allowed on
+     * this policy, including the `locked` field itself.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool locked = 3;</code>
+     * <code>bool locked = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The locked.
      */
@@ -447,7 +449,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum age for Backups created via this BackupPlan (in days).
+     * Optional. Minimum age for Backups created via this BackupPlan (in days).
      * This field MUST be an integer value between 0-90 (inclusive).
      * A Backup created under this BackupPlan will NOT be deletable until it
      * reaches Backup's (create_time + backup_delete_lock_days).
@@ -458,7 +460,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Default: 0 (no delete blocking)
      * </pre>
      *
-     * <code>int32 backup_delete_lock_days = 1;</code>
+     * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The backupDeleteLockDays.
      */
@@ -473,27 +475,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The default maximum age of a Backup created via this BackupPlan.
-     * This field MUST be an integer value &gt;= 0 and &lt;= 365.
-     * If specified, a Backup created under this BackupPlan will be
-     * automatically deleted after its age reaches (create_time +
-     * backup_retain_days).
-     * If not specified, Backups created under this BackupPlan will NOT be
-     * subject to automatic deletion.
-     * Updating this field does NOT affect existing Backups under it. Backups
-     * created AFTER a successful update will automatically pick up the new
-     * value.
-     * NOTE: backup_retain_days must be &gt;=
+     * Optional. The default maximum age of a Backup created via this
+     * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+     * specified, a Backup created under this BackupPlan will be automatically
+     * deleted after its age reaches (create_time + backup_retain_days). If not
+     * specified, Backups created under this BackupPlan will NOT be subject to
+     * automatic deletion. Updating this field does NOT affect existing Backups
+     * under it. Backups created AFTER a successful update will automatically
+     * pick up the new value. NOTE: backup_retain_days must be &gt;=
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
      * If
      * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
      * is defined, then this must be
-     * &lt;= 360 * the creation interval.
+     * &lt;= 360 * the creation interval. If
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config] is
+     * defined, then this must be
+     * &lt;= 360 * [target_rpo_minutes][Schedule.rpo_config.target_rpo_minutes] /
+     * (1440minutes/day).
      *
      * Default: 0 (no automatic deletion)
      * </pre>
      *
-     * <code>int32 backup_retain_days = 2;</code>
+     * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The backupRetainDays.
      */
@@ -508,14 +511,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag denotes whether the retention policy of this BackupPlan is
-     * locked.  If set to True, no further update is allowed on this policy,
-     * including the `locked` field itself.
+     * Optional. This flag denotes whether the retention policy of this
+     * BackupPlan is locked.  If set to True, no further update is allowed on
+     * this policy, including the `locked` field itself.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool locked = 3;</code>
+     * <code>bool locked = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The locked.
      */
@@ -918,7 +921,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Minimum age for Backups created via this BackupPlan (in days).
+       * Optional. Minimum age for Backups created via this BackupPlan (in days).
        * This field MUST be an integer value between 0-90 (inclusive).
        * A Backup created under this BackupPlan will NOT be deletable until it
        * reaches Backup's (create_time + backup_delete_lock_days).
@@ -929,7 +932,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Default: 0 (no delete blocking)
        * </pre>
        *
-       * <code>int32 backup_delete_lock_days = 1;</code>
+       * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The backupDeleteLockDays.
        */
@@ -941,7 +944,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Minimum age for Backups created via this BackupPlan (in days).
+       * Optional. Minimum age for Backups created via this BackupPlan (in days).
        * This field MUST be an integer value between 0-90 (inclusive).
        * A Backup created under this BackupPlan will NOT be deletable until it
        * reaches Backup's (create_time + backup_delete_lock_days).
@@ -952,7 +955,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Default: 0 (no delete blocking)
        * </pre>
        *
-       * <code>int32 backup_delete_lock_days = 1;</code>
+       * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The backupDeleteLockDays to set.
        * @return This builder for chaining.
@@ -968,7 +971,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Minimum age for Backups created via this BackupPlan (in days).
+       * Optional. Minimum age for Backups created via this BackupPlan (in days).
        * This field MUST be an integer value between 0-90 (inclusive).
        * A Backup created under this BackupPlan will NOT be deletable until it
        * reaches Backup's (create_time + backup_delete_lock_days).
@@ -979,7 +982,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Default: 0 (no delete blocking)
        * </pre>
        *
-       * <code>int32 backup_delete_lock_days = 1;</code>
+       * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -995,27 +998,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
-       * If specified, a Backup created under this BackupPlan will be
-       * automatically deleted after its age reaches (create_time +
-       * backup_retain_days).
-       * If not specified, Backups created under this BackupPlan will NOT be
-       * subject to automatic deletion.
-       * Updating this field does NOT affect existing Backups under it. Backups
-       * created AFTER a successful update will automatically pick up the new
-       * value.
-       * NOTE: backup_retain_days must be &gt;=
+       * Optional. The default maximum age of a Backup created via this
+       * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+       * specified, a Backup created under this BackupPlan will be automatically
+       * deleted after its age reaches (create_time + backup_retain_days). If not
+       * specified, Backups created under this BackupPlan will NOT be subject to
+       * automatic deletion. Updating this field does NOT affect existing Backups
+       * under it. Backups created AFTER a successful update will automatically
+       * pick up the new value. NOTE: backup_retain_days must be &gt;=
        * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
        * If
        * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
        * is defined, then this must be
-       * &lt;= 360 * the creation interval.
+       * &lt;= 360 * the creation interval. If
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config] is
+       * defined, then this must be
+       * &lt;= 360 * [target_rpo_minutes][Schedule.rpo_config.target_rpo_minutes] /
+       * (1440minutes/day).
        *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
-       * <code>int32 backup_retain_days = 2;</code>
+       * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The backupRetainDays.
        */
@@ -1027,27 +1031,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
-       * If specified, a Backup created under this BackupPlan will be
-       * automatically deleted after its age reaches (create_time +
-       * backup_retain_days).
-       * If not specified, Backups created under this BackupPlan will NOT be
-       * subject to automatic deletion.
-       * Updating this field does NOT affect existing Backups under it. Backups
-       * created AFTER a successful update will automatically pick up the new
-       * value.
-       * NOTE: backup_retain_days must be &gt;=
+       * Optional. The default maximum age of a Backup created via this
+       * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+       * specified, a Backup created under this BackupPlan will be automatically
+       * deleted after its age reaches (create_time + backup_retain_days). If not
+       * specified, Backups created under this BackupPlan will NOT be subject to
+       * automatic deletion. Updating this field does NOT affect existing Backups
+       * under it. Backups created AFTER a successful update will automatically
+       * pick up the new value. NOTE: backup_retain_days must be &gt;=
        * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
        * If
        * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
        * is defined, then this must be
-       * &lt;= 360 * the creation interval.
+       * &lt;= 360 * the creation interval. If
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config] is
+       * defined, then this must be
+       * &lt;= 360 * [target_rpo_minutes][Schedule.rpo_config.target_rpo_minutes] /
+       * (1440minutes/day).
        *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
-       * <code>int32 backup_retain_days = 2;</code>
+       * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The backupRetainDays to set.
        * @return This builder for chaining.
@@ -1063,27 +1068,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The default maximum age of a Backup created via this BackupPlan.
-       * This field MUST be an integer value &gt;= 0 and &lt;= 365.
-       * If specified, a Backup created under this BackupPlan will be
-       * automatically deleted after its age reaches (create_time +
-       * backup_retain_days).
-       * If not specified, Backups created under this BackupPlan will NOT be
-       * subject to automatic deletion.
-       * Updating this field does NOT affect existing Backups under it. Backups
-       * created AFTER a successful update will automatically pick up the new
-       * value.
-       * NOTE: backup_retain_days must be &gt;=
+       * Optional. The default maximum age of a Backup created via this
+       * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+       * specified, a Backup created under this BackupPlan will be automatically
+       * deleted after its age reaches (create_time + backup_retain_days). If not
+       * specified, Backups created under this BackupPlan will NOT be subject to
+       * automatic deletion. Updating this field does NOT affect existing Backups
+       * under it. Backups created AFTER a successful update will automatically
+       * pick up the new value. NOTE: backup_retain_days must be &gt;=
        * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
        * If
        * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
        * is defined, then this must be
-       * &lt;= 360 * the creation interval.
+       * &lt;= 360 * the creation interval. If
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config] is
+       * defined, then this must be
+       * &lt;= 360 * [target_rpo_minutes][Schedule.rpo_config.target_rpo_minutes] /
+       * (1440minutes/day).
        *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
-       * <code>int32 backup_retain_days = 2;</code>
+       * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1099,14 +1105,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether the retention policy of this BackupPlan is
-       * locked.  If set to True, no further update is allowed on this policy,
-       * including the `locked` field itself.
+       * Optional. This flag denotes whether the retention policy of this
+       * BackupPlan is locked.  If set to True, no further update is allowed on
+       * this policy, including the `locked` field itself.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool locked = 3;</code>
+       * <code>bool locked = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The locked.
        */
@@ -1118,14 +1124,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether the retention policy of this BackupPlan is
-       * locked.  If set to True, no further update is allowed on this policy,
-       * including the `locked` field itself.
+       * Optional. This flag denotes whether the retention policy of this
+       * BackupPlan is locked.  If set to True, no further update is allowed on
+       * this policy, including the `locked` field itself.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool locked = 3;</code>
+       * <code>bool locked = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The locked to set.
        * @return This builder for chaining.
@@ -1141,14 +1147,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether the retention policy of this BackupPlan is
-       * locked.  If set to True, no further update is allowed on this policy,
-       * including the `locked` field itself.
+       * Optional. This flag denotes whether the retention policy of this
+       * BackupPlan is locked.  If set to True, no further update is allowed on
+       * this policy, including the `locked` field itself.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool locked = 3;</code>
+       * <code>bool locked = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1232,16 +1238,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan. If this is
-     * defined, then
+     * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+     * defines a repeating schedule for creating Backups via this BackupPlan.
+     * This is mutually exclusive with the
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+     * field since at most one schedule can be defined for a BackupPlan. If this
+     * is defined, then
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
      * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
-     * <code>string cron_schedule = 1;</code>
+     * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cronSchedule.
      */
@@ -1250,16 +1259,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan. If this is
-     * defined, then
+     * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+     * defines a repeating schedule for creating Backups via this BackupPlan.
+     * This is mutually exclusive with the
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+     * field since at most one schedule can be defined for a BackupPlan. If this
+     * is defined, then
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
      * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
-     * <code>string cron_schedule = 1;</code>
+     * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cronSchedule.
      */
@@ -1269,17 +1281,126 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag denotes whether automatic Backup creation is paused for this
-     * BackupPlan.
+     * Optional. This flag denotes whether automatic Backup creation is paused
+     * for this BackupPlan.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool paused = 2;</code>
+     * <code>bool paused = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The paused.
      */
     boolean getPaused();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rpoConfig field is set.
+     */
+    boolean hasRpoConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rpoConfig.
+     */
+    com.google.cloud.gkebackup.v1.RpoConfig getRpoConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RpoConfigOrBuilder getRpoConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the nextScheduledBackupTime field is set.
+     */
+    boolean hasNextScheduledBackupTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The nextScheduledBackupTime.
+     */
+    com.google.protobuf.Timestamp getNextScheduledBackupTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getNextScheduledBackupTimeOrBuilder();
   }
   /**
    *
@@ -1326,6 +1447,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gkebackup.v1.BackupPlan.Schedule.Builder.class);
     }
 
+    private int bitField0_;
     public static final int CRON_SCHEDULE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -1334,16 +1456,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan. If this is
-     * defined, then
+     * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+     * defines a repeating schedule for creating Backups via this BackupPlan.
+     * This is mutually exclusive with the
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+     * field since at most one schedule can be defined for a BackupPlan. If this
+     * is defined, then
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
      * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
-     * <code>string cron_schedule = 1;</code>
+     * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cronSchedule.
      */
@@ -1363,16 +1488,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-     * repeating schedule for creating Backups via this BackupPlan. If this is
-     * defined, then
+     * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+     * defines a repeating schedule for creating Backups via this BackupPlan.
+     * This is mutually exclusive with the
+     * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+     * field since at most one schedule can be defined for a BackupPlan. If this
+     * is defined, then
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
      * must also be defined.
      *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
-     * <code>string cron_schedule = 1;</code>
+     * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cronSchedule.
      */
@@ -1395,19 +1523,158 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag denotes whether automatic Backup creation is paused for this
-     * BackupPlan.
+     * Optional. This flag denotes whether automatic Backup creation is paused
+     * for this BackupPlan.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool paused = 2;</code>
+     * <code>bool paused = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The paused.
      */
     @java.lang.Override
     public boolean getPaused() {
       return paused_;
+    }
+
+    public static final int RPO_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.gkebackup.v1.RpoConfig rpoConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rpoConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasRpoConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rpoConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RpoConfig getRpoConfig() {
+      return rpoConfig_ == null
+          ? com.google.cloud.gkebackup.v1.RpoConfig.getDefaultInstance()
+          : rpoConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the RPO schedule configuration for this BackupPlan.
+     * This is mutually exclusive with the
+     * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+     * field since at most one schedule can be defined for a BackupPLan. If this
+     * is defined, then
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * must also be defined.
+     *
+     * Default (empty): no automatic backup creation will occur.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RpoConfigOrBuilder getRpoConfigOrBuilder() {
+      return rpoConfig_ == null
+          ? com.google.cloud.gkebackup.v1.RpoConfig.getDefaultInstance()
+          : rpoConfig_;
+    }
+
+    public static final int NEXT_SCHEDULED_BACKUP_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp nextScheduledBackupTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the nextScheduledBackupTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasNextScheduledBackupTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The nextScheduledBackupTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getNextScheduledBackupTime() {
+      return nextScheduledBackupTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextScheduledBackupTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Start time of next scheduled backup under this BackupPlan by
+     * either cron_schedule or rpo config.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getNextScheduledBackupTimeOrBuilder() {
+      return nextScheduledBackupTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextScheduledBackupTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1430,6 +1697,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (paused_ != false) {
         output.writeBool(2, paused_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getRpoConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getNextScheduledBackupTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1444,6 +1717,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (paused_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, paused_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRpoConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, getNextScheduledBackupTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1463,6 +1744,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
 
       if (!getCronSchedule().equals(other.getCronSchedule())) return false;
       if (getPaused() != other.getPaused()) return false;
+      if (hasRpoConfig() != other.hasRpoConfig()) return false;
+      if (hasRpoConfig()) {
+        if (!getRpoConfig().equals(other.getRpoConfig())) return false;
+      }
+      if (hasNextScheduledBackupTime() != other.hasNextScheduledBackupTime()) return false;
+      if (hasNextScheduledBackupTime()) {
+        if (!getNextScheduledBackupTime().equals(other.getNextScheduledBackupTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1478,6 +1767,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getCronSchedule().hashCode();
       hash = (37 * hash) + PAUSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPaused());
+      if (hasRpoConfig()) {
+        hash = (37 * hash) + RPO_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getRpoConfig().hashCode();
+      }
+      if (hasNextScheduledBackupTime()) {
+        hash = (37 * hash) + NEXT_SCHEDULED_BACKUP_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getNextScheduledBackupTime().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1610,10 +1907,20 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.gkebackup.v1.BackupPlan.Schedule.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getRpoConfigFieldBuilder();
+          getNextScheduledBackupTimeFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1622,6 +1929,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         cronSchedule_ = "";
         paused_ = false;
+        rpoConfig_ = null;
+        if (rpoConfigBuilder_ != null) {
+          rpoConfigBuilder_.dispose();
+          rpoConfigBuilder_ = null;
+        }
+        nextScheduledBackupTime_ = null;
+        if (nextScheduledBackupTimeBuilder_ != null) {
+          nextScheduledBackupTimeBuilder_.dispose();
+          nextScheduledBackupTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -1664,6 +1981,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.paused_ = paused_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.rpoConfig_ = rpoConfigBuilder_ == null ? rpoConfig_ : rpoConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.nextScheduledBackupTime_ =
+              nextScheduledBackupTimeBuilder_ == null
+                  ? nextScheduledBackupTime_
+                  : nextScheduledBackupTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1722,6 +2052,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         if (other.getPaused() != false) {
           setPaused(other.getPaused());
         }
+        if (other.hasRpoConfig()) {
+          mergeRpoConfig(other.getRpoConfig());
+        }
+        if (other.hasNextScheduledBackupTime()) {
+          mergeNextScheduledBackupTime(other.getNextScheduledBackupTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1760,6 +2096,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(getRpoConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getNextScheduledBackupTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1784,16 +2133,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan. If this is
-       * defined, then
+       * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+       * defines a repeating schedule for creating Backups via this BackupPlan.
+       * This is mutually exclusive with the
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+       * field since at most one schedule can be defined for a BackupPlan. If this
+       * is defined, then
        * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
        * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
-       * <code>string cron_schedule = 1;</code>
+       * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The cronSchedule.
        */
@@ -1812,16 +2164,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan. If this is
-       * defined, then
+       * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+       * defines a repeating schedule for creating Backups via this BackupPlan.
+       * This is mutually exclusive with the
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+       * field since at most one schedule can be defined for a BackupPlan. If this
+       * is defined, then
        * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
        * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
-       * <code>string cron_schedule = 1;</code>
+       * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for cronSchedule.
        */
@@ -1840,16 +2195,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan. If this is
-       * defined, then
+       * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+       * defines a repeating schedule for creating Backups via this BackupPlan.
+       * This is mutually exclusive with the
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+       * field since at most one schedule can be defined for a BackupPlan. If this
+       * is defined, then
        * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
        * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
-       * <code>string cron_schedule = 1;</code>
+       * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The cronSchedule to set.
        * @return This builder for chaining.
@@ -1867,16 +2225,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan. If this is
-       * defined, then
+       * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+       * defines a repeating schedule for creating Backups via this BackupPlan.
+       * This is mutually exclusive with the
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+       * field since at most one schedule can be defined for a BackupPlan. If this
+       * is defined, then
        * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
        * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
-       * <code>string cron_schedule = 1;</code>
+       * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1890,16 +2251,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
-       * repeating schedule for creating Backups via this BackupPlan. If this is
-       * defined, then
+       * Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that
+       * defines a repeating schedule for creating Backups via this BackupPlan.
+       * This is mutually exclusive with the
+       * [rpo_config][google.cloud.gkebackup.v1.BackupPlan.Schedule.rpo_config]
+       * field since at most one schedule can be defined for a BackupPlan. If this
+       * is defined, then
        * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
        * must also be defined.
        *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
-       * <code>string cron_schedule = 1;</code>
+       * <code>string cron_schedule = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for cronSchedule to set.
        * @return This builder for chaining.
@@ -1920,13 +2284,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether automatic Backup creation is paused for this
-       * BackupPlan.
+       * Optional. This flag denotes whether automatic Backup creation is paused
+       * for this BackupPlan.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool paused = 2;</code>
+       * <code>bool paused = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The paused.
        */
@@ -1938,13 +2302,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether automatic Backup creation is paused for this
-       * BackupPlan.
+       * Optional. This flag denotes whether automatic Backup creation is paused
+       * for this BackupPlan.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool paused = 2;</code>
+       * <code>bool paused = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The paused to set.
        * @return This builder for chaining.
@@ -1960,13 +2324,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag denotes whether automatic Backup creation is paused for this
-       * BackupPlan.
+       * Optional. This flag denotes whether automatic Backup creation is paused
+       * for this BackupPlan.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool paused = 2;</code>
+       * <code>bool paused = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1975,6 +2339,494 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         paused_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.gkebackup.v1.RpoConfig rpoConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RpoConfig,
+              com.google.cloud.gkebackup.v1.RpoConfig.Builder,
+              com.google.cloud.gkebackup.v1.RpoConfigOrBuilder>
+          rpoConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rpoConfig field is set.
+       */
+      public boolean hasRpoConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rpoConfig.
+       */
+      public com.google.cloud.gkebackup.v1.RpoConfig getRpoConfig() {
+        if (rpoConfigBuilder_ == null) {
+          return rpoConfig_ == null
+              ? com.google.cloud.gkebackup.v1.RpoConfig.getDefaultInstance()
+              : rpoConfig_;
+        } else {
+          return rpoConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRpoConfig(com.google.cloud.gkebackup.v1.RpoConfig value) {
+        if (rpoConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rpoConfig_ = value;
+        } else {
+          rpoConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRpoConfig(com.google.cloud.gkebackup.v1.RpoConfig.Builder builderForValue) {
+        if (rpoConfigBuilder_ == null) {
+          rpoConfig_ = builderForValue.build();
+        } else {
+          rpoConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRpoConfig(com.google.cloud.gkebackup.v1.RpoConfig value) {
+        if (rpoConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && rpoConfig_ != null
+              && rpoConfig_ != com.google.cloud.gkebackup.v1.RpoConfig.getDefaultInstance()) {
+            getRpoConfigBuilder().mergeFrom(value);
+          } else {
+            rpoConfig_ = value;
+          }
+        } else {
+          rpoConfigBuilder_.mergeFrom(value);
+        }
+        if (rpoConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRpoConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rpoConfig_ = null;
+        if (rpoConfigBuilder_ != null) {
+          rpoConfigBuilder_.dispose();
+          rpoConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RpoConfig.Builder getRpoConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getRpoConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RpoConfigOrBuilder getRpoConfigOrBuilder() {
+        if (rpoConfigBuilder_ != null) {
+          return rpoConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return rpoConfig_ == null
+              ? com.google.cloud.gkebackup.v1.RpoConfig.getDefaultInstance()
+              : rpoConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the RPO schedule configuration for this BackupPlan.
+       * This is mutually exclusive with the
+       * [cron_schedule][google.cloud.gkebackup.v1.BackupPlan.Schedule.cron_schedule]
+       * field since at most one schedule can be defined for a BackupPLan. If this
+       * is defined, then
+       * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+       * must also be defined.
+       *
+       * Default (empty): no automatic backup creation will occur.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RpoConfig rpo_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RpoConfig,
+              com.google.cloud.gkebackup.v1.RpoConfig.Builder,
+              com.google.cloud.gkebackup.v1.RpoConfigOrBuilder>
+          getRpoConfigFieldBuilder() {
+        if (rpoConfigBuilder_ == null) {
+          rpoConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RpoConfig,
+                  com.google.cloud.gkebackup.v1.RpoConfig.Builder,
+                  com.google.cloud.gkebackup.v1.RpoConfigOrBuilder>(
+                  getRpoConfig(), getParentForChildren(), isClean());
+          rpoConfig_ = null;
+        }
+        return rpoConfigBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp nextScheduledBackupTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          nextScheduledBackupTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the nextScheduledBackupTime field is set.
+       */
+      public boolean hasNextScheduledBackupTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The nextScheduledBackupTime.
+       */
+      public com.google.protobuf.Timestamp getNextScheduledBackupTime() {
+        if (nextScheduledBackupTimeBuilder_ == null) {
+          return nextScheduledBackupTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextScheduledBackupTime_;
+        } else {
+          return nextScheduledBackupTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setNextScheduledBackupTime(com.google.protobuf.Timestamp value) {
+        if (nextScheduledBackupTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nextScheduledBackupTime_ = value;
+        } else {
+          nextScheduledBackupTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setNextScheduledBackupTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (nextScheduledBackupTimeBuilder_ == null) {
+          nextScheduledBackupTime_ = builderForValue.build();
+        } else {
+          nextScheduledBackupTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeNextScheduledBackupTime(com.google.protobuf.Timestamp value) {
+        if (nextScheduledBackupTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && nextScheduledBackupTime_ != null
+              && nextScheduledBackupTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getNextScheduledBackupTimeBuilder().mergeFrom(value);
+          } else {
+            nextScheduledBackupTime_ = value;
+          }
+        } else {
+          nextScheduledBackupTimeBuilder_.mergeFrom(value);
+        }
+        if (nextScheduledBackupTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearNextScheduledBackupTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        nextScheduledBackupTime_ = null;
+        if (nextScheduledBackupTimeBuilder_ != null) {
+          nextScheduledBackupTimeBuilder_.dispose();
+          nextScheduledBackupTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getNextScheduledBackupTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getNextScheduledBackupTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getNextScheduledBackupTimeOrBuilder() {
+        if (nextScheduledBackupTimeBuilder_ != null) {
+          return nextScheduledBackupTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return nextScheduledBackupTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextScheduledBackupTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Start time of next scheduled backup under this BackupPlan by
+       * either cron_schedule or rpo config.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp next_scheduled_backup_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getNextScheduledBackupTimeFieldBuilder() {
+        if (nextScheduledBackupTimeBuilder_ == null) {
+          nextScheduledBackupTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getNextScheduledBackupTime(), getParentForChildren(), isClean());
+          nextScheduledBackupTime_ = null;
+        }
+        return nextScheduledBackupTimeBuilder_;
       }
 
       @java.lang.Override
@@ -2148,13 +3000,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag specifies whether volume data should be backed up when
-     * PVCs are included in the scope of a Backup.
+     * Optional. This flag specifies whether volume data should be backed up
+     * when PVCs are included in the scope of a Backup.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool include_volume_data = 4;</code>
+     * <code>bool include_volume_data = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The includeVolumeData.
      */
@@ -2164,13 +3016,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag specifies whether Kubernetes Secret resources should be
-     * included when they fall into the scope of Backups.
+     * Optional. This flag specifies whether Kubernetes Secret resources should
+     * be included when they fall into the scope of Backups.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool include_secrets = 5;</code>
+     * <code>bool include_secrets = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The includeSecrets.
      */
@@ -2180,14 +3032,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the encryptionKey field is set.
      */
@@ -2196,14 +3050,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The encryptionKey.
      */
@@ -2212,14 +3068,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder();
 
@@ -2468,13 +3326,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag specifies whether volume data should be backed up when
-     * PVCs are included in the scope of a Backup.
+     * Optional. This flag specifies whether volume data should be backed up
+     * when PVCs are included in the scope of a Backup.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool include_volume_data = 4;</code>
+     * <code>bool include_volume_data = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The includeVolumeData.
      */
@@ -2489,13 +3347,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag specifies whether Kubernetes Secret resources should be
-     * included when they fall into the scope of Backups.
+     * Optional. This flag specifies whether Kubernetes Secret resources should
+     * be included when they fall into the scope of Backups.
      *
      * Default: False
      * </pre>
      *
-     * <code>bool include_secrets = 5;</code>
+     * <code>bool include_secrets = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The includeSecrets.
      */
@@ -2510,14 +3368,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the encryptionKey field is set.
      */
@@ -2529,14 +3389,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The encryptionKey.
      */
@@ -2550,14 +3412,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This defines a customer managed encryption key that will be used to
-     * encrypt the "config" portion (the Kubernetes resources) of Backups
-     * created via this plan.
+     * Optional. This defines a customer managed encryption key that will be
+     * used to encrypt the "config" portion (the Kubernetes resources) of
+     * Backups created via this plan.
      *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
@@ -3614,13 +4478,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether volume data should be backed up when
-       * PVCs are included in the scope of a Backup.
+       * Optional. This flag specifies whether volume data should be backed up
+       * when PVCs are included in the scope of a Backup.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_volume_data = 4;</code>
+       * <code>bool include_volume_data = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The includeVolumeData.
        */
@@ -3632,13 +4496,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether volume data should be backed up when
-       * PVCs are included in the scope of a Backup.
+       * Optional. This flag specifies whether volume data should be backed up
+       * when PVCs are included in the scope of a Backup.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_volume_data = 4;</code>
+       * <code>bool include_volume_data = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The includeVolumeData to set.
        * @return This builder for chaining.
@@ -3654,13 +4518,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether volume data should be backed up when
-       * PVCs are included in the scope of a Backup.
+       * Optional. This flag specifies whether volume data should be backed up
+       * when PVCs are included in the scope of a Backup.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_volume_data = 4;</code>
+       * <code>bool include_volume_data = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3676,13 +4540,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether Kubernetes Secret resources should be
-       * included when they fall into the scope of Backups.
+       * Optional. This flag specifies whether Kubernetes Secret resources should
+       * be included when they fall into the scope of Backups.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_secrets = 5;</code>
+       * <code>bool include_secrets = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The includeSecrets.
        */
@@ -3694,13 +4558,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether Kubernetes Secret resources should be
-       * included when they fall into the scope of Backups.
+       * Optional. This flag specifies whether Kubernetes Secret resources should
+       * be included when they fall into the scope of Backups.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_secrets = 5;</code>
+       * <code>bool include_secrets = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The includeSecrets to set.
        * @return This builder for chaining.
@@ -3716,13 +4580,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This flag specifies whether Kubernetes Secret resources should be
-       * included when they fall into the scope of Backups.
+       * Optional. This flag specifies whether Kubernetes Secret resources should
+       * be included when they fall into the scope of Backups.
        *
        * Default: False
        * </pre>
        *
-       * <code>bool include_secrets = 5;</code>
+       * <code>bool include_secrets = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3743,14 +4607,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the encryptionKey field is set.
        */
@@ -3761,14 +4627,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The encryptionKey.
        */
@@ -3785,14 +4653,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setEncryptionKey(com.google.cloud.gkebackup.v1.EncryptionKey value) {
         if (encryptionKeyBuilder_ == null) {
@@ -3811,14 +4681,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setEncryptionKey(
           com.google.cloud.gkebackup.v1.EncryptionKey.Builder builderForValue) {
@@ -3835,14 +4707,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeEncryptionKey(com.google.cloud.gkebackup.v1.EncryptionKey value) {
         if (encryptionKeyBuilder_ == null) {
@@ -3867,14 +4741,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearEncryptionKey() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3890,14 +4766,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.EncryptionKey.Builder getEncryptionKeyBuilder() {
         bitField0_ |= 0x00000020;
@@ -3908,14 +4786,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
         if (encryptionKeyBuilder_ != null) {
@@ -3930,14 +4810,16 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This defines a customer managed encryption key that will be used to
-       * encrypt the "config" portion (the Kubernetes resources) of Backups
-       * created via this plan.
+       * Optional. This defines a customer managed encryption key that will be
+       * used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
        *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.gkebackup.v1.EncryptionKey,
@@ -4236,10 +5118,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this BackupPlan.
+   * Optional. User specified descriptive string for this BackupPlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -4259,10 +5141,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this BackupPlan.
+   * Optional. User specified descriptive string for this BackupPlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -4348,10 +5230,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the retentionPolicy field is set.
    */
@@ -4363,10 +5248,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The retentionPolicy.
    */
@@ -4380,10 +5268,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicyOrBuilder
@@ -4423,10 +5314,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -4445,10 +5336,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -4458,10 +5349,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -4478,10 +5369,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -4501,10 +5392,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backupSchedule field is set.
    */
@@ -4516,10 +5410,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backupSchedule.
    */
@@ -4533,10 +5430,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.BackupPlan.ScheduleOrBuilder getBackupScheduleOrBuilder() {
@@ -4616,7 +5516,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This flag indicates whether this BackupPlan has been deactivated.
+   * Optional. This flag indicates whether this BackupPlan has been deactivated.
    * Setting this field to True locks the BackupPlan such that no further
    * updates will be allowed (except deletes), including the deactivated field
    * itself. It also prevents any new Backups from being created via this
@@ -4625,7 +5525,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * Default: False
    * </pre>
    *
-   * <code>bool deactivated = 11;</code>
+   * <code>bool deactivated = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deactivated.
    */
@@ -4640,10 +5540,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backupConfig field is set.
    */
@@ -4655,10 +5557,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backupConfig.
    */
@@ -4672,10 +5576,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.BackupPlan.BackupConfigOrBuilder getBackupConfigOrBuilder() {
@@ -4801,6 +5707,79 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RPO_RISK_LEVEL_FIELD_NUMBER = 16;
+  private int rpoRiskLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A number that represents the current risk level of this
+   * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
+   * risk.
+   * </pre>
+   *
+   * <code>int32 rpo_risk_level = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rpoRiskLevel.
+   */
+  @java.lang.Override
+  public int getRpoRiskLevel() {
+    return rpoRiskLevel_;
+  }
+
+  public static final int RPO_RISK_REASON_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rpoRiskReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why the BackupPlan is in the
+   * current rpo_risk_level and action items if any.
+   * </pre>
+   *
+   * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rpoRiskReason.
+   */
+  @java.lang.Override
+  public java.lang.String getRpoRiskReason() {
+    java.lang.Object ref = rpoRiskReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rpoRiskReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why the BackupPlan is in the
+   * current rpo_risk_level and action items if any.
+   * </pre>
+   *
+   * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rpoRiskReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRpoRiskReasonBytes() {
+    java.lang.Object ref = rpoRiskReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rpoRiskReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4858,6 +5837,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, stateReason_);
+    }
+    if (rpoRiskLevel_ != 0) {
+      output.writeInt32(16, rpoRiskLevel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpoRiskReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, rpoRiskReason_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4920,6 +5905,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, stateReason_);
     }
+    if (rpoRiskLevel_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(16, rpoRiskLevel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpoRiskReason_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, rpoRiskReason_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4965,6 +5956,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (getProtectedPodCount() != other.getProtectedPodCount()) return false;
     if (state_ != other.state_) return false;
     if (!getStateReason().equals(other.getStateReason())) return false;
+    if (getRpoRiskLevel() != other.getRpoRiskLevel()) return false;
+    if (!getRpoRiskReason().equals(other.getRpoRiskReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5018,6 +6011,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + STATE_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getStateReason().hashCode();
+    hash = (37 * hash) + RPO_RISK_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + getRpoRiskLevel();
+    hash = (37 * hash) + RPO_RISK_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getRpoRiskReason().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5227,6 +6224,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       protectedPodCount_ = 0;
       state_ = 0;
       stateReason_ = "";
+      rpoRiskLevel_ = 0;
+      rpoRiskReason_ = "";
       return this;
     }
 
@@ -5317,6 +6316,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.stateReason_ = stateReason_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.rpoRiskLevel_ = rpoRiskLevel_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.rpoRiskReason_ = rpoRiskReason_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5420,6 +6425,14 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (!other.getStateReason().isEmpty()) {
         stateReason_ = other.stateReason_;
         bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (other.getRpoRiskLevel() != 0) {
+        setRpoRiskLevel(other.getRpoRiskLevel());
+      }
+      if (!other.getRpoRiskReason().isEmpty()) {
+        rpoRiskReason_ = other.rpoRiskReason_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5544,6 +6557,18 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 122
+            case 128:
+              {
+                rpoRiskLevel_ = input.readInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+            case 138:
+              {
+                rpoRiskReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6205,10 +7230,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this BackupPlan.
+     * Optional. User specified descriptive string for this BackupPlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -6227,10 +7252,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this BackupPlan.
+     * Optional. User specified descriptive string for this BackupPlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -6249,10 +7274,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this BackupPlan.
+     * Optional. User specified descriptive string for this BackupPlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -6270,10 +7295,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this BackupPlan.
+     * Optional. User specified descriptive string for this BackupPlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6287,10 +7312,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this BackupPlan.
+     * Optional. User specified descriptive string for this BackupPlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -6452,10 +7477,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the retentionPolicy field is set.
      */
@@ -6466,10 +7494,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The retentionPolicy.
      */
@@ -6486,10 +7517,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRetentionPolicy(
         com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy value) {
@@ -6509,10 +7543,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRetentionPolicy(
         com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.Builder builderForValue) {
@@ -6529,10 +7566,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeRetentionPolicy(
         com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy value) {
@@ -6558,10 +7598,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearRetentionPolicy() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -6577,10 +7620,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.Builder
         getRetentionPolicyBuilder() {
@@ -6592,10 +7638,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicyOrBuilder
         getRetentionPolicyOrBuilder() {
@@ -6611,10 +7660,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RetentionPolicy governs lifecycle of Backups created under this plan.
+     * Optional. RetentionPolicy governs lifecycle of Backups created under this
+     * plan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy,
@@ -6662,10 +7714,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -6684,10 +7736,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -6697,10 +7749,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -6717,10 +7769,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -6743,10 +7795,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -6765,10 +7817,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -6785,10 +7837,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -6806,10 +7858,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the backupSchedule field is set.
      */
@@ -6820,10 +7875,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The backupSchedule.
      */
@@ -6840,10 +7898,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackupSchedule(com.google.cloud.gkebackup.v1.BackupPlan.Schedule value) {
       if (backupScheduleBuilder_ == null) {
@@ -6862,10 +7923,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackupSchedule(
         com.google.cloud.gkebackup.v1.BackupPlan.Schedule.Builder builderForValue) {
@@ -6882,10 +7946,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeBackupSchedule(com.google.cloud.gkebackup.v1.BackupPlan.Schedule value) {
       if (backupScheduleBuilder_ == null) {
@@ -6910,10 +7977,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBackupSchedule() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -6929,10 +7999,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.Schedule.Builder getBackupScheduleBuilder() {
       bitField0_ |= 0x00000100;
@@ -6943,10 +8016,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.ScheduleOrBuilder getBackupScheduleOrBuilder() {
       if (backupScheduleBuilder_ != null) {
@@ -6961,10 +8037,13 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a schedule for automatic Backup creation via this BackupPlan.
+     * Optional. Defines a schedule for automatic Backup creation via this
+     * BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkebackup.v1.BackupPlan.Schedule,
@@ -7129,7 +8208,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag indicates whether this BackupPlan has been deactivated.
+     * Optional. This flag indicates whether this BackupPlan has been deactivated.
      * Setting this field to True locks the BackupPlan such that no further
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
@@ -7138,7 +8217,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Default: False
      * </pre>
      *
-     * <code>bool deactivated = 11;</code>
+     * <code>bool deactivated = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The deactivated.
      */
@@ -7150,7 +8229,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag indicates whether this BackupPlan has been deactivated.
+     * Optional. This flag indicates whether this BackupPlan has been deactivated.
      * Setting this field to True locks the BackupPlan such that no further
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
@@ -7159,7 +8238,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Default: False
      * </pre>
      *
-     * <code>bool deactivated = 11;</code>
+     * <code>bool deactivated = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The deactivated to set.
      * @return This builder for chaining.
@@ -7175,7 +8254,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This flag indicates whether this BackupPlan has been deactivated.
+     * Optional. This flag indicates whether this BackupPlan has been deactivated.
      * Setting this field to True locks the BackupPlan such that no further
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
@@ -7184,7 +8263,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Default: False
      * </pre>
      *
-     * <code>bool deactivated = 11;</code>
+     * <code>bool deactivated = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7205,10 +8284,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the backupConfig field is set.
      */
@@ -7219,10 +8300,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The backupConfig.
      */
@@ -7239,10 +8322,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackupConfig(com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig value) {
       if (backupConfigBuilder_ == null) {
@@ -7261,10 +8346,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackupConfig(
         com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.Builder builderForValue) {
@@ -7281,10 +8368,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeBackupConfig(com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig value) {
       if (backupConfigBuilder_ == null) {
@@ -7309,10 +8398,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBackupConfig() {
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -7328,10 +8419,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.Builder getBackupConfigBuilder() {
       bitField0_ |= 0x00000800;
@@ -7342,10 +8435,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.BackupConfigOrBuilder
         getBackupConfigOrBuilder() {
@@ -7361,10 +8456,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the configuration of Backups created via this BackupPlan.
+     * Optional. Defines the configuration of Backups created via this BackupPlan.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig,
@@ -7661,6 +8758,176 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       stateReason_ = value;
       bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private int rpoRiskLevel_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A number that represents the current risk level of this
+     * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
+     * risk.
+     * </pre>
+     *
+     * <code>int32 rpo_risk_level = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rpoRiskLevel.
+     */
+    @java.lang.Override
+    public int getRpoRiskLevel() {
+      return rpoRiskLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A number that represents the current risk level of this
+     * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
+     * risk.
+     * </pre>
+     *
+     * <code>int32 rpo_risk_level = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The rpoRiskLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRpoRiskLevel(int value) {
+
+      rpoRiskLevel_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A number that represents the current risk level of this
+     * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
+     * risk.
+     * </pre>
+     *
+     * <code>int32 rpo_risk_level = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRpoRiskLevel() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      rpoRiskLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rpoRiskReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why the BackupPlan is in the
+     * current rpo_risk_level and action items if any.
+     * </pre>
+     *
+     * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rpoRiskReason.
+     */
+    public java.lang.String getRpoRiskReason() {
+      java.lang.Object ref = rpoRiskReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rpoRiskReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why the BackupPlan is in the
+     * current rpo_risk_level and action items if any.
+     * </pre>
+     *
+     * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for rpoRiskReason.
+     */
+    public com.google.protobuf.ByteString getRpoRiskReasonBytes() {
+      java.lang.Object ref = rpoRiskReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rpoRiskReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why the BackupPlan is in the
+     * current rpo_risk_level and action items if any.
+     * </pre>
+     *
+     * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The rpoRiskReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRpoRiskReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rpoRiskReason_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why the BackupPlan is in the
+     * current rpo_risk_level and action items if any.
+     * </pre>
+     *
+     * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRpoRiskReason() {
+      rpoRiskReason_ = getDefaultInstance().getRpoRiskReason();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why the BackupPlan is in the
+     * current rpo_risk_level and action items if any.
+     * </pre>
+     *
+     * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for rpoRiskReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRpoRiskReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rpoRiskReason_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

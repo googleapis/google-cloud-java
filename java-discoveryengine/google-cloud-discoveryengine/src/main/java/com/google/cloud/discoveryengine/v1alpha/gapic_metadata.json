@@ -5,6 +5,36 @@
   "protoPackage": "google.cloud.discoveryengine.v1alpha",
   "libraryPackage": "com.google.cloud.discoveryengine.v1alpha",
   "services": {
+    "AclConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AclConfigServiceClient",
+          "rpcs": {
+            "GetAclConfig": {
+              "methods": ["getAclConfig", "getAclConfig", "getAclConfig", "getAclConfigCallable"]
+            },
+            "UpdateAclConfig": {
+              "methods": ["updateAclConfig", "updateAclConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ChunkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ChunkServiceClient",
+          "rpcs": {
+            "GetChunk": {
+              "methods": ["getChunk", "getChunk", "getChunk", "getChunkCallable"]
+            },
+            "ListChunks": {
+              "methods": ["listChunks", "listChunks", "listChunks", "listChunksPagedCallable", "listChunksCallable"]
+            }
+          }
+        }
+      }
+    },
     "CompletionService": {
       "clients": {
         "grpc": {
@@ -12,6 +42,12 @@
           "rpcs": {
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
+            },
+            "ImportSuggestionDenyListEntries": {
+              "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeSuggestionDenyListEntries": {
+              "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
             }
           }
         }
@@ -22,23 +58,44 @@
         "grpc": {
           "libraryClient": "ConversationalSearchServiceClient",
           "rpcs": {
+            "AnswerQuery": {
+              "methods": ["answerQuery", "answerQueryCallable"]
+            },
             "ConverseConversation": {
               "methods": ["converseConversation", "converseConversation", "converseConversation", "converseConversationCallable"]
             },
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "GetAnswer": {
+              "methods": ["getAnswer", "getAnswer", "getAnswer", "getAnswerCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
             },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
             }
           }
         }
@@ -58,11 +115,17 @@
             "GetDataStore": {
               "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
             },
+            "GetDocumentProcessingConfig": {
+              "methods": ["getDocumentProcessingConfig", "getDocumentProcessingConfig", "getDocumentProcessingConfig", "getDocumentProcessingConfigCallable"]
+            },
             "ListDataStores": {
               "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
             },
             "UpdateDataStore": {
               "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
+            },
+            "UpdateDocumentProcessingConfig": {
+              "methods": ["updateDocumentProcessingConfig", "updateDocumentProcessingConfig", "updateDocumentProcessingConfigCallable"]
             }
           }
         }
@@ -82,6 +145,9 @@
             "GetDocument": {
               "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
             },
+            "GetProcessedDocument": {
+              "methods": ["getProcessedDocument", "getProcessedDocument", "getProcessedDocument", "getProcessedDocumentCallable"]
+            },
             "ImportDocuments": {
               "methods": ["importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
             },
@@ -92,7 +158,7 @@
               "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
             },
             "UpdateDocument": {
-              "methods": ["updateDocument", "updateDocumentCallable"]
+              "methods": ["updateDocument", "updateDocument", "updateDocumentCallable"]
             }
           }
         }
@@ -126,6 +192,60 @@
             },
             "UpdateEngine": {
               "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EstimateBillingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EstimateBillingServiceClient",
+          "rpcs": {
+            "EstimateDataSize": {
+              "methods": ["estimateDataSizeAsync", "estimateDataSizeOperationCallable", "estimateDataSizeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GroundedGenerationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GroundedGenerationServiceClient",
+          "rpcs": {
+            "CheckGrounding": {
+              "methods": ["checkGrounding", "checkGroundingCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "GetProject": {
+              "methods": ["getProject", "getProject", "getProject", "getProjectCallable"]
+            },
+            "ProvisionProject": {
+              "methods": ["provisionProjectAsync", "provisionProjectAsync", "provisionProjectAsync", "provisionProjectOperationCallable", "provisionProjectCallable"]
+            },
+            "ReportConsentChange": {
+              "methods": ["reportConsentChange", "reportConsentChange", "reportConsentChange", "reportConsentChangeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RankService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RankServiceClient",
+          "rpcs": {
+            "Rank": {
+              "methods": ["rank", "rankCallable"]
             }
           }
         }
@@ -186,6 +306,24 @@
           "rpcs": {
             "TrainCustomModel": {
               "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServingConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServingConfigServiceClient",
+          "rpcs": {
+            "GetServingConfig": {
+              "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
+            },
+            "ListServingConfigs": {
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+            },
+            "UpdateServingConfig": {
+              "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
             }
           }
         }

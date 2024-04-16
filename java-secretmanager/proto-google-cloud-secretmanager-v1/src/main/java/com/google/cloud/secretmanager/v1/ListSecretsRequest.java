@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
+ * Request message for
+ * [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.ListSecretsRequest}
@@ -74,7 +75,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+   * `projects/&#42;`.
    * </pre>
    *
    * <code>
@@ -100,7 +102,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+   * `projects/&#42;`.
    * </pre>
    *
    * <code>
@@ -444,7 +447,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
+   * Request message for
+   * [SecretManagerService.ListSecrets][google.cloud.secretmanager.v1.SecretManagerService.ListSecrets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.ListSecretsRequest}
@@ -672,7 +676,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -697,7 +702,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -722,7 +728,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -746,7 +753,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -766,7 +774,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+     * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>

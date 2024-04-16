@@ -26,10 +26,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service definition for the Places API. Note: every request actually requires
- * a field mask set outside of the request proto (all/'&#42;', is not assumed). That can be set via
- * either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over
- * HTTP. See: https://cloud.google.com/apis/docs/system-parameters
+ * Service Description: Service definition for the Places API. Note: every request (except for
+ * Autocomplete requests) requires a field mask set outside of the request proto (`all/&#42;`, is
+ * not assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`. See:
+ * https://developers.google.com/maps/documentation/places/web-service/choose-fields
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

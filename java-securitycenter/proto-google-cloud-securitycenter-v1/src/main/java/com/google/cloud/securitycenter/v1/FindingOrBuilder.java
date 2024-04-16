@@ -1763,6 +1763,41 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return Whether the securityPosture field is set.
+   */
+  boolean hasSecurityPosture();
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return The securityPosture.
+   */
+  com.google.cloud.securitycenter.v1.SecurityPosture getSecurityPosture();
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   */
+  com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder getSecurityPostureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Log entries that are relevant to the finding.
    * </pre>
    *
@@ -1862,4 +1897,39 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
    */
   com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder getLoadBalancersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  boolean hasNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   *
+   * @return The notebook.
+   */
+  com.google.cloud.securitycenter.v1.Notebook getNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   */
+  com.google.cloud.securitycenter.v1.NotebookOrBuilder getNotebookOrBuilder();
 }

@@ -69,6 +69,18 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_CHAT = 3;</code>
    */
   SOLUTION_TYPE_CHAT(3),
+  /**
+   *
+   *
+   * <pre>
+   * Used for use cases related to the Generative Chat agent.
+   * It's used for Generative chat engine only, the associated data stores
+   * must enrolled with `SOLUTION_TYPE_CHAT` solution.
+   * </pre>
+   *
+   * <code>SOLUTION_TYPE_GENERATIVE_CHAT = 4;</code>
+   */
+  SOLUTION_TYPE_GENERATIVE_CHAT(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -112,6 +124,18 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_CHAT = 3;</code>
    */
   public static final int SOLUTION_TYPE_CHAT_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Used for use cases related to the Generative Chat agent.
+   * It's used for Generative chat engine only, the associated data stores
+   * must enrolled with `SOLUTION_TYPE_CHAT` solution.
+   * </pre>
+   *
+   * <code>SOLUTION_TYPE_GENERATIVE_CHAT = 4;</code>
+   */
+  public static final int SOLUTION_TYPE_GENERATIVE_CHAT_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +169,8 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
         return SOLUTION_TYPE_SEARCH;
       case 3:
         return SOLUTION_TYPE_CHAT;
+      case 4:
+        return SOLUTION_TYPE_GENERATIVE_CHAT;
       default:
         return null;
     }

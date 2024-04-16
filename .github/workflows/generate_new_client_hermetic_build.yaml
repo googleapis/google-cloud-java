@@ -1,0 +1,157 @@
+name: Generate new GAPIC client library (Hermetic Build)
+on:
+  workflow_dispatch:
+      # some inputs are ommited due to limit of 10 input arguments
+      inputs:
+        api_shortname:
+          required: true
+          type: string
+          description: "`api_shortname`: Name for the new directory name and (default) artifact name"
+        name_pretty:
+          required: true
+          type: string
+          description: "`name_pretty`: The human-friendly name that appears in README.md"
+        api_description:
+          required: true
+          description: "`api_description`: Description that appears in README.md"
+        proto_path:
+          required: true
+          type: string
+          description: |
+            `proto_path`: Path to proto file from the root of the googleapis repository to the
+            directory that contains the proto files (with the version).
+            For example, to generate `v2` of google/cloud/library,
+            you must pass google/cloud/library/v2
+        product_docs:
+          required: true
+          type: string
+          description: "`product_docs`: Documentation URL that appears in README.md"
+        rest_docs:
+          required: false
+          type: string
+          description: |
+            `rest_docs`: If it exists, link to the REST Documentation for a service
+        rpc_docs:
+          required: false
+          type: string
+          description: |
+            `rpc_docs`: If it exists, link to the RPC Documentation for a service
+        library_name:
+          required: false
+          type: string
+          description: |
+            `library_name`: The directory name of the new library. By default it's
+            java-<api_shortname>
+        distribution_name:
+          required: false
+          type: string
+          description: |
+            `distribution_name`: Maven coordinates of the generated library. By default it's
+            com.google.cloud:google-cloud-<api_shortname>
+
+jobs:
+  generate:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Install add-new-client-config.py dependencies
+        run: pip install --require-hashes -r generation/new_client_hermetic_build/requirements.txt
+      - name: Add entry to generation_config.yaml
+        id: config_generation
+        run: |
+          set -x
+          arguments=$(python generation/new_client_hermetic_build/generate-arguments.py)
+          echo "::set-output name=new_library_args::${arguments}"
+          echo "${arguments}" \
+                | xargs python generation/new_client_hermetic_build/add-new-client-config.py add-new-library
+        env:
+          API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
+          NAME_PRETTY: ${{ github.event.inputs.name_pretty }}
+          PROTO_PATH: ${{ github.event.inputs.proto_path }}
+          PRODUCT_DOCS: ${{ github.event.inputs.product_docs }}
+          REST_DOCS: ${{ github.event.inputs.rest_docs }}
+          RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
+          API_DESCRIPTION: ${{ github.event.inputs.api_description }}
+          LIBRARY_NAME: ${{ github.event.inputs.library_name }}
+          DISTRIBUTION_NAME: ${{ github.event.inputs.distribution_name }}
+      - name: setup docker environment
+        shell: bash
+        run: |
+          set -x
+          # we create a volume pointing to `pwd` (google-cloud-java) that will
+          # be referenced by the container and its children
+          if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
+            docker volume rm repo-google-cloud-java
+          fi
+          docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
+      - name: generate from configuration
+        id: generation
+        shell: bash
+        run: |
+          set -x
+          repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
+          echo "::set-output name=repo_volumes::${repo_volumes}"
+          docker run --rm \
+            ${repo_volumes} \
+            -v /tmp:/tmp \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -e "RUNNING_IN_DOCKER=true" \
+            -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+            gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+            python /src/generate_repo.py generate \
+            --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
+            --repository-path=/workspace/google-cloud-java \
+            --target-library-names=${API_SHORTNAME}
+        env:
+          API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
+      - name: Push to branch and create PR
+        run: |
+          set -x
+          [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
+          [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
+
+          # create and push to branch in origin
+          # random_id allows multiple runs of this workflow
+          random_id=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
+          branch_name="new-library/${{ github.event.inputs.api_shortname }}-${random_id}"
+          git checkout -b "${branch_name}"
+          git add --all
+          commit_message="feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}"
+          git commit -m "${commit_message}"
+          git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo "${branch_name}"
+
+          # create PR
+          pr_body="Generated by @${USERNAME} via [generate_new_client_hermetic_build.yaml](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client_hermetic_build.yaml)
+
+          Command used:
+
+          \`\`\`
+          python generation/new_client_hermetic_build/add-new-client-config.py add-new-client ${GENERATION_ARGUMENTS}
+
+          docker run --rm \\
+            ${DOCKER_VOLUMES} \\
+            -v /tmp:/tmp \\
+            -v /var/run/docker.sock:/var/run/docker.sock \\
+            -e \"RUNNING_IN_DOCKER=true\" \\
+            -e \"REPO_BINDING_VOLUMES=${DOCKER_VOLUMES}\" \\
+            gcr.io/cloud-devrel-public-resources/java-library-generation:latest \\
+            python /src/generate_repo.py generate \\
+            --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \\
+            --repository-path=/workspace/google-cloud-java \\
+            --target-library-names=${API_SHORTNAME}
+
+          \`\`\`"
+          gh pr create --title "${commit_message}" --label "owlbot:run" --head "${branch_name}" --body "${pr_body}"
+        env:
+          USERNAME: ${{ github.actor }}
+          API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
+          GENERATION_ARGUMENTS: ${{ steps.config_generation.outputs.new_library_args }}
+          DOCKER_VOLUMES: ${{ steps.generation.outputs.repo_volumes }}
+          GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+

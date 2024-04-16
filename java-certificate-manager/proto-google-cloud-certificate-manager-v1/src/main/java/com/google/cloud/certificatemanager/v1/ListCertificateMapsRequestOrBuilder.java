@@ -128,7 +128,7 @@ public interface ListCertificateMapsRequestOrBuilder
    * <pre>
    * A list of Certificate Map field names used to specify the order of the
    * returned results. The default sorting order is ascending. To specify
-   * descending order for a field, add a suffix " desc".
+   * descending order for a field, add a suffix `" desc"`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -142,7 +142,7 @@ public interface ListCertificateMapsRequestOrBuilder
    * <pre>
    * A list of Certificate Map field names used to specify the order of the
    * returned results. The default sorting order is ascending. To specify
-   * descending order for a field, add a suffix " desc".
+   * descending order for a field, add a suffix `" desc"`.
    * </pre>
    *
    * <code>string order_by = 5;</code>

@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -243,6 +244,21 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   public UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultSettings() {
     return ((ConfigStubSettings) getStubSettings()).exportPreviewResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTerraformVersions. */
+  public PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listTerraformVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTerraformVersion. */
+  public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getTerraformVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -543,6 +559,21 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultSettings() {
       return getStubSettingsBuilder().exportPreviewResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTerraformVersions. */
+    public PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings() {
+      return getStubSettingsBuilder().listTerraformVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTerraformVersion. */
+    public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings() {
+      return getStubSettingsBuilder().getTerraformVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

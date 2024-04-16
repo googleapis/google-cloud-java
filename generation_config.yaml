@@ -1,6 +1,6 @@
-gapic_generator_version: 2.37.0
+gapic_generator_version: 2.38.1
 protobuf_version: '25.2'
-googleapis_commitish: 20c357f6f5c7b995b617b15cab61999e6574bdab
+googleapis_commitish: 113a378d5aad5018876ec0a8cbfd4d6a4f746809
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 6612ab8f3afcd5e292aecd647f0fa68812c9f5b5
 template_excludes:
@@ -37,6 +37,7 @@ libraries:
   distribution_name: com.google.cloud:google-identity-accesscontextmanager
   GAPICs:
   - proto_path: google/identity/accesscontextmanager/v1
+  - proto_path: google/identity/accesscontextmanager/type
 
 - api_shortname: advisorynotifications
   name_pretty: Advisory Notifications API
@@ -167,6 +168,15 @@ libraries:
   GAPICs:
   - proto_path: google/appengine/v1
 
+- api_shortname: apphub
+  name_pretty: App Hub API
+  product_documentation: https://cloud.google.com/app-hub/docs/overview
+  api_description: App Hub simplifies the process of building, running, and managing
+    applications on Google Cloud.
+  rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/apphub/v1
+
 - api_shortname: area120tables
   name_pretty: Area 120 Tables
   product_documentation: https://area120.google.com/
@@ -241,6 +251,22 @@ libraries:
   - proto_path: google/cloud/automl/v1
   - proto_path: google/cloud/automl/v1beta1
 
+- api_shortname: backupdr
+  name_pretty: Backup and DR Service API
+  product_documentation: https://cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr
+  api_description: 'Backup and DR Service is a powerful, centralized, cloud-first
+    backup and disaster recovery solution for cloud-based and hybrid workloads. '
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-backupdr
+  api_id: backupdr.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/backupdr/v1
+  requires_billing: true
 - api_shortname: baremetalsolution
   name_pretty: Bare Metal Solution
   product_documentation: https://cloud.google.com/bare-metal/docs
@@ -331,7 +357,8 @@ libraries:
   product_documentation: https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest
   api_description: allows users to manage BigQuery connections to external data sources.
   release_level: stable
-  client_documentation: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1
+  client_documentation: 
+    https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1beta1
   GAPICs:
   - proto_path: google/cloud/bigquery/connection/v1
   - proto_path: google/cloud/bigquery/connection/v1beta1
@@ -434,6 +461,16 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/channel/v1
 
+- api_shortname: chat
+  name_pretty: Google Chat API
+  product_documentation: https://developers.google.com/chat/concepts
+  api_description: The Google Chat API lets you build Chat apps to integrate your
+    services with Google Chat and manage Chat resources such as spaces, members, and
+    messages.
+  rest_documentation: https://developers.google.com/chat/api/reference/rest
+  GAPICs:
+  - proto_path: google/chat/v1
+
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
   product_documentation: https://cloud.google.com/cloud-build/
@@ -459,11 +496,20 @@ libraries:
   - proto_path: google/cloud/commerce/consumer/procurement/v1
   - proto_path: google/cloud/commerce/consumer/procurement/v1alpha1
 
+- api_shortname: cloudcontrolspartner
+  name_pretty: Cloud Controls Partner API
+  product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
+  api_description: Provides insights about your customers and their Assured Workloads
+    based on your Sovereign Controls by Partners offering.
+  GAPICs:
+  - proto_path: google/cloud/cloudcontrolspartner/v1
+  - proto_path: google/cloud/cloudcontrolspartner/v1beta
+
 - api_shortname: cloudquotas
   name_pretty: Cloud Quotas API
   product_documentation: https://cloud.google.com/cloudquotas/docs/
-  api_description: "Cloud Quotas API provides GCP service consumers with management\
-    \ and\n    observability for resource usage, quotas, and restrictions of the services\n\
+  api_description: "Cloud Quotas API provides GCP service consumers with management
+    and\n    observability for resource usage, quotas, and restrictions of the services\n\
     \    they consume."
   GAPICs:
   - proto_path: google/api/cloudquotas/v1
@@ -479,18 +525,16 @@ libraries:
 - api_shortname: compute
   name_pretty: Compute Engine
   product_documentation: https://cloud.google.com/compute/
-  api_description: 'delivers virtual machines running in Google''s innovative data
-    centers and worldwide fiber network. Compute Engine''s tooling and workflow support
+  api_description: "delivers virtual machines running in Google's innovative data
+    centers and worldwide fiber network. Compute Engine's tooling and workflow support
     enable scaling from single instances to global, load-balanced cloud computing.
-    Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver
-    consistent performance and are available in many configurations.
-    '
+    Compute Engine's VMs boot quickly, come with persistent disk storage, deliver
+    consistent performance and are available in many configurations. "
   release_level: stable
   excluded_poms: grpc-google-cloud-compute-v1
   excluded_dependencies: grpc-google-cloud-compute-v1
   GAPICs:
   - proto_path: google/cloud/compute/v1
-  - proto_path: google/cloud/compute/v1small
 
 - api_shortname: confidentialcomputing
   name_pretty: Confidential Computing API
@@ -922,7 +966,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/gkehub/v1
   - proto_path: google/cloud/gkehub/v1alpha
-  - proto_path: google/cloud/gkehub/v1alpha2
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
 
@@ -935,6 +978,12 @@ libraries:
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/gsuiteaddons/v1
+  - proto_path: google/apps/script/type
+  - proto_path: google/apps/script/type/docs
+  - proto_path: google/apps/script/type/drive
+  - proto_path: google/apps/script/type/gmail
+  - proto_path: google/apps/script/type/sheets
+  - proto_path: google/apps/script/type/slides
 
 - api_shortname: iam
   name_pretty: IAM
@@ -1083,9 +1132,9 @@ libraries:
 - api_shortname: maps-mapsplatformdatasets
   name_pretty: Maps Platform Datasets API
   product_documentation: https://developers.google.com/maps/documentation
-  api_description: "The Maps Platform Datasets API enables developers to ingest geospatially-tied\
-    \ datasets\n    that they can use to enrich their experience of Maps Platform\
-    \ solutions (e.g. styling, routing)."
+  api_description: "The Maps Platform Datasets API enables developers to ingest geospatially-tied
+    datasets\n    that they can use to enrich their experience of Maps Platform solutions
+    (e.g. styling, routing)."
   api_id: mapsplatformdatasets.googleapis.com
   distribution_name: com.google.maps:google-maps-mapsplatformdatasets
   cloud_api: false
@@ -1183,7 +1232,8 @@ libraries:
 
 - api_shortname: monitoring-metricsscope
   name_pretty: Monitoring Metrics Scopes
-  product_documentation: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
+  product_documentation: 
+    https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes
   api_description: The metrics scope defines the set of Google Cloud projects whose
     metrics the current Google Cloud project can access.
   api_id: monitoring.googleapis.com
@@ -1202,7 +1252,8 @@ libraries:
 
 - api_shortname: networkmanagement
   name_pretty: Network Management API
-  product_documentation: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
+  product_documentation: 
+    https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
   api_description: provides a collection of network performance monitoring and diagnostic
     capabilities.
   library_name: network-management
@@ -1279,7 +1330,8 @@ libraries:
   product_documentation: n/a
   api_description: n/a
   release_level: stable
-  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/proto-google-cloud-orgpolicy-v1/latest/overview
   GAPICs:
   - proto_path: google/cloud/orgpolicy/v1
   - proto_path: google/cloud/orgpolicy/v2
@@ -1309,6 +1361,22 @@ libraries:
   - proto_path: google/cloud/oslogin/v1
   - proto_path: google/cloud/oslogin/v1beta
 
+- api_shortname: parallelstore
+  name_pretty: Parallelstore API
+  product_documentation: https://cloud/parallelstore?hl=en
+  api_description: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater
+    read throughput performance compared to competitive Lustre scratch offerings. '
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-parallelstore
+  api_id: parallelstore.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/parallelstore/v1beta
+  requires_billing: true
 - api_shortname: phishingprotection
   name_pretty: Phishing Protection
   product_documentation: https://cloud.google.com/phishing-protection/docs/
@@ -1336,6 +1404,7 @@ libraries:
   api_id: policy-troubleshooter.googleapis.com
   GAPICs:
   - proto_path: google/cloud/policytroubleshooter/v1
+  - proto_path: google/cloud/policytroubleshooter/iam/v3
 
 - api_shortname: policysimulator
   name_pretty: Policy Simulator API
@@ -1507,12 +1576,13 @@ libraries:
   requires_billing: false
   GAPICs:
   - proto_path: google/cloud/secretmanager/v1
+  - proto_path: google/cloud/secretmanager/v1beta2
 
 - api_shortname: securesourcemanager
   name_pretty: Secure Source Manager API
   product_documentation: https://cloud.google.com/secure-source-manager/docs/overview
-  api_description: "Regionally deployed, single-tenant managed source code repository\
-    \ hosted on\n    Google Cloud."
+  api_description: "Regionally deployed, single-tenant managed source code repository
+    hosted on\n    Google Cloud."
   GAPICs:
   - proto_path: google/cloud/securesourcemanager/v1
 
@@ -1530,7 +1600,7 @@ libraries:
   - proto_path: google/cloud/security/privateca/v1
   - proto_path: google/cloud/security/privateca/v1beta1
 
- # duplicated api_shortname
+# duplicated api_shortname
 - api_shortname: securitycenter
   name_pretty: Security Command Center
   product_documentation: https://cloud.google.com/security-command-center
@@ -1549,6 +1619,7 @@ libraries:
   - proto_path: google/cloud/securitycenter/v1
   - proto_path: google/cloud/securitycenter/v1beta1
   - proto_path: google/cloud/securitycenter/v1p1beta1
+  - proto_path: google/cloud/securitycenter/v2
 
 - api_shortname: securitycenter
   name_pretty: Security Command Center Settings API
@@ -1569,6 +1640,16 @@ libraries:
   api_description: Security Center Management API
   GAPICs:
   - proto_path: google/cloud/securitycentermanagement/v1
+
+- api_shortname: securityposture
+  name_pretty: Security Posture API
+  product_documentation: https://cloud.google.com/security-command-center/docs/security-posture-overview
+  api_description: Security Posture is a comprehensive framework of policy sets that
+    empowers organizations to define, assess early, deploy, and monitor their security
+    measures in a unified way and helps simplify governance and reduces administrative
+    toil.
+  GAPICs:
+  - proto_path: google/cloud/securityposture/v1
 
 - api_shortname: servicecontrol
   name_pretty: Service Control API
@@ -1664,6 +1745,21 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1beta
 
+- api_shortname: shopping-merchant-quota
+  name_pretty: Merchant Quota API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-quota
+  api_id: shopping-merchant-quota.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/quota/v1beta
+  requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -1907,14 +2003,14 @@ libraries:
 - api_shortname: webrisk
   name_pretty: Web Risk
   product_documentation: https://cloud.google.com/web-risk/docs/
-  api_description: "is a Google Cloud service that lets client applications check\
-    \ URLs against Google's constantly updated lists of unsafe web resources. Unsafe\
-    \ web resources include social engineering sites\u2014such as phishing and deceptive\
-    \ sites\u2014and sites that host malware or unwanted software. With the Web Risk\
-    \ API, you can quickly identify known bad sites, warn users before they click\
-    \ infected links, and prevent users from posting links to known infected pages\
-    \ from your site. The Web Risk API includes data on more than a million unsafe\
-    \ URLs and stays up to date by examining billions of URLs each day."
+  api_description: is a Google Cloud service that lets client applications check URLs
+    against Google's constantly updated lists of unsafe web resources. Unsafe web
+    resources include social engineering sites—such as phishing and deceptive sites—and
+    sites that host malware or unwanted software. With the Web Risk API, you can quickly
+    identify known bad sites, warn users before they click infected links, and prevent
+    users from posting links to known infected pages from your site. The Web Risk
+    API includes data on more than a million unsafe URLs and stays up to date by examining
+    billions of URLs each day.
   release_level: stable
   requires_billing: false
   issue_tracker: ''
@@ -1963,6 +2059,15 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workflows/v1
   - proto_path: google/cloud/workflows/v1beta
+
+- api_shortname: workspaceevents
+  name_pretty: Google Workspace Events API
+  product_documentation: https://developers.google.com/workspace/events
+  api_description: The Google Workspace Events API lets you subscribe to events and
+    manage change notifications across Google Workspace applications.
+  rest_documentation: https://developers.google.com/workspace/events/reference/rest
+  GAPICs:
+  - proto_path: google/apps/events/subscriptions/v1
 
 - api_shortname: workstations
   name_pretty: Cloud Workstations

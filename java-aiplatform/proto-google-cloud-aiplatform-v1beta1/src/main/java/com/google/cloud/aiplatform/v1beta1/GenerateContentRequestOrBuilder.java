@@ -139,6 +139,53 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  boolean hasSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The systemInstruction.
+   */
+  com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getSystemInstructionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of `Tools` the model may use to generate the next
    * response.
    *
@@ -221,6 +268,50 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ToolOrBuilder getToolsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the toolConfig field is set.
+   */
+  boolean hasToolConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The toolConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ToolConfig getToolConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ToolConfigOrBuilder getToolConfigOrBuilder();
 
   /**
    *

@@ -105,12 +105,24 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Certificates with scope EDGE_CACHE are special-purposed certificates,
-     * served from non-core Google data centers.
+     * served from Edge Points of Presence.
+     * See https://cloud.google.com/vpc/docs/edge-locations.
      * </pre>
      *
      * <code>EDGE_CACHE = 1;</code>
      */
     EDGE_CACHE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Certificates with ALL_REGIONS scope are served from all Google Cloud
+     * regions. See https://cloud.google.com/compute/docs/regions-zones.
+     * </pre>
+     *
+     * <code>ALL_REGIONS = 2;</code>
+     */
+    ALL_REGIONS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -130,12 +142,24 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Certificates with scope EDGE_CACHE are special-purposed certificates,
-     * served from non-core Google data centers.
+     * served from Edge Points of Presence.
+     * See https://cloud.google.com/vpc/docs/edge-locations.
      * </pre>
      *
      * <code>EDGE_CACHE = 1;</code>
      */
     public static final int EDGE_CACHE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Certificates with ALL_REGIONS scope are served from all Google Cloud
+     * regions. See https://cloud.google.com/compute/docs/regions-zones.
+     * </pre>
+     *
+     * <code>ALL_REGIONS = 2;</code>
+     */
+    public static final int ALL_REGIONS_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -165,6 +189,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           return DEFAULT;
         case 1:
           return EDGE_CACHE;
+        case 2:
+          return ALL_REGIONS;
         default:
           return null;
       }
@@ -2977,8 +3003,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Certificate provisioning for this domain is under way. GCP will
-         * attempt to authorize the domain.
+         * Certificate provisioning for this domain is under way. Google Cloud
+         * will attempt to authorize the domain.
          * </pre>
          *
          * <code>AUTHORIZING = 1;</code>
@@ -3023,8 +3049,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Certificate provisioning for this domain is under way. GCP will
-         * attempt to authorize the domain.
+         * Certificate provisioning for this domain is under way. Google Cloud
+         * will attempt to authorize the domain.
          * </pre>
          *
          * <code>AUTHORIZING = 1;</code>

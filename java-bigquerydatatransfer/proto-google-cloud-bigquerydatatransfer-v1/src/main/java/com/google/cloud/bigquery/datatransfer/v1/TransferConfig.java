@@ -129,7 +129,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the transfer config.
+   * Identifier. The resource name of the transfer config.
    * Transfer config names have the form either
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
    * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -138,7 +138,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * config.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -158,7 +158,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the transfer config.
+   * Identifier. The resource name of the transfer config.
    * Transfer config names have the form either
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
    * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -167,7 +167,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * config.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1922,7 +1922,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the transfer config.
+     * Identifier. The resource name of the transfer config.
      * Transfer config names have the form either
      * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
      * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -1931,7 +1931,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * config.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1950,7 +1950,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the transfer config.
+     * Identifier. The resource name of the transfer config.
      * Transfer config names have the form either
      * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
      * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -1959,7 +1959,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * config.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1978,7 +1978,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the transfer config.
+     * Identifier. The resource name of the transfer config.
      * Transfer config names have the form either
      * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
      * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -1987,7 +1987,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * config.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2005,7 +2005,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the transfer config.
+     * Identifier. The resource name of the transfer config.
      * Transfer config names have the form either
      * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
      * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -2014,7 +2014,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * config.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2028,7 +2028,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the transfer config.
+     * Identifier. The resource name of the transfer config.
      * Transfer config names have the form either
      * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
      * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -2037,7 +2037,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * config.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

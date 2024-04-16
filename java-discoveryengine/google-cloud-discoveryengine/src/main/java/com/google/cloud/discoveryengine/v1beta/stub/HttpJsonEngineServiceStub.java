@@ -43,6 +43,11 @@ import com.google.cloud.discoveryengine.v1beta.Engine;
 import com.google.cloud.discoveryengine.v1beta.GetEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesResponse;
+import com.google.cloud.discoveryengine.v1beta.PauseEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -70,6 +75,8 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
           .add(CreateEngineMetadata.getDescriptor())
           .add(DeleteEngineMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(TuneEngineResponse.getDescriptor())
+          .add(TuneEngineMetadata.getDescriptor())
           .add(Engine.getDescriptor())
           .build();
 
@@ -260,6 +267,119 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PauseEngineRequest, Engine> pauseEngineMethodDescriptor =
+      ApiMethodDescriptor.<PauseEngineRequest, Engine>newBuilder()
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/PauseEngine")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<PauseEngineRequest>newBuilder()
+                  .setPath(
+                      "/v1beta/{name=projects/*/locations/*/collections/*/engines/*}:pause",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PauseEngineRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PauseEngineRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Engine>newBuilder()
+                  .setDefaultInstance(Engine.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ResumeEngineRequest, Engine>
+      resumeEngineMethodDescriptor =
+          ApiMethodDescriptor.<ResumeEngineRequest, Engine>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/ResumeEngine")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ResumeEngineRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*}:resume",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeEngineRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeEngineRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Engine>newBuilder()
+                      .setDefaultInstance(Engine.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TuneEngineRequest, Operation>
+      tuneEngineMethodDescriptor =
+          ApiMethodDescriptor.<TuneEngineRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/TuneEngine")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TuneEngineRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/collections/*/engines/*}:tune",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TuneEngineRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TuneEngineRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TuneEngineRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<CreateEngineRequest, Operation> createEngineCallable;
   private final OperationCallable<CreateEngineRequest, Engine, CreateEngineMetadata>
       createEngineOperationCallable;
@@ -271,6 +391,11 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
   private final UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable;
   private final UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse>
       listEnginesPagedCallable;
+  private final UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable;
+  private final UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable;
+  private final UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable;
+  private final OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -515,6 +640,39 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
+        HttpJsonCallSettings.<PauseEngineRequest, Engine>newBuilder()
+            .setMethodDescriptor(pauseEngineMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
+        HttpJsonCallSettings.<ResumeEngineRequest, Engine>newBuilder()
+            .setMethodDescriptor(resumeEngineMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
+        HttpJsonCallSettings.<TuneEngineRequest, Operation>newBuilder()
+            .setMethodDescriptor(tuneEngineMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createEngineCallable =
         callableFactory.createUnaryCallable(
@@ -546,6 +704,21 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
     this.listEnginesPagedCallable =
         callableFactory.createPagedCallable(
             listEnginesTransportSettings, settings.listEnginesSettings(), clientContext);
+    this.pauseEngineCallable =
+        callableFactory.createUnaryCallable(
+            pauseEngineTransportSettings, settings.pauseEngineSettings(), clientContext);
+    this.resumeEngineCallable =
+        callableFactory.createUnaryCallable(
+            resumeEngineTransportSettings, settings.resumeEngineSettings(), clientContext);
+    this.tuneEngineCallable =
+        callableFactory.createUnaryCallable(
+            tuneEngineTransportSettings, settings.tuneEngineSettings(), clientContext);
+    this.tuneEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            tuneEngineTransportSettings,
+            settings.tuneEngineOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -559,6 +732,9 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
     methodDescriptors.add(updateEngineMethodDescriptor);
     methodDescriptors.add(getEngineMethodDescriptor);
     methodDescriptors.add(listEnginesMethodDescriptor);
+    methodDescriptors.add(pauseEngineMethodDescriptor);
+    methodDescriptors.add(resumeEngineMethodDescriptor);
+    methodDescriptors.add(tuneEngineMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -606,6 +782,27 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
   @Override
   public UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse> listEnginesPagedCallable() {
     return listEnginesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable() {
+    return pauseEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable() {
+    return resumeEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
+    return tuneEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable() {
+    return tuneEngineOperationCallable;
   }
 
   @Override

@@ -146,7 +146,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    * The most specific category associated with a category page.
    *
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    *
    * Category pages include special pages such as sales or promotions. For
@@ -180,7 +180,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    * The most specific category associated with a category page.
    *
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    *
    * Category pages include special pages such as sales or promotions. For
@@ -898,7 +898,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * The most specific category associated with a category page.
      *
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      *
      * Category pages include special pages such as sales or promotions. For
@@ -931,7 +931,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * The most specific category associated with a category page.
      *
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      *
      * Category pages include special pages such as sales or promotions. For
@@ -964,7 +964,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * The most specific category associated with a category page.
      *
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      *
      * Category pages include special pages such as sales or promotions. For
@@ -996,7 +996,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * The most specific category associated with a category page.
      *
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      *
      * Category pages include special pages such as sales or promotions. For
@@ -1024,7 +1024,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      * The most specific category associated with a category page.
      *
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      *
      * Category pages include special pages such as sales or promotions. For

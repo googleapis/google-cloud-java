@@ -113,10 +113,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Initial state: packet originating from a Google service. Some Google
-     * services, such as health check probers or Identity Aware Proxy use
-     * special routes, outside VPC routing configuration to reach Compute Engine
-     * Instances.
+     * Initial state: packet originating from a Google service.
+     * The google_service information is populated.
      * </pre>
      *
      * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
@@ -194,6 +192,29 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Storage Bucket. Used only for
+     * return traces.
+     * The storage_bucket information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_STORAGE_BUCKET = 29;</code>
+     */
+    START_FROM_STORAGE_BUCKET(29),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a published service that uses
+     * Private Service Connect. Used only for return traces.
+     * </pre>
+     *
+     * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
+     */
+    START_FROM_PSC_PUBLISHED_SERVICE(30),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -234,6 +255,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Config checking state: verify load balancer backend configuration.
+     * </pre>
+     *
+     * <code>ANALYZE_LOAD_BALANCER_BACKEND = 28;</code>
+     */
+    ANALYZE_LOAD_BALANCER_BACKEND(28),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: packet sent or received under foreign IP
      * address and allowed.
      * </pre>
@@ -256,20 +287,26 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Forwarding state: arriving at a Compute Engine internal load balancer.
+     * Deprecated in favor of the `ANALYZE_LOAD_BALANCER_BACKEND` state, not
+     * used in new tests.
      * </pre>
      *
-     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10;</code>
+     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ARRIVE_AT_INTERNAL_LOAD_BALANCER(10),
     /**
      *
      *
      * <pre>
      * Forwarding state: arriving at a Compute Engine external load balancer.
+     * Deprecated in favor of the `ANALYZE_LOAD_BALANCER_BACKEND` state, not
+     * used in new tests.
      * </pre>
      *
-     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11;</code>
+     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ARRIVE_AT_EXTERNAL_LOAD_BALANCER(11),
     /**
      *
@@ -413,10 +450,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Initial state: packet originating from a Google service. Some Google
-     * services, such as health check probers or Identity Aware Proxy use
-     * special routes, outside VPC routing configuration to reach Compute Engine
-     * Instances.
+     * Initial state: packet originating from a Google service.
+     * The google_service information is populated.
      * </pre>
      *
      * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
@@ -494,6 +529,29 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Storage Bucket. Used only for
+     * return traces.
+     * The storage_bucket information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_STORAGE_BUCKET = 29;</code>
+     */
+    public static final int START_FROM_STORAGE_BUCKET_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a published service that uses
+     * Private Service Connect. Used only for return traces.
+     * </pre>
+     *
+     * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
+     */
+    public static final int START_FROM_PSC_PUBLISHED_SERVICE_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -534,6 +592,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Config checking state: verify load balancer backend configuration.
+     * </pre>
+     *
+     * <code>ANALYZE_LOAD_BALANCER_BACKEND = 28;</code>
+     */
+    public static final int ANALYZE_LOAD_BALANCER_BACKEND_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: packet sent or received under foreign IP
      * address and allowed.
      * </pre>
@@ -556,21 +624,25 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Forwarding state: arriving at a Compute Engine internal load balancer.
+     * Deprecated in favor of the `ANALYZE_LOAD_BALANCER_BACKEND` state, not
+     * used in new tests.
      * </pre>
      *
-     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10;</code>
+     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10 [deprecated = true];</code>
      */
-    public static final int ARRIVE_AT_INTERNAL_LOAD_BALANCER_VALUE = 10;
+    @java.lang.Deprecated public static final int ARRIVE_AT_INTERNAL_LOAD_BALANCER_VALUE = 10;
     /**
      *
      *
      * <pre>
      * Forwarding state: arriving at a Compute Engine external load balancer.
+     * Deprecated in favor of the `ANALYZE_LOAD_BALANCER_BACKEND` state, not
+     * used in new tests.
      * </pre>
      *
-     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11;</code>
+     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11 [deprecated = true];</code>
      */
-    public static final int ARRIVE_AT_EXTERNAL_LOAD_BALANCER_VALUE = 11;
+    @java.lang.Deprecated public static final int ARRIVE_AT_EXTERNAL_LOAD_BALANCER_VALUE = 11;
     /**
      *
      *
@@ -719,6 +791,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_APP_ENGINE_VERSION;
         case 26:
           return START_FROM_CLOUD_RUN_REVISION;
+        case 29:
+          return START_FROM_STORAGE_BUCKET;
+        case 30:
+          return START_FROM_PSC_PUBLISHED_SERVICE;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -727,6 +803,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return APPLY_ROUTE;
         case 7:
           return APPLY_FORWARDING_RULE;
+        case 28:
+          return ANALYZE_LOAD_BALANCER_BACKEND;
         case 8:
           return SPOOFING_APPROVED;
         case 9:
@@ -830,6 +908,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     FORWARD(13),
     ABORT(14),
     DROP(15),
+    @java.lang.Deprecated
     LOAD_BALANCER(16),
     NETWORK(17),
     GKE_MASTER(18),
@@ -837,6 +916,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     CLOUD_FUNCTION(20),
     APP_ENGINE_VERSION(22),
     CLOUD_RUN_REVISION(23),
+    NAT(25),
+    PROXY_CONNECTION(26),
+    LOAD_BALANCER_BACKEND_INFO(27),
+    STORAGE_BUCKET(28),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -895,6 +978,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return APP_ENGINE_VERSION;
         case 23:
           return CLOUD_RUN_REVISION;
+        case 25:
+          return NAT;
+        case 26:
+          return PROXY_CONNECTION;
+        case 27:
+          return LOAD_BALANCER_BACKEND_INFO;
+        case 28:
+          return STORAGE_BUCKET;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -1749,14 +1840,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasLoadBalancer() {
     return stepInfoCase_ == 16;
   }
@@ -1764,14 +1861,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
    * @return The loadBalancer.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo getLoadBalancer() {
     if (stepInfoCase_ == 16) {
       return (com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo) stepInfo_;
@@ -1782,12 +1885,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfoOrBuilder
       getLoadBalancerOrBuilder() {
     if (stepInfoCase_ == 16) {
@@ -2115,6 +2222,220 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo.getDefaultInstance();
   }
 
+  public static final int NAT_FIELD_NUMBER = 25;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+   *
+   * @return Whether the nat field is set.
+   */
+  @java.lang.Override
+  public boolean hasNat() {
+    return stepInfoCase_ == 25;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+   *
+   * @return The nat.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.NatInfo getNat() {
+    if (stepInfoCase_ == 25) {
+      return (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.NatInfoOrBuilder getNatOrBuilder() {
+    if (stepInfoCase_ == 25) {
+      return (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+  }
+
+  public static final int PROXY_CONNECTION_FIELD_NUMBER = 26;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;</code>
+   *
+   * @return Whether the proxyConnection field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyConnection() {
+    return stepInfoCase_ == 26;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;</code>
+   *
+   * @return The proxyConnection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo getProxyConnection() {
+    if (stepInfoCase_ == 26) {
+      return (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfoOrBuilder
+      getProxyConnectionOrBuilder() {
+    if (stepInfoCase_ == 26) {
+      return (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+  }
+
+  public static final int LOAD_BALANCER_BACKEND_INFO_FIELD_NUMBER = 27;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   *
+   * @return Whether the loadBalancerBackendInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancerBackendInfo() {
+    return stepInfoCase_ == 27;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   *
+   * @return The loadBalancerBackendInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+      getLoadBalancerBackendInfo() {
+    if (stepInfoCase_ == 27) {
+      return (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfoOrBuilder
+      getLoadBalancerBackendInfoOrBuilder() {
+    if (stepInfoCase_ == 27) {
+      return (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.getDefaultInstance();
+  }
+
+  public static final int STORAGE_BUCKET_FIELD_NUMBER = 28;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+   *
+   * @return Whether the storageBucket field is set.
+   */
+  @java.lang.Override
+  public boolean hasStorageBucket() {
+    return stepInfoCase_ == 28;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+   *
+   * @return The storageBucket.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo getStorageBucket() {
+    if (stepInfoCase_ == 28) {
+      return (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.StorageBucketInfoOrBuilder
+      getStorageBucketOrBuilder() {
+    if (stepInfoCase_ == 28) {
+      return (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2210,6 +2531,21 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (stepInfoCase_ == 24) {
       output.writeMessage(
           24, (com.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 25) {
+      output.writeMessage(25, (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 26) {
+      output.writeMessage(
+          26, (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 27) {
+      output.writeMessage(
+          27, (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2333,6 +2669,26 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               24, (com.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 25) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 27) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2414,6 +2770,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 23:
         if (!getCloudRunRevision().equals(other.getCloudRunRevision())) return false;
+        break;
+      case 25:
+        if (!getNat().equals(other.getNat())) return false;
+        break;
+      case 26:
+        if (!getProxyConnection().equals(other.getProxyConnection())) return false;
+        break;
+      case 27:
+        if (!getLoadBalancerBackendInfo().equals(other.getLoadBalancerBackendInfo())) return false;
+        break;
+      case 28:
+        if (!getStorageBucket().equals(other.getStorageBucket())) return false;
         break;
       case 0:
       default:
@@ -2517,6 +2885,22 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 23:
         hash = (37 * hash) + CLOUD_RUN_REVISION_FIELD_NUMBER;
         hash = (53 * hash) + getCloudRunRevision().hashCode();
+        break;
+      case 25:
+        hash = (37 * hash) + NAT_FIELD_NUMBER;
+        hash = (53 * hash) + getNat().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + PROXY_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getProxyConnection().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + LOAD_BALANCER_BACKEND_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getLoadBalancerBackendInfo().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + STORAGE_BUCKET_FIELD_NUMBER;
+        hash = (53 * hash) + getStorageBucket().hashCode();
         break;
       case 0:
       default:
@@ -2725,6 +3109,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (cloudRunRevisionBuilder_ != null) {
         cloudRunRevisionBuilder_.clear();
       }
+      if (natBuilder_ != null) {
+        natBuilder_.clear();
+      }
+      if (proxyConnectionBuilder_ != null) {
+        proxyConnectionBuilder_.clear();
+      }
+      if (loadBalancerBackendInfoBuilder_ != null) {
+        loadBalancerBackendInfoBuilder_.clear();
+      }
+      if (storageBucketBuilder_ != null) {
+        storageBucketBuilder_.clear();
+      }
       stepInfoCase_ = 0;
       stepInfo_ = null;
       return this;
@@ -2840,6 +3236,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 23 && cloudRunRevisionBuilder_ != null) {
         result.stepInfo_ = cloudRunRevisionBuilder_.build();
+      }
+      if (stepInfoCase_ == 25 && natBuilder_ != null) {
+        result.stepInfo_ = natBuilder_.build();
+      }
+      if (stepInfoCase_ == 26 && proxyConnectionBuilder_ != null) {
+        result.stepInfo_ = proxyConnectionBuilder_.build();
+      }
+      if (stepInfoCase_ == 27 && loadBalancerBackendInfoBuilder_ != null) {
+        result.stepInfo_ = loadBalancerBackendInfoBuilder_.build();
+      }
+      if (stepInfoCase_ == 28 && storageBucketBuilder_ != null) {
+        result.stepInfo_ = storageBucketBuilder_.build();
       }
     }
 
@@ -3004,6 +3412,26 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_RUN_REVISION:
           {
             mergeCloudRunRevision(other.getCloudRunRevision());
+            break;
+          }
+        case NAT:
+          {
+            mergeNat(other.getNat());
+            break;
+          }
+        case PROXY_CONNECTION:
+          {
+            mergeProxyConnection(other.getProxyConnection());
+            break;
+          }
+        case LOAD_BALANCER_BACKEND_INFO:
+          {
+            mergeLoadBalancerBackendInfo(other.getLoadBalancerBackendInfo());
+            break;
+          }
+        case STORAGE_BUCKET:
+          {
+            mergeStorageBucket(other.getStorageBucket());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -3184,6 +3612,31 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 24;
                 break;
               } // case 194
+            case 202:
+              {
+                input.readMessage(getNatFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 25;
+                break;
+              } // case 202
+            case 210:
+              {
+                input.readMessage(getProxyConnectionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 26;
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    getLoadBalancerBackendInfoFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 27;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(getStorageBucketFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 28;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6363,14 +6816,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasLoadBalancer() {
       return stepInfoCase_ == 16;
     }
@@ -6378,14 +6837,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @return The loadBalancer.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo getLoadBalancer() {
       if (loadBalancerBuilder_ == null) {
         if (stepInfoCase_ == 16) {
@@ -6403,11 +6868,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setLoadBalancer(
         com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo value) {
       if (loadBalancerBuilder_ == null) {
@@ -6426,11 +6895,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setLoadBalancer(
         com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.Builder builderForValue) {
       if (loadBalancerBuilder_ == null) {
@@ -6446,11 +6919,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeLoadBalancer(
         com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo value) {
       if (loadBalancerBuilder_ == null) {
@@ -6481,11 +6958,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearLoadBalancer() {
       if (loadBalancerBuilder_ == null) {
         if (stepInfoCase_ == 16) {
@@ -6506,11 +6987,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.Builder
         getLoadBalancerBuilder() {
       return getLoadBalancerFieldBuilder().getBuilder();
@@ -6519,12 +7004,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfoOrBuilder
         getLoadBalancerOrBuilder() {
       if ((stepInfoCase_ == 16) && (loadBalancerBuilder_ != null)) {
@@ -6540,10 +7029,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo,
@@ -7880,6 +8372,898 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 23;
       onChanged();
       return cloudRunRevisionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.NatInfo,
+            com.google.cloud.networkmanagement.v1beta1.NatInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.NatInfoOrBuilder>
+        natBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     *
+     * @return Whether the nat field is set.
+     */
+    @java.lang.Override
+    public boolean hasNat() {
+      return stepInfoCase_ == 25;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     *
+     * @return The nat.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.NatInfo getNat() {
+      if (natBuilder_ == null) {
+        if (stepInfoCase_ == 25) {
+          return (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 25) {
+          return natBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    public Builder setNat(com.google.cloud.networkmanagement.v1beta1.NatInfo value) {
+      if (natBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        natBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    public Builder setNat(
+        com.google.cloud.networkmanagement.v1beta1.NatInfo.Builder builderForValue) {
+      if (natBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        natBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    public Builder mergeNat(com.google.cloud.networkmanagement.v1beta1.NatInfo value) {
+      if (natBuilder_ == null) {
+        if (stepInfoCase_ == 25
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.NatInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 25) {
+          natBuilder_.mergeFrom(value);
+        } else {
+          natBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    public Builder clearNat() {
+      if (natBuilder_ == null) {
+        if (stepInfoCase_ == 25) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 25) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        natBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.NatInfo.Builder getNatBuilder() {
+      return getNatFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.NatInfoOrBuilder getNatOrBuilder() {
+      if ((stepInfoCase_ == 25) && (natBuilder_ != null)) {
+        return natBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 25) {
+          return (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.NatInfo nat = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.NatInfo,
+            com.google.cloud.networkmanagement.v1beta1.NatInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.NatInfoOrBuilder>
+        getNatFieldBuilder() {
+      if (natBuilder_ == null) {
+        if (!(stepInfoCase_ == 25)) {
+          stepInfo_ = com.google.cloud.networkmanagement.v1beta1.NatInfo.getDefaultInstance();
+        }
+        natBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.NatInfo,
+                com.google.cloud.networkmanagement.v1beta1.NatInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.NatInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.NatInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 25;
+      onChanged();
+      return natBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfoOrBuilder>
+        proxyConnectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     *
+     * @return Whether the proxyConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasProxyConnection() {
+      return stepInfoCase_ == 26;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     *
+     * @return The proxyConnection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo getProxyConnection() {
+      if (proxyConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 26) {
+          return (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 26) {
+          return proxyConnectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    public Builder setProxyConnection(
+        com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo value) {
+      if (proxyConnectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        proxyConnectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    public Builder setProxyConnection(
+        com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.Builder builderForValue) {
+      if (proxyConnectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        proxyConnectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    public Builder mergeProxyConnection(
+        com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo value) {
+      if (proxyConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 26
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 26) {
+          proxyConnectionBuilder_.mergeFrom(value);
+        } else {
+          proxyConnectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    public Builder clearProxyConnection() {
+      if (proxyConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 26) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 26) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        proxyConnectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.Builder
+        getProxyConnectionBuilder() {
+      return getProxyConnectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfoOrBuilder
+        getProxyConnectionOrBuilder() {
+      if ((stepInfoCase_ == 26) && (proxyConnectionBuilder_ != null)) {
+        return proxyConnectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 26) {
+          return (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a ProxyConnection.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo proxy_connection = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfoOrBuilder>
+        getProxyConnectionFieldBuilder() {
+      if (proxyConnectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 26)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.getDefaultInstance();
+        }
+        proxyConnectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo,
+                com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 26;
+      onChanged();
+      return proxyConnectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo,
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfoOrBuilder>
+        loadBalancerBackendInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     *
+     * @return Whether the loadBalancerBackendInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoadBalancerBackendInfo() {
+      return stepInfoCase_ == 27;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     *
+     * @return The loadBalancerBackendInfo.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+        getLoadBalancerBackendInfo() {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        if (stepInfoCase_ == 27) {
+          return (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 27) {
+          return loadBalancerBackendInfoBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    public Builder setLoadBalancerBackendInfo(
+        com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo value) {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        loadBalancerBackendInfoBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 27;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    public Builder setLoadBalancerBackendInfo(
+        com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.Builder
+            builderForValue) {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        loadBalancerBackendInfoBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 27;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    public Builder mergeLoadBalancerBackendInfo(
+        com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo value) {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        if (stepInfoCase_ == 27
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 27) {
+          loadBalancerBackendInfoBuilder_.mergeFrom(value);
+        } else {
+          loadBalancerBackendInfoBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 27;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    public Builder clearLoadBalancerBackendInfo() {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        if (stepInfoCase_ == 27) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 27) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        loadBalancerBackendInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.Builder
+        getLoadBalancerBackendInfoBuilder() {
+      return getLoadBalancerBackendInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfoOrBuilder
+        getLoadBalancerBackendInfoOrBuilder() {
+      if ((stepInfoCase_ == 27) && (loadBalancerBackendInfoBuilder_ != null)) {
+        return loadBalancerBackendInfoBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 27) {
+          return (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a specific load balancer backend.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo,
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfoOrBuilder>
+        getLoadBalancerBackendInfoFieldBuilder() {
+      if (loadBalancerBackendInfoBuilder_ == null) {
+        if (!(stepInfoCase_ == 27)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo
+                  .getDefaultInstance();
+        }
+        loadBalancerBackendInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo,
+                com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 27;
+      onChanged();
+      return loadBalancerBackendInfoBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo,
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfoOrBuilder>
+        storageBucketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     *
+     * @return Whether the storageBucket field is set.
+     */
+    @java.lang.Override
+    public boolean hasStorageBucket() {
+      return stepInfoCase_ == 28;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     *
+     * @return The storageBucket.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo getStorageBucket() {
+      if (storageBucketBuilder_ == null) {
+        if (stepInfoCase_ == 28) {
+          return (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 28) {
+          return storageBucketBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    public Builder setStorageBucket(
+        com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo value) {
+      if (storageBucketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        storageBucketBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    public Builder setStorageBucket(
+        com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.Builder builderForValue) {
+      if (storageBucketBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        storageBucketBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    public Builder mergeStorageBucket(
+        com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo value) {
+      if (storageBucketBuilder_ == null) {
+        if (stepInfoCase_ == 28
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 28) {
+          storageBucketBuilder_.mergeFrom(value);
+        } else {
+          storageBucketBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    public Builder clearStorageBucket() {
+      if (storageBucketBuilder_ == null) {
+        if (stepInfoCase_ == 28) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 28) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        storageBucketBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.Builder
+        getStorageBucketBuilder() {
+      return getStorageBucketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.StorageBucketInfoOrBuilder
+        getStorageBucketOrBuilder() {
+      if ((stepInfoCase_ == 28) && (storageBucketBuilder_ != null)) {
+        return storageBucketBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 28) {
+          return (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Storage Bucket. Used only for return traces.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.StorageBucketInfo storage_bucket = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo,
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.StorageBucketInfoOrBuilder>
+        getStorageBucketFieldBuilder() {
+      if (storageBucketBuilder_ == null) {
+        if (!(stepInfoCase_ == 28)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.getDefaultInstance();
+        }
+        storageBucketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo,
+                com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.StorageBucketInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 28;
+      onChanged();
+      return storageBucketBuilder_;
     }
 
     @java.lang.Override

@@ -50,6 +50,26 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_OIDC = 1;</code>
    */
   TOKEN_TYPE_OIDC(1),
+  /**
+   *
+   *
+   * <pre>
+   * Public Key Infrastructure (PKI) token type
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_PKI = 2;</code>
+   */
+  TOKEN_TYPE_PKI(2),
+  /**
+   *
+   *
+   * <pre>
+   * Limited claim token type for AWS integration
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_LIMITED_AWS = 3;</code>
+   */
+  TOKEN_TYPE_LIMITED_AWS(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -73,6 +93,26 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_OIDC = 1;</code>
    */
   public static final int TOKEN_TYPE_OIDC_VALUE = 1;
+  /**
+   *
+   *
+   * <pre>
+   * Public Key Infrastructure (PKI) token type
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_PKI = 2;</code>
+   */
+  public static final int TOKEN_TYPE_PKI_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Limited claim token type for AWS integration
+   * </pre>
+   *
+   * <code>TOKEN_TYPE_LIMITED_AWS = 3;</code>
+   */
+  public static final int TOKEN_TYPE_LIMITED_AWS_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -102,6 +142,10 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
         return TOKEN_TYPE_UNSPECIFIED;
       case 1:
         return TOKEN_TYPE_OIDC;
+      case 2:
+        return TOKEN_TYPE_PKI;
+      case 3:
+        return TOKEN_TYPE_LIMITED_AWS;
       default:
         return null;
     }

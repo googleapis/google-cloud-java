@@ -264,8 +264,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Navigation
-     * Instructions][google.maps.routing.v2.NavigationInstructions.instructions]
+     * [`NavigationInstructions`](google.maps.routing.v2.NavigationInstructions.instructions)
      * presented as a formatted HTML text string. This content
      * is meant to be read as-is. This content is for display only.
      * Do not programmatically parse it.
@@ -321,8 +320,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Navigation
-     * Instructions][google.maps.routing.v2.NavigationInstructions.instructions]
+     * [`NavigationInstructions`](google.maps.routing.v2.NavigationInstructions.instructions)
      * presented as a formatted HTML text string. This content
      * is meant to be read as-is. This content is for display only.
      * Do not programmatically parse it.
@@ -791,8 +789,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -811,8 +810,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -833,8 +833,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -856,8 +857,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The arrival time.
    * NOTE: Can only be set when
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -876,8 +878,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The arrival time.
    * NOTE: Can only be set when
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -896,8 +899,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. The arrival time.
    * NOTE: Can only be set when
    * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both. Transit trips are available for up to 7 days in the past or 100
+   * days in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -996,9 +1000,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the route request.
    * </pre>
@@ -1024,9 +1029,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the route request.
    * </pre>
@@ -1057,8 +1063,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1082,8 +1088,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1111,9 +1117,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies the units of measure for the display fields. These
    * fields include the `instruction` field in
-   * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-   * units of measure used for the route, leg, step distance, and duration are
-   * not affected by this value. If you don't provide this value, then the
+   * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+   * The units of measure used for the route, leg, step distance, and duration
+   * are not affected by this value. If you don't provide this value, then the
    * display units are inferred from the location of the first origin.
    * </pre>
    *
@@ -1132,9 +1138,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies the units of measure for the display fields. These
    * fields include the `instruction` field in
-   * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-   * units of measure used for the route, leg, step distance, and duration are
-   * not affected by this value. If you don't provide this value, then the
+   * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+   * The units of measure used for the route, leg, step distance, and duration
+   * are not affected by this value. If you don't provide this value, then the
    * display units are inferred from the location of the first origin.
    * </pre>
    *
@@ -1446,13 +1452,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies the assumptions to use when calculating time in
    * traffic. This setting affects the value returned in the duration field in
-   * the [Route][google.maps.routing.v2.Route] and
-   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * the
+   * [`Route`][google.maps.routing.v2.Route] and
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
    * time in traffic based on historical averages.
    * `TrafficModel` is only available for requests that have set
-   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
    * `TRAFFIC_AWARE_OPTIMAL` and
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
    * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
    * specified.
    * </pre>
@@ -1473,13 +1480,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies the assumptions to use when calculating time in
    * traffic. This setting affects the value returned in the duration field in
-   * the [Route][google.maps.routing.v2.Route] and
-   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * the
+   * [`Route`][google.maps.routing.v2.Route] and
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
    * time in traffic based on historical averages.
    * `TrafficModel` is only available for requests that have set
-   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
    * `TRAFFIC_AWARE_OPTIMAL` and
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
    * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
    * specified.
    * </pre>
@@ -1505,7 +1513,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies preferences that influence the route returned for
    * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -1525,7 +1533,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies preferences that influence the route returned for
    * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -1547,7 +1555,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Specifies preferences that influence the route returned for
    * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -3781,8 +3789,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3801,8 +3810,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3827,8 +3837,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3855,8 +3866,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3880,8 +3892,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3913,8 +3926,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3938,8 +3952,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3958,8 +3973,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -3982,8 +3998,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>
@@ -4020,8 +4037,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4039,8 +4057,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4064,8 +4083,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4091,8 +4111,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4115,8 +4136,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4147,8 +4169,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4171,8 +4194,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4190,8 +4214,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4213,8 +4238,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. The arrival time.
      * NOTE: Can only be set when
      * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both. Transit trips are available for up to 7 days in the past or 100
+     * days in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
@@ -4515,9 +4541,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the route request.
      * </pre>
@@ -4542,9 +4569,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the route request.
      * </pre>
@@ -4569,9 +4597,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the route request.
      * </pre>
@@ -4595,9 +4624,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the route request.
      * </pre>
@@ -4617,9 +4647,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the route request.
      * </pre>
@@ -4646,8 +4677,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4670,8 +4701,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4694,8 +4725,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4717,8 +4748,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4736,8 +4767,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4763,9 +4794,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the units of measure for the display fields. These
      * fields include the `instruction` field in
-     * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-     * units of measure used for the route, leg, step distance, and duration are
-     * not affected by this value. If you don't provide this value, then the
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+     * The units of measure used for the route, leg, step distance, and duration
+     * are not affected by this value. If you don't provide this value, then the
      * display units are inferred from the location of the first origin.
      * </pre>
      *
@@ -4784,9 +4815,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the units of measure for the display fields. These
      * fields include the `instruction` field in
-     * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-     * units of measure used for the route, leg, step distance, and duration are
-     * not affected by this value. If you don't provide this value, then the
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+     * The units of measure used for the route, leg, step distance, and duration
+     * are not affected by this value. If you don't provide this value, then the
      * display units are inferred from the location of the first origin.
      * </pre>
      *
@@ -4808,9 +4839,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the units of measure for the display fields. These
      * fields include the `instruction` field in
-     * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-     * units of measure used for the route, leg, step distance, and duration are
-     * not affected by this value. If you don't provide this value, then the
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+     * The units of measure used for the route, leg, step distance, and duration
+     * are not affected by this value. If you don't provide this value, then the
      * display units are inferred from the location of the first origin.
      * </pre>
      *
@@ -4830,9 +4861,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the units of measure for the display fields. These
      * fields include the `instruction` field in
-     * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-     * units of measure used for the route, leg, step distance, and duration are
-     * not affected by this value. If you don't provide this value, then the
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+     * The units of measure used for the route, leg, step distance, and duration
+     * are not affected by this value. If you don't provide this value, then the
      * display units are inferred from the location of the first origin.
      * </pre>
      *
@@ -4857,9 +4888,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the units of measure for the display fields. These
      * fields include the `instruction` field in
-     * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
-     * units of measure used for the route, leg, step distance, and duration are
-     * not affected by this value. If you don't provide this value, then the
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction].
+     * The units of measure used for the route, leg, step distance, and duration
+     * are not affected by this value. If you don't provide this value, then the
      * display units are inferred from the location of the first origin.
      * </pre>
      *
@@ -5551,13 +5582,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the assumptions to use when calculating time in
      * traffic. This setting affects the value returned in the duration field in
-     * the [Route][google.maps.routing.v2.Route] and
-     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * the
+     * [`Route`][google.maps.routing.v2.Route] and
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
      * time in traffic based on historical averages.
      * `TrafficModel` is only available for requests that have set
-     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
      * `TRAFFIC_AWARE_OPTIMAL` and
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
      * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
      * specified.
      * </pre>
@@ -5578,13 +5610,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the assumptions to use when calculating time in
      * traffic. This setting affects the value returned in the duration field in
-     * the [Route][google.maps.routing.v2.Route] and
-     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * the
+     * [`Route`][google.maps.routing.v2.Route] and
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
      * time in traffic based on historical averages.
      * `TrafficModel` is only available for requests that have set
-     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
      * `TRAFFIC_AWARE_OPTIMAL` and
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
      * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
      * specified.
      * </pre>
@@ -5608,13 +5641,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the assumptions to use when calculating time in
      * traffic. This setting affects the value returned in the duration field in
-     * the [Route][google.maps.routing.v2.Route] and
-     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * the
+     * [`Route`][google.maps.routing.v2.Route] and
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
      * time in traffic based on historical averages.
      * `TrafficModel` is only available for requests that have set
-     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
      * `TRAFFIC_AWARE_OPTIMAL` and
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
      * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
      * specified.
      * </pre>
@@ -5637,13 +5671,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the assumptions to use when calculating time in
      * traffic. This setting affects the value returned in the duration field in
-     * the [Route][google.maps.routing.v2.Route] and
-     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * the
+     * [`Route`][google.maps.routing.v2.Route] and
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
      * time in traffic based on historical averages.
      * `TrafficModel` is only available for requests that have set
-     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
      * `TRAFFIC_AWARE_OPTIMAL` and
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
      * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
      * specified.
      * </pre>
@@ -5670,13 +5705,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies the assumptions to use when calculating time in
      * traffic. This setting affects the value returned in the duration field in
-     * the [Route][google.maps.routing.v2.Route] and
-     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * the
+     * [`Route`][google.maps.routing.v2.Route] and
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg] which contains the predicted
      * time in traffic based on historical averages.
      * `TrafficModel` is only available for requests that have set
-     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference] to
      * `TRAFFIC_AWARE_OPTIMAL` and
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
      * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
      * specified.
      * </pre>
@@ -5706,7 +5742,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5725,7 +5761,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5750,7 +5786,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5777,7 +5813,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5802,7 +5838,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5835,7 +5871,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5859,7 +5895,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5878,7 +5914,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -5901,7 +5937,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Specifies preferences that influence the route returned for
      * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *

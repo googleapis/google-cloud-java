@@ -114,6 +114,7 @@ public class ChatServiceClientTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -182,6 +183,7 @@ public class ChatServiceClientTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -506,6 +508,7 @@ public class ChatServiceClientTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -568,6 +571,7 @@ public class ChatServiceClientTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockChatService.addResponse(expectedResponse);
 
@@ -630,6 +634,7 @@ public class ChatServiceClientTest {
             .setDeletionMetadata(DeletionMetadata.newBuilder().build())
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
+            .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
             .build();
     mockChatService.addResponse(expectedResponse);
 

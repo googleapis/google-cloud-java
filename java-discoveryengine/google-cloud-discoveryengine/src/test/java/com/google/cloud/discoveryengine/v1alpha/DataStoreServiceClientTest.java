@@ -37,6 +37,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -102,6 +103,10 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -162,6 +167,10 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -222,6 +231,10 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -270,6 +283,10 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -490,6 +507,10 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -520,6 +541,154 @@ public class DataStoreServiceClientTest {
       DataStore dataStore = DataStore.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDocumentProcessingConfigTest() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    DocumentProcessingConfigName name =
+        DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    DocumentProcessingConfig actualResponse = client.getDocumentProcessingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDocumentProcessingConfigRequest actualRequest =
+        ((GetDocumentProcessingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDocumentProcessingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      DocumentProcessingConfigName name =
+          DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.getDocumentProcessingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDocumentProcessingConfigTest2() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DocumentProcessingConfig actualResponse = client.getDocumentProcessingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDocumentProcessingConfigRequest actualRequest =
+        ((GetDocumentProcessingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDocumentProcessingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDocumentProcessingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDocumentProcessingConfigTest() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    DocumentProcessingConfig documentProcessingConfig =
+        DocumentProcessingConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DocumentProcessingConfig actualResponse =
+        client.updateDocumentProcessingConfig(documentProcessingConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDocumentProcessingConfigRequest actualRequest =
+        ((UpdateDocumentProcessingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(documentProcessingConfig, actualRequest.getDocumentProcessingConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDocumentProcessingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      DocumentProcessingConfig documentProcessingConfig =
+          DocumentProcessingConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDocumentProcessingConfig(documentProcessingConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

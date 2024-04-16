@@ -71,7 +71,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -96,7 +98,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -465,7 +469,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -489,7 +495,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -513,7 +521,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -536,7 +546,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -555,7 +567,9 @@ public final class GetApplicationRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>

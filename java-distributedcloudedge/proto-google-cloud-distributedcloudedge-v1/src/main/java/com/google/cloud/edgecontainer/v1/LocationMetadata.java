@@ -23,7 +23,8 @@ package com.google.cloud.edgecontainer.v1;
  *
  *
  * <pre>
- * Metadata for a given [google.cloud.location.Location][google.cloud.location.Location].
+ * Metadata for a given
+ * [google.cloud.location.Location][google.cloud.location.Location].
  * </pre>
  *
  * Protobuf type {@code google.cloud.edgecontainer.v1.LocationMetadata}
@@ -369,7 +370,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Metadata for a given [google.cloud.location.Location][google.cloud.location.Location].
+   * Metadata for a given
+   * [google.cloud.location.Location][google.cloud.location.Location].
    * </pre>
    *
    * Protobuf type {@code google.cloud.edgecontainer.v1.LocationMetadata}

@@ -41,9 +41,33 @@ public final class CommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_UserInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_EmbeddingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_EmbeddingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_GuidedSearchSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_GuidedSearchSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_CustomFineTuningSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_CustomFineTuningSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_ExternalIdpConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_ExternalIdpConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_Principal_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_Principal_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -61,43 +85,60 @@ public final class CommonProto {
           + "xclusive_maximum\030\004 \001(\001H\001B\005\n\003minB\005\n\003max\"0"
           + "\n\017CustomAttribute\022\014\n\004text\030\001 \003(\t\022\017\n\007numbe"
           + "rs\030\002 \003(\001\"/\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n"
-          + "\nuser_agent\030\002 \001(\t\"\034\n\nDoubleList\022\016\n\006value"
-          + "s\030\001 \003(\001*M\n\020IndustryVertical\022!\n\035INDUSTRY_"
-          + "VERTICAL_UNSPECIFIED\020\000\022\013\n\007GENERIC\020\001\022\t\n\005M"
-          + "EDIA\020\002*\201\001\n\014SolutionType\022\035\n\031SOLUTION_TYPE"
-          + "_UNSPECIFIED\020\000\022 \n\034SOLUTION_TYPE_RECOMMEN"
-          + "DATION\020\001\022\030\n\024SOLUTION_TYPE_SEARCH\020\002\022\026\n\022SO"
-          + "LUTION_TYPE_CHAT\020\003*_\n\nSearchTier\022\033\n\027SEAR"
-          + "CH_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_STA"
-          + "NDARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n\013S"
-          + "earchAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIED\020"
-          + "\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\361\007\n(com.google."
-          + "cloud.discoveryengine.v1alphaB\013CommonPro"
-          + "toP\001ZRcloud.google.com/go/discoveryengin"
-          + "e/apiv1alpha/discoveryenginepb;discovery"
-          + "enginepb\242\002\017DISCOVERYENGINE\252\002$Google.Clou"
-          + "d.DiscoveryEngine.V1Alpha\312\002$Google\\Cloud"
-          + "\\DiscoveryEngine\\V1alpha\352\002\'Google::Cloud"
-          + "::DiscoveryEngine::V1alpha\352A\346\001\n%discover"
-          + "yengine.googleapis.com/Branch\022Qprojects/"
-          + "{project}/locations/{location}/dataStore"
-          + "s/{data_store}/branches/{branch}\022jprojec"
-          + "ts/{project}/locations/{location}/collec"
-          + "tions/{collection}/dataStores/{data_stor"
-          + "e}/branches/{branch}\352Am\n)discoveryengine"
-          + ".googleapis.com/Collection\022@projects/{pr"
-          + "oject}/locations/{location}/collections/"
-          + "{collection}\352A\374\002\n,discoveryengine.google"
-          + "apis.com/ServingConfig\022_projects/{projec"
-          + "t}/locations/{location}/dataStores/{data"
-          + "_store}/servingConfigs/{serving_config}\022"
-          + "xprojects/{project}/locations/{location}"
-          + "/collections/{collection}/dataStores/{da"
-          + "ta_store}/servingConfigs/{serving_config"
-          + "}\022qprojects/{project}/locations/{locatio"
-          + "n}/collections/{collection}/engines/{eng"
-          + "ine}/servingConfigs/{serving_config}b\006pr"
-          + "oto3"
+          + "\nuser_agent\030\002 \001(\t\"%\n\017EmbeddingConfig\022\022\n\n"
+          + "field_path\030\001 \001(\t\"\034\n\nDoubleList\022\016\n\006values"
+          + "\030\001 \003(\001\"y\n\020GuidedSearchSpec\022$\n\034enable_ref"
+          + "inement_attributes\030\001 \001(\010\022 \n\030enable_relat"
+          + "ed_questions\030\002 \001(\010\022\035\n\025max_related_questi"
+          + "ons\030\003 \001(\005\"5\n\024CustomFineTuningSpec\022\035\n\025ena"
+          + "ble_search_adaptor\030\001 \001(\010\"\252\002\n\tIdpConfig\022I"
+          + "\n\010idp_type\030\001 \001(\01627.google.cloud.discover"
+          + "yengine.v1alpha.IdpConfig.IdpType\022^\n\023ext"
+          + "ernal_idp_config\030\002 \001(\0132A.google.cloud.di"
+          + "scoveryengine.v1alpha.IdpConfig.External"
+          + "IdpConfig\0320\n\021ExternalIdpConfig\022\033\n\023workfo"
+          + "rce_pool_name\030\001 \001(\t\"@\n\007IdpType\022\030\n\024IDP_TY"
+          + "PE_UNSPECIFIED\020\000\022\n\n\006GSUITE\020\001\022\017\n\013THIRD_PA"
+          + "RTY\020\002\"?\n\tPrincipal\022\021\n\007user_id\030\001 \001(\tH\000\022\022\n"
+          + "\010group_id\030\002 \001(\tH\000B\013\n\tprincipal*b\n\020Indust"
+          + "ryVertical\022!\n\035INDUSTRY_VERTICAL_UNSPECIF"
+          + "IED\020\000\022\013\n\007GENERIC\020\001\022\t\n\005MEDIA\020\002\022\023\n\017HEALTHC"
+          + "ARE_FHIR\020\007*\244\001\n\014SolutionType\022\035\n\031SOLUTION_"
+          + "TYPE_UNSPECIFIED\020\000\022 \n\034SOLUTION_TYPE_RECO"
+          + "MMENDATION\020\001\022\030\n\024SOLUTION_TYPE_SEARCH\020\002\022\026"
+          + "\n\022SOLUTION_TYPE_CHAT\020\003\022!\n\035SOLUTION_TYPE_"
+          + "GENERATIVE_CHAT\020\004*_\n\nSearchTier\022\033\n\027SEARC"
+          + "H_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_STAN"
+          + "DARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n\013Se"
+          + "archAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIED\020\000"
+          + "\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\274\010\n(com.google.c"
+          + "loud.discoveryengine.v1alphaB\013CommonProt"
+          + "oP\001ZRcloud.google.com/go/discoveryengine"
+          + "/apiv1alpha/discoveryenginepb;discoverye"
+          + "nginepb\242\002\017DISCOVERYENGINE\252\002$Google.Cloud"
+          + ".DiscoveryEngine.V1Alpha\312\002$Google\\Cloud\\"
+          + "DiscoveryEngine\\V1alpha\352\002\'Google::Cloud:"
+          + ":DiscoveryEngine::V1alpha\352A\346\001\n%discovery"
+          + "engine.googleapis.com/Branch\022Qprojects/{"
+          + "project}/locations/{location}/dataStores"
+          + "/{data_store}/branches/{branch}\022jproject"
+          + "s/{project}/locations/{location}/collect"
+          + "ions/{collection}/dataStores/{data_store"
+          + "}/branches/{branch}\352Am\n)discoveryengine."
+          + "googleapis.com/Collection\022@projects/{pro"
+          + "ject}/locations/{location}/collections/{"
+          + "collection}\352AR\n\'discoveryengine.googleap"
+          + "is.com/Location\022\'projects/{project}/loca"
+          + "tions/{location}\352A}\n.discoveryengine.goo"
+          + "gleapis.com/GroundingConfig\022Kprojects/{p"
+          + "roject}/locations/{location}/groundingCo"
+          + "nfigs/{grounding_config}\352Aw\n,discoveryen"
+          + "gine.googleapis.com/RankingConfig\022Gproje"
+          + "cts/{project}/locations/{location}/ranki"
+          + "ngConfigs/{ranking_config}\352Ay\n#healthcar"
+          + "e.googleapis.com/FhirStore\022Rprojects/{pr"
+          + "oject}/locations/{location}/datasets/{da"
+          + "taset}/fhirStores/{fhir_store}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,13 +170,63 @@ public final class CommonProto {
             new java.lang.String[] {
               "UserId", "UserAgent",
             });
-    internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_descriptor =
+    internal_static_google_cloud_discoveryengine_v1alpha_EmbeddingConfig_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1alpha_EmbeddingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_EmbeddingConfig_descriptor,
+            new java.lang.String[] {
+              "FieldPath",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_DoubleList_descriptor,
             new java.lang.String[] {
               "Values",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_GuidedSearchSpec_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_discoveryengine_v1alpha_GuidedSearchSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_GuidedSearchSpec_descriptor,
+            new java.lang.String[] {
+              "EnableRefinementAttributes", "EnableRelatedQuestions", "MaxRelatedQuestions",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_CustomFineTuningSpec_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_discoveryengine_v1alpha_CustomFineTuningSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_CustomFineTuningSpec_descriptor,
+            new java.lang.String[] {
+              "EnableSearchAdaptor",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_descriptor,
+            new java.lang.String[] {
+              "IdpType", "ExternalIdpConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_ExternalIdpConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_ExternalIdpConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_IdpConfig_ExternalIdpConfig_descriptor,
+            new java.lang.String[] {
+              "WorkforcePoolName",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_Principal_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_discoveryengine_v1alpha_Principal_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_Principal_descriptor,
+            new java.lang.String[] {
+              "UserId", "GroupId", "Principal",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -2474,9 +2474,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
-   * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer
-   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -2500,9 +2497,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
-   * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer
-   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -4025,9 +4019,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
-     * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer
-     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -4050,9 +4041,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
-     * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer
-     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -4075,9 +4063,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
-     * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer
-     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -4099,9 +4084,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
-     * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer
-     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -4119,9 +4101,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
-     * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer
-     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>

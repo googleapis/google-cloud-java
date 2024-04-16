@@ -122,6 +122,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +186,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -246,6 +250,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -293,6 +299,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -428,6 +436,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -581,6 +591,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -644,6 +655,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -705,6 +717,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -753,6 +766,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -889,6 +903,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1108,6 +1123,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
+            .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -1156,6 +1172,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
+            .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 

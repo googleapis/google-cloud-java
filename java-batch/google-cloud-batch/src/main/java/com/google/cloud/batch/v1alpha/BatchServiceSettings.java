@@ -18,6 +18,7 @@ package com.google.cloud.batch.v1alpha;
 
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListResourceAllowancesPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -120,6 +121,46 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
   public PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
       listTasksSettings() {
     return ((BatchServiceStubSettings) getStubSettings()).listTasksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createResourceAllowance. */
+  public UnaryCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).createResourceAllowanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getResourceAllowance. */
+  public UnaryCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).getResourceAllowanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceAllowance. */
+  public UnaryCallSettings<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).deleteResourceAllowanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceAllowance. */
+  public OperationCallSettings<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationSettings() {
+    return ((BatchServiceStubSettings) getStubSettings())
+        .deleteResourceAllowanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listResourceAllowances. */
+  public PagedCallSettings<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ListResourceAllowancesPagedResponse>
+      listResourceAllowancesSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).listResourceAllowancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateResourceAllowance. */
+  public UnaryCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).updateResourceAllowanceSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -281,6 +322,45 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
     public PagedCallSettings.Builder<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
         listTasksSettings() {
       return getStubSettingsBuilder().listTasksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createResourceAllowance. */
+    public UnaryCallSettings.Builder<CreateResourceAllowanceRequest, ResourceAllowance>
+        createResourceAllowanceSettings() {
+      return getStubSettingsBuilder().createResourceAllowanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceAllowance. */
+    public UnaryCallSettings.Builder<GetResourceAllowanceRequest, ResourceAllowance>
+        getResourceAllowanceSettings() {
+      return getStubSettingsBuilder().getResourceAllowanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceAllowance. */
+    public UnaryCallSettings.Builder<DeleteResourceAllowanceRequest, Operation>
+        deleteResourceAllowanceSettings() {
+      return getStubSettingsBuilder().deleteResourceAllowanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceAllowance. */
+    public OperationCallSettings.Builder<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+        deleteResourceAllowanceOperationSettings() {
+      return getStubSettingsBuilder().deleteResourceAllowanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceAllowances. */
+    public PagedCallSettings.Builder<
+            ListResourceAllowancesRequest,
+            ListResourceAllowancesResponse,
+            ListResourceAllowancesPagedResponse>
+        listResourceAllowancesSettings() {
+      return getStubSettingsBuilder().listResourceAllowancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateResourceAllowance. */
+    public UnaryCallSettings.Builder<UpdateResourceAllowanceRequest, ResourceAllowance>
+        updateResourceAllowanceSettings() {
+      return getStubSettingsBuilder().updateResourceAllowanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -252,6 +252,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Maximum duration the task should run.
    * The task will be killed and marked as FAILED if over this limit.
+   * The valid value range for max_run_duration in seconds is [0,
+   * 315576000000.999999999],
    * </pre>
    *
    * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -268,6 +270,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Maximum duration the task should run.
    * The task will be killed and marked as FAILED if over this limit.
+   * The valid value range for max_run_duration in seconds is [0,
+   * 315576000000.999999999],
    * </pre>
    *
    * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -286,6 +290,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Maximum duration the task should run.
    * The task will be killed and marked as FAILED if over this limit.
+   * The valid value range for max_run_duration in seconds is [0,
+   * 315576000000.999999999],
    * </pre>
    *
    * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2081,6 +2087,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2096,6 +2104,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2117,6 +2127,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2140,6 +2152,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2160,6 +2174,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2188,6 +2204,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2208,6 +2226,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2223,6 +2243,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>
@@ -2242,6 +2264,8 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Maximum duration the task should run.
      * The task will be killed and marked as FAILED if over this limit.
+     * The valid value range for max_run_duration in seconds is [0,
+     * 315576000000.999999999],
      * </pre>
      *
      * <code>.google.protobuf.Duration max_run_duration = 4;</code>

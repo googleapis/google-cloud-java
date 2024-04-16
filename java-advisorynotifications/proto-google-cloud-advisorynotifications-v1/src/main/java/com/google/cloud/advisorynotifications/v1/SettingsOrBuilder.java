@@ -28,12 +28,13 @@ public interface SettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the settings to retrieve.
+   * Identifier. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +43,13 @@ public interface SettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the settings to retrieve.
+   * Identifier. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

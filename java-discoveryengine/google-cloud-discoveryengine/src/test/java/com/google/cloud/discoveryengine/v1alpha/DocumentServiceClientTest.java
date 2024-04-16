@@ -31,7 +31,9 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -102,6 +104,8 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -152,6 +156,8 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -290,6 +296,8 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -346,6 +354,8 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -398,24 +408,23 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setAclInfo(Document.AclInfo.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
-    UpdateDocumentRequest request =
-        UpdateDocumentRequest.newBuilder()
-            .setDocument(Document.newBuilder().build())
-            .setAllowMissing(true)
-            .build();
+    Document document = Document.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Document actualResponse = client.updateDocument(request);
+    Document actualResponse = client.updateDocument(document, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDocumentRequest actualRequest = ((UpdateDocumentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getDocument(), actualRequest.getDocument());
-    Assert.assertEquals(request.getAllowMissing(), actualRequest.getAllowMissing());
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -428,12 +437,9 @@ public class DocumentServiceClientTest {
     mockDocumentService.addException(exception);
 
     try {
-      UpdateDocumentRequest request =
-          UpdateDocumentRequest.newBuilder()
-              .setDocument(Document.newBuilder().build())
-              .setAllowMissing(true)
-              .build();
-      client.updateDocument(request);
+      Document document = Document.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDocument(document, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -534,6 +540,7 @@ public class DocumentServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
             .build();
@@ -548,9 +555,15 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
     Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
     Assert.assertEquals(request.getBigquerySource(), actualRequest.getBigquerySource());
+    Assert.assertEquals(request.getFhirStoreSource(), actualRequest.getFhirStoreSource());
+    Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
+    Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
+    Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
     Assert.assertEquals(request.getReconciliationMode(), actualRequest.getReconciliationMode());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertEquals(request.getAutoGenerateIds(), actualRequest.getAutoGenerateIds());
     Assert.assertEquals(request.getIdField(), actualRequest.getIdField());
     Assert.assertTrue(
@@ -572,6 +585,7 @@ public class DocumentServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
               .build();
@@ -606,6 +620,7 @@ public class DocumentServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setFilter("filter-1274492040")
+            .setErrorConfig(PurgeErrorConfig.newBuilder().build())
             .setForce(true)
             .build();
 
@@ -616,8 +631,10 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     PurgeDocumentsRequest actualRequest = ((PurgeDocumentsRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
     Assert.assertEquals(request.getForce(), actualRequest.getForce());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -638,6 +655,7 @@ public class DocumentServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       client.purgeDocumentsAsync(request).get();
@@ -646,6 +664,94 @@ public class DocumentServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getProcessedDocumentTest() throws Exception {
+    ProcessedDocument expectedResponse =
+        ProcessedDocument.newBuilder()
+            .setDocument(
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                    .toString())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    DocumentName name =
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+
+    ProcessedDocument actualResponse = client.getProcessedDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProcessedDocumentRequest actualRequest =
+        ((GetProcessedDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProcessedDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DocumentName name =
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+      client.getProcessedDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessedDocumentTest2() throws Exception {
+    ProcessedDocument expectedResponse =
+        ProcessedDocument.newBuilder()
+            .setDocument(
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                    .toString())
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ProcessedDocument actualResponse = client.getProcessedDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProcessedDocumentRequest actualRequest =
+        ((GetProcessedDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProcessedDocumentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getProcessedDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

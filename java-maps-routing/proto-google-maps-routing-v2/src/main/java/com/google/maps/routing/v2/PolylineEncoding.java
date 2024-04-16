@@ -44,7 +44,7 @@ public enum PolylineEncoding implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * Specifies a polyline encoded using the [polyline encoding
-   * algorithm](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
+   * algorithm](/maps/documentation/utilities/polylinealgorithm).
    * </pre>
    *
    * <code>ENCODED_POLYLINE = 1;</code>
@@ -79,7 +79,7 @@ public enum PolylineEncoding implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * Specifies a polyline encoded using the [polyline encoding
-   * algorithm](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
+   * algorithm](/maps/documentation/utilities/polylinealgorithm).
    * </pre>
    *
    * <code>ENCODED_POLYLINE = 1;</code>

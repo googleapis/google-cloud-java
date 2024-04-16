@@ -286,7 +286,7 @@ public final class JobProto {
           + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\021Provisioni"
           + "ngModel\022\"\n\036PROVISIONING_MODEL_UNSPECIFIE"
           + "D\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n\013PREEMPTIB"
-          + "LE\020\003\"\225\006\n\tTaskGroup\022\021\n\004name\030\001 \001(\tB\003\340A\003\022<\n"
+          + "LE\020\003\"\337\006\n\tTaskGroup\022\021\n\004name\030\001 \001(\tB\003\340A\003\022<\n"
           + "\ttask_spec\030\003 \001(\0132$.google.cloud.batch.v1"
           + "alpha.TaskSpecB\003\340A\002\022\022\n\ntask_count\030\004 \001(\003\022"
           + "\023\n\013parallelism\030\005 \001(\003\022Q\n\021scheduling_polic"
@@ -299,20 +299,22 @@ public final class JobProto {
           + "cloud.batch.v1alpha.Environment\022\033\n\023task_"
           + "count_per_node\030\n \001(\003\022\032\n\022require_hosts_fi"
           + "le\030\013 \001(\010\022\026\n\016permissive_ssh\030\014 \001(\010\022\034\n\017run_"
-          + "as_non_root\030\016 \001(\010B\003\340A\001\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\\\n\020Schedul"
-          + "ingPolicy\022!\n\035SCHEDULING_POLICY_UNSPECIFI"
-          + "ED\020\000\022\027\n\023AS_SOON_AS_POSSIBLE\020\001\022\014\n\010IN_ORDE"
-          + "R\020\002:o\352Al\n\036batch.googleapis.com/TaskGroup"
-          + "\022Jprojects/{project}/locations/{location"
-          + "}/jobs/{job}/taskGroups/{task_group}\"/\n\016"
-          + "ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006scopes\030"
-          + "\002 \003(\tB\302\001\n\036com.google.cloud.batch.v1alpha"
-          + "B\010JobProtoP\001Z4cloud.google.com/go/batch/"
-          + "apiv1alpha/batchpb;batchpb\242\002\003GCB\252\002\032Googl"
-          + "e.Cloud.Batch.V1Alpha\312\002\032Google\\Cloud\\Bat"
-          + "ch\\V1alpha\352\002\035Google::Cloud::Batch::V1alp"
-          + "hab\006proto3"
+          + "as_non_root\030\016 \001(\010B\003\340A\001\022H\n\017service_accoun"
+          + "t\030\017 \001(\0132*.google.cloud.batch.v1alpha.Ser"
+          + "viceAccountB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\\\n\020SchedulingPol"
+          + "icy\022!\n\035SCHEDULING_POLICY_UNSPECIFIED\020\000\022\027"
+          + "\n\023AS_SOON_AS_POSSIBLE\020\001\022\014\n\010IN_ORDER\020\002:o\352"
+          + "Al\n\036batch.googleapis.com/TaskGroup\022Jproj"
+          + "ects/{project}/locations/{location}/jobs"
+          + "/{job}/taskGroups/{task_group}\"/\n\016Servic"
+          + "eAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006scopes\030\002 \003(\tB"
+          + "\302\001\n\036com.google.cloud.batch.v1alphaB\010JobP"
+          + "rotoP\001Z4cloud.google.com/go/batch/apiv1a"
+          + "lpha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Clou"
+          + "d.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1a"
+          + "lpha\352\002\035Google::Cloud::Batch::V1alphab\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -596,6 +598,7 @@ public final class JobProto {
               "RequireHostsFile",
               "PermissiveSsh",
               "RunAsNonRoot",
+              "ServiceAccount",
             });
     internal_static_google_cloud_batch_v1alpha_TaskGroup_LabelsEntry_descriptor =
         internal_static_google_cloud_batch_v1alpha_TaskGroup_descriptor.getNestedTypes().get(0);

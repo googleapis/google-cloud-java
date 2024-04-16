@@ -565,6 +565,65 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         : transcriptNormalization_;
   }
 
+  public static final int TRANSLATION_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.speech.v2.TranslationConfig translationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the translationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTranslationConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The translationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.TranslationConfig getTranslationConfig() {
+    return translationConfig_ == null
+        ? com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()
+        : translationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.TranslationConfigOrBuilder getTranslationConfigOrBuilder() {
+    return translationConfig_ == null
+        ? com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()
+        : translationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -599,6 +658,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getTranscriptNormalization());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(15, getTranslationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -641,6 +703,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, getTranscriptNormalization());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getTranslationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -670,6 +735,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasTranscriptNormalization() != other.hasTranscriptNormalization()) return false;
     if (hasTranscriptNormalization()) {
       if (!getTranscriptNormalization().equals(other.getTranscriptNormalization())) return false;
+    }
+    if (hasTranslationConfig() != other.hasTranslationConfig()) return false;
+    if (hasTranslationConfig()) {
+      if (!getTranslationConfig().equals(other.getTranslationConfig())) return false;
     }
     if (!getDecodingConfigCase().equals(other.getDecodingConfigCase())) return false;
     switch (decodingConfigCase_) {
@@ -710,6 +779,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasTranscriptNormalization()) {
       hash = (37 * hash) + TRANSCRIPT_NORMALIZATION_FIELD_NUMBER;
       hash = (53 * hash) + getTranscriptNormalization().hashCode();
+    }
+    if (hasTranslationConfig()) {
+      hash = (37 * hash) + TRANSLATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTranslationConfig().hashCode();
     }
     switch (decodingConfigCase_) {
       case 7:
@@ -867,6 +940,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         getFeaturesFieldBuilder();
         getAdaptationFieldBuilder();
         getTranscriptNormalizationFieldBuilder();
+        getTranslationConfigFieldBuilder();
       }
     }
 
@@ -896,6 +970,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (transcriptNormalizationBuilder_ != null) {
         transcriptNormalizationBuilder_.dispose();
         transcriptNormalizationBuilder_ = null;
+      }
+      translationConfig_ = null;
+      if (translationConfigBuilder_ != null) {
+        translationConfigBuilder_.dispose();
+        translationConfigBuilder_ = null;
       }
       decodingConfigCase_ = 0;
       decodingConfig_ = null;
@@ -958,6 +1037,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 ? transcriptNormalization_
                 : transcriptNormalizationBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.translationConfig_ =
+            translationConfigBuilder_ == null
+                ? translationConfig_
+                : translationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1041,6 +1127,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasTranscriptNormalization()) {
         mergeTranscriptNormalization(other.getTranscriptNormalization());
+      }
+      if (other.hasTranslationConfig()) {
+        mergeTranslationConfig(other.getTranslationConfig());
       }
       switch (other.getDecodingConfigCase()) {
         case AUTO_DECODING_CONFIG:
@@ -1130,6 +1219,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 90
+            case 122:
+              {
+                input.readMessage(
+                    getTranslationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2635,6 +2731,220 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         transcriptNormalization_ = null;
       }
       return transcriptNormalizationBuilder_;
+    }
+
+    private com.google.cloud.speech.v2.TranslationConfig translationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.TranslationConfig,
+            com.google.cloud.speech.v2.TranslationConfig.Builder,
+            com.google.cloud.speech.v2.TranslationConfigOrBuilder>
+        translationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the translationConfig field is set.
+     */
+    public boolean hasTranslationConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The translationConfig.
+     */
+    public com.google.cloud.speech.v2.TranslationConfig getTranslationConfig() {
+      if (translationConfigBuilder_ == null) {
+        return translationConfig_ == null
+            ? com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()
+            : translationConfig_;
+      } else {
+        return translationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTranslationConfig(com.google.cloud.speech.v2.TranslationConfig value) {
+      if (translationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        translationConfig_ = value;
+      } else {
+        translationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTranslationConfig(
+        com.google.cloud.speech.v2.TranslationConfig.Builder builderForValue) {
+      if (translationConfigBuilder_ == null) {
+        translationConfig_ = builderForValue.build();
+      } else {
+        translationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTranslationConfig(com.google.cloud.speech.v2.TranslationConfig value) {
+      if (translationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && translationConfig_ != null
+            && translationConfig_
+                != com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()) {
+          getTranslationConfigBuilder().mergeFrom(value);
+        } else {
+          translationConfig_ = value;
+        }
+      } else {
+        translationConfigBuilder_.mergeFrom(value);
+      }
+      if (translationConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTranslationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      translationConfig_ = null;
+      if (translationConfigBuilder_ != null) {
+        translationConfigBuilder_.dispose();
+        translationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.TranslationConfig.Builder getTranslationConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getTranslationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.TranslationConfigOrBuilder getTranslationConfigOrBuilder() {
+      if (translationConfigBuilder_ != null) {
+        return translationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return translationConfig_ == null
+            ? com.google.cloud.speech.v2.TranslationConfig.getDefaultInstance()
+            : translationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional configuration used to automatically run translation on
+     * the given audio to the desired language for supported models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.TranslationConfig,
+            com.google.cloud.speech.v2.TranslationConfig.Builder,
+            com.google.cloud.speech.v2.TranslationConfigOrBuilder>
+        getTranslationConfigFieldBuilder() {
+      if (translationConfigBuilder_ == null) {
+        translationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.TranslationConfig,
+                com.google.cloud.speech.v2.TranslationConfig.Builder,
+                com.google.cloud.speech.v2.TranslationConfigOrBuilder>(
+                getTranslationConfig(), getParentForChildren(), isClean());
+        translationConfig_ = null;
+      }
+      return translationConfigBuilder_;
     }
 
     @java.lang.Override

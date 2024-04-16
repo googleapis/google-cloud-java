@@ -911,6 +911,25 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         : probingDetails_;
   }
 
+  public static final int BYPASS_FIREWALL_CHECKS_FIELD_NUMBER = 17;
+  private boolean bypassFirewallChecks_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether the test should skip firewall checking.
+   * If not provided, we assume false.
+   * </pre>
+   *
+   * <code>bool bypass_firewall_checks = 17;</code>
+   *
+   * @return The bypassFirewallChecks.
+   */
+  @java.lang.Override
+  public boolean getBypassFirewallChecks() {
+    return bypassFirewallChecks_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -959,6 +978,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(14, getProbingDetails());
+    }
+    if (bypassFirewallChecks_ != false) {
+      output.writeBool(17, bypassFirewallChecks_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1018,6 +1040,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getProbingDetails());
     }
+    if (bypassFirewallChecks_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, bypassFirewallChecks_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1064,6 +1089,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (hasProbingDetails()) {
       if (!getProbingDetails().equals(other.getProbingDetails())) return false;
     }
+    if (getBypassFirewallChecks() != other.getBypassFirewallChecks()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1115,6 +1141,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PROBING_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getProbingDetails().hashCode();
     }
+    hash = (37 * hash) + BYPASS_FIREWALL_CHECKS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBypassFirewallChecks());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1327,6 +1355,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         probingDetailsBuilder_.dispose();
         probingDetailsBuilder_ = null;
       }
+      bypassFirewallChecks_ = false;
       return this;
     }
 
@@ -1412,6 +1441,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         result.probingDetails_ =
             probingDetailsBuilder_ == null ? probingDetails_ : probingDetailsBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.bypassFirewallChecks_ = bypassFirewallChecks_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1511,6 +1543,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasProbingDetails()) {
         mergeProbingDetails(other.getProbingDetails());
+      }
+      if (other.getBypassFirewallChecks() != false) {
+        setBypassFirewallChecks(other.getBypassFirewallChecks());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1618,6 +1653,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 136:
+              {
+                bypassFirewallChecks_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4037,6 +4078,62 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         probingDetails_ = null;
       }
       return probingDetailsBuilder_;
+    }
+
+    private boolean bypassFirewallChecks_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether the test should skip firewall checking.
+     * If not provided, we assume false.
+     * </pre>
+     *
+     * <code>bool bypass_firewall_checks = 17;</code>
+     *
+     * @return The bypassFirewallChecks.
+     */
+    @java.lang.Override
+    public boolean getBypassFirewallChecks() {
+      return bypassFirewallChecks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the test should skip firewall checking.
+     * If not provided, we assume false.
+     * </pre>
+     *
+     * <code>bool bypass_firewall_checks = 17;</code>
+     *
+     * @param value The bypassFirewallChecks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBypassFirewallChecks(boolean value) {
+
+      bypassFirewallChecks_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the test should skip firewall checking.
+     * If not provided, we assume false.
+     * </pre>
+     *
+     * <code>bool bypass_firewall_checks = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBypassFirewallChecks() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      bypassFirewallChecks_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

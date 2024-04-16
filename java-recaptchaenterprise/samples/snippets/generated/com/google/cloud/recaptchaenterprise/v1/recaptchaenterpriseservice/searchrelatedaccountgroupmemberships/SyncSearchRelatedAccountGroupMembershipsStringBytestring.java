@@ -19,8 +19,8 @@ package com.google.cloud.recaptchaenterprise.v1.samples;
 // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_StringBytestring_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.protobuf.ByteString;
+import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
-import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
 
 public class SyncSearchRelatedAccountGroupMembershipsStringBytestring {
 
@@ -36,7 +36,7 @@ public class SyncSearchRelatedAccountGroupMembershipsStringBytestring {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
         RecaptchaEnterpriseServiceClient.create()) {
-      String project = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+      String project = ProjectName.of("[PROJECT]").toString();
       ByteString hashedAccountId = ByteString.EMPTY;
       for (RelatedAccountGroupMembership element :
           recaptchaEnterpriseServiceClient

@@ -161,4 +161,64 @@ public class MockEngineServiceImpl extends EngineServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void pauseEngine(PauseEngineRequest request, StreamObserver<Engine> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Engine) {
+      requests.add(request);
+      responseObserver.onNext(((Engine) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PauseEngine, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Engine.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void resumeEngine(ResumeEngineRequest request, StreamObserver<Engine> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Engine) {
+      requests.add(request);
+      responseObserver.onNext(((Engine) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResumeEngine, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Engine.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void tuneEngine(TuneEngineRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TuneEngine, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

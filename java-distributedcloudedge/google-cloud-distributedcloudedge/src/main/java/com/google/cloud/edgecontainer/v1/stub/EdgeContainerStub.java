@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1.stub;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -33,9 +34,12 @@ import com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest;
 import com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse;
 import com.google.cloud.edgecontainer.v1.GetClusterRequest;
 import com.google.cloud.edgecontainer.v1.GetMachineRequest;
 import com.google.cloud.edgecontainer.v1.GetNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.GetServerConfigRequest;
 import com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersResponse;
@@ -48,9 +52,15 @@ import com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse;
 import com.google.cloud.edgecontainer.v1.Machine;
 import com.google.cloud.edgecontainer.v1.NodePool;
 import com.google.cloud.edgecontainer.v1.OperationMetadata;
+import com.google.cloud.edgecontainer.v1.ServerConfig;
 import com.google.cloud.edgecontainer.v1.UpdateClusterRequest;
 import com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.UpgradeClusterRequest;
 import com.google.cloud.edgecontainer.v1.VpnConnection;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -103,6 +113,15 @@ public abstract class EdgeContainerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
   }
 
+  public OperationCallable<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterCallable()");
+  }
+
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterOperationCallable()");
@@ -115,6 +134,11 @@ public abstract class EdgeContainerStub implements BackgroundResource {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAccessTokenCallable()");
+  }
+
+  public UnaryCallable<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateOfflineCredentialCallable()");
   }
 
   public UnaryCallable<ListNodePoolsRequest, ListNodePoolsPagedResponse>
@@ -201,6 +225,23 @@ public abstract class EdgeContainerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteVpnConnectionRequest, Operation> deleteVpnConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteVpnConnectionCallable()");
+  }
+
+  public UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getServerConfigCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

@@ -73,8 +73,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
@@ -101,8 +102,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
@@ -197,7 +199,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A positive number that is the maximum number of results to return.
+   * A positive number that is the maximum number of results to return. The
+   * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
+   * submitted, will instead return a maximum of 10,000 results.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -682,8 +686,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -709,8 +714,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -736,8 +742,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -762,8 +769,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -784,8 +792,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -954,7 +963,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return.
+     * A positive number that is the maximum number of results to return. The
+     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
+     * submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -969,7 +980,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return.
+     * A positive number that is the maximum number of results to return. The
+     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
+     * submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -988,7 +1001,9 @@ public final class ListMetricDescriptorsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A positive number that is the maximum number of results to return.
+     * A positive number that is the maximum number of results to return. The
+     * default and maximum value is 10,000. If a page_size &lt;= 0 or &gt; 10,000 is
+     * submitted, will instead return a maximum of 10,000 results.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>

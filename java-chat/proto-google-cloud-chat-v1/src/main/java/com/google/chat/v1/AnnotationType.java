@@ -59,6 +59,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SLASH_COMMAND = 2;</code>
    */
   SLASH_COMMAND(2),
+  /**
+   *
+   *
+   * <pre>
+   * A rich link annotation.
+   * </pre>
+   *
+   * <code>RICH_LINK = 3;</code>
+   */
+  RICH_LINK(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -92,6 +102,16 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SLASH_COMMAND = 2;</code>
    */
   public static final int SLASH_COMMAND_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * A rich link annotation.
+   * </pre>
+   *
+   * <code>RICH_LINK = 3;</code>
+   */
+  public static final int RICH_LINK_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,6 +143,8 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
         return USER_MENTION;
       case 2:
         return SLASH_COMMAND;
+      case 3:
+        return RICH_LINK;
       default:
         return null;
     }

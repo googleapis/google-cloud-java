@@ -49,6 +49,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     completableOption_ = 0;
     recsFilterableOption_ = 0;
     keyPropertyType_ = "";
+    advancedSiteSearchDataSources_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -152,6 +153,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GEOLOCATION = 6;</code>
      */
     GEOLOCATION(6),
+    /**
+     *
+     *
+     * <pre>
+     * Field value type is Datetime.
+     * </pre>
+     *
+     * <code>DATETIME = 7;</code>
+     */
+    DATETIME(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -225,6 +236,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GEOLOCATION = 6;</code>
      */
     public static final int GEOLOCATION_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Field value type is Datetime.
+     * </pre>
+     *
+     * <code>DATETIME = 7;</code>
+     */
+    public static final int DATETIME_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -264,6 +285,8 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
           return BOOLEAN;
         case 6:
           return GEOLOCATION;
+        case 7:
+          return DATETIME;
         default:
           return null;
       }
@@ -1288,6 +1311,169 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1alpha.FieldConfig.FilterableOption)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional source of the advanced site search field.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource}
+   */
+  public enum AdvancedSiteSearchDataSource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset.
+     * </pre>
+     *
+     * <code>ADVANCED_SITE_SEARCH_DATA_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    ADVANCED_SITE_SEARCH_DATA_SOURCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from meta tag.
+     * </pre>
+     *
+     * <code>METATAGS = 1;</code>
+     */
+    METATAGS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from page map.
+     * </pre>
+     *
+     * <code>PAGEMAP = 2;</code>
+     */
+    PAGEMAP(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset.
+     * </pre>
+     *
+     * <code>ADVANCED_SITE_SEARCH_DATA_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ADVANCED_SITE_SEARCH_DATA_SOURCE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from meta tag.
+     * </pre>
+     *
+     * <code>METATAGS = 1;</code>
+     */
+    public static final int METATAGS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from page map.
+     * </pre>
+     *
+     * <code>PAGEMAP = 2;</code>
+     */
+    public static final int PAGEMAP_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdvancedSiteSearchDataSource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AdvancedSiteSearchDataSource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ADVANCED_SITE_SEARCH_DATA_SOURCE_UNSPECIFIED;
+        case 1:
+          return METATAGS;
+        case 2:
+          return PAGEMAP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AdvancedSiteSearchDataSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AdvancedSiteSearchDataSource>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AdvancedSiteSearchDataSource>() {
+              public AdvancedSiteSearchDataSource findValueByNumber(int number) {
+                return AdvancedSiteSearchDataSource.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1alpha.FieldConfig.getDescriptor()
+          .getEnumTypes()
+          .get(7);
+    }
+
+    private static final AdvancedSiteSearchDataSource[] VALUES = values();
+
+    public static AdvancedSiteSearchDataSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AdvancedSiteSearchDataSource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource)
+  }
+
   public static final int FIELD_PATH_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1930,6 +2116,158 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ADVANCED_SITE_SEARCH_DATA_SOURCES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> advancedSiteSearchDataSources_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer,
+          com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>
+      advancedSiteSearchDataSources_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>() {
+            public com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
+                convert(java.lang.Integer from) {
+              com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
+                  result =
+                      com.google.cloud.discoveryengine.v1alpha.FieldConfig
+                          .AdvancedSiteSearchDataSource.forNumber(from);
+              return result == null
+                  ? com.google.cloud.discoveryengine.v1alpha.FieldConfig
+                      .AdvancedSiteSearchDataSource.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return A list containing the advancedSiteSearchDataSources.
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>
+      getAdvancedSiteSearchDataSourcesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer,
+        com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>(
+        advancedSiteSearchDataSources_, advancedSiteSearchDataSources_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return The count of advancedSiteSearchDataSources.
+   */
+  @java.lang.Override
+  public int getAdvancedSiteSearchDataSourcesCount() {
+    return advancedSiteSearchDataSources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The advancedSiteSearchDataSources at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
+      getAdvancedSiteSearchDataSources(int index) {
+    return advancedSiteSearchDataSources_converter_.convert(
+        advancedSiteSearchDataSources_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for
+   *     advancedSiteSearchDataSources.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAdvancedSiteSearchDataSourcesValueList() {
+    return advancedSiteSearchDataSources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of advancedSiteSearchDataSources at the given index.
+   */
+  @java.lang.Override
+  public int getAdvancedSiteSearchDataSourcesValue(int index) {
+    return advancedSiteSearchDataSources_.get(index);
+  }
+
+  private int advancedSiteSearchDataSourcesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1944,6 +2282,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldPath_);
     }
@@ -1990,6 +2329,13 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
             .FILTERABLE_OPTION_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(9, recsFilterableOption_);
+    }
+    if (getAdvancedSiteSearchDataSourcesList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(advancedSiteSearchDataSourcesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < advancedSiteSearchDataSources_.size(); i++) {
+      output.writeEnumNoTag(advancedSiteSearchDataSources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2047,6 +2393,20 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, recsFilterableOption_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < advancedSiteSearchDataSources_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                advancedSiteSearchDataSources_.get(i));
+      }
+      size += dataSize;
+      if (!getAdvancedSiteSearchDataSourcesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      advancedSiteSearchDataSourcesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2072,6 +2432,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     if (completableOption_ != other.completableOption_) return false;
     if (recsFilterableOption_ != other.recsFilterableOption_) return false;
     if (!getKeyPropertyType().equals(other.getKeyPropertyType())) return false;
+    if (!advancedSiteSearchDataSources_.equals(other.advancedSiteSearchDataSources_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2101,6 +2462,10 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + recsFilterableOption_;
     hash = (37 * hash) + KEY_PROPERTY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getKeyPropertyType().hashCode();
+    if (getAdvancedSiteSearchDataSourcesCount() > 0) {
+      hash = (37 * hash) + ADVANCED_SITE_SEARCH_DATA_SOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + advancedSiteSearchDataSources_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2250,6 +2615,8 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       completableOption_ = 0;
       recsFilterableOption_ = 0;
       keyPropertyType_ = "";
+      advancedSiteSearchDataSources_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -2277,11 +2644,22 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1alpha.FieldConfig buildPartial() {
       com.google.cloud.discoveryengine.v1alpha.FieldConfig result =
           new com.google.cloud.discoveryengine.v1alpha.FieldConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1alpha.FieldConfig result) {
+      if (((bitField0_ & 0x00000200) != 0)) {
+        advancedSiteSearchDataSources_ =
+            java.util.Collections.unmodifiableList(advancedSiteSearchDataSources_);
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.advancedSiteSearchDataSources_ = advancedSiteSearchDataSources_;
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1alpha.FieldConfig result) {
@@ -2392,6 +2770,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.advancedSiteSearchDataSources_.isEmpty()) {
+        if (advancedSiteSearchDataSources_.isEmpty()) {
+          advancedSiteSearchDataSources_ = other.advancedSiteSearchDataSources_;
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          ensureAdvancedSiteSearchDataSourcesIsMutable();
+          advancedSiteSearchDataSources_.addAll(other.advancedSiteSearchDataSources_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2472,6 +2860,25 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 72
+            case 80:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAdvancedSiteSearchDataSourcesIsMutable();
+                advancedSiteSearchDataSources_.add(tmpRaw);
+                break;
+              } // case 80
+            case 82:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureAdvancedSiteSearchDataSourcesIsMutable();
+                  advancedSiteSearchDataSources_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4042,6 +4449,341 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       keyPropertyType_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> advancedSiteSearchDataSources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAdvancedSiteSearchDataSourcesIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        advancedSiteSearchDataSources_ =
+            new java.util.ArrayList<java.lang.Integer>(advancedSiteSearchDataSources_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @return A list containing the advancedSiteSearchDataSources.
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>
+        getAdvancedSiteSearchDataSourcesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>(
+          advancedSiteSearchDataSources_, advancedSiteSearchDataSources_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @return The count of advancedSiteSearchDataSources.
+     */
+    public int getAdvancedSiteSearchDataSourcesCount() {
+      return advancedSiteSearchDataSources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The advancedSiteSearchDataSources at the given index.
+     */
+    public com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
+        getAdvancedSiteSearchDataSources(int index) {
+      return advancedSiteSearchDataSources_converter_.convert(
+          advancedSiteSearchDataSources_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The advancedSiteSearchDataSources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvancedSiteSearchDataSources(
+        int index,
+        com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      advancedSiteSearchDataSources_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param value The advancedSiteSearchDataSources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvancedSiteSearchDataSources(
+        com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      advancedSiteSearchDataSources_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param values The advancedSiteSearchDataSources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdvancedSiteSearchDataSources(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.discoveryengine.v1alpha.FieldConfig
+                        .AdvancedSiteSearchDataSource>
+            values) {
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      for (com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource value :
+          values) {
+        advancedSiteSearchDataSources_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvancedSiteSearchDataSources() {
+      advancedSiteSearchDataSources_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for
+     *     advancedSiteSearchDataSources.
+     */
+    public java.util.List<java.lang.Integer> getAdvancedSiteSearchDataSourcesValueList() {
+      return java.util.Collections.unmodifiableList(advancedSiteSearchDataSources_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of advancedSiteSearchDataSources at the given
+     *     index.
+     */
+    public int getAdvancedSiteSearchDataSourcesValue(int index) {
+      return advancedSiteSearchDataSources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for advancedSiteSearchDataSources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvancedSiteSearchDataSourcesValue(int index, int value) {
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      advancedSiteSearchDataSources_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for advancedSiteSearchDataSources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvancedSiteSearchDataSourcesValue(int value) {
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      advancedSiteSearchDataSources_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, only the corresponding source will be indexed for
+     * this field. Otherwise, the values from different sources are merged.
+     *
+     * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+     * map:
+     *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+     *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for advancedSiteSearchDataSources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdvancedSiteSearchDataSourcesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureAdvancedSiteSearchDataSourcesIsMutable();
+      for (int value : values) {
+        advancedSiteSearchDataSources_.add(value);
+      }
       onChanged();
       return this;
     }

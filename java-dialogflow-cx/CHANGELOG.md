@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.52.0 (2024-04-04)
+
+* No change
+
+
+## 0.50.0 (2024-03-28)
+
+### Features
+
+* added support for DataStoreConnection, DataStoreConnectionSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* added support for MultiLanguageSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* added support for PersonalizationSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* added support for SpeechSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* added support for Webhook OAuthConfig, and ServiceAgentAuth Settings. ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* clarified wording around quota usage ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
+## 0.49.0 (2024-03-22)
+
+* No change
+
+
 ## 0.48.0 (2024-03-06)
 
 * No change

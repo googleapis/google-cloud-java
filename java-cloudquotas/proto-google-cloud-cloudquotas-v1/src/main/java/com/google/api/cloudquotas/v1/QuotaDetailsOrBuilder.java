@@ -36,4 +36,45 @@ public interface QuotaDetailsOrBuilder
    * @return The value.
    */
   long getValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   *
+   * @return Whether the rolloutInfo field is set.
+   */
+  boolean hasRolloutInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   *
+   * @return The rolloutInfo.
+   */
+  com.google.api.cloudquotas.v1.RolloutInfo getRolloutInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   */
+  com.google.api.cloudquotas.v1.RolloutInfoOrBuilder getRolloutInfoOrBuilder();
 }

@@ -74,7 +74,9 @@ public final class DeleteServiceProjectAttachmentRequest
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the service project attachment to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * </pre>
    *
    * <code>
@@ -99,7 +101,9 @@ public final class DeleteServiceProjectAttachmentRequest
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the service project attachment to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * </pre>
    *
    * <code>
@@ -572,7 +576,9 @@ public final class DeleteServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the service project attachment to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
      * </pre>
      *
      * <code>
@@ -596,7 +602,9 @@ public final class DeleteServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the service project attachment to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
      * </pre>
      *
      * <code>
@@ -620,7 +628,9 @@ public final class DeleteServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the service project attachment to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
      * </pre>
      *
      * <code>
@@ -643,7 +653,9 @@ public final class DeleteServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the service project attachment to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
      * </pre>
      *
      * <code>
@@ -662,7 +674,9 @@ public final class DeleteServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the service project attachment to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
      * </pre>
      *
      * <code>

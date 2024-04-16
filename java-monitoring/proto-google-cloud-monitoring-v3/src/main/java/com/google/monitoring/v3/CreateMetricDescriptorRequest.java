@@ -72,8 +72,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    * 4
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
@@ -100,8 +101,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    * 4
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
@@ -131,8 +133,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-   * descriptor.
+   * Required. The new [custom
+   * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * </pre>
    *
    * <code>
@@ -149,8 +151,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-   * descriptor.
+   * Required. The new [custom
+   * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * </pre>
    *
    * <code>
@@ -169,8 +171,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-   * descriptor.
+   * Required. The new [custom
+   * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
    * </pre>
    *
    * <code>
@@ -577,8 +579,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      * 4
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -604,8 +607,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      * 4
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -631,8 +635,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      * 4
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -657,8 +662,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      * 4
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -679,8 +685,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-     * which to execute the request. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+     * to execute the request. The format is:
      * 4
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
@@ -713,8 +720,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -730,8 +737,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -753,8 +760,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -778,8 +785,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -800,8 +807,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -830,8 +837,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -852,8 +859,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -869,8 +876,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
@@ -890,8 +897,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
-     * descriptor.
+     * Required. The new [custom
+     * metric](https://cloud.google.com/monitoring/custom-metrics) descriptor.
      * </pre>
      *
      * <code>
