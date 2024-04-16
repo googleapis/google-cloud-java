@@ -27,6 +27,7 @@ import com.google.maps.routing.v2.RoutesClient;
 import com.google.maps.routing.v2.RoutingPreference;
 import com.google.maps.routing.v2.TrafficModel;
 import com.google.maps.routing.v2.TransitPreferences;
+import com.google.maps.routing.v2.Units;
 import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 
@@ -53,6 +54,7 @@ public class AsyncComputeRouteMatrix {
               .setArrivalTime(Timestamp.newBuilder().build())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
+              .setUnits(Units.forNumber(0))
               .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
               .setTrafficModel(TrafficModel.forNumber(0))
               .setTransitPreferences(TransitPreferences.newBuilder().build())

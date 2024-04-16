@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1.ImportDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1.ImportErrorConfig;
+import com.google.protobuf.FieldMask;
 
 public class AsyncImportDocumentsLRO {
 
@@ -45,6 +46,7 @@ public class AsyncImportDocumentsLRO {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
               .build();

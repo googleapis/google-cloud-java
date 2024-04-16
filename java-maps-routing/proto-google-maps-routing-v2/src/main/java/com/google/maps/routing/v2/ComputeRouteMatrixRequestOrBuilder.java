@@ -32,12 +32,14 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -53,12 +55,14 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -74,12 +78,14 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -95,12 +101,14 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -117,12 +125,14 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -271,7 +281,7 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -288,7 +298,7 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -305,7 +315,7 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -320,9 +330,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -337,9 +347,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -354,9 +364,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -369,9 +379,10 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the first origin.
    * </pre>
@@ -386,9 +397,10 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the first origin.
    * </pre>
@@ -404,8 +416,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -418,8 +430,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -427,6 +439,31 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The bytes for regionCode.
    */
   com.google.protobuf.ByteString getRegionCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the units of measure for the display fields.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enum numeric value on the wire for units.
+   */
+  int getUnitsValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the units of measure for the display fields.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The units.
+   */
+  com.google.maps.routing.v2.Units getUnits();
 
   /**
    *

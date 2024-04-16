@@ -90,7 +90,7 @@ public class RegionalInventoryServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "accounts/account-653/products/product-653";
+    ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
 
     ListRegionalInventoriesPagedResponse pagedListResponse = client.listRegionalInventories(parent);
 
@@ -122,6 +122,56 @@ public class RegionalInventoryServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+      client.listRegionalInventories(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRegionalInventoriesTest2() throws Exception {
+    RegionalInventory responsesElement = RegionalInventory.newBuilder().build();
+    ListRegionalInventoriesResponse expectedResponse =
+        ListRegionalInventoriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRegionalInventories(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "accounts/account-653/products/product-653";
+
+    ListRegionalInventoriesPagedResponse pagedListResponse = client.listRegionalInventories(parent);
+
+    List<RegionalInventory> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRegionalInventoriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRegionalInventoriesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String parent = "accounts/account-653/products/product-653";
       client.listRegionalInventories(parent);
       Assert.fail("No exception raised");
@@ -147,7 +197,7 @@ public class RegionalInventoryServiceClientHttpJsonTest {
 
     InsertRegionalInventoryRequest request =
         InsertRegionalInventoryRequest.newBuilder()
-            .setParent("accounts/account-653/products/product-653")
+            .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setRegionalInventory(RegionalInventory.newBuilder().build())
             .build();
 
@@ -179,7 +229,7 @@ public class RegionalInventoryServiceClientHttpJsonTest {
     try {
       InsertRegionalInventoryRequest request =
           InsertRegionalInventoryRequest.newBuilder()
-              .setParent("accounts/account-653/products/product-653")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
               .build();
       client.insertRegionalInventory(request);

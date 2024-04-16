@@ -397,6 +397,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= ModelMonitoringServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing Vertex AI Model moitoring. This
+ * includes `ModelMonitor` resources, `ModelMonitoringJob` resources.
+ *
+ * <p>Sample for ModelMonitoringServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ModelMonitoringServiceClient modelMonitoringServiceClient =
+ *     ModelMonitoringServiceClient.create()) {
+ *   ModelMonitorName name = ModelMonitorName.of("[PROJECT]", "[LOCATION]", "[MODEL_MONITOR]");
+ *   ModelMonitor response = modelMonitoringServiceClient.getModelMonitor(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ModelServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's machine learning Models.

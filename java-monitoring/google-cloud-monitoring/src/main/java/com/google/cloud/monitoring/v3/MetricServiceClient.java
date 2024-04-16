@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListMonitoredResourceDescriptors</td>
- *      <td><p> Lists monitored resource descriptors that match a filter. This method does not require a Workspace.</td>
+ *      <td><p> Lists monitored resource descriptors that match a filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -110,7 +110,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMonitoredResourceDescriptor</td>
- *      <td><p> Gets a single monitored resource descriptor. This method does not require a Workspace.</td>
+ *      <td><p> Gets a single monitored resource descriptor.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -129,7 +129,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListMetricDescriptors</td>
- *      <td><p> Lists metric descriptors that match a filter. This method does not require a Workspace.</td>
+ *      <td><p> Lists metric descriptors that match a filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -151,7 +151,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMetricDescriptor</td>
- *      <td><p> Gets a single metric descriptor. This method does not require a Workspace.</td>
+ *      <td><p> Gets a single metric descriptor.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -170,7 +170,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateMetricDescriptor</td>
- *      <td><p> Creates a new metric descriptor. The creation is executed asynchronously and callers may check the returned operation to track its progress. User-created metric descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics).</td>
+ *      <td><p> Creates a new metric descriptor. The creation is executed asynchronously. User-created metric descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The metric descriptor is updated if it already exists, except that metric labels are never removed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -210,7 +210,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTimeSeries</td>
- *      <td><p> Lists time series that match a filter. This method does not require a Workspace.</td>
+ *      <td><p> Lists time series that match a filter.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -232,7 +232,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateTimeSeries</td>
- *      <td><p> Creates or adds data to one or more time series. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response.</td>
+ *      <td><p> Creates or adds data to one or more time series. The response is empty if all time series in the request were written. If any time series could not be written, a corresponding failure message is included in the error response. This method does not support [resource locations constraint of an organization policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -361,8 +361,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -397,8 +396,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -433,8 +431,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -469,8 +466,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -503,8 +499,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -539,8 +534,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -575,8 +569,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a
-   * Workspace.
+   * Lists monitored resource descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -618,7 +611,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Workspace.
+   * Gets a single monitored resource descriptor.
    *
    * <p>Sample code:
    *
@@ -653,7 +646,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Workspace.
+   * Gets a single monitored resource descriptor.
    *
    * <p>Sample code:
    *
@@ -686,7 +679,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Workspace.
+   * Gets a single monitored resource descriptor.
    *
    * <p>Sample code:
    *
@@ -719,7 +712,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Workspace.
+   * Gets a single monitored resource descriptor.
    *
    * <p>Sample code:
    *
@@ -751,7 +744,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -785,7 +778,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -819,7 +812,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -853,7 +846,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -885,7 +878,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -920,7 +913,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -954,7 +947,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   * Lists metric descriptors that match a filter.
    *
    * <p>Sample code:
    *
@@ -995,7 +988,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single metric descriptor. This method does not require a Workspace.
+   * Gets a single metric descriptor.
    *
    * <p>Sample code:
    *
@@ -1028,7 +1021,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single metric descriptor. This method does not require a Workspace.
+   * Gets a single metric descriptor.
    *
    * <p>Sample code:
    *
@@ -1060,7 +1053,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single metric descriptor. This method does not require a Workspace.
+   * Gets a single metric descriptor.
    *
    * <p>Sample code:
    *
@@ -1091,7 +1084,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single metric descriptor. This method does not require a Workspace.
+   * Gets a single metric descriptor.
    *
    * <p>Sample code:
    *
@@ -1123,9 +1116,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1161,9 +1154,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1199,9 +1192,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1237,9 +1230,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1275,9 +1268,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1306,9 +1299,9 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new metric descriptor. The creation is executed asynchronously and callers may check
-   * the returned operation to track its progress. User-created metric descriptors define [custom
-   * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   * Creates a new metric descriptor. The creation is executed asynchronously. User-created metric
+   * descriptors define [custom metrics](https://cloud.google.com/monitoring/custom-metrics). The
+   * metric descriptor is updated if it already exists, except that metric labels are never removed.
    *
    * <p>Sample code:
    *
@@ -1468,7 +1461,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1521,7 +1514,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1574,7 +1567,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1627,7 +1620,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1680,7 +1673,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1717,7 +1710,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1755,7 +1748,7 @@ public class MetricServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists time series that match a filter. This method does not require a Workspace.
+   * Lists time series that match a filter.
    *
    * <p>Sample code:
    *
@@ -1802,7 +1795,9 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates or adds data to one or more time series. The response is empty if all time series in
    * the request were written. If any time series could not be written, a corresponding failure
-   * message is included in the error response.
+   * message is included in the error response. This method does not support [resource locations
+   * constraint of an organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
    *
    * <p>Sample code:
    *
@@ -1842,7 +1837,9 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates or adds data to one or more time series. The response is empty if all time series in
    * the request were written. If any time series could not be written, a corresponding failure
-   * message is included in the error response.
+   * message is included in the error response. This method does not support [resource locations
+   * constraint of an organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
    *
    * <p>Sample code:
    *
@@ -1879,7 +1876,9 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates or adds data to one or more time series. The response is empty if all time series in
    * the request were written. If any time series could not be written, a corresponding failure
-   * message is included in the error response.
+   * message is included in the error response. This method does not support [resource locations
+   * constraint of an organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
    *
    * <p>Sample code:
    *
@@ -1910,7 +1909,9 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates or adds data to one or more time series. The response is empty if all time series in
    * the request were written. If any time series could not be written, a corresponding failure
-   * message is included in the error response.
+   * message is included in the error response. This method does not support [resource locations
+   * constraint of an organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
    *
    * <p>Sample code:
    *

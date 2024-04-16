@@ -45,32 +45,35 @@ public final class DataStoreProto {
           + "tore.proto\022\037google.cloud.discoveryengine"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
           + "ogle/api/resource.proto\032,google/cloud/di"
-          + "scoveryengine/v1/common.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\267\005\n\tDataStore\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\005\022\031\n\014display_name\030\002 \001(\tB\003\340"
-          + "A\002\022Q\n\021industry_vertical\030\003 \001(\01621.google.c"
-          + "loud.discoveryengine.v1.IndustryVertical"
-          + "B\003\340A\005\022E\n\016solution_types\030\005 \003(\0162-.google.c"
-          + "loud.discoveryengine.v1.SolutionType\022\036\n\021"
-          + "default_schema_id\030\007 \001(\tB\003\340A\003\022U\n\016content_"
-          + "config\030\006 \001(\01628.google.cloud.discoveryeng"
-          + "ine.v1.DataStore.ContentConfigB\003\340A\005\0224\n\013c"
-          + "reate_time\030\004 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\"i\n\rContentConfig\022\036\n\032CONTENT_CO"
-          + "NFIG_UNSPECIFIED\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CO"
-          + "NTENT_REQUIRED\020\002\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352"
-          + "A\305\001\n(discoveryengine.googleapis.com/Data"
-          + "Store\022?projects/{project}/locations/{loc"
-          + "ation}/dataStores/{data_store}\022Xprojects"
-          + "/{project}/locations/{location}/collecti"
-          + "ons/{collection}/dataStores/{data_store}"
-          + "B\201\002\n#com.google.cloud.discoveryengine.v1"
-          + "B\016DataStoreProtoP\001ZMcloud.google.com/go/"
-          + "discoveryengine/apiv1/discoveryenginepb;"
-          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Go"
-          + "ogle.Cloud.DiscoveryEngine.V1\312\002\037Google\\C"
-          + "loud\\DiscoveryEngine\\V1\352\002\"Google::Cloud:"
-          + ":DiscoveryEngine::V1b\006proto3"
+          + "scoveryengine/v1/common.proto\032,google/cl"
+          + "oud/discoveryengine/v1/schema.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\"\371\005\n\tDataSto"
+          + "re\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_name\030\002 "
+          + "\001(\tB\003\340A\002\022Q\n\021industry_vertical\030\003 \001(\01621.go"
+          + "ogle.cloud.discoveryengine.v1.IndustryVe"
+          + "rticalB\003\340A\005\022E\n\016solution_types\030\005 \003(\0162-.go"
+          + "ogle.cloud.discoveryengine.v1.SolutionTy"
+          + "pe\022\036\n\021default_schema_id\030\007 \001(\tB\003\340A\003\022U\n\016co"
+          + "ntent_config\030\006 \001(\01628.google.cloud.discov"
+          + "eryengine.v1.DataStore.ContentConfigB\003\340A"
+          + "\005\0224\n\013create_time\030\004 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022@\n\017starting_schema\030\034 \001(\013"
+          + "2\'.google.cloud.discoveryengine.v1.Schem"
+          + "a\"i\n\rContentConfig\022\036\n\032CONTENT_CONFIG_UNS"
+          + "PECIFIED\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_RE"
+          + "QUIRED\020\002\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(dis"
+          + "coveryengine.googleapis.com/DataStore\022?p"
+          + "rojects/{project}/locations/{location}/d"
+          + "ataStores/{data_store}\022Xprojects/{projec"
+          + "t}/locations/{location}/collections/{col"
+          + "lection}/dataStores/{data_store}B\201\002\n#com"
+          + ".google.cloud.discoveryengine.v1B\016DataSt"
+          + "oreProtoP\001ZMcloud.google.com/go/discover"
+          + "yengine/apiv1/discoveryenginepb;discover"
+          + "yenginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clo"
+          + "ud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Dis"
+          + "coveryEngine\\V1\352\002\"Google::Cloud::Discove"
+          + "ryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,6 +82,7 @@ public final class DataStoreProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.SchemaProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_DataStore_descriptor =
@@ -94,6 +98,7 @@ public final class DataStoreProto {
               "DefaultSchemaId",
               "ContentConfig",
               "CreateTime",
+              "StartingSchema",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -104,6 +109,7 @@ public final class DataStoreProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.SchemaProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

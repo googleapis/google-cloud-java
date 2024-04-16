@@ -29,7 +29,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent containing the listed SLOs, either a
-   * project or a Monitoring Workspace. The formats are:
+   * project or a Monitoring Metrics Scope. The formats are:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
@@ -47,7 +47,7 @@ public interface ListServiceLevelObjectivesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent containing the listed SLOs, either a
-   * project or a Monitoring Workspace. The formats are:
+   * project or a Monitoring Metrics Scope. The formats are:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-

@@ -28,7 +28,7 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * The resource name of the transfer config.
+   * Identifier. The resource name of the transfer config.
    * Transfer config names have the form either
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
    * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -37,7 +37,7 @@ public interface TransferConfigOrBuilder
    * config.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -46,7 +46,7 @@ public interface TransferConfigOrBuilder
    *
    *
    * <pre>
-   * The resource name of the transfer config.
+   * Identifier. The resource name of the transfer config.
    * Transfer config names have the form either
    * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
    * `projects/{project_id}/transferConfigs/{config_id}`,
@@ -55,7 +55,7 @@ public interface TransferConfigOrBuilder
    * config.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

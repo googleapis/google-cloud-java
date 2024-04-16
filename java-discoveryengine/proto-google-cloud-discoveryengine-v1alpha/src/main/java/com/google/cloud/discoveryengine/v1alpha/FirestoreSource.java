@@ -239,7 +239,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
    * limit of 2,000 characters. Can be specified if one wants to have the
    * Firestore export to a specific Cloud Storage directory.
    *
-   * Please ensure that the Firestore service account has the necessary Cloud
+   * Ensure that the Firestore service account has the necessary Cloud
    * Storage Admin permissions to access the specified Cloud Storage directory.
    * </pre>
    *
@@ -267,7 +267,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
    * limit of 2,000 characters. Can be specified if one wants to have the
    * Firestore export to a specific Cloud Storage directory.
    *
-   * Please ensure that the Firestore service account has the necessary Cloud
+   * Ensure that the Firestore service account has the necessary Cloud
    * Storage Admin permissions to access the specified Cloud Storage directory.
    * </pre>
    *
@@ -1050,7 +1050,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      * limit of 2,000 characters. Can be specified if one wants to have the
      * Firestore export to a specific Cloud Storage directory.
      *
-     * Please ensure that the Firestore service account has the necessary Cloud
+     * Ensure that the Firestore service account has the necessary Cloud
      * Storage Admin permissions to access the specified Cloud Storage directory.
      * </pre>
      *
@@ -1077,7 +1077,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      * limit of 2,000 characters. Can be specified if one wants to have the
      * Firestore export to a specific Cloud Storage directory.
      *
-     * Please ensure that the Firestore service account has the necessary Cloud
+     * Ensure that the Firestore service account has the necessary Cloud
      * Storage Admin permissions to access the specified Cloud Storage directory.
      * </pre>
      *
@@ -1104,7 +1104,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      * limit of 2,000 characters. Can be specified if one wants to have the
      * Firestore export to a specific Cloud Storage directory.
      *
-     * Please ensure that the Firestore service account has the necessary Cloud
+     * Ensure that the Firestore service account has the necessary Cloud
      * Storage Admin permissions to access the specified Cloud Storage directory.
      * </pre>
      *
@@ -1130,7 +1130,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      * limit of 2,000 characters. Can be specified if one wants to have the
      * Firestore export to a specific Cloud Storage directory.
      *
-     * Please ensure that the Firestore service account has the necessary Cloud
+     * Ensure that the Firestore service account has the necessary Cloud
      * Storage Admin permissions to access the specified Cloud Storage directory.
      * </pre>
      *
@@ -1152,7 +1152,7 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      * limit of 2,000 characters. Can be specified if one wants to have the
      * Firestore export to a specific Cloud Storage directory.
      *
-     * Please ensure that the Firestore service account has the necessary Cloud
+     * Ensure that the Firestore service account has the necessary Cloud
      * Storage Admin permissions to access the specified Cloud Storage directory.
      * </pre>
      *

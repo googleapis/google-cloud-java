@@ -638,6 +638,63 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int BOOST_SPEC_FIELD_NUMBER = 10;
+  private com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boostSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return Whether the boostSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoostSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return The boostSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec() {
+    return boostSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+        : boostSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder
+      getBoostSpecOrBuilder() {
+    return boostSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+        : boostSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -674,6 +731,9 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, filter_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10, getBoostSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -715,6 +775,9 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, filter_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getBoostSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -748,6 +811,10 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       if (!getSummarySpec().equals(other.getSummarySpec())) return false;
     }
     if (!getFilter().equals(other.getFilter())) return false;
+    if (hasBoostSpec() != other.hasBoostSpec()) return false;
+    if (hasBoostSpec()) {
+      if (!getBoostSpec().equals(other.getBoostSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -783,6 +850,10 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    if (hasBoostSpec()) {
+      hash = (37 * hash) + BOOST_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getBoostSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -951,6 +1022,7 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         getQueryFieldBuilder();
         getConversationFieldBuilder();
         getSummarySpecFieldBuilder();
+        getBoostSpecFieldBuilder();
       }
     }
 
@@ -978,6 +1050,11 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         summarySpecBuilder_ = null;
       }
       filter_ = "";
+      boostSpec_ = null;
+      if (boostSpecBuilder_ != null) {
+        boostSpecBuilder_.dispose();
+        boostSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1046,6 +1123,10 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1127,6 +1208,9 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasBoostSpec()) {
+        mergeBoostSpec(other.getBoostSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1207,6 +1291,12 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2619,6 +2709,215 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boostSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>
+        boostSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     *
+     * @return Whether the boostSpec field is set.
+     */
+    public boolean hasBoostSpec() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     *
+     * @return The boostSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec() {
+      if (boostSpecBuilder_ == null) {
+        return boostSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+            : boostSpec_;
+      } else {
+        return boostSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder setBoostSpec(com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec value) {
+      if (boostSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        boostSpec_ = value;
+      } else {
+        boostSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder setBoostSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder builderForValue) {
+      if (boostSpecBuilder_ == null) {
+        boostSpec_ = builderForValue.build();
+      } else {
+        boostSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder mergeBoostSpec(
+        com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec value) {
+      if (boostSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && boostSpec_ != null
+            && boostSpec_
+                != com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec
+                    .getDefaultInstance()) {
+          getBoostSpecBuilder().mergeFrom(value);
+        } else {
+          boostSpec_ = value;
+        }
+      } else {
+        boostSpecBuilder_.mergeFrom(value);
+      }
+      if (boostSpec_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public Builder clearBoostSpec() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      boostSpec_ = null;
+      if (boostSpecBuilder_ != null) {
+        boostSpecBuilder_.dispose();
+        boostSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder
+        getBoostSpecBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getBoostSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder
+        getBoostSpecOrBuilder() {
+      if (boostSpecBuilder_ != null) {
+        return boostSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return boostSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.getDefaultInstance()
+            : boostSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specification to boost certain documents in search results which may
+     * affect the converse response. For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+            com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>
+        getBoostSpecFieldBuilder() {
+      if (boostSpecBuilder_ == null) {
+        boostSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec.Builder,
+                com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder>(
+                getBoostSpec(), getParentForChildren(), isClean());
+        boostSpec_ = null;
+      }
+      return boostSpecBuilder_;
     }
 
     @java.lang.Override

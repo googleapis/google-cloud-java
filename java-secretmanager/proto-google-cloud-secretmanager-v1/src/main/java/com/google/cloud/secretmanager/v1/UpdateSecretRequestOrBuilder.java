@@ -28,7 +28,8 @@ public interface UpdateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface UpdateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -56,7 +58,8 @@ public interface UpdateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>

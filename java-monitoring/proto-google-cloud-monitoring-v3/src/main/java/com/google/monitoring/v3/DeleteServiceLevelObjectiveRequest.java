@@ -72,7 +72,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   * Required. Resource name of the `ServiceLevelObjective` to delete. The
+   * format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
@@ -99,7 +100,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   * Required. Resource name of the `ServiceLevelObjective` to delete. The
+   * format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
@@ -471,7 +473,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+     * Required. Resource name of the `ServiceLevelObjective` to delete. The
+     * format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
@@ -497,7 +500,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+     * Required. Resource name of the `ServiceLevelObjective` to delete. The
+     * format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
@@ -523,7 +527,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+     * Required. Resource name of the `ServiceLevelObjective` to delete. The
+     * format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
@@ -548,7 +553,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+     * Required. Resource name of the `ServiceLevelObjective` to delete. The
+     * format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
@@ -569,7 +575,8 @@ public final class DeleteServiceLevelObjectiveRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+     * Required. Resource name of the `ServiceLevelObjective` to delete. The
+     * format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>

@@ -92,7 +92,8 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>
@@ -106,7 +107,8 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>
@@ -120,7 +122,8 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial
+   * field values.
    * </pre>
    *
    * <code>

@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.discoveryengine.v1.Document;
 import com.google.cloud.discoveryengine.v1.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1.UpdateDocumentRequest;
+import com.google.protobuf.FieldMask;
 
 public class AsyncUpdateDocument {
 
@@ -39,6 +40,7 @@ public class AsyncUpdateDocument {
           UpdateDocumentRequest.newBuilder()
               .setDocument(Document.newBuilder().build())
               .setAllowMissing(true)
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       ApiFuture<Document> future =
           documentServiceClient.updateDocumentCallable().futureCall(request);

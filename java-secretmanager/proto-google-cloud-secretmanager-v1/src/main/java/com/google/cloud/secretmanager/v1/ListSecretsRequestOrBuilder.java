@@ -29,7 +29,8 @@ public interface ListSecretsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+   * `projects/&#42;`.
    * </pre>
    *
    * <code>
@@ -44,7 +45,8 @@ public interface ListSecretsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the project associated with the
-   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
+   * [Secrets][google.cloud.secretmanager.v1.Secret], in the format
+   * `projects/&#42;`.
    * </pre>
    *
    * <code>

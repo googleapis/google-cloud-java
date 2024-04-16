@@ -91,11 +91,11 @@ jobs:
         run: git --no-pager diff --exit-code
 
   owlbot-yaml:
-    # Each module's .Owlbot.yaml config is configured according to set_owlbot_config.sh
+    # Each module's .Owlbot-hermetic.yaml config is configured according to set_owlbot_config.sh
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check if .Owlbot.yaml files are correctly configured
+      - name: Check if .Owlbot-hermetic.yaml files are correctly configured
         run: |
           bash generation/set_owlbot_config.sh
       - name: Fail if there's any difference (To fix, run generation/set_owlbot_config.sh)

@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -91,6 +92,7 @@ public class SearchTuningServiceClientTest {
             .addAllErrorSamples(new ArrayList<Status>())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .setModelStatus("modelStatus488502395")
+            .putAllMetrics(new HashMap<String, Double>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

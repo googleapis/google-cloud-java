@@ -122,4 +122,17 @@ public interface ImportDocumentsMetadataOrBuilder
    * @return The failureCount.
    */
   long getFailureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total count of entries that were processed.
+   * </pre>
+   *
+   * <code>int64 total_count = 5;</code>
+   *
+   * @return The totalCount.
+   */
+  long getTotalCount();
 }

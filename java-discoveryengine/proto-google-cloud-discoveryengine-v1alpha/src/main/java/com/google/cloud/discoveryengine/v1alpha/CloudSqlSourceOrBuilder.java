@@ -142,7 +142,7 @@ public interface CloudSqlSourceOrBuilder
    * limit of 2,000 characters. Can be specified if one wants to have the
    * Cloud SQL export to a specific Cloud Storage directory.
    *
-   * Please ensure that the Cloud SQL service account has the necessary Cloud
+   * Ensure that the Cloud SQL service account has the necessary Cloud
    * Storage Admin permissions to access the specified Cloud Storage directory.
    * </pre>
    *
@@ -159,7 +159,7 @@ public interface CloudSqlSourceOrBuilder
    * limit of 2,000 characters. Can be specified if one wants to have the
    * Cloud SQL export to a specific Cloud Storage directory.
    *
-   * Please ensure that the Cloud SQL service account has the necessary Cloud
+   * Ensure that the Cloud SQL service account has the necessary Cloud
    * Storage Admin permissions to access the specified Cloud Storage directory.
    * </pre>
    *
@@ -173,8 +173,8 @@ public interface CloudSqlSourceOrBuilder
    *
    *
    * <pre>
-   * Option for serverless export. Enabling this option will incur
-   * additional cost. More info can be found
+   * Option for serverless export. Enabling this option will incur additional
+   * cost. More info can be found
    * [here](https://cloud.google.com/sql/pricing#serverless).
    * </pre>
    *

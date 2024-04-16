@@ -28,7 +28,8 @@ public interface AccessSecretVersionResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -41,7 +42,8 @@ public interface AccessSecretVersionResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *

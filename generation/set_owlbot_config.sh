@@ -4,14 +4,14 @@
 # that the paths correctly reference the files under the modules in this monorepo.
 #
 # Usage:
-# set_owlbot_config.sh <.OwlBot.yaml path from the root>
+# set_owlbot_config.sh <.Owlbot-hermetic.yaml path from the root>
 # Example:
-# $ set_owlbot_config.sh java-dataform/.OwlBot.yaml
+# $ set_owlbot_config.sh java-dataform/.Owlbot-hermetic.yaml
 #
 # To apply the change to all OwlBot configuration files in all modules:
-# $ for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh generation/set_owlbot_config.sh $F; done
+# $ for F in `find . -maxdepth 2 -name '.Owlbot-hermetic.yaml'`; do sh generation/set_owlbot_config.sh $F; done
 
-for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`;
+for F in `find . -maxdepth 2 -name '.Owlbot-hermetic.yaml'`;
 do
 
 OWLBOT_FILE=$F

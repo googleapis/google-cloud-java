@@ -521,4 +521,274 @@ public class EngineServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void pauseEngineTest() throws Exception {
+    Engine expectedResponse =
+        Engine.newBuilder()
+            .setName(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDataStoreIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .setIndustryVertical(IndustryVertical.forNumber(0))
+            .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .build();
+    mockEngineService.addResponse(expectedResponse);
+
+    EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    Engine actualResponse = client.pauseEngine(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PauseEngineRequest actualRequest = ((PauseEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pauseEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.pauseEngine(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pauseEngineTest2() throws Exception {
+    Engine expectedResponse =
+        Engine.newBuilder()
+            .setName(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDataStoreIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .setIndustryVertical(IndustryVertical.forNumber(0))
+            .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .build();
+    mockEngineService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Engine actualResponse = client.pauseEngine(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PauseEngineRequest actualRequest = ((PauseEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pauseEngineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.pauseEngine(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumeEngineTest() throws Exception {
+    Engine expectedResponse =
+        Engine.newBuilder()
+            .setName(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDataStoreIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .setIndustryVertical(IndustryVertical.forNumber(0))
+            .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .build();
+    mockEngineService.addResponse(expectedResponse);
+
+    EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    Engine actualResponse = client.resumeEngine(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeEngineRequest actualRequest = ((ResumeEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.resumeEngine(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumeEngineTest2() throws Exception {
+    Engine expectedResponse =
+        Engine.newBuilder()
+            .setName(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDataStoreIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .setIndustryVertical(IndustryVertical.forNumber(0))
+            .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .build();
+    mockEngineService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Engine actualResponse = client.resumeEngine(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeEngineRequest actualRequest = ((ResumeEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeEngineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.resumeEngine(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void tuneEngineTest() throws Exception {
+    TuneEngineResponse expectedResponse = TuneEngineResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneEngineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEngineService.addResponse(resultOperation);
+
+    EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    TuneEngineResponse actualResponse = client.tuneEngineAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TuneEngineRequest actualRequest = ((TuneEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void tuneEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      EngineName name = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.tuneEngineAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void tuneEngineTest2() throws Exception {
+    TuneEngineResponse expectedResponse = TuneEngineResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneEngineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEngineService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    TuneEngineResponse actualResponse = client.tuneEngineAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TuneEngineRequest actualRequest = ((TuneEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void tuneEngineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEngineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.tuneEngineAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

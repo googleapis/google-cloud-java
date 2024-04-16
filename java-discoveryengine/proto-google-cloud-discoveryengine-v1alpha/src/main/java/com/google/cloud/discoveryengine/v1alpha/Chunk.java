@@ -120,6 +120,50 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for title.
      */
     com.google.protobuf.ByteString getTitleBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     *
+     * @return Whether the structData field is set.
+     */
+    boolean hasStructData();
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     *
+     * @return The structData.
+     */
+    com.google.protobuf.Struct getStructData();
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     */
+    com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
   }
   /**
    *
@@ -167,6 +211,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata.Builder.class);
     }
 
+    private int bitField0_;
     public static final int URI_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -269,6 +314,61 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int STRUCT_DATA_FIELD_NUMBER = 3;
+    private com.google.protobuf.Struct structData_;
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     *
+     * @return Whether the structData field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructData() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     *
+     * @return The structData.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getStructData() {
+      return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data representation.
+     * The structured JSON data for the document. It should conform to the
+     * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_data = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+      return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -289,6 +389,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getStructData());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -303,6 +406,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStructData());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -322,6 +428,10 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
       if (!getUri().equals(other.getUri())) return false;
       if (!getTitle().equals(other.getTitle())) return false;
+      if (hasStructData() != other.hasStructData()) return false;
+      if (hasStructData()) {
+        if (!getStructData().equals(other.getStructData())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -337,6 +447,10 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getUri().hashCode();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
+      if (hasStructData()) {
+        hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getStructData().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -472,10 +586,19 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStructDataFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -484,6 +607,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         uri_ = "";
         title_ = "";
+        structData_ = null;
+        if (structDataBuilder_ != null) {
+          structDataBuilder_.dispose();
+          structDataBuilder_ = null;
+        }
         return this;
       }
 
@@ -528,6 +656,13 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.title_ = title_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.structData_ =
+              structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -590,6 +725,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.hasStructData()) {
+          mergeStructData(other.getStructData());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -628,6 +766,12 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(getStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -857,6 +1001,218 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Struct structData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          structDataBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       *
+       * @return Whether the structData field is set.
+       */
+      public boolean hasStructData() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       *
+       * @return The structData.
+       */
+      public com.google.protobuf.Struct getStructData() {
+        if (structDataBuilder_ == null) {
+          return structData_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : structData_;
+        } else {
+          return structDataBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public Builder setStructData(com.google.protobuf.Struct value) {
+        if (structDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          structData_ = value;
+        } else {
+          structDataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public Builder setStructData(com.google.protobuf.Struct.Builder builderForValue) {
+        if (structDataBuilder_ == null) {
+          structData_ = builderForValue.build();
+        } else {
+          structDataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public Builder mergeStructData(com.google.protobuf.Struct value) {
+        if (structDataBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && structData_ != null
+              && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getStructDataBuilder().mergeFrom(value);
+          } else {
+            structData_ = value;
+          }
+        } else {
+          structDataBuilder_.mergeFrom(value);
+        }
+        if (structData_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public Builder clearStructData() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        structData_ = null;
+        if (structDataBuilder_ != null) {
+          structDataBuilder_.dispose();
+          structDataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public com.google.protobuf.Struct.Builder getStructDataBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStructDataFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+        if (structDataBuilder_ != null) {
+          return structDataBuilder_.getMessageOrBuilder();
+        } else {
+          return structData_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : structData_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Data representation.
+       * The structured JSON data for the document. It should conform to the
+       * registered [Schema][google.cloud.discoveryengine.v1alpha.Schema] or an
+       * `INVALID_ARGUMENT` error is thrown.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          getStructDataFieldBuilder() {
+        if (structDataBuilder_ == null) {
+          structDataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getStructData(), getParentForChildren(), isClean());
+          structData_ = null;
+        }
+        return structDataBuilder_;
       }
 
       @java.lang.Override

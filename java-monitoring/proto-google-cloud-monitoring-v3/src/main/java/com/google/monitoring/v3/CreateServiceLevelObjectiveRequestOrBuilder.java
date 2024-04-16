@@ -63,7 +63,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * <pre>
    * Optional. The ServiceLevelObjective id to use for this
    * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-   * match the pattern `[a-z0-9&#92;-]+`
+   * match the pattern `^[a-zA-Z0-9-_:.]+$`
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>
@@ -77,7 +77,7 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    * <pre>
    * Optional. The ServiceLevelObjective id to use for this
    * ServiceLevelObjective. If omitted, an id will be generated instead. Must
-   * match the pattern `[a-z0-9&#92;-]+`
+   * match the pattern `^[a-zA-Z0-9-_:.]+$`
    * </pre>
    *
    * <code>string service_level_objective_id = 3;</code>

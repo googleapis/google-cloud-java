@@ -118,7 +118,10 @@ public interface TrainCustomModelResponseOrBuilder
    *
    *  * **bad-data**: The training data quality is bad.
    *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-   *  * **in-progress**: Model training is in progress.
+   *  * **in-progress**: Model training job creation is in progress.
+   *  * **training**: Model is actively training.
+   *  * **evaluating**: The model is evaluating trained metrics.
+   *  * **indexing**: The model trained metrics are indexing.
    *  * **ready**: The model is ready for serving.
    * </pre>
    *
@@ -135,7 +138,10 @@ public interface TrainCustomModelResponseOrBuilder
    *
    *  * **bad-data**: The training data quality is bad.
    *  * **no-improvement**: Tuning didn't improve performance. Won't deploy.
-   *  * **in-progress**: Model training is in progress.
+   *  * **in-progress**: Model training job creation is in progress.
+   *  * **training**: Model is actively training.
+   *  * **evaluating**: The model is evaluating trained metrics.
+   *  * **indexing**: The model trained metrics are indexing.
    *  * **ready**: The model is ready for serving.
    * </pre>
    *

@@ -28,8 +28,9 @@ public interface QueryTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
@@ -43,8 +44,9 @@ public interface QueryTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
-   * which to execute the request. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) on which
+   * to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>

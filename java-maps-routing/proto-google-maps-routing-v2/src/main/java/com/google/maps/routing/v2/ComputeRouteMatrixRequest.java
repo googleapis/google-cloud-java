@@ -45,6 +45,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     routingPreference_ = 0;
     languageCode_ = "";
     regionCode_ = "";
+    units_ = 0;
     extraComputations_ = java.util.Collections.emptyList();
     trafficModel_ = 0;
   }
@@ -222,12 +223,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -246,12 +249,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -271,12 +276,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -295,12 +302,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -319,12 +328,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    *
-   * * The number of elements (origins × destinations) must be no greater than
-   * 625 in any case.
-   * * The number of elements (origins × destinations) must be no greater than
-   * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-   * * The number of waypoints (origins + destinations) specified as `place_id`
-   * must be no greater than 50.
+   * * The sum of the number of origins + the number of destinations specified
+   * as either `place_id` or `address` must be no greater than 50.
+   * * The product of number of origins × number of destinations must be no
+   * greater than 625 in any case.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+   * * The product of the number of origins × number of destinations must be no
+   * greater than 100 if travel_mode is set to `TRANSIT`.
    * </pre>
    *
    * <code>
@@ -518,7 +529,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -538,7 +549,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -560,7 +571,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * Optional. The departure time. If you don't set this value, then this value
    * defaults to the time that you made the request.
    * NOTE: You can only specify a `departure_time` in the past when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
    * `TRANSIT`.
    * </pre>
    *
@@ -582,9 +593,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -602,9 +613,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -622,9 +633,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The arrival time.
    * NOTE: Can only be set when
-   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-   * both.
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+   * not both.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -644,9 +655,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the first origin.
    * </pre>
@@ -672,9 +684,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * information, see [Unicode Locale
+   * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+   * See [Language
+   * Support](https://developers.google.com/maps/faq#languagesupport)
    * for the list of supported languages. When you don't provide this value, the
    * display language is inferred from the location of the first origin.
    * </pre>
@@ -705,8 +718,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -730,8 +743,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The region code, specified as a ccTLD ("top-level domain")
-   * two-character value. For more information see
-   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * two-character value. For more information see [Country code top-level
+   * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
    * </pre>
    *
    * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -749,6 +762,40 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UNITS_FIELD_NUMBER = 7;
+  private int units_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the units of measure for the display fields.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enum numeric value on the wire for units.
+   */
+  @java.lang.Override
+  public int getUnitsValue() {
+    return units_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the units of measure for the display fields.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The units.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.Units getUnits() {
+    com.google.maps.routing.v2.Units result = com.google.maps.routing.v2.Units.forNumber(units_);
+    return result == null ? com.google.maps.routing.v2.Units.UNRECOGNIZED : result;
   }
 
   public static final int EXTRA_COMPUTATIONS_FIELD_NUMBER = 8;
@@ -1038,6 +1085,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
     }
+    if (units_ != com.google.maps.routing.v2.Units.UNITS_UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, units_);
+    }
     if (getExtraComputationsList().size() > 0) {
       output.writeUInt32NoTag(66);
       output.writeUInt32NoTag(extraComputationsMemoizedSerializedSize);
@@ -1087,6 +1137,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
+    }
+    if (units_ != com.google.maps.routing.v2.Units.UNITS_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, units_);
     }
     {
       int dataSize = 0;
@@ -1144,6 +1197,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     }
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
+    if (units_ != other.units_) return false;
     if (!extraComputations_.equals(other.extraComputations_)) return false;
     if (trafficModel_ != other.trafficModel_) return false;
     if (hasTransitPreferences() != other.hasTransitPreferences()) return false;
@@ -1185,6 +1239,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getRegionCode().hashCode();
+    hash = (37 * hash) + UNITS_FIELD_NUMBER;
+    hash = (53 * hash) + units_;
     if (getExtraComputationsCount() > 0) {
       hash = (37 * hash) + EXTRA_COMPUTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + extraComputations_.hashCode();
@@ -1375,8 +1431,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       }
       languageCode_ = "";
       regionCode_ = "";
+      units_ = 0;
       extraComputations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       trafficModel_ = 0;
       transitPreferences_ = null;
       if (transitPreferencesBuilder_ != null) {
@@ -1438,9 +1495,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       } else {
         result.destinations_ = destinationsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         extraComputations_ = java.util.Collections.unmodifiableList(extraComputations_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.extraComputations_ = extraComputations_;
     }
@@ -1470,10 +1527,13 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.regionCode_ = regionCode_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.trafficModel_ = trafficModel_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.units_ = units_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.trafficModel_ = trafficModel_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.transitPreferences_ =
             transitPreferencesBuilder_ == null
                 ? transitPreferences_
@@ -1605,10 +1665,13 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.units_ != 0) {
+        setUnitsValue(other.getUnitsValue());
+      }
       if (!other.extraComputations_.isEmpty()) {
         if (extraComputations_.isEmpty()) {
           extraComputations_ = other.extraComputations_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureExtraComputationsIsMutable();
           extraComputations_.addAll(other.extraComputations_);
@@ -1698,6 +1761,12 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000040;
                 break;
               } // case 50
+            case 56:
+              {
+                units_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 56
             case 64:
               {
                 int tmpRaw = input.readEnum();
@@ -1726,7 +1795,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
             case 80:
               {
                 trafficModel_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
@@ -1739,7 +1808,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
               {
                 input.readMessage(
                     getTransitPreferencesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             default:
@@ -1785,12 +1854,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1812,12 +1883,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1839,12 +1912,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1866,12 +1941,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1899,12 +1976,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1930,12 +2009,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1963,12 +2044,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -1996,12 +2079,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2027,12 +2112,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2058,12 +2145,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2089,12 +2178,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2119,12 +2210,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2149,12 +2242,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2172,12 +2267,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2199,12 +2296,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2227,12 +2326,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2251,12 +2352,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2275,12 +2378,14 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * matrix. Several size restrictions apply to the cardinality of origins and
      * destinations:
      *
-     * * The number of elements (origins × destinations) must be no greater than
-     * 625 in any case.
-     * * The number of elements (origins × destinations) must be no greater than
-     * 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
-     * * The number of waypoints (origins + destinations) specified as `place_id`
-     * must be no greater than 50.
+     * * The sum of the number of origins + the number of destinations specified
+     * as either `place_id` or `address` must be no greater than 50.
+     * * The product of number of origins × number of destinations must be no
+     * greater than 625 in any case.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if routing_preference is set to `TRAFFIC_AWARE_OPTIMAL`.
+     * * The product of the number of origins × number of destinations must be no
+     * greater than 100 if travel_mode is set to `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -2954,7 +3059,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -2974,7 +3079,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3000,7 +3105,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3028,7 +3133,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3053,7 +3158,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3086,7 +3191,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3111,7 +3216,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3131,7 +3236,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3155,7 +3260,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * Optional. The departure time. If you don't set this value, then this value
      * defaults to the time that you made the request.
      * NOTE: You can only specify a `departure_time` in the past when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
      * `TRANSIT`.
      * </pre>
      *
@@ -3192,9 +3297,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3211,9 +3316,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3236,9 +3341,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3263,9 +3368,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3287,9 +3392,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3319,9 +3424,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3343,9 +3448,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3362,9 +3467,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3385,9 +3490,9 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The arrival time.
      * NOTE: Can only be set when
-     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
-     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
-     * both.
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either `departure_time` or `arrival_time`, but
+     * not both.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp arrival_time = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -3416,9 +3521,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the first origin.
      * </pre>
@@ -3443,9 +3549,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the first origin.
      * </pre>
@@ -3470,9 +3577,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the first origin.
      * </pre>
@@ -3496,9 +3604,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the first origin.
      * </pre>
@@ -3518,9 +3627,10 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-     * information, see
-     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
-     * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+     * information, see [Unicode Locale
+     * Identifier](http://www.unicode.org/reports/tr35/#Unicode_locale_identifier).
+     * See [Language
+     * Support](https://developers.google.com/maps/faq#languagesupport)
      * for the list of supported languages. When you don't provide this value, the
      * display language is inferred from the location of the first origin.
      * </pre>
@@ -3547,8 +3657,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3571,8 +3681,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3595,8 +3705,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3618,8 +3728,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3637,8 +3747,8 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The region code, specified as a ccTLD ("top-level domain")
-     * two-character value. For more information see
-     * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+     * two-character value. For more information see [Country code top-level
+     * domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains).
      * </pre>
      *
      * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3657,13 +3767,107 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private int units_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the units of measure for the display fields.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for units.
+     */
+    @java.lang.Override
+    public int getUnitsValue() {
+      return units_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the units of measure for the display fields.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for units to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitsValue(int value) {
+      units_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the units of measure for the display fields.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The units.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.Units getUnits() {
+      com.google.maps.routing.v2.Units result = com.google.maps.routing.v2.Units.forNumber(units_);
+      return result == null ? com.google.maps.routing.v2.Units.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the units of measure for the display fields.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The units to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnits(com.google.maps.routing.v2.Units value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      units_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the units of measure for the display fields.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Units units = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnits() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      units_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<java.lang.Integer> extraComputations_ =
         java.util.Collections.emptyList();
 
     private void ensureExtraComputationsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         extraComputations_ = new java.util.ArrayList<java.lang.Integer>(extraComputations_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -3829,7 +4033,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     public Builder clearExtraComputations() {
       extraComputations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3995,7 +4199,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     public Builder setTrafficModelValue(int value) {
       trafficModel_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4052,7 +4256,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       trafficModel_ = value.getNumber();
       onChanged();
       return this;
@@ -4079,7 +4283,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTrafficModel() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       trafficModel_ = 0;
       onChanged();
       return this;
@@ -4108,7 +4312,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * @return Whether the transitPreferences field is set.
      */
     public boolean hasTransitPreferences() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4158,7 +4362,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       } else {
         transitPreferencesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4183,7 +4387,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
       } else {
         transitPreferencesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4203,7 +4407,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      */
     public Builder mergeTransitPreferences(com.google.maps.routing.v2.TransitPreferences value) {
       if (transitPreferencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && transitPreferences_ != null
             && transitPreferences_
                 != com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()) {
@@ -4215,7 +4419,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
         transitPreferencesBuilder_.mergeFrom(value);
       }
       if (transitPreferences_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4235,7 +4439,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearTransitPreferences() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       transitPreferences_ = null;
       if (transitPreferencesBuilder_ != null) {
         transitPreferencesBuilder_.dispose();
@@ -4259,7 +4463,7 @@ public final class ComputeRouteMatrixRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.maps.routing.v2.TransitPreferences.Builder getTransitPreferencesBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getTransitPreferencesFieldBuilder().getBuilder();
     }

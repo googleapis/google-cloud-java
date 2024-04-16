@@ -117,7 +117,20 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * duration.
      * </pre>
      *
-     * <code>double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the limit field is set.
+     */
+    boolean hasLimit();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Limit value of a UsageResourceAllowance within its one
+     * duration.
+     * </pre>
+     *
+     * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The limit.
      */
@@ -130,7 +143,19 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * Output only. Accumulated consumption during `consumption_interval`.
      * </pre>
      *
-     * <code>double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the consumed field is set.
+     */
+    boolean hasConsumed();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Accumulated consumption during `consumption_interval`.
+     * </pre>
+     *
+     * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The consumed.
      */
@@ -246,7 +271,23 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * duration.
      * </pre>
      *
-     * <code>double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the limit field is set.
+     */
+    @java.lang.Override
+    public boolean hasLimit() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Limit value of a UsageResourceAllowance within its one
+     * duration.
+     * </pre>
+     *
+     * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The limit.
      */
@@ -264,7 +305,22 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * Output only. Accumulated consumption during `consumption_interval`.
      * </pre>
      *
-     * <code>double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the consumed field is set.
+     */
+    @java.lang.Override
+    public boolean hasConsumed() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Accumulated consumption during `consumption_interval`.
+     * </pre>
+     *
+     * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The consumed.
      */
@@ -290,10 +346,10 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getConsumptionInterval());
       }
-      if (java.lang.Double.doubleToRawLongBits(limit_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeDouble(2, limit_);
       }
-      if (java.lang.Double.doubleToRawLongBits(consumed_) != 0) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeDouble(3, consumed_);
       }
       getUnknownFields().writeTo(output);
@@ -309,10 +365,10 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConsumptionInterval());
       }
-      if (java.lang.Double.doubleToRawLongBits(limit_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, limit_);
       }
-      if (java.lang.Double.doubleToRawLongBits(consumed_) != 0) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, consumed_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -336,10 +392,16 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       if (hasConsumptionInterval()) {
         if (!getConsumptionInterval().equals(other.getConsumptionInterval())) return false;
       }
-      if (java.lang.Double.doubleToLongBits(getLimit())
-          != java.lang.Double.doubleToLongBits(other.getLimit())) return false;
-      if (java.lang.Double.doubleToLongBits(getConsumed())
-          != java.lang.Double.doubleToLongBits(other.getConsumed())) return false;
+      if (hasLimit() != other.hasLimit()) return false;
+      if (hasLimit()) {
+        if (java.lang.Double.doubleToLongBits(getLimit())
+            != java.lang.Double.doubleToLongBits(other.getLimit())) return false;
+      }
+      if (hasConsumed() != other.hasConsumed()) return false;
+      if (hasConsumed()) {
+        if (java.lang.Double.doubleToLongBits(getConsumed())
+            != java.lang.Double.doubleToLongBits(other.getConsumed())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -355,16 +417,20 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         hash = (37 * hash) + CONSUMPTION_INTERVAL_FIELD_NUMBER;
         hash = (53 * hash) + getConsumptionInterval().hashCode();
       }
-      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getLimit()));
-      hash = (37 * hash) + CONSUMED_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getConsumed()));
+      if (hasLimit()) {
+        hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getLimit()));
+      }
+      if (hasConsumed()) {
+        hash = (37 * hash) + CONSUMED_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getConsumed()));
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -577,9 +643,11 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.limit_ = limit_;
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.consumed_ = consumed_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -639,10 +707,10 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         if (other.hasConsumptionInterval()) {
           mergeConsumptionInterval(other.getConsumptionInterval());
         }
-        if (other.getLimit() != 0D) {
+        if (other.hasLimit()) {
           setLimit(other.getLimit());
         }
-        if (other.getConsumed() != 0D) {
+        if (other.hasConsumed()) {
           setConsumed(other.getConsumed());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -921,7 +989,23 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * duration.
        * </pre>
        *
-       * <code>double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the limit field is set.
+       */
+      @java.lang.Override
+      public boolean hasLimit() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Limit value of a UsageResourceAllowance within its one
+       * duration.
+       * </pre>
+       *
+       * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The limit.
        */
@@ -937,7 +1021,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * duration.
        * </pre>
        *
-       * <code>double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The limit to set.
        * @return This builder for chaining.
@@ -957,7 +1041,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * duration.
        * </pre>
        *
-       * <code>double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double limit = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -976,7 +1060,22 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the consumed field is set.
+       */
+      @java.lang.Override
+      public boolean hasConsumed() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Accumulated consumption during `consumption_interval`.
+       * </pre>
+       *
+       * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The consumed.
        */
@@ -991,7 +1090,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The consumed to set.
        * @return This builder for chaining.
@@ -1010,7 +1109,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1142,7 +1241,19 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * Output only. Accumulated consumption during `consumption_interval`.
      * </pre>
      *
-     * <code>double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the consumed field is set.
+     */
+    boolean hasConsumed();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Accumulated consumption during `consumption_interval`.
+     * </pre>
+     *
+     * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The consumed.
      */
@@ -1251,7 +1362,22 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * Output only. Accumulated consumption during `consumption_interval`.
      * </pre>
      *
-     * <code>double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the consumed field is set.
+     */
+    @java.lang.Override
+    public boolean hasConsumed() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Accumulated consumption during `consumption_interval`.
+     * </pre>
+     *
+     * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The consumed.
      */
@@ -1277,7 +1403,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getConsumptionInterval());
       }
-      if (java.lang.Double.doubleToRawLongBits(consumed_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeDouble(2, consumed_);
       }
       getUnknownFields().writeTo(output);
@@ -1293,7 +1419,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConsumptionInterval());
       }
-      if (java.lang.Double.doubleToRawLongBits(consumed_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, consumed_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -1318,8 +1444,11 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       if (hasConsumptionInterval()) {
         if (!getConsumptionInterval().equals(other.getConsumptionInterval())) return false;
       }
-      if (java.lang.Double.doubleToLongBits(getConsumed())
-          != java.lang.Double.doubleToLongBits(other.getConsumed())) return false;
+      if (hasConsumed() != other.hasConsumed()) return false;
+      if (hasConsumed()) {
+        if (java.lang.Double.doubleToLongBits(getConsumed())
+            != java.lang.Double.doubleToLongBits(other.getConsumed())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1335,11 +1464,13 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         hash = (37 * hash) + CONSUMPTION_INTERVAL_FIELD_NUMBER;
         hash = (53 * hash) + getConsumptionInterval().hashCode();
       }
-      hash = (37 * hash) + CONSUMED_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getConsumed()));
+      if (hasConsumed()) {
+        hash = (37 * hash) + CONSUMED_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getConsumed()));
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1551,6 +1682,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.consumed_ = consumed_;
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1612,7 +1744,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         if (other.hasConsumptionInterval()) {
           mergeConsumptionInterval(other.getConsumptionInterval());
         }
-        if (other.getConsumed() != 0D) {
+        if (other.hasConsumed()) {
           setConsumed(other.getConsumed());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1884,7 +2016,22 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the consumed field is set.
+       */
+      @java.lang.Override
+      public boolean hasConsumed() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Accumulated consumption during `consumption_interval`.
+       * </pre>
+       *
+       * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The consumed.
        */
@@ -1899,7 +2046,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The consumed to set.
        * @return This builder for chaining.
@@ -1918,7 +2065,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
        * Output only. Accumulated consumption during `consumption_interval`.
        * </pre>
        *
-       * <code>double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double consumed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */

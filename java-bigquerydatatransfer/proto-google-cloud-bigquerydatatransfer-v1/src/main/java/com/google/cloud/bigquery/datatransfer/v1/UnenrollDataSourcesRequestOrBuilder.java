@@ -28,10 +28,11 @@ public interface UnenrollDataSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the project resource in the form: `projects/{project_id}`
+   * Required. The name of the project resource in the form:
+   * `projects/{project_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -40,10 +41,11 @@ public interface UnenrollDataSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the project resource in the form: `projects/{project_id}`
+   * Required. The name of the project resource in the form:
+   * `projects/{project_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
