@@ -16,7 +16,6 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.stub;
 
-import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,7 +34,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoProgress;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -152,47 +150,7 @@ public class HttpJsonVideoIntelligenceServiceStub extends VideoIntelligenceServi
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(
-            clientContext,
-            callableFactory,
-            typeRegistry,
-            ImmutableMap.<String, HttpRule>builder()
-                .put(
-                    "google.longrunning.Operations.CancelOperation",
-                    HttpRule.newBuilder()
-                        .setPost("/v1p3beta1/{name=projects/*/locations/*/operations/*}:cancel")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1p3beta1/operations/{name=projects/*/locations/*/operations/*}:cancel")
-                                .build())
-                        .build())
-                .put(
-                    "google.longrunning.Operations.DeleteOperation",
-                    HttpRule.newBuilder()
-                        .setDelete("/v1p3beta1/{name=projects/*/locations/*/operations/*}")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1p3beta1/operations/{name=projects/*/locations/*/operations/*}")
-                                .build())
-                        .build())
-                .put(
-                    "google.longrunning.Operations.GetOperation",
-                    HttpRule.newBuilder()
-                        .setGet("/v1p3beta1/{name=projects/*/locations/*/operations/*}")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1p3beta1/operations/{name=projects/*/locations/*/operations/*}")
-                                .build())
-                        .build())
-                .put(
-                    "google.longrunning.Operations.ListOperations",
-                    HttpRule.newBuilder()
-                        .setGet("/v1p3beta1/{name=projects/*/locations/*}/operations")
-                        .build())
-                .build());
+        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
     HttpJsonCallSettings<AnnotateVideoRequest, Operation> annotateVideoTransportSettings =
         HttpJsonCallSettings.<AnnotateVideoRequest, Operation>newBuilder()

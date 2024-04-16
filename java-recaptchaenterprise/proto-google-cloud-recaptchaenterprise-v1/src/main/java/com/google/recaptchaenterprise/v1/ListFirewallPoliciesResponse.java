@@ -23,7 +23,7 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * Response to request to list firewall policies belonging to a key.
+ * Response to request to list firewall policies belonging to a project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.ListFirewallPoliciesResponse}
@@ -370,7 +370,7 @@ public final class ListFirewallPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response to request to list firewall policies belonging to a key.
+   * Response to request to list firewall policies belonging to a project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.ListFirewallPoliciesResponse}
