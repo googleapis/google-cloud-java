@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.38.0](https://github.com/googleapis/java-bigtable/compare/v2.37.0...v2.38.0) (2024-04-15)
+
+
+### Features
+
+* Add Data Boost configurations to admin API ([f29c5bb](https://github.com/googleapis/java-bigtable/commit/f29c5bba08daffe2721454db1714f6ea6f47fc66))
+* Add feature flag for client side metrics ([#2179](https://github.com/googleapis/java-bigtable/issues/2179)) ([f29c5bb](https://github.com/googleapis/java-bigtable/commit/f29c5bba08daffe2721454db1714f6ea6f47fc66))
+* Migrate to OTEL and enable metrics by default ([#2166](https://github.com/googleapis/java-bigtable/issues/2166)) ([1682939](https://github.com/googleapis/java-bigtable/commit/168293937cc7f438a3ec2dee46805aa8e12089c4))
+
+
+### Bug Fixes
+
+* Add more error handling ([#2203](https://github.com/googleapis/java-bigtable/issues/2203)) ([c2a63f7](https://github.com/googleapis/java-bigtable/commit/c2a63f7627f2aa6e2e51ec3e185abfa5234ad3e4))
+* Fix export to log detect resource errors ([#2197](https://github.com/googleapis/java-bigtable/issues/2197)) ([d32fbb7](https://github.com/googleapis/java-bigtable/commit/d32fbb78bbde2ad04103ab7b2c1176a6df72d0a3))
+
 ## [2.37.0](https://github.com/googleapis/java-bigtable/compare/v2.36.0...v2.37.0) (2024-03-27)
 
 
