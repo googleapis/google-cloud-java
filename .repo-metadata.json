@@ -15,5 +15,6 @@
   "api_description": "is a fully managed, schemaless database for\nstoring non-relational data. Cloud Datastore automatically scales with\nyour users and supports ACID transactions, high availability of reads and\nwrites, strong consistency for reads and ancestor queries, and eventual\nconsistency for all other queries.",
   "excluded_dependencies": "grpc-google-cloud-datastore-v1",
   "extra_versioned_modules": "datastore-v1-proto-client",
-  "excluded_poms": "grpc-google-cloud-datastore-v1"
+  "excluded_poms": "grpc-google-cloud-datastore-v1",
+  "recommended_package": "com.google.cloud.datastore"
 }
