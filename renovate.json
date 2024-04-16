@@ -56,6 +56,16 @@
         "generation_config.yaml"
       ],
       "matchStrings": [
+        "libraries_bom_version\\s*:\\s*(?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "com.google.cloud:libraries-bom",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": [
+        "generation_config.yaml"
+      ],
+      "matchStrings": [
         "gapic_generator_version\\s*:\\s*(?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "com.google.api:gapic-generator-java",
