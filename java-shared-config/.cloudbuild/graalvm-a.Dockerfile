@@ -37,6 +37,8 @@ ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 RUN yum install -y docker-engine docker-cli
 
 # Install terraform
+# See also https://www.hashicorp.com/official-packaging-guide
+COPY hashicorp.repo /etc/yum.repos.d/hashicorp.repo
 RUN yum -y install terraform
 
 # Install jq
