@@ -2,7 +2,7 @@ name: Hermetic library generation upon generation config change through pull req
 on:
   pull_request:
     paths:
-      - "generation_config.yaml"
+    - "generation_config.yaml"
 jobs:
   library_generation:
     runs-on: ubuntu-latest
@@ -13,23 +13,23 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - name: Checkout the target branch
+    - name: checkout the target branch
       shell: bash
       run: |
         git checkout ${{ github.base_ref }}
-    - name: Checkout the current branch
+    - name: checkout the current branch
       shell: bash
       run: |
         git checkout ${{ github.head_ref }}
-    - name: Get baseline generation config from target branch
+    - name: get baseline generation config
       shell: bash
       run: |
         git show ${{ github.base_ref }}:generation_config.yaml > baseline_generation_config.yaml
-    - name: Show configuration diff
+    - name: show configuration diff
       shell: bash
       run: |
         diff generation_config.yaml baseline_generation_config.yaml || echo "config diff"
-    - name: Setup docker environment
+    - name: create a docker volume
       shell: bash
       run: |
         set -x
@@ -39,7 +39,7 @@ jobs:
           docker volume rm repo-google-cloud-java
         fi
         docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
-    - name: Generate changed libraries
+    - name: generate changed libraries
       shell: bash
       run: |
         docker run --rm \
@@ -50,10 +50,10 @@ jobs:
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           python /src/cli/entry_point.py generate \
-          --baseline-generation-config=/workspace/google-cloud-java/baseline_generation_config.yaml \
-          --current-generation-config=/workspace/google-cloud-java/generation_config.yaml \
+          --baseline-generation-config-path=/workspace/google-cloud-java/baseline_generation_config.yaml \
+          --current-generation-config-path=/workspace/google-cloud-java/generation_config.yaml \
           --repository-path=/workspace/google-cloud-java
-    - name: Push commit to the pull request
+    - name: push commit to the pull request
       shell: bash
       run: |
         [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
@@ -61,7 +61,7 @@ jobs:
         git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt generation_config.yaml
         message="chore: generate libraries at $(date)"
         git commit --allow-empty -m "${message}"
-        git push
+        git push -f
         if [[ -f "pr_description.txt" ]]; then
           pr_num=$(gh pr list -s open -H ${{ github.head_ref }} -q . --json number | jq ".[] | .number")
           gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"

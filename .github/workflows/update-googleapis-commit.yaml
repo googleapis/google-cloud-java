@@ -1,7 +1,7 @@
-name: Generate GAPIC libraries from configuration
+name: Update googleapis commit
 on:
   schedule:
-  - cron: '0 2 * * *' # nightly at 2 am UTC
+  - cron: '* 2 * * *'
   workflow_dispatch:
 
 
@@ -53,7 +53,7 @@ jobs:
           git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
           git push -f monorepo "${branch_name}"
-          set -x
+          gh pr create --title "${title}" --head "${branch_name}" --body "${title}"
         else
           git push
         fi
