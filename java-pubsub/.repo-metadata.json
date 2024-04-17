@@ -14,5 +14,6 @@
   "codeowner_team": "@googleapis/api-pubsub",
   "api_id": "pubsub.googleapis.com",
   "library_type": "GAPIC_COMBO",
-  "requires_billing": true
+  "requires_billing": true,
+  "recommended_package": "com.google.cloud.pubsub.v1"
 }
