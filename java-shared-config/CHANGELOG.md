@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.7.7](https://github.com/googleapis/java-shared-config/compare/v1.7.6...v1.7.7) (2024-04-17)
+
+
+### Bug Fixes
+
+* Graalvm image terraform install ([#806](https://github.com/googleapis/java-shared-config/issues/806)) ([96589ef](https://github.com/googleapis/java-shared-config/commit/96589efd2d4abbda8623c855c92be092293133ce))
+
+
+### Dependencies
+
+* Update dependency com.puppycrawl.tools:checkstyle to v10.15.0 ([#792](https://github.com/googleapis/java-shared-config/issues/792)) ([984f434](https://github.com/googleapis/java-shared-config/commit/984f434ddbb9ddbf60d80d14dae6a92d8639596a))
+* Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.13.0 ([8136d33](https://github.com/googleapis/java-shared-config/commit/8136d33b21a7492bee3673836db035be14240c44))
+* Update dependency org.apache.maven.plugins:maven-gpg-plugin to v3.2.3 ([e485b45](https://github.com/googleapis/java-shared-config/commit/e485b45aff22a0528feabfa9348152c20a146560))
+* Update dependency org.apache.maven.plugins:maven-jar-plugin to v3.4.0 ([567ba39](https://github.com/googleapis/java-shared-config/commit/567ba397399c67fbbad3558358a7d86f30e8b3e7))
+* Update dependency org.apache.maven.plugins:maven-source-plugin to v3.3.1 ([8b625c0](https://github.com/googleapis/java-shared-config/commit/8b625c0c05f90c0df5fa5f2e11da8e8b8067ce85))
+* Update dependency org.jacoco:jacoco-maven-plugin to v0.8.12 ([15870f4](https://github.com/googleapis/java-shared-config/commit/15870f491eba6132ae60239eda1ebec5b307b4e6))
+
 ## [1.7.6](https://github.com/googleapis/java-shared-config/compare/v1.7.5...v1.7.6) (2024-03-14)
 
 
