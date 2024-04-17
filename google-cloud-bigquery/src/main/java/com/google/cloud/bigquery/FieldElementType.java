@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery;
 
+import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.auto.value.AutoValue;
 import java.io.Serializable;
@@ -57,6 +58,16 @@ public abstract class FieldElementType implements Serializable {
     // Treat a FieldElementType message without a Type subfield as invalid.
     if (rangeElementTypePb.getType() != null) {
       return newBuilder().setType(rangeElementTypePb.getType()).build();
+    }
+    return null;
+  }
+
+  /** Creates an instance of FieldElementType from QueryParameterType with RangeElementType. */
+  static FieldElementType fromPb(QueryParameterType queryParameterTypePb) {
+    // Treat a FieldElementType message without a Type subfield as invalid.
+    if ((queryParameterTypePb.getRangeElementType() != null)
+        && (queryParameterTypePb.getRangeElementType().getType() != null)) {
+      return newBuilder().setType(queryParameterTypePb.getRangeElementType().getType()).build();
     }
     return null;
   }

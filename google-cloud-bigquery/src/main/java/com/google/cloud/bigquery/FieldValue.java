@@ -67,7 +67,10 @@ public class FieldValue implements Serializable {
     REPEATED,
 
     /** A {@code FieldValue} for a field of type {@link LegacySQLTypeName#RECORD}. */
-    RECORD
+    RECORD,
+
+    /** A {@code FieldValue} for a field of type {@link LegacySQLTypeName#RANGE}. */
+    RANGE
   }
 
   private FieldValue(Attribute attribute, Object value) {
@@ -230,6 +233,23 @@ public class FieldValue implements Serializable {
   }
 
   /**
+   * Returns this field's value as a {@link Range}. This method should only be used * if the
+   * corresponding field has {@link LegacySQLTypeName#RANGE} type.
+   *
+   * @throws ClassCastException if the field is not a primitive type
+   * @throws IllegalArgumentException if the field's value could not be converted to {@link Range}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
+   */
+  @SuppressWarnings("unchecked")
+  public Range getRangeValue() {
+    if (attribute == Attribute.RANGE) {
+      return (Range) value;
+    }
+    // Provide best effort to convert value to Range object.
+    return Range.of(getStringValue());
+  }
+
+  /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
    * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #getAttribute()} is
    * {@link Attribute#REPEATED}).
@@ -332,6 +352,12 @@ public class FieldValue implements Serializable {
       return FieldValue.of(Attribute.PRIMITIVE, null);
     }
     if (cellPb instanceof String) {
+      if ((recordSchema != null)
+          && (recordSchema.getType() == LegacySQLTypeName.RANGE)
+          && (recordSchema.getRangeElementType() != null)) {
+        return FieldValue.of(
+            Attribute.RANGE, Range.of((String) cellPb, recordSchema.getRangeElementType()));
+      }
       return FieldValue.of(Attribute.PRIMITIVE, cellPb);
     }
     if (cellPb instanceof List) {

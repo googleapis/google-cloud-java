@@ -619,4 +619,69 @@ public class QueryParameterValueTest {
       assertThat(value.getArrayValues()).isNull();
     }
   }
+
+  @Test
+  public void testRange() {
+    testRangeDataEquals(null, null, FieldElementType.newBuilder().setType("DATE").build());
+    testRangeDataEquals(null, "1971-02-03", FieldElementType.newBuilder().setType("DATE").build());
+    testRangeDataEquals("1970-01-02", null, FieldElementType.newBuilder().setType("DATE").build());
+    testRangeDataEquals(
+        "1970-01-02", "1971-02-03", FieldElementType.newBuilder().setType("DATE").build());
+
+    testRangeDataEquals(null, null, FieldElementType.newBuilder().setType("DATETIME").build());
+    testRangeDataEquals(
+        null,
+        "2015-09-20 06:41:35.220000",
+        FieldElementType.newBuilder().setType("DATETIME").build());
+    testRangeDataEquals(
+        "2014-08-19 05:41:35.220000",
+        null,
+        FieldElementType.newBuilder().setType("DATETIME").build());
+    testRangeDataEquals(
+        "2014-08-19 05:41:35.220000",
+        "2015-09-20 06:41:35.220000",
+        FieldElementType.newBuilder().setType("DATETIME").build());
+
+    testRangeDataEquals(null, null, FieldElementType.newBuilder().setType("TIMESTAMP").build());
+    testRangeDataEquals(
+        null,
+        "2015-09-20 13:41:35.220000+01:00",
+        FieldElementType.newBuilder().setType("TIMESTAMP").build());
+    testRangeDataEquals(
+        "2014-08-19 12:41:35.220000+00:00",
+        null,
+        FieldElementType.newBuilder().setType("TIMESTAMP").build());
+    testRangeDataEquals(
+        "2014-08-19 12:41:35.220000+00:00",
+        "2015-09-20 13:41:35.220000+01:00",
+        FieldElementType.newBuilder().setType("TIMESTAMP").build());
+  }
+
+  /** Helper method to test range QueryParameterValue and its permutations. */
+  private static void testRangeDataEquals(String start, String end, FieldElementType type) {
+    QueryParameterValue rangeField =
+        QueryParameterValue.range(
+            Range.newBuilder().setType(type).setStart(start).setEnd(end).build());
+    QueryParameterType parameterType = rangeField.toTypePb();
+    com.google.api.services.bigquery.model.QueryParameterValue parameterValue =
+        rangeField.toValuePb();
+    QueryParameterValue queryParameterValue =
+        QueryParameterValue.fromPb(parameterValue, parameterType);
+
+    assertThat(queryParameterValue.getType()).isEqualTo(StandardSQLTypeName.RANGE);
+    if (start == null) {
+      assertThat(queryParameterValue.getRangeValues().getStart().isNull()).isTrue();
+    } else {
+      assertThat(queryParameterValue.getRangeValues().getStart().getStringValue()).isEqualTo(start);
+    }
+    if (end == null) {
+      assertThat(queryParameterValue.getRangeValues().getEnd().isNull()).isTrue();
+    } else {
+      assertThat(queryParameterValue.getRangeValues().getEnd().getStringValue()).isEqualTo(end);
+    }
+    assertThat(queryParameterValue.getRangeValues().getType()).isEqualTo(type);
+    assertThat(queryParameterValue.getArrayValues()).isNull();
+    assertThat(queryParameterValue.getStructValues()).isNull();
+    assertThat(queryParameterValue.getValue()).isNull();
+  }
 }

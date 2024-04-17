@@ -55,6 +55,9 @@ public class FieldValueTest {
   private static final Map<String, String> BYTES_FIELD = ImmutableMap.of("v", BYTES_BASE64);
   private static final Map<String, String> NULL_FIELD =
       ImmutableMap.of("v", Data.nullOf(String.class));
+
+  private static final Map<String, String> RANGE_FIELD = ImmutableMap.of("v", "[start, end)");
+
   private static final Map<String, Object> REPEATED_FIELD =
       ImmutableMap.<String, Object>of("v", ImmutableList.<Object>of(INTEGER_FIELD, INTEGER_FIELD));
   private static final Map<String, Object> RECORD_FIELD =
@@ -99,6 +102,9 @@ public class FieldValueTest {
     assertArrayEquals(BYTES, value.getBytesValue());
     value = FieldValue.fromPb(NULL_FIELD);
     assertNull(value.getValue());
+    value = FieldValue.fromPb(RANGE_FIELD);
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
+    assertEquals(Range.of(RANGE_FIELD.get("v")), value.getRangeValue());
     value = FieldValue.fromPb(REPEATED_FIELD);
     assertEquals(FieldValue.Attribute.REPEATED, value.getAttribute());
     assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.getRepeatedValue().get(0));
@@ -155,6 +161,10 @@ public class FieldValueTest {
     FieldValue nullValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
     assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD));
     assertEquals(nullValue.hashCode(), FieldValue.fromPb(NULL_FIELD).hashCode());
+
+    FieldValue rangeValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "[start, end)");
+    assertEquals(rangeValue, FieldValue.fromPb(RANGE_FIELD));
+    assertEquals(rangeValue.hashCode(), FieldValue.fromPb(RANGE_FIELD).hashCode());
 
     FieldValue repeatedValue =
         FieldValue.of(FieldValue.Attribute.REPEATED, ImmutableList.of(integerValue, integerValue));

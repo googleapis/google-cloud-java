@@ -17,6 +17,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.services.bigquery.model.QueryParameterType;
 import org.junit.Test;
 
 public class FieldElementTypeTest {
@@ -36,6 +37,11 @@ public class FieldElementTypeTest {
   @Test
   public void testFromAndPb() {
     assertEquals(FIELD_ELEMENT_TYPE, FieldElementType.fromPb(FIELD_ELEMENT_TYPE.toPb()));
+    assertEquals(
+        FIELD_ELEMENT_TYPE,
+        FieldElementType.fromPb(
+            new QueryParameterType()
+                .setRangeElementType(new QueryParameterType().setType("DATE"))));
   }
 
   private void compareFieldElementType(FieldElementType expected, FieldElementType value) {
