@@ -180,6 +180,12 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     abstract Builder setHivePartitioningOptionsInner(
         HivePartitioningOptions hivePartitioningOptions);
 
+    public Builder setObjectMetadata(String objectMetadata) {
+      return setObjectMetadataInner(objectMetadata);
+    }
+
+    abstract Builder setObjectMetadataInner(String objectMetadata);
+
     /** Creates an {@code ExternalTableDefinition} object. */
     @Override
     public abstract ExternalTableDefinition build();
@@ -254,6 +260,21 @@ public abstract class ExternalTableDefinition extends TableDefinition {
 
   @Nullable
   public abstract ImmutableList<String> getSourceUrisImmut();
+
+  /**
+   * Returns the object metadata.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration">
+   *     ObjectMetadata</a>
+   */
+  @Nullable
+  public String getObjectMetadata() {
+    return getObjectMetadataInner();
+  }
+
+  @Nullable
+  abstract String getObjectMetadataInner();
 
   /**
    * Returns the source format, and possibly some parsing options, of the external data. Supported
@@ -362,6 +383,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       externalConfigurationPb.setFileSetSpecType(getFileSetSpecType());
     }
 
+    if (getObjectMetadata() != null) {
+      externalConfigurationPb.setObjectMetadata(getObjectMetadata());
+    }
+
     return externalConfigurationPb;
   }
 
@@ -424,6 +449,24 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   public static Builder newBuilder(String sourceUri, FormatOptions format) {
     checkArgument(!isNullOrEmpty(sourceUri), "Provided sourceUri is null or empty");
     return newBuilder().setSourceUris(ImmutableList.of(sourceUri)).setFormatOptions(format);
+  }
+
+  /**
+   * Creates a builder for an ExternalTableDefinition object.
+   *
+   * @param sourceUri the fully-qualified URIs that point to your data in Google Cloud. For Google
+   *     Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and
+   *     valid HTTPS URL for a Google Cloud Bigtable table. Size limits related to load jobs apply
+   *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
+   * @return a builder for an ExternalTableDefinition object given source URIs and format
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     Source Format</a>
+   */
+  public static Builder newBuilder(String sourceUri) {
+    checkArgument(!isNullOrEmpty(sourceUri), "Provided sourceUri is null or empty");
+    return newBuilder().setSourceUris(ImmutableList.of(sourceUri));
   }
 
   /**
@@ -534,6 +577,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       if (externalDataConfiguration.getFileSetSpecType() != null) {
         builder.setFileSetSpecType(externalDataConfiguration.getFileSetSpecType());
       }
+      if (externalDataConfiguration.getObjectMetadata() != null) {
+        builder.setObjectMetadata(externalDataConfiguration.getObjectMetadata());
+      }
     }
     return builder.build();
   }
@@ -595,6 +641,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getFileSetSpecType() != null) {
       builder.setFileSetSpecType(externalDataConfiguration.getFileSetSpecType());
+    }
+
+    if (externalDataConfiguration.getObjectMetadata() != null) {
+      builder.setObjectMetadata(externalDataConfiguration.getObjectMetadata());
     }
 
     return builder.build();

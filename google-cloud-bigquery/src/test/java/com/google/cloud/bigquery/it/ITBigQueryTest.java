@@ -6579,6 +6579,49 @@ public class ITBigQueryTest {
     assertTrue(remoteTable.delete());
   }
 
+  @Test
+  public void testObjectTable() throws InterruptedException {
+    String tableName = "test_object_table";
+    TableId tableId = TableId.of(DATASET, tableName);
+
+    String sourceUri = "gs://" + BUCKET + "/" + JSON_LOAD_FILE;
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(sourceUri)
+            .setConnectionId(
+                "projects/java-docs-samples-testing/locations/us/connections/DEVREL_TEST_CONNECTION")
+            .setObjectMetadata("SIMPLE")
+            .build();
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.getTableId().getDataset());
+    assertEquals(tableName, createdTable.getTableId().getTable());
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+
+    try {
+      assertTrue(remoteTable.getDefinition() instanceof ExternalTableDefinition);
+      assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+      assertEquals(
+          "SIMPLE", ((ExternalTableDefinition) remoteTable.getDefinition()).getObjectMetadata());
+      assertNotNull(remoteTable.getDefinition().getSchema().getFields().get("uri"));
+
+      String query = String.format("SELECT * FROM  %s.%s", DATASET, tableName);
+      QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+
+      Job remoteJob = bigquery.create(JobInfo.of(config));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+
+      Job queryJob = bigquery.getJob(remoteJob.getJobId());
+      JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+      assertNotNull(statistics);
+      assertThat(statistics.getTotalBytesProcessed()).isGreaterThan(0);
+    } finally {
+      assertTrue(remoteTable.delete());
+    }
+  }
+
   static GoogleCredentials loadCredentials(String credentialFile) {
     try {
       InputStream keyStream = new ByteArrayInputStream(credentialFile.getBytes());
