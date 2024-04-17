@@ -175,7 +175,7 @@ public class UnaryMetricsMetadataIT {
 
     assertThat(allMetricData)
         .comparingElementsUsing(METRIC_DATA_NAME_CONTAINS)
-        .contains(BuiltinMetricsConstants.OPERATION_LATENCIES_NAME);
+        .contains(BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME);
     assertThat(metricData).isNotNull();
 
     List<PointData> pointData = new ArrayList<>(metricData.getData().getPoints());
