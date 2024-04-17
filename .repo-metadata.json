@@ -13,5 +13,6 @@
   "codeowner_team": "@googleapis/api-bigquery",
   "api_id": "bigquery.googleapis.com",
   "library_type": "GAPIC_MANUAL",
-  "requires_billing": true
+  "requires_billing": true,
+  "recommended_package": "com.google.cloud.bigquery"
 }
