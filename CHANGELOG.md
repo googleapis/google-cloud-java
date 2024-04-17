@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.16.3](https://github.com/googleapis/java-logging/compare/v3.16.2...v3.16.3) (2024-04-17)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ([#1569](https://github.com/googleapis/java-logging/issues/1569)) ([8eb0781](https://github.com/googleapis/java-logging/commit/8eb0781b1e1e6e369a6ff0a03d1db4cd0462a6a7))
+
 ## [3.16.2](https://github.com/googleapis/java-logging/compare/v3.16.1...v3.16.2) (2024-03-20)
 
 
