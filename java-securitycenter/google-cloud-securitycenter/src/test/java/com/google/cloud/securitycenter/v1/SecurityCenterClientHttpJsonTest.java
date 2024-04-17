@@ -462,6 +462,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -553,6 +554,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3931,6 +3933,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -4024,6 +4027,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -4115,6 +4119,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -4206,6 +4211,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -4618,6 +4624,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -4667,6 +4674,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
 
@@ -4741,6 +4749,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setSecurityPosture(SecurityPosture.newBuilder().build())
               .addAllLogEntries(new ArrayList<LogEntry>())
               .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+              .setCloudArmor(CloudArmor.newBuilder().build())
               .setNotebook(Notebook.newBuilder().build())
               .build();
       client.updateFinding(finding);

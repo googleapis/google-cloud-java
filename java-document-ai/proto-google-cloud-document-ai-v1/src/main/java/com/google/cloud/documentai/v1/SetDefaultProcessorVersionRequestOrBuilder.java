@@ -28,9 +28,7 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] to change default
-   * version.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
    * </pre>
    *
    * <code>
@@ -44,9 +42,7 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] to change default
-   * version.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
    * </pre>
    *
    * <code>
@@ -61,9 +57,8 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of child
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-   * default. Format:
+   * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+   * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
    * </pre>
    *
@@ -78,9 +73,8 @@ public interface SetDefaultProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of child
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-   * default. Format:
+   * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+   * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
    * </pre>
    *

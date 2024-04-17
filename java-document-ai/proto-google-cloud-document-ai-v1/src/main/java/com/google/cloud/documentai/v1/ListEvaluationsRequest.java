@@ -23,8 +23,7 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Retrieves a list of evaluations for a given
- * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+ * Retrieves a list of evaluations for a given [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ListEvaluationsRequest}
@@ -73,9 +72,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-   * evaluations for.
+   * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -101,9 +98,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-   * evaluations for.
+   * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -381,8 +376,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Retrieves a list of evaluations for a given
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Retrieves a list of evaluations for a given [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ListEvaluationsRequest}
@@ -594,9 +588,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-     * evaluations for.
+     * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -621,9 +613,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-     * evaluations for.
+     * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -648,9 +638,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-     * evaluations for.
+     * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -674,9 +662,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-     * evaluations for.
+     * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -696,9 +682,7 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
-     * evaluations for.
+     * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *

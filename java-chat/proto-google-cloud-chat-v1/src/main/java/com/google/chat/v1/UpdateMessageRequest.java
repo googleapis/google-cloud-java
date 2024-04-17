@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.UpdateMessageRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request to update a message.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.UpdateMessageRequest}
+ */
 public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.UpdateMessageRequest)
@@ -202,7 +210,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. If `true` and the message isn't found, a new message is created
    * and `updateMask` is ignored. The specified message ID must be
-   * [client-assigned](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message)
+   * [client-assigned](https://developers.google.com/workspace/chat/create-messages#name_a_created_message)
    * or the request fails.
    * </pre>
    *
@@ -401,7 +409,15 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.UpdateMessageRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request to update a message.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.UpdateMessageRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.UpdateMessageRequest)
@@ -1138,7 +1154,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. If `true` and the message isn't found, a new message is created
      * and `updateMask` is ignored. The specified message ID must be
-     * [client-assigned](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message)
+     * [client-assigned](https://developers.google.com/workspace/chat/create-messages#name_a_created_message)
      * or the request fails.
      * </pre>
      *
@@ -1156,7 +1172,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. If `true` and the message isn't found, a new message is created
      * and `updateMask` is ignored. The specified message ID must be
-     * [client-assigned](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message)
+     * [client-assigned](https://developers.google.com/workspace/chat/create-messages#name_a_created_message)
      * or the request fails.
      * </pre>
      *
@@ -1178,7 +1194,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. If `true` and the message isn't found, a new message is created
      * and `updateMask` is ignored. The specified message ID must be
-     * [client-assigned](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message)
+     * [client-assigned](https://developers.google.com/workspace/chat/create-messages#name_a_created_message)
      * or the request fails.
      * </pre>
      *

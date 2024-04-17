@@ -620,9 +620,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -640,9 +640,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -663,9 +663,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -1762,9 +1762,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1782,9 +1782,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1812,9 +1812,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1839,9 +1839,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1863,9 +1863,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1898,9 +1898,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1928,9 +1928,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1945,9 +1945,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *
@@ -1970,9 +1970,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
-     * user](https://developers.google.com/chat/api/guides/auth/users), the
-     * output populates the
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+     * the output populates the
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * `name` and `type`.
      * </pre>
      *

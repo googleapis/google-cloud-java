@@ -23,7 +23,9 @@ package com.google.chat.v1;
  *
  *
  * <pre>
- * A borderless widget attached to the bottom of an app's message.
+ * One or more interactive widgets that appear at the bottom of a message. For
+ * details, see [Add interactive widgets at the bottom of a
+ * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.AccessoryWidget}
@@ -112,7 +114,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -127,7 +129,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -145,7 +147,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -334,7 +336,9 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A borderless widget attached to the bottom of an app's message.
+   * One or more interactive widgets that appear at the bottom of a message. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.AccessoryWidget}
@@ -550,7 +554,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -565,7 +569,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -590,7 +594,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -612,7 +616,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -631,7 +635,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -663,7 +667,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -688,7 +692,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -700,7 +704,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -720,7 +724,7 @@ public final class AccessoryWidget extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of buttons that are displayed under the message.
+     * A list of buttons.
      * </pre>
      *
      * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>

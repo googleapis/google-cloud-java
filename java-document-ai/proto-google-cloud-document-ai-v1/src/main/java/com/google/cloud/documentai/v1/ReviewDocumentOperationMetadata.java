@@ -24,8 +24,7 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * The long-running operation metadata for the
- * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
- * method.
+ * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument] method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentOperationMetadata}
@@ -348,8 +347,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    * <pre>
    * The long-running operation metadata for the
-   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
-   * method.
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument] method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentOperationMetadata}

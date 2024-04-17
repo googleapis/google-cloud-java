@@ -134,12 +134,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * Google Workspace organization might already use this display name.)
    *
    * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-   * `SPACE`. Include `display_name` together with `space_type` in the update
-   * mask and ensure that the specified space has a non-empty display name and
-   * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-   * type in the specified space when updating the display name is optional if
-   * the existing space already has the `SPACE` type. Trying to update the
-   * space type in other ways results in an invalid argument error).
+   * `SPACE`. Include `display_name` together
+   * with `space_type` in the update mask and ensure that the specified space
+   * has a non-empty display name and the `SPACE` space type. Including the
+   * `space_type` mask and the `SPACE` type in the specified space when updating
+   * the display name is optional if the existing space already has the `SPACE`
+   * type. Trying to update the space type in other ways results in an invalid
+   * argument error).
    *
    * - `space_details`
    *
@@ -148,6 +149,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * allows users to change their history
    * setting](https://support.google.com/a/answer/7664184).
    * Warning: mutually exclusive with all other field paths.)
+   *
    * - Developer Preview: `access_settings.audience` (Supports changing the
    * [access setting](https://support.google.com/chat/answer/11971020) of a
    * space. If no audience is specified in the access setting, the space's
@@ -181,12 +183,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * Google Workspace organization might already use this display name.)
    *
    * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-   * `SPACE`. Include `display_name` together with `space_type` in the update
-   * mask and ensure that the specified space has a non-empty display name and
-   * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-   * type in the specified space when updating the display name is optional if
-   * the existing space already has the `SPACE` type. Trying to update the
-   * space type in other ways results in an invalid argument error).
+   * `SPACE`. Include `display_name` together
+   * with `space_type` in the update mask and ensure that the specified space
+   * has a non-empty display name and the `SPACE` space type. Including the
+   * `space_type` mask and the `SPACE` type in the specified space when updating
+   * the display name is optional if the existing space already has the `SPACE`
+   * type. Trying to update the space type in other ways results in an invalid
+   * argument error).
    *
    * - `space_details`
    *
@@ -195,6 +198,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * allows users to change their history
    * setting](https://support.google.com/a/answer/7664184).
    * Warning: mutually exclusive with all other field paths.)
+   *
    * - Developer Preview: `access_settings.audience` (Supports changing the
    * [access setting](https://support.google.com/chat/answer/11971020) of a
    * space. If no audience is specified in the access setting, the space's
@@ -228,12 +232,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * Google Workspace organization might already use this display name.)
    *
    * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-   * `SPACE`. Include `display_name` together with `space_type` in the update
-   * mask and ensure that the specified space has a non-empty display name and
-   * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-   * type in the specified space when updating the display name is optional if
-   * the existing space already has the `SPACE` type. Trying to update the
-   * space type in other ways results in an invalid argument error).
+   * `SPACE`. Include `display_name` together
+   * with `space_type` in the update mask and ensure that the specified space
+   * has a non-empty display name and the `SPACE` space type. Including the
+   * `space_type` mask and the `SPACE` type in the specified space when updating
+   * the display name is optional if the existing space already has the `SPACE`
+   * type. Trying to update the space type in other ways results in an invalid
+   * argument error).
    *
    * - `space_details`
    *
@@ -242,6 +247,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
    * allows users to change their history
    * setting](https://support.google.com/a/answer/7664184).
    * Warning: mutually exclusive with all other field paths.)
+   *
    * - Developer Preview: `access_settings.audience` (Supports changing the
    * [access setting](https://support.google.com/chat/answer/11971020) of a
    * space. If no audience is specified in the access setting, the space's
@@ -869,12 +875,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -883,6 +890,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -915,12 +923,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -929,6 +938,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -967,12 +977,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -981,6 +992,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1021,12 +1033,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1035,6 +1048,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1072,12 +1086,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1086,6 +1101,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1131,12 +1147,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1145,6 +1162,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1182,12 +1200,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1196,6 +1215,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1228,12 +1248,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1242,6 +1263,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's
@@ -1278,12 +1300,13 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * Google Workspace organization might already use this display name.)
      *
      * - `space_type` (Only supports changing a `GROUP_CHAT` space type to
-     * `SPACE`. Include `display_name` together with `space_type` in the update
-     * mask and ensure that the specified space has a non-empty display name and
-     * the `SPACE` space type. Including the `space_type` mask and the `SPACE`
-     * type in the specified space when updating the display name is optional if
-     * the existing space already has the `SPACE` type. Trying to update the
-     * space type in other ways results in an invalid argument error).
+     * `SPACE`. Include `display_name` together
+     * with `space_type` in the update mask and ensure that the specified space
+     * has a non-empty display name and the `SPACE` space type. Including the
+     * `space_type` mask and the `SPACE` type in the specified space when updating
+     * the display name is optional if the existing space already has the `SPACE`
+     * type. Trying to update the space type in other ways results in an invalid
+     * argument error).
      *
      * - `space_details`
      *
@@ -1292,6 +1315,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
      * allows users to change their history
      * setting](https://support.google.com/a/answer/7664184).
      * Warning: mutually exclusive with all other field paths.)
+     *
      * - Developer Preview: `access_settings.audience` (Supports changing the
      * [access setting](https://support.google.com/chat/answer/11971020) of a
      * space. If no audience is specified in the access setting, the space's

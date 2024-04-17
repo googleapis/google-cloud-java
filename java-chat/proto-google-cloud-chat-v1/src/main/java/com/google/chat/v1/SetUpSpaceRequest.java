@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.SetUpSpaceRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request to create a space and add specified users to it.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.SetUpSpaceRequest}
+ */
 public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.SetUpSpaceRequest)
@@ -613,7 +621,15 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.SetUpSpaceRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request to create a space and add specified users to it.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.SetUpSpaceRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.SetUpSpaceRequest)

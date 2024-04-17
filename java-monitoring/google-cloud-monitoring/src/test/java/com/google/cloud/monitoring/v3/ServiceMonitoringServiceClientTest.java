@@ -108,6 +108,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -152,6 +153,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -196,6 +198,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -240,6 +243,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -284,6 +288,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -325,6 +330,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();
@@ -542,6 +548,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setBasicService(Service.BasicService.newBuilder().build())
             .setTelemetry(Service.Telemetry.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .build();

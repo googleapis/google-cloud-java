@@ -65,7 +65,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
    * @return The type.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=122
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -150,7 +150,7 @@ public interface SpaceOrBuilder
    *
    * <pre>
    * The space's display name. Required when [creating a
-   * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
    * If you receive the error message `ALREADY_EXISTS` when creating a space or
    * updating the `displayName`, try a different `displayName`. An
    * existing space within the Google Workspace organization might already use
@@ -171,7 +171,7 @@ public interface SpaceOrBuilder
    *
    * <pre>
    * The space's display name. Required when [creating a
-   * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
    * If you receive the error message `ALREADY_EXISTS` when creating a space or
    * updating the `displayName`, try a different `displayName`. An
    * existing space within the Google Workspace organization might already use
@@ -196,13 +196,18 @@ public interface SpaceOrBuilder
    * Input when creating a space in a Google Workspace organization. Omit this
    * field when creating spaces in the following conditions:
    *
-   *   * The authenticated user uses a Google Account. By default,
-   *     the space permits any Google Chat user.
+   *   * The authenticated user uses a consumer account (unmanaged user
+   *     account). By default, a space created by a consumer account permits any
+   *     Google Chat user.
    *
    *   * The space is used to [import data to Google Chat]
-   *     (https://developers.google.com/chat/api/guides/import-data-overview).
-   *     Import mode spaces must only permit members from the same Google
-   *     Workspace organization.
+   *     (https://developers.google.com/chat/api/guides/import-data-overview)
+   *     because import mode spaces must only permit members from the same
+   *     Google Workspace organization. However, as part of the [Google
+   *     Workspace Developer Preview
+   *     Program](https://developers.google.com/workspace/preview), import mode
+   *     spaces can permit any Google Chat user so this field can then be set
+   *     for import mode spaces.
    *
    * For existing spaces, this field is output only.
    * </pre>

@@ -24,8 +24,7 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * The long-running operation metadata for the
- * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor]
- * method.
+ * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor] method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.EnableProcessorMetadata}
@@ -285,8 +284,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
    *
    * <pre>
    * The long-running operation metadata for the
-   * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor]
-   * method.
+   * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor] method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.EnableProcessorMetadata}

@@ -25,10 +25,10 @@ package com.google.chat.v1;
  * <pre>
  * A thread in a Google Chat space. For example usage, see
  * [Start or reply to a message
- * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+ * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
  *
  * If you specify a thread when creating a message, you can set the
- * [`messageReplyOption`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption)
+ * [`messageReplyOption`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption)
  * field to determine what happens if no matching thread is found.
  * </pre>
  *
@@ -359,10 +359,10 @@ public final class Thread extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A thread in a Google Chat space. For example usage, see
    * [Start or reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    *
    * If you specify a thread when creating a message, you can set the
-   * [`messageReplyOption`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption)
+   * [`messageReplyOption`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption)
    * field to determine what happens if no matching thread is found.
    * </pre>
    *

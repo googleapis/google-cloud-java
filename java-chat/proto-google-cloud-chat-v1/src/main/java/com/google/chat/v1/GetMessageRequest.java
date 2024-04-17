@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.GetMessageRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request to get a message.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.GetMessageRequest}
+ */
 public final class GetMessageRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.GetMessageRequest)
@@ -70,7 +78,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
    * If you've set a custom ID for your message, you can use the value from the
    * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
    * message]
-   * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>
@@ -102,7 +110,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
    * If you've set a custom ID for your message, you can use the value from the
    * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
    * message]
-   * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>
@@ -281,7 +289,15 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.GetMessageRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request to get a message.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.GetMessageRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.GetMessageRequest)
@@ -466,7 +482,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -497,7 +513,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -528,7 +544,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -558,7 +574,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -584,7 +600,7 @@ public final class GetMessageRequest extends com.google.protobuf.GeneratedMessag
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>

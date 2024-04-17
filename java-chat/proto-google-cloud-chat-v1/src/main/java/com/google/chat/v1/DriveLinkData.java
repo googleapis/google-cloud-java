@@ -70,7 +70,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A
-   * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+   * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
    * which references a Google Drive file.
    * </pre>
    *
@@ -87,7 +87,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A
-   * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+   * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
    * which references a Google Drive file.
    * </pre>
    *
@@ -106,7 +106,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A
-   * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+   * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
    * which references a Google Drive file.
    * </pre>
    *
@@ -563,7 +563,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -601,7 +601,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -625,7 +625,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -646,7 +646,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -675,7 +675,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -696,7 +696,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -712,7 +712,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *
@@ -732,7 +732,7 @@ public final class DriveLinkData extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A
-     * [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
+     * [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref)
      * which references a Google Drive file.
      * </pre>
      *

@@ -24,8 +24,7 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * The long-running operation metadata for the
- * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor]
- * method.
+ * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor] method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.DeleteProcessorMetadata}
@@ -285,8 +284,7 @@ public final class DeleteProcessorMetadata extends com.google.protobuf.Generated
    *
    * <pre>
    * The long-running operation metadata for the
-   * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor]
-   * method.
+   * [DeleteProcessor][google.cloud.documentai.v1.DocumentProcessorService.DeleteProcessor] method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.DeleteProcessorMetadata}

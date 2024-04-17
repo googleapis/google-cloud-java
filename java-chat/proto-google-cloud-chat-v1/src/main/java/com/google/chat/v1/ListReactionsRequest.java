@@ -218,9 +218,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
    * Optional. A query filter.
    *
    * You can filter reactions by
-   * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+   * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
    * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * (`user.name`).
    *
    * To filter reactions for multiple emojis or users, join similar fields
@@ -284,9 +284,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
    * Optional. A query filter.
    *
    * You can filter reactions by
-   * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+   * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
    * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * (`user.name`).
    *
    * To filter reactions for multiple emojis or users, join similar fields
@@ -1083,9 +1083,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
      * Optional. A query filter.
      *
      * You can filter reactions by
-     * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+     * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
      * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * (`user.name`).
      *
      * To filter reactions for multiple emojis or users, join similar fields
@@ -1148,9 +1148,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
      * Optional. A query filter.
      *
      * You can filter reactions by
-     * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+     * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
      * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * (`user.name`).
      *
      * To filter reactions for multiple emojis or users, join similar fields
@@ -1213,9 +1213,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
      * Optional. A query filter.
      *
      * You can filter reactions by
-     * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+     * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
      * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * (`user.name`).
      *
      * To filter reactions for multiple emojis or users, join similar fields
@@ -1277,9 +1277,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
      * Optional. A query filter.
      *
      * You can filter reactions by
-     * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+     * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
      * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * (`user.name`).
      *
      * To filter reactions for multiple emojis or users, join similar fields
@@ -1337,9 +1337,9 @@ public final class ListReactionsRequest extends com.google.protobuf.GeneratedMes
      * Optional. A query filter.
      *
      * You can filter reactions by
-     * [emoji](https://developers.google.com/chat/api/reference/rest/v1/Emoji)
+     * [emoji](https://developers.google.com/workspace/chat/api/reference/rest/v1/Emoji)
      * (either `emoji.unicode` or `emoji.custom_emoji.uid`) and
-     * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+     * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
      * (`user.name`).
      *
      * To filter reactions for multiple emojis or users, join similar fields
