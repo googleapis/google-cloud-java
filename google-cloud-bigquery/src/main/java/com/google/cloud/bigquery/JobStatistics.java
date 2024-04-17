@@ -17,12 +17,14 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.services.bigquery.model.ExportDataStatistics;
 import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
 import com.google.api.services.bigquery.model.JobStatistics5;
 import com.google.api.services.bigquery.model.QueryParameter;
+import com.google.auto.value.AutoValue;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
@@ -32,6 +34,7 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 /** A Google BigQuery Job statistics. */
@@ -398,6 +401,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long estimatedBytesProcessed;
     private final Long numDmlAffectedRows;
     private final DmlStats dmlStats;
+    private final ExportDataStats exportDataStats;
     private final List<TableId> referencedTables;
     private final StatementType statementType;
     private final Long totalBytesBilled;
@@ -472,6 +476,80 @@ public abstract class JobStatistics implements Serializable {
       }
     }
 
+    /**
+     * Statistics for the EXPORT DATA statement as part of Query Job. EXTRACT JOB statistics are
+     * populated in ExtractStatistics.
+     */
+    @AutoValue
+    public abstract static class ExportDataStats implements Serializable {
+      private static final long serialVersionUID = 1L;
+
+      /**
+       * Returns number of destination files generated in case of EXPORT DATA statement only.
+       *
+       * @return value or {@code null} for none
+       */
+      @Nullable
+      public abstract Long getFileCount();
+
+      /**
+       * Returns number of destination rows generated in case of EXPORT DATA statement only.
+       *
+       * @return value or {@code null} for none
+       */
+      @Nullable
+      public abstract Long getRowCount();
+
+      public abstract Builder toBuilder();
+
+      public static Builder newBuilder() {
+        return new AutoValue_JobStatistics_QueryStatistics_ExportDataStats.Builder();
+      }
+
+      static ExportDataStats fromPb(ExportDataStatistics exportDataStatisticsPb) {
+        Builder builder = newBuilder();
+        if (exportDataStatisticsPb.getFileCount() != null) {
+          builder.setFileCount(exportDataStatisticsPb.getFileCount());
+        }
+        if (exportDataStatisticsPb.getRowCount() != null) {
+          builder.setRowCount(exportDataStatisticsPb.getRowCount());
+        }
+        return builder.build();
+      }
+
+      ExportDataStatistics toPb() {
+        ExportDataStatistics exportDataStatisticsPb = new ExportDataStatistics();
+        if (getFileCount() != null) {
+          exportDataStatisticsPb.setFileCount(getFileCount());
+        }
+        if (getRowCount() != null) {
+          exportDataStatisticsPb.setRowCount(getRowCount());
+        }
+        return exportDataStatisticsPb;
+      }
+
+      @AutoValue.Builder
+      public abstract static class Builder {
+
+        /**
+         * Number of destination files generated in case of EXPORT DATA statement only.
+         *
+         * @param fileCount fileCount or {@code null} for none
+         */
+        public abstract Builder setFileCount(Long fileCount);
+
+        /**
+         * Number of destination rows generated in case of EXPORT DATA statement only.
+         *
+         * @param rowCount rowCount or {@code null} for none
+         */
+        public abstract Builder setRowCount(Long rowCount);
+
+        /** Creates a {@code ExportDataStats} object. */
+        public abstract ExportDataStats build();
+      }
+    }
+
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
       private BiEngineStats biEngineStats;
@@ -483,6 +561,7 @@ public abstract class JobStatistics implements Serializable {
       private Long estimatedBytesProcessed;
       private Long numDmlAffectedRows;
       private DmlStats dmlStats;
+      private ExportDataStats exportDataStats;
       private List<TableId> referencedTables;
       private StatementType statementType;
       private Long totalBytesBilled;
@@ -553,6 +632,10 @@ public abstract class JobStatistics implements Serializable {
           if (statisticsPb.getQuery().getDmlStats() != null) {
             this.dmlStats = DmlStats.fromPb(statisticsPb.getQuery().getDmlStats());
           }
+          if (statisticsPb.getQuery().getExportDataStatistics() != null) {
+            this.exportDataStats =
+                ExportDataStats.fromPb(statisticsPb.getQuery().getExportDataStatistics());
+          }
         }
       }
 
@@ -598,6 +681,11 @@ public abstract class JobStatistics implements Serializable {
 
       Builder setDmlStats(DmlStats dmlStats) {
         this.dmlStats = dmlStats;
+        return self();
+      }
+
+      Builder setExportDataStats(ExportDataStats exportDataStats) {
+        this.exportDataStats = exportDataStats;
         return self();
       }
 
@@ -683,6 +771,7 @@ public abstract class JobStatistics implements Serializable {
       this.estimatedBytesProcessed = builder.estimatedBytesProcessed;
       this.numDmlAffectedRows = builder.numDmlAffectedRows;
       this.dmlStats = builder.dmlStats;
+      this.exportDataStats = builder.exportDataStats;
       this.referencedTables = builder.referencedTables;
       this.statementType = builder.statementType;
       this.totalBytesBilled = builder.totalBytesBilled;
@@ -747,6 +836,11 @@ public abstract class JobStatistics implements Serializable {
     /** Detailed statistics for DML statements. */
     public DmlStats getDmlStats() {
       return dmlStats;
+    }
+
+    /** Detailed statistics for EXPORT DATA statement. */
+    public ExportDataStats getExportDataStats() {
+      return exportDataStats;
     }
 
     /**
@@ -899,6 +993,9 @@ public abstract class JobStatistics implements Serializable {
       }
       if (dmlStats != null) {
         queryStatisticsPb.setDmlStats(dmlStats.toPb());
+      }
+      if (exportDataStats != null) {
+        queryStatisticsPb.setExportDataStatistics(exportDataStats.toPb());
       }
       if (referencedTables != null) {
         queryStatisticsPb.setReferencedTables(

@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.ExportDataStats;
 import com.google.cloud.bigquery.JobStatistics.ReservationUsage;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics.ScriptStackFrame;
@@ -63,6 +64,13 @@ public class JobStatisticsTest {
           .setDeletedRowCount(DELETED_ROW_COUNT)
           .setInsertedRowCount(INSERTED_ROW_COUNT)
           .setUpdatedRowCount(UPDATED_ROW_COUNT)
+          .build();
+  private static final Long EXPORT_DATA_STATS_ROW_COUNT = 3L;
+  private static final Long EXPORT_DATA_STATS_FILE_COUNT = 2L;
+  private static final ExportDataStats EXPORT_DATA_STATS =
+      ExportDataStats.newBuilder()
+          .setRowCount(EXPORT_DATA_STATS_ROW_COUNT)
+          .setFileCount(EXPORT_DATA_STATS_FILE_COUNT)
           .build();
   private static final QueryStatistics.StatementType STATEMENT_TYPE =
       QueryStatistics.StatementType.SELECT;
@@ -189,6 +197,7 @@ public class JobStatisticsTest {
           .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
           .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
           .setDmlStats(DML_STATS)
+          .setExportDataStats(EXPORT_DATA_STATS)
           .setReferenceTables(REFERENCED_TABLES)
           .setStatementType(STATEMENT_TYPE)
           .setTotalBytesBilled(TOTAL_BYTES_BILLED)
@@ -293,6 +302,7 @@ public class JobStatisticsTest {
     assertEquals(ESTIMATE_BYTES_PROCESSED, QUERY_STATISTICS.getEstimatedBytesProcessed());
     assertEquals(NUM_DML_AFFECTED_ROWS, QUERY_STATISTICS.getNumDmlAffectedRows());
     assertEquals(DML_STATS, QUERY_STATISTICS.getDmlStats());
+    assertEquals(EXPORT_DATA_STATS, QUERY_STATISTICS.getExportDataStats());
     assertEquals(REFERENCED_TABLES, QUERY_STATISTICS.getReferencedTables());
     assertEquals(STATEMENT_TYPE, QUERY_STATISTICS.getStatementType());
     assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.getTotalBytesBilled());
@@ -448,6 +458,8 @@ public class JobStatisticsTest {
     assertEquals(expected.getMetadataCacheStats(), value.getMetadataCacheStats());
     assertEquals(expected.getStatementType(), value.getStatementType());
     assertEquals(expected.getTimeline(), value.getTimeline());
+    assertEquals(expected.getDmlStats(), value.getDmlStats());
+    assertEquals(expected.getExportDataStats(), value.getExportDataStats());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

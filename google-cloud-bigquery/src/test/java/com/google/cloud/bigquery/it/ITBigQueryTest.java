@@ -6734,4 +6734,28 @@ public class ITBigQueryTest {
     }
     return null;
   }
+
+  @Test
+  public void testQueryExportStatistics() throws InterruptedException {
+    String query =
+        String.format(
+            "EXPORT DATA OPTIONS(\n"
+                + "  uri='gs://%s/*.csv',\n"
+                + "  format='CSV',\n"
+                + "  overwrite=true,\n"
+                + "  header=true,\n"
+                + "  field_delimiter=';') AS\n"
+                + "SELECT num FROM UNNEST([1,2,3]) AS num",
+            BUCKET);
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job = job.waitFor();
+
+    QueryStatistics queryStatistics = job.getStatistics();
+    assertNotNull(queryStatistics);
+    assertNotNull(queryStatistics.getExportDataStats());
+    assertEquals(1L, queryStatistics.getExportDataStats().getFileCount().longValue());
+    assertEquals(3L, queryStatistics.getExportDataStats().getRowCount().longValue());
+  }
 }
