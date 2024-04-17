@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.129.0](https://github.com/googleapis/java-pubsub/compare/v1.128.1...v1.129.0) (2024-04-17)
+
+
+### Features
+
+* Add `libraries_bom_version` in metadata ([#1956](https://github.com/googleapis/java-pubsub/issues/1956)) ([#1990](https://github.com/googleapis/java-pubsub/issues/1990)) ([18cfa73](https://github.com/googleapis/java-pubsub/commit/18cfa73208bdf9b6a1a597bac740056abfcb03ef))
+
+
+### Dependencies
+
+* Update actions/setup-java action to v4 ([#1978](https://github.com/googleapis/java-pubsub/issues/1978)) ([64a0df3](https://github.com/googleapis/java-pubsub/commit/64a0df337c91f965e4d8960801e10f90f78c46cd))
+
 ## [1.128.1](https://github.com/googleapis/java-pubsub/compare/v1.128.0...v1.128.1) (2024-04-10)
 
 
