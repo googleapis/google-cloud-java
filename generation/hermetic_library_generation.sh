@@ -55,8 +55,9 @@ if [ -z "${generation_config}" ]; then
   echo "Use default generation config: ${generation_config}"
 fi
 
-volume_name="repo-google-cloud-java"
-repo_volumes="${volume_name}:/workspace/google-cloud-java"
+volume_name="repo"
+workspace_name="/workspace/repo"
+repo_volumes="${volume_name}:${workspace_name}"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
 
@@ -84,9 +85,9 @@ docker run \
   -e "REPO_BINDING_VOLUMES=-v ${repo_volumes}" \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
   python /src/cli/entry_point.py generate \
-  --baseline-generation-config-path=/workspace/google-cloud-java/"${baseline_generation_config}" \
-  --current-generation-config-path=/workspace/google-cloud-java/"${generation_config}" \
-  --repository-path=/workspace/google-cloud-java
+  --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
+  --current-generation-config-path="${workspace_name}/${generation_config}" \
+  --repository-path="${workspace_name}"
 # commit the change to the pull request.
 [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
 [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
