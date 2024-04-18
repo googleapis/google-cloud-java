@@ -463,14 +463,14 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.getReason());
+      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
     }
 
     try {
       transaction.rollback();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.getReason());
+      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
     }
   }
 
@@ -666,7 +666,7 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.getReason());
+      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
     }
 
     List<Entity> list = datastore.fetch(KEY1, KEY2, KEY3);
@@ -718,7 +718,7 @@ public class ITDatastoreTest {
       batch.submit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.getReason());
+      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
     }
 
     batch = datastore.newBatch();
@@ -1430,7 +1430,7 @@ public class ITDatastoreTest {
       entity3.getString("str");
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      // expected - no such property
+      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
     }
     assertFalse(result.hasNext());
     datastore.delete(ENTITY3.getKey());
@@ -1447,7 +1447,7 @@ public class ITDatastoreTest {
       datastore.add(ENTITY1);
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      // expected;
+      assertDatastoreException(expected, "ALREADY_EXISTS", 6);
     }
 
     List<Entity> entities = datastore.add(ENTITY3, PARTIAL_ENTITY1, PARTIAL_ENTITY2);
@@ -1475,7 +1475,7 @@ public class ITDatastoreTest {
       datastore.update(ENTITY3);
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      // expected;
+      assertDatastoreException(expected, "NOT_FOUND", 5);
     }
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.getKey()));
@@ -1566,7 +1566,7 @@ public class ITDatastoreTest {
       datastore.runInTransaction(callable2);
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(4, ((DatastoreException) expected.getCause()).getCode());
+      assertDatastoreException((DatastoreException) expected.getCause(), "DEADLINE_EXCEEDED", 4);
     }
   }
 
@@ -1620,7 +1620,7 @@ public class ITDatastoreTest {
       datastore.runInTransaction(callable2, readOnlyOptions);
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(3, ((DatastoreException) expected.getCause()).getCode());
+      assertDatastoreException((DatastoreException) expected.getCause(), "INVALID_ARGUMENT", 3);
     }
   }
 
@@ -1835,5 +1835,11 @@ public class ITDatastoreTest {
     } finally {
       datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
     }
+  }
+
+  private void assertDatastoreException(
+      DatastoreException expected, String reason, int statusCode) {
+    assertEquals(reason, expected.getReason());
+    assertEquals(statusCode, expected.getCode());
   }
 }
