@@ -575,7 +575,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *
@@ -596,7 +595,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *
@@ -1639,7 +1637,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. User's role within a Chat space, which determines their permitted
      * actions in the space.
      *
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * This field can only be used as input in `UpdateMembership`.
      * </pre>
      *
@@ -1660,7 +1657,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. User's role within a Chat space, which determines their permitted
      * actions in the space.
      *
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * This field can only be used as input in `UpdateMembership`.
      * </pre>
      *
@@ -1684,7 +1680,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. User's role within a Chat space, which determines their permitted
      * actions in the space.
      *
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * This field can only be used as input in `UpdateMembership`.
      * </pre>
      *
@@ -1707,7 +1702,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. User's role within a Chat space, which determines their permitted
      * actions in the space.
      *
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * This field can only be used as input in `UpdateMembership`.
      * </pre>
      *
@@ -1734,7 +1728,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. User's role within a Chat space, which determines their permitted
      * actions in the space.
      *
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * This field can only be used as input in `UpdateMembership`.
      * </pre>
      *

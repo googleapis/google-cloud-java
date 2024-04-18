@@ -89,7 +89,6 @@ public interface MembershipOrBuilder
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *
@@ -107,7 +106,6 @@ public interface MembershipOrBuilder
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *

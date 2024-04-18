@@ -417,6 +417,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateMembership</td>
+ *      <td><p> Updates a membership. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMembership(UpdateMembershipRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateMembership(Membership membership, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMembershipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteMembership</td>
  *      <td><p> Deletes a membership. For an example, see [Remove a user or a Google Chat app from a space](https://developers.google.com/workspace/chat/delete-members).
  * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
@@ -3195,6 +3213,103 @@ public class ChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return stub.createMembershipCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   Membership membership = Membership.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Membership response = chatServiceClient.updateMembership(membership, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param membership Required. The membership to update. Only fields specified by `update_mask`
+   *     are updated.
+   * @param updateMask Required. The field paths to update. Separate multiple values with commas or
+   *     use `&#42;` to update all field paths.
+   *     <p>Currently supported field paths:
+   *     <p>- `role`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Membership updateMembership(Membership membership, FieldMask updateMask) {
+    UpdateMembershipRequest request =
+        UpdateMembershipRequest.newBuilder()
+            .setMembership(membership)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMembership(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setMembership(Membership.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Membership response = chatServiceClient.updateMembership(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Membership updateMembership(UpdateMembershipRequest request) {
+    return updateMembershipCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setMembership(Membership.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Membership> future =
+   *       chatServiceClient.updateMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   Membership response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return stub.updateMembershipCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

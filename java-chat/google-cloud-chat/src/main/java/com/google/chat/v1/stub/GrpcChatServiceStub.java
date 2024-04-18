@@ -57,6 +57,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -245,6 +246,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateMembershipRequest, Membership>
+      updateMembershipMethodDescriptor =
+          MethodDescriptor.<UpdateMembershipRequest, Membership>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateMembership")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMembershipRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteMembershipRequest, Membership>
       deleteMembershipMethodDescriptor =
           MethodDescriptor.<DeleteMembershipRequest, Membership>newBuilder()
@@ -312,6 +323,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
+  private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
   private final UnaryCallable<CreateReactionRequest, Reaction> createReactionCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsResponse> listReactionsCallable;
@@ -520,6 +532,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
+        GrpcCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
+            .setMethodDescriptor(updateMembershipMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("membership.name", String.valueOf(request.getMembership().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteMembershipRequest, Membership> deleteMembershipTransportSettings =
         GrpcCallSettings.<DeleteMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(deleteMembershipMethodDescriptor)
@@ -628,6 +650,9 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
+    this.updateMembershipCallable =
+        callableFactory.createUnaryCallable(
+            updateMembershipTransportSettings, settings.updateMembershipSettings(), clientContext);
     this.deleteMembershipCallable =
         callableFactory.createUnaryCallable(
             deleteMembershipTransportSettings, settings.deleteMembershipSettings(), clientContext);
@@ -758,6 +783,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return createMembershipCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return updateMembershipCallable;
   }
 
   @Override

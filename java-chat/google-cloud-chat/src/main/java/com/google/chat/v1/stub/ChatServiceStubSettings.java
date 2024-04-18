@@ -75,6 +75,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -173,6 +174,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       completeImportSpaceSettings;
   private final UnaryCallSettings<FindDirectMessageRequest, Space> findDirectMessageSettings;
   private final UnaryCallSettings<CreateMembershipRequest, Membership> createMembershipSettings;
+  private final UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings;
   private final UnaryCallSettings<DeleteMembershipRequest, Membership> deleteMembershipSettings;
   private final UnaryCallSettings<CreateReactionRequest, Reaction> createReactionSettings;
   private final PagedCallSettings<
@@ -491,6 +493,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return createMembershipSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateMembership. */
+  public UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings() {
+    return updateMembershipSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteMembership. */
   public UnaryCallSettings<DeleteMembershipRequest, Membership> deleteMembershipSettings() {
     return deleteMembershipSettings;
@@ -649,6 +656,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     completeImportSpaceSettings = settingsBuilder.completeImportSpaceSettings().build();
     findDirectMessageSettings = settingsBuilder.findDirectMessageSettings().build();
     createMembershipSettings = settingsBuilder.createMembershipSettings().build();
+    updateMembershipSettings = settingsBuilder.updateMembershipSettings().build();
     deleteMembershipSettings = settingsBuilder.deleteMembershipSettings().build();
     createReactionSettings = settingsBuilder.createReactionSettings().build();
     listReactionsSettings = settingsBuilder.listReactionsSettings().build();
@@ -686,6 +694,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         findDirectMessageSettings;
     private final UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings;
+    private final UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings;
     private final UnaryCallSettings.Builder<DeleteMembershipRequest, Membership>
         deleteMembershipSettings;
     private final UnaryCallSettings.Builder<CreateReactionRequest, Reaction> createReactionSettings;
@@ -749,6 +759,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       completeImportSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       findDirectMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMembershipSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReactionsSettings = PagedCallSettings.newBuilder(LIST_REACTIONS_PAGE_STR_FACT);
@@ -774,6 +785,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               completeImportSpaceSettings,
               findDirectMessageSettings,
               createMembershipSettings,
+              updateMembershipSettings,
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
@@ -802,6 +814,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       completeImportSpaceSettings = settings.completeImportSpaceSettings.toBuilder();
       findDirectMessageSettings = settings.findDirectMessageSettings.toBuilder();
       createMembershipSettings = settings.createMembershipSettings.toBuilder();
+      updateMembershipSettings = settings.updateMembershipSettings.toBuilder();
       deleteMembershipSettings = settings.deleteMembershipSettings.toBuilder();
       createReactionSettings = settings.createReactionSettings.toBuilder();
       listReactionsSettings = settings.listReactionsSettings.toBuilder();
@@ -827,6 +840,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               completeImportSpaceSettings,
               findDirectMessageSettings,
               createMembershipSettings,
+              updateMembershipSettings,
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
@@ -945,6 +959,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .createMembershipSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateMembershipSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1082,6 +1101,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings() {
       return createMembershipSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMembership. */
+    public UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings() {
+      return updateMembershipSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteMembership. */

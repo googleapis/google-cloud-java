@@ -754,6 +754,47 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+      getUpdateMembershipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMembership",
+      requestType = com.google.chat.v1.UpdateMembershipRequest.class,
+      responseType = com.google.chat.v1.Membership.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+      getUpdateMembershipMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+        getUpdateMembershipMethod;
+    if ((getUpdateMembershipMethod = ChatServiceGrpc.getUpdateMembershipMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateMembershipMethod = ChatServiceGrpc.getUpdateMembershipMethod) == null) {
+          ChatServiceGrpc.getUpdateMembershipMethod =
+              getUpdateMembershipMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMembership"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateMembershipRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Membership.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("UpdateMembership"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.DeleteMembershipRequest, com.google.chat.v1.Membership>
       getDeleteMembershipMethod;
 
@@ -1420,6 +1461,21 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a membership. Requires [user
+     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    default void updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Membership> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMembershipMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
@@ -2014,6 +2070,23 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a membership. Requires [user
+     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public void updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Membership> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
@@ -2541,6 +2614,20 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.CreateMembershipRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a membership. Requires [user
+     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public com.google.chat.v1.Membership updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3078,6 +3165,20 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a membership. Requires [user
+     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
+        updateMembership(com.google.chat.v1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a membership. For an example, see
      * [Remove a user or a Google Chat app from a
      * space](https://developers.google.com/workspace/chat/delete-members).
@@ -3164,10 +3265,11 @@ public final class ChatServiceGrpc {
   private static final int METHODID_COMPLETE_IMPORT_SPACE = 15;
   private static final int METHODID_FIND_DIRECT_MESSAGE = 16;
   private static final int METHODID_CREATE_MEMBERSHIP = 17;
-  private static final int METHODID_DELETE_MEMBERSHIP = 18;
-  private static final int METHODID_CREATE_REACTION = 19;
-  private static final int METHODID_LIST_REACTIONS = 20;
-  private static final int METHODID_DELETE_REACTION = 21;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 18;
+  private static final int METHODID_DELETE_MEMBERSHIP = 19;
+  private static final int METHODID_CREATE_REACTION = 20;
+  private static final int METHODID_LIST_REACTIONS = 21;
+  private static final int METHODID_DELETE_REACTION = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3279,6 +3381,11 @@ public final class ChatServiceGrpc {
         case METHODID_CREATE_MEMBERSHIP:
           serviceImpl.createMembership(
               (com.google.chat.v1.CreateMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Membership>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBERSHIP:
+          serviceImpl.updateMembership(
+              (com.google.chat.v1.UpdateMembershipRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.Membership>) responseObserver);
           break;
         case METHODID_DELETE_MEMBERSHIP:
@@ -3428,6 +3535,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.CreateMembershipRequest, com.google.chat.v1.Membership>(
                     service, METHODID_CREATE_MEMBERSHIP)))
         .addMethod(
+            getUpdateMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>(
+                    service, METHODID_UPDATE_MEMBERSHIP)))
+        .addMethod(
             getDeleteMembershipMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3520,6 +3633,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getCompleteImportSpaceMethod())
                       .addMethod(getFindDirectMessageMethod())
                       .addMethod(getCreateMembershipMethod())
+                      .addMethod(getUpdateMembershipMethod())
                       .addMethod(getDeleteMembershipMethod())
                       .addMethod(getCreateReactionMethod())
                       .addMethod(getListReactionsMethod())
