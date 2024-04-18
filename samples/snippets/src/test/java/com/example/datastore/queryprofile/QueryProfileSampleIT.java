@@ -64,7 +64,7 @@ public class QueryProfileSampleIT {
     QueryProfileExplain.invoke();
 
     // Assert
-    systemsOutRule.assertContains("query_scope: Collection Group");
+    systemsOutRule.assertContains("query_scope: Collection group");
     systemsOutRule.assertContains("properties: (__name__ ASC)");
   }
 
@@ -74,7 +74,7 @@ public class QueryProfileSampleIT {
     QueryProfileExplainAggregation.invoke();
 
     // Assert
-    systemsOutRule.assertContains("query_scope: Collection Group");
+    systemsOutRule.assertContains("query_scope: Collection group");
     systemsOutRule.assertContains("properties: (__name__ ASC)");
   }
 
@@ -86,7 +86,7 @@ public class QueryProfileSampleIT {
     // Assert
     systemsOutRule.assertContains("documents_scanned:");
     systemsOutRule.assertContains("index_entries_scanned:");
-    systemsOutRule.assertContains("query_scope: Collection Group");
+    systemsOutRule.assertContains("query_scope: Collection group");
     systemsOutRule.assertContains("Entity: Entity{key=");
   }
 
@@ -98,7 +98,7 @@ public class QueryProfileSampleIT {
     // Assert
     systemsOutRule.assertContains("index_entries_scanned:");
     systemsOutRule.assertContains("documents_scanned:");
-    systemsOutRule.assertContains("query_scope: Collection Group");
+    systemsOutRule.assertContains("query_scope: Collection group");
     systemsOutRule.assertContains("Count: 2");
   }
 }

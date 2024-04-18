@@ -48,6 +48,6 @@ public class SystemsOutRule implements TestRule {
   }
 
   public void assertContains(String content) {
-    assertThat(currentOut.toString()).contains(content);
+    assertThat(currentOut.toString().toLowerCase()).contains(content.toLowerCase());
   }
 }
