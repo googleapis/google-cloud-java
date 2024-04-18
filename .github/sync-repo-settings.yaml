@@ -14,7 +14,6 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
@@ -31,7 +30,6 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
   - pattern: 1.13.x
     isAdminEnforced: true
@@ -45,7 +43,6 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
 permissionRules:
   - team: yoshi-admins
