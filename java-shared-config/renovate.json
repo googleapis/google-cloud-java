@@ -15,9 +15,9 @@
   "packageRules": [
     {
       "packagePatterns": [
-        "^com.google.guava:"
+        "^com.google.auto.value:"
       ],
-      "versionScheme": "docker"
+      "enabled": false
     },
     {
       "packagePatterns": [
