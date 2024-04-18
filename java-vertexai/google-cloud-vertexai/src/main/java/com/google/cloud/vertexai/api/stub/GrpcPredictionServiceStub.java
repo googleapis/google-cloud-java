@@ -16,8 +16,6 @@
 
 package com.google.cloud.vertexai.api.stub;
 
-import static com.google.cloud.vertexai.api.PredictionServiceClient.ListLocationsPagedResponse;
-
 import com.google.api.HttpBody;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -42,6 +40,7 @@ import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.PredictRequest;
 import com.google.cloud.vertexai.api.PredictResponse;
+import com.google.cloud.vertexai.api.PredictionServiceClient.ListLocationsPagedResponse;
 import com.google.cloud.vertexai.api.RawPredictRequest;
 import com.google.cloud.vertexai.api.StreamDirectPredictRequest;
 import com.google.cloud.vertexai.api.StreamDirectPredictResponse;
