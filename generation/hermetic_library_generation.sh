@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script should be run at the root directory of google-cloud-java
+# This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
 # 1. compare generation configurations in the current branch (with which the
@@ -8,6 +8,18 @@
 # 2. generate changed libraries using library_generation image;
 # 3. commit the change to the pull request
 # 4. edit the pr body with generated pull request description, if applicable.
+
+# The following commands need to be installed before running the script:
+# 1. git
+# 2. gh
+# 3. docker
+
+# The parameters of this script is:
+# 1. target_branch, the branch into which the pull request is merged.
+# 2. current_branch, the branch with which the pull request is associated.
+# 3. image_tag, the tag of gcr.io/cloud-devrel-public-resources/java-library-generation.
+# 3. [optional] generation_config, the path to the generation configuration,
+# the default value is generation_config.yaml in the repository root.
 while [[ $# -gt 0 ]]; do
 key="$1"
 case "${key}" in
