@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       # the branch into which the pull request is merged
-      base_branch: lts-11
+      base_branch: main
     steps:
     - uses: actions/checkout@v4
     - name: Update googleapis commit to latest
