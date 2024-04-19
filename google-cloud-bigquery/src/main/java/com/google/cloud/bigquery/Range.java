@@ -19,6 +19,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
+import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
@@ -43,6 +44,18 @@ public abstract class Range implements Serializable {
 
   @Nullable
   abstract String getEndInner();
+
+  /** Returns the start and end values of this range. */
+  public ImmutableMap<String, String> getValues() {
+    ImmutableMap.Builder<String, String> result = ImmutableMap.builder();
+    if (!getStart().isNull()) {
+      result.put("start", getStart().getStringValue());
+    }
+    if (!getEnd().isNull()) {
+      result.put("end", getEnd().getStringValue());
+    }
+    return result.build();
+  }
 
   /** Returns the type of the range. */
   @Nullable

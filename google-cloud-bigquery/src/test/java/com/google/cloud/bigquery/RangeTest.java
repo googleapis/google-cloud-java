@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 
 public class RangeTest {
@@ -77,6 +78,17 @@ public class RangeTest {
     compareRange(RANGE_TIMESTAMP, RANGE_TIMESTAMP.toBuilder().build());
   }
 
+  @Test
+  public void testGetValues() {
+    compareRange(null, null, Range.of("[null, NULL)").getValues());
+    compareRange(null, null, Range.of("[unbounded, UNBOUNDED)").getValues());
+    compareRange(null, null, Range.of("[nUlL, uNbOuNdEd)").getValues());
+
+    compareRange(null, "2020-12-31", Range.of("[null, 2020-12-31)").getValues());
+    compareRange("2020-01-01", null, Range.of("[2020-01-01, null)").getValues());
+    compareRange("2020-01-01", "2020-12-31", Range.of("[2020-01-01, 2020-12-31)").getValues());
+  }
+
   private static void compareRange(Range expected, Range value) {
     assertEquals(expected.getStart(), value.getStart());
     assertEquals(expected.getEnd(), value.getEnd());
@@ -96,5 +108,11 @@ public class RangeTest {
     } else {
       assertEquals(expectedEnd, range.getEnd().getStringValue());
     }
+  }
+
+  private static void compareRange(
+      String expectedStart, String expectedEnd, ImmutableMap<String, String> values) {
+    assertEquals(expectedStart, values.get("start"));
+    assertEquals(expectedEnd, values.get("end"));
   }
 }
