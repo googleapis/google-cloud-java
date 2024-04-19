@@ -40,7 +40,7 @@ import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /** A Google BigQuery Job statistics. */
 public abstract class JobStatistics implements Serializable {
 
-  private static final long serialVersionUID = 1433024714741660399L;
+  private static final long serialVersionUID = 1433024714741660400L;
 
   private final Long creationTime;
   private final Long endTime;
@@ -51,6 +51,7 @@ public abstract class JobStatistics implements Serializable {
   private final List<ReservationUsage> reservationUsage;
   private final TransactionInfo transactionInfo;
   private final SessionInfo sessionInfo;
+  private final Long totalSlotMs;
 
   /** A Google BigQuery Copy Job statistics. */
   public static class CopyStatistics extends JobStatistics {
@@ -390,7 +391,7 @@ public abstract class JobStatistics implements Serializable {
   /** A Google BigQuery Query Job statistics. */
   public static class QueryStatistics extends JobStatistics {
 
-    private static final long serialVersionUID = 7539354109226732353L;
+    private static final long serialVersionUID = 7539354109226732354L;
 
     private final BiEngineStats biEngineStats;
     private final Integer billingTier;
@@ -407,7 +408,6 @@ public abstract class JobStatistics implements Serializable {
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
     private final Long totalPartitionsProcessed;
-    private final Long totalSlotMs;
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
@@ -567,7 +567,6 @@ public abstract class JobStatistics implements Serializable {
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
       private Long totalPartitionsProcessed;
-      private Long totalSlotMs;
       private List<QueryStage> queryPlan;
       private List<TimelineSample> timeline;
       private Schema schema;
@@ -599,7 +598,6 @@ public abstract class JobStatistics implements Serializable {
           this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
           this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
           this.totalPartitionsProcessed = statisticsPb.getQuery().getTotalPartitionsProcessed();
-          this.totalSlotMs = statisticsPb.getQuery().getTotalSlotMs();
           if (statisticsPb.getQuery().getStatementType() != null) {
             this.statementType = StatementType.valueOf(statisticsPb.getQuery().getStatementType());
           }
@@ -719,11 +717,6 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
-      Builder setTotalSlotMs(Long totalSlotMs) {
-        this.totalSlotMs = totalSlotMs;
-        return self();
-      }
-
       Builder setQueryPlan(List<QueryStage> queryPlan) {
         this.queryPlan = queryPlan;
         return self();
@@ -777,7 +770,6 @@ public abstract class JobStatistics implements Serializable {
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
       this.totalPartitionsProcessed = builder.totalPartitionsProcessed;
-      this.totalSlotMs = builder.totalSlotMs;
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
@@ -872,11 +864,6 @@ public abstract class JobStatistics implements Serializable {
     /** Total number of partitions processed from all partitioned tables referenced in the job. */
     public Long getTotalPartitionsProcessed() {
       return totalPartitionsProcessed;
-    }
-
-    /** Returns the slot-milliseconds consumed by the query. */
-    public Long getTotalSlotMs() {
-      return totalSlotMs;
     }
 
     /**
@@ -984,7 +971,6 @@ public abstract class JobStatistics implements Serializable {
       queryStatisticsPb.setTotalBytesBilled(totalBytesBilled);
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
       queryStatisticsPb.setTotalPartitionsProcessed(totalPartitionsProcessed);
-      queryStatisticsPb.setTotalSlotMs(totalSlotMs);
       if (ddlTargetTable != null) {
         queryStatisticsPb.setDdlTargetTable(ddlTargetTable.toPb());
       }
@@ -1589,6 +1575,7 @@ public abstract class JobStatistics implements Serializable {
     private List<ReservationUsage> reservationUsage;
     private TransactionInfo transactionInfo;
     private SessionInfo sessionInfo;
+    private Long totalSlotMs;
 
     protected Builder() {}
 
@@ -1598,6 +1585,9 @@ public abstract class JobStatistics implements Serializable {
       this.startTime = statisticsPb.getStartTime();
       this.numChildJobs = statisticsPb.getNumChildJobs();
       this.parentJobId = statisticsPb.getParentJobId();
+      if (statisticsPb.getTotalSlotMs() != null) {
+        this.totalSlotMs = statisticsPb.getTotalSlotMs();
+      }
       if (statisticsPb.getScriptStatistics() != null) {
         this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
       }
@@ -1633,6 +1623,11 @@ public abstract class JobStatistics implements Serializable {
       return self();
     }
 
+    B setTotalSlotMs(Long totalSlotMs) {
+      this.totalSlotMs = totalSlotMs;
+      return self();
+    }
+
     abstract T build();
   }
 
@@ -1646,6 +1641,7 @@ public abstract class JobStatistics implements Serializable {
     this.reservationUsage = builder.reservationUsage;
     this.transactionInfo = builder.transactionInfo;
     this.sessionInfo = builder.sessionInfo;
+    this.totalSlotMs = builder.totalSlotMs;
   }
 
   /** Returns the creation time of the job in milliseconds since epoch. */
@@ -1699,6 +1695,11 @@ public abstract class JobStatistics implements Serializable {
     return sessionInfo;
   }
 
+  /** Returns the slot-milliseconds for the job. */
+  public Long getTotalSlotMs() {
+    return totalSlotMs;
+  }
+
   ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("creationTime", creationTime)
@@ -1709,7 +1710,8 @@ public abstract class JobStatistics implements Serializable {
         .add("scriptStatistics", scriptStatistics)
         .add("reservationUsage", reservationUsage)
         .add("transactionInfo", transactionInfo)
-        .add("sessionInfo", sessionInfo);
+        .add("sessionInfo", sessionInfo)
+        .add("totalSlotMs", totalSlotMs);
   }
 
   @Override
@@ -1727,7 +1729,8 @@ public abstract class JobStatistics implements Serializable {
         scriptStatistics,
         reservationUsage,
         transactionInfo,
-        sessionInfo);
+        sessionInfo,
+        totalSlotMs);
   }
 
   final boolean baseEquals(JobStatistics jobStatistics) {
@@ -1742,6 +1745,7 @@ public abstract class JobStatistics implements Serializable {
     statistics.setStartTime(startTime);
     statistics.setNumChildJobs(numChildJobs);
     statistics.setParentJobId(parentJobId);
+    statistics.setTotalSlotMs(totalSlotMs);
     if (scriptStatistics != null) {
       statistics.setScriptStatistics(scriptStatistics.toPb());
     }
