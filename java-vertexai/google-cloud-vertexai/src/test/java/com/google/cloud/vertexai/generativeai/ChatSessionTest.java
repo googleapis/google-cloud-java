@@ -41,11 +41,9 @@ import com.google.cloud.vertexai.api.Schema;
 import com.google.cloud.vertexai.api.Tool;
 import com.google.cloud.vertexai.api.Type;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -309,12 +307,15 @@ public final class ChatSessionTest {
   public void testChatSessionMergeHistoryToRootChatSession() throws Exception {
 
     // (Arrange) Set up the return value of the generateContent
-    VertexAI vertexAi = new VertexAI(PROJECT, LOCATION);
-    GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
-    field.setAccessible(true);
-    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
+    VertexAI vertexAi =
+        new VertexAI.Builder()
+            .setProjectId(PROJECT)
+            .setLocation(LOCATION)
+            .setPredictionClientSupplier(() -> mockPredictionServiceClient)
+            .build();
+
+    GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))

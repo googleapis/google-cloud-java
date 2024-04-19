@@ -32,6 +32,7 @@ import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -129,6 +130,7 @@ public final class GenerativeModel {
      * names can be found at
      * https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
      */
+    @CanIgnoreReturnValue
     public Builder setModelName(String modelName) {
       checkArgument(
           !Strings.isNullOrEmpty(modelName),
@@ -144,6 +146,7 @@ public final class GenerativeModel {
      * Sets {@link com.google.cloud.vertexai.VertexAI} that contains the default configs for the
      * generative model. This is required for building a GenerativeModel instance.
      */
+    @CanIgnoreReturnValue
     public Builder setVertexAi(VertexAI vertexAi) {
       checkNotNull(vertexAi, "VertexAI can't be null.");
       this.vertexAi = vertexAi;
@@ -154,6 +157,7 @@ public final class GenerativeModel {
      * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
      * interact with the generative model.
      */
+    @CanIgnoreReturnValue
     public Builder setGenerationConfig(GenerationConfig generationConfig) {
       checkNotNull(generationConfig, "GenerationConfig can't be null.");
       this.generationConfig = generationConfig;
@@ -164,6 +168,7 @@ public final class GenerativeModel {
      * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
      * default to interact with the generative model.
      */
+    @CanIgnoreReturnValue
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
       checkNotNull(
           safetySettings,
@@ -176,6 +181,7 @@ public final class GenerativeModel {
      * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
      * interact with the generative model.
      */
+    @CanIgnoreReturnValue
     public Builder setTools(List<Tool> tools) {
       checkNotNull(tools, "tools can't be null. Use an empty list if no tool is to be used.");
       this.tools = ImmutableList.copyOf(tools);
