@@ -754,6 +754,47 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+      getUpdateMembershipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMembership",
+      requestType = com.google.chat.v1.UpdateMembershipRequest.class,
+      responseType = com.google.chat.v1.Membership.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+      getUpdateMembershipMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+        getUpdateMembershipMethod;
+    if ((getUpdateMembershipMethod = ChatServiceGrpc.getUpdateMembershipMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateMembershipMethod = ChatServiceGrpc.getUpdateMembershipMethod) == null) {
+          ChatServiceGrpc.getUpdateMembershipMethod =
+              getUpdateMembershipMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMembership"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateMembershipRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Membership.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("UpdateMembership"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.DeleteMembershipRequest, com.google.chat.v1.Membership>
       getDeleteMembershipMethod;
 
@@ -969,11 +1010,11 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a message in a Google Chat space. For an example, see [Create a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+     * Creates a message in a Google Chat space. For an example, see [Send a
+     * message](https://developers.google.com/workspace/chat/create-messages).
      * Calling this method requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth) and
-     * supports the following authentication types:
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * and supports the following authentication types:
      * - For text messages, user authentication or app authentication are
      * supported.
      * - For card messages, only app authentication is supported. (Only Chat apps
@@ -995,7 +1036,7 @@ public final class ChatServiceGrpc {
      * messages from blocked members and spaces. For an example, see
      * [List messages](/chat/api/guides/v1/messages/list).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void listMessages(
@@ -1009,24 +1050,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Lists memberships in a space. For an example, see [List
-     * memberships](https://developers.google.com/chat/api/guides/v1/members/list).
-     * Listing memberships with
-     * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * Lists memberships in a space. For an example, see [List users and Google
+     * Chat apps in a
+     * space](https://developers.google.com/workspace/chat/list-members). Listing
+     * memberships with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * lists memberships in spaces that the Chat app has
      * access to, but excludes Chat app memberships,
      * including its own. Listing memberships with
      * [User
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void listMemberships(
@@ -1041,15 +1082,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a membership. For an example, see
-     * [Get a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+     * [Get details about a user's or Google Chat app's
+     * membership](https://developers.google.com/workspace/chat/get-members).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void getMembership(
@@ -1064,15 +1105,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a message.
-     * For an example, see [Read a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+     * For an example, see [Get details about a
+     * message](https://developers.google.com/workspace/chat/get-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -1091,14 +1132,14 @@ public final class ChatServiceGrpc {
      * method uses a `patch` request while the `update` method uses a `put`
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+     * message](https://developers.google.com/workspace/chat/update-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -1116,14 +1157,14 @@ public final class ChatServiceGrpc {
      * <pre>
      * Deletes a message.
      * For an example, see [Delete a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+     * message](https://developers.google.com/workspace/chat/delete-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -1141,12 +1182,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
-     * API](https://developers.google.com/chat/api/reference/rest/v1/media/download).
+     * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
      * For an example, see
-     * [Get a message
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
+     * [Get metadata about a message
+     * attachment](https://developers.google.com/workspace/chat/get-media-attachments).
      * Requires [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     default void getAttachment(
@@ -1162,9 +1203,9 @@ public final class ChatServiceGrpc {
      * <pre>
      * Uploads an attachment. For an example, see
      * [Upload media as a file
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
+     * attachment](https://developers.google.com/workspace/chat/upload-media-attachments).
      * Requires user
-     * [authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * You can upload attachments up to 200 MB. Certain file types aren't
      * supported. For details, see [File types blocked by Google
      * Chat](https://support.google.com/chat/answer/7651457?&amp;co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%20Google%20Chat).
@@ -1184,14 +1225,14 @@ public final class ChatServiceGrpc {
      * Lists spaces the caller is a member of. Group chats and DMs aren't listed
      * until the first message is sent. For an example, see
      * [List
-     * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+     * spaces](https://developers.google.com/workspace/chat/list-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
      * </pre>
@@ -1207,14 +1248,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a space. For an example, see
-     * [Get a space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+     * [Get details about a
+     * space](https://developers.google.com/workspace/chat/get-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void getSpace(
@@ -1229,12 +1271,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a named space. Spaces grouped by topics aren't supported. For an
      * example, see [Create a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void createSpace(
@@ -1251,8 +1293,8 @@ public final class ChatServiceGrpc {
      * Creates a space and adds specified users to it. The calling user is
      * automatically added to the space, and shouldn't be specified as a
      * membership in the request. For an example, see
-     * [Set up a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+     * [Set up a space with initial
+     * members](https://developers.google.com/workspace/chat/set-up-spaces).
      * To specify the human members to add, add memberships with the appropriate
      * `member.name` in the `SetUpSpaceRequest`. To add a human user, use
      * `users/{user}`, where `{user}` can be the email address for the user. For
@@ -1272,8 +1314,8 @@ public final class ChatServiceGrpc {
      * can only use this method to set up a DM with the calling app. To add the
      * calling app as a member of a space or an existing DM between two human
      * users, see
-     * [create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * If a DM already exists between two users, even when one user blocks the
      * other at the time a request is made, then the existing DM is returned.
      * Spaces with threaded replies aren't supported. If you receive the error
@@ -1281,7 +1323,7 @@ public final class ChatServiceGrpc {
      * `displayName`. An existing space within the Google Workspace organization
      * might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void setUpSpace(
@@ -1296,12 +1338,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a space. For an example, see
      * [Update a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+     * space](https://developers.google.com/workspace/chat/update-spaces).
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void updateSpace(
@@ -1319,9 +1361,9 @@ public final class ChatServiceGrpc {
      * that the space's child resources—like messages posted in the space and
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/delete).
+     * space](https://developers.google.com/workspace/chat/delete-spaces).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * from a user who has permission to delete the space.
      * </pre>
      */
@@ -1337,11 +1379,11 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Completes the
-     * [import process](https://developers.google.com/chat/api/guides/import-data)
+     * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
      * Requires app authentication and domain-wide delegation. For more
      * information, see [Authorize Google Chat apps to import
-     * data](https://developers.google.com/chat/api/guides/authorize-import).
+     * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
     default void completeImportSpace(
@@ -1361,17 +1403,17 @@ public final class ChatServiceGrpc {
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
      * With [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * returns the direct message space between the specified user and the
      * authenticated user.
      * With [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * or [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     default void findDirectMessage(
@@ -1387,13 +1429,13 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a human membership or app membership for the calling app. Creating
      * memberships for other apps isn't supported. For an example, see
-     * [ Create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or a Google Chat app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * When creating a membership, if the specified member has their auto-accept
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space. Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` in the
      * `CreateMembershipRequest`:
      * - To add the calling app to a space or a direct message between two human
@@ -1419,11 +1461,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a membership. For an example, see
-     * [Delete a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
-     * Requires [user
+     * Updates a membership. Requires [user
      * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    default void updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Membership> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMembershipMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a membership. For an example, see
+     * [Remove a user or a Google Chat app from a
+     * space](https://developers.google.com/workspace/chat/delete-members).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void deleteMembership(
@@ -1437,12 +1494,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. For an example, see
-     * [Create a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create).
+     * Creates a reaction and adds it to a message. Only unicode emojis are
+     * supported. For an example, see
+     * [Add a reaction to a
+     * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
-     * Only unicode emoji are supported.
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void createReaction(
@@ -1457,10 +1514,10 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists reactions to a message. For an example, see
-     * [List
-     * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list).
+     * [List reactions for a
+     * message](https://developers.google.com/workspace/chat/list-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void listReactions(
@@ -1474,11 +1531,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. For an example, see
+     * Deletes a reaction to a message. Only unicode emojis are supported.
+     * For an example, see
      * [Delete a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete).
+     * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     default void deleteReaction(
@@ -1529,11 +1587,11 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a message in a Google Chat space. For an example, see [Create a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+     * Creates a message in a Google Chat space. For an example, see [Send a
+     * message](https://developers.google.com/workspace/chat/create-messages).
      * Calling this method requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth) and
-     * supports the following authentication types:
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * and supports the following authentication types:
      * - For text messages, user authentication or app authentication are
      * supported.
      * - For card messages, only app authentication is supported. (Only Chat apps
@@ -1557,7 +1615,7 @@ public final class ChatServiceGrpc {
      * messages from blocked members and spaces. For an example, see
      * [List messages](/chat/api/guides/v1/messages/list).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void listMessages(
@@ -1573,24 +1631,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Lists memberships in a space. For an example, see [List
-     * memberships](https://developers.google.com/chat/api/guides/v1/members/list).
-     * Listing memberships with
-     * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * Lists memberships in a space. For an example, see [List users and Google
+     * Chat apps in a
+     * space](https://developers.google.com/workspace/chat/list-members). Listing
+     * memberships with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * lists memberships in spaces that the Chat app has
      * access to, but excludes Chat app memberships,
      * including its own. Listing memberships with
      * [User
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void listMemberships(
@@ -1607,15 +1665,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a membership. For an example, see
-     * [Get a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+     * [Get details about a user's or Google Chat app's
+     * membership](https://developers.google.com/workspace/chat/get-members).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void getMembership(
@@ -1632,15 +1690,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a message.
-     * For an example, see [Read a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+     * For an example, see [Get details about a
+     * message](https://developers.google.com/workspace/chat/get-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -1660,14 +1718,14 @@ public final class ChatServiceGrpc {
      * method uses a `patch` request while the `update` method uses a `put`
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+     * message](https://developers.google.com/workspace/chat/update-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -1687,14 +1745,14 @@ public final class ChatServiceGrpc {
      * <pre>
      * Deletes a message.
      * For an example, see [Delete a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+     * message](https://developers.google.com/workspace/chat/delete-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -1714,12 +1772,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
-     * API](https://developers.google.com/chat/api/reference/rest/v1/media/download).
+     * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
      * For an example, see
-     * [Get a message
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
+     * [Get metadata about a message
+     * attachment](https://developers.google.com/workspace/chat/get-media-attachments).
      * Requires [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public void getAttachment(
@@ -1737,9 +1795,9 @@ public final class ChatServiceGrpc {
      * <pre>
      * Uploads an attachment. For an example, see
      * [Upload media as a file
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
+     * attachment](https://developers.google.com/workspace/chat/upload-media-attachments).
      * Requires user
-     * [authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * You can upload attachments up to 200 MB. Certain file types aren't
      * supported. For details, see [File types blocked by Google
      * Chat](https://support.google.com/chat/answer/7651457?&amp;co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%20Google%20Chat).
@@ -1761,14 +1819,14 @@ public final class ChatServiceGrpc {
      * Lists spaces the caller is a member of. Group chats and DMs aren't listed
      * until the first message is sent. For an example, see
      * [List
-     * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+     * spaces](https://developers.google.com/workspace/chat/list-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
      * </pre>
@@ -1785,14 +1843,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a space. For an example, see
-     * [Get a space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+     * [Get details about a
+     * space](https://developers.google.com/workspace/chat/get-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void getSpace(
@@ -1808,12 +1867,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a named space. Spaces grouped by topics aren't supported. For an
      * example, see [Create a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void createSpace(
@@ -1832,8 +1891,8 @@ public final class ChatServiceGrpc {
      * Creates a space and adds specified users to it. The calling user is
      * automatically added to the space, and shouldn't be specified as a
      * membership in the request. For an example, see
-     * [Set up a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+     * [Set up a space with initial
+     * members](https://developers.google.com/workspace/chat/set-up-spaces).
      * To specify the human members to add, add memberships with the appropriate
      * `member.name` in the `SetUpSpaceRequest`. To add a human user, use
      * `users/{user}`, where `{user}` can be the email address for the user. For
@@ -1853,8 +1912,8 @@ public final class ChatServiceGrpc {
      * can only use this method to set up a DM with the calling app. To add the
      * calling app as a member of a space or an existing DM between two human
      * users, see
-     * [create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * If a DM already exists between two users, even when one user blocks the
      * other at the time a request is made, then the existing DM is returned.
      * Spaces with threaded replies aren't supported. If you receive the error
@@ -1862,7 +1921,7 @@ public final class ChatServiceGrpc {
      * `displayName`. An existing space within the Google Workspace organization
      * might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void setUpSpace(
@@ -1878,12 +1937,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a space. For an example, see
      * [Update a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+     * space](https://developers.google.com/workspace/chat/update-spaces).
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void updateSpace(
@@ -1903,9 +1962,9 @@ public final class ChatServiceGrpc {
      * that the space's child resources—like messages posted in the space and
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/delete).
+     * space](https://developers.google.com/workspace/chat/delete-spaces).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * from a user who has permission to delete the space.
      * </pre>
      */
@@ -1923,11 +1982,11 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Completes the
-     * [import process](https://developers.google.com/chat/api/guides/import-data)
+     * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
      * Requires app authentication and domain-wide delegation. For more
      * information, see [Authorize Google Chat apps to import
-     * data](https://developers.google.com/chat/api/guides/authorize-import).
+     * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
     public void completeImportSpace(
@@ -1949,17 +2008,17 @@ public final class ChatServiceGrpc {
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
      * With [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * returns the direct message space between the specified user and the
      * authenticated user.
      * With [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * or [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public void findDirectMessage(
@@ -1977,13 +2036,13 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a human membership or app membership for the calling app. Creating
      * memberships for other apps isn't supported. For an example, see
-     * [ Create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or a Google Chat app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * When creating a membership, if the specified member has their auto-accept
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space. Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` in the
      * `CreateMembershipRequest`:
      * - To add the calling app to a space or a direct message between two human
@@ -2011,11 +2070,28 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a membership. For an example, see
-     * [Delete a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
-     * Requires [user
+     * Updates a membership. Requires [user
      * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public void updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Membership> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a membership. For an example, see
+     * [Remove a user or a Google Chat app from a
+     * space](https://developers.google.com/workspace/chat/delete-members).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void deleteMembership(
@@ -2031,12 +2107,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. For an example, see
-     * [Create a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create).
+     * Creates a reaction and adds it to a message. Only unicode emojis are
+     * supported. For an example, see
+     * [Add a reaction to a
+     * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
-     * Only unicode emoji are supported.
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void createReaction(
@@ -2053,10 +2129,10 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists reactions to a message. For an example, see
-     * [List
-     * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list).
+     * [List reactions for a
+     * message](https://developers.google.com/workspace/chat/list-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void listReactions(
@@ -2072,11 +2148,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. For an example, see
+     * Deletes a reaction to a message. Only unicode emojis are supported.
+     * For an example, see
      * [Delete a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete).
+     * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public void deleteReaction(
@@ -2113,11 +2190,11 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a message in a Google Chat space. For an example, see [Create a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+     * Creates a message in a Google Chat space. For an example, see [Send a
+     * message](https://developers.google.com/workspace/chat/create-messages).
      * Calling this method requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth) and
-     * supports the following authentication types:
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * and supports the following authentication types:
      * - For text messages, user authentication or app authentication are
      * supported.
      * - For card messages, only app authentication is supported. (Only Chat apps
@@ -2138,7 +2215,7 @@ public final class ChatServiceGrpc {
      * messages from blocked members and spaces. For an example, see
      * [List messages](/chat/api/guides/v1/messages/list).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.ListMessagesResponse listMessages(
@@ -2151,24 +2228,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Lists memberships in a space. For an example, see [List
-     * memberships](https://developers.google.com/chat/api/guides/v1/members/list).
-     * Listing memberships with
-     * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * Lists memberships in a space. For an example, see [List users and Google
+     * Chat apps in a
+     * space](https://developers.google.com/workspace/chat/list-members). Listing
+     * memberships with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * lists memberships in spaces that the Chat app has
      * access to, but excludes Chat app memberships,
      * including its own. Listing memberships with
      * [User
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.ListMembershipsResponse listMemberships(
@@ -2182,15 +2259,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a membership. For an example, see
-     * [Get a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+     * [Get details about a user's or Google Chat app's
+     * membership](https://developers.google.com/workspace/chat/get-members).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Membership getMembership(
@@ -2204,15 +2281,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a message.
-     * For an example, see [Read a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+     * For an example, see [Get details about a
+     * message](https://developers.google.com/workspace/chat/get-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -2230,14 +2307,14 @@ public final class ChatServiceGrpc {
      * method uses a `patch` request while the `update` method uses a `put`
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+     * message](https://developers.google.com/workspace/chat/update-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -2254,14 +2331,14 @@ public final class ChatServiceGrpc {
      * <pre>
      * Deletes a message.
      * For an example, see [Delete a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+     * message](https://developers.google.com/workspace/chat/delete-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -2278,12 +2355,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
-     * API](https://developers.google.com/chat/api/reference/rest/v1/media/download).
+     * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
      * For an example, see
-     * [Get a message
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
+     * [Get metadata about a message
+     * attachment](https://developers.google.com/workspace/chat/get-media-attachments).
      * Requires [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.chat.v1.Attachment getAttachment(
@@ -2298,9 +2375,9 @@ public final class ChatServiceGrpc {
      * <pre>
      * Uploads an attachment. For an example, see
      * [Upload media as a file
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
+     * attachment](https://developers.google.com/workspace/chat/upload-media-attachments).
      * Requires user
-     * [authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * You can upload attachments up to 200 MB. Certain file types aren't
      * supported. For details, see [File types blocked by Google
      * Chat](https://support.google.com/chat/answer/7651457?&amp;co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%20Google%20Chat).
@@ -2319,14 +2396,14 @@ public final class ChatServiceGrpc {
      * Lists spaces the caller is a member of. Group chats and DMs aren't listed
      * until the first message is sent. For an example, see
      * [List
-     * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+     * spaces](https://developers.google.com/workspace/chat/list-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
      * </pre>
@@ -2342,14 +2419,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a space. For an example, see
-     * [Get a space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+     * [Get details about a
+     * space](https://developers.google.com/workspace/chat/get-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request) {
@@ -2363,12 +2441,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a named space. Spaces grouped by topics aren't supported. For an
      * example, see [Create a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request) {
@@ -2383,8 +2461,8 @@ public final class ChatServiceGrpc {
      * Creates a space and adds specified users to it. The calling user is
      * automatically added to the space, and shouldn't be specified as a
      * membership in the request. For an example, see
-     * [Set up a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+     * [Set up a space with initial
+     * members](https://developers.google.com/workspace/chat/set-up-spaces).
      * To specify the human members to add, add memberships with the appropriate
      * `member.name` in the `SetUpSpaceRequest`. To add a human user, use
      * `users/{user}`, where `{user}` can be the email address for the user. For
@@ -2404,8 +2482,8 @@ public final class ChatServiceGrpc {
      * can only use this method to set up a DM with the calling app. To add the
      * calling app as a member of a space or an existing DM between two human
      * users, see
-     * [create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * If a DM already exists between two users, even when one user blocks the
      * other at the time a request is made, then the existing DM is returned.
      * Spaces with threaded replies aren't supported. If you receive the error
@@ -2413,7 +2491,7 @@ public final class ChatServiceGrpc {
      * `displayName`. An existing space within the Google Workspace organization
      * might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Space setUpSpace(com.google.chat.v1.SetUpSpaceRequest request) {
@@ -2427,12 +2505,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a space. For an example, see
      * [Update a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+     * space](https://developers.google.com/workspace/chat/update-spaces).
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request) {
@@ -2448,9 +2526,9 @@ public final class ChatServiceGrpc {
      * that the space's child resources—like messages posted in the space and
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/delete).
+     * space](https://developers.google.com/workspace/chat/delete-spaces).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * from a user who has permission to delete the space.
      * </pre>
      */
@@ -2464,11 +2542,11 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Completes the
-     * [import process](https://developers.google.com/chat/api/guides/import-data)
+     * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
      * Requires app authentication and domain-wide delegation. For more
      * information, see [Authorize Google Chat apps to import
-     * data](https://developers.google.com/chat/api/guides/authorize-import).
+     * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
     public com.google.chat.v1.CompleteImportSpaceResponse completeImportSpace(
@@ -2486,17 +2564,17 @@ public final class ChatServiceGrpc {
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
      * With [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * returns the direct message space between the specified user and the
      * authenticated user.
      * With [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * or [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.chat.v1.Space findDirectMessage(
@@ -2511,13 +2589,13 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a human membership or app membership for the calling app. Creating
      * memberships for other apps isn't supported. For an example, see
-     * [ Create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or a Google Chat app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * When creating a membership, if the specified member has their auto-accept
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space. Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` in the
      * `CreateMembershipRequest`:
      * - To add the calling app to a space or a direct message between two human
@@ -2542,11 +2620,25 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a membership. For an example, see
-     * [Delete a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
-     * Requires [user
+     * Updates a membership. Requires [user
      * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public com.google.chat.v1.Membership updateMembership(
+        com.google.chat.v1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a membership. For an example, see
+     * [Remove a user or a Google Chat app from a
+     * space](https://developers.google.com/workspace/chat/delete-members).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Membership deleteMembership(
@@ -2559,12 +2651,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. For an example, see
-     * [Create a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create).
+     * Creates a reaction and adds it to a message. Only unicode emojis are
+     * supported. For an example, see
+     * [Add a reaction to a
+     * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
-     * Only unicode emoji are supported.
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.Reaction createReaction(
@@ -2578,10 +2670,10 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists reactions to a message. For an example, see
-     * [List
-     * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list).
+     * [List reactions for a
+     * message](https://developers.google.com/workspace/chat/list-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.chat.v1.ListReactionsResponse listReactions(
@@ -2594,11 +2686,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. For an example, see
+     * Deletes a reaction to a message. Only unicode emojis are supported.
+     * For an example, see
      * [Delete a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete).
+     * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.protobuf.Empty deleteReaction(
@@ -2632,11 +2725,11 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a message in a Google Chat space. For an example, see [Create a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+     * Creates a message in a Google Chat space. For an example, see [Send a
+     * message](https://developers.google.com/workspace/chat/create-messages).
      * Calling this method requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth) and
-     * supports the following authentication types:
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
+     * and supports the following authentication types:
      * - For text messages, user authentication or app authentication are
      * supported.
      * - For card messages, only app authentication is supported. (Only Chat apps
@@ -2657,7 +2750,7 @@ public final class ChatServiceGrpc {
      * messages from blocked members and spaces. For an example, see
      * [List messages](/chat/api/guides/v1/messages/list).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2671,24 +2764,24 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Lists memberships in a space. For an example, see [List
-     * memberships](https://developers.google.com/chat/api/guides/v1/members/list).
-     * Listing memberships with
-     * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * Lists memberships in a space. For an example, see [List users and Google
+     * Chat apps in a
+     * space](https://developers.google.com/workspace/chat/list-members). Listing
+     * memberships with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * lists memberships in spaces that the Chat app has
      * access to, but excludes Chat app memberships,
      * including its own. Listing memberships with
      * [User
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * lists memberships in spaces that the authenticated user has access to.
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2703,15 +2796,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a membership. For an example, see
-     * [Get a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+     * [Get details about a user's or Google Chat app's
+     * membership](https://developers.google.com/workspace/chat/get-members).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
@@ -2725,15 +2818,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a message.
-     * For an example, see [Read a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+     * For an example, see [Get details about a
+     * message](https://developers.google.com/workspace/chat/get-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
@@ -2752,14 +2845,14 @@ public final class ChatServiceGrpc {
      * method uses a `patch` request while the `update` method uses a `put`
      * request. We recommend using the `patch` method. For an example, see
      * [Update a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+     * message](https://developers.google.com/workspace/chat/update-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only update messages
      * created by the calling Chat app.
      * </pre>
@@ -2776,14 +2869,14 @@ public final class ChatServiceGrpc {
      * <pre>
      * Deletes a message.
      * For an example, see [Delete a
-     * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+     * message](https://developers.google.com/workspace/chat/delete-messages).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * When using app authentication, requests can only delete messages
      * created by the calling Chat app.
      * </pre>
@@ -2800,12 +2893,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
-     * API](https://developers.google.com/chat/api/reference/rest/v1/media/download).
+     * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
      * For an example, see
-     * [Get a message
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
+     * [Get metadata about a message
+     * attachment](https://developers.google.com/workspace/chat/get-media-attachments).
      * Requires [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Attachment>
@@ -2820,9 +2913,9 @@ public final class ChatServiceGrpc {
      * <pre>
      * Uploads an attachment. For an example, see
      * [Upload media as a file
-     * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
+     * attachment](https://developers.google.com/workspace/chat/upload-media-attachments).
      * Requires user
-     * [authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * You can upload attachments up to 200 MB. Certain file types aren't
      * supported. For details, see [File types blocked by Google
      * Chat](https://support.google.com/chat/answer/7651457?&amp;co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%20Google%20Chat).
@@ -2842,14 +2935,14 @@ public final class ChatServiceGrpc {
      * Lists spaces the caller is a member of. Group chats and DMs aren't listed
      * until the first message is sent. For an example, see
      * [List
-     * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+     * spaces](https://developers.google.com/workspace/chat/list-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * Lists spaces visible to the caller or authenticated user. Group chats
      * and DMs aren't listed until the first message is sent.
      * </pre>
@@ -2865,14 +2958,15 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Returns details about a space. For an example, see
-     * [Get a space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+     * [Get details about a
+     * space](https://developers.google.com/workspace/chat/get-spaces).
      * Requires
-     * [authentication](https://developers.google.com/chat/api/guides/auth).
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize).
      * Supports
      * [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * and [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> getSpace(
@@ -2887,12 +2981,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a named space. Spaces grouped by topics aren't supported. For an
      * example, see [Create a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/create-spaces).
      *  If you receive the error message `ALREADY_EXISTS` when creating
      *  a space, try a different `displayName`. An existing space within
      *  the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> createSpace(
@@ -2908,8 +3002,8 @@ public final class ChatServiceGrpc {
      * Creates a space and adds specified users to it. The calling user is
      * automatically added to the space, and shouldn't be specified as a
      * membership in the request. For an example, see
-     * [Set up a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+     * [Set up a space with initial
+     * members](https://developers.google.com/workspace/chat/set-up-spaces).
      * To specify the human members to add, add memberships with the appropriate
      * `member.name` in the `SetUpSpaceRequest`. To add a human user, use
      * `users/{user}`, where `{user}` can be the email address for the user. For
@@ -2929,8 +3023,8 @@ public final class ChatServiceGrpc {
      * can only use this method to set up a DM with the calling app. To add the
      * calling app as a member of a space or an existing DM between two human
      * users, see
-     * [create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * If a DM already exists between two users, even when one user blocks the
      * other at the time a request is made, then the existing DM is returned.
      * Spaces with threaded replies aren't supported. If you receive the error
@@ -2938,7 +3032,7 @@ public final class ChatServiceGrpc {
      * `displayName`. An existing space within the Google Workspace organization
      * might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> setUpSpace(
@@ -2953,12 +3047,12 @@ public final class ChatServiceGrpc {
      * <pre>
      * Updates a space. For an example, see
      * [Update a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+     * space](https://developers.google.com/workspace/chat/update-spaces).
      * If you're updating the `displayName` field and receive the error message
      * `ALREADY_EXISTS`, try a different display name.. An existing space within
      * the Google Workspace organization might already use this display name.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space> updateSpace(
@@ -2975,9 +3069,9 @@ public final class ChatServiceGrpc {
      * that the space's child resources—like messages posted in the space and
      * memberships in the space—are also deleted. For an example, see
      * [Delete a
-     * space](https://developers.google.com/chat/api/guides/v1/spaces/delete).
+     * space](https://developers.google.com/workspace/chat/delete-spaces).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * from a user who has permission to delete the space.
      * </pre>
      */
@@ -2992,11 +3086,11 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Completes the
-     * [import process](https://developers.google.com/chat/api/guides/import-data)
+     * [import process](https://developers.google.com/workspace/chat/import-data)
      * for the specified space and makes it visible to users.
      * Requires app authentication and domain-wide delegation. For more
      * information, see [Authorize Google Chat apps to import
-     * data](https://developers.google.com/chat/api/guides/authorize-import).
+     * data](https://developers.google.com/workspace/chat/authorize-import).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3015,17 +3109,17 @@ public final class ChatServiceGrpc {
      * see
      * [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
      * With [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * returns the direct message space between the specified user and the
      * authenticated user.
      * With [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts),
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
      * returns the direct message space between the specified user and the calling
      * Chat app.
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users)
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * or [app
-     * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Space>
@@ -3040,13 +3134,13 @@ public final class ChatServiceGrpc {
      * <pre>
      * Creates a human membership or app membership for the calling app. Creating
      * memberships for other apps isn't supported. For an example, see
-     * [ Create a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+     * [Invite or add a user or a Google Chat app to a
+     * space](https://developers.google.com/workspace/chat/create-members).
      * When creating a membership, if the specified member has their auto-accept
      * policy turned off, then they're invited, and must accept the space
      * invitation before joining. Otherwise, creating a membership adds the member
      * directly to the specified space. Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * To specify the member to add, set the `membership.member.name` in the
      * `CreateMembershipRequest`:
      * - To add the calling app to a space or a direct message between two human
@@ -3071,11 +3165,25 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a membership. For an example, see
-     * [Delete a
-     * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
-     * Requires [user
+     * Updates a membership. Requires [user
      * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
+        updateMembership(com.google.chat.v1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a membership. For an example, see
+     * [Remove a user or a Google Chat app from a
+     * space](https://developers.google.com/workspace/chat/delete-members).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Membership>
@@ -3088,12 +3196,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Creates a reaction and adds it to a message. For an example, see
-     * [Create a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create).
+     * Creates a reaction and adds it to a message. Only unicode emojis are
+     * supported. For an example, see
+     * [Add a reaction to a
+     * message](https://developers.google.com/workspace/chat/create-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
-     * Only unicode emoji are supported.
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Reaction>
@@ -3107,10 +3215,10 @@ public final class ChatServiceGrpc {
      *
      * <pre>
      * Lists reactions to a message. For an example, see
-     * [List
-     * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list).
+     * [List reactions for a
+     * message](https://developers.google.com/workspace/chat/list-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3124,11 +3232,12 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a reaction to a message. For an example, see
+     * Deletes a reaction to a message. Only unicode emojis are supported.
+     * For an example, see
      * [Delete a
-     * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete).
+     * reaction](https://developers.google.com/workspace/chat/delete-reactions).
      * Requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3156,10 +3265,11 @@ public final class ChatServiceGrpc {
   private static final int METHODID_COMPLETE_IMPORT_SPACE = 15;
   private static final int METHODID_FIND_DIRECT_MESSAGE = 16;
   private static final int METHODID_CREATE_MEMBERSHIP = 17;
-  private static final int METHODID_DELETE_MEMBERSHIP = 18;
-  private static final int METHODID_CREATE_REACTION = 19;
-  private static final int METHODID_LIST_REACTIONS = 20;
-  private static final int METHODID_DELETE_REACTION = 21;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 18;
+  private static final int METHODID_DELETE_MEMBERSHIP = 19;
+  private static final int METHODID_CREATE_REACTION = 20;
+  private static final int METHODID_LIST_REACTIONS = 21;
+  private static final int METHODID_DELETE_REACTION = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3271,6 +3381,11 @@ public final class ChatServiceGrpc {
         case METHODID_CREATE_MEMBERSHIP:
           serviceImpl.createMembership(
               (com.google.chat.v1.CreateMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Membership>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBERSHIP:
+          serviceImpl.updateMembership(
+              (com.google.chat.v1.UpdateMembershipRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.Membership>) responseObserver);
           break;
         case METHODID_DELETE_MEMBERSHIP:
@@ -3420,6 +3535,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.CreateMembershipRequest, com.google.chat.v1.Membership>(
                     service, METHODID_CREATE_MEMBERSHIP)))
         .addMethod(
+            getUpdateMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateMembershipRequest, com.google.chat.v1.Membership>(
+                    service, METHODID_UPDATE_MEMBERSHIP)))
+        .addMethod(
             getDeleteMembershipMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3512,6 +3633,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getCompleteImportSpaceMethod())
                       .addMethod(getFindDirectMessageMethod())
                       .addMethod(getCreateMembershipMethod())
+                      .addMethod(getUpdateMembershipMethod())
                       .addMethod(getDeleteMembershipMethod())
                       .addMethod(getCreateReactionMethod())
                       .addMethod(getListReactionsMethod())

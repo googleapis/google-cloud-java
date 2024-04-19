@@ -62,6 +62,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -739,6 +740,45 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateMembershipRequest, Membership>
+      updateMembershipMethodDescriptor =
+          ApiMethodDescriptor.<UpdateMembershipRequest, Membership>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateMembership")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateMembershipRequest>newBuilder()
+                      .setPath(
+                          "/v1/{membership.name=spaces/*/members/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMembershipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "membership.name", request.getMembership().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMembershipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("membership", request.getMembership(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Membership>newBuilder()
+                      .setDefaultInstance(Membership.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteMembershipRequest, Membership>
       deleteMembershipMethodDescriptor =
           ApiMethodDescriptor.<DeleteMembershipRequest, Membership>newBuilder()
@@ -907,6 +947,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
+  private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
   private final UnaryCallable<CreateReactionRequest, Reaction> createReactionCallable;
   private final UnaryCallable<ListReactionsRequest, ListReactionsResponse> listReactionsCallable;
@@ -1134,6 +1175,17 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateMembershipRequest, Membership> updateMembershipTransportSettings =
+        HttpJsonCallSettings.<UpdateMembershipRequest, Membership>newBuilder()
+            .setMethodDescriptor(updateMembershipMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("membership.name", String.valueOf(request.getMembership().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteMembershipRequest, Membership> deleteMembershipTransportSettings =
         HttpJsonCallSettings.<DeleteMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(deleteMembershipMethodDescriptor)
@@ -1247,6 +1299,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
+    this.updateMembershipCallable =
+        callableFactory.createUnaryCallable(
+            updateMembershipTransportSettings, settings.updateMembershipSettings(), clientContext);
     this.deleteMembershipCallable =
         callableFactory.createUnaryCallable(
             deleteMembershipTransportSettings, settings.deleteMembershipSettings(), clientContext);
@@ -1288,6 +1343,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(completeImportSpaceMethodDescriptor);
     methodDescriptors.add(findDirectMessageMethodDescriptor);
     methodDescriptors.add(createMembershipMethodDescriptor);
+    methodDescriptors.add(updateMembershipMethodDescriptor);
     methodDescriptors.add(deleteMembershipMethodDescriptor);
     methodDescriptors.add(createReactionMethodDescriptor);
     methodDescriptors.add(listReactionsMethodDescriptor);
@@ -1401,6 +1457,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return createMembershipCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return updateMembershipCallable;
   }
 
   @Override

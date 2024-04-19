@@ -102,14 +102,14 @@ public interface CreateMessageRequestOrBuilder
    * a message and specify a `threadKey` or the
    * [thread.name][google.chat.v1.Thread.name]. For example usage, see [Start or
    * reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    * </pre>
    *
    * <code>string thread_key = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=548
+   *     google/chat/v1/message.proto;l=502
    * @return The threadKey.
    */
   @java.lang.Deprecated
@@ -124,14 +124,14 @@ public interface CreateMessageRequestOrBuilder
    * a message and specify a `threadKey` or the
    * [thread.name][google.chat.v1.Thread.name]. For example usage, see [Start or
    * reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    * </pre>
    *
    * <code>string thread_key = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=548
+   *     google/chat/v1/message.proto;l=502
    * @return The bytes for threadKey.
    */
   @java.lang.Deprecated
@@ -215,7 +215,7 @@ public interface CreateMessageRequestOrBuilder
    * different messages.
    *
    * For details, see [Name a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string message_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -241,7 +241,7 @@ public interface CreateMessageRequestOrBuilder
    * different messages.
    *
    * For details, see [Name a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string message_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

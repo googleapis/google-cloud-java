@@ -26,7 +26,7 @@ package com.google.chat.v1;
  * Output only. Annotations associated with the plain-text body of the message.
  * To add basic formatting to a text message, see
  * [Format text
- * messages](https://developers.google.com/chat/format-messages).
+ * messages](https://developers.google.com/workspace/chat/format-messages).
  *
  * Example plain-text message body:
  * ```
@@ -622,7 +622,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    * Output only. Annotations associated with the plain-text body of the message.
    * To add basic formatting to a text message, see
    * [Format text
-   * messages](https://developers.google.com/chat/format-messages).
+   * messages](https://developers.google.com/workspace/chat/format-messages).
    *
    * Example plain-text message body:
    * ```

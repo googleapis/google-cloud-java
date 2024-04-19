@@ -231,8 +231,7 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The http endpoint that can be called to invoke
-   * processing.
+   * Output only. Immutable. The http endpoint that can be called to invoke processing.
    * </pre>
    *
    * <code>
@@ -246,8 +245,7 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The http endpoint that can be called to invoke
-   * processing.
+   * Output only. Immutable. The http endpoint that can be called to invoke processing.
    * </pre>
    *
    * <code>

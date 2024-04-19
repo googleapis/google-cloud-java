@@ -146,8 +146,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The input data used to train a new
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * The input data used to train a new [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -473,8 +472,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The input data used to train a new
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * The input data used to train a new [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -1993,6 +1991,731 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
   }
 
+  public interface FoundationModelTuningOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of steps to run for model tuning. Valid values are between
+     * 1 and 400. If not provided, recommended steps will be used.
+     * </pre>
+     *
+     * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The trainSteps.
+     */
+    int getTrainSteps();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The multiplier to apply to the recommended learning rate. Valid values
+     * are between 0.1 and 10. If not provided, recommended learning rate will
+     * be used.
+     * </pre>
+     *
+     * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The learningRateMultiplier.
+     */
+    float getLearningRateMultiplier();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of the processor.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions}
+   */
+  public static final class FoundationModelTuningOptions
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+      FoundationModelTuningOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FoundationModelTuningOptions.newBuilder() to construct.
+    private FoundationModelTuningOptions(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FoundationModelTuningOptions() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FoundationModelTuningOptions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_FoundationModelTuningOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_FoundationModelTuningOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions.class,
+              com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions.Builder.class);
+    }
+
+    public static final int TRAIN_STEPS_FIELD_NUMBER = 2;
+    private int trainSteps_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of steps to run for model tuning. Valid values are between
+     * 1 and 400. If not provided, recommended steps will be used.
+     * </pre>
+     *
+     * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The trainSteps.
+     */
+    @java.lang.Override
+    public int getTrainSteps() {
+      return trainSteps_;
+    }
+
+    public static final int LEARNING_RATE_MULTIPLIER_FIELD_NUMBER = 3;
+    private float learningRateMultiplier_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The multiplier to apply to the recommended learning rate. Valid values
+     * are between 0.1 and 10. If not provided, recommended learning rate will
+     * be used.
+     * </pre>
+     *
+     * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The learningRateMultiplier.
+     */
+    @java.lang.Override
+    public float getLearningRateMultiplier() {
+      return learningRateMultiplier_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (trainSteps_ != 0) {
+        output.writeInt32(2, trainSteps_);
+      }
+      if (java.lang.Float.floatToRawIntBits(learningRateMultiplier_) != 0) {
+        output.writeFloat(3, learningRateMultiplier_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (trainSteps_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, trainSteps_);
+      }
+      if (java.lang.Float.floatToRawIntBits(learningRateMultiplier_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, learningRateMultiplier_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+          other =
+              (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                      .FoundationModelTuningOptions)
+                  obj;
+
+      if (getTrainSteps() != other.getTrainSteps()) return false;
+      if (java.lang.Float.floatToIntBits(getLearningRateMultiplier())
+          != java.lang.Float.floatToIntBits(other.getLearningRateMultiplier())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRAIN_STEPS_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainSteps();
+      hash = (37 * hash) + LEARNING_RATE_MULTIPLIER_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getLearningRateMultiplier());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of the processor.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_FoundationModelTuningOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_FoundationModelTuningOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions.class,
+                com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trainSteps_ = 0;
+        learningRateMultiplier_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_FoundationModelTuningOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions
+          build() {
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions
+          buildPartial() {
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            result =
+                new com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trainSteps_ = trainSteps_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.learningRateMultiplier_ = learningRateMultiplier_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptions) {
+          return mergeFrom(
+              (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                      .FoundationModelTuningOptions)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+              other) {
+        if (other
+            == com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptions.getDefaultInstance()) return this;
+        if (other.getTrainSteps() != 0) {
+          setTrainSteps(other.getTrainSteps());
+        }
+        if (other.getLearningRateMultiplier() != 0F) {
+          setLearningRateMultiplier(other.getLearningRateMultiplier());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  trainSteps_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              case 29:
+                {
+                  learningRateMultiplier_ = input.readFloat();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 29
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int trainSteps_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of steps to run for model tuning. Valid values are between
+       * 1 and 400. If not provided, recommended steps will be used.
+       * </pre>
+       *
+       * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The trainSteps.
+       */
+      @java.lang.Override
+      public int getTrainSteps() {
+        return trainSteps_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of steps to run for model tuning. Valid values are between
+       * 1 and 400. If not provided, recommended steps will be used.
+       * </pre>
+       *
+       * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The trainSteps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainSteps(int value) {
+
+        trainSteps_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of steps to run for model tuning. Valid values are between
+       * 1 and 400. If not provided, recommended steps will be used.
+       * </pre>
+       *
+       * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainSteps() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        trainSteps_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float learningRateMultiplier_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The multiplier to apply to the recommended learning rate. Valid values
+       * are between 0.1 and 10. If not provided, recommended learning rate will
+       * be used.
+       * </pre>
+       *
+       * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The learningRateMultiplier.
+       */
+      @java.lang.Override
+      public float getLearningRateMultiplier() {
+        return learningRateMultiplier_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The multiplier to apply to the recommended learning rate. Valid values
+       * are between 0.1 and 10. If not provided, recommended learning rate will
+       * be used.
+       * </pre>
+       *
+       * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The learningRateMultiplier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLearningRateMultiplier(float value) {
+
+        learningRateMultiplier_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The multiplier to apply to the recommended learning rate. Valid values
+       * are between 0.1 and 10. If not provided, recommended learning rate will
+       * be used.
+       * </pre>
+       *
+       * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLearningRateMultiplier() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        learningRateMultiplier_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+    private static final com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions();
+    }
+
+    public static com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FoundationModelTuningOptions> PARSER =
+        new com.google.protobuf.AbstractParser<FoundationModelTuningOptions>() {
+          @java.lang.Override
+          public FoundationModelTuningOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FoundationModelTuningOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FoundationModelTuningOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int processorFlagsCase_ = 0;
 
@@ -2004,6 +2727,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CUSTOM_DOCUMENT_EXTRACTION_OPTIONS(5),
+    FOUNDATION_MODEL_TUNING_OPTIONS(12),
     PROCESSORFLAGS_NOT_SET(0);
     private final int value;
 
@@ -2024,6 +2748,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       switch (value) {
         case 5:
           return CUSTOM_DOCUMENT_EXTRACTION_OPTIONS;
+        case 12:
+          return FOUNDATION_MODEL_TUNING_OPTIONS;
         case 0:
           return PROCESSORFLAGS_NOT_SET;
         default:
@@ -2106,6 +2832,72 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         .CustomDocumentExtractionOptions.getDefaultInstance();
   }
 
+  public static final int FOUNDATION_MODEL_TUNING_OPTIONS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   *
+   * @return Whether the foundationModelTuningOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasFoundationModelTuningOptions() {
+    return processorFlagsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   *
+   * @return The foundationModelTuningOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+      getFoundationModelTuningOptions() {
+    if (processorFlagsCase_ == 12) {
+      return (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions)
+          processorFlags_;
+    }
+    return com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control foundation model tuning of a processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+          .FoundationModelTuningOptionsOrBuilder
+      getFoundationModelTuningOptionsOrBuilder() {
+    if (processorFlagsCase_ == 12) {
+      return (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+              .FoundationModelTuningOptions)
+          processorFlags_;
+    }
+    return com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+        .getDefaultInstance();
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -2114,9 +2906,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new
-   * version for. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new version for.
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -2141,9 +2932,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new
-   * version for. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new version for.
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -2283,8 +3073,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -2301,8 +3090,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -2321,8 +3109,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -2345,8 +3132,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This
-   * processor version must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This processor version
+   * must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *
@@ -2370,8 +3157,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This
-   * processor version must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This processor version
+   * must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *
@@ -2428,6 +3215,12 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getDocumentSchema());
     }
+    if (processorFlagsCase_ == 12) {
+      output.writeMessage(
+          12,
+          (com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions)
+              processorFlags_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2459,6 +3252,14 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDocumentSchema());
+    }
+    if (processorFlagsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12,
+              (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                      .FoundationModelTuningOptions)
+                  processorFlags_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2496,6 +3297,10 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         if (!getCustomDocumentExtractionOptions()
             .equals(other.getCustomDocumentExtractionOptions())) return false;
         break;
+      case 12:
+        if (!getFoundationModelTuningOptions().equals(other.getFoundationModelTuningOptions()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -2530,6 +3335,10 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       case 5:
         hash = (37 * hash) + CUSTOM_DOCUMENT_EXTRACTION_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getCustomDocumentExtractionOptions().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + FOUNDATION_MODEL_TUNING_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getFoundationModelTuningOptions().hashCode();
         break;
       case 0:
       default:
@@ -2690,6 +3499,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (customDocumentExtractionOptionsBuilder_ != null) {
         customDocumentExtractionOptionsBuilder_.clear();
       }
+      if (foundationModelTuningOptionsBuilder_ != null) {
+        foundationModelTuningOptionsBuilder_.clear();
+      }
       parent_ = "";
       processorVersion_ = null;
       if (processorVersionBuilder_ != null) {
@@ -2746,25 +3558,25 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
 
     private void buildPartial0(com.google.cloud.documentai.v1.TrainProcessorVersionRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.processorVersion_ =
             processorVersionBuilder_ == null ? processorVersion_ : processorVersionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.documentSchema_ =
             documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.inputData_ = inputDataBuilder_ == null ? inputData_ : inputDataBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.baseProcessorVersion_ = baseProcessorVersion_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2776,6 +3588,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       result.processorFlags_ = this.processorFlags_;
       if (processorFlagsCase_ == 5 && customDocumentExtractionOptionsBuilder_ != null) {
         result.processorFlags_ = customDocumentExtractionOptionsBuilder_.build();
+      }
+      if (processorFlagsCase_ == 12 && foundationModelTuningOptionsBuilder_ != null) {
+        result.processorFlags_ = foundationModelTuningOptionsBuilder_.build();
       }
     }
 
@@ -2827,7 +3642,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasProcessorVersion()) {
@@ -2841,13 +3656,18 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       if (!other.getBaseProcessorVersion().isEmpty()) {
         baseProcessorVersion_ = other.baseProcessorVersion_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getProcessorFlagsCase()) {
         case CUSTOM_DOCUMENT_EXTRACTION_OPTIONS:
           {
             mergeCustomDocumentExtractionOptions(other.getCustomDocumentExtractionOptions());
+            break;
+          }
+        case FOUNDATION_MODEL_TUNING_OPTIONS:
+          {
+            mergeFoundationModelTuningOptions(other.getFoundationModelTuningOptions());
             break;
           }
         case PROCESSORFLAGS_NOT_SET:
@@ -2884,20 +3704,20 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProcessorVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getInputDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
@@ -2911,15 +3731,22 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             case 66:
               {
                 baseProcessorVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(
+                    getFoundationModelTuningOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                processorFlagsCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3217,14 +4044,276 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       return customDocumentExtractionOptionsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptions,
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+                .Builder,
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptionsOrBuilder>
+        foundationModelTuningOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     *
+     * @return Whether the foundationModelTuningOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasFoundationModelTuningOptions() {
+      return processorFlagsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     *
+     * @return The foundationModelTuningOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+        getFoundationModelTuningOptions() {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 12) {
+          return (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions)
+              processorFlags_;
+        }
+        return com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions.getDefaultInstance();
+      } else {
+        if (processorFlagsCase_ == 12) {
+          return foundationModelTuningOptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    public Builder setFoundationModelTuningOptions(
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            value) {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processorFlags_ = value;
+        onChanged();
+      } else {
+        foundationModelTuningOptionsBuilder_.setMessage(value);
+      }
+      processorFlagsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    public Builder setFoundationModelTuningOptions(
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+                .Builder
+            builderForValue) {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        processorFlags_ = builderForValue.build();
+        onChanged();
+      } else {
+        foundationModelTuningOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      processorFlagsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    public Builder mergeFoundationModelTuningOptions(
+        com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            value) {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 12
+            && processorFlags_
+                != com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions.getDefaultInstance()) {
+          processorFlags_ =
+              com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions.newBuilder(
+                      (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                              .FoundationModelTuningOptions)
+                          processorFlags_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          processorFlags_ = value;
+        }
+        onChanged();
+      } else {
+        if (processorFlagsCase_ == 12) {
+          foundationModelTuningOptionsBuilder_.mergeFrom(value);
+        } else {
+          foundationModelTuningOptionsBuilder_.setMessage(value);
+        }
+      }
+      processorFlagsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    public Builder clearFoundationModelTuningOptions() {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 12) {
+          processorFlagsCase_ = 0;
+          processorFlags_ = null;
+          onChanged();
+        }
+      } else {
+        if (processorFlagsCase_ == 12) {
+          processorFlagsCase_ = 0;
+          processorFlags_ = null;
+        }
+        foundationModelTuningOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+            .Builder
+        getFoundationModelTuningOptionsBuilder() {
+      return getFoundationModelTuningOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptionsOrBuilder
+        getFoundationModelTuningOptionsOrBuilder() {
+      if ((processorFlagsCase_ == 12) && (foundationModelTuningOptionsBuilder_ != null)) {
+        return foundationModelTuningOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (processorFlagsCase_ == 12) {
+          return (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions)
+              processorFlags_;
+        }
+        return com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+            .FoundationModelTuningOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control foundation model tuning of a processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions foundation_model_tuning_options = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptions,
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest.FoundationModelTuningOptions
+                .Builder,
+            com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                .FoundationModelTuningOptionsOrBuilder>
+        getFoundationModelTuningOptionsFieldBuilder() {
+      if (foundationModelTuningOptionsBuilder_ == null) {
+        if (!(processorFlagsCase_ == 12)) {
+          processorFlags_ =
+              com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                  .FoundationModelTuningOptions.getDefaultInstance();
+        }
+        foundationModelTuningOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions,
+                com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptions.Builder,
+                com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                    .FoundationModelTuningOptionsOrBuilder>(
+                (com.google.cloud.documentai.v1.TrainProcessorVersionRequest
+                        .FoundationModelTuningOptions)
+                    processorFlags_,
+                getParentForChildren(),
+                isClean());
+        processorFlags_ = null;
+      }
+      processorFlagsCase_ = 12;
+      onChanged();
+      return foundationModelTuningOptionsBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new
-     * version for. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new version for.
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -3248,9 +4337,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new
-     * version for. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new version for.
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -3274,9 +4362,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new
-     * version for. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new version for.
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -3291,7 +4378,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3299,9 +4386,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new
-     * version for. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new version for.
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -3312,7 +4398,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3320,9 +4406,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new
-     * version for. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new version for.
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -3338,7 +4423,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3363,7 +4448,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the processorVersion field is set.
      */
     public boolean hasProcessorVersion() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3407,7 +4492,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         processorVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3429,7 +4514,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         processorVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3446,7 +4531,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeProcessorVersion(com.google.cloud.documentai.v1.ProcessorVersion value) {
       if (processorVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && processorVersion_ != null
             && processorVersion_
                 != com.google.cloud.documentai.v1.ProcessorVersion.getDefaultInstance()) {
@@ -3458,7 +4543,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         processorVersionBuilder_.mergeFrom(value);
       }
       if (processorVersion_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -3475,7 +4560,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearProcessorVersion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       processorVersion_ = null;
       if (processorVersionBuilder_ != null) {
         processorVersionBuilder_.dispose();
@@ -3496,7 +4581,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.documentai.v1.ProcessorVersion.Builder getProcessorVersionBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getProcessorVersionFieldBuilder().getBuilder();
     }
@@ -3568,7 +4653,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3612,7 +4697,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3634,7 +4719,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3651,7 +4736,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && documentSchema_ != null
             && documentSchema_
                 != com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()) {
@@ -3663,7 +4748,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         documentSchemaBuilder_.mergeFrom(value);
       }
       if (documentSchema_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -3680,7 +4765,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearDocumentSchema() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       documentSchema_ = null;
       if (documentSchemaBuilder_ != null) {
         documentSchemaBuilder_.dispose();
@@ -3701,7 +4786,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.documentai.v1.DocumentSchema.Builder getDocumentSchemaBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
@@ -3763,8 +4848,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3774,14 +4858,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the inputData field is set.
      */
     public boolean hasInputData() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3804,8 +4887,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3822,7 +4904,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         inputDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3830,8 +4912,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3846,7 +4927,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         inputDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3854,8 +4935,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3865,7 +4945,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder mergeInputData(
         com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData value) {
       if (inputDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && inputData_ != null
             && inputData_
                 != com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData
@@ -3878,7 +4958,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         inputDataBuilder_.mergeFrom(value);
       }
       if (inputData_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3887,8 +4967,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3896,7 +4975,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearInputData() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       inputData_ = null;
       if (inputDataBuilder_ != null) {
         inputDataBuilder_.dispose();
@@ -3909,8 +4988,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3919,7 +4997,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData.Builder
         getInputDataBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getInputDataFieldBuilder().getBuilder();
     }
@@ -3927,8 +5005,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3950,8 +5027,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -3980,8 +5056,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This
-     * processor version must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This processor version
+     * must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -4004,8 +5080,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This
-     * processor version must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This processor version
+     * must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -4028,8 +5104,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This
-     * processor version must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This processor version
+     * must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -4043,7 +5119,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       baseProcessorVersion_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4051,8 +5127,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This
-     * processor version must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This processor version
+     * must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -4062,7 +5138,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder clearBaseProcessorVersion() {
       baseProcessorVersion_ = getDefaultInstance().getBaseProcessorVersion();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4070,8 +5146,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This
-     * processor version must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This processor version
+     * must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -4086,7 +5162,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       baseProcessorVersion_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

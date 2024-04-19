@@ -75,9 +75,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] to change default
-   * version.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
    * </pre>
    *
    * <code>
@@ -102,9 +100,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] to change default
-   * version.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
    * </pre>
    *
    * <code>
@@ -134,9 +130,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of child
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-   * default. Format:
+   * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+   * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
    * </pre>
    *
@@ -162,9 +157,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of child
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-   * default. Format:
+   * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+   * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
    * </pre>
    *
@@ -565,9 +559,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [Processor][google.cloud.documentai.v1.Processor] to change default
-     * version.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
      * </pre>
      *
      * <code>
@@ -591,9 +583,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [Processor][google.cloud.documentai.v1.Processor] to change default
-     * version.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
      * </pre>
      *
      * <code>
@@ -617,9 +607,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [Processor][google.cloud.documentai.v1.Processor] to change default
-     * version.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
      * </pre>
      *
      * <code>
@@ -642,9 +630,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [Processor][google.cloud.documentai.v1.Processor] to change default
-     * version.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
      * </pre>
      *
      * <code>
@@ -663,9 +649,7 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the
-     * [Processor][google.cloud.documentai.v1.Processor] to change default
-     * version.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] to change default version.
      * </pre>
      *
      * <code>
@@ -691,9 +675,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of child
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-     * default. Format:
+     * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+     * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
      * </pre>
      *
@@ -718,9 +701,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of child
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-     * default. Format:
+     * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+     * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
      * </pre>
      *
@@ -745,9 +727,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of child
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-     * default. Format:
+     * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+     * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
      * </pre>
      *
@@ -771,9 +752,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of child
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-     * default. Format:
+     * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+     * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
      * </pre>
      *
@@ -793,9 +773,8 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of child
-     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as
-     * default. Format:
+     * Required. The resource name of child [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to use as default.
+     * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`
      * </pre>
      *

@@ -24,9 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Request message for the
- * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
- * method. Some processor types may require the project be added to an
- * allowlist.
+ * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes] method.
+ * Some processor types may require the project be added to an allowlist.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}
@@ -288,9 +287,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Request message for the
-   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
-   * method. Some processor types may require the project be added to an
-   * allowlist.
+   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes] method.
+   * Some processor types may require the project be added to an allowlist.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}

@@ -28,12 +28,12 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Resource name for this Service. The format is:
+   * Identifier. Resource name for this Service. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Resource name for this Service. The format is:
+   * Identifier. Resource name for this Service. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -294,6 +294,190 @@ public interface ServiceOrBuilder
    */
   com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder
       getIstioCanonicalServiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   *
+   * @return Whether the cloudRun field is set.
+   */
+  boolean hasCloudRun();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   *
+   * @return The cloudRun.
+   */
+  com.google.monitoring.v3.Service.CloudRun getCloudRun();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   */
+  com.google.monitoring.v3.Service.CloudRunOrBuilder getCloudRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   *
+   * @return Whether the gkeNamespace field is set.
+   */
+  boolean hasGkeNamespace();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   *
+   * @return The gkeNamespace.
+   */
+  com.google.monitoring.v3.Service.GkeNamespace getGkeNamespace();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   */
+  com.google.monitoring.v3.Service.GkeNamespaceOrBuilder getGkeNamespaceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   *
+   * @return Whether the gkeWorkload field is set.
+   */
+  boolean hasGkeWorkload();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   *
+   * @return The gkeWorkload.
+   */
+  com.google.monitoring.v3.Service.GkeWorkload getGkeWorkload();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   */
+  com.google.monitoring.v3.Service.GkeWorkloadOrBuilder getGkeWorkloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   *
+   * @return Whether the gkeService field is set.
+   */
+  boolean hasGkeService();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   *
+   * @return The gkeService.
+   */
+  com.google.monitoring.v3.Service.GkeService getGkeService();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   */
+  com.google.monitoring.v3.Service.GkeServiceOrBuilder getGkeServiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   *
+   * @return Whether the basicService field is set.
+   */
+  boolean hasBasicService();
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   *
+   * @return The basicService.
+   */
+  com.google.monitoring.v3.Service.BasicService getBasicService();
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   */
+  com.google.monitoring.v3.Service.BasicServiceOrBuilder getBasicServiceOrBuilder();
 
   /**
    *

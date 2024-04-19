@@ -1645,6 +1645,64 @@ public class ChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateMembershipTest() throws Exception {
+    Membership expectedResponse =
+        Membership.newBuilder()
+            .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Membership membership =
+        Membership.newBuilder()
+            .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Membership actualResponse = client.updateMembership(membership, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMembershipExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Membership membership =
+          Membership.newBuilder()
+              .setName(MembershipName.of("[SPACE]", "[MEMBER]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMembership(membership, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteMembershipTest() throws Exception {
     Membership expectedResponse =
         Membership.newBuilder()

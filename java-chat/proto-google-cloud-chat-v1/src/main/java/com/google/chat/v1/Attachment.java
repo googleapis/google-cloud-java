@@ -66,22 +66,78 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Attachment.class, com.google.chat.v1.Attachment.Builder.class);
   }
 
-  /** Protobuf enum {@code google.chat.v1.Attachment.Source} */
+  /**
+   *
+   *
+   * <pre>
+   * The source of the attachment.
+   * </pre>
+   *
+   * Protobuf enum {@code google.chat.v1.Attachment.Source}
+   */
   public enum Source implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>SOURCE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved.
+     * </pre>
+     *
+     * <code>SOURCE_UNSPECIFIED = 0;</code>
+     */
     SOURCE_UNSPECIFIED(0),
-    /** <code>DRIVE_FILE = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The file is a Google Drive file.
+     * </pre>
+     *
+     * <code>DRIVE_FILE = 1;</code>
+     */
     DRIVE_FILE(1),
-    /** <code>UPLOADED_CONTENT = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The file is uploaded to Chat.
+     * </pre>
+     *
+     * <code>UPLOADED_CONTENT = 2;</code>
+     */
     UPLOADED_CONTENT(2),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>SOURCE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved.
+     * </pre>
+     *
+     * <code>SOURCE_UNSPECIFIED = 0;</code>
+     */
     public static final int SOURCE_UNSPECIFIED_VALUE = 0;
-    /** <code>DRIVE_FILE = 1;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The file is a Google Drive file.
+     * </pre>
+     *
+     * <code>DRIVE_FILE = 1;</code>
+     */
     public static final int DRIVE_FILE_VALUE = 1;
-    /** <code>UPLOADED_CONTENT = 2;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The file is uploaded to Chat.
+     * </pre>
+     *
+     * <code>UPLOADED_CONTENT = 2;</code>
+     */
     public static final int UPLOADED_CONTENT_VALUE = 2;
 
     public final int getNumber() {

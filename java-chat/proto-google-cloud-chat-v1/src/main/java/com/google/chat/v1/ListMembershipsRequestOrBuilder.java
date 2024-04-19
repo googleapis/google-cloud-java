@@ -68,8 +68,8 @@ public interface ListMembershipsRequestOrBuilder
    *
    * If unspecified, at most 100 memberships are returned.
    *
-   * The maximum value is 1,000. If you use a value more than 1,000, it's
-   * automatically changed to 1,000.
+   * The maximum value is 1000. If you use a value more than 1000, it's
+   * automatically changed to 1000.
    *
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
@@ -122,9 +122,9 @@ public interface ListMembershipsRequestOrBuilder
    * Optional. A query filter.
    *
    * You can filter memberships by a member's role
-   * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+   * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
    * and type
-   * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+   * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
@@ -146,6 +146,7 @@ public interface ListMembershipsRequestOrBuilder
    * member.type = "HUMAN" AND member.type = "BOT"
    * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
    * ```
+   *
    *
    * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
    * error.
@@ -163,9 +164,9 @@ public interface ListMembershipsRequestOrBuilder
    * Optional. A query filter.
    *
    * You can filter memberships by a member's role
-   * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+   * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
    * and type
-   * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+   * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
@@ -187,6 +188,7 @@ public interface ListMembershipsRequestOrBuilder
    * member.type = "HUMAN" AND member.type = "BOT"
    * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
    * ```
+   *
    *
    * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
    * error.
@@ -228,7 +230,7 @@ public interface ListMembershipsRequestOrBuilder
    * that don't match the filter criteria aren't returned.
    *
    * Currently requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
    * <code>bool show_invited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

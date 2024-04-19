@@ -1902,6 +1902,41 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudArmor cloud_armor = 59;</code>
+   *
+   * @return Whether the cloudArmor field is set.
+   */
+  boolean hasCloudArmor();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudArmor cloud_armor = 59;</code>
+   *
+   * @return The cloudArmor.
+   */
+  com.google.cloud.securitycenter.v1.CloudArmor getCloudArmor();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Cloud Armor findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudArmor cloud_armor = 59;</code>
+   */
+  com.google.cloud.securitycenter.v1.CloudArmorOrBuilder getCloudArmorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Notebook associated with the finding.
    * </pre>
    *

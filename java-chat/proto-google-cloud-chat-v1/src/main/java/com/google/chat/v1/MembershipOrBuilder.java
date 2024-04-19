@@ -89,7 +89,6 @@ public interface MembershipOrBuilder
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *
@@ -107,7 +106,6 @@ public interface MembershipOrBuilder
    * Optional. User's role within a Chat space, which determines their permitted
    * actions in the space.
    *
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * This field can only be used as input in `UpdateMembership`.
    * </pre>
    *
@@ -125,9 +123,9 @@ public interface MembershipOrBuilder
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -142,9 +140,9 @@ public interface MembershipOrBuilder
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -159,9 +157,9 @@ public interface MembershipOrBuilder
    * <pre>
    * The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * output populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *

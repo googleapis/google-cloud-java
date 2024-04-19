@@ -68,8 +68,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateMessage</td>
- *      <td><p> Creates a message in a Google Chat space. For an example, see [Create a message](https://developers.google.com/chat/api/guides/v1/messages/create).
- * <p>  Calling this method requires [authentication](https://developers.google.com/chat/api/guides/auth) and supports the following authentication types:
+ *      <td><p> Creates a message in a Google Chat space. For an example, see [Send a message](https://developers.google.com/workspace/chat/create-messages).
+ * <p>  Calling this method requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and supports the following authentication types:
  * <p>  - For text messages, user authentication or app authentication are supported. - For card messages, only app authentication is supported. (Only Chat apps can create card messages.)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -89,7 +89,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListMessages</td>
- *      <td><p> Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list). Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list). Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -109,8 +109,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListMemberships</td>
- *      <td><p> Lists memberships in a space. For an example, see [List memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing memberships with [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships, including its own. Listing memberships with [User authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in spaces that the authenticated user has access to.
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Lists memberships in a space. For an example, see [List users and Google Chat apps in a space](https://developers.google.com/workspace/chat/list-members). Listing memberships with [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships, including its own. Listing memberships with [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) lists memberships in spaces that the authenticated user has access to.
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -130,8 +130,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMembership</td>
- *      <td><p> Returns details about a membership. For an example, see [Get a membership](https://developers.google.com/chat/api/guides/v1/members/get).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Returns details about a membership. For an example, see [Get details about a user's or Google Chat app's membership](https://developers.google.com/workspace/chat/get-members).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -150,8 +150,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMessage</td>
- *      <td><p> Returns details about a message. For an example, see [Read a message](https://developers.google.com/chat/api/guides/v1/messages/get).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+ *      <td><p> Returns details about a message. For an example, see [Get details about a message](https://developers.google.com/workspace/chat/get-messages).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
  * <p>  Note: Might return a message from a blocked member or space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -171,8 +171,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateMessage</td>
- *      <td><p> Updates a message. There's a difference between the `patch` and `update` methods. The `patch` method uses a `patch` request while the `update` method uses a `put` request. We recommend using the `patch` method. For an example, see [Update a message](https://developers.google.com/chat/api/guides/v1/messages/update).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users). When using app authentication, requests can only update messages created by the calling Chat app.</td>
+ *      <td><p> Updates a message. There's a difference between the `patch` and `update` methods. The `patch` method uses a `patch` request while the `update` method uses a `put` request. We recommend using the `patch` method. For an example, see [Update a message](https://developers.google.com/workspace/chat/update-messages).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user). When using app authentication, requests can only update messages created by the calling Chat app.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -190,8 +190,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteMessage</td>
- *      <td><p> Deletes a message. For an example, see [Delete a message](https://developers.google.com/chat/api/guides/v1/messages/delete).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users). When using app authentication, requests can only delete messages created by the calling Chat app.</td>
+ *      <td><p> Deletes a message. For an example, see [Delete a message](https://developers.google.com/workspace/chat/delete-messages).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user). When using app authentication, requests can only delete messages created by the calling Chat app.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -210,7 +210,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAttachment</td>
- *      <td><p> Gets the metadata of a message attachment. The attachment data is fetched using the [media API](https://developers.google.com/chat/api/reference/rest/v1/media/download). For an example, see [Get a message attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get). Requires [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).</td>
+ *      <td><p> Gets the metadata of a message attachment. The attachment data is fetched using the [media API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an example, see [Get metadata about a message attachment](https://developers.google.com/workspace/chat/get-media-attachments). Requires [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -229,7 +229,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UploadAttachment</td>
- *      <td><p> Uploads an attachment. For an example, see [Upload media as a file attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload). Requires user [authentication](https://developers.google.com/chat/api/guides/auth/users).
+ *      <td><p> Uploads an attachment. For an example, see [Upload media as a file attachment](https://developers.google.com/workspace/chat/upload-media-attachments). Requires user [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
  * <p>  You can upload attachments up to 200 MB. Certain file types aren't supported. For details, see [File types blocked by Google Chat](https://support.google.com/chat/answer/7651457?&amp;co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%20Google%20Chat).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -244,8 +244,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListSpaces</td>
- *      <td><p> Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first message is sent. For an example, see [List spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+ *      <td><p> Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first message is sent. For an example, see [List spaces](https://developers.google.com/workspace/chat/list-spaces).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
  * <p>  Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed until the first message is sent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -265,8 +265,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSpace</td>
- *      <td><p> Returns details about a space. For an example, see [Get a space](https://developers.google.com/chat/api/guides/v1/spaces/get).
- * <p>  Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Returns details about a space. For an example, see [Get details about a space](https://developers.google.com/workspace/chat/get-spaces).
+ * <p>  Requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) and [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -285,9 +285,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSpace</td>
- *      <td><p> Creates a named space. Spaces grouped by topics aren't supported. For an example, see [Create a space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+ *      <td><p> Creates a named space. Spaces grouped by topics aren't supported. For an example, see [Create a space](https://developers.google.com/workspace/chat/create-spaces).
  * <p>   If you receive the error message `ALREADY_EXISTS` when creating  a space, try a different `displayName`. An existing space within  the Google Workspace organization might already use this display name.
- * <p>  Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -305,14 +305,14 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetUpSpace</td>
- *      <td><p> Creates a space and adds specified users to it. The calling user is automatically added to the space, and shouldn't be specified as a membership in the request. For an example, see [Set up a space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+ *      <td><p> Creates a space and adds specified users to it. The calling user is automatically added to the space, and shouldn't be specified as a membership in the request. For an example, see [Set up a space with initial members](https://developers.google.com/workspace/chat/set-up-spaces).
  * <p>  To specify the human members to add, add memberships with the appropriate `member.name` in the `SetUpSpaceRequest`. To add a human user, use `users/{user}`, where `{user}` can be the email address for the user. For users in the same Workspace organization `{user}` can also be the `id` for the person from the People API, or the `id` for the user in the Directory API. For example, if the People API Person profile ID for `user{@literal @}example.com` is `123456789`, you can add the user to the space by setting the `membership.member.name` to `users/user{@literal @}example.com` or `users/123456789`.
  * <p>  For a space or group chat, if the caller blocks or is blocked by some members, then those members aren't added to the created space.
  * <p>  To create a direct message (DM) between the calling user and another human user, specify exactly one membership to represent the human user. If one user blocks the other, the request fails and the DM isn't created.
- * <p>  To create a DM between the calling user and the calling app, set `Space.singleUserBotDm` to `true` and don't specify any memberships. You can only use this method to set up a DM with the calling app. To add the calling app as a member of a space or an existing DM between two human users, see [create a membership](https://developers.google.com/chat/api/guides/v1/members/create).
+ * <p>  To create a DM between the calling user and the calling app, set `Space.singleUserBotDm` to `true` and don't specify any memberships. You can only use this method to set up a DM with the calling app. To add the calling app as a member of a space or an existing DM between two human users, see [Invite or add a user or app to a space](https://developers.google.com/workspace/chat/create-members).
  * <p>  If a DM already exists between two users, even when one user blocks the other at the time a request is made, then the existing DM is returned.
  * <p>  Spaces with threaded replies aren't supported. If you receive the error message `ALREADY_EXISTS` when setting up a space, try a different `displayName`. An existing space within the Google Workspace organization might already use this display name.
- * <p>  Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -326,9 +326,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSpace</td>
- *      <td><p> Updates a space. For an example, see [Update a space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+ *      <td><p> Updates a space. For an example, see [Update a space](https://developers.google.com/workspace/chat/update-spaces).
  * <p>  If you're updating the `displayName` field and receive the error message `ALREADY_EXISTS`, try a different display name.. An existing space within the Google Workspace organization might already use this display name.
- * <p>  Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -346,7 +346,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteSpace</td>
- *      <td><p> Deletes a named space. Always performs a cascading delete, which means that the space's child resources—like messages posted in the space and memberships in the space—are also deleted. For an example, see [Delete a space](https://developers.google.com/chat/api/guides/v1/spaces/delete). Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) from a user who has permission to delete the space.</td>
+ *      <td><p> Deletes a named space. Always performs a cascading delete, which means that the space's child resources—like messages posted in the space and memberships in the space—are also deleted. For an example, see [Delete a space](https://developers.google.com/workspace/chat/delete-spaces). Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) from a user who has permission to delete the space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -365,7 +365,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CompleteImportSpace</td>
- *      <td><p> Completes the [import process](https://developers.google.com/chat/api/guides/import-data) for the specified space and makes it visible to users. Requires app authentication and domain-wide delegation. For more information, see [Authorize Google Chat apps to import data](https://developers.google.com/chat/api/guides/authorize-import).</td>
+ *      <td><p> Completes the [import process](https://developers.google.com/workspace/chat/import-data) for the specified space and makes it visible to users. Requires app authentication and domain-wide delegation. For more information, see [Authorize Google Chat apps to import data](https://developers.google.com/workspace/chat/authorize-import).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -380,9 +380,9 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> FindDirectMessage</td>
  *      <td><p> Returns the existing direct message with the specified user. If no direct message space is found, returns a `404 NOT_FOUND` error. For an example, see [Find a direct message](/chat/api/guides/v1/spaces/find-direct-message).
- * <p>  With [user authentication](https://developers.google.com/chat/api/guides/auth/users), returns the direct message space between the specified user and the authenticated user.
- * <p>  With [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts), returns the direct message space between the specified user and the calling Chat app.
- * <p>  Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) or [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).</td>
+ * <p>  With [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user), returns the direct message space between the specified user and the authenticated user.
+ * <p>  With [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app), returns the direct message space between the specified user and the calling Chat app.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) or [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -396,7 +396,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateMembership</td>
- *      <td><p> Creates a human membership or app membership for the calling app. Creating memberships for other apps isn't supported. For an example, see [ Create a membership](https://developers.google.com/chat/api/guides/v1/members/create). When creating a membership, if the specified member has their auto-accept policy turned off, then they're invited, and must accept the space invitation before joining. Otherwise, creating a membership adds the member directly to the specified space. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+ *      <td><p> Creates a human membership or app membership for the calling app. Creating memberships for other apps isn't supported. For an example, see [Invite or add a user or a Google Chat app to a space](https://developers.google.com/workspace/chat/create-members). When creating a membership, if the specified member has their auto-accept policy turned off, then they're invited, and must accept the space invitation before joining. Otherwise, creating a membership adds the member directly to the specified space. Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
  * <p>  To specify the member to add, set the `membership.member.name` in the `CreateMembershipRequest`:
  * <p>  - To add the calling app to a space or a direct message between two human   users, use `users/app`. Unable to add other   apps to the space.
  * <p>  - To add a human user, use `users/{user}`, where `{user}` can be the email address for the user. For users in the same Workspace organization `{user}` can also be the `id` for the person from the People API, or the `id` for the user in the Directory API. For example, if the People API Person profile ID for `user{@literal @}example.com` is `123456789`, you can add the user to the space by setting the `membership.member.name` to `users/user{@literal @}example.com` or `users/123456789`.</td>
@@ -417,9 +417,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateMembership</td>
+ *      <td><p> Updates a membership. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMembership(UpdateMembershipRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateMembership(Membership membership, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMembershipCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteMembership</td>
- *      <td><p> Deletes a membership. For an example, see [Delete a membership](https://developers.google.com/chat/api/guides/v1/members/delete).
- * <p>  Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Deletes a membership. For an example, see [Remove a user or a Google Chat app from a space](https://developers.google.com/workspace/chat/delete-members).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -438,7 +456,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateReaction</td>
- *      <td><p> Creates a reaction and adds it to a message. For an example, see [Create a reaction](https://developers.google.com/chat/api/guides/v1/reactions/create). Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users). Only unicode emoji are supported.</td>
+ *      <td><p> Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example, see [Add a reaction to a message](https://developers.google.com/workspace/chat/create-reactions). Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -457,7 +475,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListReactions</td>
- *      <td><p> Lists reactions to a message. For an example, see [List reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Lists reactions to a message. For an example, see [List reactions for a message](https://developers.google.com/workspace/chat/list-reactions). Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -477,7 +495,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteReaction</td>
- *      <td><p> Deletes a reaction to a message. For an example, see [Delete a reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete). Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).</td>
+ *      <td><p> Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete a reaction](https://developers.google.com/workspace/chat/delete-reactions). Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -599,12 +617,12 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a message in a Google Chat space. For an example, see [Create a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+   * Creates a message in a Google Chat space. For an example, see [Send a
+   * message](https://developers.google.com/workspace/chat/create-messages).
    *
    * <p>Calling this method requires
-   * [authentication](https://developers.google.com/chat/api/guides/auth) and supports the following
-   * authentication types:
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and
+   * supports the following authentication types:
    *
    * <p>- For text messages, user authentication or app authentication are supported. - For card
    * messages, only app authentication is supported. (Only Chat apps can create card messages.)
@@ -640,7 +658,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           messages.
    *     </ul>
    *     <p>For details, see [Name a
-   *     message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Message createMessage(SpaceName parent, Message message, String messageId) {
@@ -655,12 +673,12 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a message in a Google Chat space. For an example, see [Create a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+   * Creates a message in a Google Chat space. For an example, see [Send a
+   * message](https://developers.google.com/workspace/chat/create-messages).
    *
    * <p>Calling this method requires
-   * [authentication](https://developers.google.com/chat/api/guides/auth) and supports the following
-   * authentication types:
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and
+   * supports the following authentication types:
    *
    * <p>- For text messages, user authentication or app authentication are supported. - For card
    * messages, only app authentication is supported. (Only Chat apps can create card messages.)
@@ -696,7 +714,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           messages.
    *     </ul>
    *     <p>For details, see [Name a
-   *     message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Message createMessage(String parent, Message message, String messageId) {
@@ -711,12 +729,12 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a message in a Google Chat space. For an example, see [Create a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+   * Creates a message in a Google Chat space. For an example, see [Send a
+   * message](https://developers.google.com/workspace/chat/create-messages).
    *
    * <p>Calling this method requires
-   * [authentication](https://developers.google.com/chat/api/guides/auth) and supports the following
-   * authentication types:
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and
+   * supports the following authentication types:
    *
    * <p>- For text messages, user authentication or app authentication are supported. - For card
    * messages, only app authentication is supported. (Only Chat apps can create card messages.)
@@ -751,12 +769,12 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a message in a Google Chat space. For an example, see [Create a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create).
+   * Creates a message in a Google Chat space. For an example, see [Send a
+   * message](https://developers.google.com/workspace/chat/create-messages).
    *
    * <p>Calling this method requires
-   * [authentication](https://developers.google.com/chat/api/guides/auth) and supports the following
-   * authentication types:
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and
+   * supports the following authentication types:
    *
    * <p>- For text messages, user authentication or app authentication are supported. - For card
    * messages, only app authentication is supported. (Only Chat apps can create card messages.)
@@ -792,7 +810,8 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists messages in a space that the caller is a member of, including messages from blocked
    * members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list).
-   * Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -826,7 +845,8 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists messages in a space that the caller is a member of, including messages from blocked
    * members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list).
-   * Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -857,7 +877,8 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists messages in a space that the caller is a member of, including messages from blocked
    * members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list).
-   * Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -894,7 +915,8 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists messages in a space that the caller is a member of, including messages from blocked
    * members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list).
-   * Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -931,7 +953,8 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists messages in a space that the caller is a member of, including messages from blocked
    * members and spaces. For an example, see [List messages](/chat/api/guides/v1/messages/list).
-   * Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -972,18 +995,21 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists memberships in a space. For an example, see [List
-   * memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing
-   * memberships with [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists
-   * memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
+   * Lists memberships in a space. For an example, see [List users and Google Chat apps in a
+   * space](https://developers.google.com/workspace/chat/list-members). Listing memberships with
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
    * including its own. Listing memberships with [User
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in
-   * spaces that the authenticated user has access to.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * lists memberships in spaces that the authenticated user has access to.
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1015,18 +1041,21 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists memberships in a space. For an example, see [List
-   * memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing
-   * memberships with [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists
-   * memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
+   * Lists memberships in a space. For an example, see [List users and Google Chat apps in a
+   * space](https://developers.google.com/workspace/chat/list-members). Listing memberships with
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
    * including its own. Listing memberships with [User
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in
-   * spaces that the authenticated user has access to.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * lists memberships in spaces that the authenticated user has access to.
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1055,18 +1084,21 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists memberships in a space. For an example, see [List
-   * memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing
-   * memberships with [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists
-   * memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
+   * Lists memberships in a space. For an example, see [List users and Google Chat apps in a
+   * space](https://developers.google.com/workspace/chat/list-members). Listing memberships with
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
    * including its own. Listing memberships with [User
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in
-   * spaces that the authenticated user has access to.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * lists memberships in spaces that the authenticated user has access to.
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1101,18 +1133,21 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists memberships in a space. For an example, see [List
-   * memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing
-   * memberships with [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists
-   * memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
+   * Lists memberships in a space. For an example, see [List users and Google Chat apps in a
+   * space](https://developers.google.com/workspace/chat/list-members). Listing memberships with
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
    * including its own. Listing memberships with [User
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in
-   * spaces that the authenticated user has access to.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * lists memberships in spaces that the authenticated user has access to.
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1148,18 +1183,21 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists memberships in a space. For an example, see [List
-   * memberships](https://developers.google.com/chat/api/guides/v1/members/list). Listing
-   * memberships with [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) lists
-   * memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
+   * Lists memberships in a space. For an example, see [List users and Google Chat apps in a
+   * space](https://developers.google.com/workspace/chat/list-members). Listing memberships with
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships,
    * including its own. Listing memberships with [User
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) lists memberships in
-   * spaces that the authenticated user has access to.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * lists memberships in spaces that the authenticated user has access to.
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1202,12 +1240,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a membership. For an example, see [Get a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+   * Returns details about a membership. For an example, see [Get details about a user's or Google
+   * Chat app's membership](https://developers.google.com/workspace/chat/get-members).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1227,8 +1268,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>To get the app's own membership, you can optionally use `spaces/{space}/members/app`.
    *     <p>Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *     <p>When [authenticated as a
-   *     user](https://developers.google.com/chat/api/guides/auth/users), you can use the user's
-   *     email as an alias for `{member}`. For example,
+   *     user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user), you
+   *     can use the user's email as an alias for `{member}`. For example,
    *     `spaces/{space}/members/example{@literal @}gmail.com` where `example{@literal @}gmail.com`
    *     is the email of the Google Chat user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1241,12 +1282,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a membership. For an example, see [Get a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+   * Returns details about a membership. For an example, see [Get details about a user's or Google
+   * Chat app's membership](https://developers.google.com/workspace/chat/get-members).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1266,8 +1310,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>To get the app's own membership, you can optionally use `spaces/{space}/members/app`.
    *     <p>Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *     <p>When [authenticated as a
-   *     user](https://developers.google.com/chat/api/guides/auth/users), you can use the user's
-   *     email as an alias for `{member}`. For example,
+   *     user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user), you
+   *     can use the user's email as an alias for `{member}`. For example,
    *     `spaces/{space}/members/example{@literal @}gmail.com` where `example{@literal @}gmail.com`
    *     is the email of the Google Chat user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1279,12 +1323,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a membership. For an example, see [Get a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+   * Returns details about a membership. For an example, see [Get details about a user's or Google
+   * Chat app's membership](https://developers.google.com/workspace/chat/get-members).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1312,12 +1359,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a membership. For an example, see [Get a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/get).
+   * Returns details about a membership. For an example, see [Get details about a user's or Google
+   * Chat app's membership](https://developers.google.com/workspace/chat/get-members).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -1344,12 +1394,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a message. For an example, see [Read a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+   * Returns details about a message. For an example, see [Get details about a
+   * message](https://developers.google.com/workspace/chat/get-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Note: Might return a message from a blocked member or space.
    *
@@ -1371,7 +1424,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    *     <p>If you've set a custom ID for your message, you can use the value from the
    *     `clientAssignedMessageId` field for `{message}`. For details, see [Name a message]
-   *     (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Message getMessage(MessageName name) {
@@ -1382,12 +1435,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a message. For an example, see [Read a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+   * Returns details about a message. For an example, see [Get details about a
+   * message](https://developers.google.com/workspace/chat/get-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Note: Might return a message from a blocked member or space.
    *
@@ -1409,7 +1465,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    *     <p>If you've set a custom ID for your message, you can use the value from the
    *     `clientAssignedMessageId` field for `{message}`. For details, see [Name a message]
-   *     (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Message getMessage(String name) {
@@ -1419,12 +1475,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a message. For an example, see [Read a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+   * Returns details about a message. For an example, see [Get details about a
+   * message](https://developers.google.com/workspace/chat/get-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Note: Might return a message from a blocked member or space.
    *
@@ -1454,12 +1513,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a message. For an example, see [Read a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/get).
+   * Returns details about a message. For an example, see [Get details about a
+   * message](https://developers.google.com/workspace/chat/get-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Note: Might return a message from a blocked member or space.
    *
@@ -1491,12 +1553,16 @@ public class ChatServiceClient implements BackgroundResource {
    * Updates a message. There's a difference between the `patch` and `update` methods. The `patch`
    * method uses a `patch` request while the `update` method uses a `put` request. We recommend
    * using the `patch` method. For an example, see [Update a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+   * message](https://developers.google.com/workspace/chat/update-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only update messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only update messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1536,12 +1602,16 @@ public class ChatServiceClient implements BackgroundResource {
    * Updates a message. There's a difference between the `patch` and `update` methods. The `patch`
    * method uses a `patch` request while the `update` method uses a `put` request. We recommend
    * using the `patch` method. For an example, see [Update a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+   * message](https://developers.google.com/workspace/chat/update-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only update messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only update messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1574,12 +1644,16 @@ public class ChatServiceClient implements BackgroundResource {
    * Updates a message. There's a difference between the `patch` and `update` methods. The `patch`
    * method uses a `patch` request while the `update` method uses a `put` request. We recommend
    * using the `patch` method. For an example, see [Update a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/update).
+   * message](https://developers.google.com/workspace/chat/update-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only update messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only update messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1609,12 +1683,16 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a message. For an example, see [Delete a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+   * message](https://developers.google.com/workspace/chat/delete-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only delete messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only delete messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1634,7 +1712,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    *     <p>If you've set a custom ID for your message, you can use the value from the
    *     `clientAssignedMessageId` field for `{message}`. For details, see [Name a message]
-   *     (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMessage(MessageName name) {
@@ -1646,12 +1724,16 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a message. For an example, see [Delete a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+   * message](https://developers.google.com/workspace/chat/delete-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only delete messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only delete messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1671,7 +1753,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    *     <p>If you've set a custom ID for your message, you can use the value from the
    *     `clientAssignedMessageId` field for `{message}`. For details, see [Name a message]
-   *     (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMessage(String name) {
@@ -1682,12 +1764,16 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a message. For an example, see [Delete a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+   * message](https://developers.google.com/workspace/chat/delete-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only delete messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only delete messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1717,12 +1803,16 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a message. For an example, see [Delete a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/delete).
+   * message](https://developers.google.com/workspace/chat/delete-messages).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). When using app
-   * authentication, requests can only delete messages created by the calling Chat app.
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * When using app authentication, requests can only delete messages created by the calling Chat
+   * app.
    *
    * <p>Sample code:
    *
@@ -1751,11 +1841,10 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the metadata of a message attachment. The attachment data is fetched using the [media
-   * API](https://developers.google.com/chat/api/reference/rest/v1/media/download). For an example,
-   * see [Get a message
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
-   * Requires [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an
+   * example, see [Get metadata about a message
+   * attachment](https://developers.google.com/workspace/chat/get-media-attachments). Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -1784,11 +1873,10 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the metadata of a message attachment. The attachment data is fetched using the [media
-   * API](https://developers.google.com/chat/api/reference/rest/v1/media/download). For an example,
-   * see [Get a message
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
-   * Requires [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an
+   * example, see [Get metadata about a message
+   * attachment](https://developers.google.com/workspace/chat/get-media-attachments). Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -1816,11 +1904,10 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the metadata of a message attachment. The attachment data is fetched using the [media
-   * API](https://developers.google.com/chat/api/reference/rest/v1/media/download). For an example,
-   * see [Get a message
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
-   * Requires [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an
+   * example, see [Get metadata about a message
+   * attachment](https://developers.google.com/workspace/chat/get-media-attachments). Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -1849,11 +1936,10 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the metadata of a message attachment. The attachment data is fetched using the [media
-   * API](https://developers.google.com/chat/api/reference/rest/v1/media/download). For an example,
-   * see [Get a message
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/get).
-   * Requires [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an
+   * example, see [Get metadata about a message
+   * attachment](https://developers.google.com/workspace/chat/get-media-attachments). Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -1881,8 +1967,9 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads an attachment. For an example, see [Upload media as a file
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
-   * Requires user [authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * attachment](https://developers.google.com/workspace/chat/upload-media-attachments). Requires
+   * user
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>You can upload attachments up to 200 MB. Certain file types aren't supported. For details,
    * see [File types blocked by Google
@@ -1916,8 +2003,9 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads an attachment. For an example, see [Upload media as a file
-   * attachment](https://developers.google.com/chat/api/guides/v1/media-and-attachments/upload).
-   * Requires user [authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * attachment](https://developers.google.com/workspace/chat/upload-media-attachments). Requires
+   * user
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>You can upload attachments up to 200 MB. Certain file types aren't supported. For details,
    * see [File types blocked by Google
@@ -1953,11 +2041,14 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first
    * message is sent. For an example, see [List
-   * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+   * spaces](https://developers.google.com/workspace/chat/list-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
@@ -1989,11 +2080,14 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first
    * message is sent. For an example, see [List
-   * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+   * spaces](https://developers.google.com/workspace/chat/list-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
@@ -2030,11 +2124,14 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first
    * message is sent. For an example, see [List
-   * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+   * spaces](https://developers.google.com/workspace/chat/list-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
@@ -2070,11 +2167,14 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Lists spaces the caller is a member of. Group chats and DMs aren't listed until the first
    * message is sent. For an example, see [List
-   * spaces](https://developers.google.com/chat/api/guides/v1/spaces/list).
+   * spaces](https://developers.google.com/workspace/chat/list-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Lists spaces visible to the caller or authenticated user. Group chats and DMs aren't listed
    * until the first message is sent.
@@ -2115,12 +2215,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a space. For an example, see [Get a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+   * Returns details about a space. For an example, see [Get details about a
+   * space](https://developers.google.com/workspace/chat/get-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2148,12 +2251,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a space. For an example, see [Get a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+   * Returns details about a space. For an example, see [Get details about a
+   * space](https://developers.google.com/workspace/chat/get-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2180,12 +2286,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a space. For an example, see [Get a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+   * Returns details about a space. For an example, see [Get details about a
+   * space](https://developers.google.com/workspace/chat/get-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2211,12 +2320,15 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns details about a space. For an example, see [Get a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/get).
+   * Returns details about a space. For an example, see [Get details about a
+   * space](https://developers.google.com/workspace/chat/get-spaces).
    *
-   * <p>Requires [authentication](https://developers.google.com/chat/api/guides/auth). Supports [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts) and [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize). Supports
+   * [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2242,13 +2354,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a named space. Spaces grouped by topics aren't supported. For an example, see [Create a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/create-spaces).
    *
    * <p>If you receive the error message `ALREADY_EXISTS` when creating a space, try a different
    * `displayName`. An existing space within the Google Workspace organization might already use
    * this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2281,13 +2394,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a named space. Spaces grouped by topics aren't supported. For an example, see [Create a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/create-spaces).
    *
    * <p>If you receive the error message `ALREADY_EXISTS` when creating a space, try a different
    * `displayName`. An existing space within the Google Workspace organization might already use
    * this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2317,13 +2431,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a named space. Spaces grouped by topics aren't supported. For an example, see [Create a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/create-spaces).
    *
    * <p>If you receive the error message `ALREADY_EXISTS` when creating a space, try a different
    * `displayName`. An existing space within the Google Workspace organization might already use
    * this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2353,7 +2468,7 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Creates a space and adds specified users to it. The calling user is automatically added to the
    * space, and shouldn't be specified as a membership in the request. For an example, see [Set up a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+   * space with initial members](https://developers.google.com/workspace/chat/set-up-spaces).
    *
    * <p>To specify the human members to add, add memberships with the appropriate `member.name` in
    * the `SetUpSpaceRequest`. To add a human user, use `users/{user}`, where `{user}` can be the
@@ -2373,8 +2488,8 @@ public class ChatServiceClient implements BackgroundResource {
    * <p>To create a DM between the calling user and the calling app, set `Space.singleUserBotDm` to
    * `true` and don't specify any memberships. You can only use this method to set up a DM with the
    * calling app. To add the calling app as a member of a space or an existing DM between two human
-   * users, see [create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+   * users, see [Invite or add a user or app to a
+   * space](https://developers.google.com/workspace/chat/create-members).
    *
    * <p>If a DM already exists between two users, even when one user blocks the other at the time a
    * request is made, then the existing DM is returned.
@@ -2383,7 +2498,8 @@ public class ChatServiceClient implements BackgroundResource {
    * `ALREADY_EXISTS` when setting up a space, try a different `displayName`. An existing space
    * within the Google Workspace organization might already use this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2415,7 +2531,7 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Creates a space and adds specified users to it. The calling user is automatically added to the
    * space, and shouldn't be specified as a membership in the request. For an example, see [Set up a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/set-up).
+   * space with initial members](https://developers.google.com/workspace/chat/set-up-spaces).
    *
    * <p>To specify the human members to add, add memberships with the appropriate `member.name` in
    * the `SetUpSpaceRequest`. To add a human user, use `users/{user}`, where `{user}` can be the
@@ -2435,8 +2551,8 @@ public class ChatServiceClient implements BackgroundResource {
    * <p>To create a DM between the calling user and the calling app, set `Space.singleUserBotDm` to
    * `true` and don't specify any memberships. You can only use this method to set up a DM with the
    * calling app. To add the calling app as a member of a space or an existing DM between two human
-   * users, see [create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create).
+   * users, see [Invite or add a user or app to a
+   * space](https://developers.google.com/workspace/chat/create-members).
    *
    * <p>If a DM already exists between two users, even when one user blocks the other at the time a
    * request is made, then the existing DM is returned.
@@ -2445,7 +2561,8 @@ public class ChatServiceClient implements BackgroundResource {
    * `ALREADY_EXISTS` when setting up a space, try a different `displayName`. An existing space
    * within the Google Workspace organization might already use this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2475,13 +2592,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a space. For an example, see [Update a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+   * space](https://developers.google.com/workspace/chat/update-spaces).
    *
    * <p>If you're updating the `displayName` field and receive the error message `ALREADY_EXISTS`,
    * try a different display name.. An existing space within the Google Workspace organization might
    * already use this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2518,8 +2636,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>- `space_history_state` (Supports [turning history on or off for the
    *     space](https://support.google.com/chat/answer/7664687) if [the organization allows users to
    *     change their history setting](https://support.google.com/a/answer/7664184). Warning:
-   *     mutually exclusive with all other field paths.) - Developer Preview:
-   *     `access_settings.audience` (Supports changing the [access
+   *     mutually exclusive with all other field paths.)
+   *     <p>- Developer Preview: `access_settings.audience` (Supports changing the [access
    *     setting](https://support.google.com/chat/answer/11971020) of a space. If no audience is
    *     specified in the access setting, the space's access setting is updated to restricted.
    *     Warning: mutually exclusive with all other field paths.)
@@ -2534,13 +2652,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a space. For an example, see [Update a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+   * space](https://developers.google.com/workspace/chat/update-spaces).
    *
    * <p>If you're updating the `displayName` field and receive the error message `ALREADY_EXISTS`,
    * try a different display name.. An existing space within the Google Workspace organization might
    * already use this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2570,13 +2689,14 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a space. For an example, see [Update a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/update).
+   * space](https://developers.google.com/workspace/chat/update-spaces).
    *
    * <p>If you're updating the `displayName` field and receive the error message `ALREADY_EXISTS`,
    * try a different display name.. An existing space within the Google Workspace organization might
    * already use this display name.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -2606,10 +2726,10 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Deletes a named space. Always performs a cascading delete, which means that the space's child
    * resources—like messages posted in the space and memberships in the space—are also deleted. For
-   * an example, see [Delete a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) from a user who has
-   * permission to delete the space.
+   * an example, see [Delete a space](https://developers.google.com/workspace/chat/delete-spaces).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * from a user who has permission to delete the space.
    *
    * <p>Sample code:
    *
@@ -2639,10 +2759,10 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Deletes a named space. Always performs a cascading delete, which means that the space's child
    * resources—like messages posted in the space and memberships in the space—are also deleted. For
-   * an example, see [Delete a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) from a user who has
-   * permission to delete the space.
+   * an example, see [Delete a space](https://developers.google.com/workspace/chat/delete-spaces).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * from a user who has permission to delete the space.
    *
    * <p>Sample code:
    *
@@ -2671,10 +2791,10 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Deletes a named space. Always performs a cascading delete, which means that the space's child
    * resources—like messages posted in the space and memberships in the space—are also deleted. For
-   * an example, see [Delete a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) from a user who has
-   * permission to delete the space.
+   * an example, see [Delete a space](https://developers.google.com/workspace/chat/delete-spaces).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * from a user who has permission to delete the space.
    *
    * <p>Sample code:
    *
@@ -2702,10 +2822,10 @@ public class ChatServiceClient implements BackgroundResource {
   /**
    * Deletes a named space. Always performs a cascading delete, which means that the space's child
    * resources—like messages posted in the space and memberships in the space—are also deleted. For
-   * an example, see [Delete a
-   * space](https://developers.google.com/chat/api/guides/v1/spaces/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users) from a user who has
-   * permission to delete the space.
+   * an example, see [Delete a space](https://developers.google.com/workspace/chat/delete-spaces).
+   * Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * from a user who has permission to delete the space.
    *
    * <p>Sample code:
    *
@@ -2730,10 +2850,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Completes the [import process](https://developers.google.com/chat/api/guides/import-data) for
+   * Completes the [import process](https://developers.google.com/workspace/chat/import-data) for
    * the specified space and makes it visible to users. Requires app authentication and domain-wide
    * delegation. For more information, see [Authorize Google Chat apps to import
-   * data](https://developers.google.com/chat/api/guides/authorize-import).
+   * data](https://developers.google.com/workspace/chat/authorize-import).
    *
    * <p>Sample code:
    *
@@ -2761,10 +2881,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Completes the [import process](https://developers.google.com/chat/api/guides/import-data) for
+   * Completes the [import process](https://developers.google.com/workspace/chat/import-data) for
    * the specified space and makes it visible to users. Requires app authentication and domain-wide
    * delegation. For more information, see [Authorize Google Chat apps to import
-   * data](https://developers.google.com/chat/api/guides/authorize-import).
+   * data](https://developers.google.com/workspace/chat/authorize-import).
    *
    * <p>Sample code:
    *
@@ -2797,15 +2917,18 @@ public class ChatServiceClient implements BackgroundResource {
    * found, returns a `404 NOT_FOUND` error. For an example, see [Find a direct
    * message](/chat/api/guides/v1/spaces/find-direct-message).
    *
-   * <p>With [user authentication](https://developers.google.com/chat/api/guides/auth/users),
+   * <p>With [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * returns the direct message space between the specified user and the authenticated user.
    *
    * <p>With [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts), returns
-   * the direct message space between the specified user and the calling Chat app.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
+   * returns the direct message space between the specified user and the calling Chat app.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) or
-   * [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * or [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -2835,15 +2958,18 @@ public class ChatServiceClient implements BackgroundResource {
    * found, returns a `404 NOT_FOUND` error. For an example, see [Find a direct
    * message](/chat/api/guides/v1/spaces/find-direct-message).
    *
-   * <p>With [user authentication](https://developers.google.com/chat/api/guides/auth/users),
+   * <p>With [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * returns the direct message space between the specified user and the authenticated user.
    *
    * <p>With [app
-   * authentication](https://developers.google.com/chat/api/guides/auth/service-accounts), returns
-   * the direct message space between the specified user and the calling Chat app.
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app),
+   * returns the direct message space between the specified user and the calling Chat app.
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) or
-   * [app authentication](https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * or [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    *
    * <p>Sample code:
    *
@@ -2869,12 +2995,12 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a human membership or app membership for the calling app. Creating memberships for
-   * other apps isn't supported. For an example, see [ Create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create). When creating a
+   * other apps isn't supported. For an example, see [Invite or add a user or a Google Chat app to a
+   * space](https://developers.google.com/workspace/chat/create-members). When creating a
    * membership, if the specified member has their auto-accept policy turned off, then they're
    * invited, and must accept the space invitation before joining. Otherwise, creating a membership
    * adds the member directly to the specified space. Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>To specify the member to add, set the `membership.member.name` in the
    * `CreateMembershipRequest`:
@@ -2934,12 +3060,12 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a human membership or app membership for the calling app. Creating memberships for
-   * other apps isn't supported. For an example, see [ Create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create). When creating a
+   * other apps isn't supported. For an example, see [Invite or add a user or a Google Chat app to a
+   * space](https://developers.google.com/workspace/chat/create-members). When creating a
    * membership, if the specified member has their auto-accept policy turned off, then they're
    * invited, and must accept the space invitation before joining. Otherwise, creating a membership
    * adds the member directly to the specified space. Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>To specify the member to add, set the `membership.member.name` in the
    * `CreateMembershipRequest`:
@@ -2996,12 +3122,12 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a human membership or app membership for the calling app. Creating memberships for
-   * other apps isn't supported. For an example, see [ Create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create). When creating a
+   * other apps isn't supported. For an example, see [Invite or add a user or a Google Chat app to a
+   * space](https://developers.google.com/workspace/chat/create-members). When creating a
    * membership, if the specified member has their auto-accept policy turned off, then they're
    * invited, and must accept the space invitation before joining. Otherwise, creating a membership
    * adds the member directly to the specified space. Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>To specify the member to add, set the `membership.member.name` in the
    * `CreateMembershipRequest`:
@@ -3044,12 +3170,12 @@ public class ChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a human membership or app membership for the calling app. Creating memberships for
-   * other apps isn't supported. For an example, see [ Create a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/create). When creating a
+   * other apps isn't supported. For an example, see [Invite or add a user or a Google Chat app to a
+   * space](https://developers.google.com/workspace/chat/create-members). When creating a
    * membership, if the specified member has their auto-accept policy turned off, then they're
    * invited, and must accept the space invitation before joining. Otherwise, creating a membership
    * adds the member directly to the specified space. Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>To specify the member to add, set the `membership.member.name` in the
    * `CreateMembershipRequest`:
@@ -3091,10 +3217,108 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a membership. For an example, see [Delete a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   Membership membership = Membership.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Membership response = chatServiceClient.updateMembership(membership, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param membership Required. The membership to update. Only fields specified by `update_mask`
+   *     are updated.
+   * @param updateMask Required. The field paths to update. Separate multiple values with commas or
+   *     use `&#42;` to update all field paths.
+   *     <p>Currently supported field paths:
+   *     <p>- `role`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Membership updateMembership(Membership membership, FieldMask updateMask) {
+    UpdateMembershipRequest request =
+        UpdateMembershipRequest.newBuilder()
+            .setMembership(membership)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMembership(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setMembership(Membership.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Membership response = chatServiceClient.updateMembership(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Membership updateMembership(UpdateMembershipRequest request) {
+    return updateMembershipCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a membership. Requires [user
+   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setMembership(Membership.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Membership> future =
+   *       chatServiceClient.updateMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   Membership response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    return stub.updateMembershipCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a membership. For an example, see [Remove a user or a Google Chat app from a
+   * space](https://developers.google.com/workspace/chat/delete-members).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3129,10 +3353,11 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a membership. For an example, see [Delete a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
+   * Deletes a membership. For an example, see [Remove a user or a Google Chat app from a
+   * space](https://developers.google.com/workspace/chat/delete-members).
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3166,10 +3391,11 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a membership. For an example, see [Delete a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
+   * Deletes a membership. For an example, see [Remove a user or a Google Chat app from a
+   * space](https://developers.google.com/workspace/chat/delete-members).
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3197,10 +3423,11 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a membership. For an example, see [Delete a
-   * membership](https://developers.google.com/chat/api/guides/v1/members/delete).
+   * Deletes a membership. For an example, see [Remove a user or a Google Chat app from a
+   * space](https://developers.google.com/workspace/chat/delete-members).
    *
-   * <p>Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3228,10 +3455,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. For an example, see [Create a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). Only unicode emoji
-   * are supported.
+   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
+   * see [Add a reaction to a
+   * message](https://developers.google.com/workspace/chat/create-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3264,10 +3491,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. For an example, see [Create a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). Only unicode emoji
-   * are supported.
+   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
+   * see [Add a reaction to a
+   * message](https://developers.google.com/workspace/chat/create-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3297,10 +3524,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. For an example, see [Create a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). Only unicode emoji
-   * are supported.
+   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
+   * see [Add a reaction to a
+   * message](https://developers.google.com/workspace/chat/create-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3329,10 +3556,10 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. For an example, see [Create a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/create). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users). Only unicode emoji
-   * are supported.
+   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
+   * see [Add a reaction to a
+   * message](https://developers.google.com/workspace/chat/create-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3360,9 +3587,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists reactions to a message. For an example, see [List
-   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Lists reactions to a message. For an example, see [List reactions for a
+   * message](https://developers.google.com/workspace/chat/list-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3394,9 +3621,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists reactions to a message. For an example, see [List
-   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Lists reactions to a message. For an example, see [List reactions for a
+   * message](https://developers.google.com/workspace/chat/list-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3425,9 +3652,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists reactions to a message. For an example, see [List
-   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Lists reactions to a message. For an example, see [List reactions for a
+   * message](https://developers.google.com/workspace/chat/list-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3460,9 +3687,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists reactions to a message. For an example, see [List
-   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Lists reactions to a message. For an example, see [List reactions for a
+   * message](https://developers.google.com/workspace/chat/list-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3496,9 +3723,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists reactions to a message. For an example, see [List
-   * reactions](https://developers.google.com/chat/api/guides/v1/reactions/list). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Lists reactions to a message. For an example, see [List reactions for a
+   * message](https://developers.google.com/workspace/chat/list-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3537,9 +3764,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. For an example, see [Delete a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
+   * a reaction](https://developers.google.com/workspace/chat/delete-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3567,9 +3794,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. For an example, see [Delete a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
+   * a reaction](https://developers.google.com/workspace/chat/delete-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3596,9 +3823,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. For an example, see [Delete a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
+   * a reaction](https://developers.google.com/workspace/chat/delete-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *
@@ -3626,9 +3853,9 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. For an example, see [Delete a
-   * reaction](https://developers.google.com/chat/api/guides/v1/reactions/delete). Requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
+   * a reaction](https://developers.google.com/workspace/chat/delete-reactions). Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    *
    * <p>Sample code:
    *

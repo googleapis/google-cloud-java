@@ -308,12 +308,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Resource name for this `ServiceLevelObjective`. The format is:
+   * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -333,12 +333,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Resource name for this `ServiceLevelObjective`. The format is:
+   * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1317,12 +1317,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Resource name for this `ServiceLevelObjective`. The format is:
+     * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1341,12 +1341,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Resource name for this `ServiceLevelObjective`. The format is:
+     * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1365,12 +1365,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Resource name for this `ServiceLevelObjective`. The format is:
+     * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1388,12 +1388,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Resource name for this `ServiceLevelObjective`. The format is:
+     * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1407,12 +1407,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Resource name for this `ServiceLevelObjective`. The format is:
+     * Identifier. Resource name for this `ServiceLevelObjective`. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

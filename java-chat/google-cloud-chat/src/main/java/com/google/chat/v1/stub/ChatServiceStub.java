@@ -52,6 +52,7 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -153,6 +154,10 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     throw new UnsupportedOperationException("Not implemented: createMembershipCallable()");
+  }
+
+  public UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMembershipCallable()");
   }
 
   public UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable() {

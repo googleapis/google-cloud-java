@@ -24,7 +24,7 @@ package com.google.chat.v1;
  *
  * <pre>
  * Contains a
- * [dialog](https://developers.google.com/chat/how-tos/dialogs) and request
+ * [dialog](https://developers.google.com/workspace/chat/dialogs) and request
  * status code.
  * </pre>
  *
@@ -113,8 +113,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-   * for the request.
+   * Input only.
+   * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+   * request.
    * </pre>
    *
    * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -129,8 +130,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-   * for the request.
+   * Input only.
+   * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+   * request.
    * </pre>
    *
    * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -148,8 +150,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-   * for the request.
+   * Input only.
+   * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+   * request.
    * </pre>
    *
    * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -169,7 +172,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Status for a request to either invoke or submit a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
    * a status and message to users, if necessary.
    * For example, in case of an error or success.
    * </pre>
@@ -189,7 +192,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Status for a request to either invoke or submit a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
    * a status and message to users, if necessary.
    * For example, in case of an error or success.
    * </pre>
@@ -211,7 +214,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Status for a request to either invoke or submit a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
    * a status and message to users, if necessary.
    * For example, in case of an error or success.
    * </pre>
@@ -418,7 +421,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Contains a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs) and request
+   * [dialog](https://developers.google.com/workspace/chat/dialogs) and request
    * status code.
    * </pre>
    *
@@ -662,8 +665,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -678,8 +682,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -704,8 +709,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -727,8 +733,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -747,8 +754,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -778,8 +786,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -804,8 +813,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -817,8 +827,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -838,8 +849,9 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Dialog](https://developers.google.com/chat/how-tos/dialogs)
-     * for the request.
+     * Input only.
+     * [Dialog](https://developers.google.com/workspace/chat/dialogs) for the
+     * request.
      * </pre>
      *
      * <code>.google.chat.v1.Dialog dialog = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -877,7 +889,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -896,7 +908,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -921,7 +933,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -948,7 +960,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -972,7 +984,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -1004,7 +1016,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -1028,7 +1040,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -1047,7 +1059,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>
@@ -1070,7 +1082,7 @@ public final class DialogAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Status for a request to either invoke or submit a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Displays
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Displays
      * a status and message to users, if necessary.
      * For example, in case of an error or success.
      * </pre>

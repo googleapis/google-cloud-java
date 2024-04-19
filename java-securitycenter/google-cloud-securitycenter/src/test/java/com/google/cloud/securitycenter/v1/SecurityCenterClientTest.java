@@ -449,6 +449,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -536,6 +537,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3608,6 +3610,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3697,6 +3700,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3784,6 +3788,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3870,6 +3875,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -4222,6 +4228,7 @@ public class SecurityCenterClientTest {
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
             .setNotebook(Notebook.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);

@@ -432,6 +432,27 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void updateMembership(
+      UpdateMembershipRequest request, StreamObserver<Membership> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Membership) {
+      requests.add(request);
+      responseObserver.onNext(((Membership) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMembership, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Membership.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteMembership(
       DeleteMembershipRequest request, StreamObserver<Membership> responseObserver) {
     Object response = responses.poll();

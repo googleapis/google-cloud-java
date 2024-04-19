@@ -174,6 +174,11 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).createMembershipSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateMembership. */
+  public UnaryCallSettings<UpdateMembershipRequest, Membership> updateMembershipSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateMembershipSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteMembership. */
   public UnaryCallSettings<DeleteMembershipRequest, Membership> deleteMembershipSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteMembershipSettings();
@@ -402,6 +407,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings() {
       return getStubSettingsBuilder().createMembershipSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMembership. */
+    public UnaryCallSettings.Builder<UpdateMembershipRequest, Membership>
+        updateMembershipSettings() {
+      return getStubSettingsBuilder().updateMembershipSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteMembership. */

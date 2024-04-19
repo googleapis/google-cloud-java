@@ -131,7 +131,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Presents a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs).
+     * [dialog](https://developers.google.com/workspace/chat/dialogs).
      * </pre>
      *
      * <code>DIALOG = 4;</code>
@@ -208,7 +208,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Presents a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs).
+     * [dialog](https://developers.google.com/workspace/chat/dialogs).
      * </pre>
      *
      * <code>DIALOG = 4;</code>
@@ -2471,7 +2471,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *
@@ -2490,7 +2490,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *
@@ -2511,7 +2511,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *
@@ -3242,7 +3242,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3260,7 +3260,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3284,7 +3284,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3310,7 +3310,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3333,7 +3333,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3364,7 +3364,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3387,7 +3387,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3405,7 +3405,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *
@@ -3427,7 +3427,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. A response to an interaction event related to a
-     * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+     * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
      * accompanied by `ResponseType.Dialog`.
      * </pre>
      *

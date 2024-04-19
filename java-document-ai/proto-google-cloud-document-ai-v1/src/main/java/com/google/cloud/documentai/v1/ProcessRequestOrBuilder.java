@@ -133,15 +133,11 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
-   * to use for processing. If a
-   * [Processor][google.cloud.documentai.v1.Processor] is specified, the server
-   * will use its [default
-   * version][google.cloud.documentai.v1.Processor.default_processor_version].
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
-   * or
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -156,15 +152,11 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
-   * to use for processing. If a
-   * [Processor][google.cloud.documentai.v1.Processor] is specified, the server
-   * will use its [default
-   * version][google.cloud.documentai.v1.Processor.default_processor_version].
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
-   * or
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -194,8 +186,7 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies which fields to include in the
-   * [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
+   * Specifies which fields to include in the [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
    * output. Only supports top-level document and pages field, so it must be in
    * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
@@ -209,8 +200,7 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies which fields to include in the
-   * [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
+   * Specifies which fields to include in the [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
    * output. Only supports top-level document and pages field, so it must be in
    * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
@@ -224,8 +214,7 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies which fields to include in the
-   * [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
+   * Specifies which fields to include in the [ProcessResponse.document][google.cloud.documentai.v1.ProcessResponse.document]
    * output. Only supports top-level document and pages field, so it must be in
    * the form of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>

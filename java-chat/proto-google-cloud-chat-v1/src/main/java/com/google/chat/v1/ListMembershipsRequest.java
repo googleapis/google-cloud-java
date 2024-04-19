@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.ListMembershipsRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for listing memberships.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.ListMembershipsRequest}
+ */
 public final class ListMembershipsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListMembershipsRequest)
@@ -129,8 +137,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    *
    * If unspecified, at most 100 memberships are returned.
    *
-   * The maximum value is 1,000. If you use a value more than 1,000, it's
-   * automatically changed to 1,000.
+   * The maximum value is 1000. If you use a value more than 1000, it's
+   * automatically changed to 1000.
    *
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
@@ -216,9 +224,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * Optional. A query filter.
    *
    * You can filter memberships by a member's role
-   * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+   * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
    * and type
-   * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+   * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
@@ -240,6 +248,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * member.type = "HUMAN" AND member.type = "BOT"
    * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
    * ```
+   *
    *
    * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
    * error.
@@ -268,9 +277,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * Optional. A query filter.
    *
    * You can filter memberships by a member's role
-   * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+   * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
    * and type
-   * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+   * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
    *
    * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
    *
@@ -292,6 +301,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * member.type = "HUMAN" AND member.type = "BOT"
    * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
    * ```
+   *
    *
    * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
    * error.
@@ -351,7 +361,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * that don't match the filter criteria aren't returned.
    *
    * Currently requires [user
-   * authentication](https://developers.google.com/chat/api/guides/auth/users).
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
    * <code>bool show_invited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -567,7 +577,15 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.ListMembershipsRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for listing memberships.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.ListMembershipsRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.ListMembershipsRequest)
@@ -951,8 +969,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * If unspecified, at most 100 memberships are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
@@ -974,8 +992,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * If unspecified, at most 100 memberships are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
@@ -1001,8 +1019,8 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      * If unspecified, at most 100 memberships are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
@@ -1157,9 +1175,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Optional. A query filter.
      *
      * You can filter memberships by a member's role
-     * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+     * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
      * and type
-     * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+     * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
@@ -1181,6 +1199,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * member.type = "HUMAN" AND member.type = "BOT"
      * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
      * ```
+     *
      *
      * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
      * error.
@@ -1208,9 +1227,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Optional. A query filter.
      *
      * You can filter memberships by a member's role
-     * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+     * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
      * and type
-     * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+     * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
@@ -1232,6 +1251,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * member.type = "HUMAN" AND member.type = "BOT"
      * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
      * ```
+     *
      *
      * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
      * error.
@@ -1259,9 +1279,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Optional. A query filter.
      *
      * You can filter memberships by a member's role
-     * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+     * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
      * and type
-     * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+     * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
@@ -1283,6 +1303,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * member.type = "HUMAN" AND member.type = "BOT"
      * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
      * ```
+     *
      *
      * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
      * error.
@@ -1309,9 +1330,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Optional. A query filter.
      *
      * You can filter memberships by a member's role
-     * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+     * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
      * and type
-     * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+     * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
@@ -1333,6 +1354,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * member.type = "HUMAN" AND member.type = "BOT"
      * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
      * ```
+     *
      *
      * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
      * error.
@@ -1355,9 +1377,9 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Optional. A query filter.
      *
      * You can filter memberships by a member's role
-     * ([`role`](https://developers.google.com/chat/api/reference/rest/v1/spaces.members#membershiprole))
+     * ([`role`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members#membershiprole))
      * and type
-     * ([`member.type`](https://developers.google.com/chat/api/reference/rest/v1/User#type)).
+     * ([`member.type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/User#type)).
      *
      * To filter by role, set `role` to `ROLE_MEMBER` or `ROLE_MANAGER`.
      *
@@ -1379,6 +1401,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * member.type = "HUMAN" AND member.type = "BOT"
      * role = "ROLE_MANAGER" AND role = "ROLE_MEMBER"
      * ```
+     *
      *
      * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
      * error.
@@ -1481,7 +1504,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * that don't match the filter criteria aren't returned.
      *
      * Currently requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool show_invited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1504,7 +1527,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * that don't match the filter criteria aren't returned.
      *
      * Currently requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool show_invited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1531,7 +1554,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * that don't match the filter criteria aren't returned.
      *
      * Currently requires [user
-     * authentication](https://developers.google.com/chat/api/guides/auth/users).
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool show_invited = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

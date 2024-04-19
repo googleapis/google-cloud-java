@@ -87,8 +87,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Custom view of service telemetry. Currently a place-holder pending final
-   * design.
+   * Use a custom service to designate a service that you want to monitor
+   * when none of the other service types (like App Engine, Cloud Run, or
+   * a GKE type) matches your intended service.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Service.Custom}
@@ -280,8 +281,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom view of service telemetry. Currently a place-holder pending final
-     * design.
+     * Use a custom service to designate a service that you want to monitor
+     * when none of the other service types (like App Engine, Cloud Run, or
+     * a GKE type) matches your intended service.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.Service.Custom}
@@ -511,8 +513,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the App Engine module underlying this service. Corresponds to
-     * the `module_id` resource label in the `gae_app` monitored resource:
-     * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+     * the `module_id` resource label in the [`gae_app` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
      * </pre>
      *
      * <code>string module_id = 1;</code>
@@ -525,8 +527,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the App Engine module underlying this service. Corresponds to
-     * the `module_id` resource label in the `gae_app` monitored resource:
-     * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+     * the `module_id` resource label in the [`gae_app` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
      * </pre>
      *
      * <code>string module_id = 1;</code>
@@ -588,8 +590,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the App Engine module underlying this service. Corresponds to
-     * the `module_id` resource label in the `gae_app` monitored resource:
-     * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+     * the `module_id` resource label in the [`gae_app` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
      * </pre>
      *
      * <code>string module_id = 1;</code>
@@ -613,8 +615,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the App Engine module underlying this service. Corresponds to
-     * the `module_id` resource label in the `gae_app` monitored resource:
-     * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+     * the `module_id` resource label in the [`gae_app` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
      * </pre>
      *
      * <code>string module_id = 1;</code>
@@ -985,8 +987,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The ID of the App Engine module underlying this service. Corresponds to
-       * the `module_id` resource label in the `gae_app` monitored resource:
-       * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+       * the `module_id` resource label in the [`gae_app` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
        * </pre>
        *
        * <code>string module_id = 1;</code>
@@ -1009,8 +1011,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The ID of the App Engine module underlying this service. Corresponds to
-       * the `module_id` resource label in the `gae_app` monitored resource:
-       * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+       * the `module_id` resource label in the [`gae_app` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
        * </pre>
        *
        * <code>string module_id = 1;</code>
@@ -1033,8 +1035,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The ID of the App Engine module underlying this service. Corresponds to
-       * the `module_id` resource label in the `gae_app` monitored resource:
-       * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+       * the `module_id` resource label in the [`gae_app` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
        * </pre>
        *
        * <code>string module_id = 1;</code>
@@ -1056,8 +1058,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The ID of the App Engine module underlying this service. Corresponds to
-       * the `module_id` resource label in the `gae_app` monitored resource:
-       * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+       * the `module_id` resource label in the [`gae_app` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
        * </pre>
        *
        * <code>string module_id = 1;</code>
@@ -1075,8 +1077,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The ID of the App Engine module underlying this service. Corresponds to
-       * the `module_id` resource label in the `gae_app` monitored resource:
-       * https://cloud.google.com/monitoring/api/resources#tag_gae_app
+       * the `module_id` resource label in the [`gae_app` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_gae_app).
        * </pre>
        *
        * <code>string module_id = 1;</code>
@@ -1169,8 +1171,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Cloud Endpoints service underlying this service.
-     * Corresponds to the `service` resource label in the `api` monitored
-     * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+     * Corresponds to the `service` resource label in the [`api` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -1183,8 +1185,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Cloud Endpoints service underlying this service.
-     * Corresponds to the `service` resource label in the `api` monitored
-     * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+     * Corresponds to the `service` resource label in the [`api` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -1246,8 +1248,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Cloud Endpoints service underlying this service.
-     * Corresponds to the `service` resource label in the `api` monitored
-     * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+     * Corresponds to the `service` resource label in the [`api` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -1271,8 +1273,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Cloud Endpoints service underlying this service.
-     * Corresponds to the `service` resource label in the `api` monitored
-     * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+     * Corresponds to the `service` resource label in the [`api` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -1644,8 +1646,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the Cloud Endpoints service underlying this service.
-       * Corresponds to the `service` resource label in the `api` monitored
-       * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+       * Corresponds to the `service` resource label in the [`api` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
        * </pre>
        *
        * <code>string service = 1;</code>
@@ -1668,8 +1670,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the Cloud Endpoints service underlying this service.
-       * Corresponds to the `service` resource label in the `api` monitored
-       * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+       * Corresponds to the `service` resource label in the [`api` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
        * </pre>
        *
        * <code>string service = 1;</code>
@@ -1692,8 +1694,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the Cloud Endpoints service underlying this service.
-       * Corresponds to the `service` resource label in the `api` monitored
-       * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+       * Corresponds to the `service` resource label in the [`api` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
        * </pre>
        *
        * <code>string service = 1;</code>
@@ -1715,8 +1717,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the Cloud Endpoints service underlying this service.
-       * Corresponds to the `service` resource label in the `api` monitored
-       * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+       * Corresponds to the `service` resource label in the [`api` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
        * </pre>
        *
        * <code>string service = 1;</code>
@@ -1734,8 +1736,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the Cloud Endpoints service underlying this service.
-       * Corresponds to the `service` resource label in the `api` monitored
-       * resource: https://cloud.google.com/monitoring/api/resources#tag_api
+       * Corresponds to the `service` resource label in the [`api` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_api).
        * </pre>
        *
        * <code>string service = 1;</code>
@@ -5353,6 +5355,6487 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface CloudRunOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.CloudRun)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Cloud Run service. Corresponds to the `service_name`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string service_name = 1;</code>
+     *
+     * @return The serviceName.
+     */
+    java.lang.String getServiceName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Cloud Run service. Corresponds to the `service_name`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string service_name = 1;</code>
+     *
+     * @return The bytes for serviceName.
+     */
+    com.google.protobuf.ByteString getServiceNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location the service is run. Corresponds to the `location`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     *
+     *
+     * <pre>
+     * The location the service is run. Corresponds to the `location`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString getLocationBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Run service. Learn more at https://cloud.google.com/run.
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.CloudRun}
+   */
+  public static final class CloudRun extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.CloudRun)
+      CloudRunOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CloudRun.newBuilder() to construct.
+    private CloudRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CloudRun() {
+      serviceName_ = "";
+      location_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CloudRun();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_CloudRun_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_CloudRun_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.CloudRun.class,
+              com.google.monitoring.v3.Service.CloudRun.Builder.class);
+    }
+
+    public static final int SERVICE_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Cloud Run service. Corresponds to the `service_name`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string service_name = 1;</code>
+     *
+     * @return The serviceName.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceName() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Cloud Run service. Corresponds to the `service_name`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string service_name = 1;</code>
+     *
+     * @return The bytes for serviceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceNameBytes() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The location the service is run. Corresponds to the `location`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location the service is run. Corresponds to the `location`
+     * resource label in the [`cloud_run_revision` monitored
+     * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.CloudRun)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.CloudRun other =
+          (com.google.monitoring.v3.Service.CloudRun) obj;
+
+      if (!getServiceName().equals(other.getServiceName())) return false;
+      if (!getLocation().equals(other.getLocation())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceName().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.Service.CloudRun prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Run service. Learn more at https://cloud.google.com/run.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.CloudRun}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.CloudRun)
+        com.google.monitoring.v3.Service.CloudRunOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_CloudRun_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_CloudRun_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.CloudRun.class,
+                com.google.monitoring.v3.Service.CloudRun.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.CloudRun.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        serviceName_ = "";
+        location_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_CloudRun_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.CloudRun getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.CloudRun build() {
+        com.google.monitoring.v3.Service.CloudRun result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.CloudRun buildPartial() {
+        com.google.monitoring.v3.Service.CloudRun result =
+            new com.google.monitoring.v3.Service.CloudRun(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.Service.CloudRun result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceName_ = serviceName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.location_ = location_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.CloudRun) {
+          return mergeFrom((com.google.monitoring.v3.Service.CloudRun) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.CloudRun other) {
+        if (other == com.google.monitoring.v3.Service.CloudRun.getDefaultInstance()) return this;
+        if (!other.getServiceName().isEmpty()) {
+          serviceName_ = other.serviceName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  location_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object serviceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the Cloud Run service. Corresponds to the `service_name`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string service_name = 1;</code>
+       *
+       * @return The serviceName.
+       */
+      public java.lang.String getServiceName() {
+        java.lang.Object ref = serviceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the Cloud Run service. Corresponds to the `service_name`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string service_name = 1;</code>
+       *
+       * @return The bytes for serviceName.
+       */
+      public com.google.protobuf.ByteString getServiceNameBytes() {
+        java.lang.Object ref = serviceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the Cloud Run service. Corresponds to the `service_name`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string service_name = 1;</code>
+       *
+       * @param value The serviceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the Cloud Run service. Corresponds to the `service_name`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string service_name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceName() {
+        serviceName_ = getDefaultInstance().getServiceName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the Cloud Run service. Corresponds to the `service_name`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string service_name = 1;</code>
+       *
+       * @param value The bytes for serviceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The location the service is run. Corresponds to the `location`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location the service is run. Corresponds to the `location`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location the service is run. Corresponds to the `location`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location the service is run. Corresponds to the `location`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location the service is run. Corresponds to the `location`
+       * resource label in the [`cloud_run_revision` monitored
+       * resource](https://cloud.google.com/monitoring/api/resources#tag_cloud_run_revision).
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.CloudRun)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.CloudRun)
+    private static final com.google.monitoring.v3.Service.CloudRun DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.CloudRun();
+    }
+
+    public static com.google.monitoring.v3.Service.CloudRun getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloudRun> PARSER =
+        new com.google.protobuf.AbstractParser<CloudRun>() {
+          @java.lang.Override
+          public CloudRun parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CloudRun> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudRun> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.CloudRun getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GkeNamespaceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.GkeNamespace)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString getLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    java.lang.String getClusterName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    com.google.protobuf.ByteString getClusterNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of this namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    java.lang.String getNamespaceName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of this namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    com.google.protobuf.ByteString getNamespaceNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GKE Namespace. The field names correspond to the resource metadata labels
+   * on monitored resources that fall under a namespace (for example,
+   * `k8s_container` or `k8s_pod`).
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.GkeNamespace}
+   */
+  public static final class GkeNamespace extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.GkeNamespace)
+      GkeNamespaceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GkeNamespace.newBuilder() to construct.
+    private GkeNamespace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GkeNamespace() {
+      projectId_ = "";
+      location_ = "";
+      clusterName_ = "";
+      namespaceName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GkeNamespace();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeNamespace_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeNamespace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.GkeNamespace.class,
+              com.google.monitoring.v3.Service.GkeNamespace.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterName() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterNameBytes() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAMESPACE_NAME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespaceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of this namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespaceName() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespaceName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of this namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceNameBytes() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespaceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespaceName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespaceName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.GkeNamespace)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.GkeNamespace other =
+          (com.google.monitoring.v3.Service.GkeNamespace) obj;
+
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!getLocation().equals(other.getLocation())) return false;
+      if (!getClusterName().equals(other.getClusterName())) return false;
+      if (!getNamespaceName().equals(other.getNamespaceName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterName().hashCode();
+      hash = (37 * hash) + NAMESPACE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespaceName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.Service.GkeNamespace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Namespace. The field names correspond to the resource metadata labels
+     * on monitored resources that fall under a namespace (for example,
+     * `k8s_container` or `k8s_pod`).
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.GkeNamespace}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.GkeNamespace)
+        com.google.monitoring.v3.Service.GkeNamespaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeNamespace_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeNamespace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.GkeNamespace.class,
+                com.google.monitoring.v3.Service.GkeNamespace.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.GkeNamespace.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        projectId_ = "";
+        location_ = "";
+        clusterName_ = "";
+        namespaceName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeNamespace_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeNamespace getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeNamespace build() {
+        com.google.monitoring.v3.Service.GkeNamespace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeNamespace buildPartial() {
+        com.google.monitoring.v3.Service.GkeNamespace result =
+            new com.google.monitoring.v3.Service.GkeNamespace(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.Service.GkeNamespace result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.location_ = location_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clusterName_ = clusterName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.namespaceName_ = namespaceName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.GkeNamespace) {
+          return mergeFrom((com.google.monitoring.v3.Service.GkeNamespace) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.GkeNamespace other) {
+        if (other == com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance())
+          return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getClusterName().isEmpty()) {
+          clusterName_ = other.clusterName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getNamespaceName().isEmpty()) {
+          namespaceName_ = other.namespaceName_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  projectId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  location_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  clusterName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  namespaceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The clusterName.
+       */
+      public java.lang.String getClusterName() {
+        java.lang.Object ref = clusterName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The bytes for clusterName.
+       */
+      public com.google.protobuf.ByteString getClusterNameBytes() {
+        java.lang.Object ref = clusterName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterName() {
+        clusterName_ = getDefaultInstance().getClusterName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The bytes for clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespaceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of this namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The namespaceName.
+       */
+      public java.lang.String getNamespaceName() {
+        java.lang.Object ref = namespaceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespaceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The bytes for namespaceName.
+       */
+      public com.google.protobuf.ByteString getNamespaceNameBytes() {
+        java.lang.Object ref = namespaceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespaceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespaceName() {
+        namespaceName_ = getDefaultInstance().getNamespaceName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The bytes for namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.GkeNamespace)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.GkeNamespace)
+    private static final com.google.monitoring.v3.Service.GkeNamespace DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.GkeNamespace();
+    }
+
+    public static com.google.monitoring.v3.Service.GkeNamespace getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GkeNamespace> PARSER =
+        new com.google.protobuf.AbstractParser<GkeNamespace>() {
+          @java.lang.Override
+          public GkeNamespace parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GkeNamespace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GkeNamespace> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeNamespace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GkeWorkloadOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.GkeWorkload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString getLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    java.lang.String getClusterName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    com.google.protobuf.ByteString getClusterNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    java.lang.String getNamespaceName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    com.google.protobuf.ByteString getNamespaceNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of this workload (for example, "Deployment" or "DaemonSet")
+     * </pre>
+     *
+     * <code>string top_level_controller_type = 5;</code>
+     *
+     * @return The topLevelControllerType.
+     */
+    java.lang.String getTopLevelControllerType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of this workload (for example, "Deployment" or "DaemonSet")
+     * </pre>
+     *
+     * <code>string top_level_controller_type = 5;</code>
+     *
+     * @return The bytes for topLevelControllerType.
+     */
+    com.google.protobuf.ByteString getTopLevelControllerTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of this workload.
+     * </pre>
+     *
+     * <code>string top_level_controller_name = 6;</code>
+     *
+     * @return The topLevelControllerName.
+     */
+    java.lang.String getTopLevelControllerName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of this workload.
+     * </pre>
+     *
+     * <code>string top_level_controller_name = 6;</code>
+     *
+     * @return The bytes for topLevelControllerName.
+     */
+    com.google.protobuf.ByteString getTopLevelControllerNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A GKE Workload (Deployment, StatefulSet, etc). The field names correspond
+   * to the metadata labels on monitored resources that fall under a workload
+   * (for example, `k8s_container` or `k8s_pod`).
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.GkeWorkload}
+   */
+  public static final class GkeWorkload extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.GkeWorkload)
+      GkeWorkloadOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GkeWorkload.newBuilder() to construct.
+    private GkeWorkload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GkeWorkload() {
+      projectId_ = "";
+      location_ = "";
+      clusterName_ = "";
+      namespaceName_ = "";
+      topLevelControllerType_ = "";
+      topLevelControllerName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GkeWorkload();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeWorkload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeWorkload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.GkeWorkload.class,
+              com.google.monitoring.v3.Service.GkeWorkload.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterName() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterNameBytes() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAMESPACE_NAME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespaceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespaceName() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespaceName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceNameBytes() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespaceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOP_LEVEL_CONTROLLER_TYPE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topLevelControllerType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The type of this workload (for example, "Deployment" or "DaemonSet")
+     * </pre>
+     *
+     * <code>string top_level_controller_type = 5;</code>
+     *
+     * @return The topLevelControllerType.
+     */
+    @java.lang.Override
+    public java.lang.String getTopLevelControllerType() {
+      java.lang.Object ref = topLevelControllerType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        topLevelControllerType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of this workload (for example, "Deployment" or "DaemonSet")
+     * </pre>
+     *
+     * <code>string top_level_controller_type = 5;</code>
+     *
+     * @return The bytes for topLevelControllerType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTopLevelControllerTypeBytes() {
+      java.lang.Object ref = topLevelControllerType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        topLevelControllerType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOP_LEVEL_CONTROLLER_NAME_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topLevelControllerName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of this workload.
+     * </pre>
+     *
+     * <code>string top_level_controller_name = 6;</code>
+     *
+     * @return The topLevelControllerName.
+     */
+    @java.lang.Override
+    public java.lang.String getTopLevelControllerName() {
+      java.lang.Object ref = topLevelControllerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        topLevelControllerName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of this workload.
+     * </pre>
+     *
+     * <code>string top_level_controller_name = 6;</code>
+     *
+     * @return The bytes for topLevelControllerName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTopLevelControllerNameBytes() {
+      java.lang.Object ref = topLevelControllerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        topLevelControllerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespaceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topLevelControllerType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, topLevelControllerType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topLevelControllerName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, topLevelControllerName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespaceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topLevelControllerType_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(5, topLevelControllerType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topLevelControllerName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(6, topLevelControllerName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.GkeWorkload)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.GkeWorkload other =
+          (com.google.monitoring.v3.Service.GkeWorkload) obj;
+
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!getLocation().equals(other.getLocation())) return false;
+      if (!getClusterName().equals(other.getClusterName())) return false;
+      if (!getNamespaceName().equals(other.getNamespaceName())) return false;
+      if (!getTopLevelControllerType().equals(other.getTopLevelControllerType())) return false;
+      if (!getTopLevelControllerName().equals(other.getTopLevelControllerName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterName().hashCode();
+      hash = (37 * hash) + NAMESPACE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespaceName().hashCode();
+      hash = (37 * hash) + TOP_LEVEL_CONTROLLER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTopLevelControllerType().hashCode();
+      hash = (37 * hash) + TOP_LEVEL_CONTROLLER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTopLevelControllerName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.Service.GkeWorkload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A GKE Workload (Deployment, StatefulSet, etc). The field names correspond
+     * to the metadata labels on monitored resources that fall under a workload
+     * (for example, `k8s_container` or `k8s_pod`).
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.GkeWorkload}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.GkeWorkload)
+        com.google.monitoring.v3.Service.GkeWorkloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeWorkload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeWorkload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.GkeWorkload.class,
+                com.google.monitoring.v3.Service.GkeWorkload.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.GkeWorkload.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        projectId_ = "";
+        location_ = "";
+        clusterName_ = "";
+        namespaceName_ = "";
+        topLevelControllerType_ = "";
+        topLevelControllerName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeWorkload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeWorkload getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeWorkload build() {
+        com.google.monitoring.v3.Service.GkeWorkload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeWorkload buildPartial() {
+        com.google.monitoring.v3.Service.GkeWorkload result =
+            new com.google.monitoring.v3.Service.GkeWorkload(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.Service.GkeWorkload result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.location_ = location_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clusterName_ = clusterName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.namespaceName_ = namespaceName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.topLevelControllerType_ = topLevelControllerType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.topLevelControllerName_ = topLevelControllerName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.GkeWorkload) {
+          return mergeFrom((com.google.monitoring.v3.Service.GkeWorkload) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.GkeWorkload other) {
+        if (other == com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getClusterName().isEmpty()) {
+          clusterName_ = other.clusterName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getNamespaceName().isEmpty()) {
+          namespaceName_ = other.namespaceName_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getTopLevelControllerType().isEmpty()) {
+          topLevelControllerType_ = other.topLevelControllerType_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getTopLevelControllerName().isEmpty()) {
+          topLevelControllerName_ = other.topLevelControllerName_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  projectId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  location_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  clusterName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  namespaceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  topLevelControllerType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  topLevelControllerName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The clusterName.
+       */
+      public java.lang.String getClusterName() {
+        java.lang.Object ref = clusterName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The bytes for clusterName.
+       */
+      public com.google.protobuf.ByteString getClusterNameBytes() {
+        java.lang.Object ref = clusterName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterName() {
+        clusterName_ = getDefaultInstance().getClusterName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The bytes for clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespaceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The namespaceName.
+       */
+      public java.lang.String getNamespaceName() {
+        java.lang.Object ref = namespaceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespaceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The bytes for namespaceName.
+       */
+      public com.google.protobuf.ByteString getNamespaceNameBytes() {
+        java.lang.Object ref = namespaceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespaceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespaceName() {
+        namespaceName_ = getDefaultInstance().getNamespaceName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The bytes for namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object topLevelControllerType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The type of this workload (for example, "Deployment" or "DaemonSet")
+       * </pre>
+       *
+       * <code>string top_level_controller_type = 5;</code>
+       *
+       * @return The topLevelControllerType.
+       */
+      public java.lang.String getTopLevelControllerType() {
+        java.lang.Object ref = topLevelControllerType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          topLevelControllerType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this workload (for example, "Deployment" or "DaemonSet")
+       * </pre>
+       *
+       * <code>string top_level_controller_type = 5;</code>
+       *
+       * @return The bytes for topLevelControllerType.
+       */
+      public com.google.protobuf.ByteString getTopLevelControllerTypeBytes() {
+        java.lang.Object ref = topLevelControllerType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          topLevelControllerType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this workload (for example, "Deployment" or "DaemonSet")
+       * </pre>
+       *
+       * <code>string top_level_controller_type = 5;</code>
+       *
+       * @param value The topLevelControllerType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopLevelControllerType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topLevelControllerType_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this workload (for example, "Deployment" or "DaemonSet")
+       * </pre>
+       *
+       * <code>string top_level_controller_type = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopLevelControllerType() {
+        topLevelControllerType_ = getDefaultInstance().getTopLevelControllerType();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this workload (for example, "Deployment" or "DaemonSet")
+       * </pre>
+       *
+       * <code>string top_level_controller_type = 5;</code>
+       *
+       * @param value The bytes for topLevelControllerType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopLevelControllerTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        topLevelControllerType_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object topLevelControllerName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of this workload.
+       * </pre>
+       *
+       * <code>string top_level_controller_name = 6;</code>
+       *
+       * @return The topLevelControllerName.
+       */
+      public java.lang.String getTopLevelControllerName() {
+        java.lang.Object ref = topLevelControllerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          topLevelControllerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this workload.
+       * </pre>
+       *
+       * <code>string top_level_controller_name = 6;</code>
+       *
+       * @return The bytes for topLevelControllerName.
+       */
+      public com.google.protobuf.ByteString getTopLevelControllerNameBytes() {
+        java.lang.Object ref = topLevelControllerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          topLevelControllerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this workload.
+       * </pre>
+       *
+       * <code>string top_level_controller_name = 6;</code>
+       *
+       * @param value The topLevelControllerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopLevelControllerName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topLevelControllerName_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this workload.
+       * </pre>
+       *
+       * <code>string top_level_controller_name = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopLevelControllerName() {
+        topLevelControllerName_ = getDefaultInstance().getTopLevelControllerName();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this workload.
+       * </pre>
+       *
+       * <code>string top_level_controller_name = 6;</code>
+       *
+       * @param value The bytes for topLevelControllerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopLevelControllerNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        topLevelControllerName_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.GkeWorkload)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.GkeWorkload)
+    private static final com.google.monitoring.v3.Service.GkeWorkload DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.GkeWorkload();
+    }
+
+    public static com.google.monitoring.v3.Service.GkeWorkload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GkeWorkload> PARSER =
+        new com.google.protobuf.AbstractParser<GkeWorkload>() {
+          @java.lang.Override
+          public GkeWorkload parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GkeWorkload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GkeWorkload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeWorkload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GkeServiceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.GkeService)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString getLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    java.lang.String getClusterName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    com.google.protobuf.ByteString getClusterNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    java.lang.String getNamespaceName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    com.google.protobuf.ByteString getNamespaceNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of this service.
+     * </pre>
+     *
+     * <code>string service_name = 5;</code>
+     *
+     * @return The serviceName.
+     */
+    java.lang.String getServiceName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of this service.
+     * </pre>
+     *
+     * <code>string service_name = 5;</code>
+     *
+     * @return The bytes for serviceName.
+     */
+    com.google.protobuf.ByteString getServiceNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GKE Service. The "service" here represents a
+   * [Kubernetes service
+   * object](https://kubernetes.io/docs/concepts/services-networking/service).
+   * The field names correspond to the resource labels on [`k8s_service`
+   * monitored
+   * resources](https://cloud.google.com/monitoring/api/resources#tag_k8s_service).
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.GkeService}
+   */
+  public static final class GkeService extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.GkeService)
+      GkeServiceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GkeService.newBuilder() to construct.
+    private GkeService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GkeService() {
+      projectId_ = "";
+      location_ = "";
+      clusterName_ = "";
+      namespaceName_ = "";
+      serviceName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GkeService();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeService_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_GkeService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.GkeService.class,
+              com.google.monitoring.v3.Service.GkeService.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project this resource lives in. For legacy services
+     * migrated from the `Custom` type, this may be a distinct project from the
+     * one parenting the service itself.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the parent cluster. This may be a zone or region.
+     * </pre>
+     *
+     * <code>string location = 2;</code>
+     *
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clusterName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The clusterName.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterName() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent cluster.
+     * </pre>
+     *
+     * <code>string cluster_name = 3;</code>
+     *
+     * @return The bytes for clusterName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClusterNameBytes() {
+      java.lang.Object ref = clusterName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAMESPACE_NAME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespaceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The namespaceName.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespaceName() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespaceName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the parent namespace.
+     * </pre>
+     *
+     * <code>string namespace_name = 4;</code>
+     *
+     * @return The bytes for namespaceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceNameBytes() {
+      java.lang.Object ref = namespaceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespaceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SERVICE_NAME_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of this service.
+     * </pre>
+     *
+     * <code>string service_name = 5;</code>
+     *
+     * @return The serviceName.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceName() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of this service.
+     * </pre>
+     *
+     * <code>string service_name = 5;</code>
+     *
+     * @return The bytes for serviceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceNameBytes() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespaceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespaceName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.GkeService)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.GkeService other =
+          (com.google.monitoring.v3.Service.GkeService) obj;
+
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!getLocation().equals(other.getLocation())) return false;
+      if (!getClusterName().equals(other.getClusterName())) return false;
+      if (!getNamespaceName().equals(other.getNamespaceName())) return false;
+      if (!getServiceName().equals(other.getServiceName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterName().hashCode();
+      hash = (37 * hash) + NAMESPACE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespaceName().hashCode();
+      hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.Service.GkeService prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Service. The "service" here represents a
+     * [Kubernetes service
+     * object](https://kubernetes.io/docs/concepts/services-networking/service).
+     * The field names correspond to the resource labels on [`k8s_service`
+     * monitored
+     * resources](https://cloud.google.com/monitoring/api/resources#tag_k8s_service).
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.GkeService}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.GkeService)
+        com.google.monitoring.v3.Service.GkeServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.GkeService.class,
+                com.google.monitoring.v3.Service.GkeService.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.GkeService.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        projectId_ = "";
+        location_ = "";
+        clusterName_ = "";
+        namespaceName_ = "";
+        serviceName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_GkeService_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeService getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeService build() {
+        com.google.monitoring.v3.Service.GkeService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.GkeService buildPartial() {
+        com.google.monitoring.v3.Service.GkeService result =
+            new com.google.monitoring.v3.Service.GkeService(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.Service.GkeService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.location_ = location_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.clusterName_ = clusterName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.namespaceName_ = namespaceName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.serviceName_ = serviceName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.GkeService) {
+          return mergeFrom((com.google.monitoring.v3.Service.GkeService) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.GkeService other) {
+        if (other == com.google.monitoring.v3.Service.GkeService.getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getClusterName().isEmpty()) {
+          clusterName_ = other.clusterName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getNamespaceName().isEmpty()) {
+          namespaceName_ = other.namespaceName_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getServiceName().isEmpty()) {
+          serviceName_ = other.serviceName_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  projectId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  location_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  clusterName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  namespaceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  serviceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project this resource lives in. For legacy services
+       * migrated from the `Custom` type, this may be a distinct project from the
+       * one parenting the service itself.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        projectId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The location of the parent cluster. This may be a zone or region.
+       * </pre>
+       *
+       * <code>string location = 2;</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clusterName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The clusterName.
+       */
+      public java.lang.String getClusterName() {
+        java.lang.Object ref = clusterName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return The bytes for clusterName.
+       */
+      public com.google.protobuf.ByteString getClusterNameBytes() {
+        java.lang.Object ref = clusterName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clusterName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterName() {
+        clusterName_ = getDefaultInstance().getClusterName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent cluster.
+       * </pre>
+       *
+       * <code>string cluster_name = 3;</code>
+       *
+       * @param value The bytes for clusterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        clusterName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespaceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The namespaceName.
+       */
+      public java.lang.String getNamespaceName() {
+        java.lang.Object ref = namespaceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespaceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return The bytes for namespaceName.
+       */
+      public com.google.protobuf.ByteString getNamespaceNameBytes() {
+        java.lang.Object ref = namespaceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespaceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespaceName() {
+        namespaceName_ = getDefaultInstance().getNamespaceName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the parent namespace.
+       * </pre>
+       *
+       * <code>string namespace_name = 4;</code>
+       *
+       * @param value The bytes for namespaceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespaceName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of this service.
+       * </pre>
+       *
+       * <code>string service_name = 5;</code>
+       *
+       * @return The serviceName.
+       */
+      public java.lang.String getServiceName() {
+        java.lang.Object ref = serviceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this service.
+       * </pre>
+       *
+       * <code>string service_name = 5;</code>
+       *
+       * @return The bytes for serviceName.
+       */
+      public com.google.protobuf.ByteString getServiceNameBytes() {
+        java.lang.Object ref = serviceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this service.
+       * </pre>
+       *
+       * <code>string service_name = 5;</code>
+       *
+       * @param value The serviceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceName_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this service.
+       * </pre>
+       *
+       * <code>string service_name = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceName() {
+        serviceName_ = getDefaultInstance().getServiceName();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of this service.
+       * </pre>
+       *
+       * <code>string service_name = 5;</code>
+       *
+       * @param value The bytes for serviceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceName_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.GkeService)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.GkeService)
+    private static final com.google.monitoring.v3.Service.GkeService DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.GkeService();
+    }
+
+    public static com.google.monitoring.v3.Service.GkeService getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GkeService> PARSER =
+        new com.google.protobuf.AbstractParser<GkeService>() {
+          @java.lang.Override
+          public GkeService parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GkeService> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GkeService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeService getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BasicServiceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.BasicService)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of service that this basic service defines, e.g.
+     * APP_ENGINE service type.
+     * Documentation and valid values
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>string service_type = 1;</code>
+     *
+     * @return The serviceType.
+     */
+    java.lang.String getServiceType();
+    /**
+     *
+     *
+     * <pre>
+     * The type of service that this basic service defines, e.g.
+     * APP_ENGINE service type.
+     * Documentation and valid values
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>string service_type = 1;</code>
+     *
+     * @return The bytes for serviceType.
+     */
+    com.google.protobuf.ByteString getServiceTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    int getServiceLabelsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    boolean containsServiceLabels(java.lang.String key);
+    /** Use {@link #getServiceLabelsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getServiceLabels();
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getServiceLabelsMap();
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    /* nullable */
+    java.lang.String getServiceLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    java.lang.String getServiceLabelsOrThrow(java.lang.String key);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A well-known service type, defined by its service type and service labels.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.BasicService}
+   */
+  public static final class BasicService extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.BasicService)
+      BasicServiceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BasicService.newBuilder() to construct.
+    private BasicService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BasicService() {
+      serviceType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BasicService();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_BasicService_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetServiceLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_BasicService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.BasicService.class,
+              com.google.monitoring.v3.Service.BasicService.Builder.class);
+    }
+
+    public static final int SERVICE_TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The type of service that this basic service defines, e.g.
+     * APP_ENGINE service type.
+     * Documentation and valid values
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>string service_type = 1;</code>
+     *
+     * @return The serviceType.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceType() {
+      java.lang.Object ref = serviceType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of service that this basic service defines, e.g.
+     * APP_ENGINE service type.
+     * Documentation and valid values
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>string service_type = 1;</code>
+     *
+     * @return The bytes for serviceType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceTypeBytes() {
+      java.lang.Object ref = serviceType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SERVICE_LABELS_FIELD_NUMBER = 2;
+
+    private static final class ServiceLabelsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.monitoring.v3.ServiceMonitoringProto
+                  .internal_static_google_monitoring_v3_Service_BasicService_ServiceLabelsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> serviceLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetServiceLabels() {
+      if (serviceLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ServiceLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return serviceLabels_;
+    }
+
+    public int getServiceLabelsCount() {
+      return internalGetServiceLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    @java.lang.Override
+    public boolean containsServiceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetServiceLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getServiceLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getServiceLabels() {
+      return getServiceLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getServiceLabelsMap() {
+      return internalGetServiceLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getServiceLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetServiceLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that specify the resource that emits the monitoring data which
+     * is used for SLO reporting of this `Service`.
+     * Documentation and valid values for given service types
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; service_labels = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getServiceLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetServiceLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceType_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetServiceLabels(), ServiceLabelsDefaultEntryHolder.defaultEntry, 2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceType_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetServiceLabels().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> serviceLabels__ =
+            ServiceLabelsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, serviceLabels__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.BasicService)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.BasicService other =
+          (com.google.monitoring.v3.Service.BasicService) obj;
+
+      if (!getServiceType().equals(other.getServiceType())) return false;
+      if (!internalGetServiceLabels().equals(other.internalGetServiceLabels())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceType().hashCode();
+      if (!internalGetServiceLabels().getMap().isEmpty()) {
+        hash = (37 * hash) + SERVICE_LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetServiceLabels().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.monitoring.v3.Service.BasicService prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A well-known service type, defined by its service type and service labels.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.BasicService}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.BasicService)
+        com.google.monitoring.v3.Service.BasicServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_BasicService_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetServiceLabels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableServiceLabels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_BasicService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.BasicService.class,
+                com.google.monitoring.v3.Service.BasicService.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.BasicService.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        serviceType_ = "";
+        internalGetMutableServiceLabels().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_BasicService_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.BasicService getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.BasicService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.BasicService build() {
+        com.google.monitoring.v3.Service.BasicService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.BasicService buildPartial() {
+        com.google.monitoring.v3.Service.BasicService result =
+            new com.google.monitoring.v3.Service.BasicService(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.Service.BasicService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceType_ = serviceType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceLabels_ = internalGetServiceLabels();
+          result.serviceLabels_.makeImmutable();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.BasicService) {
+          return mergeFrom((com.google.monitoring.v3.Service.BasicService) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.BasicService other) {
+        if (other == com.google.monitoring.v3.Service.BasicService.getDefaultInstance())
+          return this;
+        if (!other.getServiceType().isEmpty()) {
+          serviceType_ = other.serviceType_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableServiceLabels().mergeFrom(other.internalGetServiceLabels());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> serviceLabels__ =
+                      input.readMessage(
+                          ServiceLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableServiceLabels()
+                      .getMutableMap()
+                      .put(serviceLabels__.getKey(), serviceLabels__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object serviceType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The type of service that this basic service defines, e.g.
+       * APP_ENGINE service type.
+       * Documentation and valid values
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>string service_type = 1;</code>
+       *
+       * @return The serviceType.
+       */
+      public java.lang.String getServiceType() {
+        java.lang.Object ref = serviceType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of service that this basic service defines, e.g.
+       * APP_ENGINE service type.
+       * Documentation and valid values
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>string service_type = 1;</code>
+       *
+       * @return The bytes for serviceType.
+       */
+      public com.google.protobuf.ByteString getServiceTypeBytes() {
+        java.lang.Object ref = serviceType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of service that this basic service defines, e.g.
+       * APP_ENGINE service type.
+       * Documentation and valid values
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>string service_type = 1;</code>
+       *
+       * @param value The serviceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of service that this basic service defines, e.g.
+       * APP_ENGINE service type.
+       * Documentation and valid values
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>string service_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceType() {
+        serviceType_ = getDefaultInstance().getServiceType();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of service that this basic service defines, e.g.
+       * APP_ENGINE service type.
+       * Documentation and valid values
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>string service_type = 1;</code>
+       *
+       * @param value The bytes for serviceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> serviceLabels_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetServiceLabels() {
+        if (serviceLabels_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ServiceLabelsDefaultEntryHolder.defaultEntry);
+        }
+        return serviceLabels_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableServiceLabels() {
+        if (serviceLabels_ == null) {
+          serviceLabels_ =
+              com.google.protobuf.MapField.newMapField(
+                  ServiceLabelsDefaultEntryHolder.defaultEntry);
+        }
+        if (!serviceLabels_.isMutable()) {
+          serviceLabels_ = serviceLabels_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return serviceLabels_;
+      }
+
+      public int getServiceLabelsCount() {
+        return internalGetServiceLabels().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      @java.lang.Override
+      public boolean containsServiceLabels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetServiceLabels().getMap().containsKey(key);
+      }
+      /** Use {@link #getServiceLabelsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getServiceLabels() {
+        return getServiceLabelsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getServiceLabelsMap() {
+        return internalGetServiceLabels().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getServiceLabelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetServiceLabels().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getServiceLabelsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetServiceLabels().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearServiceLabels() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableServiceLabels().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      public Builder removeServiceLabels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableServiceLabels().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableServiceLabels() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableServiceLabels().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      public Builder putServiceLabels(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableServiceLabels().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Labels that specify the resource that emits the monitoring data which
+       * is used for SLO reporting of this `Service`.
+       * Documentation and valid values for given service types
+       * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; service_labels = 2;</code>
+       */
+      public Builder putAllServiceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableServiceLabels().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.BasicService)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.BasicService)
+    private static final com.google.monitoring.v3.Service.BasicService DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.BasicService();
+    }
+
+    public static com.google.monitoring.v3.Service.BasicService getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BasicService> PARSER =
+        new com.google.protobuf.AbstractParser<BasicService>() {
+          @java.lang.Override
+          public BasicService parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BasicService> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BasicService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.BasicService getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface TelemetryOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.Telemetry)
@@ -6018,6 +12501,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     CLUSTER_ISTIO(9),
     MESH_ISTIO(10),
     ISTIO_CANONICAL_SERVICE(11),
+    CLOUD_RUN(12),
+    GKE_NAMESPACE(15),
+    GKE_WORKLOAD(16),
+    GKE_SERVICE(17),
     IDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -6048,6 +12535,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return MESH_ISTIO;
         case 11:
           return ISTIO_CANONICAL_SERVICE;
+        case 12:
+          return CLOUD_RUN;
+        case 15:
+          return GKE_NAMESPACE;
+        case 16:
+          return GKE_WORKLOAD;
+        case 17:
+          return GKE_SERVICE;
         case 0:
           return IDENTIFIER_NOT_SET;
         default:
@@ -6072,12 +12567,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name for this Service. The format is:
+   * Identifier. Resource name for this Service. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -6097,12 +12592,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name for this Service. The format is:
+   * Identifier. Resource name for this Service. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -6483,6 +12978,269 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
   }
 
+  public static final int CLOUD_RUN_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   *
+   * @return Whether the cloudRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudRun() {
+    return identifierCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   *
+   * @return The cloudRun.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.CloudRun getCloudRun() {
+    if (identifierCase_ == 12) {
+      return (com.google.monitoring.v3.Service.CloudRun) identifier_;
+    }
+    return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for Cloud Run services.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.CloudRunOrBuilder getCloudRunOrBuilder() {
+    if (identifierCase_ == 12) {
+      return (com.google.monitoring.v3.Service.CloudRun) identifier_;
+    }
+    return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+  }
+
+  public static final int GKE_NAMESPACE_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   *
+   * @return Whether the gkeNamespace field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeNamespace() {
+    return identifierCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   *
+   * @return The gkeNamespace.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeNamespace getGkeNamespace() {
+    if (identifierCase_ == 15) {
+      return (com.google.monitoring.v3.Service.GkeNamespace) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Namespaces.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeNamespaceOrBuilder getGkeNamespaceOrBuilder() {
+    if (identifierCase_ == 15) {
+      return (com.google.monitoring.v3.Service.GkeNamespace) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+  }
+
+  public static final int GKE_WORKLOAD_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   *
+   * @return Whether the gkeWorkload field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeWorkload() {
+    return identifierCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   *
+   * @return The gkeWorkload.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeWorkload getGkeWorkload() {
+    if (identifierCase_ == 16) {
+      return (com.google.monitoring.v3.Service.GkeWorkload) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Workloads.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeWorkloadOrBuilder getGkeWorkloadOrBuilder() {
+    if (identifierCase_ == 16) {
+      return (com.google.monitoring.v3.Service.GkeWorkload) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+  }
+
+  public static final int GKE_SERVICE_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   *
+   * @return Whether the gkeService field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeService() {
+    return identifierCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   *
+   * @return The gkeService.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeService getGkeService() {
+    if (identifierCase_ == 17) {
+      return (com.google.monitoring.v3.Service.GkeService) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for GKE Services (the Kubernetes concept of a service).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.GkeServiceOrBuilder getGkeServiceOrBuilder() {
+    if (identifierCase_ == 17) {
+      return (com.google.monitoring.v3.Service.GkeService) identifier_;
+    }
+    return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+  }
+
+  public static final int BASIC_SERVICE_FIELD_NUMBER = 19;
+  private com.google.monitoring.v3.Service.BasicService basicService_;
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   *
+   * @return Whether the basicService field is set.
+   */
+  @java.lang.Override
+  public boolean hasBasicService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   *
+   * @return The basicService.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.BasicService getBasicService() {
+    return basicService_ == null
+        ? com.google.monitoring.v3.Service.BasicService.getDefaultInstance()
+        : basicService_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Message that contains the service type and service labels of this service
+   * if it is a basic service.
+   * Documentation and examples
+   * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.BasicServiceOrBuilder getBasicServiceOrBuilder() {
+    return basicService_ == null
+        ? com.google.monitoring.v3.Service.BasicService.getDefaultInstance()
+        : basicService_;
+  }
+
   public static final int TELEMETRY_FIELD_NUMBER = 13;
   private com.google.monitoring.v3.Service.Telemetry telemetry_;
   /**
@@ -6498,7 +13256,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTelemetry() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -6693,11 +13451,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (identifierCase_ == 11) {
       output.writeMessage(11, (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (identifierCase_ == 12) {
+      output.writeMessage(12, (com.google.monitoring.v3.Service.CloudRun) identifier_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(13, getTelemetry());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 14);
+    if (identifierCase_ == 15) {
+      output.writeMessage(15, (com.google.monitoring.v3.Service.GkeNamespace) identifier_);
+    }
+    if (identifierCase_ == 16) {
+      output.writeMessage(16, (com.google.monitoring.v3.Service.GkeWorkload) identifier_);
+    }
+    if (identifierCase_ == 17) {
+      output.writeMessage(17, (com.google.monitoring.v3.Service.GkeService) identifier_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(19, getBasicService());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6743,7 +13516,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (identifierCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.monitoring.v3.Service.CloudRun) identifier_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTelemetry());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -6755,6 +13533,24 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, userLabels__);
+    }
+    if (identifierCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.monitoring.v3.Service.GkeNamespace) identifier_);
+    }
+    if (identifierCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.monitoring.v3.Service.GkeWorkload) identifier_);
+    }
+    if (identifierCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.monitoring.v3.Service.GkeService) identifier_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getBasicService());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6773,6 +13569,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasBasicService() != other.hasBasicService()) return false;
+    if (hasBasicService()) {
+      if (!getBasicService().equals(other.getBasicService())) return false;
+    }
     if (hasTelemetry() != other.hasTelemetry()) return false;
     if (hasTelemetry()) {
       if (!getTelemetry().equals(other.getTelemetry())) return false;
@@ -6798,6 +13598,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       case 11:
         if (!getIstioCanonicalService().equals(other.getIstioCanonicalService())) return false;
         break;
+      case 12:
+        if (!getCloudRun().equals(other.getCloudRun())) return false;
+        break;
+      case 15:
+        if (!getGkeNamespace().equals(other.getGkeNamespace())) return false;
+        break;
+      case 16:
+        if (!getGkeWorkload().equals(other.getGkeWorkload())) return false;
+        break;
+      case 17:
+        if (!getGkeService().equals(other.getGkeService())) return false;
+        break;
       case 0:
       default:
     }
@@ -6816,6 +13628,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (hasBasicService()) {
+      hash = (37 * hash) + BASIC_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getBasicService().hashCode();
+    }
     if (hasTelemetry()) {
       hash = (37 * hash) + TELEMETRY_FIELD_NUMBER;
       hash = (53 * hash) + getTelemetry().hashCode();
@@ -6848,6 +13664,22 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + ISTIO_CANONICAL_SERVICE_FIELD_NUMBER;
         hash = (53 * hash) + getIstioCanonicalService().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CLOUD_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudRun().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + GKE_NAMESPACE_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeNamespace().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + GKE_WORKLOAD_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeWorkload().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + GKE_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeService().hashCode();
         break;
       case 0:
       default:
@@ -7017,6 +13849,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBasicServiceFieldBuilder();
         getTelemetryFieldBuilder();
       }
     }
@@ -7044,6 +13877,23 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (istioCanonicalServiceBuilder_ != null) {
         istioCanonicalServiceBuilder_.clear();
+      }
+      if (cloudRunBuilder_ != null) {
+        cloudRunBuilder_.clear();
+      }
+      if (gkeNamespaceBuilder_ != null) {
+        gkeNamespaceBuilder_.clear();
+      }
+      if (gkeWorkloadBuilder_ != null) {
+        gkeWorkloadBuilder_.clear();
+      }
+      if (gkeServiceBuilder_ != null) {
+        gkeServiceBuilder_.clear();
+      }
+      basicService_ = null;
+      if (basicServiceBuilder_ != null) {
+        basicServiceBuilder_.dispose();
+        basicServiceBuilder_ = null;
       }
       telemetry_ = null;
       if (telemetryBuilder_ != null) {
@@ -7096,11 +13946,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.telemetry_ = telemetryBuilder_ == null ? telemetry_ : telemetryBuilder_.build();
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.basicService_ =
+            basicServiceBuilder_ == null ? basicService_ : basicServiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.telemetry_ = telemetryBuilder_ == null ? telemetry_ : telemetryBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -7127,6 +13982,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (identifierCase_ == 11 && istioCanonicalServiceBuilder_ != null) {
         result.identifier_ = istioCanonicalServiceBuilder_.build();
+      }
+      if (identifierCase_ == 12 && cloudRunBuilder_ != null) {
+        result.identifier_ = cloudRunBuilder_.build();
+      }
+      if (identifierCase_ == 15 && gkeNamespaceBuilder_ != null) {
+        result.identifier_ = gkeNamespaceBuilder_.build();
+      }
+      if (identifierCase_ == 16 && gkeWorkloadBuilder_ != null) {
+        result.identifier_ = gkeWorkloadBuilder_.build();
+      }
+      if (identifierCase_ == 17 && gkeServiceBuilder_ != null) {
+        result.identifier_ = gkeServiceBuilder_.build();
       }
     }
 
@@ -7185,11 +14052,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasBasicService()) {
+        mergeBasicService(other.getBasicService());
+      }
       if (other.hasTelemetry()) {
         mergeTelemetry(other.getTelemetry());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       switch (other.getIdentifierCase()) {
         case CUSTOM:
           {
@@ -7219,6 +14089,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         case ISTIO_CANONICAL_SERVICE:
           {
             mergeIstioCanonicalService(other.getIstioCanonicalService());
+            break;
+          }
+        case CLOUD_RUN:
+          {
+            mergeCloudRun(other.getCloudRun());
+            break;
+          }
+        case GKE_NAMESPACE:
+          {
+            mergeGkeNamespace(other.getGkeNamespace());
+            break;
+          }
+        case GKE_WORKLOAD:
+          {
+            mergeGkeWorkload(other.getGkeWorkload());
+            break;
+          }
+        case GKE_SERVICE:
+          {
+            mergeGkeService(other.getGkeService());
             break;
           }
         case IDENTIFIER_NOT_SET:
@@ -7301,10 +14191,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 identifierCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getCloudRunFieldBuilder().getBuilder(), extensionRegistry);
+                identifierCase_ = 12;
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(getTelemetryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
@@ -7316,9 +14212,33 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(getGkeNamespaceFieldBuilder().getBuilder(), extensionRegistry);
+                identifierCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getGkeWorkloadFieldBuilder().getBuilder(), extensionRegistry);
+                identifierCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getGkeServiceFieldBuilder().getBuilder(), extensionRegistry);
+                identifierCase_ = 17;
+                break;
+              } // case 138
+            case 154:
+              {
+                input.readMessage(getBasicServiceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7357,12 +14277,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name for this Service. The format is:
+     * Identifier. Resource name for this Service. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -7381,12 +14301,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name for this Service. The format is:
+     * Identifier. Resource name for this Service. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -7405,12 +14325,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name for this Service. The format is:
+     * Identifier. Resource name for this Service. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -7428,12 +14348,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name for this Service. The format is:
+     * Identifier. Resource name for this Service. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -7447,12 +14367,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name for this Service. The format is:
+     * Identifier. Resource name for this Service. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -8860,6 +15780,1055 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return istioCanonicalServiceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.CloudRun,
+            com.google.monitoring.v3.Service.CloudRun.Builder,
+            com.google.monitoring.v3.Service.CloudRunOrBuilder>
+        cloudRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     *
+     * @return Whether the cloudRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudRun() {
+      return identifierCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     *
+     * @return The cloudRun.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.CloudRun getCloudRun() {
+      if (cloudRunBuilder_ == null) {
+        if (identifierCase_ == 12) {
+          return (com.google.monitoring.v3.Service.CloudRun) identifier_;
+        }
+        return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+      } else {
+        if (identifierCase_ == 12) {
+          return cloudRunBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    public Builder setCloudRun(com.google.monitoring.v3.Service.CloudRun value) {
+      if (cloudRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identifier_ = value;
+        onChanged();
+      } else {
+        cloudRunBuilder_.setMessage(value);
+      }
+      identifierCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    public Builder setCloudRun(com.google.monitoring.v3.Service.CloudRun.Builder builderForValue) {
+      if (cloudRunBuilder_ == null) {
+        identifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudRunBuilder_.setMessage(builderForValue.build());
+      }
+      identifierCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    public Builder mergeCloudRun(com.google.monitoring.v3.Service.CloudRun value) {
+      if (cloudRunBuilder_ == null) {
+        if (identifierCase_ == 12
+            && identifier_ != com.google.monitoring.v3.Service.CloudRun.getDefaultInstance()) {
+          identifier_ =
+              com.google.monitoring.v3.Service.CloudRun.newBuilder(
+                      (com.google.monitoring.v3.Service.CloudRun) identifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (identifierCase_ == 12) {
+          cloudRunBuilder_.mergeFrom(value);
+        } else {
+          cloudRunBuilder_.setMessage(value);
+        }
+      }
+      identifierCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    public Builder clearCloudRun() {
+      if (cloudRunBuilder_ == null) {
+        if (identifierCase_ == 12) {
+          identifierCase_ = 0;
+          identifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (identifierCase_ == 12) {
+          identifierCase_ = 0;
+          identifier_ = null;
+        }
+        cloudRunBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    public com.google.monitoring.v3.Service.CloudRun.Builder getCloudRunBuilder() {
+      return getCloudRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.CloudRunOrBuilder getCloudRunOrBuilder() {
+      if ((identifierCase_ == 12) && (cloudRunBuilder_ != null)) {
+        return cloudRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (identifierCase_ == 12) {
+          return (com.google.monitoring.v3.Service.CloudRun) identifier_;
+        }
+        return com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for Cloud Run services.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.CloudRun cloud_run = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.CloudRun,
+            com.google.monitoring.v3.Service.CloudRun.Builder,
+            com.google.monitoring.v3.Service.CloudRunOrBuilder>
+        getCloudRunFieldBuilder() {
+      if (cloudRunBuilder_ == null) {
+        if (!(identifierCase_ == 12)) {
+          identifier_ = com.google.monitoring.v3.Service.CloudRun.getDefaultInstance();
+        }
+        cloudRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.CloudRun,
+                com.google.monitoring.v3.Service.CloudRun.Builder,
+                com.google.monitoring.v3.Service.CloudRunOrBuilder>(
+                (com.google.monitoring.v3.Service.CloudRun) identifier_,
+                getParentForChildren(),
+                isClean());
+        identifier_ = null;
+      }
+      identifierCase_ = 12;
+      onChanged();
+      return cloudRunBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeNamespace,
+            com.google.monitoring.v3.Service.GkeNamespace.Builder,
+            com.google.monitoring.v3.Service.GkeNamespaceOrBuilder>
+        gkeNamespaceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     *
+     * @return Whether the gkeNamespace field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkeNamespace() {
+      return identifierCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     *
+     * @return The gkeNamespace.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeNamespace getGkeNamespace() {
+      if (gkeNamespaceBuilder_ == null) {
+        if (identifierCase_ == 15) {
+          return (com.google.monitoring.v3.Service.GkeNamespace) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+      } else {
+        if (identifierCase_ == 15) {
+          return gkeNamespaceBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    public Builder setGkeNamespace(com.google.monitoring.v3.Service.GkeNamespace value) {
+      if (gkeNamespaceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identifier_ = value;
+        onChanged();
+      } else {
+        gkeNamespaceBuilder_.setMessage(value);
+      }
+      identifierCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    public Builder setGkeNamespace(
+        com.google.monitoring.v3.Service.GkeNamespace.Builder builderForValue) {
+      if (gkeNamespaceBuilder_ == null) {
+        identifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeNamespaceBuilder_.setMessage(builderForValue.build());
+      }
+      identifierCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    public Builder mergeGkeNamespace(com.google.monitoring.v3.Service.GkeNamespace value) {
+      if (gkeNamespaceBuilder_ == null) {
+        if (identifierCase_ == 15
+            && identifier_ != com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance()) {
+          identifier_ =
+              com.google.monitoring.v3.Service.GkeNamespace.newBuilder(
+                      (com.google.monitoring.v3.Service.GkeNamespace) identifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (identifierCase_ == 15) {
+          gkeNamespaceBuilder_.mergeFrom(value);
+        } else {
+          gkeNamespaceBuilder_.setMessage(value);
+        }
+      }
+      identifierCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    public Builder clearGkeNamespace() {
+      if (gkeNamespaceBuilder_ == null) {
+        if (identifierCase_ == 15) {
+          identifierCase_ = 0;
+          identifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (identifierCase_ == 15) {
+          identifierCase_ = 0;
+          identifier_ = null;
+        }
+        gkeNamespaceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    public com.google.monitoring.v3.Service.GkeNamespace.Builder getGkeNamespaceBuilder() {
+      return getGkeNamespaceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeNamespaceOrBuilder getGkeNamespaceOrBuilder() {
+      if ((identifierCase_ == 15) && (gkeNamespaceBuilder_ != null)) {
+        return gkeNamespaceBuilder_.getMessageOrBuilder();
+      } else {
+        if (identifierCase_ == 15) {
+          return (com.google.monitoring.v3.Service.GkeNamespace) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Namespaces.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeNamespace gke_namespace = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeNamespace,
+            com.google.monitoring.v3.Service.GkeNamespace.Builder,
+            com.google.monitoring.v3.Service.GkeNamespaceOrBuilder>
+        getGkeNamespaceFieldBuilder() {
+      if (gkeNamespaceBuilder_ == null) {
+        if (!(identifierCase_ == 15)) {
+          identifier_ = com.google.monitoring.v3.Service.GkeNamespace.getDefaultInstance();
+        }
+        gkeNamespaceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.GkeNamespace,
+                com.google.monitoring.v3.Service.GkeNamespace.Builder,
+                com.google.monitoring.v3.Service.GkeNamespaceOrBuilder>(
+                (com.google.monitoring.v3.Service.GkeNamespace) identifier_,
+                getParentForChildren(),
+                isClean());
+        identifier_ = null;
+      }
+      identifierCase_ = 15;
+      onChanged();
+      return gkeNamespaceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeWorkload,
+            com.google.monitoring.v3.Service.GkeWorkload.Builder,
+            com.google.monitoring.v3.Service.GkeWorkloadOrBuilder>
+        gkeWorkloadBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     *
+     * @return Whether the gkeWorkload field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkeWorkload() {
+      return identifierCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     *
+     * @return The gkeWorkload.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeWorkload getGkeWorkload() {
+      if (gkeWorkloadBuilder_ == null) {
+        if (identifierCase_ == 16) {
+          return (com.google.monitoring.v3.Service.GkeWorkload) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+      } else {
+        if (identifierCase_ == 16) {
+          return gkeWorkloadBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    public Builder setGkeWorkload(com.google.monitoring.v3.Service.GkeWorkload value) {
+      if (gkeWorkloadBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identifier_ = value;
+        onChanged();
+      } else {
+        gkeWorkloadBuilder_.setMessage(value);
+      }
+      identifierCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    public Builder setGkeWorkload(
+        com.google.monitoring.v3.Service.GkeWorkload.Builder builderForValue) {
+      if (gkeWorkloadBuilder_ == null) {
+        identifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeWorkloadBuilder_.setMessage(builderForValue.build());
+      }
+      identifierCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    public Builder mergeGkeWorkload(com.google.monitoring.v3.Service.GkeWorkload value) {
+      if (gkeWorkloadBuilder_ == null) {
+        if (identifierCase_ == 16
+            && identifier_ != com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance()) {
+          identifier_ =
+              com.google.monitoring.v3.Service.GkeWorkload.newBuilder(
+                      (com.google.monitoring.v3.Service.GkeWorkload) identifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (identifierCase_ == 16) {
+          gkeWorkloadBuilder_.mergeFrom(value);
+        } else {
+          gkeWorkloadBuilder_.setMessage(value);
+        }
+      }
+      identifierCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    public Builder clearGkeWorkload() {
+      if (gkeWorkloadBuilder_ == null) {
+        if (identifierCase_ == 16) {
+          identifierCase_ = 0;
+          identifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (identifierCase_ == 16) {
+          identifierCase_ = 0;
+          identifier_ = null;
+        }
+        gkeWorkloadBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    public com.google.monitoring.v3.Service.GkeWorkload.Builder getGkeWorkloadBuilder() {
+      return getGkeWorkloadFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeWorkloadOrBuilder getGkeWorkloadOrBuilder() {
+      if ((identifierCase_ == 16) && (gkeWorkloadBuilder_ != null)) {
+        return gkeWorkloadBuilder_.getMessageOrBuilder();
+      } else {
+        if (identifierCase_ == 16) {
+          return (com.google.monitoring.v3.Service.GkeWorkload) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Workloads.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeWorkload gke_workload = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeWorkload,
+            com.google.monitoring.v3.Service.GkeWorkload.Builder,
+            com.google.monitoring.v3.Service.GkeWorkloadOrBuilder>
+        getGkeWorkloadFieldBuilder() {
+      if (gkeWorkloadBuilder_ == null) {
+        if (!(identifierCase_ == 16)) {
+          identifier_ = com.google.monitoring.v3.Service.GkeWorkload.getDefaultInstance();
+        }
+        gkeWorkloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.GkeWorkload,
+                com.google.monitoring.v3.Service.GkeWorkload.Builder,
+                com.google.monitoring.v3.Service.GkeWorkloadOrBuilder>(
+                (com.google.monitoring.v3.Service.GkeWorkload) identifier_,
+                getParentForChildren(),
+                isClean());
+        identifier_ = null;
+      }
+      identifierCase_ = 16;
+      onChanged();
+      return gkeWorkloadBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeService,
+            com.google.monitoring.v3.Service.GkeService.Builder,
+            com.google.monitoring.v3.Service.GkeServiceOrBuilder>
+        gkeServiceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     *
+     * @return Whether the gkeService field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkeService() {
+      return identifierCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     *
+     * @return The gkeService.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeService getGkeService() {
+      if (gkeServiceBuilder_ == null) {
+        if (identifierCase_ == 17) {
+          return (com.google.monitoring.v3.Service.GkeService) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+      } else {
+        if (identifierCase_ == 17) {
+          return gkeServiceBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    public Builder setGkeService(com.google.monitoring.v3.Service.GkeService value) {
+      if (gkeServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identifier_ = value;
+        onChanged();
+      } else {
+        gkeServiceBuilder_.setMessage(value);
+      }
+      identifierCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    public Builder setGkeService(
+        com.google.monitoring.v3.Service.GkeService.Builder builderForValue) {
+      if (gkeServiceBuilder_ == null) {
+        identifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeServiceBuilder_.setMessage(builderForValue.build());
+      }
+      identifierCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    public Builder mergeGkeService(com.google.monitoring.v3.Service.GkeService value) {
+      if (gkeServiceBuilder_ == null) {
+        if (identifierCase_ == 17
+            && identifier_ != com.google.monitoring.v3.Service.GkeService.getDefaultInstance()) {
+          identifier_ =
+              com.google.monitoring.v3.Service.GkeService.newBuilder(
+                      (com.google.monitoring.v3.Service.GkeService) identifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (identifierCase_ == 17) {
+          gkeServiceBuilder_.mergeFrom(value);
+        } else {
+          gkeServiceBuilder_.setMessage(value);
+        }
+      }
+      identifierCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    public Builder clearGkeService() {
+      if (gkeServiceBuilder_ == null) {
+        if (identifierCase_ == 17) {
+          identifierCase_ = 0;
+          identifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (identifierCase_ == 17) {
+          identifierCase_ = 0;
+          identifier_ = null;
+        }
+        gkeServiceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    public com.google.monitoring.v3.Service.GkeService.Builder getGkeServiceBuilder() {
+      return getGkeServiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.GkeServiceOrBuilder getGkeServiceOrBuilder() {
+      if ((identifierCase_ == 17) && (gkeServiceBuilder_ != null)) {
+        return gkeServiceBuilder_.getMessageOrBuilder();
+      } else {
+        if (identifierCase_ == 17) {
+          return (com.google.monitoring.v3.Service.GkeService) identifier_;
+        }
+        return com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for GKE Services (the Kubernetes concept of a service).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.GkeService gke_service = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.GkeService,
+            com.google.monitoring.v3.Service.GkeService.Builder,
+            com.google.monitoring.v3.Service.GkeServiceOrBuilder>
+        getGkeServiceFieldBuilder() {
+      if (gkeServiceBuilder_ == null) {
+        if (!(identifierCase_ == 17)) {
+          identifier_ = com.google.monitoring.v3.Service.GkeService.getDefaultInstance();
+        }
+        gkeServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.GkeService,
+                com.google.monitoring.v3.Service.GkeService.Builder,
+                com.google.monitoring.v3.Service.GkeServiceOrBuilder>(
+                (com.google.monitoring.v3.Service.GkeService) identifier_,
+                getParentForChildren(),
+                isClean());
+        identifier_ = null;
+      }
+      identifierCase_ = 17;
+      onChanged();
+      return gkeServiceBuilder_;
+    }
+
+    private com.google.monitoring.v3.Service.BasicService basicService_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.BasicService,
+            com.google.monitoring.v3.Service.BasicService.Builder,
+            com.google.monitoring.v3.Service.BasicServiceOrBuilder>
+        basicServiceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     *
+     * @return Whether the basicService field is set.
+     */
+    public boolean hasBasicService() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     *
+     * @return The basicService.
+     */
+    public com.google.monitoring.v3.Service.BasicService getBasicService() {
+      if (basicServiceBuilder_ == null) {
+        return basicService_ == null
+            ? com.google.monitoring.v3.Service.BasicService.getDefaultInstance()
+            : basicService_;
+      } else {
+        return basicServiceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public Builder setBasicService(com.google.monitoring.v3.Service.BasicService value) {
+      if (basicServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        basicService_ = value;
+      } else {
+        basicServiceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public Builder setBasicService(
+        com.google.monitoring.v3.Service.BasicService.Builder builderForValue) {
+      if (basicServiceBuilder_ == null) {
+        basicService_ = builderForValue.build();
+      } else {
+        basicServiceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public Builder mergeBasicService(com.google.monitoring.v3.Service.BasicService value) {
+      if (basicServiceBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && basicService_ != null
+            && basicService_
+                != com.google.monitoring.v3.Service.BasicService.getDefaultInstance()) {
+          getBasicServiceBuilder().mergeFrom(value);
+        } else {
+          basicService_ = value;
+        }
+      } else {
+        basicServiceBuilder_.mergeFrom(value);
+      }
+      if (basicService_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public Builder clearBasicService() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      basicService_ = null;
+      if (basicServiceBuilder_ != null) {
+        basicServiceBuilder_.dispose();
+        basicServiceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public com.google.monitoring.v3.Service.BasicService.Builder getBasicServiceBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getBasicServiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    public com.google.monitoring.v3.Service.BasicServiceOrBuilder getBasicServiceOrBuilder() {
+      if (basicServiceBuilder_ != null) {
+        return basicServiceBuilder_.getMessageOrBuilder();
+      } else {
+        return basicService_ == null
+            ? com.google.monitoring.v3.Service.BasicService.getDefaultInstance()
+            : basicService_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message that contains the service type and service labels of this service
+     * if it is a basic service.
+     * Documentation and examples
+     * [here](https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli).
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.BasicService basic_service = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.BasicService,
+            com.google.monitoring.v3.Service.BasicService.Builder,
+            com.google.monitoring.v3.Service.BasicServiceOrBuilder>
+        getBasicServiceFieldBuilder() {
+      if (basicServiceBuilder_ == null) {
+        basicServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.BasicService,
+                com.google.monitoring.v3.Service.BasicService.Builder,
+                com.google.monitoring.v3.Service.BasicServiceOrBuilder>(
+                getBasicService(), getParentForChildren(), isClean());
+        basicService_ = null;
+      }
+      return basicServiceBuilder_;
+    }
+
     private com.google.monitoring.v3.Service.Telemetry telemetry_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Service.Telemetry,
@@ -8878,7 +16847,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the telemetry field is set.
      */
     public boolean hasTelemetry() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -8918,7 +16887,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         telemetryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8938,7 +16907,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         telemetryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8953,7 +16922,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTelemetry(com.google.monitoring.v3.Service.Telemetry value) {
       if (telemetryBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && telemetry_ != null
             && telemetry_ != com.google.monitoring.v3.Service.Telemetry.getDefaultInstance()) {
           getTelemetryBuilder().mergeFrom(value);
@@ -8964,7 +16933,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         telemetryBuilder_.mergeFrom(value);
       }
       if (telemetry_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -8979,7 +16948,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
      */
     public Builder clearTelemetry() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00002000);
       telemetry_ = null;
       if (telemetryBuilder_ != null) {
         telemetryBuilder_.dispose();
@@ -8998,7 +16967,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
      */
     public com.google.monitoring.v3.Service.Telemetry.Builder getTelemetryBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getTelemetryFieldBuilder().getBuilder();
     }
@@ -9066,7 +17035,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return userLabels_;
     }
@@ -9171,7 +17140,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -9199,7 +17168,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -9224,7 +17193,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -9243,7 +17212,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       return this;
     }
 

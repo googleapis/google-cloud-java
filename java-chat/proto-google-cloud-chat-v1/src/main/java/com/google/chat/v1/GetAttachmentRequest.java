@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.GetAttachmentRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request to get an attachment.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.GetAttachmentRequest}
+ */
 public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.GetAttachmentRequest)
@@ -270,7 +278,15 @@ public final class GetAttachmentRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.GetAttachmentRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request to get an attachment.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.GetAttachmentRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.GetAttachmentRequest)

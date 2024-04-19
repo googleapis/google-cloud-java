@@ -67,6 +67,9 @@
             "SetUpSpace": {
               "methods": ["setUpSpace", "setUpSpaceCallable"]
             },
+            "UpdateMembership": {
+              "methods": ["updateMembership", "updateMembership", "updateMembershipCallable"]
+            },
             "UpdateMessage": {
               "methods": ["updateMessage", "updateMessage", "updateMessageCallable"]
             },

@@ -1731,6 +1731,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -1745,6 +1746,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -1759,6 +1761,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -2100,6 +2103,57 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
      */
     com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder getPingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     *
+     * @return Whether the serviceAgentAuthentication field is set.
+     */
+    boolean hasServiceAgentAuthentication();
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     *
+     * @return The serviceAgentAuthentication.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+        getServiceAgentAuthentication();
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthenticationOrBuilder
+        getServiceAgentAuthenticationOrBuilder();
+
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.AuthMethodCase getAuthMethodCase();
   }
   /**
    *
@@ -4596,7 +4650,898 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public interface ServiceAgentAuthenticationOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Type of authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      int getTypeValue();
+      /**
+       *
+       *
+       * <pre>
+       * Type of authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+       * </code>
+       *
+       * @return The type.
+       */
+      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .ServiceAgentAuthenticationType
+          getType();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed for generating an
+     * [OpenID Connect
+     * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+     * The OIDC token will be generated for the Monitoring service agent service
+     * account.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication}
+     */
+    public static final class ServiceAgentAuthentication
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+        ServiceAgentAuthenticationOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ServiceAgentAuthentication.newBuilder() to construct.
+      private ServiceAgentAuthentication(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ServiceAgentAuthentication() {
+        type_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ServiceAgentAuthentication();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ServiceAgentAuthentication_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ServiceAgentAuthentication_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .class,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Type of authentication.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType}
+       */
+      public enum ServiceAgentAuthenticationType
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Default value, will result in OIDC Authentication.
+         * </pre>
+         *
+         * <code>SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * OIDC Authentication
+         * </pre>
+         *
+         * <code>OIDC_TOKEN = 1;</code>
+         */
+        OIDC_TOKEN(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Default value, will result in OIDC Authentication.
+         * </pre>
+         *
+         * <code>SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * OIDC Authentication
+         * </pre>
+         *
+         * <code>OIDC_TOKEN = 1;</code>
+         */
+        public static final int OIDC_TOKEN_VALUE = 1;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ServiceAgentAuthenticationType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ServiceAgentAuthenticationType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED;
+            case 1:
+              return OIDC_TOKEN;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ServiceAgentAuthenticationType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                ServiceAgentAuthenticationType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ServiceAgentAuthenticationType>() {
+                  public ServiceAgentAuthenticationType findValueByNumber(int number) {
+                    return ServiceAgentAuthenticationType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ServiceAgentAuthenticationType[] VALUES = values();
+
+        public static ServiceAgentAuthenticationType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ServiceAgentAuthenticationType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType)
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Type of authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .ServiceAgentAuthenticationType
+          getType() {
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                .ServiceAgentAuthenticationType
+            result =
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .ServiceAgentAuthenticationType.forNumber(type_);
+        return result == null
+            ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                .ServiceAgentAuthenticationType.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (type_
+            != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                .ServiceAgentAuthenticationType.SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, type_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (type_
+            != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                .ServiceAgentAuthenticationType.SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication other =
+            (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication) obj;
+
+        if (type_ != other.type_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed for generating an
+       * [OpenID Connect
+       * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+       * The OIDC token will be generated for the Monitoring service agent service
+       * account.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthenticationOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ServiceAgentAuthentication_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ServiceAgentAuthentication_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                      .class,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          type_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ServiceAgentAuthentication_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+            build() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+            buildPartial() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication result =
+              new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.type_ = type_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication) {
+            return mergeFrom(
+                (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication other) {
+          if (other
+              == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                  .getDefaultInstance()) return this;
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    type_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int type_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Type of authentication.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for type.
+         */
+        @java.lang.Override
+        public int getTypeValue() {
+          return type_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of authentication.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeValue(int value) {
+          type_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of authentication.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+         * </code>
+         *
+         * @return The type.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                .ServiceAgentAuthenticationType
+            getType() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                  .ServiceAgentAuthenticationType
+              result =
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                      .ServiceAgentAuthenticationType.forNumber(type_);
+          return result == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                  .ServiceAgentAuthenticationType.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of authentication.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+         * </code>
+         *
+         * @param value The type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setType(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .ServiceAgentAuthenticationType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          type_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of authentication.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.ServiceAgentAuthenticationType type = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+      private static final com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+              .ServiceAgentAuthentication
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication();
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ServiceAgentAuthentication> PARSER =
+          new com.google.protobuf.AbstractParser<ServiceAgentAuthentication>() {
+            @java.lang.Override
+            public ServiceAgentAuthentication parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ServiceAgentAuthentication> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ServiceAgentAuthentication> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
+    private int authMethodCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object authMethod_;
+
+    public enum AuthMethodCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SERVICE_AGENT_AUTHENTICATION(14),
+      AUTHMETHOD_NOT_SET(0);
+      private final int value;
+
+      private AuthMethodCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AuthMethodCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static AuthMethodCase forNumber(int value) {
+        switch (value) {
+          case 14:
+            return SERVICE_AGENT_AUTHENTICATION;
+          case 0:
+            return AUTHMETHOD_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public AuthMethodCase getAuthMethodCase() {
+      return AuthMethodCase.forNumber(authMethodCase_);
+    }
+
     public static final int REQUEST_METHOD_FIELD_NUMBER = 8;
     private int requestMethod_ = 0;
     /**
@@ -4745,6 +5690,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -4762,6 +5708,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -4782,6 +5729,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
+     * Do not set both `auth_method` and `auth_info`.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -5255,6 +6203,75 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           : pingConfig_;
     }
 
+    public static final int SERVICE_AGENT_AUTHENTICATION_FIELD_NUMBER = 14;
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     *
+     * @return Whether the serviceAgentAuthentication field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceAgentAuthentication() {
+      return authMethodCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     *
+     * @return The serviceAgentAuthentication.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+        getServiceAgentAuthentication() {
+      if (authMethodCase_ == 14) {
+        return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+            authMethod_;
+      }
+      return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Uptime will generate and attach an OIDC JWT token for the
+     * Monitoring service agent service account as an `Authorization` header
+     * in the HTTP request when probing.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthenticationOrBuilder
+        getServiceAgentAuthenticationOrBuilder() {
+      if (authMethodCase_ == 14) {
+        return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+            authMethod_;
+      }
+      return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5310,6 +6327,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customContentType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, customContentType_);
+      }
+      if (authMethodCase_ == 14) {
+        output.writeMessage(
+            14,
+            (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                authMethod_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5372,6 +6395,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customContentType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, customContentType_);
       }
+      if (authMethodCase_ == 14) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                14,
+                (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                    authMethod_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5407,6 +6437,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (hasPingConfig() != other.hasPingConfig()) return false;
       if (hasPingConfig()) {
         if (!getPingConfig().equals(other.getPingConfig())) return false;
+      }
+      if (!getAuthMethodCase().equals(other.getAuthMethodCase())) return false;
+      switch (authMethodCase_) {
+        case 14:
+          if (!getServiceAgentAuthentication().equals(other.getServiceAgentAuthentication()))
+            return false;
+          break;
+        case 0:
+        default:
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -5452,6 +6491,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (hasPingConfig()) {
         hash = (37 * hash) + PING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getPingConfig().hashCode();
+      }
+      switch (authMethodCase_) {
+        case 14:
+          hash = (37 * hash) + SERVICE_AGENT_AUTHENTICATION_FIELD_NUMBER;
+          hash = (53 * hash) + getServiceAgentAuthentication().hashCode();
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -5655,6 +6702,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           pingConfigBuilder_.dispose();
           pingConfigBuilder_ = null;
         }
+        if (serviceAgentAuthenticationBuilder_ != null) {
+          serviceAgentAuthenticationBuilder_.clear();
+        }
+        authMethodCase_ = 0;
+        authMethod_ = null;
         return this;
       }
 
@@ -5686,6 +6738,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
@@ -5748,6 +6801,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result) {
+        result.authMethodCase_ = authMethodCase_;
+        result.authMethod_ = this.authMethod_;
+        if (authMethodCase_ == 14 && serviceAgentAuthenticationBuilder_ != null) {
+          result.authMethod_ = serviceAgentAuthenticationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5864,6 +6925,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
         if (other.hasPingConfig()) {
           mergePingConfig(other.getPingConfig());
+        }
+        switch (other.getAuthMethodCase()) {
+          case SERVICE_AGENT_AUTHENTICATION:
+            {
+              mergeServiceAgentAuthentication(other.getServiceAgentAuthentication());
+              break;
+            }
+          case AUTHMETHOD_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5984,6 +7056,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 106
+              case 114:
+                {
+                  input.readMessage(
+                      getServiceAgentAuthenticationFieldBuilder().getBuilder(), extensionRegistry);
+                  authMethodCase_ = 14;
+                  break;
+                } // case 114
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5998,6 +7077,20 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+
+      private int authMethodCase_ = 0;
+      private java.lang.Object authMethod_;
+
+      public AuthMethodCase getAuthMethodCase() {
+        return AuthMethodCase.forNumber(authMethodCase_);
+      }
+
+      public Builder clearAuthMethod() {
+        authMethodCase_ = 0;
+        authMethod_ = null;
+        onChanged();
         return this;
       }
 
@@ -6360,6 +7453,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6376,6 +7470,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6400,6 +7495,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6425,6 +7521,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6448,6 +7545,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6480,6 +7578,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6501,6 +7600,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6518,6 +7618,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -6540,6 +7641,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
+       * Do not set both `auth_method` and `auth_info`.
        * </pre>
        *
        * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
@@ -7893,6 +8995,277 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           pingConfig_ = null;
         }
         return pingConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                  .Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+                  .ServiceAgentAuthenticationOrBuilder>
+          serviceAgentAuthenticationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       *
+       * @return Whether the serviceAgentAuthentication field is set.
+       */
+      @java.lang.Override
+      public boolean hasServiceAgentAuthentication() {
+        return authMethodCase_ == 14;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       *
+       * @return The serviceAgentAuthentication.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+          getServiceAgentAuthentication() {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          if (authMethodCase_ == 14) {
+            return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                authMethod_;
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .getDefaultInstance();
+        } else {
+          if (authMethodCase_ == 14) {
+            return serviceAgentAuthenticationBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      public Builder setServiceAgentAuthentication(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication value) {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authMethod_ = value;
+          onChanged();
+        } else {
+          serviceAgentAuthenticationBuilder_.setMessage(value);
+        }
+        authMethodCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      public Builder setServiceAgentAuthentication(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.Builder
+              builderForValue) {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          authMethod_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceAgentAuthenticationBuilder_.setMessage(builderForValue.build());
+        }
+        authMethodCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      public Builder mergeServiceAgentAuthentication(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication value) {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          if (authMethodCase_ == 14
+              && authMethod_
+                  != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                      .getDefaultInstance()) {
+            authMethod_ =
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .newBuilder(
+                        (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+                                .ServiceAgentAuthentication)
+                            authMethod_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            authMethod_ = value;
+          }
+          onChanged();
+        } else {
+          if (authMethodCase_ == 14) {
+            serviceAgentAuthenticationBuilder_.mergeFrom(value);
+          } else {
+            serviceAgentAuthenticationBuilder_.setMessage(value);
+          }
+        }
+        authMethodCase_ = 14;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      public Builder clearServiceAgentAuthentication() {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          if (authMethodCase_ == 14) {
+            authMethodCase_ = 0;
+            authMethod_ = null;
+            onChanged();
+          }
+        } else {
+          if (authMethodCase_ == 14) {
+            authMethodCase_ = 0;
+            authMethod_ = null;
+          }
+          serviceAgentAuthenticationBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication.Builder
+          getServiceAgentAuthenticationBuilder() {
+        return getServiceAgentAuthenticationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+              .ServiceAgentAuthenticationOrBuilder
+          getServiceAgentAuthenticationOrBuilder() {
+        if ((authMethodCase_ == 14) && (serviceAgentAuthenticationBuilder_ != null)) {
+          return serviceAgentAuthenticationBuilder_.getMessageOrBuilder();
+        } else {
+          if (authMethodCase_ == 14) {
+            return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                authMethod_;
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, Uptime will generate and attach an OIDC JWT token for the
+       * Monitoring service agent service account as an `Authorization` header
+       * in the HTTP request when probing.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication service_agent_authentication = 14;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                  .Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+                  .ServiceAgentAuthenticationOrBuilder>
+          getServiceAgentAuthenticationFieldBuilder() {
+        if (serviceAgentAuthenticationBuilder_ == null) {
+          if (!(authMethodCase_ == 14)) {
+            authMethod_ =
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                    .getDefaultInstance();
+          }
+          serviceAgentAuthenticationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication
+                      .Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+                      .ServiceAgentAuthenticationOrBuilder>(
+                  (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ServiceAgentAuthentication)
+                      authMethod_,
+                  getParentForChildren(),
+                  isClean());
+          authMethod_ = null;
+        }
+        authMethodCase_ = 14;
+        onChanged();
+        return serviceAgentAuthenticationBuilder_;
       }
 
       @java.lang.Override
@@ -11554,6 +12927,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MONITORED_RESOURCE(3),
     RESOURCE_GROUP(4),
+    SYNTHETIC_MONITOR(21),
     RESOURCE_NOT_SET(0);
     private final int value;
 
@@ -11576,6 +12950,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           return MONITORED_RESOURCE;
         case 4:
           return RESOURCE_GROUP;
+        case 21:
+          return SYNTHETIC_MONITOR;
         case 0:
           return RESOURCE_NOT_SET;
         default:
@@ -11649,7 +13025,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A unique resource name for this Uptime check configuration. The format is:
+   * Identifier. A unique resource name for this Uptime check configuration. The
+   * format is:
    *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    *
@@ -11661,7 +13038,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * response.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -11681,7 +13058,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A unique resource name for this Uptime check configuration. The format is:
+   * Identifier. A unique resource name for this Uptime check configuration. The
+   * format is:
    *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    *
@@ -11693,7 +13071,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * response.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -11899,6 +13277,57 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance();
+  }
+
+  public static final int SYNTHETIC_MONITOR_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   *
+   * @return Whether the syntheticMonitor field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyntheticMonitor() {
+    return resourceCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   *
+   * @return The syntheticMonitor.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.SyntheticMonitorTarget getSyntheticMonitor() {
+    if (resourceCase_ == 21) {
+      return (com.google.monitoring.v3.SyntheticMonitorTarget) resource_;
+    }
+    return com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder getSyntheticMonitorOrBuilder() {
+    if (resourceCase_ == 21) {
+      return (com.google.monitoring.v3.SyntheticMonitorTarget) resource_;
+    }
+    return com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
   }
 
   public static final int HTTP_CHECK_FIELD_NUMBER = 5;
@@ -12379,7 +13808,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-   *     google/monitoring/v3/uptime.proto;l=478
+   *     google/monitoring/v3/uptime.proto;l=545
    * @return The isInternal.
    */
   @java.lang.Override
@@ -12679,6 +14108,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 20);
+    if (resourceCase_ == 21) {
+      output.writeMessage(21, (com.google.monitoring.v3.SyntheticMonitorTarget) resource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -12758,6 +14190,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, userLabels__);
     }
+    if (resourceCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.monitoring.v3.SyntheticMonitorTarget) resource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12797,6 +14234,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         break;
       case 4:
         if (!getResourceGroup().equals(other.getResourceGroup())) return false;
+        break;
+      case 21:
+        if (!getSyntheticMonitor().equals(other.getSyntheticMonitor())) return false;
         break;
       case 0:
       default:
@@ -12863,6 +14303,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       case 4:
         hash = (37 * hash) + RESOURCE_GROUP_FIELD_NUMBER;
         hash = (53 * hash) + getResourceGroup().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + SYNTHETIC_MONITOR_FIELD_NUMBER;
+        hash = (53 * hash) + getSyntheticMonitor().hashCode();
         break;
       case 0:
       default:
@@ -13061,6 +14505,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (resourceGroupBuilder_ != null) {
         resourceGroupBuilder_.clear();
       }
+      if (syntheticMonitorBuilder_ != null) {
+        syntheticMonitorBuilder_.clear();
+      }
       if (httpCheckBuilder_ != null) {
         httpCheckBuilder_.clear();
       }
@@ -13083,10 +14530,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchers_ = null;
         contentMatchersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       checkerType_ = 0;
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       isInternal_ = false;
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
@@ -13094,7 +14541,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         internalCheckers_ = null;
         internalCheckersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableUserLabels().clear();
       resourceCase_ = 0;
       resource_ = null;
@@ -13138,23 +14585,23 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(com.google.monitoring.v3.UptimeCheckConfig result) {
       if (contentMatchersBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           contentMatchers_ = java.util.Collections.unmodifiableList(contentMatchers_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.contentMatchers_ = contentMatchers_;
       } else {
         result.contentMatchers_ = contentMatchersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.selectedRegions_ = selectedRegions_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
@@ -13171,21 +14618,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.period_ = periodBuilder_ == null ? period_ : periodBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.checkerType_ = checkerType_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.isInternal_ = isInternal_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -13200,6 +14647,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (resourceCase_ == 4 && resourceGroupBuilder_ != null) {
         result.resource_ = resourceGroupBuilder_.build();
+      }
+      if (resourceCase_ == 21 && syntheticMonitorBuilder_ != null) {
+        result.resource_ = syntheticMonitorBuilder_.build();
       }
       result.checkRequestTypeCase_ = checkRequestTypeCase_;
       result.checkRequestType_ = this.checkRequestType_;
@@ -13276,7 +14726,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.contentMatchers_.isEmpty()) {
           if (contentMatchers_.isEmpty()) {
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureContentMatchersIsMutable();
             contentMatchers_.addAll(other.contentMatchers_);
@@ -13289,7 +14739,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             contentMatchersBuilder_.dispose();
             contentMatchersBuilder_ = null;
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             contentMatchersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContentMatchersFieldBuilder()
@@ -13305,7 +14755,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!other.selectedRegions_.isEmpty()) {
         if (selectedRegions_.isEmpty()) {
           selectedRegions_ = other.selectedRegions_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureSelectedRegionsIsMutable();
           selectedRegions_.addAll(other.selectedRegions_);
@@ -13319,7 +14769,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -13332,7 +14782,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -13343,7 +14793,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       switch (other.getResourceCase()) {
         case MONITORED_RESOURCE:
           {
@@ -13353,6 +14803,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         case RESOURCE_GROUP:
           {
             mergeResourceGroup(other.getResourceGroup());
+            break;
+          }
+        case SYNTHETIC_MONITOR:
+          {
+            mergeSyntheticMonitor(other.getSyntheticMonitor());
             break;
           }
         case RESOURCE_NOT_SET:
@@ -13442,13 +14897,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 58:
               {
                 input.readMessage(getPeriodFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -13500,13 +14955,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 120:
               {
                 isInternal_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 120
             case 136:
               {
                 checkerType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 136
             case 162:
@@ -13518,9 +14973,16 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getSyntheticMonitorFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 21;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13573,7 +15035,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A unique resource name for this Uptime check configuration. The format is:
+     * Identifier. A unique resource name for this Uptime check configuration. The
+     * format is:
      *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      *
@@ -13585,7 +15048,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * response.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -13604,7 +15067,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A unique resource name for this Uptime check configuration. The format is:
+     * Identifier. A unique resource name for this Uptime check configuration. The
+     * format is:
      *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      *
@@ -13616,7 +15080,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * response.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -13635,7 +15099,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A unique resource name for this Uptime check configuration. The format is:
+     * Identifier. A unique resource name for this Uptime check configuration. The
+     * format is:
      *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      *
@@ -13647,7 +15112,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * response.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -13665,7 +15130,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A unique resource name for this Uptime check configuration. The format is:
+     * Identifier. A unique resource name for this Uptime check configuration. The
+     * format is:
      *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      *
@@ -13677,7 +15143,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * response.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -13691,7 +15157,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A unique resource name for this Uptime check configuration. The format is:
+     * Identifier. A unique resource name for this Uptime check configuration. The
+     * format is:
      *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      *
@@ -13703,7 +15170,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * response.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -14355,6 +15822,215 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.SyntheticMonitorTarget,
+            com.google.monitoring.v3.SyntheticMonitorTarget.Builder,
+            com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder>
+        syntheticMonitorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     *
+     * @return Whether the syntheticMonitor field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyntheticMonitor() {
+      return resourceCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     *
+     * @return The syntheticMonitor.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.SyntheticMonitorTarget getSyntheticMonitor() {
+      if (syntheticMonitorBuilder_ == null) {
+        if (resourceCase_ == 21) {
+          return (com.google.monitoring.v3.SyntheticMonitorTarget) resource_;
+        }
+        return com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
+      } else {
+        if (resourceCase_ == 21) {
+          return syntheticMonitorBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    public Builder setSyntheticMonitor(com.google.monitoring.v3.SyntheticMonitorTarget value) {
+      if (syntheticMonitorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resource_ = value;
+        onChanged();
+      } else {
+        syntheticMonitorBuilder_.setMessage(value);
+      }
+      resourceCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    public Builder setSyntheticMonitor(
+        com.google.monitoring.v3.SyntheticMonitorTarget.Builder builderForValue) {
+      if (syntheticMonitorBuilder_ == null) {
+        resource_ = builderForValue.build();
+        onChanged();
+      } else {
+        syntheticMonitorBuilder_.setMessage(builderForValue.build());
+      }
+      resourceCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    public Builder mergeSyntheticMonitor(com.google.monitoring.v3.SyntheticMonitorTarget value) {
+      if (syntheticMonitorBuilder_ == null) {
+        if (resourceCase_ == 21
+            && resource_ != com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance()) {
+          resource_ =
+              com.google.monitoring.v3.SyntheticMonitorTarget.newBuilder(
+                      (com.google.monitoring.v3.SyntheticMonitorTarget) resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resource_ = value;
+        }
+        onChanged();
+      } else {
+        if (resourceCase_ == 21) {
+          syntheticMonitorBuilder_.mergeFrom(value);
+        } else {
+          syntheticMonitorBuilder_.setMessage(value);
+        }
+      }
+      resourceCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    public Builder clearSyntheticMonitor() {
+      if (syntheticMonitorBuilder_ == null) {
+        if (resourceCase_ == 21) {
+          resourceCase_ = 0;
+          resource_ = null;
+          onChanged();
+        }
+      } else {
+        if (resourceCase_ == 21) {
+          resourceCase_ = 0;
+          resource_ = null;
+        }
+        syntheticMonitorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    public com.google.monitoring.v3.SyntheticMonitorTarget.Builder getSyntheticMonitorBuilder() {
+      return getSyntheticMonitorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder getSyntheticMonitorOrBuilder() {
+      if ((resourceCase_ == 21) && (syntheticMonitorBuilder_ != null)) {
+        return syntheticMonitorBuilder_.getMessageOrBuilder();
+      } else {
+        if (resourceCase_ == 21) {
+          return (com.google.monitoring.v3.SyntheticMonitorTarget) resource_;
+        }
+        return com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Synthetic Monitor to invoke.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.SyntheticMonitorTarget,
+            com.google.monitoring.v3.SyntheticMonitorTarget.Builder,
+            com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder>
+        getSyntheticMonitorFieldBuilder() {
+      if (syntheticMonitorBuilder_ == null) {
+        if (!(resourceCase_ == 21)) {
+          resource_ = com.google.monitoring.v3.SyntheticMonitorTarget.getDefaultInstance();
+        }
+        syntheticMonitorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.SyntheticMonitorTarget,
+                com.google.monitoring.v3.SyntheticMonitorTarget.Builder,
+                com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder>(
+                (com.google.monitoring.v3.SyntheticMonitorTarget) resource_,
+                getParentForChildren(),
+                isClean());
+        resource_ = null;
+      }
+      resourceCase_ = 21;
+      onChanged();
+      return syntheticMonitorBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.UptimeCheckConfig.HttpCheck,
             com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder,
             com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder>
@@ -14797,7 +16473,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the period field is set.
      */
     public boolean hasPeriod() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -14841,7 +16517,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         periodBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14863,7 +16539,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         periodBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14881,7 +16557,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePeriod(com.google.protobuf.Duration value) {
       if (periodBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && period_ != null
             && period_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getPeriodBuilder().mergeFrom(value);
@@ -14892,7 +16568,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         periodBuilder_.mergeFrom(value);
       }
       if (period_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -14910,7 +16586,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     public Builder clearPeriod() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       period_ = null;
       if (periodBuilder_ != null) {
         periodBuilder_.dispose();
@@ -14932,7 +16608,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getPeriodBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPeriodFieldBuilder().getBuilder();
     }
@@ -15003,7 +16679,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -15043,7 +16719,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15063,7 +16739,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15079,7 +16755,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && timeout_ != null
             && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTimeoutBuilder().mergeFrom(value);
@@ -15090,7 +16766,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         timeoutBuilder_.mergeFrom(value);
       }
       if (timeout_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -15106,7 +16782,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public Builder clearTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -15126,7 +16802,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -15178,11 +16854,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchers_ = java.util.Collections.emptyList();
 
     private void ensureContentMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         contentMatchers_ =
             new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>(
                 contentMatchers_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -15460,7 +17136,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearContentMatchers() {
       if (contentMatchersBuilder_ == null) {
         contentMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         contentMatchersBuilder_.clear();
@@ -15626,7 +17302,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>(
                 contentMatchers_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         contentMatchers_ = null;
@@ -15664,7 +17340,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder setCheckerTypeValue(int value) {
       checkerType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -15703,7 +17379,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       checkerType_ = value.getNumber();
       onChanged();
       return this;
@@ -15720,7 +17396,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCheckerType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       checkerType_ = 0;
       onChanged();
       return this;
@@ -15729,9 +17405,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> selectedRegions_ = java.util.Collections.emptyList();
 
     private void ensureSelectedRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         selectedRegions_ = new java.util.ArrayList<java.lang.Integer>(selectedRegions_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -15884,7 +17560,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelectedRegions() {
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -16009,7 +17685,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=478
+     *     google/monitoring/v3/uptime.proto;l=545
      * @return The isInternal.
      */
     @java.lang.Override
@@ -16030,7 +17706,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=478
+     *     google/monitoring/v3/uptime.proto;l=545
      * @param value The isInternal to set.
      * @return This builder for chaining.
      */
@@ -16038,7 +17714,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder setIsInternal(boolean value) {
 
       isInternal_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -16055,12 +17731,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=478
+     *     google/monitoring/v3/uptime.proto;l=545
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearIsInternal() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       isInternal_ = false;
       onChanged();
       return this;
@@ -16070,10 +17746,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -16355,7 +18031,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -16521,7 +18197,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;
@@ -16549,7 +18225,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return userLabels_;
     }
@@ -16658,7 +18334,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -16687,7 +18363,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -16713,7 +18389,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -16733,7 +18409,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
 

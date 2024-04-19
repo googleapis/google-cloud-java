@@ -24,8 +24,7 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Response message for the
- * [ListProcessors][google.cloud.documentai.v1.DocumentProcessorService.ListProcessors]
- * method.
+ * [ListProcessors][google.cloud.documentai.v1.DocumentProcessorService.ListProcessors] method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ListProcessorsResponse}
@@ -364,8 +363,7 @@ public final class ListProcessorsResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Response message for the
-   * [ListProcessors][google.cloud.documentai.v1.DocumentProcessorService.ListProcessors]
-   * method.
+   * [ListProcessors][google.cloud.documentai.v1.DocumentProcessorService.ListProcessors] method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ListProcessorsResponse}

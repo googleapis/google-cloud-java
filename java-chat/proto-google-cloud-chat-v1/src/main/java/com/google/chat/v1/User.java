@@ -25,8 +25,9 @@ package com.google.chat.v1;
  * <pre>
  * A user in Google Chat.
  * When returned as an output from a request, if your Chat app [authenticates as
- * a user](https://developers.google.com/chat/api/guides/auth/users), the output
- * for a `User` resource only populates the user's `name` and `type`.
+ * a
+ * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+ * the output for a `User` resource only populates the user's `name` and `type`.
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.User}
@@ -662,8 +663,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A user in Google Chat.
    * When returned as an output from a request, if your Chat app [authenticates as
-   * a user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * for a `User` resource only populates the user's `name` and `type`.
+   * a
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output for a `User` resource only populates the user's `name` and `type`.
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.User}
