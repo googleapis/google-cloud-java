@@ -8,7 +8,7 @@ jobs:
   library_generation:
     runs-on: ubuntu-latest
     env:
-      library_generation_image_tag: latest
+      library_generation_image_tag: 2.39.0
     steps:
     - uses: actions/checkout@v4
       with:
