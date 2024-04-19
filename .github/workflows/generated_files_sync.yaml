@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# Github action job to test core java library features on
+# GitHub action job to test core java library features on
 # downstream client libraries before they are released.
 on:
   push:
