@@ -1,0 +1,24 @@
+name: Update googleapis commit
+on:
+  schedule:
+  - cron: '* 2 * * *'
+  workflow_dispatch:
+
+
+jobs:
+  update-googleapis-commit:
+    runs-on: ubuntu-22.04
+    env:
+      # the branch into which the pull request is merged
+      base_branch: lts-11
+    steps:
+    - uses: actions/checkout@v4
+    - name: Update googleapis commit to latest
+      shell: bash
+      run: |
+        set -x
+        bash generation/update_googleapis_commit.sh \
+          --base_branch "${base_branch}"\
+          --repo ${{ github.repository }}
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
