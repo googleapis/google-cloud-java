@@ -18,6 +18,7 @@ package com.google.cloud.vertexai.it;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
+import com.google.cloud.vertexai.Transport;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensResponse;
@@ -41,7 +42,9 @@ import javax.imageio.ImageIO;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -50,6 +53,7 @@ public class ITGenerativeModelIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String MODEL_NAME_TEXT = "gemini-pro";
   private static final String MODEL_NAME_MULTIMODAL = "gemini-pro-vision";
+  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-1.5-pro-preview-0409";
   private static final String LOCATION = "us-central1";
 
   // Tested content
@@ -67,12 +71,16 @@ public class ITGenerativeModelIntegrationTest {
   private VertexAI vertexAi;
   private GenerativeModel textModel;
   private GenerativeModel multiModalModel;
+  private GenerativeModel latestGemini;
+
+  @Rule public TestName name = new TestName();
 
   @Before
   public void setUp() throws IOException {
     vertexAi = new VertexAI(PROJECT_ID, LOCATION);
     textModel = new GenerativeModel(MODEL_NAME_TEXT, vertexAi);
     multiModalModel = new GenerativeModel(MODEL_NAME_MULTIMODAL, vertexAi);
+    latestGemini = new GenerativeModel(MODEL_NAME_LATEST_GEMINI, vertexAi);
   }
 
   @After
@@ -111,16 +119,29 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
+  public void generateContent_restTransport_nonEmptyCandidateList() throws IOException {
+    try (VertexAI vertexAiViaRest =
+        new VertexAI.Builder()
+            .setProjectId(PROJECT_ID)
+            .setLocation(LOCATION)
+            .setTransport(Transport.REST)
+            .build()) {
+      GenerativeModel textModelWithRest = new GenerativeModel(MODEL_NAME_TEXT, vertexAiViaRest);
+      GenerateContentResponse response = textModelWithRest.generateContent(TEXT);
+
+      assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
+    }
+  }
+
+  @Test
   public void generateContent_withPlainText_nonEmptyCandidateList() throws IOException {
     GenerateContentResponse response = textModel.generateContent(TEXT);
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogResponse(methodName, TEXT, response);
+    assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
   }
 
   @Test
   public void generateContent_withCompleteConfig_nonEmptyCandidateList() throws IOException {
-    logger.info(String.format("Generating response for question: %s", TEXT));
     Integer maxOutputTokens = 50;
     GenerationConfig generationConfig =
         GenerationConfig.newBuilder()
@@ -144,8 +165,7 @@ public class ITGenerativeModelIntegrationTest {
     String contentText = ResponseHandler.getText(response);
     int numWords = contentText.split("\\s+").length;
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogResponse(methodName, TEXT, response);
+    assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
     // We avoid calling the countTokens service and just assert that the number of words should be
     // less than the maxOutputTokens since each word on average results in more than one tokens.
     assertThat(numWords).isAtMost(maxOutputTokens);
@@ -156,20 +176,40 @@ public class ITGenerativeModelIntegrationTest {
     ApiFuture<GenerateContentResponse> responseFuture = textModel.generateContentAsync(TEXT);
     GenerateContentResponse response = responseFuture.get();
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogResponse(methodName, TEXT, response);
+    assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
+  }
+
+  @Test
+  public void generateContent_withContentList_nonEmptyCandidate() throws IOException {
+    String followupPrompt = "Why do you think these two things are put together?";
+    GenerateContentResponse response =
+        latestGemini.generateContent(
+            Arrays.asList(
+                // First Content is from the user (default role is 'user')
+                ContentMaker.fromMultiModalData(
+                    "Please describe this image.",
+                    PartMaker.fromMimeTypeAndData("image/jpeg", GCS_IMAGE_URI)),
+                // Second Content is from the model
+                ContentMaker.forRole("model")
+                    .fromString(
+                        "This is an image of a yellow rubber duck and a blue toy truck. The duck is"
+                            + " on the left and the truck is on the right."),
+                // Another followup question from the user; "user" is the default role so we omit
+                // can it. Same for `fromMultiModalList`
+                ContentMaker.fromString(followupPrompt)));
+
+    assertNonEmptyAndLogResponse(name.getMethodName(), followupPrompt, response);
   }
 
   @Test
   public void generateContentStream_withPlainText_nonEmptyCandidateList() throws IOException {
     ResponseStream<GenerateContentResponse> stream = textModel.generateContentStream(TEXT);
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogTextContentOfResponseStream(methodName, TEXT, stream);
+    assertNonEmptyAndLogTextContentOfResponseStream(name.getMethodName(), TEXT, stream);
   }
 
   // TODO(b/333866041): Re-enable byteImage test
-  @Ignore("The test is not compatible with GraalVM native image test on GitHub.")
+  @Ignore("TODO(b/333866041):The test is not compatible with GraalVM native image test on GitHub.")
   @Test
   public void generateContentStream_withByteImage_nonEmptyCandidateList() throws Exception {
     ResponseStream<GenerateContentResponse> stream =
@@ -178,8 +218,7 @@ public class ITGenerativeModelIntegrationTest {
                 IMAGE_INQUIRY,
                 PartMaker.fromMimeTypeAndData("image/jpeg", imageToBytes(new URL(IMAGE_URL)))));
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogTextContentOfResponseStream(methodName, IMAGE_INQUIRY, stream);
+    assertNonEmptyAndLogTextContentOfResponseStream(name.getMethodName(), IMAGE_INQUIRY, stream);
   }
 
   @Test
@@ -189,8 +228,7 @@ public class ITGenerativeModelIntegrationTest {
 
     ResponseStream<GenerateContentResponse> stream = multiModalModel.generateContentStream(content);
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogTextContentOfResponseStream(methodName, VIDEO_INQUIRY, stream);
+    assertNonEmptyAndLogTextContentOfResponseStream(name.getMethodName(), VIDEO_INQUIRY, stream);
   }
 
   @Test
@@ -200,8 +238,7 @@ public class ITGenerativeModelIntegrationTest {
 
     ResponseStream<GenerateContentResponse> stream = multiModalModel.generateContentStream(content);
 
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogTextContentOfResponseStream(methodName, IMAGE_INQUIRY, stream);
+    assertNonEmptyAndLogTextContentOfResponseStream(name.getMethodName(), IMAGE_INQUIRY, stream);
   }
 
   @Test

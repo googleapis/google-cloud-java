@@ -38,6 +38,7 @@ import java.util.Collections;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -83,6 +84,9 @@ public class ITChatSessionIntegrationTest {
     }
   }
 
+  @Ignore(
+      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
+          + " the GitHub side.")
   @Test
   public void sendMessageMixedStreamAndUnary_historyOfFour() throws IOException {
     // Arrange
@@ -110,6 +114,9 @@ public class ITChatSessionIntegrationTest {
         ImmutableList.of(expectedFirstContent, expectedThirdContent));
   }
 
+  @Ignore(
+      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
+          + " the GitHub side.")
   @Test
   public void sendMessageWithNewConfigs_historyContainsFullConversation() throws IOException {
     // Arrange
@@ -150,6 +157,9 @@ public class ITChatSessionIntegrationTest {
         ImmutableList.of(expectedFirstContent, expectedThirdContent));
   }
 
+  @Ignore(
+      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
+          + " the GitHub side.")
   @Test
   public void sendMessageWithFunctionCalling_functionCallInResponse() throws IOException {
     // Arrange
