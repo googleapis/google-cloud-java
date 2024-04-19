@@ -78,7 +78,7 @@ git checkout "${current_branch}"
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 diff "${generation_config}" "${baseline_generation_config}" || echo "config diff"
-# bind docker volume to include google-cloud-java in docker running environment.
+# bind docker volume to include the repository in docker running environment.
 if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
   docker volume rm ${volume_name}
 fi
@@ -101,8 +101,6 @@ docker run \
   --current-generation-config-path="${workspace_name}/${generation_config}" \
   --repository-path="${workspace_name}"
 # commit the change to the pull request.
-[ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
-[ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
 git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt "${generation_config}"
 git commit --allow-empty -m "${message}"
 git push
