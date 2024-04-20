@@ -2409,8 +2409,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Filtering places by minimum charging rate. Any places with
-     * charging a rate less than the minimum charging rate are filtered out.
+     * Optional. Minimum required charging rate in kilowatts. A place with a
+     * charging rate less than the specified rate is filtered out.
      * </pre>
      *
      * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2424,7 +2424,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2439,7 +2439,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2454,7 +2454,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2470,7 +2470,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2485,7 +2485,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2547,8 +2547,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Filtering places by minimum charging rate. Any places with
-     * charging a rate less than the minimum charging rate are filtered out.
+     * Optional. Minimum required charging rate in kilowatts. A place with a
+     * charging rate less than the specified rate is filtered out.
      * </pre>
      *
      * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2583,7 +2583,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2603,7 +2603,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2621,7 +2621,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2640,7 +2640,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -2658,7 +2658,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The list of preferred EV connector types. A place that does not
-     * support any of the listed connector types are filter out.
+     * support any of the listed connector types is filtered out.
      * </pre>
      *
      * <code>
@@ -3096,8 +3096,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Optional. Filtering places by minimum charging rate. Any places with
-       * charging a rate less than the minimum charging rate are filtered out.
+       * Optional. Minimum required charging rate in kilowatts. A place with a
+       * charging rate less than the specified rate is filtered out.
        * </pre>
        *
        * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3112,8 +3112,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Optional. Filtering places by minimum charging rate. Any places with
-       * charging a rate less than the minimum charging rate are filtered out.
+       * Optional. Minimum required charging rate in kilowatts. A place with a
+       * charging rate less than the specified rate is filtered out.
        * </pre>
        *
        * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3132,8 +3132,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Optional. Filtering places by minimum charging rate. Any places with
-       * charging a rate less than the minimum charging rate are filtered out.
+       * Optional. Minimum required charging rate in kilowatts. A place with a
+       * charging rate less than the specified rate is filtered out.
        * </pre>
        *
        * <code>double minimum_charging_rate_kw = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3160,7 +3160,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3179,7 +3179,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3196,7 +3196,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3214,7 +3214,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3239,7 +3239,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3263,7 +3263,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3287,7 +3287,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3307,7 +3307,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3324,7 +3324,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3342,7 +3342,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3364,7 +3364,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
@@ -3385,7 +3385,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Optional. The list of preferred EV connector types. A place that does not
-       * support any of the listed connector types are filter out.
+       * support any of the listed connector types is filtered out.
        * </pre>
        *
        * <code>
