@@ -81,16 +81,22 @@ public class BigQueryImplTest {
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
           Acl.of(new Acl.View(TableId.of(PROJECT, "dataset", "table"))));
   private static final DatasetInfo DATASET_INFO =
-      DatasetInfo.newBuilder(DATASET).setAcl(ACCESS_RULES).setDescription("description").build();
+      DatasetInfo.newBuilder(DATASET)
+          .setAcl(ACCESS_RULES)
+          .setDescription("description")
+          .setLocation(LOCATION)
+          .build();
   private static final DatasetInfo DATASET_INFO_WITH_PROJECT =
       DatasetInfo.newBuilder(PROJECT, DATASET)
           .setAcl(ACCESS_RULES_WITH_PROJECT)
           .setDescription("description")
+          .setLocation(LOCATION)
           .build();
   private static final DatasetInfo OTHER_DATASET_INFO =
       DatasetInfo.newBuilder(PROJECT, OTHER_DATASET)
           .setAcl(ACCESS_RULES)
           .setDescription("other description")
+          .setLocation(LOCATION)
           .build();
   private static final TableId TABLE_ID = TableId.of(DATASET, TABLE);
   private static final TableId OTHER_TABLE_ID = TableId.of(PROJECT, DATASET, OTHER_TABLE);

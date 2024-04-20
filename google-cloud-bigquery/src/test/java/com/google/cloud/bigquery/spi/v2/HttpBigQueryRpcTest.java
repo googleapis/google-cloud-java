@@ -35,7 +35,8 @@ public class HttpBigQueryRpcTest {
             .setId("project-id:dataset-id")
             .setFriendlyName("friendly")
             .setKind("bigquery#dataset")
-            .setLabels(Collections.singletonMap("foo", "bar"));
+            .setLabels(Collections.singletonMap("foo", "bar"))
+            .setLocation("test-region-1");
     Dataset dataset = HttpBigQueryRpc.LIST_TO_DATASET.apply(listDataSet);
 
     assertThat(dataset.getKind()).isEqualTo("bigquery#dataset");
@@ -43,5 +44,6 @@ public class HttpBigQueryRpcTest {
     assertThat(dataset.getFriendlyName()).isEqualTo("friendly");
     assertThat(dataset.getDatasetReference()).isEqualTo(datasetRef);
     assertThat(dataset.getLabels()).containsExactly("foo", "bar");
+    assertThat(dataset.getLocation()).isEqualTo("test-region-1");
   }
 }

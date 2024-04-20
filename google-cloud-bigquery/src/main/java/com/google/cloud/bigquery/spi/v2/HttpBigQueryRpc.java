@@ -95,6 +95,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setFriendlyName(datasetPb.getFriendlyName())
               .setId(datasetPb.getId())
               .setKind(datasetPb.getKind())
+              .setLocation(datasetPb.getLocation())
               .setLabels(datasetPb.getLabels());
         }
       };

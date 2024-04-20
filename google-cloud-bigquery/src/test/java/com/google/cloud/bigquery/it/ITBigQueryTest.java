@@ -775,6 +775,20 @@ public class ITBigQueryTest {
 
   private static final Set<String> PUBLIC_DATASETS =
       ImmutableSet.of("github_repos", "hacker_news", "noaa_gsod", "samples", "usa_names");
+  private static final Map<String, String> PUBLIC_DATASETS_LOCATION =
+      ImmutableMap.<String, String>builder()
+          .put("github_repos", "US")
+          .put("hacker_news", "US")
+          .put("noaa_gsod", "US")
+          .put("samples", "US")
+          .put("usa_names", "US")
+          // Dataset url:
+          // https://console.cloud.google.com/bigquery?project=bigquery-public-data&ws=!1m4!1m3!3m2!1sbigquery-public-data!2sgnomAD_asiane1
+          .put("gnomAD_asiane1", "asia-northeast1")
+          // Dataset url:
+          // https://console.cloud.google.com/bigquery?project=bigquery-public-data&ws=!1m4!1m3!3m2!1sbigquery-public-data!2sgnomAD_eu
+          .put("gnomAD_eu", "EU")
+          .build();
 
   private static final String PUBLIC_PROJECT = "bigquery-public-data";
   private static final String PUBLIC_DATASET = "census_bureau_international";
@@ -1113,11 +1127,16 @@ public class ITBigQueryTest {
     Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();
     Set<String> datasetNames = new HashSet<>();
+    Map<String, String> datasetLocation = new HashMap<>();
     while (iterator.hasNext()) {
-      datasetNames.add(iterator.next().getDatasetId().getDataset());
+      Dataset dataset = iterator.next();
+      String name = dataset.getDatasetId().getDataset();
+      datasetNames.add(name);
+      datasetLocation.put(name, dataset.getLocation());
     }
     for (String type : PUBLIC_DATASETS) {
       assertTrue(datasetNames.contains(type));
+      assertEquals(PUBLIC_DATASETS_LOCATION.get(type), datasetLocation.get(type));
     }
   }
 
@@ -6759,11 +6778,16 @@ public class ITBigQueryTest {
     Page<Dataset> datasets = bigQuery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();
     Set<String> datasetNames = new HashSet<>();
+    Map<String, String> datasetLocation = new HashMap<>();
     while (iterator.hasNext()) {
-      datasetNames.add(iterator.next().getDatasetId().getDataset());
+      Dataset dataset = iterator.next();
+      String name = dataset.getDatasetId().getDataset();
+      datasetNames.add(name);
+      datasetLocation.put(name, dataset.getLocation());
     }
     for (String type : PUBLIC_DATASETS) {
       assertTrue(datasetNames.contains(type));
+      assertEquals(PUBLIC_DATASETS_LOCATION.get(type), datasetLocation.get(type));
     }
   }
 
