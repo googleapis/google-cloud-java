@@ -13,30 +13,29 @@
 # limitations under the License.
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
-name: Hermetic library generation upon generation config change through pull requests
+name: Update googleapis commit
 on:
-  pull_request:
-    paths:
-    - "generation_config.yaml"
+  schedule:
+  - cron: '* 2 * * *'
+  workflow_dispatch:
+
 
 jobs:
-  library_generation:
-    runs-on: ubuntu-latest
+  update-googleapis-commit:
+    runs-on: ubuntu-22.04
     env:
-      library_generation_image_tag: 2.39.0
+      # the branch into which the pull request is merged
+      base_branch: main
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Generate changed libraries
+    - name: Update googleapis commit to latest
       shell: bash
       run: |
         set -x
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
-        bash generation/hermetic_library_generation.sh \
-          --target_branch ${{ github.base_ref }} \
-          --current_branch ${{ github.head_ref }} \
-          --image_tag "${library_generation_image_tag}"
+        bash generation/update_googleapis_commit.sh \
+          --base_branch "${base_branch}"\
+          --repo ${{ github.repository }}
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
