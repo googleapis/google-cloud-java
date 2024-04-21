@@ -226,15 +226,6 @@ public class FirewallStubSettings extends StubSettings<FirewallStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -531,15 +522,6 @@ public class FirewallStubSettings extends StubSettings<FirewallStubSettings> {
     /** Returns the builder for the settings used for calls to deleteIngressRule. */
     public UnaryCallSettings.Builder<DeleteIngressRuleRequest, Empty> deleteIngressRuleSettings() {
       return deleteIngressRuleSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

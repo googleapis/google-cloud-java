@@ -257,15 +257,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -673,15 +664,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     public UnaryCallSettings.Builder<BatchGetServicesRequest, BatchGetServicesResponse>
         batchGetServicesSettings() {
       return batchGetServicesSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

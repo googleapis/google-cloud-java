@@ -211,15 +211,6 @@ public class AdvisoryNotificationsServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -488,15 +479,6 @@ public class AdvisoryNotificationsServiceStubSettings
     /** Returns the builder for the settings used for calls to updateSettings. */
     public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
       return updateSettingsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override
