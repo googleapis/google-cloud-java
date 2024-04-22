@@ -1,5 +1,5 @@
 gapic_generator_version: 2.39.0
-protobuf_version: '25.2'
+protobuf_version: '25.3'
 googleapis_commitish: cab99b213a32bc0fc3ef76d445e09df9fa094e47
 libraries_bom_version: 26.37.0
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
