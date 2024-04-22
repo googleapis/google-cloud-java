@@ -2,12 +2,15 @@
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
-# 1. compare generation configurations in the current branch (with which the
+# 1. Find whether the last commit in this pull request contains changes to
+# the generation configuration and exit early if it doesn't have such a change
+# since the generation result would be the same.
+# 2. Compare generation configurations in the current branch (with which the
 # pull request associated) and target branch (into which the pull request is
 # merged);
-# 2. generate changed libraries using library_generation image;
-# 3. commit the change to the pull request
-# 4. edit the pr body with generated pull request description, if applicable.
+# 3. Generate changed libraries using library_generation image;
+# 4. Commit the changes to the pull request, if any.
+# 5. Edit the PR body with generated pull request description, if applicable.
 
 # The following commands need to be installed before running the script:
 # 1. git
