@@ -82,12 +82,15 @@ git checkout "${current_branch}"
 # do not generate again as the result will be the same.
 contains_config_change=$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r | grep "${generation_config}")
 if [[ "${contains_config_change}" == "" ]]; then
-    echo "The last commit doesn't contain configuration change, exit."
+    echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
     exit 0
 fi
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
-diff "${generation_config}" "${baseline_generation_config}" || echo "config diff"
+config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
+echo "Configuration diff:"
+echo "${config_diff}"
+
 # bind docker volume to include the repository in docker running environment.
 if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
   docker volume rm ${volume_name}
@@ -111,10 +114,11 @@ docker run \
   --current-generation-config-path="${workspace_name}/${generation_config}" \
   --repository-path="${workspace_name}"
 # commit the change to the pull request.
-git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt "${generation_config}"
+git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
 changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
-    echo "Nothing to commit, exit."
+    echo "There is no generated code change with the generation config change ${config_diff}."
+    echo "Skip committing to the pull request."
     exit 0
 fi
 
