@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
@@ -109,6 +110,40 @@ public class UpdateAppProfileRequestTest {
                                     com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_LOW)
                                 .build()))
                 .setUpdateMask(FieldMask.newBuilder().addPaths("standard_isolation"))
+                .build());
+  }
+
+  @Test
+  public void testUpdateExistingDataBoostIsolationReadOnly() {
+    com.google.bigtable.admin.v2.AppProfile existingProto =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
+            .setEtag("my-etag")
+            .setDescription("description")
+            .setMultiClusterRoutingUseAny(MultiClusterRoutingUseAny.getDefaultInstance())
+            .setStandardIsolation(StandardIsolation.getDefaultInstance())
+            .build();
+
+    AppProfile existingWrapper = AppProfile.fromProto(existingProto);
+
+    UpdateAppProfileRequest updateWrapper =
+        UpdateAppProfileRequest.of(existingWrapper)
+            .setIsolationPolicy(
+                AppProfile.DataBoostIsolationReadOnlyPolicy.of(
+                    AppProfile.ComputeBillingOwner.HOST_PAYS));
+
+    assertThat(updateWrapper.toProto("my-project"))
+        .isEqualTo(
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+                .setAppProfile(
+                    existingProto
+                        .toBuilder()
+                        .setDataBoostIsolationReadOnly(
+                            DataBoostIsolationReadOnly.newBuilder()
+                                .setComputeBillingOwner(
+                                    DataBoostIsolationReadOnly.ComputeBillingOwner.HOST_PAYS)
+                                .build()))
+                .setUpdateMask(FieldMask.newBuilder().addPaths("data_boost_isolation_read_only"))
                 .build());
   }
 }

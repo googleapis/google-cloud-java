@@ -243,6 +243,43 @@ public class BigtableInstanceAdminClientIT {
   }
 
   @Test
+  public void appProfileTestDataBoost() {
+    String newInstanceId = prefixGenerator.newPrefix();
+    String newClusterId = newInstanceId + "-c1";
+
+    client.createInstance(
+        CreateInstanceRequest.of(newInstanceId)
+            .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
+            .setDisplayName("Priority-Instance-Test")
+            .addLabel("state", "readytodelete")
+            .setType(Type.PRODUCTION));
+
+    try {
+      assertThat(client.exists(newInstanceId)).isTrue();
+
+      String testAppProfile = prefixGenerator.newPrefix();
+
+      CreateAppProfileRequest request =
+          CreateAppProfileRequest.of(newInstanceId, testAppProfile)
+              .setRoutingPolicy(AppProfile.SingleClusterRoutingPolicy.of(newClusterId))
+              .setIsolationPolicy(
+                  AppProfile.DataBoostIsolationReadOnlyPolicy.of(
+                      AppProfile.ComputeBillingOwner.HOST_PAYS))
+              .setDescription("databoost app profile");
+
+      AppProfile newlyCreateAppProfile = client.createAppProfile(request);
+      AppProfile.ComputeBillingOwner computeBillingOwner =
+          ((AppProfile.DataBoostIsolationReadOnlyPolicy) newlyCreateAppProfile.getIsolationPolicy())
+              .getComputeBillingOwner();
+      assertThat(computeBillingOwner).isEqualTo(AppProfile.ComputeBillingOwner.HOST_PAYS);
+    } finally {
+      if (client.exists(newInstanceId)) {
+        client.deleteInstance(newInstanceId);
+      }
+    }
+  }
+
+  @Test
   public void iamUpdateTest() {
     Policy policy = client.getIamPolicy(instanceId);
     assertThat(policy).isNotNull();

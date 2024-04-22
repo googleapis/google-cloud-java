@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
@@ -83,5 +84,21 @@ public class CreateAppProfileRequestTest {
 
     assertThat(wrapper.toProto("my-project").getAppProfile().getStandardIsolation())
         .isEqualTo(StandardIsolation.getDefaultInstance());
+  }
+
+  @Test
+  public void testDataBoostIsolationReadOnly() {
+    CreateAppProfileRequest wrapper =
+        CreateAppProfileRequest.of("my-instance", "my-profile")
+            .setRoutingPolicy(MultiClusterRoutingPolicy.of())
+            .setIsolationPolicy(
+                AppProfile.DataBoostIsolationReadOnlyPolicy.of(
+                    AppProfile.ComputeBillingOwner.HOST_PAYS));
+
+    assertThat(wrapper.toProto("my-project").getAppProfile().getDataBoostIsolationReadOnly())
+        .isEqualTo(
+            DataBoostIsolationReadOnly.newBuilder()
+                .setComputeBillingOwner(DataBoostIsolationReadOnly.ComputeBillingOwner.HOST_PAYS)
+                .build());
   }
 }

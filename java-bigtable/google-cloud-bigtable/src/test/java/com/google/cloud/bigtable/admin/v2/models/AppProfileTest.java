@@ -234,4 +234,61 @@ public class AppProfileTest {
     assertThat(updateAppProfileRequest.hashCode())
         .isNotEqualTo(updateAppProfileRequest3.hashCode());
   }
+
+  @Test
+  public void testFromProtoWithDataBoostIsolation() {
+    AppProfile producer =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setSingleClusterRouting(
+                    SingleClusterRouting.newBuilder()
+                        .setClusterId("my-cluster")
+                        .setAllowTransactionalWrites(true)
+                        .build())
+                .setDataBoostIsolationReadOnly(
+                    com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.newBuilder()
+                        .setComputeBillingOwner(
+                            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                                .ComputeBillingOwner.HOST_PAYS))
+                .setEtag("my-etag")
+                .build());
+
+    assertThat(producer.getInstanceId()).isEqualTo("my-instance");
+    assertThat(producer.getId()).isEqualTo("my-profile");
+    assertThat(producer.getDescription()).isEqualTo("my description");
+    assertThat(producer.getPolicy()).isEqualTo(SingleClusterRoutingPolicy.of("my-cluster", true));
+    assertThat(producer.getIsolationPolicy())
+        .isEqualTo(
+            AppProfile.DataBoostIsolationReadOnlyPolicy.of(
+                AppProfile.ComputeBillingOwner.HOST_PAYS));
+
+    AppProfile consumer =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setSingleClusterRouting(
+                    SingleClusterRouting.newBuilder()
+                        .setClusterId("my-cluster")
+                        .setAllowTransactionalWrites(true)
+                        .build())
+                .setDataBoostIsolationReadOnly(
+                    com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.newBuilder()
+                        .setComputeBillingOwner(
+                            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                                .ComputeBillingOwner.COMPUTE_BILLING_OWNER_UNSPECIFIED))
+                .setEtag("my-etag")
+                .build());
+
+    assertThat(consumer.getInstanceId()).isEqualTo("my-instance");
+    assertThat(consumer.getId()).isEqualTo("my-profile");
+    assertThat(consumer.getDescription()).isEqualTo("my description");
+    assertThat(consumer.getPolicy()).isEqualTo(SingleClusterRoutingPolicy.of("my-cluster", true));
+    assertThat(consumer.getIsolationPolicy())
+        .isEqualTo(
+            AppProfile.DataBoostIsolationReadOnlyPolicy.of(
+                AppProfile.ComputeBillingOwner.UNSPECIFIED));
+  }
 }

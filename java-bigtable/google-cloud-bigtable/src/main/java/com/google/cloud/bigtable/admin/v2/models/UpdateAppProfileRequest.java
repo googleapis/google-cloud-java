@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.DataBoostIsolationReadOnlyPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.IsolationPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.RoutingPolicy;
@@ -132,6 +133,13 @@ public final class UpdateAppProfileRequest {
           .getAppProfileBuilder()
           .setStandardIsolation(((StandardIsolationPolicy) isolationPolicy).toProto());
       updateFieldMask(com.google.bigtable.admin.v2.AppProfile.STANDARD_ISOLATION_FIELD_NUMBER);
+    } else if (isolationPolicy instanceof DataBoostIsolationReadOnlyPolicy) {
+      proto
+          .getAppProfileBuilder()
+          .setDataBoostIsolationReadOnly(
+              ((DataBoostIsolationReadOnlyPolicy) isolationPolicy).toProto());
+      updateFieldMask(
+          com.google.bigtable.admin.v2.AppProfile.DATA_BOOST_ISOLATION_READ_ONLY_FIELD_NUMBER);
     } else {
       throw new IllegalArgumentException("Unknown policy type: " + isolationPolicy);
     }

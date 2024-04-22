@@ -97,11 +97,15 @@ public final class CreateAppProfileRequest {
   /** Sets the isolation policy for all read/write requests that use this app profile. */
   public CreateAppProfileRequest setIsolationPolicy(IsolationPolicy isolationPolicy) {
     Preconditions.checkNotNull(isolationPolicy);
-
     if (isolationPolicy instanceof StandardIsolationPolicy) {
       proto
           .getAppProfileBuilder()
           .setStandardIsolation(((StandardIsolationPolicy) isolationPolicy).toProto());
+    } else if (isolationPolicy instanceof AppProfile.DataBoostIsolationReadOnlyPolicy) {
+      proto
+          .getAppProfileBuilder()
+          .setDataBoostIsolationReadOnly(
+              ((AppProfile.DataBoostIsolationReadOnlyPolicy) isolationPolicy).toProto());
     } else {
       throw new IllegalArgumentException("Unknown policy type: " + isolationPolicy);
     }

@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.Priority;
 import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
@@ -81,6 +82,8 @@ public final class AppProfile {
   public IsolationPolicy getIsolationPolicy() {
     if (proto.hasStandardIsolation()) {
       return new StandardIsolationPolicy(proto.getStandardIsolation());
+    } else if (proto.hasDataBoostIsolationReadOnly()) {
+      return new DataBoostIsolationReadOnlyPolicy(proto.getDataBoostIsolationReadOnly());
     } else {
       // Should never happen because the constructor verifies that one must exist.
       throw new IllegalStateException();
@@ -401,6 +404,107 @@ public final class AppProfile {
         return false;
       }
       StandardIsolationPolicy that = (StandardIsolationPolicy) o;
+      return Objects.equal(proto, that.proto);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(proto);
+    }
+  }
+
+  /** Compute Billing Owner specifies how usage should be accounted when using Data Boost. */
+  public static enum ComputeBillingOwner {
+    UNSPECIFIED(DataBoostIsolationReadOnly.ComputeBillingOwner.COMPUTE_BILLING_OWNER_UNSPECIFIED),
+    HOST_PAYS(DataBoostIsolationReadOnly.ComputeBillingOwner.HOST_PAYS),
+    UNRECOGNIZED(DataBoostIsolationReadOnly.ComputeBillingOwner.UNRECOGNIZED);
+
+    private final com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+            .ComputeBillingOwner
+        proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static ComputeBillingOwner fromProto(
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+            proto) {
+      Preconditions.checkNotNull(proto);
+
+      for (ComputeBillingOwner owner : values()) {
+        if (owner.proto.equals(proto)) {
+          return owner;
+        }
+      }
+
+      return UNRECOGNIZED;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public DataBoostIsolationReadOnly.ComputeBillingOwner toProto() {
+      return proto;
+    }
+
+    ComputeBillingOwner(DataBoostIsolationReadOnly.ComputeBillingOwner proto) {
+      this.proto = proto;
+    }
+  }
+
+  /**
+   * A Data Boost Read Only {@link IsolationPolicy} for running high-throughput read traffic on your
+   * Bigtable data without affecting application traffic. Data Boost App Profile needs to be created
+   * with a ComputeBillingOwner which specifies how usage should be accounted when using Data Boost.
+   */
+  public static class DataBoostIsolationReadOnlyPolicy implements IsolationPolicy {
+    private final DataBoostIsolationReadOnly proto;
+
+    DataBoostIsolationReadOnlyPolicy(DataBoostIsolationReadOnly proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates a new instance of {@link DataBoostIsolationReadOnlyPolicy} with specified {@link
+     * ComputeBillingOwner}.
+     */
+    public static DataBoostIsolationReadOnlyPolicy of(ComputeBillingOwner billingOwner) {
+      return new DataBoostIsolationReadOnlyPolicy(
+          DataBoostIsolationReadOnly.newBuilder()
+              .setComputeBillingOwner(billingOwner.toProto())
+              .build());
+    }
+
+    /**
+     * Gets the {@link ComputeBillingOwner} on the current {@link DataBoostIsolationReadOnlyPolicy}
+     * instance.
+     */
+    public ComputeBillingOwner getComputeBillingOwner() {
+      return ComputeBillingOwner.fromProto(proto.getComputeBillingOwner());
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public DataBoostIsolationReadOnly toProto() {
+      return proto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      DataBoostIsolationReadOnlyPolicy that = (DataBoostIsolationReadOnlyPolicy) o;
       return Objects.equal(proto, that.proto);
     }
 
