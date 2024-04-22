@@ -77,7 +77,7 @@
         "^.github/workflows/hermetic_library_generation.yaml$"
       ],
       "matchStrings": [
-        "\\s*library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
+        "library_generation_image_tag:\\s*(?<currentValue>.+?)\\n"
       ],
       "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
