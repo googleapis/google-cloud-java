@@ -16,9 +16,9 @@
 name: Hermetic library generation upon generation config change through pull requests
 on:
   workflow_dispatch:
-#  pull_request:
-#    paths:
-#    - "generation_config.yaml"
+  pull_request:
+    paths:
+    - "generation_config.yaml"
 
 jobs:
   library_generation:

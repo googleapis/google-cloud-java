@@ -75,6 +75,13 @@ message="chore: generate libraries at $(date)"
 
 git checkout "${target_branch}"
 git checkout "${current_branch}"
+# if the last commit doesn't contain changes to generation configuration,
+# do not generate again as the result will be the same.
+contains_config_change=$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r | grep "${generation_config}")
+if [[ "${contains_config_change}" == "" ]]; then
+    echo "The last commit doesn't contain configuration change, exit."
+    exit 0
+fi
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 diff "${generation_config}" "${baseline_generation_config}" || echo "config diff"
@@ -102,7 +109,13 @@ docker run \
   --repository-path="${workspace_name}"
 # commit the change to the pull request.
 git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt "${generation_config}"
-git commit --allow-empty -m "${message}"
+changed_files=$(git diff --cached --name-only)
+if [[ "${changed_files}" == "" ]]; then
+    echo "Nothing to commit, exit."
+    exit 0
+fi
+
+git commit -m "${message}"
 git push
 # set pr body if pr_description.txt is generated.
 if [[ -f "pr_description.txt" ]]; then
