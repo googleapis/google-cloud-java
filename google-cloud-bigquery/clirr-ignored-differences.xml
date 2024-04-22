@@ -3,17 +3,6 @@
 <differences>
   <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
-    <differenceType>3005</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <justification>TableResult is an internal API and it should be fine to update</justification>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <method>*TableResult(*)</method>
-    <justification>TableResult is an internal API and it should be fine to update</justification>
-  </difference>
-  <difference>
     <differenceType>7004</differenceType>
     <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
     <method>com.google.api.services.bigquery.model.GetQueryResultsResponse getQueryResultsWithRowLimit(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)</method>
@@ -24,19 +13,6 @@
     <className>com/google/cloud/bigquery/spi/v2/HttpBigQueryRpc</className>
     <method>com.google.api.services.bigquery.model.GetQueryResultsResponse getQueryResultsWithRowLimit(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)</method>
     <justification>getQueryResultsWithRowLimit is just used by ConnectionImpl at the moment so it should be fine to update the signature instead of writing an overloaded method</justification>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <method>*TableResult(*)</method>
-    <justification>It should be fine to update TableResult constructors since it is used to return results to the user and users should not directly construct TableResult objects</justification>
-  </difference>
-  <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <method>*TableResult(*)</method>
-    <to>*TableResult(*)</to>
-    <justification>It should be fine to update TableResult constructors since it is used to return results to the user and users should not directly construct TableResult objects</justification>
   </difference>
   <difference>
     <differenceType>7013</differenceType>
@@ -57,16 +33,6 @@
     <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/TableInfo*</className>
     <method>*ResourceTags(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <method>*getPageNoSchema(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/TableResult*</className>
-    <method>*toBuilder(*)</method>
   </difference>
   <difference>
     <differenceType>7012</differenceType>
@@ -162,9 +128,5 @@
     <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/StandardTableDefinition*</className>
     <method>*BigLakeConfiguration(*)</method>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/bigquery/EmptyTableResult*</className>
   </difference>
   </differences>
