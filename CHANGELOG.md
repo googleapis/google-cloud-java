@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.39.0](https://github.com/googleapis/java-bigquery/compare/v2.38.2...v2.39.0) (2024-04-22)
+
+
+### Features
+
+* Add ExportDataStats to QueryStatistics ([#3244](https://github.com/googleapis/java-bigquery/issues/3244)) ([e91be80](https://github.com/googleapis/java-bigquery/commit/e91be80ebdd39c2448914ff9aa1742f3079d0bb8))
+* Add new fields to copy job statistics ([#3205](https://github.com/googleapis/java-bigquery/issues/3205)) ([64bdda8](https://github.com/googleapis/java-bigquery/commit/64bdda84fe06726042a41f2a89ac5c067f9bc949))
+* Add Range object to allow reading range value ([#3236](https://github.com/googleapis/java-bigquery/issues/3236)) ([2c3399d](https://github.com/googleapis/java-bigquery/commit/2c3399dd10fecc01237158a3cdeee966b38746f2))
+* Add support for inserting Range values ([#3246](https://github.com/googleapis/java-bigquery/issues/3246)) ([ff1ebc6](https://github.com/googleapis/java-bigquery/commit/ff1ebc66e458519deca37275ba91650133188683))
+* Add support for ObjectMetadata ([#3217](https://github.com/googleapis/java-bigquery/issues/3217)) ([975df05](https://github.com/googleapis/java-bigquery/commit/975df05b95b714c5574155d5e09860885c4b58f2))
+* Add totalSlotMs to JobStatistics ([#3250](https://github.com/googleapis/java-bigquery/issues/3250)) ([75ea095](https://github.com/googleapis/java-bigquery/commit/75ea095b0a194d6be4951795bc3a616ace389ff2))
+
+
+### Bug Fixes
+
+* Fix BigQuery#listDatasets to include dataset location in the response ([#3238](https://github.com/googleapis/java-bigquery/issues/3238)) ([c50c17b](https://github.com/googleapis/java-bigquery/commit/c50c17bc4eedd0c34f440b697a8b26a5354c9c4f))
+* Remove @InternalApi from TableResult ([#3257](https://github.com/googleapis/java-bigquery/issues/3257)) ([19d92a1](https://github.com/googleapis/java-bigquery/commit/19d92a144cd4d86fee6dd420e574c3a1a928642c))
+
+
+### Dependencies
+
+* Update actions/checkout action ([#3256](https://github.com/googleapis/java-bigquery/issues/3256)) ([6df3a32](https://github.com/googleapis/java-bigquery/commit/6df3a325b7f71ed1eb2054dd0c3a27cfd6cda2f2))
+* Update actions/upload-artifact action to v4.3.2 ([#3248](https://github.com/googleapis/java-bigquery/issues/3248)) ([066b51f](https://github.com/googleapis/java-bigquery/commit/066b51fb088fc67c83a45a219897752876889136))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.40.0 ([#3210](https://github.com/googleapis/java-bigquery/issues/3210)) ([bf7e97e](https://github.com/googleapis/java-bigquery/commit/bf7e97e1c936a419a34529a316c4f538872dd20b))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.41.0 ([#3219](https://github.com/googleapis/java-bigquery/issues/3219)) ([9d71b8b](https://github.com/googleapis/java-bigquery/commit/9d71b8b9a9231ea5d7cfa93c7bcbb533d6a3a900))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.43.0 ([#3225](https://github.com/googleapis/java-bigquery/issues/3225)) ([a897306](https://github.com/googleapis/java-bigquery/commit/a8973067348fa09acd91c5b01f048c43fac93894))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20240323-2.0.0 ([#3239](https://github.com/googleapis/java-bigquery/issues/3239)) ([2c0f48f](https://github.com/googleapis/java-bigquery/commit/2c0f48f86d3c4d5a1a682775c494a9122373858d))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.44.0 ([#3211](https://github.com/googleapis/java-bigquery/issues/3211)) ([6993b51](https://github.com/googleapis/java-bigquery/commit/6993b51f8722466b846a7dd3912acbd81e04126c))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.45.0 ([#3220](https://github.com/googleapis/java-bigquery/issues/3220)) ([21ae09c](https://github.com/googleapis/java-bigquery/commit/21ae09ce2c63f790ca77cc5c4c0df16dcb123b59))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.47.0 ([#3226](https://github.com/googleapis/java-bigquery/issues/3226)) ([d45d168](https://github.com/googleapis/java-bigquery/commit/d45d168bf53a8648e2254c8c4305a5d9a390276d))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ([#3207](https://github.com/googleapis/java-bigquery/issues/3207)) ([6204331](https://github.com/googleapis/java-bigquery/commit/6204331953b3922f5ecb1ac0c1868cb6579dd73b))
+* Update dependency org.threeten:threeten-extra to v1.8.0 ([#3242](https://github.com/googleapis/java-bigquery/issues/3242)) ([66d5efd](https://github.com/googleapis/java-bigquery/commit/66d5efded17c42514f98f4af2bc6ba826999a62a))
+* Update github/codeql-action action to v2.24.9 ([#3204](https://github.com/googleapis/java-bigquery/issues/3204)) ([7a24d3e](https://github.com/googleapis/java-bigquery/commit/7a24d3e29f32db58475c1e02ab1c13ee8941c27d))
+* Update github/codeql-action action to v2.25.1 ([#3229](https://github.com/googleapis/java-bigquery/issues/3229)) ([aeedf29](https://github.com/googleapis/java-bigquery/commit/aeedf2960700f1742e38469fd26ea70000967cfa))
+
 ## [2.38.2](https://github.com/googleapis/java-bigquery/compare/v2.38.1...v2.38.2) (2024-03-21)
 
 
