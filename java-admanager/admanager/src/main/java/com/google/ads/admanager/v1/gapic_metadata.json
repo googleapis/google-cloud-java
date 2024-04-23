@@ -1,0 +1,258 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.ads.admanager.v1",
+  "libraryPackage": "com.google.ads.admanager.v1",
+  "services": {
+    "AdPartnerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdPartnerServiceClient",
+          "rpcs": {
+            "GetAdPartner": {
+              "methods": ["getAdPartner", "getAdPartner", "getAdPartner", "getAdPartnerCallable"]
+            },
+            "ListAdPartners": {
+              "methods": ["listAdPartners", "listAdPartners", "listAdPartners", "listAdPartnersPagedCallable", "listAdPartnersCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AdUnitService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdUnitServiceClient",
+          "rpcs": {
+            "GetAdUnit": {
+              "methods": ["getAdUnit", "getAdUnit", "getAdUnit", "getAdUnitCallable"]
+            },
+            "ListAdUnits": {
+              "methods": ["listAdUnits", "listAdUnits", "listAdUnits", "listAdUnitsPagedCallable", "listAdUnitsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CompanyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompanyServiceClient",
+          "rpcs": {
+            "GetCompany": {
+              "methods": ["getCompany", "getCompany", "getCompany", "getCompanyCallable"]
+            },
+            "ListCompanies": {
+              "methods": ["listCompanies", "listCompanies", "listCompanies", "listCompaniesPagedCallable", "listCompaniesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ContactService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContactServiceClient",
+          "rpcs": {
+            "GetContact": {
+              "methods": ["getContact", "getContact", "getContact", "getContactCallable"]
+            },
+            "ListContacts": {
+              "methods": ["listContacts", "listContacts", "listContacts", "listContactsPagedCallable", "listContactsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CreativeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CreativeServiceClient",
+          "rpcs": {
+            "GetCreative": {
+              "methods": ["getCreative", "getCreative", "getCreative", "getCreativeCallable"]
+            },
+            "ListCreatives": {
+              "methods": ["listCreatives", "listCreatives", "listCreatives", "listCreativesPagedCallable", "listCreativesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CustomFieldService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomFieldServiceClient",
+          "rpcs": {
+            "GetCustomField": {
+              "methods": ["getCustomField", "getCustomField", "getCustomField", "getCustomFieldCallable"]
+            },
+            "ListCustomFields": {
+              "methods": ["listCustomFields", "listCustomFields", "listCustomFields", "listCustomFieldsPagedCallable", "listCustomFieldsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CustomTargetingKeyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomTargetingKeyServiceClient",
+          "rpcs": {
+            "GetCustomTargetingKey": {
+              "methods": ["getCustomTargetingKey", "getCustomTargetingKey", "getCustomTargetingKey", "getCustomTargetingKeyCallable"]
+            },
+            "ListCustomTargetingKeys": {
+              "methods": ["listCustomTargetingKeys", "listCustomTargetingKeys", "listCustomTargetingKeys", "listCustomTargetingKeysPagedCallable", "listCustomTargetingKeysCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CustomTargetingValueService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomTargetingValueServiceClient",
+          "rpcs": {
+            "GetCustomTargetingValue": {
+              "methods": ["getCustomTargetingValue", "getCustomTargetingValue", "getCustomTargetingValue", "getCustomTargetingValueCallable"]
+            },
+            "ListCustomTargetingValues": {
+              "methods": ["listCustomTargetingValues", "listCustomTargetingValues", "listCustomTargetingValues", "listCustomTargetingValuesPagedCallable", "listCustomTargetingValuesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LabelServiceClient",
+          "rpcs": {
+            "GetLabel": {
+              "methods": ["getLabel", "getLabel", "getLabel", "getLabelCallable"]
+            },
+            "ListLabels": {
+              "methods": ["listLabels", "listLabels", "listLabels", "listLabelsPagedCallable", "listLabelsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LineItemService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LineItemServiceClient",
+          "rpcs": {
+            "GetLineItem": {
+              "methods": ["getLineItem", "getLineItem", "getLineItem", "getLineItemCallable"]
+            },
+            "ListLineItems": {
+              "methods": ["listLineItems", "listLineItems", "listLineItems", "listLineItemsPagedCallable", "listLineItemsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NetworkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkServiceClient",
+          "rpcs": {
+            "GetNetwork": {
+              "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
+            }
+          }
+        }
+      }
+    },
+    "OrderService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrderServiceClient",
+          "rpcs": {
+            "GetOrder": {
+              "methods": ["getOrder", "getOrder", "getOrder", "getOrderCallable"]
+            },
+            "ListOrders": {
+              "methods": ["listOrders", "listOrders", "listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PlacementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PlacementServiceClient",
+          "rpcs": {
+            "GetPlacement": {
+              "methods": ["getPlacement", "getPlacement", "getPlacement", "getPlacementCallable"]
+            },
+            "ListPlacements": {
+              "methods": ["listPlacements", "listPlacements", "listPlacements", "listPlacementsPagedCallable", "listPlacementsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReportService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReportServiceClient",
+          "rpcs": {
+            "ExportSavedReport": {
+              "methods": ["exportSavedReportAsync", "exportSavedReportAsync", "exportSavedReportAsync", "exportSavedReportOperationCallable", "exportSavedReportCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RoleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RoleServiceClient",
+          "rpcs": {
+            "GetRole": {
+              "methods": ["getRole", "getRole", "getRole", "getRoleCallable"]
+            },
+            "ListRoles": {
+              "methods": ["listRoles", "listRoles", "listRoles", "listRolesPagedCallable", "listRolesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TeamService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TeamServiceClient",
+          "rpcs": {
+            "GetTeam": {
+              "methods": ["getTeam", "getTeam", "getTeam", "getTeamCallable"]
+            },
+            "ListTeams": {
+              "methods": ["listTeams", "listTeams", "listTeams", "listTeamsPagedCallable", "listTeamsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserServiceClient",
+          "rpcs": {
+            "GetUser": {
+              "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
