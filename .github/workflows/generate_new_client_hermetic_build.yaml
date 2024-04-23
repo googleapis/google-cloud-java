@@ -101,7 +101,7 @@ jobs:
             -v /var/run/docker.sock:/var/run/docker.sock \
             -e "RUNNING_IN_DOCKER=true" \
             -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
-            gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+            gcr.io/cloud-devrel-public-resources/java-library-generation:2.39.0 \
             python /src/generate_repo.py generate \
             --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
             --repository-path=/workspace/google-cloud-java \
