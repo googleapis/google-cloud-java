@@ -39,7 +39,7 @@ public class AsyncDeleteSecret {
         SecretManagerServiceClient.create()) {
       DeleteSecretRequest request =
           DeleteSecretRequest.newBuilder()
-              .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setEtag("etag3123477")
               .build();
       ApiFuture<Empty> future =

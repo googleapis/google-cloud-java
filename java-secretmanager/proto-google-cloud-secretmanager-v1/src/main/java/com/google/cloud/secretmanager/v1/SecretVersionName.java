@@ -17,6 +17,7 @@
 package com.google.cloud.secretmanager.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +33,39 @@ public class SecretVersionName implements ResourceName {
   private static final PathTemplate PROJECT_SECRET_SECRET_VERSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/secrets/{secret}/versions/{secret_version}");
+  private static final PathTemplate PROJECT_LOCATION_SECRET_SECRET_VERSION =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String secret;
   private final String secretVersion;
+  private final String location;
 
   @Deprecated
   protected SecretVersionName() {
     project = null;
     secret = null;
     secretVersion = null;
+    location = null;
   }
 
   private SecretVersionName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     secret = Preconditions.checkNotNull(builder.getSecret());
     secretVersion = Preconditions.checkNotNull(builder.getSecretVersion());
+    location = null;
+    pathTemplate = PROJECT_SECRET_SECRET_VERSION;
+  }
+
+  private SecretVersionName(ProjectLocationSecretSecretVersionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    secret = Preconditions.checkNotNull(builder.getSecret());
+    secretVersion = Preconditions.checkNotNull(builder.getSecretVersion());
+    pathTemplate = PROJECT_LOCATION_SECRET_SECRET_VERSION;
   }
 
   public String getProject() {
@@ -62,8 +80,21 @@ public class SecretVersionName implements ResourceName {
     return secretVersion;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectSecretSecretVersionBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationSecretSecretVersionBuilder
+      newProjectLocationSecretSecretVersionBuilder() {
+    return new ProjectLocationSecretSecretVersionBuilder();
   }
 
   public Builder toBuilder() {
@@ -78,9 +109,49 @@ public class SecretVersionName implements ResourceName {
         .build();
   }
 
+  public static SecretVersionName ofProjectSecretSecretVersionName(
+      String project, String secret, String secretVersion) {
+    return newBuilder()
+        .setProject(project)
+        .setSecret(secret)
+        .setSecretVersion(secretVersion)
+        .build();
+  }
+
+  public static SecretVersionName ofProjectLocationSecretSecretVersionName(
+      String project, String location, String secret, String secretVersion) {
+    return newProjectLocationSecretSecretVersionBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSecret(secret)
+        .setSecretVersion(secretVersion)
+        .build();
+  }
+
   public static String format(String project, String secret, String secretVersion) {
     return newBuilder()
         .setProject(project)
+        .setSecret(secret)
+        .setSecretVersion(secretVersion)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectSecretSecretVersionName(
+      String project, String secret, String secretVersion) {
+    return newBuilder()
+        .setProject(project)
+        .setSecret(secret)
+        .setSecretVersion(secretVersion)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationSecretSecretVersionName(
+      String project, String location, String secret, String secretVersion) {
+    return newProjectLocationSecretSecretVersionBuilder()
+        .setProject(project)
+        .setLocation(location)
         .setSecret(secret)
         .setSecretVersion(secretVersion)
         .build()
@@ -91,10 +162,19 @@ public class SecretVersionName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_SECRET_SECRET_VERSION.validatedMatch(
-            formattedString, "SecretVersionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("secret"), matchMap.get("secret_version"));
+    if (PROJECT_SECRET_SECRET_VERSION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SECRET_SECRET_VERSION.match(formattedString);
+      return ofProjectSecretSecretVersionName(
+          matchMap.get("project"), matchMap.get("secret"), matchMap.get("secret_version"));
+    } else if (PROJECT_LOCATION_SECRET_SECRET_VERSION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_SECRET_SECRET_VERSION.match(formattedString);
+      return ofProjectLocationSecretSecretVersionName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("secret"),
+          matchMap.get("secret_version"));
+    }
+    throw new ValidationException("SecretVersionName.parse: formattedString not in valid format");
   }
 
   public static List<SecretVersionName> parseList(List<String> formattedStrings) {
@@ -118,7 +198,8 @@ public class SecretVersionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SECRET_SECRET_VERSION.matches(formattedString);
+    return PROJECT_SECRET_SECRET_VERSION.matches(formattedString)
+        || PROJECT_LOCATION_SECRET_SECRET_VERSION.matches(formattedString);
   }
 
   @Override
@@ -136,6 +217,9 @@ public class SecretVersionName implements ResourceName {
           if (secretVersion != null) {
             fieldMapBuilder.put("secret_version", secretVersion);
           }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,8 +233,7 @@ public class SecretVersionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_SECRET_SECRET_VERSION.instantiate(
-        "project", project, "secret", secret, "secret_version", secretVersion);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -162,7 +245,8 @@ public class SecretVersionName implements ResourceName {
       SecretVersionName that = ((SecretVersionName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.secret, that.secret)
-          && Objects.equals(this.secretVersion, that.secretVersion);
+          && Objects.equals(this.secretVersion, that.secretVersion)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -171,11 +255,15 @@ public class SecretVersionName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(secret);
     h *= 1000003;
     h ^= Objects.hashCode(secretVersion);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -215,9 +303,64 @@ public class SecretVersionName implements ResourceName {
     }
 
     private Builder(SecretVersionName secretVersionName) {
+      Preconditions.checkArgument(
+          Objects.equals(secretVersionName.pathTemplate, PROJECT_SECRET_SECRET_VERSION),
+          "toBuilder is only supported when SecretVersionName has the pattern of projects/{project}/secrets/{secret}/versions/{secret_version}");
       this.project = secretVersionName.project;
       this.secret = secretVersionName.secret;
       this.secretVersion = secretVersionName.secretVersion;
+    }
+
+    public SecretVersionName build() {
+      return new SecretVersionName(this);
+    }
+  }
+
+  /**
+   * Builder for projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}.
+   */
+  public static class ProjectLocationSecretSecretVersionBuilder {
+    private String project;
+    private String location;
+    private String secret;
+    private String secretVersion;
+
+    protected ProjectLocationSecretSecretVersionBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getSecret() {
+      return secret;
+    }
+
+    public String getSecretVersion() {
+      return secretVersion;
+    }
+
+    public ProjectLocationSecretSecretVersionBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationSecretSecretVersionBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationSecretSecretVersionBuilder setSecret(String secret) {
+      this.secret = secret;
+      return this;
+    }
+
+    public ProjectLocationSecretSecretVersionBuilder setSecretVersion(String secretVersion) {
+      this.secretVersion = secretVersion;
+      return this;
     }
 
     public SecretVersionName build() {

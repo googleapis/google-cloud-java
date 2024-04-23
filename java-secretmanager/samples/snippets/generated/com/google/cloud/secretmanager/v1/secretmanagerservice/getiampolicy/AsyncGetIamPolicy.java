@@ -40,7 +40,7 @@ public class AsyncGetIamPolicy {
         SecretManagerServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

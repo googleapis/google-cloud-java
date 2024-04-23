@@ -39,6 +39,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -100,7 +101,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListSecretsPagedResponse pagedListResponse = client.listSecrets(parent);
 
@@ -132,7 +133,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listSecrets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -142,6 +143,56 @@ public class SecretManagerServiceClientHttpJsonTest {
 
   @Test
   public void listSecretsTest2() throws Exception {
+    Secret responsesElement = Secret.newBuilder().build();
+    ListSecretsResponse expectedResponse =
+        ListSecretsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecrets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListSecretsPagedResponse pagedListResponse = client.listSecrets(parent);
+
+    List<Secret> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecretsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSecretsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listSecrets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecretsTest3() throws Exception {
     Secret responsesElement = Secret.newBuilder().build();
     ListSecretsResponse expectedResponse =
         ListSecretsResponse.newBuilder()
@@ -175,7 +226,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   }
 
   @Test
-  public void listSecretsExceptionTest2() throws Exception {
+  public void listSecretsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -194,7 +245,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void createSecretTest() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -203,10 +254,12 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     String secretId = "secretId945974251";
     Secret secret = Secret.newBuilder().build();
 
@@ -236,7 +289,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       String secretId = "secretId945974251";
       Secret secret = Secret.newBuilder().build();
       client.createSecret(parent, secretId, secret);
@@ -250,7 +303,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void createSecretTest2() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -259,10 +312,12 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-2353";
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String secretId = "secretId945974251";
     Secret secret = Secret.newBuilder().build();
 
@@ -292,6 +347,64 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String secretId = "secretId945974251";
+      Secret secret = Secret.newBuilder().build();
+      client.createSecret(parent, secretId, secret);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSecretTest3() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
+            .setRotation(Rotation.newBuilder().build())
+            .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2353";
+    String secretId = "secretId945974251";
+    Secret secret = Secret.newBuilder().build();
+
+    Secret actualResponse = client.createSecret(parent, secretId, secret);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecretExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String parent = "projects/project-2353";
       String secretId = "secretId945974251";
       Secret secret = Secret.newBuilder().build();
@@ -306,16 +419,21 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void addSecretVersionTest() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+    SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
     SecretPayload payload = SecretPayload.newBuilder().build();
 
     SecretVersion actualResponse = client.addSecretVersion(parent, payload);
@@ -344,7 +462,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       SecretPayload payload = SecretPayload.newBuilder().build();
       client.addSecretVersion(parent, payload);
       Assert.fail("No exception raised");
@@ -357,12 +475,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void addSecretVersionTest2() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -408,7 +531,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void getSecretTest() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -417,10 +540,12 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+    SecretName name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
 
     Secret actualResponse = client.getSecret(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -448,7 +573,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       client.getSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -460,7 +585,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void getSecretTest2() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -469,6 +594,8 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -512,7 +639,7 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void updateSecretTest() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -521,12 +648,14 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
     Secret secret =
         Secret.newBuilder()
-            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setReplication(Replication.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -535,6 +664,8 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
             .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -566,7 +697,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     try {
       Secret secret =
           Secret.newBuilder()
-              .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setReplication(Replication.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
@@ -575,6 +706,8 @@ public class SecretManagerServiceClientHttpJsonTest {
               .setRotation(Rotation.newBuilder().build())
               .putAllVersionAliases(new HashMap<String, Long>())
               .putAllAnnotations(new HashMap<String, String>())
+              .setVersionDestroyTtl(Duration.newBuilder().build())
+              .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSecret(secret, updateMask);
@@ -589,7 +722,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+    SecretName name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
 
     client.deleteSecret(name);
 
@@ -616,7 +749,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       client.deleteSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -674,7 +807,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+    SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
 
     ListSecretVersionsPagedResponse pagedListResponse = client.listSecretVersions(parent);
 
@@ -706,7 +839,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       client.listSecretVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -768,16 +901,23 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void getSecretVersionTest() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+    SecretVersionName name =
+        SecretVersionName.ofProjectSecretSecretVersionName(
+            "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
 
     SecretVersion actualResponse = client.getSecretVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -805,7 +945,9 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       client.getSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -817,12 +959,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void getSecretVersionTest2() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -866,12 +1013,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void accessSecretVersionTest() throws Exception {
     AccessSecretVersionResponse expectedResponse =
         AccessSecretVersionResponse.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setPayload(SecretPayload.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+    SecretVersionName name =
+        SecretVersionName.ofProjectSecretSecretVersionName(
+            "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
 
     AccessSecretVersionResponse actualResponse = client.accessSecretVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -899,7 +1051,9 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       client.accessSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -911,7 +1065,10 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void accessSecretVersionTest2() throws Exception {
     AccessSecretVersionResponse expectedResponse =
         AccessSecretVersionResponse.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setPayload(SecretPayload.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -956,16 +1113,23 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void disableSecretVersionTest() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+    SecretVersionName name =
+        SecretVersionName.ofProjectSecretSecretVersionName(
+            "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
 
     SecretVersion actualResponse = client.disableSecretVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -993,7 +1157,9 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       client.disableSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1005,12 +1171,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void disableSecretVersionTest2() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1054,16 +1225,23 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void enableSecretVersionTest() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+    SecretVersionName name =
+        SecretVersionName.ofProjectSecretSecretVersionName(
+            "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
 
     SecretVersion actualResponse = client.enableSecretVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1091,7 +1269,9 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       client.enableSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1103,12 +1283,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void enableSecretVersionTest2() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1152,16 +1337,23 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void destroySecretVersionTest() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+    SecretVersionName name =
+        SecretVersionName.ofProjectSecretSecretVersionName(
+            "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
 
     SecretVersion actualResponse = client.destroySecretVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1189,7 +1381,9 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       client.destroySecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1201,12 +1395,17 @@ public class SecretManagerServiceClientHttpJsonTest {
   public void destroySecretVersionTest2() throws Exception {
     SecretVersion expectedResponse =
         SecretVersion.newBuilder()
-            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setName(
+                SecretVersionName.ofProjectSecretSecretVersionName(
+                        "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
             .setEtag("etag3123477")
             .setClientSpecifiedPayloadChecksum(true)
+            .setScheduledDestroyTime(Timestamp.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryptionStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1259,7 +1458,7 @@ public class SecretManagerServiceClientHttpJsonTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1292,7 +1491,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1316,7 +1515,7 @@ public class SecretManagerServiceClientHttpJsonTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -1348,7 +1547,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -1366,7 +1565,7 @@ public class SecretManagerServiceClientHttpJsonTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1398,7 +1597,7 @@ public class SecretManagerServiceClientHttpJsonTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

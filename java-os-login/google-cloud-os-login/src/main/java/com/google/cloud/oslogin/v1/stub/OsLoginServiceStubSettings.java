@@ -169,15 +169,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -501,15 +492,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     public UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         updateSshPublicKeySettings() {
       return updateSshPublicKeySettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

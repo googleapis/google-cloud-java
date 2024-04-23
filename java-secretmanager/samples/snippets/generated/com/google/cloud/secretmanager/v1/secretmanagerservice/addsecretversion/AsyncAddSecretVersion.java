@@ -40,7 +40,7 @@ public class AsyncAddSecretVersion {
         SecretManagerServiceClient.create()) {
       AddSecretVersionRequest request =
           AddSecretVersionRequest.newBuilder()
-              .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setPayload(SecretPayload.newBuilder().build())
               .build();
       ApiFuture<SecretVersion> future =

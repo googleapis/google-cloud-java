@@ -38,7 +38,10 @@ public class SyncDestroySecretVersion {
         SecretManagerServiceClient.create()) {
       DestroySecretVersionRequest request =
           DestroySecretVersionRequest.newBuilder()
-              .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+              .setName(
+                  SecretVersionName.ofProjectSecretSecretVersionName(
+                          "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                      .toString())
               .setEtag("etag3123477")
               .build();
       SecretVersion response = secretManagerServiceClient.destroySecretVersion(request);
