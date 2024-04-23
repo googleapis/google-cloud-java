@@ -43,7 +43,9 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -57,8 +59,11 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -297,6 +302,36 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
+      getSpaceReadStateMethodDescriptor =
+          MethodDescriptor.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateMethodDescriptor =
+          MethodDescriptor.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSpaceReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateMethodDescriptor =
+          MethodDescriptor.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetThreadReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetThreadReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ThreadReadState.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -330,6 +365,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
+  private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateCallable;
+  private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -582,6 +622,40 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateTransportSettings =
+        GrpcCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
+            .setMethodDescriptor(getSpaceReadStateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateTransportSettings =
+            GrpcCallSettings.<UpdateSpaceReadStateRequest, SpaceReadState>newBuilder()
+                .setMethodDescriptor(updateSpaceReadStateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_read_state.name",
+                          String.valueOf(request.getSpaceReadState().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateTransportSettings =
+            GrpcCallSettings.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
+                .setMethodDescriptor(getThreadReadStateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -668,6 +742,21 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.getSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceReadStateTransportSettings,
+            settings.getSpaceReadStateSettings(),
+            clientContext);
+    this.updateSpaceReadStateCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceReadStateTransportSettings,
+            settings.updateSpaceReadStateSettings(),
+            clientContext);
+    this.getThreadReadStateCallable =
+        callableFactory.createUnaryCallable(
+            getThreadReadStateTransportSettings,
+            settings.getThreadReadStateSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -814,6 +903,21 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {
+    return getSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
+    return updateSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
+    return getThreadReadStateCallable;
   }
 
   @Override

@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/export_evaluated_data_items_config.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 3.25.3
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public final class ExportEvaluatedDataItemsConfigProto {

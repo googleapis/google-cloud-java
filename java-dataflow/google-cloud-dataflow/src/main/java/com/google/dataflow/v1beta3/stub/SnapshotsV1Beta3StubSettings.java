@@ -135,15 +135,6 @@ public class SnapshotsV1Beta3StubSettings extends StubSettings<SnapshotsV1Beta3S
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -380,15 +371,6 @@ public class SnapshotsV1Beta3StubSettings extends StubSettings<SnapshotsV1Beta3S
     public UnaryCallSettings.Builder<ListSnapshotsRequest, ListSnapshotsResponse>
         listSnapshotsSettings() {
       return listSnapshotsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

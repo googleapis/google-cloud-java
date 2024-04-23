@@ -35,7 +35,7 @@ public class SyncGetSecretString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      String name = SecretName.of("[PROJECT]", "[SECRET]").toString();
+      String name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString();
       Secret response = secretManagerServiceClient.getSecret(name);
     }
   }

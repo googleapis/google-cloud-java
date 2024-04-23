@@ -40,7 +40,7 @@ public class AsyncTestIamPermissions {
         SecretManagerServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

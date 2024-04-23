@@ -200,6 +200,23 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).deleteReactionSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSpaceReadState. */
+  public UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceReadState. */
+  public UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSpaceReadStateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getThreadReadState. */
+  public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getThreadReadStateSettings();
+  }
+
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
     return new ChatServiceSettings.Builder(stub.toBuilder()).build();
   }
@@ -436,6 +453,24 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return getStubSettingsBuilder().deleteReactionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceReadState. */
+    public UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings() {
+      return getStubSettingsBuilder().getSpaceReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceReadState. */
+    public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings() {
+      return getStubSettingsBuilder().updateSpaceReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getThreadReadState. */
+    public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings() {
+      return getStubSettingsBuilder().getThreadReadStateSettings();
     }
 
     @Override

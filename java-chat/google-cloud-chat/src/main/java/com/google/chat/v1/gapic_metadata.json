@@ -52,6 +52,12 @@
             "GetSpace": {
               "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
             },
+            "GetSpaceReadState": {
+              "methods": ["getSpaceReadState", "getSpaceReadState", "getSpaceReadState", "getSpaceReadStateCallable"]
+            },
+            "GetThreadReadState": {
+              "methods": ["getThreadReadState", "getThreadReadState", "getThreadReadState", "getThreadReadStateCallable"]
+            },
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
             },
@@ -75,6 +81,9 @@
             },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
+            },
+            "UpdateSpaceReadState": {
+              "methods": ["updateSpaceReadState", "updateSpaceReadState", "updateSpaceReadStateCallable"]
             },
             "UploadAttachment": {
               "methods": ["uploadAttachment", "uploadAttachmentCallable"]
