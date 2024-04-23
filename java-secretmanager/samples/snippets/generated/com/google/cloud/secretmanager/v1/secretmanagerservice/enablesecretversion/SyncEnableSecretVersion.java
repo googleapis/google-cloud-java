@@ -38,7 +38,10 @@ public class SyncEnableSecretVersion {
         SecretManagerServiceClient.create()) {
       EnableSecretVersionRequest request =
           EnableSecretVersionRequest.newBuilder()
-              .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+              .setName(
+                  SecretVersionName.ofProjectSecretSecretVersionName(
+                          "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                      .toString())
               .setEtag("etag3123477")
               .build();
       SecretVersion response = secretManagerServiceClient.enableSecretVersion(request);

@@ -39,7 +39,7 @@ public class SyncAddSecretVersion {
         SecretManagerServiceClient.create()) {
       AddSecretVersionRequest request =
           AddSecretVersionRequest.newBuilder()
-              .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setPayload(SecretPayload.newBuilder().build())
               .build();
       SecretVersion response = secretManagerServiceClient.addSecretVersion(request);

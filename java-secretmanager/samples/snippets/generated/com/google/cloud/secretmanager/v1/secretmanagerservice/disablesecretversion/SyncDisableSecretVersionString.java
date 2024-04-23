@@ -35,7 +35,10 @@ public class SyncDisableSecretVersionString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+      String name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+                  "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+              .toString();
       SecretVersion response = secretManagerServiceClient.disableSecretVersion(name);
     }
   }

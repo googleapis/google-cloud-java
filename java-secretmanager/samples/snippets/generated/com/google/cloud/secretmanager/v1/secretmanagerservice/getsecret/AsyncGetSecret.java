@@ -39,7 +39,7 @@ public class AsyncGetSecret {
         SecretManagerServiceClient.create()) {
       GetSecretRequest request =
           GetSecretRequest.newBuilder()
-              .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .build();
       ApiFuture<Secret> future = secretManagerServiceClient.getSecretCallable().futureCall(request);
       // Do something.

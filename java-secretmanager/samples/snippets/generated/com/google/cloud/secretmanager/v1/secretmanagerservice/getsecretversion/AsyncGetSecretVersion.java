@@ -39,7 +39,10 @@ public class AsyncGetSecretVersion {
         SecretManagerServiceClient.create()) {
       GetSecretVersionRequest request =
           GetSecretVersionRequest.newBuilder()
-              .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+              .setName(
+                  SecretVersionName.ofProjectSecretSecretVersionName(
+                          "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                      .toString())
               .build();
       ApiFuture<SecretVersion> future =
           secretManagerServiceClient.getSecretVersionCallable().futureCall(request);

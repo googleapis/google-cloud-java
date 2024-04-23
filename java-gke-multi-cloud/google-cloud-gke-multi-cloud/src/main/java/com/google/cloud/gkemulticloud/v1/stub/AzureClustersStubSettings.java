@@ -537,15 +537,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1404,15 +1395,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     public UnaryCallSettings.Builder<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigSettings() {
       return getAzureServerConfigSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

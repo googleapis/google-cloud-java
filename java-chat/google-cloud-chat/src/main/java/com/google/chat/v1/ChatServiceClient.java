@@ -512,6 +512,65 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetSpaceReadState</td>
+ *      <td><p> Returns details about a user's read state within a space, used to identify read and unread messages.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSpaceReadState(GetSpaceReadStateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSpaceReadState(SpaceReadStateName name)
+ *           <li><p> getSpaceReadState(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSpaceReadStateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSpaceReadState</td>
+ *      <td><p> Updates a user's read state within a space, used to identify read and unread messages.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSpaceReadState(UpdateSpaceReadStateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSpaceReadState(SpaceReadState spaceReadState, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSpaceReadStateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetThreadReadState</td>
+ *      <td><p> Returns details about a user's read state within a thread, used to identify read and unread messages.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getThreadReadState(GetThreadReadStateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getThreadReadState(ThreadReadStateName name)
+ *           <li><p> getThreadReadState(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getThreadReadStateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -3878,6 +3937,410 @@ public class ChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return stub.deleteReactionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a space, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceReadStateName name = SpaceReadStateName.of("[USER]", "[SPACE]");
+   *   SpaceReadState response = chatServiceClient.getSpaceReadState(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the space read state to retrieve.
+   *     <p>Only supports getting read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example, `users/me/spaces/{space}/spaceReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/spaceReadState`.
+   *     <p>- Their user id. For example, `users/123456789/spaces/{space}/spaceReadState`.
+   *     <p>Format: users/{user}/spaces/{space}/spaceReadState
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceReadState getSpaceReadState(SpaceReadStateName name) {
+    GetSpaceReadStateRequest request =
+        GetSpaceReadStateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSpaceReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a space, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SpaceReadStateName.of("[USER]", "[SPACE]").toString();
+   *   SpaceReadState response = chatServiceClient.getSpaceReadState(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the space read state to retrieve.
+   *     <p>Only supports getting read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example, `users/me/spaces/{space}/spaceReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/spaceReadState`.
+   *     <p>- Their user id. For example, `users/123456789/spaces/{space}/spaceReadState`.
+   *     <p>Format: users/{user}/spaces/{space}/spaceReadState
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceReadState getSpaceReadState(String name) {
+    GetSpaceReadStateRequest request = GetSpaceReadStateRequest.newBuilder().setName(name).build();
+    return getSpaceReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a space, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceReadStateRequest request =
+   *       GetSpaceReadStateRequest.newBuilder()
+   *           .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+   *           .build();
+   *   SpaceReadState response = chatServiceClient.getSpaceReadState(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceReadState getSpaceReadState(GetSpaceReadStateRequest request) {
+    return getSpaceReadStateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a space, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceReadStateRequest request =
+   *       GetSpaceReadStateRequest.newBuilder()
+   *           .setName(SpaceReadStateName.of("[USER]", "[SPACE]").toString())
+   *           .build();
+   *   ApiFuture<SpaceReadState> future =
+   *       chatServiceClient.getSpaceReadStateCallable().futureCall(request);
+   *   // Do something.
+   *   SpaceReadState response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable() {
+    return stub.getSpaceReadStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a space, used to identify read and unread messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceReadState spaceReadState = SpaceReadState.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SpaceReadState response = chatServiceClient.updateSpaceReadState(spaceReadState, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param spaceReadState Required. The space read state and fields to update.
+   *     <p>Only supports updating read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example, `users/me/spaces/{space}/spaceReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/spaceReadState`.
+   *     <p>- Their user id. For example, `users/123456789/spaces/{space}/spaceReadState`.
+   *     <p>Format: users/{user}/spaces/{space}/spaceReadState
+   * @param updateMask Required. The field paths to update. Currently supported field paths:
+   *     <p>- `last_read_time`
+   *     <p>When the `last_read_time` is before the latest message create time, the space appears as
+   *     unread in the UI.
+   *     <p>To mark the space as read, set `last_read_time` to any value later (larger) than the
+   *     latest message create time. The `last_read_time` is coerced to match the latest message
+   *     create time. Note that the space read state only affects the read state of messages that
+   *     are visible in the space's top-level conversation. Replies in threads are unaffected by
+   *     this timestamp, and instead rely on the thread read state.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceReadState updateSpaceReadState(
+      SpaceReadState spaceReadState, FieldMask updateMask) {
+    UpdateSpaceReadStateRequest request =
+        UpdateSpaceReadStateRequest.newBuilder()
+            .setSpaceReadState(spaceReadState)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSpaceReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a space, used to identify read and unread messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSpaceReadStateRequest request =
+   *       UpdateSpaceReadStateRequest.newBuilder()
+   *           .setSpaceReadState(SpaceReadState.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SpaceReadState response = chatServiceClient.updateSpaceReadState(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceReadState updateSpaceReadState(UpdateSpaceReadStateRequest request) {
+    return updateSpaceReadStateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a space, used to identify read and unread messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSpaceReadStateRequest request =
+   *       UpdateSpaceReadStateRequest.newBuilder()
+   *           .setSpaceReadState(SpaceReadState.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SpaceReadState> future =
+   *       chatServiceClient.updateSpaceReadStateCallable().futureCall(request);
+   *   // Do something.
+   *   SpaceReadState response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateCallable() {
+    return stub.updateSpaceReadStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a thread, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ThreadReadStateName name = ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]");
+   *   ThreadReadState response = chatServiceClient.getThreadReadState(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the thread read state to retrieve.
+   *     <p>Only supports getting read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example,
+   *     `users/me/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their user id. For example,
+   *     `users/123456789/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>Format: users/{user}/spaces/{space}/threads/{thread}/threadReadState
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ThreadReadState getThreadReadState(ThreadReadStateName name) {
+    GetThreadReadStateRequest request =
+        GetThreadReadStateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getThreadReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a thread, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString();
+   *   ThreadReadState response = chatServiceClient.getThreadReadState(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the thread read state to retrieve.
+   *     <p>Only supports getting read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example,
+   *     `users/me/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their user id. For example,
+   *     `users/123456789/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>Format: users/{user}/spaces/{space}/threads/{thread}/threadReadState
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ThreadReadState getThreadReadState(String name) {
+    GetThreadReadStateRequest request =
+        GetThreadReadStateRequest.newBuilder().setName(name).build();
+    return getThreadReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a thread, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetThreadReadStateRequest request =
+   *       GetThreadReadStateRequest.newBuilder()
+   *           .setName(ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString())
+   *           .build();
+   *   ThreadReadState response = chatServiceClient.getThreadReadState(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ThreadReadState getThreadReadState(GetThreadReadStateRequest request) {
+    return getThreadReadStateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a user's read state within a thread, used to identify read and unread
+   * messages.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetThreadReadStateRequest request =
+   *       GetThreadReadStateRequest.newBuilder()
+   *           .setName(ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString())
+   *           .build();
+   *   ApiFuture<ThreadReadState> future =
+   *       chatServiceClient.getThreadReadStateCallable().futureCall(request);
+   *   // Do something.
+   *   ThreadReadState response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateCallable() {
+    return stub.getThreadReadStateCallable();
   }
 
   @Override

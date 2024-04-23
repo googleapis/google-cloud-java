@@ -292,15 +292,6 @@ public class MapsPlatformDatasetsV1AlphaStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -636,15 +627,6 @@ public class MapsPlatformDatasetsV1AlphaStubSettings
     public UnaryCallSettings.Builder<DeleteDatasetVersionRequest, Empty>
         deleteDatasetVersionSettings() {
       return deleteDatasetVersionSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

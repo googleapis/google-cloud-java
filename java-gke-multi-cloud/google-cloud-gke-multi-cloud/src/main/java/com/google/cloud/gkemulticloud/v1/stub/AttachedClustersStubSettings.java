@@ -319,15 +319,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -868,15 +859,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
             GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
         generateAttachedClusterAgentTokenSettings() {
       return generateAttachedClusterAgentTokenSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

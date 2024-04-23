@@ -61,7 +61,9 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
+import com.google.chat.v1.GetThreadReadStateRequest;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -75,8 +77,11 @@ import com.google.chat.v1.Message;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
+import com.google.chat.v1.SpaceReadState;
+import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
@@ -147,6 +152,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.spaces")
           .add("https://www.googleapis.com/auth/chat.spaces.create")
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.readstate")
+          .add("https://www.googleapis.com/auth/chat.users.readstate.readonly")
           .build();
 
   private final UnaryCallSettings<CreateMessageRequest, Message> createMessageSettings;
@@ -181,6 +188,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       listReactionsSettings;
   private final UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings;
+  private final UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState>
+      getSpaceReadStateSettings;
+  private final UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings;
+  private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings;
 
   private static final PagedListDescriptor<ListMessagesRequest, ListMessagesResponse, Message>
       LIST_MESSAGES_PAGE_STR_DESC =
@@ -519,6 +532,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return deleteReactionSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSpaceReadState. */
+  public UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateSettings() {
+    return getSpaceReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceReadState. */
+  public UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
+      updateSpaceReadStateSettings() {
+    return updateSpaceReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getThreadReadState. */
+  public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
+      getThreadReadStateSettings() {
+    return getThreadReadStateSettings;
+  }
+
   public ChatServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -533,15 +563,6 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
-  }
-
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
   }
 
   /** Returns the default service name. */
@@ -661,6 +682,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     createReactionSettings = settingsBuilder.createReactionSettings().build();
     listReactionsSettings = settingsBuilder.listReactionsSettings().build();
     deleteReactionSettings = settingsBuilder.deleteReactionSettings().build();
+    getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
+    updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
+    getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
   }
 
   /** Builder for ChatServiceStubSettings. */
@@ -703,6 +727,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
         listReactionsSettings;
     private final UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings;
+    private final UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings;
+    private final UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings;
+    private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -764,6 +794,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReactionsSettings = PagedCallSettings.newBuilder(LIST_REACTIONS_PAGE_STR_FACT);
       deleteReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -789,7 +822,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
-              deleteReactionSettings);
+              deleteReactionSettings,
+              getSpaceReadStateSettings,
+              updateSpaceReadStateSettings,
+              getThreadReadStateSettings);
       initDefaults(this);
     }
 
@@ -819,6 +855,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = settings.createReactionSettings.toBuilder();
       listReactionsSettings = settings.listReactionsSettings.toBuilder();
       deleteReactionSettings = settings.deleteReactionSettings.toBuilder();
+      getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
+      updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
+      getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -844,7 +883,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteMembershipSettings,
               createReactionSettings,
               listReactionsSettings,
-              deleteReactionSettings);
+              deleteReactionSettings,
+              getSpaceReadStateSettings,
+              updateSpaceReadStateSettings,
+              getThreadReadStateSettings);
     }
 
     private static Builder createDefault() {
@@ -984,6 +1026,21 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .deleteReactionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSpaceReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getThreadReadStateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1132,13 +1189,22 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       return deleteReactionSettings;
     }
 
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
+    /** Returns the builder for the settings used for calls to getSpaceReadState. */
+    public UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
+        getSpaceReadStateSettings() {
+      return getSpaceReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceReadState. */
+    public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
+        updateSpaceReadStateSettings() {
+      return updateSpaceReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getThreadReadState. */
+    public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
+        getThreadReadStateSettings() {
+      return getThreadReadStateSettings;
     }
 
     @Override

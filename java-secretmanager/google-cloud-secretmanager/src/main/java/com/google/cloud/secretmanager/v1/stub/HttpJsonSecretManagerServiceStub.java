@@ -90,6 +90,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/secrets")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -127,6 +128,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/secrets")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -166,6 +168,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/secrets/*}:addVersion")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -202,6 +206,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                         serializer.putPathParam(fields, "name", request.getName());
                         return fields;
                       })
+                  .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*}")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
@@ -237,6 +242,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                                 fields, "secret.name", request.getSecret().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{secret.name=projects/*/locations/*/secrets/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -275,6 +281,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -311,6 +318,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*/secrets/*}/versions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -349,6 +357,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/secrets/*/versions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -384,6 +393,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:access")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -419,6 +430,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:disable")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -457,6 +470,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:enable")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -495,6 +510,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/secrets/*/versions/*}:destroy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -532,6 +549,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -569,6 +588,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -605,6 +626,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/secrets/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
