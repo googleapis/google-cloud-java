@@ -169,6 +169,7 @@
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
+    <module>java-shopping-merchantapi</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
     <module>java-storageinsights</module>

@@ -1771,6 +1771,21 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/reports/v1beta
 
+- api_shortname: shopping-merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchantapi/latest/overview
+  release_level: preview
+  distribution_name: com.google.shipping:google-shopping-merchantapi
+  api_id: shopping-merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shipping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1beta
+  requires_billing: true
 - api_shortname: speech
   name_pretty: Cloud Speech
   product_documentation: https://cloud.google.com/speech-to-text/docs/
