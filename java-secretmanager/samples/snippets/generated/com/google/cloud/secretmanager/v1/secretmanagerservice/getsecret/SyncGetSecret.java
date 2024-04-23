@@ -38,7 +38,7 @@ public class SyncGetSecret {
         SecretManagerServiceClient.create()) {
       GetSecretRequest request =
           GetSecretRequest.newBuilder()
-              .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .build();
       Secret response = secretManagerServiceClient.getSecret(request);
     }

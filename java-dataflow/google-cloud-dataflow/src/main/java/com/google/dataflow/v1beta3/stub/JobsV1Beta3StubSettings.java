@@ -284,15 +284,6 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -602,15 +593,6 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
     /** Returns the builder for the settings used for calls to snapshotJob. */
     public UnaryCallSettings.Builder<SnapshotJobRequest, Snapshot> snapshotJobSettings() {
       return snapshotJobSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

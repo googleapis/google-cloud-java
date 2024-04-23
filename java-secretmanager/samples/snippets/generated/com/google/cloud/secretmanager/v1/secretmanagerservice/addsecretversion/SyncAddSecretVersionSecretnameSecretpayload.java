@@ -36,7 +36,7 @@ public class SyncAddSecretVersionSecretnameSecretpayload {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       SecretPayload payload = SecretPayload.newBuilder().build();
       SecretVersion response = secretManagerServiceClient.addSecretVersion(parent, payload);
     }

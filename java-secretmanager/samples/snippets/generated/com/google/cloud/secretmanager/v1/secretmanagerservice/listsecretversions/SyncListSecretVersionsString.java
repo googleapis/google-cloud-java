@@ -35,7 +35,7 @@ public class SyncListSecretVersionsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      String parent = SecretName.of("[PROJECT]", "[SECRET]").toString();
+      String parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString();
       for (SecretVersion element :
           secretManagerServiceClient.listSecretVersions(parent).iterateAll()) {
         // doThingsWith(element);

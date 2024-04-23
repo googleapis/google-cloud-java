@@ -136,15 +136,6 @@ public class Controller2StubSettings extends StubSettings<Controller2StubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -405,15 +396,6 @@ public class Controller2StubSettings extends StubSettings<Controller2StubSetting
     public UnaryCallSettings.Builder<UpdateActiveBreakpointRequest, UpdateActiveBreakpointResponse>
         updateActiveBreakpointSettings() {
       return updateActiveBreakpointSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

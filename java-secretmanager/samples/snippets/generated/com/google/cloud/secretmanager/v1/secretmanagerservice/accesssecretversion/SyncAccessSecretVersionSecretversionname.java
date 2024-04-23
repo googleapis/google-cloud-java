@@ -35,7 +35,9 @@ public class SyncAccessSecretVersionSecretversionname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+      SecretVersionName name =
+          SecretVersionName.ofProjectSecretSecretVersionName(
+              "[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
       AccessSecretVersionResponse response = secretManagerServiceClient.accessSecretVersion(name);
     }
   }

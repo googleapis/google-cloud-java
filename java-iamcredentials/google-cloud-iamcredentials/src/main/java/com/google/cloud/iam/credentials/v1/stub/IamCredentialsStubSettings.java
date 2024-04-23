@@ -140,15 +140,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -411,15 +402,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     /** Returns the builder for the settings used for calls to signJwt. */
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return signJwtSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override
