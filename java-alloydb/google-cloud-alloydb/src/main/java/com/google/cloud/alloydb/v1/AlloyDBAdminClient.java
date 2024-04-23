@@ -774,7 +774,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AlloyDBAdminClient, using the given stub for making calls. This is
-   * for advanced usage - prefer using create(AlloyDBAdminSettings).
+   * for advanced usage - prefer using create(AlloyDBAdminSettings) - manually added.
    */
   public static final AlloyDBAdminClient create(AlloyDBAdminStub stub) {
     return new AlloyDBAdminClient(stub);
