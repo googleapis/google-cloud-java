@@ -37,6 +37,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     userIpAddress_ = "";
     expectedAction_ = "";
     hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+    fraudPrevention_ = 0;
   }
 
   @java.lang.Override
@@ -58,6 +59,177 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.recaptchaenterprise.v1beta1.Event.class,
             com.google.recaptchaenterprise.v1beta1.Event.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Setting that controls Fraud Prevention assessments.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention}
+   */
+  public enum FraudPrevention implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default, unspecified setting. If opted in for automatic detection,
+     * `fraud_prevention_assessment` is returned based on the request.
+     * Otherwise, `fraud_prevention_assessment` is returned if
+     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * enabled in the Google Cloud console.
+     * </pre>
+     *
+     * <code>FRAUD_PREVENTION_UNSPECIFIED = 0;</code>
+     */
+    FRAUD_PREVENTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Enable Fraud Prevention for this assessment, if Fraud Prevention is
+     * enabled in the Google Cloud console.
+     * </pre>
+     *
+     * <code>ENABLED = 1;</code>
+     */
+    ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Disable Fraud Prevention for this assessment, regardless of opt-in
+     * status or the Google Cloud console settings.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default, unspecified setting. If opted in for automatic detection,
+     * `fraud_prevention_assessment` is returned based on the request.
+     * Otherwise, `fraud_prevention_assessment` is returned if
+     * `transaction_data` is present in the `Event` and Fraud Prevention is
+     * enabled in the Google Cloud console.
+     * </pre>
+     *
+     * <code>FRAUD_PREVENTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int FRAUD_PREVENTION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Enable Fraud Prevention for this assessment, if Fraud Prevention is
+     * enabled in the Google Cloud console.
+     * </pre>
+     *
+     * <code>ENABLED = 1;</code>
+     */
+    public static final int ENABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Disable Fraud Prevention for this assessment, regardless of opt-in
+     * status or the Google Cloud console settings.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    public static final int DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FraudPrevention valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FraudPrevention forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FRAUD_PREVENTION_UNSPECIFIED;
+        case 1:
+          return ENABLED;
+        case 2:
+          return DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FraudPrevention> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FraudPrevention>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FraudPrevention>() {
+              public FraudPrevention findValueByNumber(int number) {
+                return FraudPrevention.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1beta1.Event.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final FraudPrevention[] VALUES = values();
+
+    public static FraudPrevention valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FraudPrevention(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention)
   }
 
   private int bitField0_;
@@ -410,6 +582,47 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         : transactionData_;
   }
 
+  public static final int FRAUD_PREVENTION_FIELD_NUMBER = 17;
+  private int fraudPrevention_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fraudPrevention.
+   */
+  @java.lang.Override
+  public int getFraudPreventionValue() {
+    return fraudPrevention_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fraudPrevention.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention getFraudPrevention() {
+    com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention result =
+        com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.forNumber(fraudPrevention_);
+    return result == null
+        ? com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -445,6 +658,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(13, getTransactionData());
     }
+    if (fraudPrevention_
+        != com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.FRAUD_PREVENTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, fraudPrevention_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -475,6 +693,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTransactionData());
     }
+    if (fraudPrevention_
+        != com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.FRAUD_PREVENTION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, fraudPrevention_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -501,6 +724,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (hasTransactionData()) {
       if (!getTransactionData().equals(other.getTransactionData())) return false;
     }
+    if (fraudPrevention_ != other.fraudPrevention_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -528,6 +752,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TRANSACTION_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getTransactionData().hashCode();
     }
+    hash = (37 * hash) + FRAUD_PREVENTION_FIELD_NUMBER;
+    hash = (53 * hash) + fraudPrevention_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -679,6 +905,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         transactionDataBuilder_.dispose();
         transactionDataBuilder_ = null;
       }
+      fraudPrevention_ = 0;
       return this;
     }
 
@@ -738,6 +965,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.transactionData_ =
             transactionDataBuilder_ == null ? transactionData_ : transactionDataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.fraudPrevention_ = fraudPrevention_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -818,6 +1048,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTransactionData()) {
         mergeTransactionData(other.getTransactionData());
       }
+      if (other.fraudPrevention_ != 0) {
+        setFraudPreventionValue(other.getFraudPreventionValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -886,6 +1119,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 106
+            case 136:
+              {
+                fraudPrevention_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1748,6 +1987,109 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         transactionData_ = null;
       }
       return transactionDataBuilder_;
+    }
+
+    private int fraudPrevention_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Fraud Prevention setting for this Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fraudPrevention.
+     */
+    @java.lang.Override
+    public int getFraudPreventionValue() {
+      return fraudPrevention_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Fraud Prevention setting for this Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for fraudPrevention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFraudPreventionValue(int value) {
+      fraudPrevention_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Fraud Prevention setting for this Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fraudPrevention.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention getFraudPrevention() {
+      com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention result =
+          com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.forNumber(fraudPrevention_);
+      return result == null
+          ? com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Fraud Prevention setting for this Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The fraudPrevention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFraudPrevention(
+        com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      fraudPrevention_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Fraud Prevention setting for this Assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFraudPrevention() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      fraudPrevention_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
