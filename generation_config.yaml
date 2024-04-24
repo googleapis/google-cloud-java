@@ -1736,6 +1736,21 @@ libraries:
   - proto_path: google/shopping/css/v1
 
   # duplicated api_shortname
+- api_shortname: shopping-merchant-conversions
+  name_pretty: Merchant Conversions API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-conversions
+  api_id: shopping-merchant-conversions.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1beta
+  requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api

@@ -166,6 +166,7 @@
     <module>java-servicehealth</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
+    <module>java-shopping-merchant-conversions</module>
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-lfp</module>
     <module>java-shopping-merchant-notifications</module>
