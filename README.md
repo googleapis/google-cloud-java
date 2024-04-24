@@ -451,11 +451,11 @@ Note: The client library handles the Operation's polling mechanism for you. By d
 to manually poll the status yourself.
 
 ### Default LRO Values
-Each LRO RPC has a pre-configured default values. You can find these values by 
+Each LRO RPC has a set of pre-configured default values. You can find these values by
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
-For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765)
 has these default values:
 ```java
 OperationTimedPollAlgorithm.create(
@@ -499,7 +499,7 @@ ClusterControllerClient clusterControllerClient = ClusterControllerClient.create
 ```
 
 Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
-The other RPCs in the Client will still use each RPC's pre-configured LRO values. 
+The other RPCs in the Client will still use each RPC's pre-configured LRO values.
 
 ## Managing Dependencies
 
