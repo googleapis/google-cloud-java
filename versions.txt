@@ -756,3 +756,12 @@ grpc-google-cloud-backupdr-v1:0.0.0:0.0.1-SNAPSHOT
 google-maps-solar:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-solar-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-solar-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-conversions:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-conversions-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-conversions-v1beta:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-lfp:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-lfp-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-lfp-v1beta:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-notifications:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-notifications-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-notifications-v1beta:0.0.0:0.0.1-SNAPSHOT
