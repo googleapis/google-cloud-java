@@ -101,7 +101,7 @@ the total RPC's bounds.
 Exponential backoff will retry requests with an increasing delay between each retry attempt. This retry delay value
 can be capped with a maximum retry delay value.
 
-For example, with the following retry configurations:
+For example, the following retry configurations may result in the following delay times:
 ```
 Initial Retry Delay: 100ms
 Retry Delay Multiplier: 2.0
@@ -114,27 +114,33 @@ Max Retry Delay: 500ms
 - ...
 - Attempt X: Delay 500ms
 
+Note: The example above is configured to retry indefinitely. Do set an RPC operation cap by setting the TotalTimeout
+and/or MaxAttempts value.
+
 ### Jitter
-Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
-Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
-are able to spread out the retry attempts without overwhelming the server.
+Jitter is added variance via randomness to spread out when the RPCs are invoked. Google Cloud Client Libraries 
+always enable jitter for retries. This is to help spread out the retry attempts without overwhelming the server.
 
-The jitter randomness is computed on the retry delay. Before each attempt, the retry algorithm will compute
-a random value with the between `[1, RETRY_DELAY]`. This computed value is the *approximate* delay before the request
-is sent to the server.
+The jitter random value is computed as the retry delay. Before each attempt, the retry algorithm will compute a random
+value between `[1, RETRY_DELAY]`. This computed value is the *approximate* delay before the request is sent to the
+server.
 
-For example, with the following retry configurations:
+For example, the following retry configurations utilizes Jitter and Exponential Backoff, which may result in the
+following delays times:
 ```
 Initial Retry Delay: 100ms
 Retry Delay Multiplier: 2.0
 Max Retry Delay: 500ms
 ```
-- Attempt 1: Random value between [1, 100]
-- Attempt 2: Random value between [1, 200]
-- Attempt 3: Random value between [1, 400]
-- Attempt 4: Random value between [1, 500]
+- Attempt 1: Delay a random value between `[1, 100]`ms
+- Attempt 2: Delay a random value between `[1, 200]`ms
+- Attempt 3: Delay a random value between `[1, 400]`ms
+- Attempt 4: Delay a random value between `[1, 500]`ms
 - ...
-- Attempt X: Random value between [1, 500]
+- Attempt X: Delay a random value between `[1, 500]`ms
+
+Note: The example above is configured to retry indefinitely. Do set an RPC operation cap by setting the TotalTimeout
+and/or MaxAttempts value.
 
 ## Retry Examples
 The following examples below show the behavior of some retry configurations.
