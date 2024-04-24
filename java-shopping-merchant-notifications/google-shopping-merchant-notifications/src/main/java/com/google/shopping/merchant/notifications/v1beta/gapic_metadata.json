@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.notifications.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.notifications.v1beta",
+  "services": {
+    "NotificationsApiService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NotificationsApiServiceClient",
+          "rpcs": {
+            "CreateNotificationSubscription": {
+              "methods": ["createNotificationSubscription", "createNotificationSubscription", "createNotificationSubscription", "createNotificationSubscriptionCallable"]
+            },
+            "DeleteNotificationSubscription": {
+              "methods": ["deleteNotificationSubscription", "deleteNotificationSubscription", "deleteNotificationSubscription", "deleteNotificationSubscriptionCallable"]
+            },
+            "GetNotificationSubscription": {
+              "methods": ["getNotificationSubscription", "getNotificationSubscription", "getNotificationSubscription", "getNotificationSubscriptionCallable"]
+            },
+            "ListNotificationSubscriptions": {
+              "methods": ["listNotificationSubscriptions", "listNotificationSubscriptions", "listNotificationSubscriptions", "listNotificationSubscriptionsPagedCallable", "listNotificationSubscriptionsCallable"]
+            },
+            "UpdateNotificationSubscription": {
+              "methods": ["updateNotificationSubscription", "updateNotificationSubscription", "updateNotificationSubscriptionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
