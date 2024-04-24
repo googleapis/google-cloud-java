@@ -40,6 +40,10 @@ public final class MetadataLoader {
           .put(Label.FunctionName, this::getFunctionName)
           .put(Label.InstanceId, this::getInstanceId)
           .put(Label.InstanceName, this::getInstanceName)
+          .put(Label.CloudRunJobName, this::getCloudRunJobName)
+          .put(Label.CloudRunJobExecutionName, this::getCloudRunJobExecutionName)
+          .put(Label.CloudRunJobTaskIndex, this::getCloudRunJobTaskIndex)
+          .put(Label.CloudRunJobTaskAttempt, this::getCloudRunJobTaskAttempt)
           .put(Label.CloudRunLocation, this::getCloudRunLocation)
           .put(Label.GKELocation, this::getGKELocation)
           .put(Label.ModuleId, this::getModuleId)
@@ -84,6 +88,7 @@ public final class MetadataLoader {
   private String getContainerName() {
     return getter.getEnv("CONTAINER_NAME");
   }
+
   /**
    * Distinguish between Standard and Flexible GAE environments. There is no indicator of the
    * environment. The path to the startup-script in the metadata attribute was selected as one of
@@ -121,6 +126,22 @@ public final class MetadataLoader {
     return getter.getAttribute("instance/name");
   }
 
+  private String getCloudRunJobName() {
+    return getter.getEnv("CLOUD_RUN_JOB");
+  }
+
+  private String getCloudRunJobExecutionName() {
+    return getter.getEnv("CLOUD_RUN_EXECUTION");
+  }
+
+  private String getCloudRunJobTaskIndex() {
+    return getter.getEnv("CLOUD_RUN_TASK_INDEX");
+  }
+
+  private String getCloudRunJobTaskAttempt() {
+    return getter.getEnv("CLOUD_RUN_TASK_ATTEMPT");
+  }
+
   private String getCloudRunLocation() {
     return getRegion();
   }
@@ -132,6 +153,7 @@ public final class MetadataLoader {
   private String getModuleId() {
     return getter.getEnv("GAE_SERVICE");
   }
+
   /**
    * Heuristic to discover the namespace name of the current environment. There is no deterministic
    * way to discover the namespace name of the process. The name is read from the {@link
@@ -155,6 +177,7 @@ public final class MetadataLoader {
     }
     return value;
   }
+
   // Kubernetes set hostname of the pod to the pod name by default, however hostname can be override
   // in manifest
   // allow users to provide the container name via environment variable
@@ -169,6 +192,7 @@ public final class MetadataLoader {
   private String getProjectId() {
     return getter.getAttribute("project/project-id");
   }
+
   /**
    * Retrieves a region from the qualified region of 'projects/[PROJECT_NUMBER]/regions/[REGION]'
    *
@@ -193,6 +217,7 @@ public final class MetadataLoader {
   private String getVersionId() {
     return getter.getEnv("GAE_VERSION");
   }
+
   /**
    * Retrieves a zone from the qualified zone of 'projects/[PROJECT_NUMBER]/zones/[ZONE]'
    *

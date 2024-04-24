@@ -32,6 +32,7 @@ import java.util.Map;
 public class MonitoredResourceUtil {
 
   private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
+  private static final String CLOUD_RUN_JOB_LABEL_PREFIX = "run.googleapis.com/";
   protected static final String PORJECTID_LABEL = Label.ProjectId.getKey();
 
   protected enum Label {
@@ -42,6 +43,10 @@ public class MonitoredResourceUtil {
     FunctionName("function_name"),
     InstanceId("instance_id"),
     InstanceName("instance_name"),
+    CloudRunJobName("job_name"),
+    CloudRunJobExecutionName("execution_name"),
+    CloudRunJobTaskIndex("task_index"),
+    CloudRunJobTaskAttempt("task_attempt"),
     CloudRunLocation("location"),
     GKELocation("location"),
     ModuleId("module_id"),
@@ -67,6 +72,7 @@ public class MonitoredResourceUtil {
 
   private enum Resource {
     CLOUD_RUN("cloud_run_revision"),
+    CLOUD_RUN_JOB("cloud_run_job"),
     CLOUD_FUNCTION("cloud_function"),
     APP_ENGINE("gae_app"),
     GCE_INSTANCE("gce_instance"),
@@ -93,6 +99,7 @@ public class MonitoredResourceUtil {
               Label.ServiceName,
               Label.CloudRunLocation,
               Label.ConfigurationName)
+          .putAll(Resource.CLOUD_RUN_JOB.getKey(), Label.CloudRunJobName, Label.CloudRunLocation)
           .putAll(
               Resource.APP_ENGINE.getKey(), Label.ModuleId, Label.VersionId, Label.Zone, Label.Env)
           .putAll(Resource.GCE_INSTANCE.getKey(), Label.InstanceId, Label.Zone)
@@ -177,6 +184,12 @@ public class MonitoredResourceUtil {
         && getter.getEnv("K_CONFIGURATION") != null) {
       return Resource.CLOUD_RUN;
     }
+    if (getter.getEnv("CLOUD_RUN_JOB") != null
+        && getter.getEnv("CLOUD_RUN_EXECUTION") != null
+        && getter.getEnv("CLOUD_RUN_TASK_INDEX") != null
+        && getter.getEnv("CLOUD_RUN_TASK_ATTEMPT") != null) {
+      return Resource.CLOUD_RUN_JOB;
+    }
     if (getter.getEnv("GAE_INSTANCE") != null
         && getter.getEnv("GAE_SERVICE") != null
         && getter.getEnv("GAE_VERSION") != null) {
@@ -212,6 +225,14 @@ public class MonitoredResourceUtil {
         enhancers.add(
             new LabelLoggingEnhancer(APPENGINE_LABEL_PREFIX, ImmutableList.of(Label.InstanceName)));
       }
+    } else if (resourceType == Resource.CLOUD_RUN_JOB) {
+      enhancers.add(
+          new LabelLoggingEnhancer(
+              CLOUD_RUN_JOB_LABEL_PREFIX,
+              ImmutableList.of(
+                  Label.CloudRunJobExecutionName,
+                  Label.CloudRunJobTaskIndex,
+                  Label.CloudRunJobTaskAttempt)));
     }
     return enhancers;
   }

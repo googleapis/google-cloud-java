@@ -286,4 +286,32 @@ public class MonitoredResourceUtilTest {
     assertEquals("cloud_run_revision", response.getType());
     assertEquals(expectedLabels, response.getLabels());
   }
+
+  @Test
+  public void testResourceTypeCloudRunJob() {
+    final String mockedJobName = "mocked-job-name";
+    final ImmutableMap<String, String> expectedLabels =
+        ImmutableMap.of(
+            "project_id",
+            MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
+            "job_name",
+            mockedJobName,
+            "location",
+            MOCKED_REGION);
+
+    // setup
+    expect(getterMock.getAttribute("instance/region")).andReturn(MOCKED_QUALIFIED_REGION).once();
+    expect(getterMock.getAttribute(anyString())).andReturn(null).anyTimes();
+    expect(getterMock.getEnv("CLOUD_RUN_JOB")).andReturn(mockedJobName).times(2);
+    expect(getterMock.getEnv("CLOUD_RUN_EXECUTION")).andReturn(mockedJobName + "_1").times(1);
+    expect(getterMock.getEnv("CLOUD_RUN_TASK_INDEX")).andReturn("0").times(1);
+    expect(getterMock.getEnv("CLOUD_RUN_TASK_ATTEMPT")).andReturn("0").times(1);
+    expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
+    replay(getterMock);
+    // exercise
+    MonitoredResource response = MonitoredResourceUtil.getResource("", "");
+    // verify
+    assertEquals("cloud_run_job", response.getType());
+    assertEquals(expectedLabels, response.getLabels());
+  }
 }
