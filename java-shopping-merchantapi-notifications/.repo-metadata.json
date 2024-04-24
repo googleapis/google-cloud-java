@@ -1,0 +1,16 @@
+{
+  "api_shortname": "shopping-merchantapi-notifications",
+  "name_pretty": "Merchant Notifications API",
+  "product_documentation": "https://developers.google.com/merchant/api",
+  "api_description": "Programmatically manage your Merchant Center accounts.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-merchantapi-notifications/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-shopping-merchantapi-notifications",
+  "distribution_name": "com.google.shopping:google-shopping-merchantapi-notifications",
+  "api_id": "shopping-merchantapi-notifications.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
