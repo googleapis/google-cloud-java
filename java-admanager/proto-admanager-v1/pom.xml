@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>admanager-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-advisorynotifications:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:admanager:current} -->
   </parent>
   <dependencies>
     <dependency>
