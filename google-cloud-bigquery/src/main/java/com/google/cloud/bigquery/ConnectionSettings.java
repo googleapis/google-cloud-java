@@ -221,7 +221,6 @@ public abstract class ConnectionSettings {
      *
      * @param useReadAPI or {@code true} for none
      */
-    @Nullable
     public abstract Builder setUseReadAPI(Boolean useReadAPI);
 
     /**
