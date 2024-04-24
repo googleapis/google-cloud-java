@@ -18,7 +18,7 @@ package com.google.cloud.deploy.v1.samples;
 
 // [START clouddeploy_v1_generated_CloudDeploy_GetIamPolicy_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
-import com.google.cloud.deploy.v1.DeliveryPipelineName;
+import com.google.cloud.deploy.v1.CustomTargetTypeName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,7 @@ public class SyncGetIamPolicy {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                  CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();

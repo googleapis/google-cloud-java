@@ -17,6 +17,7 @@
 package com.google.cloud.secretmanager.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,19 +32,35 @@ import javax.annotation.Generated;
 public class SecretName implements ResourceName {
   private static final PathTemplate PROJECT_SECRET =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/secrets/{secret}");
+  private static final PathTemplate PROJECT_LOCATION_SECRET =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/secrets/{secret}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String secret;
+  private final String location;
 
   @Deprecated
   protected SecretName() {
     project = null;
     secret = null;
+    location = null;
   }
 
   private SecretName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     secret = Preconditions.checkNotNull(builder.getSecret());
+    location = null;
+    pathTemplate = PROJECT_SECRET;
+  }
+
+  private SecretName(ProjectLocationSecretBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    secret = Preconditions.checkNotNull(builder.getSecret());
+    pathTemplate = PROJECT_LOCATION_SECRET;
   }
 
   public String getProject() {
@@ -54,8 +71,20 @@ public class SecretName implements ResourceName {
     return secret;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectSecretBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationSecretBuilder newProjectLocationSecretBuilder() {
+    return new ProjectLocationSecretBuilder();
   }
 
   public Builder toBuilder() {
@@ -66,18 +95,50 @@ public class SecretName implements ResourceName {
     return newBuilder().setProject(project).setSecret(secret).build();
   }
 
+  public static SecretName ofProjectSecretName(String project, String secret) {
+    return newBuilder().setProject(project).setSecret(secret).build();
+  }
+
+  public static SecretName ofProjectLocationSecretName(
+      String project, String location, String secret) {
+    return newProjectLocationSecretBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSecret(secret)
+        .build();
+  }
+
   public static String format(String project, String secret) {
     return newBuilder().setProject(project).setSecret(secret).build().toString();
+  }
+
+  public static String formatProjectSecretName(String project, String secret) {
+    return newBuilder().setProject(project).setSecret(secret).build().toString();
+  }
+
+  public static String formatProjectLocationSecretName(
+      String project, String location, String secret) {
+    return newProjectLocationSecretBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSecret(secret)
+        .build()
+        .toString();
   }
 
   public static SecretName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_SECRET.validatedMatch(
-            formattedString, "SecretName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("secret"));
+    if (PROJECT_SECRET.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SECRET.match(formattedString);
+      return ofProjectSecretName(matchMap.get("project"), matchMap.get("secret"));
+    } else if (PROJECT_LOCATION_SECRET.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_SECRET.match(formattedString);
+      return ofProjectLocationSecretName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("secret"));
+    }
+    throw new ValidationException("SecretName.parse: formattedString not in valid format");
   }
 
   public static List<SecretName> parseList(List<String> formattedStrings) {
@@ -101,7 +162,8 @@ public class SecretName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SECRET.matches(formattedString);
+    return PROJECT_SECRET.matches(formattedString)
+        || PROJECT_LOCATION_SECRET.matches(formattedString);
   }
 
   @Override
@@ -116,6 +178,9 @@ public class SecretName implements ResourceName {
           if (secret != null) {
             fieldMapBuilder.put("secret", secret);
           }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -129,7 +194,7 @@ public class SecretName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_SECRET.instantiate("project", project, "secret", secret);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -139,7 +204,9 @@ public class SecretName implements ResourceName {
     }
     if (o != null && getClass() == o.getClass()) {
       SecretName that = ((SecretName) o);
-      return Objects.equals(this.project, that.project) && Objects.equals(this.secret, that.secret);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.secret, that.secret)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -148,9 +215,13 @@ public class SecretName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(secret);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -180,8 +251,51 @@ public class SecretName implements ResourceName {
     }
 
     private Builder(SecretName secretName) {
+      Preconditions.checkArgument(
+          Objects.equals(secretName.pathTemplate, PROJECT_SECRET),
+          "toBuilder is only supported when SecretName has the pattern of projects/{project}/secrets/{secret}");
       this.project = secretName.project;
       this.secret = secretName.secret;
+    }
+
+    public SecretName build() {
+      return new SecretName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/secrets/{secret}. */
+  public static class ProjectLocationSecretBuilder {
+    private String project;
+    private String location;
+    private String secret;
+
+    protected ProjectLocationSecretBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getSecret() {
+      return secret;
+    }
+
+    public ProjectLocationSecretBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationSecretBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationSecretBuilder setSecret(String secret) {
+      this.secret = secret;
+      return this;
     }
 
     public SecretName build() {

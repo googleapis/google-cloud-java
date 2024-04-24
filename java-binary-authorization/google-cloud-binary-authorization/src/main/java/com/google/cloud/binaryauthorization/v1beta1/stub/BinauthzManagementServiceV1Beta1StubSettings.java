@@ -226,15 +226,6 @@ public class BinauthzManagementServiceV1Beta1StubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -559,15 +550,6 @@ public class BinauthzManagementServiceV1Beta1StubSettings
     /** Returns the builder for the settings used for calls to deleteAttestor. */
     public UnaryCallSettings.Builder<DeleteAttestorRequest, Empty> deleteAttestorSettings() {
       return deleteAttestorSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

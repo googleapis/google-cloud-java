@@ -40,7 +40,7 @@ public class AsyncSetIamPolicy {
         SecretManagerServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

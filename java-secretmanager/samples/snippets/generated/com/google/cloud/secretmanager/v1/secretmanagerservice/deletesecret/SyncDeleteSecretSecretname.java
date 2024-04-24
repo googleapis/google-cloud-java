@@ -35,7 +35,7 @@ public class SyncDeleteSecretSecretname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName name = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       secretManagerServiceClient.deleteSecret(name);
     }
   }

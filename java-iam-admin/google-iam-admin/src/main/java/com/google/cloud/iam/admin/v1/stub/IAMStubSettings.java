@@ -635,15 +635,6 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -1387,15 +1378,6 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     /** Returns the builder for the settings used for calls to lintPolicy. */
     public UnaryCallSettings.Builder<LintPolicyRequest, LintPolicyResponse> lintPolicySettings() {
       return lintPolicySettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

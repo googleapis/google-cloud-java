@@ -166,15 +166,6 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
-  }
-
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -545,15 +536,6 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
     public OperationCallSettings.Builder<RepairApplicationRequest, Application, OperationMetadataV1>
         repairApplicationOperationSettings() {
       return repairApplicationOperationSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

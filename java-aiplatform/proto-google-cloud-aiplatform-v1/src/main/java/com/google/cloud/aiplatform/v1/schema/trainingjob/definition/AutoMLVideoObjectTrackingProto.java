@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_object_tracking.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 3.25.3
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 public final class AutoMLVideoObjectTrackingProto {

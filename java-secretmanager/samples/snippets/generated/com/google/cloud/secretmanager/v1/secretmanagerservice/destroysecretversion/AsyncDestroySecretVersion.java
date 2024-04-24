@@ -39,7 +39,10 @@ public class AsyncDestroySecretVersion {
         SecretManagerServiceClient.create()) {
       DestroySecretVersionRequest request =
           DestroySecretVersionRequest.newBuilder()
-              .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+              .setName(
+                  SecretVersionName.ofProjectSecretSecretVersionName(
+                          "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                      .toString())
               .setEtag("etag3123477")
               .build();
       ApiFuture<SecretVersion> future =

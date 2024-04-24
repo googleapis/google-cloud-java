@@ -38,7 +38,10 @@ public class SyncGetSecretVersion {
         SecretManagerServiceClient.create()) {
       GetSecretVersionRequest request =
           GetSecretVersionRequest.newBuilder()
-              .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+              .setName(
+                  SecretVersionName.ofProjectSecretSecretVersionName(
+                          "[PROJECT]", "[SECRET]", "[SECRET_VERSION]")
+                      .toString())
               .build();
       SecretVersion response = secretManagerServiceClient.getSecretVersion(request);
     }

@@ -39,7 +39,7 @@ public class AsyncListSecretVersions {
         SecretManagerServiceClient.create()) {
       ListSecretVersionsRequest request =
           ListSecretVersionsRequest.newBuilder()
-              .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setParent(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
