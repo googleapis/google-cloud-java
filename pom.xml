@@ -168,6 +168,8 @@
     <module>java-shopping-css</module>
     <module>java-shopping-merchant-conversions</module>
     <module>java-shopping-merchant-inventories</module>
+    <module>java-shopping-merchant-lfp</module>
+    <module>java-shopping-merchant-notifications</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>

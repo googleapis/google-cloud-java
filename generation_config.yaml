@@ -1761,6 +1761,38 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1beta
 
+- api_shortname: shopping-merchant-conversions
+  name_pretty: Merchant Conversions API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-conversions
+  api_id: shopping-merchant-conversions.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1beta
+  requires_billing: true
+
+- api_shortname: shopping-merchant-lfp
+  name_pretty: Merchant LFP API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-lfp
+  api_id: shopping-merchant-lfp.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1beta
+  requires_billing: true
+
 - api_shortname: shopping-merchant-quota
   name_pretty: Merchant Quota API
   product_documentation: https://developers.google.com/merchant/api
@@ -1776,6 +1808,7 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/quota/v1beta
   requires_billing: true
+
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
