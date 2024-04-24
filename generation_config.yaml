@@ -1051,6 +1051,22 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/iot/v1
 
+- api_shortname: merchantapi
+  name_pretty: Merchant Notifications API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchantapi-notifications/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchantapi-notifications
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/notifications/v1beta
+  library_name: java-shopping-merchantapi-notifications
+  requires_billing: true
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
