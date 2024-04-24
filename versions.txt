@@ -754,3 +754,4 @@ google-cloud-backupdr:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-backupdr-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-backupdr-v1:0.0.0:0.0.1-SNAPSHOT
 admanager:0.0.0:0.0.1-SNAPSHOT
+proto-admanager-v1:0.0.0:0.0.1-SNAPSHOT

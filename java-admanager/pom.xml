@@ -31,12 +31,17 @@
         <artifactId>admanager</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:admanager:current} -->
       </dependency>
-
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-admanager-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-admanager-v1:current} -->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <modules>
     <module>admanager</module>
+    <module>proto-admanager-v1</module>
     <module>admanager-bom</module>
   </modules>
 
