@@ -765,3 +765,5 @@ grpc-google-shopping-merchant-lfp-v1beta:0.0.0:0.0.1-SNAPSHOT
 google-shopping-merchant-notifications:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-notifications-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-notifications-v1beta:0.0.0:0.0.1-SNAPSHOT
+ad-manager:0.0.0:0.0.1-SNAPSHOT
+proto-ad-manager-v1:0.0.0:0.0.1-SNAPSHOT

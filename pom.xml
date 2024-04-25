@@ -16,6 +16,7 @@
     <module>google-cloud-pom-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
+    <module>java-admanager</module>
     <module>java-advisorynotifications</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
