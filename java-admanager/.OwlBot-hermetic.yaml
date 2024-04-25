@@ -1,0 +1,35 @@
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/java-admanager/grpc-google-.*/src"
+- "/java-admanager/proto-google-.*/src"
+- "/java-admanager/google-.*/src"
+- "/java-admanager/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-admanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
+deep-copy-regex:
+- source: "/google/ads/admanager/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-admanager/$1/proto-ad-manager-$1/src"
+- source: "/google/ads/admanager/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-admanager/$1/grpc-ad-manager-$1/src"
+- source: "/google/ads/admanager/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-admanager/$1/ad-manager/src"
+- source: "/google/ads/admanager/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-admanager/$1/samples/snippets/generated"
+
+api-name: admanager
