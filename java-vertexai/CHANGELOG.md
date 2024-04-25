@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0 (2024-04-25)
+
+### Features
+
+* Update gapic to include system instruction ([#10733](https://github.com/googleapis/google-cloud-java/issues/10733)) ([8340a49](https://github.com/googleapis/google-cloud-java/commit/8340a49755a3c1504765b83f244099a5fbb1cd46))
+* check null and empty values for input String ([#10658](https://github.com/googleapis/google-cloud-java/issues/10658)) ([949889d](https://github.com/googleapis/google-cloud-java/commit/949889dd71175601ab5d099f65b1f7656205177e))
+
+
+
 ## 1.1.0 (2024-04-04)
 
 * No change

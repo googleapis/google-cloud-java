@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.43.0 (2024-04-25)
+
+### Features
+
+* Added CloudRun, GkeNamespace, GkeWorkload, GkeService, and BasicService service types ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Added ServiceAgentAuthentication auth method for Uptime ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Added Synthetic Monitor targets to Uptime data model ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Updated comments accordingly ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Updated comments accordingly ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Various updates ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+
+
+
 ## 3.42.0 (2024-04-04)
 
 * No change
