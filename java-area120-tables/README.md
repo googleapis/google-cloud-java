@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.45.0</version>
+  <version>0.46.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.area120:google-area120-tables:0.45.0'
+implementation 'com.google.area120:google-area120-tables:0.46.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.45.0"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.46.0"
 ```
 <!-- {x-version-update-end} -->
 
