@@ -179,6 +179,9 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Memorystore for Redis API](https://github.com/googleapis/google-cloud-java/tree/main/java-redis-cluster) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-redis-cluster.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-redis-cluster&core=gav) |
 | [Merchant API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-reports) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-reports.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-reports&core=gav) |
 | [Merchant API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-inventories) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-inventories.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-inventories&core=gav) |
+| [Merchant Conversions API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-conversions) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-conversions.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-conversions&core=gav) |
+| [Merchant LFP API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-lfp) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-lfp.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-lfp&core=gav) |
+| [Merchant Notifications API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-notifications) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-notifications.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-notifications&core=gav) |
 | [Merchant Quota API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-quota) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-quota.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-quota&core=gav) |
 | [Migration Center API](https://github.com/googleapis/google-cloud-java/tree/main/java-migrationcenter) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-migrationcenter.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-migrationcenter&core=gav) |
 | [Monitoring Metrics Scopes](https://github.com/googleapis/google-cloud-java/tree/main/java-monitoring-metricsscope) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring-metricsscope.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-monitoring-metricsscope&core=gav) |
@@ -202,6 +205,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Security Command Center Settings API](https://github.com/googleapis/google-cloud-java/tree/main/java-securitycenter-settings) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-securitycenter-settings.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-securitycenter-settings&core=gav) |
 | [Security Posture API](https://github.com/googleapis/google-cloud-java/tree/main/java-securityposture) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-securityposture.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-securityposture&core=gav) |
 | [Service Health API](https://github.com/googleapis/google-cloud-java/tree/main/java-servicehealth) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-servicehealth.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-servicehealth&core=gav) |
+| [Solar API](https://github.com/googleapis/google-cloud-java/tree/main/java-maps-solar) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.maps/google-maps-solar.svg)](https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-solar&core=gav) |
 | [Storage Insights API](https://github.com/googleapis/google-cloud-java/tree/main/java-storageinsights) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-storageinsights.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-storageinsights&core=gav) |
 | [Support API](https://github.com/googleapis/google-cloud-java/tree/main/java-cloudsupport) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-cloudsupport.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-cloudsupport&core=gav) |
 | [Telco Automation API](https://github.com/googleapis/google-cloud-java/tree/main/java-telcoautomation) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-telcoautomation.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-telcoautomation&core=gav) |
@@ -451,11 +455,11 @@ Note: The client library handles the Operation's polling mechanism for you. By d
 to manually poll the status yourself.
 
 ### Default LRO Values
-Each LRO RPC has a pre-configured default values. You can find these values by 
+Each LRO RPC has a set of pre-configured default values. You can find these values by
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
-For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765)
 has these default values:
 ```java
 OperationTimedPollAlgorithm.create(
@@ -499,7 +503,7 @@ ClusterControllerClient clusterControllerClient = ClusterControllerClient.create
 ```
 
 Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
-The other RPCs in the Client will still use each RPC's pre-configured LRO values. 
+The other RPCs in the Client will still use each RPC's pre-configured LRO values.
 
 ## Managing Dependencies
 

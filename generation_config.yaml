@@ -1183,6 +1183,24 @@ libraries:
   GAPICs:
   - proto_path: google/maps/routing/v2
 
+- api_shortname: maps-solar
+  name_pretty: Solar API
+  product_documentation: https://developers.google.com/maps/documentation/solar/overview
+  api_description: The Solar API allows users to read details about the solar potential
+    of over 60 million buildings. This includes measurements of the building's roof
+    (e.g., size and tilt/azimuth), energy production for a range of sizes of solar
+    installations, and financial costs and benefits.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-solar
+  api_id: maps-solar.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/solar/v1
+  requires_billing: true
+  rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
 - api_shortname: mediatranslation
   name_pretty: Media Translation API
   product_documentation: https://cloud.google.com/
