@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.17.0](https://github.com/googleapis/java-logging/compare/v3.16.3...v3.17.0) (2024-04-25)
+
+
+### Features
+
+* Add Cloud Run Jobs support ([#1574](https://github.com/googleapis/java-logging/issues/1574)) ([1dd64d0](https://github.com/googleapis/java-logging/commit/1dd64d078e0d4cbb1e16cb1d050ba192492d6a60))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.39.0 ([#1587](https://github.com/googleapis/java-logging/issues/1587)) ([848418b](https://github.com/googleapis/java-logging/commit/848418b426c2e93e636dbd9de71985c386ccb9d2))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 ([#1586](https://github.com/googleapis/java-logging/issues/1586)) ([edcaf8d](https://github.com/googleapis/java-logging/commit/edcaf8de643a7f7f419ee6059c706d0ef0ef4873))
+
 ## [3.16.3](https://github.com/googleapis/java-logging/compare/v3.16.2...v3.16.3) (2024-04-17)
 
 
