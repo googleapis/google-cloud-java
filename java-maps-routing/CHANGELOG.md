@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.27.0 (2024-04-25)
+
+### Features
+
+* adds support for new toll passes ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* adds support for specifying units in the ComputeRouteMatrix request ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* various formatting and grammar fixes for proto documentation ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+
+
+
 ## 1.26.0 (2024-04-04)
 
 * No change

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.50.0 (2024-04-25)
+
+### Features
+
+* Add cloud_armor field to finding's list of attributes ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+* Fixed backtick and double quotes mismatch in security_marks.proto ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+
+
+
 ## 2.49.0 (2024-04-04)
 
 * No change

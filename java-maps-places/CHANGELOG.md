@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.13.0 (2024-04-25)
+
+### Features
+
+* Correct requirements on Autocomplete and Details session token field ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Document the maximum number of reviews and photos returned ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Fix designation of Text Search ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Fix typo in PriceLevel enum ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* slightly improved documentation for EVOptions in SearchTextRequest ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+* Update field mask guidance ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+
+
+
 ## 0.12.0 (2024-04-04)
 
 * No change
