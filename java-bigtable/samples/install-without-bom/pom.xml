@@ -25,7 +25,6 @@
 
 
   <dependencies>
-    <!-- {x-version-update-start:google-cloud-bigtable:released} -->
     <!-- [START bigtable_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -33,7 +32,6 @@
       <version>2.38.0</version>
     </dependency>
     <!-- [END bigtable_install_without_bom] -->
-    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
