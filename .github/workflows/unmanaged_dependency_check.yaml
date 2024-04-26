@@ -14,6 +14,6 @@ jobs:
       shell: bash
       run: .kokoro/build.sh
     - name: Unmanaged dependency check
-      uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.28.1
+      uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.29.0
       with:
         bom-path: pom.xml
