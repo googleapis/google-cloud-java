@@ -105,6 +105,12 @@ public class EnhancedBigQueryStorageStubSettings
     return BigQueryStorageStubSettings.defaultExecutorProviderBuilder();
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "bigquerystorage";
+  }
+
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return BigQueryStorageStubSettings.getDefaultEndpoint();
