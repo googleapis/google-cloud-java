@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookExecutionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookRuntimeTemplatesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookRuntimesPagedResponse;
 
@@ -28,15 +29,20 @@ import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeOperationMetadat
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.GetNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.GetNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimeTemplatesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimeTemplatesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimesResponse;
+import com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob;
 import com.google.cloud.aiplatform.v1beta1.NotebookRuntime;
 import com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeOperationMetadata;
@@ -178,6 +184,34 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeCallable() {
     throw new UnsupportedOperationException("Not implemented: startNotebookRuntimeCallable()");
+  }
+
+  public UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNotebookExecutionJobCallable()");
+  }
+
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listNotebookExecutionJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNotebookExecutionJobsCallable()");
+  }
+
+  public OperationCallable<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNotebookExecutionJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNotebookExecutionJobCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

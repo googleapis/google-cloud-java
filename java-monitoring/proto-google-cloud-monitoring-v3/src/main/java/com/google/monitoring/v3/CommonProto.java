@@ -90,12 +90,12 @@ public final class CommonProto {
           + "\020\005\022\021\n\rCOMPARISON_NE\020\006*a\n\013ServiceTier\022\034\n\030"
           + "SERVICE_TIER_UNSPECIFIED\020\000\022\026\n\022SERVICE_TI"
           + "ER_BASIC\020\001\022\030\n\024SERVICE_TIER_PREMIUM\020\002\032\002\030\001"
-          + "B\306\001\n\030com.google.monitoring.v3B\013CommonPro"
+          + "B\315\001\n\030com.google.monitoring.v3B\013CommonPro"
           + "toP\001ZAcloud.google.com/go/monitoring/api"
-          + "v3/v2/monitoringpb;monitoringpb\252\002\032Google"
-          + ".Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Moni"
-          + "toring\\V3\352\002\035Google::Cloud::Monitoring::V"
-          + "3b\006proto3"
+          + "v3/v2/monitoringpb;monitoringpb\242\002\004GMON\252\002"
+          + "\032Google.Cloud.Monitoring.V3\312\002\032Google\\Clo"
+          + "ud\\Monitoring\\V3\352\002\035Google::Cloud::Monito"
+          + "ring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
