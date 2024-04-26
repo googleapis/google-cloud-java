@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.4.0...v3.5.0) (2024-04-26)
+
+
+### Features
+
+* Add `libraries_bom_version` in metadata ([#1956](https://github.com/googleapis/java-bigquerystorage/issues/1956)) ([#2463](https://github.com/googleapis/java-bigquerystorage/issues/2463)) ([b35bd4a](https://github.com/googleapis/java-bigquerystorage/commit/b35bd4a631ad6411531cd9056d01e829a0863b39))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.39.0 ([#2467](https://github.com/googleapis/java-bigquerystorage/issues/2467)) ([e2bc82d](https://github.com/googleapis/java-bigquerystorage/commit/e2bc82dde45c8c8e01bbe221f5817b02e9c5b7ed))
+
+
+### Dependencies
+
+* Update actions/checkout digest to 1d96c77 ([#2469](https://github.com/googleapis/java-bigquerystorage/issues/2469)) ([8efb813](https://github.com/googleapis/java-bigquerystorage/commit/8efb8131ff89b57509b4b122c75f765c62514b1c))
+* Update arrow.version to v16 ([#2468](https://github.com/googleapis/java-bigquerystorage/issues/2468)) ([d143c65](https://github.com/googleapis/java-bigquerystorage/commit/d143c65b6c92b98d321408458a6b2bc18e42593b))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.38.2 ([#2453](https://github.com/googleapis/java-bigquerystorage/issues/2453)) ([a054ddd](https://github.com/googleapis/java-bigquerystorage/commit/a054dddb20962c610a7af5c8cd76c93082df55fa))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.39.0 ([#2473](https://github.com/googleapis/java-bigquerystorage/issues/2473)) ([4eadc4a](https://github.com/googleapis/java-bigquerystorage/commit/4eadc4a5e63acf2daba7589f804b5facad1452fa))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ([#2455](https://github.com/googleapis/java-bigquerystorage/issues/2455)) ([80269b0](https://github.com/googleapis/java-bigquerystorage/commit/80269b0f861ab9f5a2426668e10b35e963019395))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 ([#2465](https://github.com/googleapis/java-bigquerystorage/issues/2465)) ([c082c36](https://github.com/googleapis/java-bigquerystorage/commit/c082c363fc365962dc9654a9cefb7602711c03f8))
+
 ## [3.4.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.3.1...v3.4.0) (2024-03-19)
 
 
