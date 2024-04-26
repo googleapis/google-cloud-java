@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [0.131.5-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.4-alpha...v0.131.5-alpha) (2024-04-26)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#1301](https://github.com/googleapis/java-logging-logback/issues/1301)) ([614fc8f](https://github.com/googleapis/java-logging-logback/commit/614fc8fd1e9358652af91ada9ad49b809ac671c0))
+* Update actions/github-script action to v7 ([#1299](https://github.com/googleapis/java-logging-logback/issues/1299)) ([80d6f4c](https://github.com/googleapis/java-logging-logback/commit/80d6f4c2157be25e0270f6e0d7d6bf4e1f571818))
+* Update actions/setup-java action to v4 ([#1302](https://github.com/googleapis/java-logging-logback/issues/1302)) ([06b124a](https://github.com/googleapis/java-logging-logback/commit/06b124a45c61fb150ca928d698466a5a7d4678d3))
+* Update dependency com.google.cloud:google-cloud-logging to v3.17.0 ([#1303](https://github.com/googleapis/java-logging-logback/issues/1303)) ([7131e07](https://github.com/googleapis/java-logging-logback/commit/7131e07ee3eaef7379b1ddb33fadb9f5d89222de))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 ([#1304](https://github.com/googleapis/java-logging-logback/issues/1304)) ([2e87cf9](https://github.com/googleapis/java-logging-logback/commit/2e87cf91b170e79731a8318a51bc07f9b2df0d30))
+
 ## [0.131.4-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.3-alpha...v0.131.4-alpha) (2024-03-21)
 
 
