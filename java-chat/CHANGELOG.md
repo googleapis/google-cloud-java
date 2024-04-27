@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 (2024-04-25)
+
+### Features
+
+* Add Chat read state APIs ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+* add UpdateMembership API ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+
+
+
 ## 0.5.0 (2024-04-04)
 
 * No change

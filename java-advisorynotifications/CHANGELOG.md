@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.31.0 (2024-04-25)
+
+### Features
+
+* add GetSettings and UpdateSettings methods at the Project-level to advisorynotifications.googleapis.com ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* adding docs for new project level settings methods ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+
+
+
 ## 0.30.0 (2024-04-04)
 
 * No change

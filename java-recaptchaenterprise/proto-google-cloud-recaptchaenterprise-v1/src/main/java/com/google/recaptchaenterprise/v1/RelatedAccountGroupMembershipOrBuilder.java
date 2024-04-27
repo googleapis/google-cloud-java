@@ -97,7 +97,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * <code>bytes hashed_account_id = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id
-   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1891
+   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1913
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated

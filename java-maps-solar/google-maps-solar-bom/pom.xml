@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.maps</groupId>
+  <artifactId>google-maps-solar-bom</artifactId>
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+  </parent>
+
+  <name>Google Solar API BOM</name>
+  <description>
+    BOM for Solar API
+  </description>
+
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.maps</groupId>
+        <artifactId>google-maps-solar</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.maps.api.grpc</groupId>
+        <artifactId>grpc-google-maps-solar-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-solar-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.maps.api.grpc</groupId>
+        <artifactId>proto-google-maps-solar-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-solar-v1:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

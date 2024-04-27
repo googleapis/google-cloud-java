@@ -78,9 +78,18 @@ public class ITGenerativeModelIntegrationTest {
   @Before
   public void setUp() throws IOException {
     vertexAi = new VertexAI(PROJECT_ID, LOCATION);
-    textModel = new GenerativeModel(MODEL_NAME_TEXT, vertexAi);
-    multiModalModel = new GenerativeModel(MODEL_NAME_MULTIMODAL, vertexAi);
-    latestGemini = new GenerativeModel(MODEL_NAME_LATEST_GEMINI, vertexAi);
+    // Set temperature to 0 to reduce randomness on model responses
+    GenerationConfig defaultGenerationConfig =
+        GenerationConfig.newBuilder().setTemperature(0).build();
+    textModel =
+        new GenerativeModel(MODEL_NAME_TEXT, vertexAi)
+            .withGenerationConfig(defaultGenerationConfig);
+    multiModalModel =
+        new GenerativeModel(MODEL_NAME_MULTIMODAL, vertexAi)
+            .withGenerationConfig(defaultGenerationConfig);
+    latestGemini =
+        new GenerativeModel(MODEL_NAME_LATEST_GEMINI, vertexAi)
+            .withGenerationConfig(defaultGenerationConfig);
   }
 
   @After

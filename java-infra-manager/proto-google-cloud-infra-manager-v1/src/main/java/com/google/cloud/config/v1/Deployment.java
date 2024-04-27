@@ -76,6 +76,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 24:
+        return internalGetAnnotations();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -2207,6 +2209,125 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.config.v1.QuotaValidation.UNRECOGNIZED : result;
   }
 
+  public static final int ANNOTATIONS_FIELD_NUMBER = 24;
+
+  private static final class AnnotationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.config.v1.ConfigProto
+                .internal_static_google_cloud_config_v1_Deployment_AnnotationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotations() {
+    if (annotations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+    }
+    return annotations_;
+  }
+
+  public int getAnnotationsCount() {
+    return internalGetAnnotations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAnnotations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAnnotations().getMap().containsKey(key);
+  }
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+    return getAnnotationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+    return internalGetAnnotations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2289,6 +2410,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.config.v1.QuotaValidation.QUOTA_VALIDATION_UNSPECIFIED.getNumber()) {
       output.writeEnum(23, quotaValidation_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 24);
     getUnknownFields().writeTo(output);
   }
 
@@ -2376,6 +2499,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.config.v1.QuotaValidation.QUOTA_VALIDATION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(23, quotaValidation_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+          AnnotationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, annotations__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2436,6 +2569,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTfVersion().equals(other.getTfVersion())) return false;
     if (quotaValidation_ != other.quotaValidation_) return false;
+    if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getBlueprintCase().equals(other.getBlueprintCase())) return false;
     switch (blueprintCase_) {
       case 6:
@@ -2517,6 +2651,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTfVersion().hashCode();
     hash = (37 * hash) + QUOTA_VALIDATION_FIELD_NUMBER;
     hash = (53 * hash) + quotaValidation_;
+    if (!internalGetAnnotations().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
     switch (blueprintCase_) {
       case 6:
         hash = (37 * hash) + TERRAFORM_BLUEPRINT_FIELD_NUMBER;
@@ -2649,6 +2787,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 24:
+          return internalGetAnnotations();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2660,6 +2800,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 24:
+          return internalGetMutableAnnotations();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2740,6 +2882,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       tfVersionConstraint_ = "";
       tfVersion_ = "";
       quotaValidation_ = 0;
+      internalGetMutableAnnotations().clear();
       blueprintCase_ = 0;
       blueprint_ = null;
       return this;
@@ -2862,6 +3005,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.quotaValidation_ = quotaValidation_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3027,6 +3174,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (other.quotaValidation_ != 0) {
         setQuotaValidationValue(other.getQuotaValidationValue());
       }
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00400000;
       switch (other.getBlueprintCase()) {
         case TERRAFORM_BLUEPRINT:
           {
@@ -3210,6 +3359,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 184
+            case 194:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6537,6 +6698,200 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00200000);
       quotaValidation_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotations() {
+      if (annotations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      return annotations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotations() {
+      if (annotations_ == null) {
+        annotations_ =
+            com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotations_.isMutable()) {
+        annotations_ = annotations_.copy();
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return annotations_;
+    }
+
+    public int getAnnotationsCount() {
+      return internalGetAnnotations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAnnotations().getMap().containsKey(key);
+    }
+    /** Use {@link #getAnnotationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+      return getAnnotationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+      return internalGetAnnotations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      internalGetMutableAnnotations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAnnotations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00400000;
+      return internalGetMutableAnnotations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAnnotations(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00400000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+     * identify deployments during automation. See
+     * https://google.aip.dev/148#annotations for details on format and size
+     * limitations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00400000;
       return this;
     }
 

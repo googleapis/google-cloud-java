@@ -686,5 +686,75 @@ public interface PreviewOrBuilder
    */
   com.google.protobuf.ByteString getLogsBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the preview.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tfVersion.
+   */
+  java.lang.String getTfVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the preview.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tfVersion.
+   */
+  com.google.protobuf.ByteString getTfVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tfVersionConstraint field is set.
+   */
+  boolean hasTfVersionConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tfVersionConstraint.
+   */
+  java.lang.String getTfVersionConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for tfVersionConstraint.
+   */
+  com.google.protobuf.ByteString getTfVersionConstraintBytes();
+
   com.google.cloud.config.v1.Preview.BlueprintCase getBlueprintCase();
 }

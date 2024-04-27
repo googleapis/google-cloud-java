@@ -1,6 +1,6 @@
 gapic_generator_version: 2.39.0
 protobuf_version: '25.3'
-googleapis_commitish: 03dd9e4025b87c6be2ec2f8987a3953916600d67
+googleapis_commitish: 0179dcc4d2b4d7376e7f0292b15c72aab3100dd6
 libraries_bom_version: 26.37.0
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 63cc541da2c45fcfca2136c43e638da1fbae174d
@@ -39,6 +39,22 @@ libraries:
   GAPICs:
   - proto_path: google/identity/accesscontextmanager/v1
   - proto_path: google/identity/accesscontextmanager/type
+
+#- api_shortname: admanager
+#  name_pretty: Google Ad Manager API
+#  product_documentation: https://developers.google.com/ad-manager/api/beta
+#  api_description: The Ad Manager API enables an app to integrate with Google Ad Manager.
+#    You can read Ad Manager data and run reports using the API.
+#  client_documentation: https://cloud.google.com/java/docs/reference/ad-manager/latest/overview
+#  release_level: preview
+#  distribution_name: com.google.api-ads:ad-manager
+#  api_id: admanager.googleapis.com
+#  library_type: GAPIC_AUTO
+#  group_id: com.google.api-ads
+#  cloud_api: false
+#  GAPICs:
+#  - proto_path: google/ads/admanager/v1
+#  requires_billing: true
 
 - api_shortname: advisorynotifications
   name_pretty: Advisory Notifications API
@@ -1168,6 +1184,24 @@ libraries:
   GAPICs:
   - proto_path: google/maps/routing/v2
 
+- api_shortname: maps-solar
+  name_pretty: Solar API
+  product_documentation: https://developers.google.com/maps/documentation/solar/overview
+  api_description: The Solar API allows users to read details about the solar potential
+    of over 60 million buildings. This includes measurements of the building's roof
+    (e.g., size and tilt/azimuth), energy production for a range of sizes of solar
+    installations, and financial costs and benefits.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-maps-solar/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-solar
+  api_id: maps-solar.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/solar/v1
+  requires_billing: true
+  rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
 - api_shortname: mediatranslation
   name_pretty: Media Translation API
   product_documentation: https://cloud.google.com/
@@ -1736,6 +1770,22 @@ libraries:
   - proto_path: google/shopping/css/v1
 
   # duplicated api_shortname
+- api_shortname: shopping-merchant-conversions
+  name_pretty: Merchant Conversions API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-conversions
+  api_id: shopping-merchant-conversions.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1beta
+  requires_billing: true
+
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -1745,6 +1795,22 @@ libraries:
   distribution_name: com.google.shopping:google-shopping-merchant-inventories
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1beta
+
+- api_shortname: shopping-merchant-lfp
+  name_pretty: Merchant LFP API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-lfp
+  api_id: shopping-merchant-lfp.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1beta
+  requires_billing: true
 
 - api_shortname: shopping-merchant-quota
   name_pretty: Merchant Quota API
@@ -1761,6 +1827,7 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/quota/v1beta
   requires_billing: true
+
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api

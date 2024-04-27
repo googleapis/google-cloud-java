@@ -16,6 +16,7 @@
     <module>google-cloud-pom-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
+    <module>java-admanager</module>
     <module>java-advisorynotifications</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
@@ -116,6 +117,7 @@
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routing</module>
+    <module>java-maps-solar</module>
     <module>java-mediatranslation</module>
     <module>java-meet</module>
     <module>java-memcache</module>
@@ -166,7 +168,10 @@
     <module>java-servicehealth</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
+    <module>java-shopping-merchant-conversions</module>
     <module>java-shopping-merchant-inventories</module>
+    <module>java-shopping-merchant-lfp</module>
+    <module>java-shopping-merchant-notifications</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>

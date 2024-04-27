@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.42.0 (2024-04-25)
+
+### Features
+
+* Added optional flag of an existing field `limit`, `consumed`, `carryover` in ResourceAllowance
+* add a service_account field to taskGroup for service account support ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* Added optional flag of an existing field `limit`, `consumed`, `carryover` in ResourceAllowance ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* A comment for field `max_run_duration` in message `.google.cloud.batch.v1alpha.TaskSpec` and `.google.cloud.batch.v1.TaskSpec` is changed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add non-negative restriction comment for usage_resource_allowance.spec.limit.limit exposed on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add non-negative restriction comment for usage_resource_allowance.spec.limit.limit exposed on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* state one Resource Allowance per region per project limitation on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* state one Resource Allowance per region per project limitation on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* update comments on ServiceAccount email and scopes fields ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+
+
+
 ## 0.41.0 (2024-04-04)
 
 * No change
