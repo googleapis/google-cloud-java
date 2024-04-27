@@ -88,8 +88,6 @@ fi
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
-echo "Configuration diff:"
-echo "${config_diff}"
 
 # bind docker volume to include the repository in docker running environment.
 if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
@@ -122,6 +120,8 @@ if [[ "${changed_files}" == "" ]]; then
     exit 0
 fi
 
+echo "Configuration diff:"
+echo "${config_diff}"
 git commit -m "${message}"
 git push
 # set pr body if pr_description.txt is generated.
