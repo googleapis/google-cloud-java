@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.39.0](https://github.com/googleapis/java-bigtable/compare/v2.38.0...v2.39.0) (2024-04-29)
+
+
+### Features
+
+* Admin API changes for databoost ([#2181](https://github.com/googleapis/java-bigtable/issues/2181)) ([3b1886b](https://github.com/googleapis/java-bigtable/commit/3b1886bea79525505e41124b41985f37c490c97e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.36.0 ([#2215](https://github.com/googleapis/java-bigtable/issues/2215)) ([5a9259e](https://github.com/googleapis/java-bigtable/commit/5a9259e3c861f1ed13c84e0bb024ddda3e1dc147))
+* Update shared dependencies ([#2190](https://github.com/googleapis/java-bigtable/issues/2190)) ([3f37d8d](https://github.com/googleapis/java-bigtable/commit/3f37d8da8b51a3fea56d1c462b9500ee2c244973))
+
 ## [2.38.0](https://github.com/googleapis/java-bigtable/compare/v2.37.0...v2.38.0) (2024-04-15)
 
 
