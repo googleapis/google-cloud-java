@@ -146,9 +146,9 @@ jobs:
           python /src/cli/entry_point.py validate-generation-config \
           --generation-config-path="${workspace_name}/generation_config.yaml"
       env:
-      library_generation_image_tag: latest
-      volume_name: repo
-      workspace_name: /workspace/repo
+        library_generation_image_tag: latest
+        volume_name: repo
+        workspace_name: /workspace/repo
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
