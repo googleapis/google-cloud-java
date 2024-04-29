@@ -28,7 +28,6 @@ libraries:
     personnel.
   release_level: stable
   GAPICs:
-  - proto_path: google/cloud/accessapproval/v1
 
 - api_shortname: accesscontextmanager
   name_pretty: Identity Access Context Manager
