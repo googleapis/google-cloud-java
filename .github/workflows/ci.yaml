@@ -115,6 +115,40 @@ jobs:
       uses: googleapis/java-cloud-bom/tests/validate-bom@v26.13.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
+  generation-config-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: bind docker volume
+      shell: bash
+      run: |
+        if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
+          docker volume rm ${volume_name}
+        fi
+        docker volume create \
+          --name ${volume_name} \
+          --opt "type=none" \
+          --opt "device=$(pwd)" \
+          --opt "o=bind"
+      env:
+        volume_name: repo
+    - name: validate generation configuration
+      shell: bash
+      run: |
+        docker run \
+          --rm \
+          -v "${volume_name}:${workspace_name}" \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=-v ${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python /src/cli/entry_point.py validate-generation-config \
+          --generation-config-path="${workspace_name}/generation_config.yaml"
+      env:
+      library_generation_image_tag: latest
+      volume_name: repo
+      workspace_name: /workspace/repo
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
