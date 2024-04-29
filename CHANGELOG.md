@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.39.1](https://github.com/googleapis/java-bigquery/compare/v2.39.0...v2.39.1) (2024-04-29)
+
+
+### Bug Fixes
+
+* @Nullable annotations on builder methods ([#3222](https://github.com/googleapis/java-bigquery/issues/3222)) ([0c5eed1](https://github.com/googleapis/java-bigquery/commit/0c5eed1a18409f120a1243bd5da1db2aa4f9c206))
+
+
+### Dependencies
+
+* Update actions/checkout action ([#3267](https://github.com/googleapis/java-bigquery/issues/3267)) ([c297ed2](https://github.com/googleapis/java-bigquery/commit/c297ed2c77e36257451b5c12e4988f3293cdbb88))
+* Update actions/upload-artifact action to v4.3.3 ([#3258](https://github.com/googleapis/java-bigquery/issues/3258)) ([5215235](https://github.com/googleapis/java-bigquery/commit/52152350a2a6218b51ebf3d7dd6beb2699064a3c))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.44.0 ([#3270](https://github.com/googleapis/java-bigquery/issues/3270)) ([ee09ab6](https://github.com/googleapis/java-bigquery/commit/ee09ab68ea2be824aaf4e3d08b67e3bfbab2977f))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v3.5.0 ([e7c6201](https://github.com/googleapis/java-bigquery/commit/e7c620119321b673c19b99adb79247cd3c52cd67))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.48.0 ([#3271](https://github.com/googleapis/java-bigquery/issues/3271)) ([3b6e0d5](https://github.com/googleapis/java-bigquery/commit/3b6e0d5e3d26b8e2de412aa926a638d72562d4a0))
+* Update github/codeql-action action to v2.25.2 ([#3260](https://github.com/googleapis/java-bigquery/issues/3260)) ([3302dc4](https://github.com/googleapis/java-bigquery/commit/3302dc46e3e2c6a173798ef7f1642d3d4cb20332))
+* Update github/codeql-action action to v2.25.3 ([#3268](https://github.com/googleapis/java-bigquery/issues/3268)) ([1cf2377](https://github.com/googleapis/java-bigquery/commit/1cf237702e16952029741c306aa57cb3558a663f))
+
 ## [2.39.0](https://github.com/googleapis/java-bigquery/compare/v2.38.2...v2.39.0) (2024-04-22)
 
 
