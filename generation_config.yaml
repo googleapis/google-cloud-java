@@ -1,4 +1,4 @@
-gapic_generator_version: 2.39.0
+gapic_generator_version: 2.38.0
 protobuf_version: '25.3'
 googleapis_commitish: 0179dcc4d2b4d7376e7f0292b15c72aab3100dd6
 libraries_bom_version: 26.38.0
