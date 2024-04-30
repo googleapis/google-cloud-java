@@ -43,16 +43,6 @@
     },
     {
       "fileMatch": [
-        "README.md"
-      ],
-      "matchStrings": [
-        "<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"
-      ],
-      "depNameTemplate": "com.google.cloud:libraries-bom",
-      "datasourceTemplate": "maven"
-    },
-    {
-      "fileMatch": [
         "generation_config.yaml"
       ],
       "matchStrings": [
