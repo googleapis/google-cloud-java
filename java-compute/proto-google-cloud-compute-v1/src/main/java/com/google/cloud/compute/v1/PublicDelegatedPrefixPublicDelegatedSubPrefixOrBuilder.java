@@ -28,6 +28,31 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
+   * The allocatable prefix length supported by this PublicDelegatedSubPrefix.
+   * </pre>
+   *
+   * <code>optional int32 allocatable_prefix_length = 38427446;</code>
+   *
+   * @return Whether the allocatablePrefixLength field is set.
+   */
+  boolean hasAllocatablePrefixLength();
+  /**
+   *
+   *
+   * <pre>
+   * The allocatable prefix length supported by this PublicDelegatedSubPrefix.
+   * </pre>
+   *
+   * <code>optional int32 allocatable_prefix_length = 38427446;</code>
+   *
+   * @return The allocatablePrefixLength.
+   */
+  int getAllocatablePrefixLength();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the project scoping this PublicDelegatedSubPrefix.
    * </pre>
    *
@@ -159,6 +184,46 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    * @return The isAddress.
    */
   boolean getIsAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * The PublicDelegatedSubPrefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
+  /**
+   *
+   *
+   * <pre>
+   * The PublicDelegatedSubPrefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return The mode.
+   */
+  java.lang.String getMode();
+  /**
+   *
+   *
+   * <pre>
+   * The PublicDelegatedSubPrefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return The bytes for mode.
+   */
+  com.google.protobuf.ByteString getModeBytes();
 
   /**
    *

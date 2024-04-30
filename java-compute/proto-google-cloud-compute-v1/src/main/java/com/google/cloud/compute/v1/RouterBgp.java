@@ -41,6 +41,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     advertiseMode_ = "";
     advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     advertisedIpRanges_ = java.util.Collections.emptyList();
+    identifierRange_ = "";
   }
 
   @java.lang.Override
@@ -579,6 +580,72 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     return asn_;
   }
 
+  public static final int IDENTIFIER_RANGE_FIELD_NUMBER = 501573159;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identifierRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+   * </pre>
+   *
+   * <code>optional string identifier_range = 501573159;</code>
+   *
+   * @return Whether the identifierRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdentifierRange() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+   * </pre>
+   *
+   * <code>optional string identifier_range = 501573159;</code>
+   *
+   * @return The identifierRange.
+   */
+  @java.lang.Override
+  public java.lang.String getIdentifierRange() {
+    java.lang.Object ref = identifierRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      identifierRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+   * </pre>
+   *
+   * <code>optional string identifier_range = 501573159;</code>
+   *
+   * @return The bytes for identifierRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdentifierRangeBytes() {
+    java.lang.Object ref = identifierRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      identifierRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KEEPALIVE_INTERVAL_FIELD_NUMBER = 276771516;
   private int keepaliveInterval_ = 0;
   /**
@@ -594,7 +661,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKeepaliveInterval() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -636,11 +703,14 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeUInt32(276771516, keepaliveInterval_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 312134331, advertiseMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 501573159, identifierRange_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -667,12 +737,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(276771516, keepaliveInterval_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(312134331, advertiseMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(501573159, identifierRange_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -698,6 +771,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (hasAsn() != other.hasAsn()) return false;
     if (hasAsn()) {
       if (getAsn() != other.getAsn()) return false;
+    }
+    if (hasIdentifierRange() != other.hasIdentifierRange()) return false;
+    if (hasIdentifierRange()) {
+      if (!getIdentifierRange().equals(other.getIdentifierRange())) return false;
     }
     if (hasKeepaliveInterval() != other.hasKeepaliveInterval()) return false;
     if (hasKeepaliveInterval()) {
@@ -729,6 +806,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (hasAsn()) {
       hash = (37 * hash) + ASN_FIELD_NUMBER;
       hash = (53 * hash) + getAsn();
+    }
+    if (hasIdentifierRange()) {
+      hash = (37 * hash) + IDENTIFIER_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentifierRange().hashCode();
     }
     if (hasKeepaliveInterval()) {
       hash = (37 * hash) + KEEPALIVE_INTERVAL_FIELD_NUMBER;
@@ -881,6 +962,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       asn_ = 0;
+      identifierRange_ = "";
       keepaliveInterval_ = 0;
       return this;
     }
@@ -945,8 +1027,12 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.keepaliveInterval_ = keepaliveInterval_;
+        result.identifierRange_ = identifierRange_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.keepaliveInterval_ = keepaliveInterval_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1041,6 +1127,11 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAsn()) {
         setAsn(other.getAsn());
       }
+      if (other.hasIdentifierRange()) {
+        identifierRange_ = other.identifierRange_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasKeepaliveInterval()) {
         setKeepaliveInterval(other.getKeepaliveInterval());
       }
@@ -1100,7 +1191,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
             case -2080795168:
               {
                 keepaliveInterval_ = input.readUInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -2080795168
             case -1797892646:
@@ -1109,6 +1200,12 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1797892646
+            case -282382022:
+              {
+                identifierRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -282382022
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1905,6 +2002,126 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object identifierRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @return Whether the identifierRange field is set.
+     */
+    public boolean hasIdentifierRange() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @return The identifierRange.
+     */
+    public java.lang.String getIdentifierRange() {
+      java.lang.Object ref = identifierRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identifierRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @return The bytes for identifierRange.
+     */
+    public com.google.protobuf.ByteString getIdentifierRangeBytes() {
+      java.lang.Object ref = identifierRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identifierRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @param value The identifierRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentifierRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      identifierRange_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentifierRange() {
+      identifierRange_ = getDefaultInstance().getIdentifierRange();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+     * </pre>
+     *
+     * <code>optional string identifier_range = 501573159;</code>
+     *
+     * @param value The bytes for identifierRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentifierRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      identifierRange_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private int keepaliveInterval_;
     /**
      *
@@ -1919,7 +2136,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasKeepaliveInterval() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1951,7 +2168,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder setKeepaliveInterval(int value) {
 
       keepaliveInterval_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1967,7 +2184,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeepaliveInterval() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       keepaliveInterval_ = 0;
       onChanged();
       return this;

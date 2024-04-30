@@ -413,6 +413,30 @@
  * }
  * }</pre>
  *
+ * <p>======================= InstanceGroupManagerResizeRequestsClient =======================
+ *
+ * <p>Service Description: The InstanceGroupManagerResizeRequests API.
+ *
+ * <p>Sample for InstanceGroupManagerResizeRequestsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InstanceGroupManagerResizeRequestsClient instanceGroupManagerResizeRequestsClient =
+ *     InstanceGroupManagerResizeRequestsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String instanceGroupManager = "instanceGroupManager-388242077";
+ *   String resizeRequest = "resizeRequest-1656358085";
+ *   InstanceGroupManagerResizeRequest response =
+ *       instanceGroupManagerResizeRequestsClient.get(
+ *           project, zone, instanceGroupManager, resizeRequest);
+ * }
+ * }</pre>
+ *
  * <p>======================= InstanceGroupManagersClient =======================
  *
  * <p>Service Description: The InstanceGroupManagers API.
@@ -452,6 +476,26 @@
  *   String zone = "zone3744684";
  *   String instanceGroup = "instanceGroup-1404696854";
  *   InstanceGroup response = instanceGroupsClient.get(project, zone, instanceGroup);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InstanceSettingsServiceClient =======================
+ *
+ * <p>Service Description: The InstanceSettings API.
+ *
+ * <p>Sample for InstanceSettingsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InstanceSettingsServiceClient instanceSettingsServiceClient =
+ *     InstanceSettingsServiceClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   InstanceSettings response = instanceSettingsServiceClient.get(project, zone);
  * }
  * }</pre>
  *
@@ -1636,6 +1680,46 @@
  *   String project = "project-309310695";
  *   String sslPolicy = "sslPolicy618174046";
  *   SslPolicy response = sslPoliciesClient.get(project, sslPolicy);
+ * }
+ * }</pre>
+ *
+ * <p>======================= StoragePoolTypesClient =======================
+ *
+ * <p>Service Description: The StoragePoolTypes API.
+ *
+ * <p>Sample for StoragePoolTypesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (StoragePoolTypesClient storagePoolTypesClient = StoragePoolTypesClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String storagePoolType = "storagePoolType-354080495";
+ *   StoragePoolType response = storagePoolTypesClient.get(project, zone, storagePoolType);
+ * }
+ * }</pre>
+ *
+ * <p>======================= StoragePoolsClient =======================
+ *
+ * <p>Service Description: The StoragePools API.
+ *
+ * <p>Sample for StoragePoolsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (StoragePoolsClient storagePoolsClient = StoragePoolsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String storagePool = "storagePool-525690569";
+ *   StoragePool response = storagePoolsClient.get(project, zone, storagePool);
  * }
  * }</pre>
  *

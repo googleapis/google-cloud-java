@@ -375,7 +375,32 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return Whether the enableIpv4 field is set.
+   */
+  boolean hasEnableIpv4();
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return The enableIpv4.
+   */
+  boolean getEnableIpv4();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -387,7 +412,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -395,6 +420,108 @@ public interface RouterBgpPeerOrBuilder
    * @return The enableIpv6.
    */
   boolean getEnableIpv6();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @return A list containing the exportPolicies.
+   */
+  java.util.List<java.lang.String> getExportPoliciesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @return The count of exportPolicies.
+   */
+  int getExportPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The exportPolicies at the given index.
+   */
+  java.lang.String getExportPolicies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the exportPolicies at the given index.
+   */
+  com.google.protobuf.ByteString getExportPoliciesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @return A list containing the importPolicies.
+   */
+  java.util.List<java.lang.String> getImportPoliciesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @return The count of importPolicies.
+   */
+  int getImportPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The importPolicies at the given index.
+   */
+  java.lang.String getImportPolicies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the importPolicies at the given index.
+   */
+  com.google.protobuf.ByteString getImportPoliciesBytes(int index);
 
   /**
    *
@@ -437,7 +564,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -449,7 +576,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -461,7 +588,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -469,6 +596,43 @@ public interface RouterBgpPeerOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return Whether the ipv4NexthopAddress field is set.
+   */
+  boolean hasIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The ipv4NexthopAddress.
+   */
+  java.lang.String getIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The bytes for ipv4NexthopAddress.
+   */
+  com.google.protobuf.ByteString getIpv4NexthopAddressBytes();
 
   /**
    *
@@ -650,7 +814,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -662,7 +826,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -674,7 +838,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -682,6 +846,43 @@ public interface RouterBgpPeerOrBuilder
    * @return The bytes for peerIpAddress.
    */
   com.google.protobuf.ByteString getPeerIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return Whether the peerIpv4NexthopAddress field is set.
+   */
+  boolean hasPeerIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The peerIpv4NexthopAddress.
+   */
+  java.lang.String getPeerIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The bytes for peerIpv4NexthopAddress.
+   */
+  com.google.protobuf.ByteString getPeerIpv4NexthopAddressBytes();
 
   /**
    *

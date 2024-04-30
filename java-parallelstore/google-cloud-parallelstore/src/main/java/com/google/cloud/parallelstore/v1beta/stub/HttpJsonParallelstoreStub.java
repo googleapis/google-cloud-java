@@ -42,7 +42,13 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parallelstore.v1beta.CreateInstanceRequest;
 import com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ExportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataResponse;
 import com.google.cloud.parallelstore.v1beta.GetInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ImportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataResponse;
 import com.google.cloud.parallelstore.v1beta.Instance;
 import com.google.cloud.parallelstore.v1beta.ListInstancesRequest;
 import com.google.cloud.parallelstore.v1beta.ListInstancesResponse;
@@ -73,6 +79,10 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
       TypeRegistry.newBuilder()
           .add(OperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(ImportDataMetadata.getDescriptor())
+          .add(ExportDataResponse.getDescriptor())
+          .add(ImportDataResponse.getDescriptor())
+          .add(ExportDataMetadata.getDescriptor())
           .add(Instance.getDescriptor())
           .build();
 
@@ -271,6 +281,86 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ImportDataRequest, Operation>
+      importDataMethodDescriptor =
+          ApiMethodDescriptor.<ImportDataRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.parallelstore.v1beta.Parallelstore/ImportData")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportDataRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:importData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportDataRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportDataRequest, Operation>
+      exportDataMethodDescriptor =
+          ApiMethodDescriptor.<ExportDataRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.parallelstore.v1beta.Parallelstore/ExportData")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportDataRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/instances/*}:exportData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportDataRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -352,6 +442,12 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
+  private final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable;
+  private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
+  private final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -483,6 +579,28 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
+        HttpJsonCallSettings.<ImportDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(importDataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
+        HttpJsonCallSettings.<ExportDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -543,6 +661,24 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
             settings.deleteInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.importDataCallable =
+        callableFactory.createUnaryCallable(
+            importDataTransportSettings, settings.importDataSettings(), clientContext);
+    this.importDataOperationCallable =
+        callableFactory.createOperationCallable(
+            importDataTransportSettings,
+            settings.importDataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.exportDataCallable =
+        callableFactory.createUnaryCallable(
+            exportDataTransportSettings, settings.exportDataSettings(), clientContext);
+    this.exportDataOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDataTransportSettings,
+            settings.exportDataOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -565,6 +701,8 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
     methodDescriptors.add(createInstanceMethodDescriptor);
     methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
+    methodDescriptors.add(importDataMethodDescriptor);
+    methodDescriptors.add(exportDataMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -621,6 +759,28 @@ public class HttpJsonParallelstoreStub extends ParallelstoreStub {
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
+    return importDataCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable() {
+    return importDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return exportDataCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable() {
+    return exportDataOperationCallable;
   }
 
   @Override

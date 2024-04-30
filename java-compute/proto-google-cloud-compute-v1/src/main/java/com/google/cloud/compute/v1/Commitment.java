@@ -543,6 +543,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_N2(301912156),
     /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
     GENERAL_PURPOSE_N2D(232471400),
+    /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
+    GENERAL_PURPOSE_N4(301912158),
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     GENERAL_PURPOSE_T2D(232477166),
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
@@ -590,6 +592,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int GENERAL_PURPOSE_N2_VALUE = 301912156;
     /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
     public static final int GENERAL_PURPOSE_N2D_VALUE = 232471400;
+    /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
+    public static final int GENERAL_PURPOSE_N4_VALUE = 301912158;
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     public static final int GENERAL_PURPOSE_T2D_VALUE = 232477166;
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
@@ -651,6 +655,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_N2;
         case 232471400:
           return GENERAL_PURPOSE_N2D;
+        case 301912158:
+          return GENERAL_PURPOSE_N4;
         case 232477166:
           return GENERAL_PURPOSE_T2D;
         case 68500563:

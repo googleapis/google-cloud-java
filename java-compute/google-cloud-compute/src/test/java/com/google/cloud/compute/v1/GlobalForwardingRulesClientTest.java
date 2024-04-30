@@ -166,6 +166,7 @@ public class GlobalForwardingRulesClientTest {
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
+            .setIpCollection("ipCollection1525846821")
             .setIpVersion("ipVersion-1161634383")
             .setIsMirroringCollector(true)
             .setKind("kind3292052")

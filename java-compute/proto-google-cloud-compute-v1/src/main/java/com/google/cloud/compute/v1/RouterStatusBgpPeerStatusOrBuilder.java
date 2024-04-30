@@ -95,7 +95,32 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return Whether the enableIpv4 field is set.
+   */
+  boolean hasEnableIpv4();
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return The enableIpv4.
+   */
+  boolean getEnableIpv4();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -107,7 +132,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -152,6 +177,43 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return Whether the ipv4NexthopAddress field is set.
+   */
+  boolean hasIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The ipv4NexthopAddress.
+   */
+  java.lang.String getIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The bytes for ipv4NexthopAddress.
+   */
+  com.google.protobuf.ByteString getIpv4NexthopAddressBytes();
 
   /**
    *
@@ -350,6 +412,43 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The bytes for peerIpAddress.
    */
   com.google.protobuf.ByteString getPeerIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return Whether the peerIpv4NexthopAddress field is set.
+   */
+  boolean hasPeerIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The peerIpv4NexthopAddress.
+   */
+  java.lang.String getPeerIpv4NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The bytes for peerIpv4NexthopAddress.
+   */
+  com.google.protobuf.ByteString getPeerIpv4NexthopAddressBytes();
 
   /**
    *

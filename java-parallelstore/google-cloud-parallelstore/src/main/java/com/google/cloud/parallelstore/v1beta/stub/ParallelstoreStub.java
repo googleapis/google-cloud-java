@@ -29,7 +29,13 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parallelstore.v1beta.CreateInstanceRequest;
 import com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ExportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataResponse;
 import com.google.cloud.parallelstore.v1beta.GetInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ImportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataResponse;
 import com.google.cloud.parallelstore.v1beta.Instance;
 import com.google.cloud.parallelstore.v1beta.ListInstancesRequest;
 import com.google.cloud.parallelstore.v1beta.ListInstancesResponse;
@@ -96,6 +102,24 @@ public abstract class ParallelstoreStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDataOperationCallable()");
+  }
+
+  public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDataCallable()");
+  }
+
+  public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDataOperationCallable()");
+  }
+
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

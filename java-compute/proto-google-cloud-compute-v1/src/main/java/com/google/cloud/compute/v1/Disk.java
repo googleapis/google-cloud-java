@@ -68,6 +68,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     sourceSnapshotId_ = "";
     sourceStorageObject_ = "";
     status_ = "";
+    storagePool_ = "";
     type_ = "";
     users_ = com.google.protobuf.LazyStringArrayList.emptyList();
     zone_ = "";
@@ -356,6 +357,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORING = 404263851;</code>
      */
     RESTORING(404263851),
+    /**
+     *
+     *
+     * <pre>
+     * Disk is currently unavailable and cannot be accessed, attached or detached.
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 413756464;</code>
+     */
+    UNAVAILABLE(413756464),
     UNRECOGNIZED(-1),
     ;
 
@@ -419,6 +430,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORING = 404263851;</code>
      */
     public static final int RESTORING_VALUE = 404263851;
+    /**
+     *
+     *
+     * <pre>
+     * Disk is currently unavailable and cannot be accessed, attached or detached.
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 413756464;</code>
+     */
+    public static final int UNAVAILABLE_VALUE = 413756464;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -456,6 +477,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           return READY;
         case 404263851:
           return RESTORING;
+        case 413756464:
+          return UNAVAILABLE;
         default:
           return null;
       }
@@ -3224,6 +3247,72 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STORAGE_POOL_FIELD_NUMBER = 360473440;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storagePool_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return Whether the storagePool field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoragePool() {
+    return ((bitField1_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return The storagePool.
+   */
+  @java.lang.Override
+  public java.lang.String getStoragePool() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storagePool_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return The bytes for storagePool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStoragePoolBytes() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storagePool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TYPE_FIELD_NUMBER = 3575610;
 
   @SuppressWarnings("serial")
@@ -3241,7 +3330,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField1_ & 0x00000040) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
   /**
    *
@@ -3371,7 +3460,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField1_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00000100) != 0);
   }
   /**
    *
@@ -3444,10 +3533,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
@@ -3553,6 +3642,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
+    if (((bitField1_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 360473440, storagePool_);
+    }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 361137822, options_);
     }
@@ -3606,10 +3698,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField1_ & 0x00000040) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
@@ -3769,6 +3861,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
+    }
+    if (((bitField1_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(360473440, storagePool_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(361137822, options_);
@@ -3997,6 +4092,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
     }
+    if (hasStoragePool() != other.hasStoragePool()) return false;
+    if (hasStoragePool()) {
+      if (!getStoragePool().equals(other.getStoragePool())) return false;
+    }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
       if (!getType().equals(other.getType())) return false;
@@ -4196,6 +4295,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+    }
+    if (hasStoragePool()) {
+      hash = (37 * hash) + STORAGE_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePool().hashCode();
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -4464,6 +4567,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       sourceSnapshotId_ = "";
       sourceStorageObject_ = "";
       status_ = "";
+      storagePool_ = "";
       type_ = "";
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
       zone_ = "";
@@ -4715,16 +4819,20 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         to_bitField1_ |= 0x00000020;
       }
       if (((from_bitField1_ & 0x00002000) != 0)) {
-        result.type_ = type_;
+        result.storagePool_ = storagePool_;
         to_bitField1_ |= 0x00000040;
       }
       if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.type_ = type_;
+        to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         users_.makeImmutable();
         result.users_ = users_;
       }
-      if (((from_bitField1_ & 0x00008000) != 0)) {
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.zone_ = zone_;
-        to_bitField1_ |= 0x00000080;
+        to_bitField1_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -5009,15 +5117,20 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         bitField1_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasStoragePool()) {
+        storagePool_ = other.storagePool_;
+        bitField1_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00004000;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField1_ |= 0x00004000;
+          bitField1_ |= 0x00008000;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -5026,7 +5139,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00010000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5076,13 +5189,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 28604882
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 29957474
             case 156928746:
@@ -5305,6 +5418,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case -1490811254
+            case -1411179774:
+              {
+                storagePool_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00002000;
+                break;
+              } // case -1411179774
             case -1405864718:
               {
                 options_ = input.readStringRequireUtf8();
@@ -11469,6 +11588,126 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object storagePool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return Whether the storagePool field is set.
+     */
+    public boolean hasStoragePool() {
+      return ((bitField1_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return The storagePool.
+     */
+    public java.lang.String getStoragePool() {
+      java.lang.Object ref = storagePool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storagePool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return The bytes for storagePool.
+     */
+    public com.google.protobuf.ByteString getStoragePoolBytes() {
+      java.lang.Object ref = storagePool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storagePool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @param value The storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storagePool_ = value;
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoragePool() {
+      storagePool_ = getDefaultInstance().getStoragePool();
+      bitField1_ = (bitField1_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @param value The bytes for storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      storagePool_ = value;
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object type_ = "";
     /**
      *
@@ -11482,7 +11721,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
     /**
      *
@@ -11545,7 +11784,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11562,7 +11801,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -11584,7 +11823,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11596,7 +11835,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
     }
     /**
      *
@@ -11676,7 +11915,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.set(index, value);
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -11698,7 +11937,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -11717,7 +11956,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -11734,7 +11973,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUsers() {
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       ;
       onChanged();
       return this;
@@ -11758,7 +11997,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -11776,7 +12015,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
     /**
      *
@@ -11839,7 +12078,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11856,7 +12095,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -11878,7 +12117,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
