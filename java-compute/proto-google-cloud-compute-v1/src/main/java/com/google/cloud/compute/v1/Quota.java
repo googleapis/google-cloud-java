@@ -384,6 +384,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     SSD_TOTAL_GB(161732561),
     /** <code>SSL_CERTIFICATES = 378372399;</code> */
     SSL_CERTIFICATES(378372399),
+    /** <code>SSL_POLICIES = 523254339;</code> */
+    SSL_POLICIES(523254339),
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     STATIC_ADDRESSES(93624049),
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
@@ -738,6 +740,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int SSD_TOTAL_GB_VALUE = 161732561;
     /** <code>SSL_CERTIFICATES = 378372399;</code> */
     public static final int SSL_CERTIFICATES_VALUE = 378372399;
+    /** <code>SSL_POLICIES = 523254339;</code> */
+    public static final int SSL_POLICIES_VALUE = 523254339;
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     public static final int STATIC_ADDRESSES_VALUE = 93624049;
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
@@ -1089,6 +1093,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return SSD_TOTAL_GB;
         case 378372399:
           return SSL_CERTIFICATES;
+        case 523254339:
+          return SSL_POLICIES;
         case 93624049:
           return STATIC_ADDRESSES;
         case 275809649:

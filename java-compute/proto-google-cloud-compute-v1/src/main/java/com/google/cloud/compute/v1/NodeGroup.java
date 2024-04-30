@@ -44,6 +44,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     fingerprint_ = "";
     kind_ = "";
     locationHint_ = "";
+    maintenanceInterval_ = "";
     maintenancePolicy_ = "";
     name_ = "";
     nodeTemplate_ = "";
@@ -71,6 +72,166 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.NodeGroup.class,
             com.google.cloud.compute.v1.NodeGroup.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NodeGroup.MaintenanceInterval}
+   */
+  public enum MaintenanceInterval implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MAINTENANCE_INTERVAL = 0;</code>
+     */
+    UNDEFINED_MAINTENANCE_INTERVAL(0),
+    /**
+     *
+     *
+     * <pre>
+     * VMs are eligible to receive infrastructure and hypervisor updates as they become available. This may result in more maintenance operations (live migrations or terminations) for the VM than the PERIODIC and RECURRENT options.
+     * </pre>
+     *
+     * <code>AS_NEEDED = 500724834;</code>
+     */
+    AS_NEEDED(500724834),
+    /**
+     *
+     *
+     * <pre>
+     * VMs receive infrastructure and hypervisor updates on a periodic basis, minimizing the number of maintenance operations (live migrations or terminations) on an individual VM. This may mean a VM will take longer to receive an update than if it was configured for AS_NEEDED. Security updates will still be applied as soon as they are available. RECURRENT is used for GEN3 and Slice of Hardware VMs.
+     * </pre>
+     *
+     * <code>RECURRENT = 194244550;</code>
+     */
+    RECURRENT(194244550),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MAINTENANCE_INTERVAL = 0;</code>
+     */
+    public static final int UNDEFINED_MAINTENANCE_INTERVAL_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * VMs are eligible to receive infrastructure and hypervisor updates as they become available. This may result in more maintenance operations (live migrations or terminations) for the VM than the PERIODIC and RECURRENT options.
+     * </pre>
+     *
+     * <code>AS_NEEDED = 500724834;</code>
+     */
+    public static final int AS_NEEDED_VALUE = 500724834;
+    /**
+     *
+     *
+     * <pre>
+     * VMs receive infrastructure and hypervisor updates on a periodic basis, minimizing the number of maintenance operations (live migrations or terminations) on an individual VM. This may mean a VM will take longer to receive an update than if it was configured for AS_NEEDED. Security updates will still be applied as soon as they are available. RECURRENT is used for GEN3 and Slice of Hardware VMs.
+     * </pre>
+     *
+     * <code>RECURRENT = 194244550;</code>
+     */
+    public static final int RECURRENT_VALUE = 194244550;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MaintenanceInterval valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MaintenanceInterval forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MAINTENANCE_INTERVAL;
+        case 500724834:
+          return AS_NEEDED;
+        case 194244550:
+          return RECURRENT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MaintenanceInterval>() {
+              public MaintenanceInterval findValueByNumber(int number) {
+                return MaintenanceInterval.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NodeGroup.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final MaintenanceInterval[] VALUES = values();
+
+    public static MaintenanceInterval valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MaintenanceInterval(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NodeGroup.MaintenanceInterval)
   }
 
   /**
@@ -236,7 +397,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NodeGroup.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.NodeGroup.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final MaintenancePolicy[] VALUES = values();
@@ -373,7 +534,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NodeGroup.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.NodeGroup.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Status[] VALUES = values();
@@ -800,6 +961,75 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MAINTENANCE_INTERVAL_FIELD_NUMBER = 403368049;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object maintenanceInterval_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return Whether the maintenanceInterval field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceInterval() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return The maintenanceInterval.
+   */
+  @java.lang.Override
+  public java.lang.String getMaintenanceInterval() {
+    java.lang.Object ref = maintenanceInterval_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintenanceInterval_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return The bytes for maintenanceInterval.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMaintenanceIntervalBytes() {
+    java.lang.Object ref = maintenanceInterval_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      maintenanceInterval_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 528327646;
 
   @SuppressWarnings("serial")
@@ -818,7 +1048,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenancePolicy() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -880,7 +1110,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenanceWindow() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <code>
@@ -925,7 +1155,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -991,7 +1221,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNodeTemplate() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1057,7 +1287,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1121,7 +1351,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShareSettings() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1171,7 +1401,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSize() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1207,7 +1437,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1275,7 +1505,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1344,22 +1574,22 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeInt32(3530753, size_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(186374812, getMaintenanceWindow());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1368,22 +1598,25 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(266668163, getShareSettings());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 403368049, maintenanceInterval_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 528327646, maintenancePolicy_);
     }
     getUnknownFields().writeTo(output);
@@ -1401,23 +1634,23 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3530753, size_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               186374812, getMaintenanceWindow());
@@ -1430,23 +1663,27 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(266668163, getShareSettings());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(403368049, maintenanceInterval_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(528327646, maintenancePolicy_);
     }
@@ -1492,6 +1729,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (hasLocationHint() != other.hasLocationHint()) return false;
     if (hasLocationHint()) {
       if (!getLocationHint().equals(other.getLocationHint())) return false;
+    }
+    if (hasMaintenanceInterval() != other.hasMaintenanceInterval()) return false;
+    if (hasMaintenanceInterval()) {
+      if (!getMaintenanceInterval().equals(other.getMaintenanceInterval())) return false;
     }
     if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
@@ -1567,6 +1808,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (hasLocationHint()) {
       hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
       hash = (53 * hash) + getLocationHint().hashCode();
+    }
+    if (hasMaintenanceInterval()) {
+      hash = (37 * hash) + MAINTENANCE_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceInterval().hashCode();
     }
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
@@ -1764,6 +2009,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       id_ = 0L;
       kind_ = "";
       locationHint_ = "";
+      maintenanceInterval_ = "";
       maintenancePolicy_ = "";
       maintenanceWindow_ = null;
       if (maintenanceWindowBuilder_ != null) {
@@ -1850,44 +2096,48 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.maintenancePolicy_ = maintenancePolicy_;
+        result.maintenanceInterval_ = maintenanceInterval_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.maintenancePolicy_ = maintenancePolicy_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.maintenanceWindow_ =
             maintenanceWindowBuilder_ == null
                 ? maintenanceWindow_
                 : maintenanceWindowBuilder_.build();
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.name_ = name_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.nodeTemplate_ = nodeTemplate_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.nodeTemplate_ = nodeTemplate_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.shareSettings_ =
-            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.size_ = size_;
+        result.shareSettings_ =
+            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.status_ = status_;
+        result.size_ = size_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.zone_ = zone_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1968,9 +2218,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasMaintenanceInterval()) {
+        maintenanceInterval_ = other.maintenanceInterval_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (other.hasMaintenancePolicy()) {
         maintenancePolicy_ = other.maintenancePolicy_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasMaintenanceWindow()) {
@@ -1978,17 +2233,17 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasNodeTemplate()) {
         nodeTemplate_ = other.nodeTemplate_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasShareSettings()) {
@@ -1999,12 +2254,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2048,19 +2303,19 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26989658
             case 28246024:
               {
                 size_ = input.readInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 28246024
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 29957474
             case 244202930:
@@ -2072,14 +2327,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1450082194
             case 1490998498:
               {
                 input.readMessage(
                     getMaintenanceWindowFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1490998498
             case 1775600330:
@@ -2098,13 +2353,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case 2133345306:
               {
                 input.readMessage(getShareSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 2133345306
             case -1709731654:
               {
                 nodeTemplate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -1709731654
             case -1490811254:
@@ -2113,6 +2368,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case -1490811254
+            case -1068022902:
+              {
+                maintenanceInterval_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -1068022902
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -2122,13 +2383,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -645248918
             case -68346126:
               {
                 maintenancePolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -68346126
             default:
@@ -2991,6 +3252,132 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object maintenanceInterval_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @return Whether the maintenanceInterval field is set.
+     */
+    public boolean hasMaintenanceInterval() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @return The maintenanceInterval.
+     */
+    public java.lang.String getMaintenanceInterval() {
+      java.lang.Object ref = maintenanceInterval_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenanceInterval_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @return The bytes for maintenanceInterval.
+     */
+    public com.google.protobuf.ByteString getMaintenanceIntervalBytes() {
+      java.lang.Object ref = maintenanceInterval_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maintenanceInterval_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @param value The maintenanceInterval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceInterval(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      maintenanceInterval_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintenanceInterval() {
+      maintenanceInterval_ = getDefaultInstance().getMaintenanceInterval();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Check the MaintenanceInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_interval = 403368049;</code>
+     *
+     * @param value The bytes for maintenanceInterval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceIntervalBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      maintenanceInterval_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object maintenancePolicy_ = "";
     /**
      *
@@ -3005,7 +3392,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenancePolicy field is set.
      */
     public boolean hasMaintenancePolicy() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3071,7 +3458,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       maintenancePolicy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3089,7 +3476,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMaintenancePolicy() {
       maintenancePolicy_ = getDefaultInstance().getMaintenancePolicy();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3112,7 +3499,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       maintenancePolicy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3131,7 +3518,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenanceWindow field is set.
      */
     public boolean hasMaintenanceWindow() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>
@@ -3164,7 +3551,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceWindowBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3180,7 +3567,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceWindowBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3192,7 +3579,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMaintenanceWindow(
         com.google.cloud.compute.v1.NodeGroupMaintenanceWindow value) {
       if (maintenanceWindowBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && maintenanceWindow_ != null
             && maintenanceWindow_
                 != com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.getDefaultInstance()) {
@@ -3204,7 +3591,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         maintenanceWindowBuilder_.mergeFrom(value);
       }
       if (maintenanceWindow_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3215,7 +3602,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenanceWindow() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       maintenanceWindow_ = null;
       if (maintenanceWindowBuilder_ != null) {
         maintenanceWindowBuilder_.dispose();
@@ -3231,7 +3618,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder
         getMaintenanceWindowBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
@@ -3285,7 +3672,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3348,7 +3735,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3365,7 +3752,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3387,7 +3774,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3405,7 +3792,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nodeTemplate field is set.
      */
     public boolean hasNodeTemplate() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3468,7 +3855,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nodeTemplate_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3485,7 +3872,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNodeTemplate() {
       nodeTemplate_ = getDefaultInstance().getNodeTemplate();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3507,7 +3894,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nodeTemplate_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3525,7 +3912,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3588,7 +3975,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3605,7 +3992,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3627,7 +4014,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3650,7 +4037,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shareSettings field is set.
      */
     public boolean hasShareSettings() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3690,7 +4077,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       } else {
         shareSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3710,7 +4097,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       } else {
         shareSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3725,7 +4112,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeShareSettings(com.google.cloud.compute.v1.ShareSettings value) {
       if (shareSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && shareSettings_ != null
             && shareSettings_ != com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()) {
           getShareSettingsBuilder().mergeFrom(value);
@@ -3736,7 +4123,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         shareSettingsBuilder_.mergeFrom(value);
       }
       if (shareSettings_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -3751,7 +4138,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public Builder clearShareSettings() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       shareSettings_ = null;
       if (shareSettingsBuilder_ != null) {
         shareSettingsBuilder_.dispose();
@@ -3770,7 +4157,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public com.google.cloud.compute.v1.ShareSettings.Builder getShareSettingsBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getShareSettingsFieldBuilder().getBuilder();
     }
@@ -3832,7 +4219,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSize() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3864,7 +4251,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder setSize(int value) {
 
       size_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3880,7 +4267,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       size_ = 0;
       onChanged();
       return this;
@@ -3900,7 +4287,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -3966,7 +4353,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3984,7 +4371,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4007,7 +4394,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4025,7 +4412,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4088,7 +4475,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4105,7 +4492,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4127,7 +4514,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

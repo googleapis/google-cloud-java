@@ -1435,6 +1435,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },

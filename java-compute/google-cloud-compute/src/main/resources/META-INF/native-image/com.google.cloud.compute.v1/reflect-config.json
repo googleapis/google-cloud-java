@@ -18063,6 +18063,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.compute.v1.NodeGroup$MaintenanceInterval",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.compute.v1.NodeGroup$MaintenancePolicy",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -18244,6 +18253,24 @@
   },
   {
     "name": "com.google.cloud.compute.v1.NodeGroupsListNodes$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.compute.v1.NodeGroupsPerformMaintenanceRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.compute.v1.NodeGroupsPerformMaintenanceRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -19854,6 +19881,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.compute.v1.Policy",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -20295,6 +20340,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.compute.v1.PublicDelegatedPrefix$Mode",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.compute.v1.PublicDelegatedPrefix$Status",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -20350,6 +20404,15 @@
   },
   {
     "name": "com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix$Mode",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -22465,6 +22528,15 @@
   },
   {
     "name": "com.google.cloud.compute.v1.RouterInterface$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.compute.v1.RouterInterface$IpVersion",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
