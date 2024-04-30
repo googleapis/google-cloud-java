@@ -493,6 +493,7 @@ public class DisksClientTest {
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
             .setSourceStorageObject("sourceStorageObject1498862911")
             .setStatus("status-892481550")
+            .setStoragePool("storagePool-525690569")
             .setType("type3575610")
             .addAllUsers(new ArrayList<String>())
             .setZone("zone3744684")

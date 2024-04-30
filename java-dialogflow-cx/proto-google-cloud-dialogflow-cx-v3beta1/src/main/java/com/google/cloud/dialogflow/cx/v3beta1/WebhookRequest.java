@@ -5119,6 +5119,56 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         : sentimentAnalysisResult_;
   }
 
+  public static final int LANGUAGE_INFO_FIELD_NUMBER = 18;
+  private com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo languageInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   *
+   * @return Whether the languageInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasLanguageInfo() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   *
+   * @return The languageInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo getLanguageInfo() {
+    return languageInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.getDefaultInstance()
+        : languageInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder getLanguageInfoOrBuilder() {
+    return languageInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.getDefaultInstance()
+        : languageInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5175,6 +5225,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 17) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, query_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(18, getLanguageInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5227,6 +5280,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 17) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, query_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLanguageInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5269,6 +5325,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
     if (hasSentimentAnalysisResult()) {
       if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
+    }
+    if (hasLanguageInfo() != other.hasLanguageInfo()) return false;
+    if (hasLanguageInfo()) {
+      if (!getLanguageInfo().equals(other.getLanguageInfo())) return false;
     }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
@@ -5332,6 +5392,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
+    }
+    if (hasLanguageInfo()) {
+      hash = (37 * hash) + LANGUAGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageInfo().hashCode();
     }
     switch (queryCase_) {
       case 10:
@@ -5509,6 +5573,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         getMessagesFieldBuilder();
         getPayloadFieldBuilder();
         getSentimentAnalysisResultFieldBuilder();
+        getLanguageInfoFieldBuilder();
       }
     }
 
@@ -5554,6 +5619,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (sentimentAnalysisResultBuilder_ != null) {
         sentimentAnalysisResultBuilder_.dispose();
         sentimentAnalysisResultBuilder_ = null;
+      }
+      languageInfo_ = null;
+      if (languageInfoBuilder_ != null) {
+        languageInfoBuilder_.dispose();
+        languageInfoBuilder_ = null;
       }
       queryCase_ = 0;
       query_ = null;
@@ -5643,6 +5713,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 ? sentimentAnalysisResult_
                 : sentimentAnalysisResultBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.languageInfo_ =
+            languageInfoBuilder_ == null ? languageInfo_ : languageInfoBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5752,6 +5827,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSentimentAnalysisResult()) {
         mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
+      }
+      if (other.hasLanguageInfo()) {
+        mergeLanguageInfo(other.getLanguageInfo());
       }
       switch (other.getQueryCase()) {
         case TEXT:
@@ -5918,6 +5996,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 query_ = s;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(getLanguageInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8494,6 +8578,193 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         sentimentAnalysisResult_ = null;
       }
       return sentimentAnalysisResultBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo languageInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo,
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder>
+        languageInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     *
+     * @return Whether the languageInfo field is set.
+     */
+    public boolean hasLanguageInfo() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     *
+     * @return The languageInfo.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo getLanguageInfo() {
+      if (languageInfoBuilder_ == null) {
+        return languageInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.getDefaultInstance()
+            : languageInfo_;
+      } else {
+        return languageInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public Builder setLanguageInfo(com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo value) {
+      if (languageInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageInfo_ = value;
+      } else {
+        languageInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public Builder setLanguageInfo(
+        com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.Builder builderForValue) {
+      if (languageInfoBuilder_ == null) {
+        languageInfo_ = builderForValue.build();
+      } else {
+        languageInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public Builder mergeLanguageInfo(com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo value) {
+      if (languageInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && languageInfo_ != null
+            && languageInfo_
+                != com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.getDefaultInstance()) {
+          getLanguageInfoBuilder().mergeFrom(value);
+        } else {
+          languageInfo_ = value;
+        }
+      } else {
+        languageInfoBuilder_.mergeFrom(value);
+      }
+      if (languageInfo_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public Builder clearLanguageInfo() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      languageInfo_ = null;
+      if (languageInfoBuilder_ != null) {
+        languageInfoBuilder_.dispose();
+        languageInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.Builder getLanguageInfoBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getLanguageInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder getLanguageInfoOrBuilder() {
+      if (languageInfoBuilder_ != null) {
+        return languageInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return languageInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.getDefaultInstance()
+            : languageInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the language of the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo,
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder>
+        getLanguageInfoFieldBuilder() {
+      if (languageInfoBuilder_ == null) {
+        languageInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo,
+                com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder>(
+                getLanguageInfo(), getParentForChildren(), isClean());
+        languageInfo_ = null;
+      }
+      return languageInfoBuilder_;
     }
 
     @java.lang.Override

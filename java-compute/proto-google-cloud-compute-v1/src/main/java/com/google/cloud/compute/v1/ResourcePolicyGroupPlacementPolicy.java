@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation as well as network locality
+ * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy}
@@ -526,7 +526,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation as well as network locality
+   * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy}

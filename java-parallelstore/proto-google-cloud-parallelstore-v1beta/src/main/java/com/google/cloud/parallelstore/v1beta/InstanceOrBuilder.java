@@ -472,7 +472,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Contains the id of allocated IP address range
+   * Optional. Immutable. Contains the id of the allocated IP address range
    * associated with the private service access connection for example,
    * "test-default" associated with IP range 10.0.0.0/29. If no range id is
    * provided all ranges will be considered.
@@ -489,7 +489,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Contains the id of allocated IP address range
+   * Optional. Immutable. Contains the id of the allocated IP address range
    * associated with the private service access connection for example,
    * "test-default" associated with IP range 10.0.0.0/29. If no range id is
    * provided all ranges will be considered.
@@ -502,4 +502,41 @@ public interface InstanceOrBuilder
    * @return The bytes for reservedIpRange.
    */
   com.google.protobuf.ByteString getReservedIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Contains the id of the allocated IP address range
+   * associated with the private service access connection for example,
+   * "test-default" associated with IP range 10.0.0.0/29. This field is
+   * populated by the service and and contains the value currently used by the
+   * service.
+   * </pre>
+   *
+   * <code>
+   * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The effectiveReservedIpRange.
+   */
+  java.lang.String getEffectiveReservedIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Contains the id of the allocated IP address range
+   * associated with the private service access connection for example,
+   * "test-default" associated with IP range 10.0.0.0/29. This field is
+   * populated by the service and and contains the value currently used by the
+   * service.
+   * </pre>
+   *
+   * <code>
+   * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for effectiveReservedIpRange.
+   */
+  com.google.protobuf.ByteString getEffectiveReservedIpRangeBytes();
 }
