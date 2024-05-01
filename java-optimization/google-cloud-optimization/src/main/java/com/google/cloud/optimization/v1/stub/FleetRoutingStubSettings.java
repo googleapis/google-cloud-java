@@ -137,6 +137,15 @@ public class FleetRoutingStubSettings extends StubSettings<FleetRoutingStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -417,6 +426,15 @@ public class FleetRoutingStubSettings extends StubSettings<FleetRoutingStubSetti
             BatchOptimizeToursRequest, BatchOptimizeToursResponse, AsyncModelMetadata>
         batchOptimizeToursOperationSettings() {
       return batchOptimizeToursOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override

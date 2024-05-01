@@ -212,6 +212,15 @@ public class SynonymSetServiceStubSettings extends StubSettings<SynonymSetServic
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -503,6 +512,15 @@ public class SynonymSetServiceStubSettings extends StubSettings<SynonymSetServic
             ListSynonymSetsRequest, ListSynonymSetsResponse, ListSynonymSetsPagedResponse>
         listSynonymSetsSettings() {
       return listSynonymSetsSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override
