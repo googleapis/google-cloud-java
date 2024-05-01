@@ -15,11 +15,9 @@
 # downstream client libraries before they are released.
 name: Hermetic library generation upon generation config change through pull requests
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-    - "generation_config.yaml"
-
+    # do not run this workflow when merging the pull request.
+    types: [ opened, reopened, edited, synchronize ]
 jobs:
   library_generation:
     runs-on: ubuntu-latest
