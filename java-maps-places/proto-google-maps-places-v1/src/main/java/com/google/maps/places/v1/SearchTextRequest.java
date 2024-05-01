@@ -82,7 +82,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * RankPreference value not set. Will default to DISTANCE.
+     * For a categorical query such as "Restaurants in New York City", RELEVANCE
+     * is the default. For non-categorical queries such as "Mountain View, CA"
+     * we recommend that you leave rankPreference unset.
      * </pre>
      *
      * <code>RANK_PREFERENCE_UNSPECIFIED = 0;</code>
@@ -116,7 +118,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * RankPreference value not set. Will default to DISTANCE.
+     * For a categorical query such as "Restaurants in New York City", RELEVANCE
+     * is the default. For non-categorical queries such as "Mountain View, CA"
+     * we recommend that you leave rankPreference unset.
      * </pre>
      *
      * <code>RANK_PREFERENCE_UNSPECIFIED = 0;</code>

@@ -88,6 +88,10 @@ public final class ContentProto {
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -188,20 +192,25 @@ public final class ContentProto {
           + "tB\003\340A\003\022%\n\020confidence_score\030\002 \001(\002B\006\340A\001\340A\003"
           + "H\001\210\001\001\032+\n\003Web\022\020\n\003uri\030\001 \001(\tB\003\340A\003\022\022\n\005title\030"
           + "\002 \001(\tB\003\340A\003B\013\n\treferenceB\023\n\021_confidence_s"
-          + "core\"\213\001\n\021GroundingMetadata\022\037\n\022web_search"
+          + "core\"\366\001\n\021GroundingMetadata\022\037\n\022web_search"
           + "_queries\030\001 \003(\tB\003\340A\001\022U\n\026grounding_attribu"
           + "tions\030\002 \003(\01320.google.cloud.aiplatform.v1"
-          + ".GroundingAttributionB\003\340A\001*\264\001\n\014HarmCateg"
-          + "ory\022\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000\022\035\n\031HA"
-          + "RM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_CATEGO"
-          + "RY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_CATEGORY_"
-          + "HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SEXUALLY_E"
-          + "XPLICIT\020\004B\312\001\n\036com.google.cloud.aiplatfor"
-          + "m.v1B\014ContentProtoP\001Z>cloud.google.com/g"
-          + "o/aiplatform/apiv1/aiplatformpb;aiplatfo"
-          + "rmpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
-          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::"
-          + "AIPlatform::V1b\006proto3"
+          + ".GroundingAttributionB\003\340A\001\022R\n\022search_ent"
+          + "ry_point\030\004 \001(\0132,.google.cloud.aiplatform"
+          + ".v1.SearchEntryPointB\003\340A\001H\000\210\001\001B\025\n\023_searc"
+          + "h_entry_point\"H\n\020SearchEntryPoint\022\035\n\020ren"
+          + "dered_content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001"
+          + "(\014B\003\340A\001*\264\001\n\014HarmCategory\022\035\n\031HARM_CATEGOR"
+          + "Y_UNSPECIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_SP"
+          + "EECH\020\001\022#\n\037HARM_CATEGORY_DANGEROUS_CONTEN"
+          + "T\020\002\022\034\n\030HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HAR"
+          + "M_CATEGORY_SEXUALLY_EXPLICIT\020\004B\312\001\n\036com.g"
+          + "oogle.cloud.aiplatform.v1B\014ContentProtoP"
+          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
+          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -353,7 +362,15 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor,
             new java.lang.String[] {
-              "WebSearchQueries", "GroundingAttributions",
+              "WebSearchQueries", "GroundingAttributions", "SearchEntryPoint",
+            });
+    internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor,
+            new java.lang.String[] {
+              "RenderedContent", "SdkBlob",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

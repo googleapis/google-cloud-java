@@ -28,7 +28,8 @@ public interface SupervisedHyperParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Number of training epoches for this tuning job.
+   * Optional. Number of complete passes the model makes over the entire
+   * training dataset during training.
    * </pre>
    *
    * <code>int64 epoch_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,7 +42,7 @@ public interface SupervisedHyperParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Learning rate multiplier for tuning.
+   * Optional. Multiplier for adjusting the default learning rate.
    * </pre>
    *
    * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

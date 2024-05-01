@@ -568,4 +568,42 @@ public interface NodeGroupNodeOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InstanceConsumptionInfoOrBuilder getTotalResourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  boolean hasUpcomingMaintenance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   */
+  com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder getUpcomingMaintenanceOrBuilder();
 }

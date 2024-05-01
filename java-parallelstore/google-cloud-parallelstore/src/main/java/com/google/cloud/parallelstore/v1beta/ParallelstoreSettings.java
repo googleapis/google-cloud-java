@@ -127,6 +127,28 @@ public class ParallelstoreSettings extends ClientSettings<ParallelstoreSettings>
     return ((ParallelstoreStubSettings) getStubSettings()).deleteInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to importData. */
+  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
+    return ((ParallelstoreStubSettings) getStubSettings()).importDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public OperationCallSettings<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationSettings() {
+    return ((ParallelstoreStubSettings) getStubSettings()).importDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return ((ParallelstoreStubSettings) getStubSettings()).exportDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationSettings() {
+    return ((ParallelstoreStubSettings) getStubSettings()).exportDataOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -293,6 +315,28 @@ public class ParallelstoreSettings extends ClientSettings<ParallelstoreSettings>
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
+      return getStubSettingsBuilder().importDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public OperationCallSettings.Builder<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+        importDataOperationSettings() {
+      return getStubSettingsBuilder().importDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return getStubSettingsBuilder().exportDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public OperationCallSettings.Builder<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+        exportDataOperationSettings() {
+      return getStubSettingsBuilder().exportDataOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

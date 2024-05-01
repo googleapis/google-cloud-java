@@ -376,7 +376,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Removes data when the conversation ends. If there is no [Conversation][]
+     * Removes data when the conversation ends. If there is no
+     * [Conversation][google.cloud.dialogflow.cx.v3beta1.Conversation]
      * explicitly established, a default conversation ends when the
      * corresponding Dialogflow session ends.
      * </pre>
@@ -401,7 +402,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Removes data when the conversation ends. If there is no [Conversation][]
+     * Removes data when the conversation ends. If there is no
+     * [Conversation][google.cloud.dialogflow.cx.v3beta1.Conversation]
      * explicitly established, a default conversation ends when the
      * corresponding Dialogflow session ends.
      * </pre>

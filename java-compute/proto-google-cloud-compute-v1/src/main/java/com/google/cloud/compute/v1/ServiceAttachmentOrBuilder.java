@@ -132,7 +132,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this service attachment.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>
@@ -145,7 +145,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this service attachment.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>
@@ -158,7 +158,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this service attachment.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>
@@ -170,7 +170,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this service attachment.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>
@@ -184,7 +184,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this service attachment.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>
@@ -198,7 +198,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this service attachment. The project can be specified using its id or number.
+   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -210,7 +210,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this service attachment. The project can be specified using its id or number.
+   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -222,7 +222,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this service attachment. The project can be specified using its id or number.
+   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -235,7 +235,7 @@ public interface ServiceAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this service attachment. The project can be specified using its id or number.
+   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>

@@ -583,5 +583,40 @@ public interface WebhookRequestOrBuilder
   com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   *
+   * @return Whether the languageInfo field is set.
+   */
+  boolean hasLanguageInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   *
+   * @return The languageInfo.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LanguageInfo getLanguageInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the language of the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LanguageInfo language_info = 18;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LanguageInfoOrBuilder getLanguageInfoOrBuilder();
+
   com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.QueryCase getQueryCase();
 }

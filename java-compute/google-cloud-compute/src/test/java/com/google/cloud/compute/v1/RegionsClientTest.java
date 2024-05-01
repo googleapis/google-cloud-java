@@ -85,6 +85,7 @@ public class RegionsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .setQuotaStatusWarning(QuotaStatusWarning.newBuilder().build())
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setStatus("status-892481550")

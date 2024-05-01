@@ -191,7 +191,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -204,7 +204,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -217,7 +217,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

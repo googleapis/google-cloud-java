@@ -49,6 +49,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sourceImage_ = "";
     sourceSnapshot_ = "";
+    storagePool_ = "";
   }
 
   @java.lang.Override
@@ -1563,6 +1564,72 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         : sourceSnapshotEncryptionKey_;
   }
 
+  public static final int STORAGE_POOL_FIELD_NUMBER = 360473440;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storagePool_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return Whether the storagePool field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoragePool() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return The storagePool.
+   */
+  @java.lang.Override
+  public java.lang.String getStoragePool() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storagePool_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * </pre>
+   *
+   * <code>optional string storage_pool = 360473440;</code>
+   *
+   * @return The bytes for storagePool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStoragePoolBytes() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storagePool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1616,6 +1683,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     for (int i = 0; i < licenses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 360473440, storagePool_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output,
@@ -1699,6 +1769,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       size += dataSize;
       size += 5 * getLicensesList().size();
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(360473440, storagePool_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceManagerTags().getMap().entrySet()) {
@@ -1809,6 +1882,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (!getSourceSnapshotEncryptionKey().equals(other.getSourceSnapshotEncryptionKey()))
         return false;
     }
+    if (hasStoragePool() != other.hasStoragePool()) return false;
+    if (hasStoragePool()) {
+      if (!getStoragePool().equals(other.getStoragePool())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1891,6 +1968,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (hasSourceSnapshotEncryptionKey()) {
       hash = (37 * hash) + SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSnapshotEncryptionKey().hashCode();
+    }
+    if (hasStoragePool()) {
+      hash = (37 * hash) + STORAGE_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePool().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2094,6 +2175,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         sourceSnapshotEncryptionKeyBuilder_.dispose();
         sourceSnapshotEncryptionKeyBuilder_ = null;
       }
+      storagePool_ = "";
       return this;
     }
 
@@ -2208,6 +2290,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 ? sourceSnapshotEncryptionKey_
                 : sourceSnapshotEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.storagePool_ = storagePool_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2345,6 +2431,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (other.hasSourceSnapshotEncryptionKey()) {
         mergeSourceSnapshotEncryptionKey(other.getSourceSnapshotEncryptionKey());
       }
+      if (other.hasStoragePool()) {
+        storagePool_ = other.storagePool_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2453,6 +2544,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 licenses_.add(s);
                 break;
               } // case -1593826670
+            case -1411179774:
+              {
+                storagePool_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -1411179774
             case -1273597982:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -4911,6 +5008,126 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         sourceSnapshotEncryptionKey_ = null;
       }
       return sourceSnapshotEncryptionKeyBuilder_;
+    }
+
+    private java.lang.Object storagePool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return Whether the storagePool field is set.
+     */
+    public boolean hasStoragePool() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return The storagePool.
+     */
+    public java.lang.String getStoragePool() {
+      java.lang.Object ref = storagePool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storagePool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return The bytes for storagePool.
+     */
+    public com.google.protobuf.ByteString getStoragePoolBytes() {
+      java.lang.Object ref = storagePool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storagePool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @param value The storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storagePool_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoragePool() {
+      storagePool_ = getDefaultInstance().getStoragePool();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+     * </pre>
+     *
+     * <code>optional string storage_pool = 360473440;</code>
+     *
+     * @param value The bytes for storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      storagePool_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
