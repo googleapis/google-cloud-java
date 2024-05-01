@@ -236,6 +236,15 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the endpoint set by the user or the the service's default endpoint. */
+  @Override
+  public String getEndpoint() {
+    if (super.getEndpoint() != null) {
+      return super.getEndpoint();
+    }
+    return getDefaultEndpoint();
+  }
+
   /** Returns the default service name. */
   @Override
   public String getServiceName() {
@@ -615,6 +624,15 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
     public OperationCallSettings.Builder<UpdateFeatureRequest, Feature, OperationMetadata>
         updateFeatureOperationSettings() {
       return updateFeatureOperationSettings;
+    }
+
+    /** Returns the endpoint set by the user or the the service's default endpoint. */
+    @Override
+    public String getEndpoint() {
+      if (super.getEndpoint() != null) {
+        return super.getEndpoint();
+      }
+      return getDefaultEndpoint();
     }
 
     @Override
