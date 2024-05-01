@@ -70,7 +70,7 @@ if [ -z "${generation_config}" ]; then
   echo "Use default generation config: ${generation_config}"
 fi
 
-workspace_name="/workspace/repo"
+workspace_name="/workspace"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
 
@@ -93,8 +93,7 @@ docker run \
   -v "$(pwd):${workspace_name}" \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
-  --current-generation-config-path="${workspace_name}/${generation_config}" \
-  --repository-path="${workspace_name}"
+  --current-generation-config-path="${workspace_name}/${generation_config}"
 # commit the change to the pull request.
 git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
 changed_files=$(git diff --cached --name-only)
