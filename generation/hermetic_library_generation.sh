@@ -92,7 +92,6 @@ docker run \
   --rm \
   -v "$(pwd):${workspace_name}" \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
-  python /src/cli/entry_point.py generate \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
   --current-generation-config-path="${workspace_name}/${generation_config}" \
   --repository-path="${workspace_name}"
