@@ -64,6 +64,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1.GroundingMetadata.Builder.class);
   }
 
+  private int bitField0_;
   public static final int WEB_SEARCH_QUERIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -212,6 +213,62 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     return groundingAttributions_.get(index);
   }
 
+  public static final int SEARCH_ENTRY_POINT_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1.SearchEntryPoint searchEntryPoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchEntryPoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchEntryPoint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchEntryPoint.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SearchEntryPoint getSearchEntryPoint() {
+    return searchEntryPoint_ == null
+        ? com.google.cloud.aiplatform.v1.SearchEntryPoint.getDefaultInstance()
+        : searchEntryPoint_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SearchEntryPointOrBuilder getSearchEntryPointOrBuilder() {
+    return searchEntryPoint_ == null
+        ? com.google.cloud.aiplatform.v1.SearchEntryPoint.getDefaultInstance()
+        : searchEntryPoint_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -231,6 +288,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < groundingAttributions_.size(); i++) {
       output.writeMessage(2, groundingAttributions_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getSearchEntryPoint());
     }
     getUnknownFields().writeTo(output);
   }
@@ -254,6 +314,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, groundingAttributions_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSearchEntryPoint());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -272,6 +335,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
 
     if (!getWebSearchQueriesList().equals(other.getWebSearchQueriesList())) return false;
     if (!getGroundingAttributionsList().equals(other.getGroundingAttributionsList())) return false;
+    if (hasSearchEntryPoint() != other.hasSearchEntryPoint()) return false;
+    if (hasSearchEntryPoint()) {
+      if (!getSearchEntryPoint().equals(other.getSearchEntryPoint())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,6 +357,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (getGroundingAttributionsCount() > 0) {
       hash = (37 * hash) + GROUNDING_ATTRIBUTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getGroundingAttributionsList().hashCode();
+    }
+    if (hasSearchEntryPoint()) {
+      hash = (37 * hash) + SEARCH_ENTRY_POINT_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchEntryPoint().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -420,10 +491,20 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.aiplatform.v1.GroundingMetadata.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getGroundingAttributionsFieldBuilder();
+        getSearchEntryPointFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -438,6 +519,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingAttributionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      searchEntryPoint_ = null;
+      if (searchEntryPointBuilder_ != null) {
+        searchEntryPointBuilder_.dispose();
+        searchEntryPointBuilder_ = null;
+      }
       return this;
     }
 
@@ -492,6 +578,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         webSearchQueries_.makeImmutable();
         result.webSearchQueries_ = webSearchQueries_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchEntryPoint_ =
+            searchEntryPointBuilder_ == null ? searchEntryPoint_ : searchEntryPointBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -577,6 +670,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (other.hasSearchEntryPoint()) {
+        mergeSearchEntryPoint(other.getSearchEntryPoint());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -624,6 +720,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(
+                    getSearchEntryPointFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1224,6 +1327,211 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingAttributions_ = null;
       }
       return groundingAttributionsBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.SearchEntryPoint searchEntryPoint_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SearchEntryPoint,
+            com.google.cloud.aiplatform.v1.SearchEntryPoint.Builder,
+            com.google.cloud.aiplatform.v1.SearchEntryPointOrBuilder>
+        searchEntryPointBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchEntryPoint field is set.
+     */
+    public boolean hasSearchEntryPoint() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchEntryPoint.
+     */
+    public com.google.cloud.aiplatform.v1.SearchEntryPoint getSearchEntryPoint() {
+      if (searchEntryPointBuilder_ == null) {
+        return searchEntryPoint_ == null
+            ? com.google.cloud.aiplatform.v1.SearchEntryPoint.getDefaultInstance()
+            : searchEntryPoint_;
+      } else {
+        return searchEntryPointBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchEntryPoint(com.google.cloud.aiplatform.v1.SearchEntryPoint value) {
+      if (searchEntryPointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchEntryPoint_ = value;
+      } else {
+        searchEntryPointBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchEntryPoint(
+        com.google.cloud.aiplatform.v1.SearchEntryPoint.Builder builderForValue) {
+      if (searchEntryPointBuilder_ == null) {
+        searchEntryPoint_ = builderForValue.build();
+      } else {
+        searchEntryPointBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchEntryPoint(com.google.cloud.aiplatform.v1.SearchEntryPoint value) {
+      if (searchEntryPointBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && searchEntryPoint_ != null
+            && searchEntryPoint_
+                != com.google.cloud.aiplatform.v1.SearchEntryPoint.getDefaultInstance()) {
+          getSearchEntryPointBuilder().mergeFrom(value);
+        } else {
+          searchEntryPoint_ = value;
+        }
+      } else {
+        searchEntryPointBuilder_.mergeFrom(value);
+      }
+      if (searchEntryPoint_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchEntryPoint() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      searchEntryPoint_ = null;
+      if (searchEntryPointBuilder_ != null) {
+        searchEntryPointBuilder_.dispose();
+        searchEntryPointBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SearchEntryPoint.Builder getSearchEntryPointBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSearchEntryPointFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SearchEntryPointOrBuilder getSearchEntryPointOrBuilder() {
+      if (searchEntryPointBuilder_ != null) {
+        return searchEntryPointBuilder_.getMessageOrBuilder();
+      } else {
+        return searchEntryPoint_ == null
+            ? com.google.cloud.aiplatform.v1.SearchEntryPoint.getDefaultInstance()
+            : searchEntryPoint_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google search entry for the following-up web searches.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SearchEntryPoint,
+            com.google.cloud.aiplatform.v1.SearchEntryPoint.Builder,
+            com.google.cloud.aiplatform.v1.SearchEntryPointOrBuilder>
+        getSearchEntryPointFieldBuilder() {
+      if (searchEntryPointBuilder_ == null) {
+        searchEntryPointBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.SearchEntryPoint,
+                com.google.cloud.aiplatform.v1.SearchEntryPoint.Builder,
+                com.google.cloud.aiplatform.v1.SearchEntryPointOrBuilder>(
+                getSearchEntryPoint(), getParentForChildren(), isClean());
+        searchEntryPoint_ = null;
+      }
+      return searchEntryPointBuilder_;
     }
 
     @java.lang.Override

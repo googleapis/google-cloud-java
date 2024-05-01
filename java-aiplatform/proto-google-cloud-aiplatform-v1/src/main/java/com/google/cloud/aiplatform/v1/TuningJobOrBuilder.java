@@ -28,7 +28,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Model name for tuning, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -40,7 +40,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Model name for tuning, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -52,7 +52,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Model name for tuning, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -132,8 +132,8 @@ public interface TuningJobOrBuilder
    *
    * <pre>
    * Optional. The display name of the
-   * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to
-   * 128 characters long and can consist of any UTF-8 characters.
+   * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
+   * characters long and can consist of any UTF-8 characters.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,8 +146,8 @@ public interface TuningJobOrBuilder
    *
    * <pre>
    * Optional. The display name of the
-   * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to
-   * 128 characters long and can consist of any UTF-8 characters.
+   * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
+   * characters long and can consist of any UTF-8 characters.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
