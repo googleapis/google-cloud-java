@@ -158,19 +158,11 @@ was modified (or the script exited because the library already existed).
 
 The last step you need is to `cd` into the root of `google-cloud-java` and run
 ```
-docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
-repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
-docker run --rm \
-  ${repo_volumes} \
-  -v /tmp:/tmp \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e "RUNNING_IN_DOCKER=true" \
-  -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
-  gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
-  python /src/generate_repo.py generate \
-  --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
-  --repository-path=/workspace/google-cloud-java \
-  --target-library-names=<library_name if specified; otherwise api_shortname>
+docker run --rm -u $(id -u):$(id -g) -v $(pwd):/workspace --entrypoint \
+    python gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+    /src/generate_repo.py generate \
+    --target-library-names=contentwarehouse \
+    --generation-config-yaml=/workspace/generation_config.yaml
 
 ```
 

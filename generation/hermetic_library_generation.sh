@@ -70,9 +70,7 @@ if [ -z "${generation_config}" ]; then
   echo "Use default generation config: ${generation_config}"
 fi
 
-volume_name="repo"
 workspace_name="/workspace/repo"
-repo_volumes="${volume_name}:${workspace_name}"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
 
@@ -89,23 +87,10 @@ fi
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
 
-# bind docker volume to include the repository in docker running environment.
-if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
-  docker volume rm ${volume_name}
-fi
-docker volume create \
-  --name ${volume_name} \
-  --opt "type=none" \
-  --opt "device=$(pwd)" \
-  --opt "o=bind"
 # run hermetic code generation docker image.
 docker run \
   --rm \
-  -v "${repo_volumes}" \
-  -v /tmp:/tmp \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e "RUNNING_IN_DOCKER=true" \
-  -e "REPO_BINDING_VOLUMES=-v ${repo_volumes}" \
+  -v "$(pwd):${workspace_name}" \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
   python /src/cli/entry_point.py generate \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
