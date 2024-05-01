@@ -85,7 +85,7 @@ to add `google-cloud-accessapproval` as a dependency in your code.
 ## About Access Approval
 
 
-[Access Approval][product-docs] enables controlling access to your organization's data by Google personnel.
+[Access Approval][product-docs] enables controlling access to your organization's data by Google personnel. - test2
 
 See the [Access Approval client library docs][javadocs] to learn how to
 use this Access Approval Client Library.
@@ -195,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-accessapproval.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-accessapproval/2.42.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-accessapproval/2.43.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
