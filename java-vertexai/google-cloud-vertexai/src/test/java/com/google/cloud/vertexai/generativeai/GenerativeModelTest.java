@@ -328,10 +328,7 @@ public final class GenerativeModelTest {
   public void testGenerateContentwithSystemInstructions() throws Exception {
     String systemInstructionText =
         "You're a helpful assistant that starts all its answers with: \"COOL\"";
-    Content systemInstructions =
-        Content.newBuilder()
-            .addParts(Part.newBuilder().setText(systemInstructionText).build())
-            .build();
+    Content systemInstructions = ContentMaker.fromString(systemInstructionText);
 
     model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstructions(systemInstructions);
 
@@ -339,8 +336,7 @@ public final class GenerativeModelTest {
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
         .thenReturn(mockGenerateContentResponse);
 
-    Content content =
-        Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
+    Content content = ContentMaker.fromString(TEXT);
     GenerateContentResponse unused = model.generateContent(Arrays.asList(content));
 
     ArgumentCaptor<GenerateContentRequest> request =

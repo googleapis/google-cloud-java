@@ -36,6 +36,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /** This class holds a generative model that can complete what you provided. */
 public final class GenerativeModel {
@@ -45,7 +46,7 @@ public final class GenerativeModel {
   private final GenerationConfig generationConfig;
   private final ImmutableList<SafetySetting> safetySettings;
   private final ImmutableList<Tool> tools;
-  private final Content systemInstructions;
+  private final Optional<Content> systemInstruction;
 
   /**
    * Constructs a GenerativeModel instance.
@@ -63,7 +64,7 @@ public final class GenerativeModel {
         GenerationConfig.getDefaultInstance(),
         ImmutableList.of(),
         ImmutableList.of(),
-        null,
+        Optional.empty(),
         vertexAi);
   }
 
@@ -86,7 +87,7 @@ public final class GenerativeModel {
       GenerationConfig generationConfig,
       ImmutableList<SafetySetting> safetySettings,
       ImmutableList<Tool> tools,
-      Content systemInstructions,
+      Optional<Content> systemInstruction,
       VertexAI vertexAi) {
     checkArgument(
         !Strings.isNullOrEmpty(modelName),
@@ -108,7 +109,7 @@ public final class GenerativeModel {
     this.generationConfig = generationConfig;
     this.safetySettings = safetySettings;
     this.tools = tools;
-    this.systemInstructions = systemInstructions;
+    this.systemInstruction = systemInstruction;
   }
 
   /** Builder class for {@link GenerativeModel}. */
@@ -118,7 +119,7 @@ public final class GenerativeModel {
     private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
     private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
     private ImmutableList<Tool> tools = ImmutableList.of();
-    private Content systemInstructions = null;
+    private Optional<Content> systemInstructions = Optional.empty();
 
     public GenerativeModel build() {
       checkArgument(
@@ -208,7 +209,7 @@ public final class GenerativeModel {
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         ImmutableList.copyOf(tools),
-        systemInstructions,
+        systemInstruction,
         vertexAi);
   }
 
@@ -225,7 +226,7 @@ public final class GenerativeModel {
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         ImmutableList.copyOf(tools),
-        systemInstructions,
+        systemInstruction,
         vertexAi);
   }
 
@@ -242,7 +243,7 @@ public final class GenerativeModel {
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         ImmutableList.copyOf(tools),
-        systemInstructions,
+        systemInstruction,
         vertexAi);
   }
 
@@ -259,7 +260,7 @@ public final class GenerativeModel {
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         ImmutableList.copyOf(tools),
-        systemInstructions,
+        Optional.of(systemInstructions),
         vertexAi);
   }
 
@@ -501,8 +502,8 @@ public final class GenerativeModel {
             .addAllSafetySettings(safetySettings)
             .addAllTools(tools);
 
-    if (systemInstructions != null) {
-      requestBuilder.setSystemInstruction(systemInstructions);
+    if (systemInstruction.isPresent()) {
+      requestBuilder.setSystemInstruction(systemInstruction.get());
     }
 
     return requestBuilder.build();
