@@ -33,6 +33,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
@@ -170,7 +171,9 @@ public class ITBigQueryStorageTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET).setDescription(DESCRIPTION).build();
+        DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
+            .setDescription(DESCRIPTION)
+            .build();
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
   }
@@ -188,7 +191,7 @@ public class ITBigQueryStorageTest {
   }
 
   @Test
-  public void testSimpleRead() {
+  public void testSimpleReadAvro() {
     String table =
         BigQueryResource.FormatTableResource(
             /* projectId = */ "bigquery-public-data",
@@ -220,6 +223,110 @@ public class ITBigQueryStorageTest {
     }
 
     assertEquals(164_656, rowCount);
+  }
+
+  @Test
+  public void testSimpleReadArrow() {
+    String table =
+        BigQueryResource.FormatTableResource(
+            /* projectId = */ "bigquery-public-data",
+            /* datasetId = */ "samples",
+            /* tableId = */ "shakespeare");
+
+    ReadSession session =
+        client.createReadSession(
+            /* parent = */ parentProjectId,
+            /* readSession = */ ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.ARROW)
+                .build(),
+            /* maxStreamCount = */ 1);
+    assertEquals(
+        String.format(
+            "Did not receive expected number of streams for table '%s' CreateReadSession response:%n%s",
+            table, session.toString()),
+        1,
+        session.getStreamsCount());
+
+    // Assert that there are streams available in the session.  An empty table may not have
+    // data available.  If no sessions are available for an anonymous (cached) table, consider
+    // writing results of a query to a named table rather than consuming cached results
+    // directly.
+    Preconditions.checkState(session.getStreamsCount() > 0);
+
+    // Use the first stream to perform reading.
+    String streamName = session.getStreams(0).getName();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadStream(streamName).build();
+
+    long rowCount = 0;
+    // Process each block of rows as they arrive and decode using our simple row reader.
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      Preconditions.checkState(response.hasArrowRecordBatch());
+      rowCount += response.getRowCount();
+    }
+    assertEquals(164_656, rowCount);
+  }
+
+  @Test
+  public void testRangeType() throws InterruptedException {
+    // Create table with Range values.
+    String tableName = "test_range_type";
+    TableId tableId = TableId.of(DATASET, tableName);
+    QueryJobConfiguration createTable =
+        QueryJobConfiguration.newBuilder(
+                String.format(
+                    "CREATE TABLE %s AS SELECT RANGE(DATE '2020-01-01', DATE '2020-12-31') as date, \n"
+                        + "RANGE(DATETIME '2020-01-01T12:00:00', DATETIME '2020-12-31T12:00:00') as datetime, \n"
+                        + "RANGE(TIMESTAMP '2014-01-01 07:00:00.000000+00:00', TIMESTAMP '2015-01-01 07:00:00.000000+00:00') as timestamp",
+                    tableName))
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setUseLegacySql(false)
+            .build();
+    bigquery.query(createTable);
+
+    String table =
+        BigQueryResource.FormatTableResource(
+            /* projectId = */ ServiceOptions.getDefaultProjectId(),
+            /* datasetId = */ DATASET,
+            /* tableId = */ tableId.getTable());
+
+    ReadSession session =
+        client.createReadSession(
+            /* parent = */ parentProjectId,
+            /* readSession = */ ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.ARROW)
+                .build(),
+            /* maxStreamCount = */ 1);
+    assertEquals(
+        String.format(
+            "Did not receive expected number of streams for table '%s' CreateReadSession response:%n%s",
+            table, session.toString()),
+        1,
+        session.getStreamsCount());
+
+    // Assert that there are streams available in the session.  An empty table may not have
+    // data available.  If no sessions are available for an anonymous (cached) table, consider
+    // writing results of a query to a named table rather than consuming cached results
+    // directly.
+    Preconditions.checkState(session.getStreamsCount() > 0);
+
+    // Use the first stream to perform reading.
+    String streamName = session.getStreams(0).getName();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadStream(streamName).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      Preconditions.checkState(response.hasArrowRecordBatch());
+      rowCount += response.getRowCount();
+    }
+    assertEquals(1, rowCount);
   }
 
   @Test
