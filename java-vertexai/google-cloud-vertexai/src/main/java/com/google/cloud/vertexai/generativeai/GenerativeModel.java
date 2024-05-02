@@ -125,8 +125,8 @@ public final class GenerativeModel {
           !Strings.isNullOrEmpty(modelName),
           "modelName is required. Please call setModelName() before building.");
       checkNotNull(vertexAi, "vertexAi is required. Please call setVertexAi() before building.");
-      return new GenerativeModel(modelName, generationConfig, safetySettings, tools,
-          systemInstructions, vertexAi);
+      return new GenerativeModel(
+          modelName, generationConfig, safetySettings, tools, systemInstructions, vertexAi);
     }
 
     /**
@@ -203,8 +203,13 @@ public final class GenerativeModel {
    * @return a new {@link GenerativeModel} instance with the specified GenerationConfig.
    */
   public GenerativeModel withGenerationConfig(GenerationConfig generationConfig) {
-    return new GenerativeModel(modelName, generationConfig, ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools), systemInstructions, vertexAi);
+    return new GenerativeModel(
+        modelName,
+        generationConfig,
+        ImmutableList.copyOf(safetySettings),
+        ImmutableList.copyOf(tools),
+        systemInstructions,
+        vertexAi);
   }
 
   /**
@@ -216,34 +221,46 @@ public final class GenerativeModel {
    */
   public GenerativeModel withSafetySettings(List<SafetySetting> safetySettings) {
     return new GenerativeModel(
-        modelName, generationConfig, ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools), systemInstructions, vertexAi);
+        modelName,
+        generationConfig,
+        ImmutableList.copyOf(safetySettings),
+        ImmutableList.copyOf(tools),
+        systemInstructions,
+        vertexAi);
   }
 
   /**
    * Creates a copy of the current model with updated tools.
    *
-   * @param tools a list of {@link com.google.cloud.vertexai.api.Tool} that will be used in
-   *     the new model.
+   * @param tools a list of {@link com.google.cloud.vertexai.api.Tool} that will be used in the new
+   *     model.
    * @return a new {@link GenerativeModel} instance with the specified tools.
    */
   public GenerativeModel withTools(List<Tool> tools) {
     return new GenerativeModel(
-        modelName, generationConfig, ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools), systemInstructions, vertexAi);
+        modelName,
+        generationConfig,
+        ImmutableList.copyOf(safetySettings),
+        ImmutableList.copyOf(tools),
+        systemInstructions,
+        vertexAi);
   }
 
   /**
    * Creates a copy of the current model with updated system instructions.
    *
-   * @param systemInstructions a {@link com.google.cloud.vertexai.api.Content} containing
-   *     system instructions.
+   * @param systemInstructions a {@link com.google.cloud.vertexai.api.Content} containing system
+   *     instructions.
    * @return a new {@link GenerativeModel} instance with the specified tools.
    */
   public GenerativeModel withSystemInstructions(Content systemInstructions) {
     return new GenerativeModel(
-        modelName, generationConfig, ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools), systemInstructions, vertexAi);
+        modelName,
+        generationConfig,
+        ImmutableList.copyOf(safetySettings),
+        ImmutableList.copyOf(tools),
+        systemInstructions,
+        vertexAi);
   }
 
   /**
@@ -476,12 +493,13 @@ public final class GenerativeModel {
   private GenerateContentRequest buildGenerateContentRequest(List<Content> contents) {
     checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
 
-    GenerateContentRequest.Builder requestBuilder = GenerateContentRequest.newBuilder()
-        .setModel(resourceName)
-        .addAllContents(contents)
-        .setGenerationConfig(generationConfig)
-        .addAllSafetySettings(safetySettings)
-        .addAllTools(tools);
+    GenerateContentRequest.Builder requestBuilder =
+        GenerateContentRequest.newBuilder()
+            .setModel(resourceName)
+            .addAllContents(contents)
+            .setGenerationConfig(generationConfig)
+            .addAllSafetySettings(safetySettings)
+            .addAllTools(tools);
 
     if (systemInstructions != null) {
       requestBuilder.setSystemInstruction(systemInstructions);
@@ -503,8 +521,7 @@ public final class GenerativeModel {
   }
 
   /**
-   * Returns a list of {@link com.google.cloud.vertexai.api.SafetySetting} of this generative
-   * model.
+   * Returns a list of {@link com.google.cloud.vertexai.api.SafetySetting} of this generative model.
    */
   public ImmutableList<SafetySetting> getSafetySettings() {
     return safetySettings;
