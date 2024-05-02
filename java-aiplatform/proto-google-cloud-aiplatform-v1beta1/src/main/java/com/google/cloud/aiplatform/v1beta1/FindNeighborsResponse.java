@@ -117,7 +117,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The distance between the neighbor and the query vector.
+     * The distance between the neighbor and the dense embedding query.
      * </pre>
      *
      * <code>double distance = 2;</code>
@@ -234,7 +234,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The distance between the neighbor and the query vector.
+     * The distance between the neighbor and the dense embedding query.
      * </pre>
      *
      * <code>double distance = 2;</code>
@@ -865,7 +865,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The distance between the neighbor and the query vector.
+       * The distance between the neighbor and the dense embedding query.
        * </pre>
        *
        * <code>double distance = 2;</code>
@@ -880,7 +880,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The distance between the neighbor and the query vector.
+       * The distance between the neighbor and the dense embedding query.
        * </pre>
        *
        * <code>double distance = 2;</code>
@@ -899,7 +899,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * The distance between the neighbor and the query vector.
+       * The distance between the neighbor and the dense embedding query.
        * </pre>
        *
        * <code>double distance = 2;</code>

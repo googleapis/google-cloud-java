@@ -71,12 +71,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-   * configuration. Format is
+   * Optional. Membership of the GKE Hub-registered cluster to which to apply
+   * the Skaffold configuration. Format is
    * `projects/{project}/locations/{location}/memberships/{membership_name}`.
    * </pre>
    *
-   * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The membership.
    */
@@ -96,12 +98,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-   * configuration. Format is
+   * Optional. Membership of the GKE Hub-registered cluster to which to apply
+   * the Skaffold configuration. Format is
    * `projects/{project}/locations/{location}/memberships/{membership_name}`.
    * </pre>
    *
-   * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for membership.
    */
@@ -463,12 +467,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-     * configuration. Format is
+     * Optional. Membership of the GKE Hub-registered cluster to which to apply
+     * the Skaffold configuration. Format is
      * `projects/{project}/locations/{location}/memberships/{membership_name}`.
      * </pre>
      *
-     * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The membership.
      */
@@ -487,12 +493,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-     * configuration. Format is
+     * Optional. Membership of the GKE Hub-registered cluster to which to apply
+     * the Skaffold configuration. Format is
      * `projects/{project}/locations/{location}/memberships/{membership_name}`.
      * </pre>
      *
-     * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for membership.
      */
@@ -511,12 +519,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-     * configuration. Format is
+     * Optional. Membership of the GKE Hub-registered cluster to which to apply
+     * the Skaffold configuration. Format is
      * `projects/{project}/locations/{location}/memberships/{membership_name}`.
      * </pre>
      *
-     * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The membership to set.
      * @return This builder for chaining.
@@ -534,12 +544,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-     * configuration. Format is
+     * Optional. Membership of the GKE Hub-registered cluster to which to apply
+     * the Skaffold configuration. Format is
      * `projects/{project}/locations/{location}/memberships/{membership_name}`.
      * </pre>
      *
-     * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -553,12 +565,14 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-     * configuration. Format is
+     * Optional. Membership of the GKE Hub-registered cluster to which to apply
+     * the Skaffold configuration. Format is
      * `projects/{project}/locations/{location}/memberships/{membership_name}`.
      * </pre>
      *
-     * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for membership to set.
      * @return This builder for chaining.

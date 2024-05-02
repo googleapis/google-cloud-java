@@ -28,12 +28,14 @@ public interface AnthosClusterOrBuilder
    *
    *
    * <pre>
-   * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-   * configuration. Format is
+   * Optional. Membership of the GKE Hub-registered cluster to which to apply
+   * the Skaffold configuration. Format is
    * `projects/{project}/locations/{location}/memberships/{membership_name}`.
    * </pre>
    *
-   * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The membership.
    */
@@ -42,12 +44,14 @@ public interface AnthosClusterOrBuilder
    *
    *
    * <pre>
-   * Membership of the GKE Hub-registered cluster to which to apply the Skaffold
-   * configuration. Format is
+   * Optional. Membership of the GKE Hub-registered cluster to which to apply
+   * the Skaffold configuration. Format is
    * `projects/{project}/locations/{location}/memberships/{membership_name}`.
    * </pre>
    *
-   * <code>string membership = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string membership = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for membership.
    */

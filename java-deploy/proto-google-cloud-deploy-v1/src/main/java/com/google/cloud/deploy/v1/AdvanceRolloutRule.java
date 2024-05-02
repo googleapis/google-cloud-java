@@ -75,7 +75,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. ID of the rule. This id must be unique in the `Automation`
-   * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+   * resource to which this rule belongs. The format is
+   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,7 +100,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. ID of the rule. This id must be unique in the `Automation`
-   * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+   * resource to which this rule belongs. The format is
+   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -763,7 +765,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. ID of the rule. This id must be unique in the `Automation`
-     * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+     * resource to which this rule belongs. The format is
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -786,7 +789,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. ID of the rule. This id must be unique in the `Automation`
-     * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+     * resource to which this rule belongs. The format is
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -809,7 +813,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. ID of the rule. This id must be unique in the `Automation`
-     * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+     * resource to which this rule belongs. The format is
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -831,7 +836,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. ID of the rule. This id must be unique in the `Automation`
-     * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+     * resource to which this rule belongs. The format is
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -849,7 +855,8 @@ public final class AdvanceRolloutRule extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. ID of the rule. This id must be unique in the `Automation`
-     * resource to which this rule belongs. The format is `[a-z][a-z0-9&#92;-]{0,62}`.
+     * resource to which this rule belongs. The format is
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>

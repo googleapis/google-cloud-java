@@ -36,4 +36,30 @@ public interface ImportRagFilesResponseOrBuilder
    * @return The importedRagFilesCount.
    */
   long getImportedRagFilesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of RagFiles that had failed while importing into the RagCorpus.
+   * </pre>
+   *
+   * <code>int64 failed_rag_files_count = 2;</code>
+   *
+   * @return The failedRagFilesCount.
+   */
+  long getFailedRagFilesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of RagFiles that was skipped while importing into the RagCorpus.
+   * </pre>
+   *
+   * <code>int64 skipped_rag_files_count = 3;</code>
+   *
+   * @return The skippedRagFilesCount.
+   */
+  long getSkippedRagFilesCount();
 }

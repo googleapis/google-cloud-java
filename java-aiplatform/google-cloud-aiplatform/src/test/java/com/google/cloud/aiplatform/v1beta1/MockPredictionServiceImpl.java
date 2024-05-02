@@ -392,25 +392,4 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   Exception.class.getName())));
     }
   }
-
-  @Override
-  public void chatCompletions(
-      ChatCompletionsRequest request, StreamObserver<HttpBody> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof HttpBody) {
-      requests.add(request);
-      responseObserver.onNext(((HttpBody) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ChatCompletions, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  HttpBody.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
 }

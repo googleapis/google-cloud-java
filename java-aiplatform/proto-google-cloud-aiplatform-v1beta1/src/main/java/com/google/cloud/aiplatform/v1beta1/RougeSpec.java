@@ -72,7 +72,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+   * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
    * </pre>
    *
    * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,7 +95,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+   * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
    * </pre>
    *
    * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -542,7 +542,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+     * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
      * </pre>
      *
      * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -564,7 +564,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+     * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
      * </pre>
      *
      * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -586,7 +586,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+     * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
      * </pre>
      *
      * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -607,7 +607,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+     * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
      * </pre>
      *
      * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -624,7 +624,7 @@ public final class RougeSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Supported rouge types are rougen[1-9], rougeL and rougeLsum.
+     * Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.
      * </pre>
      *
      * <code>string rouge_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

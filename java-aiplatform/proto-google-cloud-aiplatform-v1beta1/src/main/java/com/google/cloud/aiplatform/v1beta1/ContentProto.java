@@ -92,6 +92,10 @@ public final class ContentProto {
       internal_static_google_cloud_aiplatform_v1beta1_GroundingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GroundingMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_SearchEntryPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_SearchEntryPoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -199,22 +203,26 @@ public final class ContentProto {
           + "\030\001 \001(\tB\003\340A\003\022\022\n\005title\030\002 \001(\tB\003\340A\003\0328\n\020Retri"
           + "evedContext\022\020\n\003uri\030\001 \001(\tB\003\340A\003\022\022\n\005title\030\002"
           + " \001(\tB\003\340A\003B\013\n\treferenceB\023\n\021_confidence_sc"
-          + "ore\"\260\001\n\021GroundingMetadata\022\037\n\022web_search_"
-          + "queries\030\001 \003(\tB\003\340A\001\022\036\n\021retrieval_queries\030"
-          + "\003 \003(\tB\003\340A\001\022Z\n\026grounding_attributions\030\002 \003"
-          + "(\01325.google.cloud.aiplatform.v1beta1.Gro"
-          + "undingAttributionB\003\340A\001*\264\001\n\014HarmCategory\022"
-          + "\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000\022\035\n\031HARM_C"
-          + "ATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_CATEGORY_D"
-          + "ANGEROUS_CONTENT\020\002\022\034\n\030HARM_CATEGORY_HARA"
-          + "SSMENT\020\003\022#\n\037HARM_CATEGORY_SEXUALLY_EXPLI"
-          + "CIT\020\004B\343\001\n#com.google.cloud.aiplatform.v1"
-          + "beta1B\014ContentProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "ore\"\240\002\n\021GroundingMetadata\022\037\n\022web_search_"
+          + "queries\030\001 \003(\tB\003\340A\001\022W\n\022search_entry_point"
+          + "\030\004 \001(\01321.google.cloud.aiplatform.v1beta1"
+          + ".SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n\021retrieval"
+          + "_queries\030\003 \003(\tB\003\340A\001\022Z\n\026grounding_attribu"
+          + "tions\030\002 \003(\01325.google.cloud.aiplatform.v1"
+          + "beta1.GroundingAttributionB\003\340A\001B\025\n\023_sear"
+          + "ch_entry_point\"H\n\020SearchEntryPoint\022\035\n\020re"
+          + "ndered_content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 "
+          + "\001(\014B\003\340A\001*\264\001\n\014HarmCategory\022\035\n\031HARM_CATEGO"
+          + "RY_UNSPECIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_S"
+          + "PEECH\020\001\022#\n\037HARM_CATEGORY_DANGEROUS_CONTE"
+          + "NT\020\002\022\034\n\030HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HA"
+          + "RM_CATEGORY_SEXUALLY_EXPLICIT\020\004B\343\001\n#com."
+          + "google.cloud.aiplatform.v1beta1B\014Content"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -376,7 +384,15 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GroundingMetadata_descriptor,
             new java.lang.String[] {
-              "WebSearchQueries", "RetrievalQueries", "GroundingAttributions",
+              "WebSearchQueries", "SearchEntryPoint", "RetrievalQueries", "GroundingAttributions",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_SearchEntryPoint_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1beta1_SearchEntryPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_SearchEntryPoint_descriptor,
+            new java.lang.String[] {
+              "RenderedContent", "SdkBlob",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
