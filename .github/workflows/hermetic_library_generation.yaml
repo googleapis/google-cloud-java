@@ -16,8 +16,7 @@
 name: Hermetic library generation upon generation config change through pull requests
 on:
   pull_request:
-    # do not run this workflow when merging the pull request.
-    types: [ opened, reopened, edited, synchronize ]
+
 jobs:
   library_generation:
     runs-on: ubuntu-latest
