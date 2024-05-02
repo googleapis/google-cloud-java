@@ -330,7 +330,7 @@ public final class GenerativeModelTest {
         "You're a helpful assistant that starts all its answers with: \"COOL\"";
     Content systemInstructions = ContentMaker.fromString(systemInstructionText);
 
-    model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstructions(systemInstructions);
+    model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstruction(systemInstructions);
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))

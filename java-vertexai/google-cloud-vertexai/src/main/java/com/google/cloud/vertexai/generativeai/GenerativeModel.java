@@ -119,7 +119,7 @@ public final class GenerativeModel {
     private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
     private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
     private ImmutableList<Tool> tools = ImmutableList.of();
-    private Optional<Content> systemInstructions = Optional.empty();
+    private Optional<Content> systemInstruction = Optional.empty();
 
     public GenerativeModel build() {
       checkArgument(
@@ -127,7 +127,7 @@ public final class GenerativeModel {
           "modelName is required. Please call setModelName() before building.");
       checkNotNull(vertexAi, "vertexAi is required. Please call setVertexAi() before building.");
       return new GenerativeModel(
-          modelName, generationConfig, safetySettings, tools, systemInstructions, vertexAi);
+          modelName, generationConfig, safetySettings, tools, systemInstruction, vertexAi);
     }
 
     /**
@@ -194,6 +194,19 @@ public final class GenerativeModel {
       this.tools = ImmutableList.copyOf(tools);
       return this;
     }
+
+    /**
+     * Sets a system instruction that will be used by default to interact with the generative model.
+     */
+    @CanIgnoreReturnValue
+    public Builder setSystemInstruction(Content systemInstruction) {
+      checkNotNull(
+          systemInstruction,
+          "system instruction can't be null. "
+              + "Use Optional.empty() if no system instruction should be provided.");
+      this.systemInstruction = Optional.of(systemInstruction);
+      return this;
+    }
   }
 
   /**
@@ -250,17 +263,17 @@ public final class GenerativeModel {
   /**
    * Creates a copy of the current model with updated system instructions.
    *
-   * @param systemInstructions a {@link com.google.cloud.vertexai.api.Content} containing system
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} containing system
    *     instructions.
    * @return a new {@link GenerativeModel} instance with the specified tools.
    */
-  public GenerativeModel withSystemInstructions(Content systemInstructions) {
+  public GenerativeModel withSystemInstruction(Content systemInstruction) {
     return new GenerativeModel(
         modelName,
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         ImmutableList.copyOf(tools),
-        Optional.of(systemInstructions),
+        Optional.of(systemInstruction),
         vertexAi);
   }
 
@@ -531,6 +544,11 @@ public final class GenerativeModel {
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
   public ImmutableList<Tool> getTools() {
     return tools;
+  }
+
+  /** Returns the optional system instruction of this generative model. */
+  public Optional<Content> getSystemInstruction() {
+    return systemInstruction;
   }
 
   public ChatSession startChat() {
