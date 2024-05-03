@@ -236,6 +236,44 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   *
+   * @return Whether the quotaStatusWarning field is set.
+   */
+  boolean hasQuotaStatusWarning();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   *
+   * @return The quotaStatusWarning.
+   */
+  com.google.cloud.compute.v1.QuotaStatusWarning getQuotaStatusWarning();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   */
+  com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder getQuotaStatusWarningOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Quotas assigned to this region.
    * </pre>
    *

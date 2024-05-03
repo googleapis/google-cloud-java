@@ -28,6 +28,31 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
+   * The allocatable prefix length supported by this public delegated prefix. This field is optional and cannot be set for prefixes in DELEGATION mode. It cannot be set for IPv4 prefixes either, and it always defaults to 32.
+   * </pre>
+   *
+   * <code>optional int32 allocatable_prefix_length = 38427446;</code>
+   *
+   * @return Whether the allocatablePrefixLength field is set.
+   */
+  boolean hasAllocatablePrefixLength();
+  /**
+   *
+   *
+   * <pre>
+   * The allocatable prefix length supported by this public delegated prefix. This field is optional and cannot be set for prefixes in DELEGATION mode. It cannot be set for IPv4 prefixes either, and it always defaults to 32.
+   * </pre>
+   *
+   * <code>optional int32 allocatable_prefix_length = 38427446;</code>
+   *
+   * @return The allocatablePrefixLength.
+   */
+  int getAllocatablePrefixLength();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
@@ -298,6 +323,46 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The public delegated prefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
+  /**
+   *
+   *
+   * <pre>
+   * The public delegated prefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return The mode.
+   */
+  java.lang.String getMode();
+  /**
+   *
+   *
+   * <pre>
+   * The public delegated prefix mode for IPv6 only.
+   * Check the Mode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string mode = 3357091;</code>
+   *
+   * @return The bytes for mode.
+   */
+  com.google.protobuf.ByteString getModeBytes();
 
   /**
    *

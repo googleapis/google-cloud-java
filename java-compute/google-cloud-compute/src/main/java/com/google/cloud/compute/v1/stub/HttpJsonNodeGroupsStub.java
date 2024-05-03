@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNodeGroupRequest;
+import com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
@@ -594,6 +595,63 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceNodeGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PerformMaintenanceNodeGroupRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceNodeGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceNodeGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "nodeGroupsPerformMaintenanceRequestResource",
+                                      request.getNodeGroupsPerformMaintenanceRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyNodeGroupRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
@@ -820,6 +878,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private final UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable;
   private final OperationCallable<PatchNodeGroupRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable;
   private final OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
@@ -1003,6 +1065,20 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PerformMaintenanceNodeGroupRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings.<PerformMaintenanceNodeGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -1129,6 +1205,17 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1175,6 +1262,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(listNodesMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setNodeTemplateMethodDescriptor);
     methodDescriptors.add(simulateMaintenanceEventMethodDescriptor);
@@ -1275,6 +1363,17 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   @Override
   public OperationCallable<PatchNodeGroupRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation> performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
   }
 
   @Override

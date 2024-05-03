@@ -287,11 +287,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -312,11 +312,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -337,11 +337,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -363,11 +363,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -431,11 +431,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -458,11 +458,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -485,11 +485,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -513,11 +513,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
      *
-     * All locations end up in different regions would cause errors.
+     * Mixing locations from different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-     * "zones/us-west1-a"] contains 2 regions "us-central1" and
-     * "us-west1". An error is expected in this case.
+     * "zones/us-west1-a"] contains locations from two distinct regions:
+     * us-central1 and us-west1. This combination will trigger an error.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -904,11 +904,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -932,11 +932,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -959,11 +959,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -987,11 +987,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1015,11 +1015,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1051,11 +1051,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1086,11 +1086,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1118,11 +1118,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1149,11 +1149,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
        *
-       * All locations end up in different regions would cause errors.
+       * Mixing locations from different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
-       * "zones/us-west1-a"] contains 2 regions "us-central1" and
-       * "us-west1". An error is expected in this case.
+       * "zones/us-west1-a"] contains locations from two distinct regions:
+       * us-central1 and us-west1. This combination will trigger an error.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>

@@ -39,6 +39,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   private RouterInterface() {
     ipRange_ = "";
+    ipVersion_ = "";
     linkedInterconnectAttachment_ = "";
     linkedVpnTunnel_ = "";
     managementType_ = "";
@@ -67,6 +68,131 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.RouterInterface.class,
             com.google.cloud.compute.v1.RouterInterface.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.RouterInterface.IpVersion}
+   */
+  public enum IpVersion implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IP_VERSION = 0;</code>
+     */
+    UNDEFINED_IP_VERSION(0),
+    /** <code>IPV4 = 2254341;</code> */
+    IPV4(2254341),
+    /** <code>IPV6 = 2254343;</code> */
+    IPV6(2254343),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IP_VERSION = 0;</code>
+     */
+    public static final int UNDEFINED_IP_VERSION_VALUE = 0;
+    /** <code>IPV4 = 2254341;</code> */
+    public static final int IPV4_VALUE = 2254341;
+    /** <code>IPV6 = 2254343;</code> */
+    public static final int IPV6_VALUE = 2254343;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IpVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IpVersion forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IP_VERSION;
+        case 2254341:
+          return IPV4;
+        case 2254343:
+          return IPV6;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IpVersion>() {
+          public IpVersion findValueByNumber(int number) {
+            return IpVersion.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.RouterInterface.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final IpVersion[] VALUES = values();
+
+    public static IpVersion valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IpVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterInterface.IpVersion)
   }
 
   /**
@@ -202,7 +328,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterInterface.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.RouterInterface.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final ManagementType[] VALUES = values();
@@ -235,7 +361,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -250,7 +376,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -273,7 +399,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -287,6 +413,75 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       ipRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IP_VERSION_FIELD_NUMBER = 294959552;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpVersion() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The ipVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getIpVersion() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The bytes for ipVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpVersionBytes() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -310,7 +505,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasLinkedInterconnectAttachment() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -376,7 +571,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasLinkedVpnTunnel() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -443,7 +638,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasManagementType() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -511,7 +706,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -577,7 +772,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasPrivateIpAddress() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -643,7 +838,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasRedundantInterface() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -709,7 +904,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -772,29 +967,32 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100854040, privateIpAddress_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 145092645, ipRange_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 173703606, managementType_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 294959552, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 352296953, linkedVpnTunnel_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 501085518, linkedInterconnectAttachment_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 523187303, redundantInterface_);
     }
     getUnknownFields().writeTo(output);
@@ -806,31 +1004,34 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(100854040, privateIpAddress_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(145092645, ipRange_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173703606, managementType_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294959552, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(352296953, linkedVpnTunnel_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               501085518, linkedInterconnectAttachment_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(523187303, redundantInterface_);
     }
@@ -853,6 +1054,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (hasIpRange() != other.hasIpRange()) return false;
     if (hasIpRange()) {
       if (!getIpRange().equals(other.getIpRange())) return false;
+    }
+    if (hasIpVersion() != other.hasIpVersion()) return false;
+    if (hasIpVersion()) {
+      if (!getIpVersion().equals(other.getIpVersion())) return false;
     }
     if (hasLinkedInterconnectAttachment() != other.hasLinkedInterconnectAttachment()) return false;
     if (hasLinkedInterconnectAttachment()) {
@@ -897,6 +1102,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (hasIpRange()) {
       hash = (37 * hash) + IP_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIpRange().hashCode();
+    }
+    if (hasIpVersion()) {
+      hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getIpVersion().hashCode();
     }
     if (hasLinkedInterconnectAttachment()) {
       hash = (37 * hash) + LINKED_INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
@@ -1065,6 +1274,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       ipRange_ = "";
+      ipVersion_ = "";
       linkedInterconnectAttachment_ = "";
       linkedVpnTunnel_ = "";
       managementType_ = "";
@@ -1114,32 +1324,36 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.linkedInterconnectAttachment_ = linkedInterconnectAttachment_;
+        result.ipVersion_ = ipVersion_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.linkedVpnTunnel_ = linkedVpnTunnel_;
+        result.linkedInterconnectAttachment_ = linkedInterconnectAttachment_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.managementType_ = managementType_;
+        result.linkedVpnTunnel_ = linkedVpnTunnel_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.name_ = name_;
+        result.managementType_ = managementType_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.privateIpAddress_ = privateIpAddress_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.redundantInterface_ = redundantInterface_;
+        result.privateIpAddress_ = privateIpAddress_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.redundantInterface_ = redundantInterface_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.subnetwork_ = subnetwork_;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1194,39 +1408,44 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasIpVersion()) {
+        ipVersion_ = other.ipVersion_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasLinkedInterconnectAttachment()) {
         linkedInterconnectAttachment_ = other.linkedInterconnectAttachment_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasLinkedVpnTunnel()) {
         linkedVpnTunnel_ = other.linkedVpnTunnel_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasManagementType()) {
         managementType_ = other.managementType_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasPrivateIpAddress()) {
         privateIpAddress_ = other.privateIpAddress_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasRedundantInterface()) {
         redundantInterface_ = other.redundantInterface_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1258,13 +1477,13 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26989658
             case 806832322:
               {
                 privateIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 806832322
             case 1160741162:
@@ -1276,31 +1495,37 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
             case 1389628850:
               {
                 managementType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1389628850
+            case -1935290878:
+              {
+                ipVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1935290878
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1832345742
             case -1476591670:
               {
                 linkedVpnTunnel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1476591670
             case -286283150:
               {
                 linkedInterconnectAttachment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -286283150
             case -109468870:
               {
                 redundantInterface_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -109468870
             default:
@@ -1327,7 +1552,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1341,7 +1566,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1363,7 +1588,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1385,7 +1610,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1406,7 +1631,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1423,7 +1648,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+     * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
      * </pre>
      *
      * <code>optional string ip_range = 145092645;</code>
@@ -1442,6 +1667,132 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private java.lang.Object ipVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return Whether the ipVersion field is set.
+     */
+    public boolean hasIpVersion() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return The ipVersion.
+     */
+    public java.lang.String getIpVersion() {
+      java.lang.Object ref = ipVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return The bytes for ipVersion.
+     */
+    public com.google.protobuf.ByteString getIpVersionBytes() {
+      java.lang.Object ref = ipVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @param value The ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpVersion() {
+      ipVersion_ = getDefaultInstance().getIpVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP version of this interface.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @param value The bytes for ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object linkedInterconnectAttachment_ = "";
     /**
      *
@@ -1455,7 +1806,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the linkedInterconnectAttachment field is set.
      */
     public boolean hasLinkedInterconnectAttachment() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1518,7 +1869,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       linkedInterconnectAttachment_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1535,7 +1886,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearLinkedInterconnectAttachment() {
       linkedInterconnectAttachment_ = getDefaultInstance().getLinkedInterconnectAttachment();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1557,7 +1908,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       linkedInterconnectAttachment_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1575,7 +1926,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the linkedVpnTunnel field is set.
      */
     public boolean hasLinkedVpnTunnel() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1638,7 +1989,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       linkedVpnTunnel_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1655,7 +2006,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearLinkedVpnTunnel() {
       linkedVpnTunnel_ = getDefaultInstance().getLinkedVpnTunnel();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1677,7 +2028,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       linkedVpnTunnel_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1696,7 +2047,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the managementType field is set.
      */
     public boolean hasManagementType() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1762,7 +2113,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       managementType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1780,7 +2131,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearManagementType() {
       managementType_ = getDefaultInstance().getManagementType();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1803,7 +2154,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       managementType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1821,7 +2172,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1884,7 +2235,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1901,7 +2252,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1923,7 +2274,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1941,7 +2292,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the privateIpAddress field is set.
      */
     public boolean hasPrivateIpAddress() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2004,7 +2355,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       privateIpAddress_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2021,7 +2372,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearPrivateIpAddress() {
       privateIpAddress_ = getDefaultInstance().getPrivateIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2043,7 +2394,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       privateIpAddress_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2061,7 +2412,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the redundantInterface field is set.
      */
     public boolean hasRedundantInterface() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2124,7 +2475,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       redundantInterface_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2141,7 +2492,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearRedundantInterface() {
       redundantInterface_ = getDefaultInstance().getRedundantInterface();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2163,7 +2514,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       redundantInterface_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2181,7 +2532,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2244,7 +2595,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2261,7 +2612,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2283,7 +2634,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

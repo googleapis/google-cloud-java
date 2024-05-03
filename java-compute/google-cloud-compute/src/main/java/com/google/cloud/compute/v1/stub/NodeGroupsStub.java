@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.NodeGroupList;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNodeGroupRequest;
+import com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
@@ -130,6 +131,16 @@ public abstract class NodeGroupsStub implements BackgroundResource {
 
   public UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation> performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
   }
 
   public UnaryCallable<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyCallable() {

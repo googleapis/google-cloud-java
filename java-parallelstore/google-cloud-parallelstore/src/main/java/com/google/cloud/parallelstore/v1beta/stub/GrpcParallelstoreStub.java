@@ -34,7 +34,13 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parallelstore.v1beta.CreateInstanceRequest;
 import com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ExportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ExportDataResponse;
 import com.google.cloud.parallelstore.v1beta.GetInstanceRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataMetadata;
+import com.google.cloud.parallelstore.v1beta.ImportDataRequest;
+import com.google.cloud.parallelstore.v1beta.ImportDataResponse;
 import com.google.cloud.parallelstore.v1beta.Instance;
 import com.google.cloud.parallelstore.v1beta.ListInstancesRequest;
 import com.google.cloud.parallelstore.v1beta.ListInstancesResponse;
@@ -107,6 +113,22 @@ public class GrpcParallelstoreStub extends ParallelstoreStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
+      MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.parallelstore.v1beta.Parallelstore/ImportData")
+          .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
+      MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.parallelstore.v1beta.Parallelstore/ExportData")
+          .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -139,6 +161,12 @@ public class GrpcParallelstoreStub extends ParallelstoreStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
+  private final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable;
+  private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
+  private final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -236,6 +264,26 @@ public class GrpcParallelstoreStub extends ParallelstoreStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
+        GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(importDataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
+        GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -291,6 +339,24 @@ public class GrpcParallelstoreStub extends ParallelstoreStub {
         callableFactory.createOperationCallable(
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importDataCallable =
+        callableFactory.createUnaryCallable(
+            importDataTransportSettings, settings.importDataSettings(), clientContext);
+    this.importDataOperationCallable =
+        callableFactory.createOperationCallable(
+            importDataTransportSettings,
+            settings.importDataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportDataCallable =
+        callableFactory.createUnaryCallable(
+            exportDataTransportSettings, settings.exportDataSettings(), clientContext);
+    this.exportDataOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDataTransportSettings,
+            settings.exportDataOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -358,6 +424,28 @@ public class GrpcParallelstoreStub extends ParallelstoreStub {
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
+    return importDataCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
+      importDataOperationCallable() {
+    return importDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return exportDataCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
+      exportDataOperationCallable() {
+    return exportDataOperationCallable;
   }
 
   @Override

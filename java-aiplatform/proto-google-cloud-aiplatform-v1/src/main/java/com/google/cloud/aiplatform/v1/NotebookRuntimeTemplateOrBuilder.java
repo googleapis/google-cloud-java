@@ -28,10 +28,10 @@ public interface NotebookRuntimeTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the NotebookRuntimeTemplate.
+   * The resource name of the NotebookRuntimeTemplate.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -40,10 +40,10 @@ public interface NotebookRuntimeTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the NotebookRuntimeTemplate.
+   * The resource name of the NotebookRuntimeTemplate.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
