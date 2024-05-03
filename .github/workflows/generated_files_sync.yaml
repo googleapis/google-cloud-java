@@ -21,33 +21,24 @@ on:
 name: generation diff
 env:
   library_generation_image_tag: 2.40.0
-  repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: setup docker environment
-      shell: bash
-      run: |
-        # we create a volume pointing to `pwd` (google-cloud-java) that will
-        # be referenced by the container and its children
-        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
-          docker volume rm repo-google-cloud-java
-        fi
-        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: Generate root pom.xml file
       shell: bash
       run: |
-        docker run --rm \
-          ${repo_volumes} \
-          -v /tmp:/tmp \
-          -v /var/run/docker.sock:/var/run/docker.sock \
-          -e "RUNNING_IN_DOCKER=true" \
-          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+        docker run \
+          --rm \
+          -u "$(id -u):$(id -g)" \
+          -v "$(pwd):/workspace" \
+          --entrypoint python \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          python /src/cli/generate_monorepo_root_pom.py generate --repository-path=/workspace/google-cloud-java
+          /src/cli/generate_monorepo_root_pom.py \
+          generate \
+          --repository-path=/workspace
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
@@ -56,26 +47,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: setup docker environment
-      shell: bash
-      run: |
-        # we create a volume pointing to `pwd` (google-cloud-java) that will
-        # be referenced by the container and its children
-        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
-          docker volume rm repo-google-cloud-java
-        fi
-        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: Generate gapic-libraries-bom/pom.xml
       shell: bash
       run: |
-        docker run --rm \
-          ${repo_volumes} \
-          -v /tmp:/tmp \
-          -v /var/run/docker.sock:/var/run/docker.sock \
-          -e "RUNNING_IN_DOCKER=true" \
-          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+        docker run \
+          --rm \
+          -u "$(id -u):$(id -g)" \
+          -v "$(pwd):/workspace" \
+          --entrypoint python \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          python /src/cli/generate_monorepo_gapic_bom.py generate --repository-path=/workspace/google-cloud-java --versions-file=/workspace/google-cloud-java/versions.txt
+          /src/cli/generate_monorepo_gapic_bom.py \
+          generate \
+          --repository-path=/workspace \
+          --versions-file=/workspace/versions.txt
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
