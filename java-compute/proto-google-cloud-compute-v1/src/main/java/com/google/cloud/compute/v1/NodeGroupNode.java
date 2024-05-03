@@ -1164,6 +1164,60 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         : totalResources_;
   }
 
+  public static final int UPCOMING_MAINTENANCE_FIELD_NUMBER = 227348592;
+  private com.google.cloud.compute.v1.UpcomingMaintenance upcomingMaintenance_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpcomingMaintenance() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance() {
+    return upcomingMaintenance_ == null
+        ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
+        : upcomingMaintenance_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The information about an upcoming maintenance event.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder
+      getUpcomingMaintenanceOrBuilder() {
+    return upcomingMaintenance_ == null
+        ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
+        : upcomingMaintenance_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1198,6 +1252,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(208179593, getServerBinding());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(227348592, getUpcomingMaintenance());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247727959, cpuOvercommitType_);
@@ -1255,6 +1312,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(208179593, getServerBinding());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              227348592, getUpcomingMaintenance());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -1335,6 +1397,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     if (hasTotalResources()) {
       if (!getTotalResources().equals(other.getTotalResources())) return false;
     }
+    if (hasUpcomingMaintenance() != other.hasUpcomingMaintenance()) return false;
+    if (hasUpcomingMaintenance()) {
+      if (!getUpcomingMaintenance().equals(other.getUpcomingMaintenance())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1397,6 +1463,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     if (hasTotalResources()) {
       hash = (37 * hash) + TOTAL_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getTotalResources().hashCode();
+    }
+    if (hasUpcomingMaintenance()) {
+      hash = (37 * hash) + UPCOMING_MAINTENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpcomingMaintenance().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1543,6 +1613,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         getInstanceConsumptionDataFieldBuilder();
         getServerBindingFieldBuilder();
         getTotalResourcesFieldBuilder();
+        getUpcomingMaintenanceFieldBuilder();
       }
     }
 
@@ -1592,6 +1663,11 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (totalResourcesBuilder_ != null) {
         totalResourcesBuilder_.dispose();
         totalResourcesBuilder_ = null;
+      }
+      upcomingMaintenance_ = null;
+      if (upcomingMaintenanceBuilder_ != null) {
+        upcomingMaintenanceBuilder_.dispose();
+        upcomingMaintenanceBuilder_ = null;
       }
       return this;
     }
@@ -1706,6 +1782,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         result.totalResources_ =
             totalResourcesBuilder_ == null ? totalResources_ : totalResourcesBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.upcomingMaintenance_ =
+            upcomingMaintenanceBuilder_ == null
+                ? upcomingMaintenance_
+                : upcomingMaintenanceBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1883,6 +1966,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTotalResources()) {
         mergeTotalResources(other.getTotalResources());
       }
+      if (other.hasUpcomingMaintenance()) {
+        mergeUpcomingMaintenance(other.getUpcomingMaintenance());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1967,6 +2053,13 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 1665436746
+            case 1818788738:
+              {
+                input.readMessage(
+                    getUpcomingMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1818788738
             case 1981823674:
               {
                 cpuOvercommitType_ = input.readStringRequireUtf8();
@@ -4574,6 +4667,203 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         totalResources_ = null;
       }
       return totalResourcesBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.UpcomingMaintenance upcomingMaintenance_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.UpcomingMaintenance,
+            com.google.cloud.compute.v1.UpcomingMaintenance.Builder,
+            com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder>
+        upcomingMaintenanceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     *
+     * @return Whether the upcomingMaintenance field is set.
+     */
+    public boolean hasUpcomingMaintenance() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     *
+     * @return The upcomingMaintenance.
+     */
+    public com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance() {
+      if (upcomingMaintenanceBuilder_ == null) {
+        return upcomingMaintenance_ == null
+            ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
+            : upcomingMaintenance_;
+      } else {
+        return upcomingMaintenanceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public Builder setUpcomingMaintenance(com.google.cloud.compute.v1.UpcomingMaintenance value) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upcomingMaintenance_ = value;
+      } else {
+        upcomingMaintenanceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public Builder setUpcomingMaintenance(
+        com.google.cloud.compute.v1.UpcomingMaintenance.Builder builderForValue) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        upcomingMaintenance_ = builderForValue.build();
+      } else {
+        upcomingMaintenanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public Builder mergeUpcomingMaintenance(com.google.cloud.compute.v1.UpcomingMaintenance value) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && upcomingMaintenance_ != null
+            && upcomingMaintenance_
+                != com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()) {
+          getUpcomingMaintenanceBuilder().mergeFrom(value);
+        } else {
+          upcomingMaintenance_ = value;
+        }
+      } else {
+        upcomingMaintenanceBuilder_.mergeFrom(value);
+      }
+      if (upcomingMaintenance_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public Builder clearUpcomingMaintenance() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      upcomingMaintenance_ = null;
+      if (upcomingMaintenanceBuilder_ != null) {
+        upcomingMaintenanceBuilder_.dispose();
+        upcomingMaintenanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.UpcomingMaintenance.Builder getUpcomingMaintenanceBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getUpcomingMaintenanceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder
+        getUpcomingMaintenanceOrBuilder() {
+      if (upcomingMaintenanceBuilder_ != null) {
+        return upcomingMaintenanceBuilder_.getMessageOrBuilder();
+      } else {
+        return upcomingMaintenance_ == null
+            ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
+            : upcomingMaintenance_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The information about an upcoming maintenance event.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.UpcomingMaintenance,
+            com.google.cloud.compute.v1.UpcomingMaintenance.Builder,
+            com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder>
+        getUpcomingMaintenanceFieldBuilder() {
+      if (upcomingMaintenanceBuilder_ == null) {
+        upcomingMaintenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.UpcomingMaintenance,
+                com.google.cloud.compute.v1.UpcomingMaintenance.Builder,
+                com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder>(
+                getUpcomingMaintenance(), getParentForChildren(), isClean());
+        upcomingMaintenance_ = null;
+      }
+      return upcomingMaintenanceBuilder_;
     }
 
     @java.lang.Override

@@ -43,7 +43,10 @@
     },
     {
       "fileMatch": [
-        "README.md"
+        "java-dns/README.md",
+        "java-grafeas/README.md",
+        "java-notification/README.md",
+        "java-vertexai/README.md"
       ],
       "matchStrings": [
         "<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"

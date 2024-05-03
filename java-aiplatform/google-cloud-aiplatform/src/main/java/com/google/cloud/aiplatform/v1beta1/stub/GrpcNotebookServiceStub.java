@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookExecutionJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookRuntimeTemplatesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.NotebookServiceClient.ListNotebookRuntimesPagedResponse;
 
@@ -33,15 +34,20 @@ import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeOperationMetadat
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.GetNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.GetNotebookRuntimeTemplateRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimeTemplatesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimeTemplatesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListNotebookRuntimesResponse;
+import com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob;
 import com.google.cloud.aiplatform.v1beta1.NotebookRuntime;
 import com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeOperationMetadata;
@@ -193,6 +199,43 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobMethodDescriptor =
+          MethodDescriptor.<GetNotebookExecutionJobRequest, NotebookExecutionJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.NotebookService/GetNotebookExecutionJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNotebookExecutionJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NotebookExecutionJob.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsMethodDescriptor =
+          MethodDescriptor
+              .<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.NotebookService/ListNotebookExecutionJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNotebookExecutionJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNotebookExecutionJobsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobMethodDescriptor =
+          MethodDescriptor.<DeleteNotebookExecutionJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.NotebookService/DeleteNotebookExecutionJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNotebookExecutionJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -287,6 +330,17 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           StartNotebookRuntimeResponse,
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationCallable;
+  private final UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobCallable;
+  private final UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsCallable;
+  private final UnaryCallable<
+          ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsPagedCallable;
+  private final UnaryCallable<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobCallable;
+  private final OperationCallable<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -452,6 +506,40 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+        getNotebookExecutionJobTransportSettings =
+            GrpcCallSettings.<GetNotebookExecutionJobRequest, NotebookExecutionJob>newBuilder()
+                .setMethodDescriptor(getNotebookExecutionJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+        listNotebookExecutionJobsTransportSettings =
+            GrpcCallSettings
+                .<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>newBuilder()
+                .setMethodDescriptor(listNotebookExecutionJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteNotebookExecutionJobRequest, Operation>
+        deleteNotebookExecutionJobTransportSettings =
+            GrpcCallSettings.<DeleteNotebookExecutionJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteNotebookExecutionJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -600,6 +688,32 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.startNotebookRuntimeOperationSettings(),
             clientContext,
             operationsStub);
+    this.getNotebookExecutionJobCallable =
+        callableFactory.createUnaryCallable(
+            getNotebookExecutionJobTransportSettings,
+            settings.getNotebookExecutionJobSettings(),
+            clientContext);
+    this.listNotebookExecutionJobsCallable =
+        callableFactory.createUnaryCallable(
+            listNotebookExecutionJobsTransportSettings,
+            settings.listNotebookExecutionJobsSettings(),
+            clientContext);
+    this.listNotebookExecutionJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listNotebookExecutionJobsTransportSettings,
+            settings.listNotebookExecutionJobsSettings(),
+            clientContext);
+    this.deleteNotebookExecutionJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteNotebookExecutionJobTransportSettings,
+            settings.deleteNotebookExecutionJobSettings(),
+            clientContext);
+    this.deleteNotebookExecutionJobOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNotebookExecutionJobTransportSettings,
+            settings.deleteNotebookExecutionJobOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -741,6 +855,36 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationCallable() {
     return startNotebookRuntimeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>
+      getNotebookExecutionJobCallable() {
+    return getNotebookExecutionJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsResponse>
+      listNotebookExecutionJobsCallable() {
+    return listNotebookExecutionJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNotebookExecutionJobsRequest, ListNotebookExecutionJobsPagedResponse>
+      listNotebookExecutionJobsPagedCallable() {
+    return listNotebookExecutionJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteNotebookExecutionJobRequest, Operation>
+      deleteNotebookExecutionJobCallable() {
+    return deleteNotebookExecutionJobCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNotebookExecutionJobRequest, Empty, DeleteOperationMetadata>
+      deleteNotebookExecutionJobOperationCallable() {
+    return deleteNotebookExecutionJobOperationCallable;
   }
 
   @Override

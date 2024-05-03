@@ -46,6 +46,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     accessPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     network_ = "";
     reservedIpRange_ = "";
+    effectiveReservedIpRange_ = "";
   }
 
   @java.lang.Override
@@ -915,7 +916,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Contains the id of allocated IP address range
+   * Optional. Immutable. Contains the id of the allocated IP address range
    * associated with the private service access connection for example,
    * "test-default" associated with IP range 10.0.0.0/29. If no range id is
    * provided all ranges will be considered.
@@ -943,7 +944,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Contains the id of allocated IP address range
+   * Optional. Immutable. Contains the id of the allocated IP address range
    * associated with the private service access connection for example,
    * "test-default" associated with IP range 10.0.0.0/29. If no range id is
    * provided all ranges will be considered.
@@ -962,6 +963,69 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       reservedIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EFFECTIVE_RESERVED_IP_RANGE_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object effectiveReservedIpRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Contains the id of the allocated IP address range
+   * associated with the private service access connection for example,
+   * "test-default" associated with IP range 10.0.0.0/29. This field is
+   * populated by the service and and contains the value currently used by the
+   * service.
+   * </pre>
+   *
+   * <code>
+   * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The effectiveReservedIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getEffectiveReservedIpRange() {
+    java.lang.Object ref = effectiveReservedIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      effectiveReservedIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Contains the id of the allocated IP address range
+   * associated with the private service access connection for example,
+   * "test-default" associated with IP range 10.0.0.0/29. This field is
+   * populated by the service and and contains the value currently used by the
+   * service.
+   * </pre>
+   *
+   * <code>
+   * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for effectiveReservedIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEffectiveReservedIpRangeBytes() {
+    java.lang.Object ref = effectiveReservedIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      effectiveReservedIpRange_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1014,6 +1078,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, reservedIpRange_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectiveReservedIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, effectiveReservedIpRange_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1070,6 +1137,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, reservedIpRange_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectiveReservedIpRange_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(14, effectiveReservedIpRange_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1103,6 +1174,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAccessPointsList().equals(other.getAccessPointsList())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
+    if (!getEffectiveReservedIpRange().equals(other.getEffectiveReservedIpRange())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1144,6 +1216,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + RESERVED_IP_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getReservedIpRange().hashCode();
+    hash = (37 * hash) + EFFECTIVE_RESERVED_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getEffectiveReservedIpRange().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1334,6 +1408,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       accessPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       network_ = "";
       reservedIpRange_ = "";
+      effectiveReservedIpRange_ = "";
       return this;
     }
 
@@ -1407,6 +1482,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.reservedIpRange_ = reservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.effectiveReservedIpRange_ = effectiveReservedIpRange_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1503,6 +1581,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.getReservedIpRange().isEmpty()) {
         reservedIpRange_ = other.reservedIpRange_;
         bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getEffectiveReservedIpRange().isEmpty()) {
+        effectiveReservedIpRange_ = other.effectiveReservedIpRange_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1604,6 +1687,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 98
+            case 114:
+              {
+                effectiveReservedIpRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3133,7 +3222,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Contains the id of allocated IP address range
+     * Optional. Immutable. Contains the id of the allocated IP address range
      * associated with the private service access connection for example,
      * "test-default" associated with IP range 10.0.0.0/29. If no range id is
      * provided all ranges will be considered.
@@ -3160,7 +3249,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Contains the id of allocated IP address range
+     * Optional. Immutable. Contains the id of the allocated IP address range
      * associated with the private service access connection for example,
      * "test-default" associated with IP range 10.0.0.0/29. If no range id is
      * provided all ranges will be considered.
@@ -3187,7 +3276,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Contains the id of allocated IP address range
+     * Optional. Immutable. Contains the id of the allocated IP address range
      * associated with the private service access connection for example,
      * "test-default" associated with IP range 10.0.0.0/29. If no range id is
      * provided all ranges will be considered.
@@ -3213,7 +3302,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Contains the id of allocated IP address range
+     * Optional. Immutable. Contains the id of the allocated IP address range
      * associated with the private service access connection for example,
      * "test-default" associated with IP range 10.0.0.0/29. If no range id is
      * provided all ranges will be considered.
@@ -3235,7 +3324,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Contains the id of allocated IP address range
+     * Optional. Immutable. Contains the id of the allocated IP address range
      * associated with the private service access connection for example,
      * "test-default" associated with IP range 10.0.0.0/29. If no range id is
      * provided all ranges will be considered.
@@ -3255,6 +3344,142 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       reservedIpRange_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object effectiveReservedIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Contains the id of the allocated IP address range
+     * associated with the private service access connection for example,
+     * "test-default" associated with IP range 10.0.0.0/29. This field is
+     * populated by the service and and contains the value currently used by the
+     * service.
+     * </pre>
+     *
+     * <code>
+     * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The effectiveReservedIpRange.
+     */
+    public java.lang.String getEffectiveReservedIpRange() {
+      java.lang.Object ref = effectiveReservedIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveReservedIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Contains the id of the allocated IP address range
+     * associated with the private service access connection for example,
+     * "test-default" associated with IP range 10.0.0.0/29. This field is
+     * populated by the service and and contains the value currently used by the
+     * service.
+     * </pre>
+     *
+     * <code>
+     * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for effectiveReservedIpRange.
+     */
+    public com.google.protobuf.ByteString getEffectiveReservedIpRangeBytes() {
+      java.lang.Object ref = effectiveReservedIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveReservedIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Contains the id of the allocated IP address range
+     * associated with the private service access connection for example,
+     * "test-default" associated with IP range 10.0.0.0/29. This field is
+     * populated by the service and and contains the value currently used by the
+     * service.
+     * </pre>
+     *
+     * <code>
+     * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The effectiveReservedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveReservedIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      effectiveReservedIpRange_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Contains the id of the allocated IP address range
+     * associated with the private service access connection for example,
+     * "test-default" associated with IP range 10.0.0.0/29. This field is
+     * populated by the service and and contains the value currently used by the
+     * service.
+     * </pre>
+     *
+     * <code>
+     * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveReservedIpRange() {
+      effectiveReservedIpRange_ = getDefaultInstance().getEffectiveReservedIpRange();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Contains the id of the allocated IP address range
+     * associated with the private service access connection for example,
+     * "test-default" associated with IP range 10.0.0.0/29. This field is
+     * populated by the service and and contains the value currently used by the
+     * service.
+     * </pre>
+     *
+     * <code>
+     * string effective_reserved_ip_range = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for effectiveReservedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveReservedIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      effectiveReservedIpRange_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

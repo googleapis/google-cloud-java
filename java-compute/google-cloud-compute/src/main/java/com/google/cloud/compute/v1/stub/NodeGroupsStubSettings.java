@@ -62,6 +62,7 @@ import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.NodeGroupsScopedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNodeGroupRequest;
+import com.google.cloud.compute.v1.PerformMaintenanceNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
@@ -149,6 +150,10 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
   private final UnaryCallSettings<PatchNodeGroupRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchNodeGroupRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceSettings;
+  private final OperationCallSettings<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationSettings;
   private final UnaryCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetNodeTemplateNodeGroupRequest, Operation>
       setNodeTemplateSettings;
@@ -428,6 +433,18 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -558,6 +575,9 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     listNodesSettings = settingsBuilder.listNodesSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setNodeTemplateSettings = settingsBuilder.setNodeTemplateSettings().build();
     setNodeTemplateOperationSettings = settingsBuilder.setNodeTemplateOperationSettings().build();
@@ -597,6 +617,11 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     private final UnaryCallSettings.Builder<PatchNodeGroupRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchNodeGroupRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceNodeGroupRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceNodeGroupRequest, Operation, Operation>
+        performMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyNodeGroupRequest, Policy>
         setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetNodeTemplateNodeGroupRequest, Operation>
@@ -677,6 +702,8 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
       listNodesSettings = PagedCallSettings.newBuilder(LIST_NODES_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNodeTemplateOperationSettings = OperationCallSettings.newBuilder();
@@ -696,6 +723,7 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
               listSettings,
               listNodesSettings,
               patchSettings,
+              performMaintenanceSettings,
               setIamPolicySettings,
               setNodeTemplateSettings,
               simulateMaintenanceEventSettings,
@@ -721,6 +749,9 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
       listNodesSettings = settings.listNodesSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setNodeTemplateSettings = settings.setNodeTemplateSettings.toBuilder();
       setNodeTemplateOperationSettings = settings.setNodeTemplateOperationSettings.toBuilder();
@@ -741,6 +772,7 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
               listSettings,
               listNodesSettings,
               patchSettings,
+              performMaintenanceSettings,
               setIamPolicySettings,
               setNodeTemplateSettings,
               simulateMaintenanceEventSettings,
@@ -807,6 +839,11 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .performMaintenanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -931,6 +968,31 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PatchNodeGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceNodeGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1100,6 +1162,18 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     public OperationCallSettings.Builder<PatchNodeGroupRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceNodeGroupRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

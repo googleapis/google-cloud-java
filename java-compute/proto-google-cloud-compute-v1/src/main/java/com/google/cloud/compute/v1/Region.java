@@ -543,6 +543,59 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int QUOTA_STATUS_WARNING_FIELD_NUMBER = 302941430;
+  private com.google.cloud.compute.v1.QuotaStatusWarning quotaStatusWarning_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   *
+   * @return Whether the quotaStatusWarning field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuotaStatusWarning() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   *
+   * @return The quotaStatusWarning.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.QuotaStatusWarning getQuotaStatusWarning() {
+    return quotaStatusWarning_ == null
+        ? com.google.cloud.compute.v1.QuotaStatusWarning.getDefaultInstance()
+        : quotaStatusWarning_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder getQuotaStatusWarningOrBuilder() {
+    return quotaStatusWarning_ == null
+        ? com.google.cloud.compute.v1.QuotaStatusWarning.getDefaultInstance()
+        : quotaStatusWarning_;
+  }
+
   public static final int QUOTAS_FIELD_NUMBER = 125341947;
 
   @SuppressWarnings("serial")
@@ -631,7 +684,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -698,7 +751,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -764,7 +817,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSupportsPzs() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -872,7 +925,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(83983214, supportsPzs_);
     }
     for (int i = 0; i < zones_.size(); i++) {
@@ -881,13 +934,16 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < quotas_.size(); i++) {
       output.writeMessage(125341947, quotas_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(302941430, getQuotaStatusWarning());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -915,7 +971,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(83983214, supportsPzs_);
     }
     {
@@ -929,13 +985,18 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < quotas_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(125341947, quotas_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              302941430, getQuotaStatusWarning());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -979,6 +1040,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasQuotaStatusWarning() != other.hasQuotaStatusWarning()) return false;
+    if (hasQuotaStatusWarning()) {
+      if (!getQuotaStatusWarning().equals(other.getQuotaStatusWarning())) return false;
     }
     if (!getQuotasList().equals(other.getQuotasList())) return false;
     if (hasSelfLink() != other.hasSelfLink()) return false;
@@ -1028,6 +1093,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasQuotaStatusWarning()) {
+      hash = (37 * hash) + QUOTA_STATUS_WARNING_FIELD_NUMBER;
+      hash = (53 * hash) + getQuotaStatusWarning().hashCode();
     }
     if (getQuotasCount() > 0) {
       hash = (37 * hash) + QUOTAS_FIELD_NUMBER;
@@ -1189,6 +1258,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDeprecatedFieldBuilder();
+        getQuotaStatusWarningFieldBuilder();
         getQuotasFieldBuilder();
       }
     }
@@ -1207,13 +1277,18 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       id_ = 0L;
       kind_ = "";
       name_ = "";
+      quotaStatusWarning_ = null;
+      if (quotaStatusWarningBuilder_ != null) {
+        quotaStatusWarningBuilder_.dispose();
+        quotaStatusWarningBuilder_ = null;
+      }
       if (quotasBuilder_ == null) {
         quotas_ = java.util.Collections.emptyList();
       } else {
         quotas_ = null;
         quotasBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = "";
       status_ = "";
       supportsPzs_ = false;
@@ -1254,9 +1329,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Region result) {
       if (quotasBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           quotas_ = java.util.Collections.unmodifiableList(quotas_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.quotas_ = quotas_;
       } else {
@@ -1291,19 +1366,26 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.quotaStatusWarning_ =
+            quotaStatusWarningBuilder_ == null
+                ? quotaStatusWarning_
+                : quotaStatusWarningBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.supportsPzs_ = supportsPzs_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.supportsPzs_ = supportsPzs_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         zones_.makeImmutable();
         result.zones_ = zones_;
       }
@@ -1381,11 +1463,14 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasQuotaStatusWarning()) {
+        mergeQuotaStatusWarning(other.getQuotaStatusWarning());
+      }
       if (quotasBuilder_ == null) {
         if (!other.quotas_.isEmpty()) {
           if (quotas_.isEmpty()) {
             quotas_ = other.quotas_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureQuotasIsMutable();
             quotas_.addAll(other.quotas_);
@@ -1398,7 +1483,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             quotasBuilder_.dispose();
             quotasBuilder_ = null;
             quotas_ = other.quotas_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             quotasBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQuotasFieldBuilder()
@@ -1410,12 +1495,12 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasSupportsPzs()) {
@@ -1424,7 +1509,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (!other.zones_.isEmpty()) {
         if (zones_.isEmpty()) {
           zones_ = other.zones_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureZonesIsMutable();
           zones_.addAll(other.zones_);
@@ -1484,7 +1569,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             case 671865712:
               {
                 supportsPzs_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 671865712
             case 928682554:
@@ -1510,9 +1595,16 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1450082194
+            case -1871435854:
+              {
+                input.readMessage(
+                    getQuotaStatusWarningFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -1871435854
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -1522,7 +1614,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -645248918
             case -173855334:
@@ -2284,13 +2376,210 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.QuotaStatusWarning quotaStatusWarning_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.QuotaStatusWarning,
+            com.google.cloud.compute.v1.QuotaStatusWarning.Builder,
+            com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder>
+        quotaStatusWarningBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     *
+     * @return Whether the quotaStatusWarning field is set.
+     */
+    public boolean hasQuotaStatusWarning() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     *
+     * @return The quotaStatusWarning.
+     */
+    public com.google.cloud.compute.v1.QuotaStatusWarning getQuotaStatusWarning() {
+      if (quotaStatusWarningBuilder_ == null) {
+        return quotaStatusWarning_ == null
+            ? com.google.cloud.compute.v1.QuotaStatusWarning.getDefaultInstance()
+            : quotaStatusWarning_;
+      } else {
+        return quotaStatusWarningBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public Builder setQuotaStatusWarning(com.google.cloud.compute.v1.QuotaStatusWarning value) {
+      if (quotaStatusWarningBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        quotaStatusWarning_ = value;
+      } else {
+        quotaStatusWarningBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public Builder setQuotaStatusWarning(
+        com.google.cloud.compute.v1.QuotaStatusWarning.Builder builderForValue) {
+      if (quotaStatusWarningBuilder_ == null) {
+        quotaStatusWarning_ = builderForValue.build();
+      } else {
+        quotaStatusWarningBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public Builder mergeQuotaStatusWarning(com.google.cloud.compute.v1.QuotaStatusWarning value) {
+      if (quotaStatusWarningBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && quotaStatusWarning_ != null
+            && quotaStatusWarning_
+                != com.google.cloud.compute.v1.QuotaStatusWarning.getDefaultInstance()) {
+          getQuotaStatusWarningBuilder().mergeFrom(value);
+        } else {
+          quotaStatusWarning_ = value;
+        }
+      } else {
+        quotaStatusWarningBuilder_.mergeFrom(value);
+      }
+      if (quotaStatusWarning_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public Builder clearQuotaStatusWarning() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      quotaStatusWarning_ = null;
+      if (quotaStatusWarningBuilder_ != null) {
+        quotaStatusWarningBuilder_.dispose();
+        quotaStatusWarningBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.QuotaStatusWarning.Builder getQuotaStatusWarningBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getQuotaStatusWarningFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder
+        getQuotaStatusWarningOrBuilder() {
+      if (quotaStatusWarningBuilder_ != null) {
+        return quotaStatusWarningBuilder_.getMessageOrBuilder();
+      } else {
+        return quotaStatusWarning_ == null
+            ? com.google.cloud.compute.v1.QuotaStatusWarning.getDefaultInstance()
+            : quotaStatusWarning_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.QuotaStatusWarning,
+            com.google.cloud.compute.v1.QuotaStatusWarning.Builder,
+            com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder>
+        getQuotaStatusWarningFieldBuilder() {
+      if (quotaStatusWarningBuilder_ == null) {
+        quotaStatusWarningBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.QuotaStatusWarning,
+                com.google.cloud.compute.v1.QuotaStatusWarning.Builder,
+                com.google.cloud.compute.v1.QuotaStatusWarningOrBuilder>(
+                getQuotaStatusWarning(), getParentForChildren(), isClean());
+        quotaStatusWarning_ = null;
+      }
+      return quotaStatusWarningBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.Quota> quotas_ =
         java.util.Collections.emptyList();
 
     private void ensureQuotasIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         quotas_ = new java.util.ArrayList<com.google.cloud.compute.v1.Quota>(quotas_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2503,7 +2792,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public Builder clearQuotas() {
       if (quotasBuilder_ == null) {
         quotas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         quotasBuilder_.clear();
@@ -2624,7 +2913,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Quota,
                 com.google.cloud.compute.v1.Quota.Builder,
                 com.google.cloud.compute.v1.QuotaOrBuilder>(
-                quotas_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                quotas_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         quotas_ = null;
       }
       return quotasBuilder_;
@@ -2643,7 +2932,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2706,7 +2995,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2723,7 +3012,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2745,7 +3034,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2764,7 +3053,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2830,7 +3119,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2848,7 +3137,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2871,7 +3160,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2890,7 +3179,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSupportsPzs() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2922,7 +3211,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public Builder setSupportsPzs(boolean value) {
 
       supportsPzs_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2938,7 +3227,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportsPzs() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       supportsPzs_ = false;
       onChanged();
       return this;
@@ -2951,7 +3240,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (!zones_.isModifiable()) {
         zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -3031,7 +3320,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3053,7 +3342,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3072,7 +3361,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
       ensureZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3089,7 +3378,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZones() {
       zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -3113,7 +3402,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureZonesIsMutable();
       zones_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

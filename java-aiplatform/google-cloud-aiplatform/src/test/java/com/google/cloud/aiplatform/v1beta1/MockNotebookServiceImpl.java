@@ -271,4 +271,69 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getNotebookExecutionJob(
+      GetNotebookExecutionJobRequest request,
+      StreamObserver<NotebookExecutionJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NotebookExecutionJob) {
+      requests.add(request);
+      responseObserver.onNext(((NotebookExecutionJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNotebookExecutionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NotebookExecutionJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNotebookExecutionJobs(
+      ListNotebookExecutionJobsRequest request,
+      StreamObserver<ListNotebookExecutionJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNotebookExecutionJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNotebookExecutionJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNotebookExecutionJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNotebookExecutionJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteNotebookExecutionJob(
+      DeleteNotebookExecutionJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNotebookExecutionJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

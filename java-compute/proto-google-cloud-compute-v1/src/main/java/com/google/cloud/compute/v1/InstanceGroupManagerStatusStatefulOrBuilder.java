@@ -53,7 +53,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of per-instance configurations on the instance.
+   * [Output Only] Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of per-instance configurations on the instance.
+   * [Output Only] Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>
@@ -82,7 +82,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of per-instance configurations on the instance.
+   * [Output Only] Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>

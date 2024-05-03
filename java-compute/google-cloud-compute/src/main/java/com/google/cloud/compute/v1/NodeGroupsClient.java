@@ -255,6 +255,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Perform maintenance on a subset of nodes in the node group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceNodeGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(String project, String zone, String nodeGroup, NodeGroupsPerformMaintenanceRequest nodeGroupsPerformMaintenanceRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SetIamPolicy</td>
  *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
  *      <td>
@@ -1763,6 +1782,156 @@ public class NodeGroupsClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchNodeGroupRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on a subset of nodes in the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   NodeGroupsPerformMaintenanceRequest nodeGroupsPerformMaintenanceRequestResource =
+   *       NodeGroupsPerformMaintenanceRequest.newBuilder().build();
+   *   Operation response =
+   *       nodeGroupsClient
+   *           .performMaintenanceAsync(
+   *               project, zone, nodeGroup, nodeGroupsPerformMaintenanceRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param nodeGroup Name of the node group scoping this request.
+   * @param nodeGroupsPerformMaintenanceRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      String project,
+      String zone,
+      String nodeGroup,
+      NodeGroupsPerformMaintenanceRequest nodeGroupsPerformMaintenanceRequestResource) {
+    PerformMaintenanceNodeGroupRequest request =
+        PerformMaintenanceNodeGroupRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setNodeGroup(nodeGroup)
+            .setNodeGroupsPerformMaintenanceRequestResource(
+                nodeGroupsPerformMaintenanceRequestResource)
+            .build();
+    return performMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on a subset of nodes in the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   PerformMaintenanceNodeGroupRequest request =
+   *       PerformMaintenanceNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsPerformMaintenanceRequestResource(
+   *               NodeGroupsPerformMaintenanceRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = nodeGroupsClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> performMaintenanceAsync(
+      PerformMaintenanceNodeGroupRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on a subset of nodes in the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   PerformMaintenanceNodeGroupRequest request =
+   *       PerformMaintenanceNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsPerformMaintenanceRequestResource(
+   *               NodeGroupsPerformMaintenanceRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       nodeGroupsClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform maintenance on a subset of nodes in the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   PerformMaintenanceNodeGroupRequest request =
+   *       PerformMaintenanceNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsPerformMaintenanceRequestResource(
+   *               NodeGroupsPerformMaintenanceRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       nodeGroupsClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

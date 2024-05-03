@@ -286,6 +286,7 @@ public class PublicDelegatedPrefixesClientTest {
   public void getTest() throws Exception {
     PublicDelegatedPrefix expectedResponse =
         PublicDelegatedPrefix.newBuilder()
+            .setAllocatablePrefixLength(1649040182)
             .setByoipApiVersion("byoipApiVersion-693290787")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
@@ -294,6 +295,7 @@ public class PublicDelegatedPrefixesClientTest {
             .setIpCidrRange("ipCidrRange-866375486")
             .setIsLiveMigration(true)
             .setKind("kind3292052")
+            .setMode("mode3357091")
             .setName("name3373707")
             .setParentPrefix("parentPrefix975306716")
             .addAllPublicDelegatedSubPrefixs(

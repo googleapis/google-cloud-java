@@ -74,7 +74,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Cloud Storage path to file containing training dataset for
-   * tuning.
+   * tuning. The dataset must be formatted as a JSONL file.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,7 +98,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Cloud Storage path to file containing training dataset for
-   * tuning.
+   * tuning. The dataset must be formatted as a JSONL file.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,7 +127,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning.
+   * tuning. The dataset must be formatted as a JSONL file.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -151,7 +151,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning.
+   * tuning. The dataset must be formatted as a JSONL file.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -644,7 +644,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Cloud Storage path to file containing training dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -667,7 +667,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Cloud Storage path to file containing training dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -690,7 +690,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Cloud Storage path to file containing training dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -712,7 +712,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Cloud Storage path to file containing training dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -730,7 +730,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Cloud Storage path to file containing training dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -755,7 +755,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -778,7 +778,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -801,7 +801,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -823,7 +823,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -841,7 +841,7 @@ public final class SupervisedTuningSpec extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Cloud Storage path to file containing validation dataset for
-     * tuning.
+     * tuning. The dataset must be formatted as a JSONL file.
      * </pre>
      *
      * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

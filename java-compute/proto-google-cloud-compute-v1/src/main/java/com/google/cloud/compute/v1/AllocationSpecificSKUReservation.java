@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This reservation type allows to pre allocate specific instance configuration. Next ID: 6
+ * This reservation type allows to pre allocate specific instance configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -522,7 +522,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * This reservation type allows to pre allocate specific instance configuration. Next ID: 6
+   * This reservation type allows to pre allocate specific instance configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
