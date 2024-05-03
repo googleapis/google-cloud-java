@@ -223,6 +223,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -284,6 +285,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,6 +347,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -416,6 +419,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -487,6 +491,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -516,6 +521,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -565,6 +571,7 @@ public class ConfigClientHttpJsonTest {
               .setTfVersionConstraint("tfVersionConstraint-1530231677")
               .setTfVersion("tfVersion182968838")
               .setQuotaValidation(QuotaValidation.forNumber(0))
+              .putAllAnnotations(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeploymentAsync(deployment, updateMask).get();
@@ -595,6 +602,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -661,6 +669,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1419,6 +1428,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1485,6 +1495,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1551,6 +1562,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1619,6 +1631,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1780,6 +1793,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1843,6 +1858,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1906,6 +1923,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1962,6 +1981,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2118,6 +2139,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2179,6 +2202,8 @@ public class ConfigClientHttpJsonTest {
             .setErrorLogs("errorLogs329304023")
             .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
             .setLogs("logs3327407")
+            .setTfVersion("tfVersion182968838")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.37.0</version>
+      <version>26.38.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler</artifactId>
-  <version>2.41.0</version>
+  <version>2.42.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-scheduler:2.41.0'
+implementation 'com.google.cloud:google-cloud-scheduler:2.42.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "2.41.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "2.42.0"
 ```
 <!-- {x-version-update-end} -->
 

@@ -15,20 +15,18 @@
 # downstream client libraries before they are released.
 name: Hermetic library generation upon generation config change through pull requests
 on:
-  workflow_dispatch:
-#  pull_request:
-#    paths:
-#    - "generation_config.yaml"
+  pull_request:
 
 jobs:
   library_generation:
     runs-on: ubuntu-latest
     env:
-      library_generation_image_tag: 2.39.0
+      library_generation_image_tag: 2.40.0
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: Generate changed libraries
       shell: bash
       run: |

@@ -459,7 +459,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+   * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -474,7 +474,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+   * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -491,7 +491,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+   * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2260,7 +2260,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2274,7 +2274,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2294,7 +2294,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2316,7 +2316,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2336,7 +2336,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2363,7 +2363,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2382,7 +2382,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2396,7 +2396,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
@@ -2414,7 +2414,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+     * Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>

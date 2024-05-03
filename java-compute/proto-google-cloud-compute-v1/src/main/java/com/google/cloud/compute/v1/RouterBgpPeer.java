@@ -43,13 +43,17 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     advertisedIpRanges_ = java.util.Collections.emptyList();
     customLearnedIpRanges_ = java.util.Collections.emptyList();
     enable_ = "";
+    exportPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    importPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
     interfaceName_ = "";
     ipAddress_ = "";
+    ipv4NexthopAddress_ = "";
     ipv6NexthopAddress_ = "";
     managementType_ = "";
     md5AuthenticationKeyName_ = "";
     name_ = "";
     peerIpAddress_ = "";
+    peerIpv4NexthopAddress_ = "";
     peerIpv6NexthopAddress_ = "";
     routerApplianceInstance_ = "";
   }
@@ -1106,13 +1110,46 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENABLE_IPV4_FIELD_NUMBER = 181467937;
+  private boolean enableIpv4_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return Whether the enableIpv4 field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableIpv4() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv4 = 181467937;</code>
+   *
+   * @return The enableIpv4.
+   */
+  @java.lang.Override
+  public boolean getEnableIpv4() {
+    return enableIpv4_;
+  }
+
   public static final int ENABLE_IPV6_FIELD_NUMBER = 181467939;
   private boolean enableIpv6_ = false;
   /**
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -1121,13 +1158,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnableIpv6() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -1137,6 +1174,134 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableIpv6() {
     return enableIpv6_;
+  }
+
+  public static final int EXPORT_POLICIES_FIELD_NUMBER = 134084987;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList exportPolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @return A list containing the exportPolicies.
+   */
+  public com.google.protobuf.ProtocolStringList getExportPoliciesList() {
+    return exportPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @return The count of exportPolicies.
+   */
+  public int getExportPoliciesCount() {
+    return exportPolicies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The exportPolicies at the given index.
+   */
+  public java.lang.String getExportPolicies(int index) {
+    return exportPolicies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string export_policies = 134084987;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the exportPolicies at the given index.
+   */
+  public com.google.protobuf.ByteString getExportPoliciesBytes(int index) {
+    return exportPolicies_.getByteString(index);
+  }
+
+  public static final int IMPORT_POLICIES_FIELD_NUMBER = 451147946;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList importPolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @return A list containing the importPolicies.
+   */
+  public com.google.protobuf.ProtocolStringList getImportPoliciesList() {
+    return importPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @return The count of importPolicies.
+   */
+  public int getImportPoliciesCount() {
+    return importPolicies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The importPolicies at the given index.
+   */
+  public java.lang.String getImportPolicies(int index) {
+    return importPolicies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * </pre>
+   *
+   * <code>repeated string import_policies = 451147946;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the importPolicies at the given index.
+   */
+  public com.google.protobuf.ByteString getImportPoliciesBytes(int index) {
+    return importPolicies_.getByteString(index);
   }
 
   public static final int INTERFACE_NAME_FIELD_NUMBER = 437854673;
@@ -1156,7 +1321,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInterfaceName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1213,7 +1378,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -1222,13 +1387,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpAddress() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -1251,7 +1416,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the interface inside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -1265,6 +1430,72 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IPV4_NEXTHOP_ADDRESS_FIELD_NUMBER = 5703377;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv4NexthopAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return Whether the ipv4NexthopAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv4NexthopAddress() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The ipv4NexthopAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv4NexthopAddress() {
+    java.lang.Object ref = ipv4NexthopAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv4NexthopAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the interface inside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string ipv4_nexthop_address = 5703377;</code>
+   *
+   * @return The bytes for ipv4NexthopAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv4NexthopAddressBytes() {
+    java.lang.Object ref = ipv4NexthopAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv4NexthopAddress_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1288,7 +1519,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpv6NexthopAddress() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1355,7 +1586,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasManagementType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1423,7 +1654,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMd5AuthenticationKeyName() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1489,7 +1720,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1553,7 +1784,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerAsn() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1579,7 +1810,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1588,13 +1819,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1617,7 +1848,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * IP address of the BGP interface outside Google Cloud Platform.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1631,6 +1862,72 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       peerIpAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PEER_IPV4_NEXTHOP_ADDRESS_FIELD_NUMBER = 469221774;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerIpv4NexthopAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return Whether the peerIpv4NexthopAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasPeerIpv4NexthopAddress() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The peerIpv4NexthopAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getPeerIpv4NexthopAddress() {
+    java.lang.Object ref = peerIpv4NexthopAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      peerIpv4NexthopAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv4 address of the BGP interface outside Google Cloud Platform.
+   * </pre>
+   *
+   * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+   *
+   * @return The bytes for peerIpv4NexthopAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPeerIpv4NexthopAddressBytes() {
+    java.lang.Object ref = peerIpv4NexthopAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      peerIpv4NexthopAddress_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1654,7 +1951,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpv6NexthopAddress() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1720,7 +2017,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouterApplianceInstance() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -1786,35 +2083,45 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5703377, ipv4NexthopAddress_);
     }
     for (int i = 0; i < advertisedGroups_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 21065526, advertisedGroups_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27968211, ipv6NexthopAddress_);
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeUInt32(69573151, peerAsn_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    for (int i = 0; i < exportPolicies_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 134084987, exportPolicies_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 173703606, managementType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(181467937, enableIpv4_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(181467939, enableIpv6_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 281075345, md5AuthenticationKeyName_);
     }
@@ -1827,20 +2134,28 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(330412356, customLearnedRoutePriority_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    for (int i = 0; i < importPolicies_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 451147946, importPolicies_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 468312989, routerApplianceInstance_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 469221774, peerIpv4NexthopAddress_);
     }
     for (int i = 0; i < customLearnedIpRanges_.size(); i++) {
       output.writeMessage(481363012, customLearnedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 491486608, peerIpv6NexthopAddress_);
     }
@@ -1856,8 +2171,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(5703377, ipv4NexthopAddress_);
     }
     {
       int dataSize = 0;
@@ -1867,7 +2186,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getAdvertisedGroupsList().size();
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(27968211, ipv6NexthopAddress_);
     }
@@ -1876,13 +2195,24 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(69573151, peerAsn_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    {
+      int dataSize = 0;
+      for (int i = 0; i < exportPolicies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(exportPolicies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getExportPoliciesList().size();
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173703606, managementType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(181467937, enableIpv4_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(181467939, enableIpv6_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1890,10 +2220,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               281075345, md5AuthenticationKeyName_);
@@ -1909,23 +2239,36 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               330412356, customLearnedRoutePriority_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    {
+      int dataSize = 0;
+      for (int i = 0; i < importPolicies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(importPolicies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getImportPoliciesList().size();
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               468312989, routerApplianceInstance_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              469221774, peerIpv4NexthopAddress_);
     }
     for (int i = 0; i < customLearnedIpRanges_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               481363012, customLearnedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               491486608, peerIpv6NexthopAddress_);
@@ -1969,10 +2312,16 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasEnable()) {
       if (!getEnable().equals(other.getEnable())) return false;
     }
+    if (hasEnableIpv4() != other.hasEnableIpv4()) return false;
+    if (hasEnableIpv4()) {
+      if (getEnableIpv4() != other.getEnableIpv4()) return false;
+    }
     if (hasEnableIpv6() != other.hasEnableIpv6()) return false;
     if (hasEnableIpv6()) {
       if (getEnableIpv6() != other.getEnableIpv6()) return false;
     }
+    if (!getExportPoliciesList().equals(other.getExportPoliciesList())) return false;
+    if (!getImportPoliciesList().equals(other.getImportPoliciesList())) return false;
     if (hasInterfaceName() != other.hasInterfaceName()) return false;
     if (hasInterfaceName()) {
       if (!getInterfaceName().equals(other.getInterfaceName())) return false;
@@ -1980,6 +2329,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasIpv4NexthopAddress() != other.hasIpv4NexthopAddress()) return false;
+    if (hasIpv4NexthopAddress()) {
+      if (!getIpv4NexthopAddress().equals(other.getIpv4NexthopAddress())) return false;
     }
     if (hasIpv6NexthopAddress() != other.hasIpv6NexthopAddress()) return false;
     if (hasIpv6NexthopAddress()) {
@@ -2004,6 +2357,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasPeerIpAddress() != other.hasPeerIpAddress()) return false;
     if (hasPeerIpAddress()) {
       if (!getPeerIpAddress().equals(other.getPeerIpAddress())) return false;
+    }
+    if (hasPeerIpv4NexthopAddress() != other.hasPeerIpv4NexthopAddress()) return false;
+    if (hasPeerIpv4NexthopAddress()) {
+      if (!getPeerIpv4NexthopAddress().equals(other.getPeerIpv4NexthopAddress())) return false;
     }
     if (hasPeerIpv6NexthopAddress() != other.hasPeerIpv6NexthopAddress()) return false;
     if (hasPeerIpv6NexthopAddress()) {
@@ -2056,9 +2413,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
       hash = (53 * hash) + getEnable().hashCode();
     }
+    if (hasEnableIpv4()) {
+      hash = (37 * hash) + ENABLE_IPV4_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIpv4());
+    }
     if (hasEnableIpv6()) {
       hash = (37 * hash) + ENABLE_IPV6_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIpv6());
+    }
+    if (getExportPoliciesCount() > 0) {
+      hash = (37 * hash) + EXPORT_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + getExportPoliciesList().hashCode();
+    }
+    if (getImportPoliciesCount() > 0) {
+      hash = (37 * hash) + IMPORT_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + getImportPoliciesList().hashCode();
     }
     if (hasInterfaceName()) {
       hash = (37 * hash) + INTERFACE_NAME_FIELD_NUMBER;
@@ -2067,6 +2436,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasIpv4NexthopAddress()) {
+      hash = (37 * hash) + IPV4_NEXTHOP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv4NexthopAddress().hashCode();
     }
     if (hasIpv6NexthopAddress()) {
       hash = (37 * hash) + IPV6_NEXTHOP_ADDRESS_FIELD_NUMBER;
@@ -2091,6 +2464,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasPeerIpAddress()) {
       hash = (37 * hash) + PEER_IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getPeerIpAddress().hashCode();
+    }
+    if (hasPeerIpv4NexthopAddress()) {
+      hash = (37 * hash) + PEER_IPV4_NEXTHOP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerIpv4NexthopAddress().hashCode();
     }
     if (hasPeerIpv6NexthopAddress()) {
       hash = (37 * hash) + PEER_IPV6_NEXTHOP_ADDRESS_FIELD_NUMBER;
@@ -2273,15 +2650,20 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000020);
       customLearnedRoutePriority_ = 0;
       enable_ = "";
+      enableIpv4_ = false;
       enableIpv6_ = false;
+      exportPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      importPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       interfaceName_ = "";
       ipAddress_ = "";
+      ipv4NexthopAddress_ = "";
       ipv6NexthopAddress_ = "";
       managementType_ = "";
       md5AuthenticationKeyName_ = "";
       name_ = "";
       peerAsn_ = 0;
       peerIpAddress_ = "";
+      peerIpv4NexthopAddress_ = "";
       peerIpv6NexthopAddress_ = "";
       routerApplianceInstance_ = "";
       return this;
@@ -2368,48 +2750,68 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.enableIpv6_ = enableIpv6_;
+        result.enableIpv4_ = enableIpv4_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.interfaceName_ = interfaceName_;
+        result.enableIpv6_ = enableIpv6_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.ipAddress_ = ipAddress_;
-        to_bitField0_ |= 0x00000080;
+        exportPolicies_.makeImmutable();
+        result.exportPolicies_ = exportPolicies_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.ipv6NexthopAddress_ = ipv6NexthopAddress_;
-        to_bitField0_ |= 0x00000100;
+        importPolicies_.makeImmutable();
+        result.importPolicies_ = importPolicies_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.managementType_ = managementType_;
-        to_bitField0_ |= 0x00000200;
+        result.interfaceName_ = interfaceName_;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.md5AuthenticationKeyName_ = md5AuthenticationKeyName_;
-        to_bitField0_ |= 0x00000400;
+        result.ipAddress_ = ipAddress_;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00000800;
+        result.ipv4NexthopAddress_ = ipv4NexthopAddress_;
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.peerAsn_ = peerAsn_;
-        to_bitField0_ |= 0x00001000;
+        result.ipv6NexthopAddress_ = ipv6NexthopAddress_;
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.peerIpAddress_ = peerIpAddress_;
-        to_bitField0_ |= 0x00002000;
+        result.managementType_ = managementType_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
-        to_bitField0_ |= 0x00004000;
+        result.md5AuthenticationKeyName_ = md5AuthenticationKeyName_;
+        to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.routerApplianceInstance_ = routerApplianceInstance_;
+        result.name_ = name_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.peerAsn_ = peerAsn_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.peerIpAddress_ = peerIpAddress_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.peerIpv4NexthopAddress_ = peerIpv4NexthopAddress_;
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.routerApplianceInstance_ = routerApplianceInstance_;
+        to_bitField0_ |= 0x00040000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2542,37 +2944,65 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasEnableIpv4()) {
+        setEnableIpv4(other.getEnableIpv4());
+      }
       if (other.hasEnableIpv6()) {
         setEnableIpv6(other.getEnableIpv6());
       }
+      if (!other.exportPolicies_.isEmpty()) {
+        if (exportPolicies_.isEmpty()) {
+          exportPolicies_ = other.exportPolicies_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureExportPoliciesIsMutable();
+          exportPolicies_.addAll(other.exportPolicies_);
+        }
+        onChanged();
+      }
+      if (!other.importPolicies_.isEmpty()) {
+        if (importPolicies_.isEmpty()) {
+          importPolicies_ = other.importPolicies_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureImportPoliciesIsMutable();
+          importPolicies_.addAll(other.importPolicies_);
+        }
+        onChanged();
+      }
       if (other.hasInterfaceName()) {
         interfaceName_ = other.interfaceName_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasIpAddress()) {
         ipAddress_ = other.ipAddress_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (other.hasIpv4NexthopAddress()) {
+        ipv4NexthopAddress_ = other.ipv4NexthopAddress_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasIpv6NexthopAddress()) {
         ipv6NexthopAddress_ = other.ipv6NexthopAddress_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasManagementType()) {
         managementType_ = other.managementType_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasMd5AuthenticationKeyName()) {
         md5AuthenticationKeyName_ = other.md5AuthenticationKeyName_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasPeerAsn()) {
@@ -2580,17 +3010,22 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPeerIpAddress()) {
         peerIpAddress_ = other.peerIpAddress_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      if (other.hasPeerIpv4NexthopAddress()) {
+        peerIpv4NexthopAddress_ = other.peerIpv4NexthopAddress_;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasPeerIpv6NexthopAddress()) {
         peerIpv6NexthopAddress_ = other.peerIpv6NexthopAddress_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasRouterApplianceInstance()) {
         routerApplianceInstance_ = other.routerApplianceInstance_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2628,9 +3063,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 26989658
+            case 45627018:
+              {
+                ipv4NexthopAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 45627018
             case 168524210:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2641,7 +3082,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 223745690:
               {
                 ipv6NexthopAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 223745690
             case 283599458:
@@ -2661,19 +3102,32 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 556585208:
               {
                 peerAsn_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 556585208
+            case 1072679898:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExportPoliciesIsMutable();
+                exportPolicies_.add(s);
+                break;
+              } // case 1072679898
             case 1389628850:
               {
                 managementType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1389628850
+            case 1451743496:
+              {
+                enableIpv4_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1451743496
             case 1451743512:
               {
                 enableIpv6_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1451743512
             case 1491890656:
@@ -2685,13 +3139,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 1661886154:
               {
                 peerIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1661886154
             case -2046364534:
               {
                 md5AuthenticationKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -2046364534
             case -1800852454:
@@ -2715,21 +3169,34 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case -1044789534:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1044789534
             case -792129910:
               {
                 interfaceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -792129910
+            case -685783726:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureImportPoliciesIsMutable();
+                importPolicies_.add(s);
+                break;
+              } // case -685783726
             case -548463382:
               {
                 routerApplianceInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case -548463382
+            case -541193102:
+              {
+                peerIpv4NexthopAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case -541193102
             case -444063198:
               {
                 com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange m =
@@ -2747,7 +3214,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case -363074430:
               {
                 peerIpv6NexthopAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -363074430
             default:
@@ -4332,12 +4799,80 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean enableIpv4_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * </pre>
+     *
+     * <code>optional bool enable_ipv4 = 181467937;</code>
+     *
+     * @return Whether the enableIpv4 field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableIpv4() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * </pre>
+     *
+     * <code>optional bool enable_ipv4 = 181467937;</code>
+     *
+     * @return The enableIpv4.
+     */
+    @java.lang.Override
+    public boolean getEnableIpv4() {
+      return enableIpv4_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * </pre>
+     *
+     * <code>optional bool enable_ipv4 = 181467937;</code>
+     *
+     * @param value The enableIpv4 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableIpv4(boolean value) {
+
+      enableIpv4_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * </pre>
+     *
+     * <code>optional bool enable_ipv4 = 181467937;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableIpv4() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      enableIpv4_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean enableIpv6_;
     /**
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -4346,13 +4881,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasEnableIpv6() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -4367,7 +4902,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -4378,7 +4913,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableIpv6(boolean value) {
 
       enableIpv6_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4386,7 +4921,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -4394,8 +4929,356 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableIpv6() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableIpv6_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList exportPolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExportPoliciesIsMutable() {
+      if (!exportPolicies_.isModifiable()) {
+        exportPolicies_ = new com.google.protobuf.LazyStringArrayList(exportPolicies_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @return A list containing the exportPolicies.
+     */
+    public com.google.protobuf.ProtocolStringList getExportPoliciesList() {
+      exportPolicies_.makeImmutable();
+      return exportPolicies_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @return The count of exportPolicies.
+     */
+    public int getExportPoliciesCount() {
+      return exportPolicies_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The exportPolicies at the given index.
+     */
+    public java.lang.String getExportPolicies(int index) {
+      return exportPolicies_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the exportPolicies at the given index.
+     */
+    public com.google.protobuf.ByteString getExportPoliciesBytes(int index) {
+      return exportPolicies_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The exportPolicies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExportPolicies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExportPoliciesIsMutable();
+      exportPolicies_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param value The exportPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExportPolicies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExportPoliciesIsMutable();
+      exportPolicies_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param values The exportPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExportPolicies(java.lang.Iterable<java.lang.String> values) {
+      ensureExportPoliciesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exportPolicies_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExportPolicies() {
+      exportPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string export_policies = 134084987;</code>
+     *
+     * @param value The bytes of the exportPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExportPoliciesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExportPoliciesIsMutable();
+      exportPolicies_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList importPolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureImportPoliciesIsMutable() {
+      if (!importPolicies_.isModifiable()) {
+        importPolicies_ = new com.google.protobuf.LazyStringArrayList(importPolicies_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @return A list containing the importPolicies.
+     */
+    public com.google.protobuf.ProtocolStringList getImportPoliciesList() {
+      importPolicies_.makeImmutable();
+      return importPolicies_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @return The count of importPolicies.
+     */
+    public int getImportPoliciesCount() {
+      return importPolicies_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The importPolicies at the given index.
+     */
+    public java.lang.String getImportPolicies(int index) {
+      return importPolicies_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the importPolicies at the given index.
+     */
+    public com.google.protobuf.ByteString getImportPoliciesBytes(int index) {
+      return importPolicies_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The importPolicies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImportPolicies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureImportPoliciesIsMutable();
+      importPolicies_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param value The importPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addImportPolicies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureImportPoliciesIsMutable();
+      importPolicies_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param values The importPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllImportPolicies(java.lang.Iterable<java.lang.String> values) {
+      ensureImportPoliciesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, importPolicies_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImportPolicies() {
+      importPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+     * </pre>
+     *
+     * <code>repeated string import_policies = 451147946;</code>
+     *
+     * @param value The bytes of the importPolicies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addImportPoliciesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureImportPoliciesIsMutable();
+      importPolicies_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4413,7 +5296,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interfaceName field is set.
      */
     public boolean hasInterfaceName() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4476,7 +5359,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       interfaceName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4493,7 +5376,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInterfaceName() {
       interfaceName_ = getDefaultInstance().getInterfaceName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4515,7 +5398,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       interfaceName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4525,7 +5408,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4533,13 +5416,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipAddress field is set.
      */
     public boolean hasIpAddress() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4561,7 +5444,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4583,7 +5466,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4596,7 +5479,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipAddress_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4604,7 +5487,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4613,7 +5496,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpAddress() {
       ipAddress_ = getDefaultInstance().getIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4621,7 +5504,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the interface inside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -4635,7 +5518,127 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipv4NexthopAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @return Whether the ipv4NexthopAddress field is set.
+     */
+    public boolean hasIpv4NexthopAddress() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @return The ipv4NexthopAddress.
+     */
+    public java.lang.String getIpv4NexthopAddress() {
+      java.lang.Object ref = ipv4NexthopAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv4NexthopAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @return The bytes for ipv4NexthopAddress.
+     */
+    public com.google.protobuf.ByteString getIpv4NexthopAddressBytes() {
+      java.lang.Object ref = ipv4NexthopAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv4NexthopAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @param value The ipv4NexthopAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv4NexthopAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv4NexthopAddress_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv4NexthopAddress() {
+      ipv4NexthopAddress_ = getDefaultInstance().getIpv4NexthopAddress();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the interface inside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string ipv4_nexthop_address = 5703377;</code>
+     *
+     * @param value The bytes for ipv4NexthopAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv4NexthopAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv4NexthopAddress_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4653,7 +5656,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipv6NexthopAddress field is set.
      */
     public boolean hasIpv6NexthopAddress() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4716,7 +5719,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipv6NexthopAddress_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4733,7 +5736,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpv6NexthopAddress() {
       ipv6NexthopAddress_ = getDefaultInstance().getIpv6NexthopAddress();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4755,7 +5758,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipv6NexthopAddress_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4774,7 +5777,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the managementType field is set.
      */
     public boolean hasManagementType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4840,7 +5843,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       managementType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4858,7 +5861,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearManagementType() {
       managementType_ = getDefaultInstance().getManagementType();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4881,7 +5884,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       managementType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4899,7 +5902,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the md5AuthenticationKeyName field is set.
      */
     public boolean hasMd5AuthenticationKeyName() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4962,7 +5965,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       md5AuthenticationKeyName_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4979,7 +5982,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMd5AuthenticationKeyName() {
       md5AuthenticationKeyName_ = getDefaultInstance().getMd5AuthenticationKeyName();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5001,7 +6004,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       md5AuthenticationKeyName_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5019,7 +6022,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5082,7 +6085,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5099,7 +6102,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5121,7 +6124,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5140,7 +6143,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPeerAsn() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5172,7 +6175,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder setPeerAsn(int value) {
 
       peerAsn_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5188,7 +6191,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerAsn() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       peerAsn_ = 0;
       onChanged();
       return this;
@@ -5199,7 +6202,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5207,13 +6210,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpAddress field is set.
      */
     public boolean hasPeerIpAddress() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5235,7 +6238,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5257,7 +6260,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5270,7 +6273,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpAddress_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5278,7 +6281,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5287,7 +6290,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpAddress() {
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5295,7 +6298,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * IP address of the BGP interface outside Google Cloud Platform.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -5309,7 +6312,127 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpAddress_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object peerIpv4NexthopAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @return Whether the peerIpv4NexthopAddress field is set.
+     */
+    public boolean hasPeerIpv4NexthopAddress() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @return The peerIpv4NexthopAddress.
+     */
+    public java.lang.String getPeerIpv4NexthopAddress() {
+      java.lang.Object ref = peerIpv4NexthopAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peerIpv4NexthopAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @return The bytes for peerIpv4NexthopAddress.
+     */
+    public com.google.protobuf.ByteString getPeerIpv4NexthopAddressBytes() {
+      java.lang.Object ref = peerIpv4NexthopAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peerIpv4NexthopAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @param value The peerIpv4NexthopAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerIpv4NexthopAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      peerIpv4NexthopAddress_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerIpv4NexthopAddress() {
+      peerIpv4NexthopAddress_ = getDefaultInstance().getPeerIpv4NexthopAddress();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv4 address of the BGP interface outside Google Cloud Platform.
+     * </pre>
+     *
+     * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
+     *
+     * @param value The bytes for peerIpv4NexthopAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerIpv4NexthopAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      peerIpv4NexthopAddress_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5327,7 +6450,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpv6NexthopAddress field is set.
      */
     public boolean hasPeerIpv6NexthopAddress() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -5390,7 +6513,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpv6NexthopAddress_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5407,7 +6530,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpv6NexthopAddress() {
       peerIpv6NexthopAddress_ = getDefaultInstance().getPeerIpv6NexthopAddress();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -5429,7 +6552,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpv6NexthopAddress_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5447,7 +6570,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routerApplianceInstance field is set.
      */
     public boolean hasRouterApplianceInstance() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -5510,7 +6633,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       routerApplianceInstance_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5527,7 +6650,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRouterApplianceInstance() {
       routerApplianceInstance_ = getDefaultInstance().getRouterApplianceInstance();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -5549,7 +6672,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       routerApplianceInstance_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }

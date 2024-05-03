@@ -261,6 +261,46 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return Whether the maintenanceInterval field is set.
+   */
+  boolean hasMaintenanceInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return The maintenanceInterval.
+   */
+  java.lang.String getMaintenanceInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Check the MaintenanceInterval enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string maintenance_interval = 403368049;</code>
+   *
+   * @return The bytes for maintenanceInterval.
+   */
+  com.google.protobuf.ByteString getMaintenanceIntervalBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>

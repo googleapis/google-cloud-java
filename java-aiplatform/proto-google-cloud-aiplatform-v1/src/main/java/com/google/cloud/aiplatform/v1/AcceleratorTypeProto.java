@@ -38,19 +38,20 @@ public final class AcceleratorTypeProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/accelerator"
           + "_type.proto\022\032google.cloud.aiplatform.v1*"
-          + "\233\002\n\017AcceleratorType\022 \n\034ACCELERATOR_TYPE_"
+          + "\257\002\n\017AcceleratorType\022 \n\034ACCELERATOR_TYPE_"
           + "UNSPECIFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021N"
           + "VIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020"
           + "\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T"
           + "4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\010\022\024\n\020NVIDIA_A10"
           + "0_80GB\020\t\022\r\n\tNVIDIA_L4\020\013\022\024\n\020NVIDIA_H100_8"
           + "0GB\020\r\022\n\n\006TPU_V2\020\006\022\n\n\006TPU_V3\020\007\022\016\n\nTPU_V4_"
-          + "POD\020\nB\322\001\n\036com.google.cloud.aiplatform.v1"
-          + "B\024AcceleratorTypeProtoP\001Z>cloud.google.c"
-          + "om/go/aiplatform/apiv1/aiplatformpb;aipl"
-          + "atformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032"
-          + "Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Clo"
-          + "ud::AIPlatform::V1b\006proto3"
+          + "POD\020\n\022\022\n\016TPU_V5_LITEPOD\020\014B\322\001\n\036com.google"
+          + ".cloud.aiplatform.v1B\024AcceleratorTypePro"
+          + "toP\001Z>cloud.google.com/go/aiplatform/api"
+          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
+          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
+          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

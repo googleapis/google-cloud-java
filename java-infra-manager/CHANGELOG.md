@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.19.0 (2024-04-25)
+
+### Features
+
+* Annotations are now supported to help client tools identify deployments during automation ([acc7b71](https://github.com/googleapis/google-cloud-java/commit/acc7b71b5c72d049730df6a2184a1f374bfe8cbe))
+* Infrastructure manager supports 1.2.3, 1.3.10, 1.4.7, 1.5.7 versions of Terraform when creating a preview of a deployment ([acc7b71](https://github.com/googleapis/google-cloud-java/commit/acc7b71b5c72d049730df6a2184a1f374bfe8cbe))
+
+
+
 ## 0.18.0 (2024-04-04)
 
 * No change

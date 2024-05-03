@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 (2024-04-25)
+
+### Features
+
+* Add `rollout_info` field to `QuotaDetails` message ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Update contact_email doc to not check permission of the email account ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+
+
+
 ## 0.9.0 (2024-04-04)
 
 * No change

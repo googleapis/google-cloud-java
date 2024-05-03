@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.lfp.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.lfp.v1beta",
+  "services": {
+    "LfpInventoryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LfpInventoryServiceClient",
+          "rpcs": {
+            "InsertLfpInventory": {
+              "methods": ["insertLfpInventory", "insertLfpInventoryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LfpSaleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LfpSaleServiceClient",
+          "rpcs": {
+            "InsertLfpSale": {
+              "methods": ["insertLfpSale", "insertLfpSaleCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LfpStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LfpStoreServiceClient",
+          "rpcs": {
+            "DeleteLfpStore": {
+              "methods": ["deleteLfpStore", "deleteLfpStore", "deleteLfpStore", "deleteLfpStoreCallable"]
+            },
+            "GetLfpStore": {
+              "methods": ["getLfpStore", "getLfpStore", "getLfpStore", "getLfpStoreCallable"]
+            },
+            "InsertLfpStore": {
+              "methods": ["insertLfpStore", "insertLfpStore", "insertLfpStore", "insertLfpStoreCallable"]
+            },
+            "ListLfpStores": {
+              "methods": ["listLfpStores", "listLfpStores", "listLfpStores", "listLfpStoresPagedCallable", "listLfpStoresCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

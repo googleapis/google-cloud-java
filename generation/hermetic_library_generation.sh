@@ -2,12 +2,15 @@
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
-# 1. compare generation configurations in the current branch (with which the
+# 1. Find whether the last commit in this pull request contains changes to
+# the generation configuration and exit early if it doesn't have such a change
+# since the generation result would be the same.
+# 2. Compare generation configurations in the current branch (with which the
 # pull request associated) and target branch (into which the pull request is
 # merged);
-# 2. generate changed libraries using library_generation image;
-# 3. commit the change to the pull request
-# 4. edit the pr body with generated pull request description, if applicable.
+# 3. Generate changed libraries using library_generation image;
+# 4. Commit the changes to the pull request, if any.
+# 5. Edit the PR body with generated pull request description, if applicable.
 
 # The following commands need to be installed before running the script:
 # 1. git
@@ -67,42 +70,43 @@ if [ -z "${generation_config}" ]; then
   echo "Use default generation config: ${generation_config}"
 fi
 
-volume_name="repo"
-workspace_name="/workspace/repo"
-repo_volumes="${volume_name}:${workspace_name}"
+workspace_name="/workspace"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
 
 git checkout "${target_branch}"
 git checkout "${current_branch}"
+# if the last commit doesn't contain changes to generation configuration,
+# do not generate again as the result will be the same.
+contains_config_change=$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r | grep "${generation_config}")
+if [[ "${contains_config_change}" == "" ]]; then
+    echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
+    exit 0
+fi
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
-diff "${generation_config}" "${baseline_generation_config}" || echo "config diff"
-# bind docker volume to include the repository in docker running environment.
-if [[ $(docker volume inspect ${volume_name}) != '[]' ]]; then
-  docker volume rm ${volume_name}
-fi
-docker volume create \
-  --name ${volume_name} \
-  --opt "type=none" \
-  --opt "device=$(pwd)" \
-  --opt "o=bind"
+config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
+
 # run hermetic code generation docker image.
 docker run \
   --rm \
-  -v "${repo_volumes}" \
-  -v /tmp:/tmp \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e "RUNNING_IN_DOCKER=true" \
-  -e "REPO_BINDING_VOLUMES=-v ${repo_volumes}" \
+  -u "$(id -u):$(id -g)" \
+  -v "$(pwd):${workspace_name}" \
   gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
-  python /src/cli/entry_point.py generate \
   --baseline-generation-config-path="${workspace_name}/${baseline_generation_config}" \
-  --current-generation-config-path="${workspace_name}/${generation_config}" \
-  --repository-path="${workspace_name}"
+  --current-generation-config-path="${workspace_name}/${generation_config}"
 # commit the change to the pull request.
-git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt "${generation_config}"
-git commit --allow-empty -m "${message}"
+git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
+changed_files=$(git diff --cached --name-only)
+if [[ "${changed_files}" == "" ]]; then
+    echo "There is no generated code change with the generation config change ${config_diff}."
+    echo "Skip committing to the pull request."
+    exit 0
+fi
+
+echo "Configuration diff:"
+echo "${config_diff}"
+git commit -m "${message}"
 git push
 # set pr body if pr_description.txt is generated.
 if [[ -f "pr_description.txt" ]]; then

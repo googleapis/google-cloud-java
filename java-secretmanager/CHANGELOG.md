@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.42.0 (2024-04-25)
+
+### Features
+
+* Add Secret Version Delayed Destroy changes for client libraries ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+* Users can now enable secret version delayed destruction ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+
+
+
 ## 2.41.0 (2024-04-04)
 
 * No change

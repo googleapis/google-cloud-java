@@ -326,6 +326,16 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      * <code>READY = 77848963;</code>
      */
     READY(77848963),
+    /**
+     *
+     *
+     * <pre>
+     * InstantSnapshot is currently unavailable and cannot be used for Disk restoration
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 413756464;</code>
+     */
+    UNAVAILABLE(413756464),
     UNRECOGNIZED(-1),
     ;
 
@@ -379,6 +389,16 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      * <code>READY = 77848963;</code>
      */
     public static final int READY_VALUE = 77848963;
+    /**
+     *
+     *
+     * <pre>
+     * InstantSnapshot is currently unavailable and cannot be used for Disk restoration
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 413756464;</code>
+     */
+    public static final int UNAVAILABLE_VALUE = 413756464;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -414,6 +434,8 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
           return FAILED;
         case 77848963:
           return READY;
+        case 413756464:
+          return UNAVAILABLE;
         default:
           return null;
       }

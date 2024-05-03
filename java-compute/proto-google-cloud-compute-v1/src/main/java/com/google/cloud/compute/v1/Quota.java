@@ -194,6 +194,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES(323514196),
     /** <code>GPUS_ALL_REGIONS = 39387177;</code> */
     GPUS_ALL_REGIONS(39387177),
+    /** <code>HDB_TOTAL_GB = 319316271;</code> */
+    HDB_TOTAL_GB(319316271),
+    /** <code>HDB_TOTAL_IOPS = 309720317;</code> */
+    HDB_TOTAL_IOPS(309720317),
+    /** <code>HDB_TOTAL_THROUGHPUT = 20981374;</code> */
+    HDB_TOTAL_THROUGHPUT(20981374),
     /** <code>HEALTH_CHECKS = 289347502;</code> */
     HEALTH_CHECKS(289347502),
     /** <code>IMAGES = 15562360;</code> */
@@ -340,6 +346,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     REGIONAL_INTERNAL_LB_BACKEND_SERVICES(137983760),
     /** <code>REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES = 96282539;</code> */
     REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES(96282539),
+    /** <code>REGIONAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES = 483162968;</code> */
+    REGIONAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES(483162968),
     /** <code>RESERVATIONS = 32644647;</code> */
     RESERVATIONS(32644647),
     /** <code>RESOURCE_POLICIES = 83955297;</code> */
@@ -376,6 +384,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     SSD_TOTAL_GB(161732561),
     /** <code>SSL_CERTIFICATES = 378372399;</code> */
     SSL_CERTIFICATES(378372399),
+    /** <code>SSL_POLICIES = 523254339;</code> */
+    SSL_POLICIES(523254339),
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     STATIC_ADDRESSES(93624049),
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
@@ -539,6 +549,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES_VALUE = 323514196;
     /** <code>GPUS_ALL_REGIONS = 39387177;</code> */
     public static final int GPUS_ALL_REGIONS_VALUE = 39387177;
+    /** <code>HDB_TOTAL_GB = 319316271;</code> */
+    public static final int HDB_TOTAL_GB_VALUE = 319316271;
+    /** <code>HDB_TOTAL_IOPS = 309720317;</code> */
+    public static final int HDB_TOTAL_IOPS_VALUE = 309720317;
+    /** <code>HDB_TOTAL_THROUGHPUT = 20981374;</code> */
+    public static final int HDB_TOTAL_THROUGHPUT_VALUE = 20981374;
     /** <code>HEALTH_CHECKS = 289347502;</code> */
     public static final int HEALTH_CHECKS_VALUE = 289347502;
     /** <code>IMAGES = 15562360;</code> */
@@ -686,6 +702,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int REGIONAL_INTERNAL_LB_BACKEND_SERVICES_VALUE = 137983760;
     /** <code>REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES = 96282539;</code> */
     public static final int REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES_VALUE = 96282539;
+    /** <code>REGIONAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES = 483162968;</code> */
+    public static final int REGIONAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES_VALUE = 483162968;
     /** <code>RESERVATIONS = 32644647;</code> */
     public static final int RESERVATIONS_VALUE = 32644647;
     /** <code>RESOURCE_POLICIES = 83955297;</code> */
@@ -722,6 +740,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int SSD_TOTAL_GB_VALUE = 161732561;
     /** <code>SSL_CERTIFICATES = 378372399;</code> */
     public static final int SSL_CERTIFICATES_VALUE = 378372399;
+    /** <code>SSL_POLICIES = 523254339;</code> */
+    public static final int SSL_POLICIES_VALUE = 523254339;
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     public static final int STATIC_ADDRESSES_VALUE = 93624049;
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
@@ -891,6 +911,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return GLOBAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES;
         case 39387177:
           return GPUS_ALL_REGIONS;
+        case 319316271:
+          return HDB_TOTAL_GB;
+        case 309720317:
+          return HDB_TOTAL_IOPS;
+        case 20981374:
+          return HDB_TOTAL_THROUGHPUT;
         case 289347502:
           return HEALTH_CHECKS;
         case 15562360:
@@ -1037,6 +1063,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return REGIONAL_INTERNAL_LB_BACKEND_SERVICES;
         case 96282539:
           return REGIONAL_INTERNAL_MANAGED_BACKEND_SERVICES;
+        case 483162968:
+          return REGIONAL_INTERNAL_TRAFFIC_DIRECTOR_BACKEND_SERVICES;
         case 32644647:
           return RESERVATIONS;
         case 83955297:
@@ -1065,6 +1093,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return SSD_TOTAL_GB;
         case 378372399:
           return SSL_CERTIFICATES;
+        case 523254339:
+          return SSL_POLICIES;
         case 93624049:
           return STATIC_ADDRESSES;
         case 275809649:

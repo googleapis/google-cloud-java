@@ -28,7 +28,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -40,7 +40,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -52,7 +52,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+   * IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose.
    * </pre>
    *
    * <code>optional string ip_range = 145092645;</code>
@@ -60,6 +60,46 @@ public interface RouterInterfaceOrBuilder
    * @return The bytes for ipRange.
    */
   com.google.protobuf.ByteString getIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  boolean hasIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The ipVersion.
+   */
+  java.lang.String getIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * IP version of this interface.
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The bytes for ipVersion.
+   */
+  com.google.protobuf.ByteString getIpVersionBytes();
 
   /**
    *

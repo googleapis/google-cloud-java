@@ -866,5 +866,83 @@ public interface DeploymentOrBuilder
    */
   com.google.cloud.config.v1.QuotaValidation getQuotaValidation();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identify deployments during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
   com.google.cloud.config.v1.Deployment.BlueprintCase getBlueprintCase();
 }

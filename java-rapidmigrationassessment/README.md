@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.37.0</version>
+      <version>26.38.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-rapidmigrationassessment</artifactId>
-  <version>0.24.0</version>
+  <version>0.25.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-rapidmigrationassessment:0.24.0'
+implementation 'com.google.cloud:google-cloud-rapidmigrationassessment:0.25.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-rapidmigrationassessment" % "0.24.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-rapidmigrationassessment" % "0.25.0"
 ```
 <!-- {x-version-update-end} -->
 

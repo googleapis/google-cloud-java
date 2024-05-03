@@ -58,7 +58,12 @@ public class ITChatSessionIntegrationTest {
   @Before
   public void setUp() throws IOException {
     vertexAi = new VertexAI(PROJECT_ID, LOCATION);
-    model = new GenerativeModel(MODEL_NAME_TEXT, vertexAi);
+    // Set temperature to 0 to reduce randomness on model responses
+    GenerationConfig defaultGenerationConfig =
+        GenerationConfig.newBuilder().setTemperature(0).build();
+    model =
+        new GenerativeModel(MODEL_NAME_TEXT, vertexAi)
+            .withGenerationConfig(defaultGenerationConfig);
   }
 
   @After

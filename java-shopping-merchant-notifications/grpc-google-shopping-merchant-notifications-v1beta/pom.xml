@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.shopping.api.grpc</groupId>
+  <artifactId>grpc-google-shopping-merchant-notifications-v1beta</artifactId>
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-notifications-v1beta:current} -->
+  <name>grpc-google-shopping-merchant-notifications-v1beta</name>
+  <description>GRPC library for google-shopping-merchant-notifications</description>
+  <parent>
+    <groupId>com.google.shopping</groupId>
+    <artifactId>google-shopping-merchant-notifications-parent</artifactId>
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-notifications:current} -->
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>proto-google-shopping-merchant-notifications-v1beta</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+  </dependencies>
+</project>

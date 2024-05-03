@@ -221,4 +221,33 @@ public interface EventOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder getTransactionDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fraudPrevention.
+   */
+  int getFraudPreventionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this Assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fraudPrevention.
+   */
+  com.google.recaptchaenterprise.v1beta1.Event.FraudPrevention getFraudPrevention();
 }

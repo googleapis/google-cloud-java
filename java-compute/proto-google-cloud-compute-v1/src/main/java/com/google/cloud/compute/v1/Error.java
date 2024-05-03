@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+ * Errors that prevented the ResizeRequest to be fulfilled.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Error}
@@ -297,7 +297,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+   * Errors that prevented the ResizeRequest to be fulfilled.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Error}

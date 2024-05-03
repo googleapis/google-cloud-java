@@ -653,6 +653,30 @@
         }
       }
     },
+    "InstanceGroupManagerResizeRequests": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceGroupManagerResizeRequestsClient",
+          "rpcs": {
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "InstanceGroupManagers": {
       "clients": {
         "grpc": {
@@ -753,6 +777,21 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InstanceSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceSettingsServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             }
           }
         }
@@ -1395,6 +1434,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
@@ -2646,6 +2688,63 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StoragePoolTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StoragePoolTypesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StoragePools": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StoragePoolsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListDisks": {
+              "methods": ["listDisks", "listDisks", "listDisksPagedCallable", "listDisksCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }

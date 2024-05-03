@@ -158,6 +158,18 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     return ((NodeGroupsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceNodeGroupRequest, Operation>
+      performMaintenanceSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicySettings() {
     return ((NodeGroupsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -371,6 +383,18 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     public OperationCallSettings.Builder<PatchNodeGroupRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceNodeGroupRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceNodeGroupRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

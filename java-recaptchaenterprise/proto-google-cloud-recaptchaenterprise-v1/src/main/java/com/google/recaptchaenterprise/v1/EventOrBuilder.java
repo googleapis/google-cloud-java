@@ -178,7 +178,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=700
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
@@ -426,4 +426,33 @@ public interface EventOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.UserInfoOrBuilder getUserInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for fraudPrevention.
+   */
+  int getFraudPreventionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Fraud Prevention setting for this assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event.FraudPrevention fraud_prevention = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fraudPrevention.
+   */
+  com.google.recaptchaenterprise.v1.Event.FraudPrevention getFraudPrevention();
 }

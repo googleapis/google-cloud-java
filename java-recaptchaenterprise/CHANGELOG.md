@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.39.0 (2024-04-25)
+
+### Features
+
+* fixed the description of ListFirewallPoliciesResponse ([53294e2](https://github.com/googleapis/google-cloud-java/commit/53294e2cbb04e445bf691afbbfc17336a0d06921))
+
+
+
 ## 3.38.0 (2024-04-04)
 
 * No change

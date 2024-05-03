@@ -390,6 +390,43 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
+   * Resource reference of a PublicDelegatedPrefix. The PDP must be a sub-PDP in EXTERNAL_IPV6_FORWARDING_RULE_CREATION mode. Use one of the following formats to specify a sub-PDP when creating an IPv6 NetLB forwarding rule using BYOIP: Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /publicDelegatedPrefixes/sub-pdp-name Partial URL, as in: - projects/project_id/regions/region/publicDelegatedPrefixes/sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  boolean hasIpCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Resource reference of a PublicDelegatedPrefix. The PDP must be a sub-PDP in EXTERNAL_IPV6_FORWARDING_RULE_CREATION mode. Use one of the following formats to specify a sub-PDP when creating an IPv6 NetLB forwarding rule using BYOIP: Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /publicDelegatedPrefixes/sub-pdp-name Partial URL, as in: - projects/project_id/regions/region/publicDelegatedPrefixes/sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  java.lang.String getIpCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Resource reference of a PublicDelegatedPrefix. The PDP must be a sub-PDP in EXTERNAL_IPV6_FORWARDING_RULE_CREATION mode. Use one of the following formats to specify a sub-PDP when creating an IPv6 NetLB forwarding rule using BYOIP: Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /publicDelegatedPrefixes/sub-pdp-name Partial URL, as in: - projects/project_id/regions/region/publicDelegatedPrefixes/sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  com.google.protobuf.ByteString getIpCollectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>

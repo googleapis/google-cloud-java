@@ -69,7 +69,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchAllResources</td>
- *      <td><p> Searches all the resources within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the resources within a scope, even if they don't have `.get` permission of all the resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested scope, otherwise the request will be rejected.</td>
+ *      <td><p> Searches all the resources within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the resources within a scope, even if they don't have `.get` permission of all the resources. Callers should have `cloudasset.assets.searchAllResources` permission on the requested scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchAllIamPolicies</td>
- *      <td><p> Searches all the IAM policies within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on the requested scope, otherwise the request will be rejected.</td>
+ *      <td><p> Searches all the IAM policies within a given accessible Resource Manager scope (project/folder/organization). This RPC gives callers especially administrators the ability to search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission of all the IAM policies. Callers should have `cloudasset.assets.searchAllIamPolicies` permission on the requested scope, otherwise the request will be rejected.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -214,8 +214,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the resources within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the resources within a scope, even if they don't have `.get` permission of all the
-   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
-   * scope, otherwise the request will be rejected.
+   * resources. Callers should have `cloudasset.assets.searchAllResources` permission on the
+   * requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -266,8 +266,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the resources within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the resources within a scope, even if they don't have `.get` permission of all the
-   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
-   * scope, otherwise the request will be rejected.
+   * resources. Callers should have `cloudasset.assets.searchAllResources` permission on the
+   * requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -307,8 +307,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the resources within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the resources within a scope, even if they don't have `.get` permission of all the
-   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
-   * scope, otherwise the request will be rejected.
+   * resources. Callers should have `cloudasset.assets.searchAllResources` permission on the
+   * requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -347,8 +347,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the resources within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the resources within a scope, even if they don't have `.get` permission of all the
-   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
-   * scope, otherwise the request will be rejected.
+   * resources. Callers should have `cloudasset.assets.searchAllResources` permission on the
+   * requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -394,8 +394,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the IAM policies within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
-   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
-   * the requested scope, otherwise the request will be rejected.
+   * of all the IAM policies. Callers should have `cloudasset.assets.searchAllIamPolicies`
+   * permission on the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -443,8 +443,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the IAM policies within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
-   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
-   * the requested scope, otherwise the request will be rejected.
+   * of all the IAM policies. Callers should have `cloudasset.assets.searchAllIamPolicies`
+   * permission on the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -482,8 +482,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the IAM policies within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
-   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
-   * the requested scope, otherwise the request will be rejected.
+   * of all the IAM policies. Callers should have `cloudasset.assets.searchAllIamPolicies`
+   * permission on the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -520,8 +520,8 @@ public class AssetServiceClient implements BackgroundResource {
    * Searches all the IAM policies within a given accessible Resource Manager scope
    * (project/folder/organization). This RPC gives callers especially administrators the ability to
    * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
-   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
-   * the requested scope, otherwise the request will be rejected.
+   * of all the IAM policies. Callers should have `cloudasset.assets.searchAllIamPolicies`
+   * permission on the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
