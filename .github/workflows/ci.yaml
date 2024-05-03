@@ -126,10 +126,9 @@ jobs:
           --rm \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):${workspace_name}" \
-          --entrypoint python /src/cli/entry_point.py \
+          --entrypoint python \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          validate-generation-config \
-          --generation-config-path="${workspace_name}/generation_config.yaml"
+          /src/cli/entry_point.py validate-generation-config
       env:
         library_generation_image_tag: 2.40.0
         workspace_name: /workspace
