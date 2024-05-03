@@ -24,7 +24,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.api-ads</groupId>
+        <groupId>com.google.api-ads.api.grpc</groupId>
         <artifactId>ad-manager</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:ad-manager:current} -->
       </dependency>
