@@ -16,8 +16,6 @@
 
 package com.google.cloud.vertexai.api.stub;
 
-import static com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
-
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -51,6 +49,7 @@ import com.google.cloud.vertexai.api.ComputeTokensRequest;
 import com.google.cloud.vertexai.api.ComputeTokensResponse;
 import com.google.cloud.vertexai.api.CountTokensRequest;
 import com.google.cloud.vertexai.api.CountTokensResponse;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
