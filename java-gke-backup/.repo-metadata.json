@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-gke-backup",
   "distribution_name": "com.google.cloud:google-cloud-gke-backup",
-  "api_id": "gke-backup.googleapis.com",
+  "api_id": "gkebackup.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
