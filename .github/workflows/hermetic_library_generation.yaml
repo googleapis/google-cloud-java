@@ -15,21 +15,17 @@
 # downstream client libraries before they are released.
 name: Hermetic library generation upon generation config change through pull requests
 on:
-  workflow_dispatch:
   pull_request:
-    paths:
-    - "generation_config.yaml"
 
 jobs:
   library_generation:
     runs-on: ubuntu-latest
     env:
-      library_generation_image_tag: 2.39.0
+      library_generation_image_tag: 2.40.0
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: Generate changed libraries
       shell: bash
       run: |
@@ -37,8 +33,16 @@ jobs:
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         bash generation/hermetic_library_generation.sh \
-          --target_branch ${{ github.base_ref }} \
-          --current_branch ${{ github.head_ref }} \
+          --base_ref "${base_ref}" \
+          --base_repo "${base_repo}" \
+          --head_ref "${head_ref}" \
+          --head_repo_url "${head_repo_url}" \
+          --head_repo_name "${head_repo_name}" \
           --image_tag "${library_generation_image_tag}"
       env:
+        base_ref: ${{ github.event.pull_request.base.ref }}
+        base_repo: ${{ github.repository }}
+        head_ref: ${{ github.event.pull_request.head.ref }}
+        head_repo_url: ${{ github.event.pull_request.head.repo.html_url }}
+        head_repo_name: ${{ github.event.pull_request.head.repo.full_name }}
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
