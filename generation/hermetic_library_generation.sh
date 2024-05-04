@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail
+set -e
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
@@ -117,7 +117,6 @@ else
     git remote add "${fork}" "${head_repo_url}"
     git fetch "${fork}"
     git checkout -b "${head_ref}" "${fork}/${head_ref}"
-#    git branch --set-upstream-to="${fork}/${head_ref}"
 fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
