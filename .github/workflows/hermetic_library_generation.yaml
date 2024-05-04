@@ -22,8 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       library_generation_image_tag: 2.40.0
-    permissions:
-      contents: write
     steps:
     - uses: actions/checkout@v4
       with:
