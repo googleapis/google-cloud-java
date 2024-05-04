@@ -1,4 +1,4 @@
-gapic_generator_version: 2.40.0
+gapic_generator_version: 2.39.0
 protobuf_version: '25.3'
 googleapis_commitish: 5a0ae652df1ef39b7849bf2bd6ba417376ce3204
 libraries_bom_version: 26.38.0
@@ -26,7 +26,7 @@ libraries:
   product_documentation: https://cloud.google.com/access-approval/docs/
   api_description: enables controlling access to your organization's data by Google
     personnel.
-  release_level: stable
+  release_level: preview
   GAPICs:
   - proto_path: google/cloud/accessapproval/v1
 
