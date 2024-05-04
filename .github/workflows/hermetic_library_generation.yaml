@@ -45,6 +45,4 @@ jobs:
         head_ref: ${{ github.event.pull_request.head.ref }}
         head_repo_url: ${{ github.event.pull_request.head.repo.html_url }}
         head_repo_name: ${{ github.event.pull_request.head.repo.full_name }}
-        GITHUB_ACTOR_EMAIL: ${{ steps.determine_workflow_author_email.outputs.GITHUB_ACTOR_EMAIL }}
-        GITHUB_ACTOR_NAME: ${{ steps.determine_workflow_author_email.outputs.GITHUB_ACTOR_NAME }}
-        GITHUB_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
