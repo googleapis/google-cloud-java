@@ -117,7 +117,7 @@ else
     git remote add "${fork}" "${head_repo_url}"
     git fetch "${fork}"
     git checkout -b "${head_ref}" "${fork}/${head_ref}"
-    git branch --set-upstream-to="${fork}/${head_ref}"
+#    git branch --set-upstream-to="${fork}/${head_ref}"
 fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
