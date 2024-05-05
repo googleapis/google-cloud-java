@@ -123,6 +123,7 @@ fi
 change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
 # if change_of_last_commit is the same after removing generation_config, it doesn't
 # contain changes to generation configuration.
+echo "line 126"
 if [[ "${change_of_last_commit}" == "${change_of_last_commit//${generation_config}/}" ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
     exit 0
