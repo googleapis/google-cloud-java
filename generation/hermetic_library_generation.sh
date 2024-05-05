@@ -148,7 +148,6 @@ fi
 echo "Configuration diff:"
 echo "${config_diff}"
 git commit -m "${message}"
-echo "line 151"
 if [[ "${head_repo_name}" == "${base_repo}" ]]; then
     git push
     # set pr body if pr_description.txt is generated.
@@ -157,7 +156,6 @@ if [[ "${head_repo_name}" == "${base_repo}" ]]; then
         gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
     fi
 else
-    echo "line 159"
     git config --list
     git push "https://x-access-token:${GH_TOKEN}@github.com/${head_repo_name}" HEAD:"${head_ref}"
 fi
