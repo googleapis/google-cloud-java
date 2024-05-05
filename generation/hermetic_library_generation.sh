@@ -128,7 +128,6 @@ fi
 # copy generation configuration from target branch to current branch.
 git show "${base_ref}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}" || true)
-echo "line 131"
 # run hermetic code generation docker image.
 docker run \
   --rm \
@@ -149,11 +148,8 @@ fi
 echo "Configuration diff:"
 echo "${config_diff}"
 git commit -m "${message}"
-if [[ "${head_repo_name}" == "${base_repo}" ]]; then
-    git push
-else
-    git push "${fork}" "${head_ref}"
-fi
+echo "${GITHUB_ACTOR}"
+git push
 # set pr body if pr_description.txt is generated.
 if [[ -f "pr_description.txt" ]]; then
     pr_num=$(gh pr list -s open -H "${head_ref}" -q . --json number | jq ".[] | .number")
