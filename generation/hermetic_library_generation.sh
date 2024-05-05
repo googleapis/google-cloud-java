@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xe
+set -e
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
@@ -156,5 +156,6 @@ if [[ "${head_repo_name}" == "${base_repo}" ]]; then
         gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
     fi
 else
+    echo "line 159"
     git push "https://x-access-token:${GH_TOKEN}@github.com/${head_repo_name}" HEAD:"${head_ref}"
 fi
