@@ -156,6 +156,5 @@ if [[ "${head_repo_name}" == "${base_repo}" ]]; then
         gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
     fi
 else
-    git config --list
     git push "https://x-access-token:${GH_TOKEN}@github.com/${head_repo_name}" HEAD:"${head_ref}"
 fi
