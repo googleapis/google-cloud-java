@@ -122,8 +122,7 @@ fi
 # do not generate again as the result will be the same.
 change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
 set +e
-echo "line 125"
-if [[ ! "${change_of_last_commit}" == *"${generation_config}"* ]]; then
+if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
     echo "line 127"
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
     exit 0
