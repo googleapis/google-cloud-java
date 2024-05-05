@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail
+set -e
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
@@ -150,9 +150,13 @@ fi
 echo "Configuration diff:"
 echo "${config_diff}"
 git commit -m "${message}"
-git push
+if [[ "${head_repo_name}" == "${base_repo}" ]]; then
+    git push
+else
+    git push "${fork}" "${head_ref}"
+fi
 # set pr body if pr_description.txt is generated.
 if [[ -f "pr_description.txt" ]]; then
-  pr_num=$(gh pr list -s open -H "${head_ref}" -q . --json number | jq ".[] | .number")
-  gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
+    pr_num=$(gh pr list -s open -H "${head_ref}" -q . --json number | jq ".[] | .number")
+    gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
 fi
