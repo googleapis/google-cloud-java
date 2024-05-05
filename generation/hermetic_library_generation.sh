@@ -115,13 +115,15 @@ if [[ "${head_repo_name}" == "${base_repo}" ]]; then
 else
     echo "The pull request comes from a forked repository: ${head_repo_url}"
     git remote add "${fork}" "${head_repo_url}"
-    git fetch "${fork}"
+    git fetch -q "${fork}"
     git checkout -b "${head_ref}" "${fork}/${head_ref}"
 fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
 change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
-if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
+# if change_of_last_commit is the same after removing generation_config, it doesn't
+# contain changes to generation configuration.
+if [[ "${change_of_last_commit}" == "${change_of_last_commit//${generation_config}/}" ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
     exit 0
 fi
