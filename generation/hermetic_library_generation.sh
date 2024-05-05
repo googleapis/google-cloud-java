@@ -128,6 +128,7 @@ if [[ ! ( "${change_of_last_commit}" == *"${generation_config}"* ) ]]; then
 fi
 set -e
 # copy generation configuration from target branch to current branch.
+echo "line 131"
 git show "${base_ref}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
 # run hermetic code generation docker image.
