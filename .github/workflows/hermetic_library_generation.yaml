@@ -23,10 +23,17 @@ jobs:
     env:
       library_generation_image_tag: 2.40.0
     steps:
-    - uses: actions/checkout@v4
+    - if: github.event.pull_request.head.repo.full_name == github.repository
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        # Adding a token so that commits made from this workflow can
+        # trigger CI.
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+    - if: github.event.pull_request.head.repo.full_name != github.repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Generate changed libraries
       shell: bash
       run: |
