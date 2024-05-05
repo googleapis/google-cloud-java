@@ -121,10 +121,12 @@ fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
 change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
+set +e
 if [[ ! "${change_of_last_commit}" == *"${generation_config}"* ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
     exit 0
 fi
+set -e
 # copy generation configuration from target branch to current branch.
 git show "${base_ref}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
