@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eo pipefail
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
@@ -119,8 +120,8 @@ else
 fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
-contains_config_change=$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r | grep "${generation_config}")
-if [[ "${contains_config_change}" == "" ]]; then
+change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
+if [[ "${change_of_last_commit}" =~ ${generation_config} ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
     exit 0
 fi
