@@ -148,10 +148,13 @@ fi
 echo "Configuration diff:"
 echo "${config_diff}"
 git commit -m "${message}"
-echo "${GITHUB_ACTOR}"
-git push
-# set pr body if pr_description.txt is generated.
-if [[ -f "pr_description.txt" ]]; then
-    pr_num=$(gh pr list -s open -H "${head_ref}" -q . --json number | jq ".[] | .number")
-    gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
+if [[ "${head_repo_name}" == "${base_repo}" ]]; then
+    git push
+    # set pr body if pr_description.txt is generated.
+    if [[ -f "pr_description.txt" ]]; then
+        pr_num=$(gh pr list -s open -H "${head_ref}" -q . --json number | jq ".[] | .number")
+        gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
+    fi
+else
+    git push "https://x-access-token:${GH_TOKEN}@github.com/${head_repo_name}" HEAD:"${head_ref}"
 fi
