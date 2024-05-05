@@ -120,17 +120,18 @@ else
 fi
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
-set +e
+echo "line 123"
 change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
 if [[ ! ( "${change_of_last_commit}" == *"${generation_config}"* ) ]]; then
     echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
     exit 0
 fi
-set -e
+echo "line 129"
 # copy generation configuration from target branch to current branch.
-echo "line 131"
 git show "${base_ref}":"${generation_config}" > "${baseline_generation_config}"
+echo "line 132"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
+echo "line 134"
 # run hermetic code generation docker image.
 docker run \
   --rm \
