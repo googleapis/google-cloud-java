@@ -130,6 +130,7 @@ set -e
 # copy generation configuration from target branch to current branch.
 git show "${base_ref}":"${generation_config}" > "${baseline_generation_config}"
 config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
+docker pull gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" > /dev/null 2>&1
 # run hermetic code generation docker image.
 docker run \
   --rm \
