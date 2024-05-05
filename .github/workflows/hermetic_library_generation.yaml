@@ -23,16 +23,10 @@ jobs:
     env:
       library_generation_image_tag: 2.40.0
     steps:
-    - name: Set git user
-      shell: bash
-      run: |
-        git config --global user.email "cloud-java-bot@google.com"
-        git config --global user.name "cloud-java-bot"
-      env:
-        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: Generate changed libraries
       shell: bash
       run: |
