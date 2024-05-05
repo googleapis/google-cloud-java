@@ -148,6 +148,7 @@ fi
 echo "Configuration diff:"
 echo "${config_diff}"
 git commit -m "${message}"
+echo "line 151"
 if [[ "${head_repo_name}" == "${base_repo}" ]]; then
     git push
     # set pr body if pr_description.txt is generated.
