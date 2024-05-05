@@ -158,5 +158,6 @@ if [[ "${head_repo_name}" == "${base_repo}" ]]; then
     fi
 else
     echo "line 159"
+    git config --list
     git push "https://x-access-token:${GH_TOKEN}@github.com/${head_repo_name}" HEAD:"${head_ref}"
 fi
