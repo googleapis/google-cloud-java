@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.5.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.5.0...v3.5.1) (2024-05-06)
+
+
+### Dependencies
+
+* Update actions/checkout digest to 0ad4b8f ([#2474](https://github.com/googleapis/java-bigquerystorage/issues/2474)) ([d8d5278](https://github.com/googleapis/java-bigquerystorage/commit/d8d5278ca54317a599e7c8b7c661eedd075f6a74))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.39.1 ([#2480](https://github.com/googleapis/java-bigquerystorage/issues/2480)) ([2c6bcbb](https://github.com/googleapis/java-bigquerystorage/commit/2c6bcbbe727518b1a1d784d5d9f9653af5759886))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.0 ([#2483](https://github.com/googleapis/java-bigquerystorage/issues/2483)) ([8007acf](https://github.com/googleapis/java-bigquerystorage/commit/8007acfdb1965fa5a6c9308189c92ae0f523faad))
+
 ## [3.5.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.4.0...v3.5.0) (2024-04-26)
 
 
