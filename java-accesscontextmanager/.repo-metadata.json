@@ -4,7 +4,7 @@
   "product_documentation": "n/a",
   "api_description": "n/a",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-identity-accesscontextmanager/latest/overview",
-  "release_level": "stable",
+  "release_level": "preview",
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
