@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [0.131.6-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.5-alpha...v0.131.6-alpha) (2024-05-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.17.1 ([#1312](https://github.com/googleapis/java-logging-logback/issues/1312)) ([9b9b940](https://github.com/googleapis/java-logging-logback/commit/9b9b940aabc28fd1925406636e6108791652824c))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.0 ([#1311](https://github.com/googleapis/java-logging-logback/issues/1311)) ([d6505b0](https://github.com/googleapis/java-logging-logback/commit/d6505b05f6792033a1b2a290655d76ac678eaf7a))
+
 ## [0.131.5-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.131.4-alpha...v0.131.5-alpha) (2024-04-26)
 
 
