@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.40.0](https://github.com/googleapis/java-bigquery/compare/v2.39.1...v2.40.0) (2024-05-06)
+
+
+### Features
+
+* Add getStringOrDefault method to FieldValue ([#3255](https://github.com/googleapis/java-bigquery/issues/3255)) ([8bac33a](https://github.com/googleapis/java-bigquery/commit/8bac33a32e0239ffa03715ad0c6440527cb2e01e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.0 ([#3279](https://github.com/googleapis/java-bigquery/issues/3279)) ([67f2ea4](https://github.com/googleapis/java-bigquery/commit/67f2ea47f78240b6def27241e21fd298a75920b2))
+
 ## [2.39.1](https://github.com/googleapis/java-bigquery/compare/v2.39.0...v2.39.1) (2024-04-29)
 
 
