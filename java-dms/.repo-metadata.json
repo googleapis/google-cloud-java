@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-dms",
   "distribution_name": "com.google.cloud:google-cloud-dms",
-  "api_id": "dms.googleapis.com",
+  "api_id": "datamigration.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/database-migration/docs/reference/rest"

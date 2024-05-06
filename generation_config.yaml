@@ -93,6 +93,7 @@ libraries:
   api_description: AlloyDB is a fully-managed, PostgreSQL-compatible database for
     demanding transactional workloads. It provides enterprise-grade performance and
     availability while maintaining 100% compatibility with open-source PostgreSQL.
+  api_id: connectors.googleapis.com
   library_name: alloydb-connectors
   rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
   GAPICs:
@@ -143,7 +144,7 @@ libraries:
     any other type of app that can make a request to an HTTP endpoint.
   library_name: api-gateway
   release_level: stable
-  api_id: api-gateway.googleapis.com
+  api_id: apigateway.googleapis.com
   rest_documentation: https://cloud.google.com/api-gateway/docs/reference/rest
   GAPICs:
   - proto_path: google/cloud/apigateway/v1
@@ -446,7 +447,7 @@ libraries:
     and Anthos clusters on VMware'
   library_name: binary-authorization
   release_level: stable
-  api_id: binary-authorization.googleapis.com
+  api_id: binaryauthorization.googleapis.com
   codeowner_team: '@googleapis/aap-dpes'
   rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest
   rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
@@ -460,7 +461,7 @@ libraries:
   api_description: lets you acquire and manage TLS (SSL) certificates for use with
     Cloud Load Balancing.
   library_name: certificate-manager
-  api_id: certificate-manager.googleapis.com
+  api_id: certificatemanager.googleapis.com
   GAPICs:
   - proto_path: google/cloud/certificatemanager/v1
 
@@ -795,6 +796,8 @@ libraries:
   api_description: Google Distributed Cloud Edge allows you to run Kubernetes clusters
     on dedicated hardware provided and maintained by Google that is separate from
     the Google Cloud data center.
+  api_id: edgecontainer.googleapis.com
+  library_name: distributedcloudedge
   GAPICs:
   - proto_path: google/cloud/edgecontainer/v1
 
@@ -819,7 +822,7 @@ libraries:
     SQL.
   library_name: dms
   release_level: stable
-  api_id: dms.googleapis.com
+  api_id: datamigration.googleapis.com
   rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
   GAPICs:
   - proto_path: google/cloud/clouddms/v1
@@ -948,6 +951,8 @@ libraries:
   name_pretty: Backup for GKE
   product_documentation: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
   api_description: is a service for backing up and restoring workloads in GKE.
+  api_id: gkebackup.googleapis.com
+  library_name: gke-backup
   GAPICs:
   - proto_path: google/cloud/gkebackup/v1
 
@@ -1128,7 +1133,7 @@ libraries:
     and connect your on-premises AD domain to the cloud.
   library_name: managed-identities
   release_level: stable
-  api_id: managed-identities.googleapis.com
+  api_id: managedidentities.googleapis.com
   GAPICs:
   - proto_path: google/cloud/managedidentities/v1
   - proto_path: google/cloud/managedidentities/v1beta1
@@ -1379,7 +1384,7 @@ libraries:
   library_name: os-config
   release_level: stable
   requires_billing: false
-  api_id: os-config.googleapis.com
+  api_id: osconfig.googleapis.com
   GAPICs:
   - proto_path: google/cloud/osconfig/v1
   - proto_path: google/cloud/osconfig/v1alpha
@@ -1436,7 +1441,7 @@ libraries:
     those roles.
   library_name: policy-troubleshooter
   release_level: stable
-  api_id: policy-troubleshooter.googleapis.com
+  api_id: policytroubleshooter.googleapis.com
   GAPICs:
   - proto_path: google/cloud/policytroubleshooter/v1
   - proto_path: google/cloud/policytroubleshooter/iam/v3
@@ -1628,7 +1633,7 @@ libraries:
     managing infrastructure.
   library_name: security-private-ca
   release_level: stable
-  api_id: security-privateca.googleapis.com
+  api_id: privateca.googleapis.com
   rest_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rest
   rpc_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rpc
   GAPICs:
@@ -1708,7 +1713,7 @@ libraries:
     authorization, auditing, rate limiting, analytics, billing, logging, and monitoring.
   library_name: service-management
   release_level: stable
-  api_id: service-management.googleapis.com
+  api_id: servicemanagement.googleapis.com
   GAPICs:
   - proto_path: google/api/servicemanagement/v1
 
@@ -1962,7 +1967,7 @@ libraries:
     Translation lets websites and programs programmatically integrate with the translation
     service.
   release_level: stable
-  api_id: translation.googleapis.com
+  api_id: translate.googleapis.com
   issue_tracker: https://issuetracker.google.com/savedsearches/559749
   rest_documentation: https://cloud.google.com/translate/docs/reference/rest
   rpc_documentation: https://cloud.google.com/translate/docs/reference/rpc
@@ -2015,7 +2020,7 @@ libraries:
     to transform their video content for use across a variety of user devices.
   library_name: video-transcoder
   release_level: stable
-  api_id: video-transcoder.googleapis.com
+  api_id: transcoder.googleapis.com
   rest_documentation: https://cloud.google.com/transcoder/docs/reference/rest
   rpc_documentation: https://cloud.google.com/transcoder/docs/reference/rpc
   GAPICs:

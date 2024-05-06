@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-binary-authorization",
   "distribution_name": "com.google.cloud:google-cloud-binary-authorization",
-  "api_id": "binary-authorization.googleapis.com",
+  "api_id": "binaryauthorization.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",

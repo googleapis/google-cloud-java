@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-service-management",
   "distribution_name": "com.google.cloud:google-cloud-service-management",
-  "api_id": "service-management.googleapis.com",
+  "api_id": "servicemanagement.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
