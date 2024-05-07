@@ -5,7 +5,6 @@
     <artifactId>native-image-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Native Image Sample</name>
-    <url>https://github.com/googleapis/java-secretmanager</url>
 
     <properties>
         <!-- Java 8 because the Kokoro Sample test uses that Java version -->
