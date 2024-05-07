@@ -190,7 +190,6 @@ function generate_graalvm_presubmit_modules_list() {
       exit 1
     fi
     module_list=${MAVEN_MODULES}
-    module_list+=("google-cloud-examples/native-image-sample")  # Add to the original array
   fi
 }
 
