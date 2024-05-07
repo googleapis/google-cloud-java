@@ -127,7 +127,7 @@ function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
   # --also-make-dependents to run other modules that use the affected module
   mvn verify -Penable-integration-tests --projects "$1" \
-    "${INTEGRATION_TEST_ARGS}" \
+    ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
@@ -159,7 +159,7 @@ function run_graalvm_tests() {
 
   set -x
   mvn test -Pnative --projects "$gapic_projects" \
-    "${INTEGRATION_TEST_ARGS}" \
+    ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
