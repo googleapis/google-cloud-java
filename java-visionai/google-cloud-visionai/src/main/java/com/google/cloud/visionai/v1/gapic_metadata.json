@@ -1,0 +1,481 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.visionai.v1",
+  "libraryPackage": "com.google.cloud.visionai.v1",
+  "services": {
+    "HealthCheckService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HealthCheckServiceClient",
+          "rpcs": {
+            "HealthCheck": {
+              "methods": ["healthCheck", "healthCheckCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LiveVideoAnalytics": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LiveVideoAnalyticsClient",
+          "rpcs": {
+            "BatchRunProcess": {
+              "methods": ["batchRunProcessAsync", "batchRunProcessAsync", "batchRunProcessAsync", "batchRunProcessOperationCallable", "batchRunProcessCallable"]
+            },
+            "CreateAnalysis": {
+              "methods": ["createAnalysisAsync", "createAnalysisAsync", "createAnalysisAsync", "createAnalysisOperationCallable", "createAnalysisCallable"]
+            },
+            "CreateOperator": {
+              "methods": ["createOperatorAsync", "createOperatorAsync", "createOperatorAsync", "createOperatorOperationCallable", "createOperatorCallable"]
+            },
+            "CreateProcess": {
+              "methods": ["createProcessAsync", "createProcessAsync", "createProcessAsync", "createProcessOperationCallable", "createProcessCallable"]
+            },
+            "DeleteAnalysis": {
+              "methods": ["deleteAnalysisAsync", "deleteAnalysisAsync", "deleteAnalysisAsync", "deleteAnalysisOperationCallable", "deleteAnalysisCallable"]
+            },
+            "DeleteOperator": {
+              "methods": ["deleteOperatorAsync", "deleteOperatorAsync", "deleteOperatorAsync", "deleteOperatorOperationCallable", "deleteOperatorCallable"]
+            },
+            "DeleteProcess": {
+              "methods": ["deleteProcessAsync", "deleteProcessAsync", "deleteProcessAsync", "deleteProcessOperationCallable", "deleteProcessCallable"]
+            },
+            "GetAnalysis": {
+              "methods": ["getAnalysis", "getAnalysis", "getAnalysis", "getAnalysisCallable"]
+            },
+            "GetOperator": {
+              "methods": ["getOperator", "getOperator", "getOperator", "getOperatorCallable"]
+            },
+            "GetProcess": {
+              "methods": ["getProcess", "getProcess", "getProcess", "getProcessCallable"]
+            },
+            "ListAnalyses": {
+              "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]
+            },
+            "ListOperators": {
+              "methods": ["listOperators", "listOperators", "listOperators", "listOperatorsPagedCallable", "listOperatorsCallable"]
+            },
+            "ListProcesses": {
+              "methods": ["listProcesses", "listProcesses", "listProcesses", "listProcessesPagedCallable", "listProcessesCallable"]
+            },
+            "ListPublicOperators": {
+              "methods": ["listPublicOperators", "listPublicOperators", "listPublicOperators", "listPublicOperatorsPagedCallable", "listPublicOperatorsCallable"]
+            },
+            "ResolveOperatorInfo": {
+              "methods": ["resolveOperatorInfo", "resolveOperatorInfo", "resolveOperatorInfo", "resolveOperatorInfoCallable"]
+            },
+            "UpdateAnalysis": {
+              "methods": ["updateAnalysisAsync", "updateAnalysisAsync", "updateAnalysisOperationCallable", "updateAnalysisCallable"]
+            },
+            "UpdateOperator": {
+              "methods": ["updateOperatorAsync", "updateOperatorAsync", "updateOperatorOperationCallable", "updateOperatorCallable"]
+            },
+            "UpdateProcess": {
+              "methods": ["updateProcessAsync", "updateProcessAsync", "updateProcessOperationCallable", "updateProcessCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AppPlatform": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppPlatformClient",
+          "rpcs": {
+            "AddApplicationStreamInput": {
+              "methods": ["addApplicationStreamInputAsync", "addApplicationStreamInputAsync", "addApplicationStreamInputAsync", "addApplicationStreamInputOperationCallable", "addApplicationStreamInputCallable"]
+            },
+            "CreateApplication": {
+              "methods": ["createApplicationAsync", "createApplicationAsync", "createApplicationAsync", "createApplicationOperationCallable", "createApplicationCallable"]
+            },
+            "CreateApplicationInstances": {
+              "methods": ["createApplicationInstancesAsync", "createApplicationInstancesAsync", "createApplicationInstancesAsync", "createApplicationInstancesOperationCallable", "createApplicationInstancesCallable"]
+            },
+            "CreateDraft": {
+              "methods": ["createDraftAsync", "createDraftAsync", "createDraftAsync", "createDraftOperationCallable", "createDraftCallable"]
+            },
+            "CreateProcessor": {
+              "methods": ["createProcessorAsync", "createProcessorAsync", "createProcessorAsync", "createProcessorOperationCallable", "createProcessorCallable"]
+            },
+            "DeleteApplication": {
+              "methods": ["deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationOperationCallable", "deleteApplicationCallable"]
+            },
+            "DeleteApplicationInstances": {
+              "methods": ["deleteApplicationInstancesAsync", "deleteApplicationInstancesAsync", "deleteApplicationInstancesAsync", "deleteApplicationInstancesOperationCallable", "deleteApplicationInstancesCallable"]
+            },
+            "DeleteDraft": {
+              "methods": ["deleteDraftAsync", "deleteDraftAsync", "deleteDraftAsync", "deleteDraftOperationCallable", "deleteDraftCallable"]
+            },
+            "DeleteProcessor": {
+              "methods": ["deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorOperationCallable", "deleteProcessorCallable"]
+            },
+            "DeployApplication": {
+              "methods": ["deployApplicationAsync", "deployApplicationAsync", "deployApplicationAsync", "deployApplicationOperationCallable", "deployApplicationCallable"]
+            },
+            "GetApplication": {
+              "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
+            },
+            "GetDraft": {
+              "methods": ["getDraft", "getDraft", "getDraft", "getDraftCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetProcessor": {
+              "methods": ["getProcessor", "getProcessor", "getProcessor", "getProcessorCallable"]
+            },
+            "ListApplications": {
+              "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
+            },
+            "ListDrafts": {
+              "methods": ["listDrafts", "listDrafts", "listDrafts", "listDraftsPagedCallable", "listDraftsCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListPrebuiltProcessors": {
+              "methods": ["listPrebuiltProcessors", "listPrebuiltProcessors", "listPrebuiltProcessors", "listPrebuiltProcessorsCallable"]
+            },
+            "ListProcessors": {
+              "methods": ["listProcessors", "listProcessors", "listProcessors", "listProcessorsPagedCallable", "listProcessorsCallable"]
+            },
+            "RemoveApplicationStreamInput": {
+              "methods": ["removeApplicationStreamInputAsync", "removeApplicationStreamInputAsync", "removeApplicationStreamInputAsync", "removeApplicationStreamInputOperationCallable", "removeApplicationStreamInputCallable"]
+            },
+            "UndeployApplication": {
+              "methods": ["undeployApplicationAsync", "undeployApplicationAsync", "undeployApplicationAsync", "undeployApplicationOperationCallable", "undeployApplicationCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplicationAsync", "updateApplicationAsync", "updateApplicationOperationCallable", "updateApplicationCallable"]
+            },
+            "UpdateApplicationInstances": {
+              "methods": ["updateApplicationInstancesAsync", "updateApplicationInstancesAsync", "updateApplicationInstancesAsync", "updateApplicationInstancesOperationCallable", "updateApplicationInstancesCallable"]
+            },
+            "UpdateApplicationStreamInput": {
+              "methods": ["updateApplicationStreamInputAsync", "updateApplicationStreamInputAsync", "updateApplicationStreamInputAsync", "updateApplicationStreamInputOperationCallable", "updateApplicationStreamInputCallable"]
+            },
+            "UpdateDraft": {
+              "methods": ["updateDraftAsync", "updateDraftAsync", "updateDraftOperationCallable", "updateDraftCallable"]
+            },
+            "UpdateProcessor": {
+              "methods": ["updateProcessorAsync", "updateProcessorAsync", "updateProcessorOperationCallable", "updateProcessorCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PredictionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PredictionServiceClient"
+        }
+      }
+    },
+    "StreamingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreamingServiceClient",
+          "rpcs": {
+            "AcquireLease": {
+              "methods": ["acquireLease", "acquireLeaseCallable"]
+            },
+            "ReceiveEvents": {
+              "methods": ["receiveEventsCallable"]
+            },
+            "ReceivePackets": {
+              "methods": ["receivePacketsCallable"]
+            },
+            "ReleaseLease": {
+              "methods": ["releaseLease", "releaseLeaseCallable"]
+            },
+            "RenewLease": {
+              "methods": ["renewLease", "renewLeaseCallable"]
+            },
+            "SendPackets": {
+              "methods": ["sendPacketsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StreamsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreamsServiceClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateEvent": {
+              "methods": ["createEventAsync", "createEventAsync", "createEventAsync", "createEventOperationCallable", "createEventCallable"]
+            },
+            "CreateSeries": {
+              "methods": ["createSeriesAsync", "createSeriesAsync", "createSeriesAsync", "createSeriesOperationCallable", "createSeriesCallable"]
+            },
+            "CreateStream": {
+              "methods": ["createStreamAsync", "createStreamAsync", "createStreamAsync", "createStreamOperationCallable", "createStreamCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DeleteEvent": {
+              "methods": ["deleteEventAsync", "deleteEventAsync", "deleteEventAsync", "deleteEventOperationCallable", "deleteEventCallable"]
+            },
+            "DeleteSeries": {
+              "methods": ["deleteSeriesAsync", "deleteSeriesAsync", "deleteSeriesAsync", "deleteSeriesOperationCallable", "deleteSeriesCallable"]
+            },
+            "DeleteStream": {
+              "methods": ["deleteStreamAsync", "deleteStreamAsync", "deleteStreamAsync", "deleteStreamOperationCallable", "deleteStreamCallable"]
+            },
+            "GenerateStreamHlsToken": {
+              "methods": ["generateStreamHlsToken", "generateStreamHlsToken", "generateStreamHlsTokenCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetEvent": {
+              "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
+            },
+            "GetSeries": {
+              "methods": ["getSeries", "getSeries", "getSeries", "getSeriesCallable"]
+            },
+            "GetStream": {
+              "methods": ["getStream", "getStream", "getStream", "getStreamCallable"]
+            },
+            "GetStreamThumbnail": {
+              "methods": ["getStreamThumbnailAsync", "getStreamThumbnailAsync", "getStreamThumbnailOperationCallable", "getStreamThumbnailCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListEvents": {
+              "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListSeries": {
+              "methods": ["listSeries", "listSeries", "listSeries", "listSeriesPagedCallable", "listSeriesCallable"]
+            },
+            "ListStreams": {
+              "methods": ["listStreams", "listStreams", "listStreams", "listStreamsPagedCallable", "listStreamsCallable"]
+            },
+            "MaterializeChannel": {
+              "methods": ["materializeChannelAsync", "materializeChannelAsync", "materializeChannelAsync", "materializeChannelOperationCallable", "materializeChannelCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateEvent": {
+              "methods": ["updateEventAsync", "updateEventAsync", "updateEventOperationCallable", "updateEventCallable"]
+            },
+            "UpdateSeries": {
+              "methods": ["updateSeriesAsync", "updateSeriesAsync", "updateSeriesOperationCallable", "updateSeriesCallable"]
+            },
+            "UpdateStream": {
+              "methods": ["updateStreamAsync", "updateStreamAsync", "updateStreamOperationCallable", "updateStreamCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Warehouse": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WarehouseClient",
+          "rpcs": {
+            "AddCollectionItem": {
+              "methods": ["addCollectionItem", "addCollectionItem", "addCollectionItemCallable"]
+            },
+            "AnalyzeAsset": {
+              "methods": ["analyzeAssetAsync", "analyzeAssetOperationCallable", "analyzeAssetCallable"]
+            },
+            "AnalyzeCorpus": {
+              "methods": ["analyzeCorpusAsync", "analyzeCorpusOperationCallable", "analyzeCorpusCallable"]
+            },
+            "ClipAsset": {
+              "methods": ["clipAsset", "clipAssetCallable"]
+            },
+            "CreateAnnotation": {
+              "methods": ["createAnnotation", "createAnnotation", "createAnnotation", "createAnnotationCallable"]
+            },
+            "CreateAsset": {
+              "methods": ["createAsset", "createAsset", "createAsset", "createAssetCallable"]
+            },
+            "CreateCollection": {
+              "methods": ["createCollectionAsync", "createCollectionAsync", "createCollectionAsync", "createCollectionOperationCallable", "createCollectionCallable"]
+            },
+            "CreateCorpus": {
+              "methods": ["createCorpusAsync", "createCorpusAsync", "createCorpusOperationCallable", "createCorpusCallable"]
+            },
+            "CreateDataSchema": {
+              "methods": ["createDataSchema", "createDataSchema", "createDataSchema", "createDataSchemaCallable"]
+            },
+            "CreateIndex": {
+              "methods": ["createIndexAsync", "createIndexAsync", "createIndexAsync", "createIndexOperationCallable", "createIndexCallable"]
+            },
+            "CreateIndexEndpoint": {
+              "methods": ["createIndexEndpointAsync", "createIndexEndpointAsync", "createIndexEndpointAsync", "createIndexEndpointOperationCallable", "createIndexEndpointCallable"]
+            },
+            "CreateSearchConfig": {
+              "methods": ["createSearchConfig", "createSearchConfig", "createSearchConfig", "createSearchConfigCallable"]
+            },
+            "CreateSearchHypernym": {
+              "methods": ["createSearchHypernym", "createSearchHypernym", "createSearchHypernym", "createSearchHypernymCallable"]
+            },
+            "DeleteAnnotation": {
+              "methods": ["deleteAnnotation", "deleteAnnotation", "deleteAnnotation", "deleteAnnotationCallable"]
+            },
+            "DeleteAsset": {
+              "methods": ["deleteAssetAsync", "deleteAssetAsync", "deleteAssetAsync", "deleteAssetOperationCallable", "deleteAssetCallable"]
+            },
+            "DeleteCollection": {
+              "methods": ["deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionOperationCallable", "deleteCollectionCallable"]
+            },
+            "DeleteCorpus": {
+              "methods": ["deleteCorpus", "deleteCorpus", "deleteCorpus", "deleteCorpusCallable"]
+            },
+            "DeleteDataSchema": {
+              "methods": ["deleteDataSchema", "deleteDataSchema", "deleteDataSchema", "deleteDataSchemaCallable"]
+            },
+            "DeleteIndex": {
+              "methods": ["deleteIndexAsync", "deleteIndexAsync", "deleteIndexAsync", "deleteIndexOperationCallable", "deleteIndexCallable"]
+            },
+            "DeleteIndexEndpoint": {
+              "methods": ["deleteIndexEndpointAsync", "deleteIndexEndpointAsync", "deleteIndexEndpointAsync", "deleteIndexEndpointOperationCallable", "deleteIndexEndpointCallable"]
+            },
+            "DeleteSearchConfig": {
+              "methods": ["deleteSearchConfig", "deleteSearchConfig", "deleteSearchConfig", "deleteSearchConfigCallable"]
+            },
+            "DeleteSearchHypernym": {
+              "methods": ["deleteSearchHypernym", "deleteSearchHypernym", "deleteSearchHypernym", "deleteSearchHypernymCallable"]
+            },
+            "DeployIndex": {
+              "methods": ["deployIndexAsync", "deployIndexOperationCallable", "deployIndexCallable"]
+            },
+            "GenerateHlsUri": {
+              "methods": ["generateHlsUri", "generateHlsUriCallable"]
+            },
+            "GenerateRetrievalUrl": {
+              "methods": ["generateRetrievalUrl", "generateRetrievalUrlCallable"]
+            },
+            "GetAnnotation": {
+              "methods": ["getAnnotation", "getAnnotation", "getAnnotation", "getAnnotationCallable"]
+            },
+            "GetAsset": {
+              "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
+            },
+            "GetCollection": {
+              "methods": ["getCollection", "getCollection", "getCollection", "getCollectionCallable"]
+            },
+            "GetCorpus": {
+              "methods": ["getCorpus", "getCorpus", "getCorpus", "getCorpusCallable"]
+            },
+            "GetDataSchema": {
+              "methods": ["getDataSchema", "getDataSchema", "getDataSchema", "getDataSchemaCallable"]
+            },
+            "GetIndex": {
+              "methods": ["getIndex", "getIndex", "getIndex", "getIndexCallable"]
+            },
+            "GetIndexEndpoint": {
+              "methods": ["getIndexEndpoint", "getIndexEndpoint", "getIndexEndpoint", "getIndexEndpointCallable"]
+            },
+            "GetSearchConfig": {
+              "methods": ["getSearchConfig", "getSearchConfig", "getSearchConfig", "getSearchConfigCallable"]
+            },
+            "GetSearchHypernym": {
+              "methods": ["getSearchHypernym", "getSearchHypernym", "getSearchHypernym", "getSearchHypernymCallable"]
+            },
+            "ImportAssets": {
+              "methods": ["importAssetsAsync", "importAssetsOperationCallable", "importAssetsCallable"]
+            },
+            "IndexAsset": {
+              "methods": ["indexAssetAsync", "indexAssetOperationCallable", "indexAssetCallable"]
+            },
+            "IngestAsset": {
+              "methods": ["ingestAssetCallable"]
+            },
+            "ListAnnotations": {
+              "methods": ["listAnnotations", "listAnnotations", "listAnnotations", "listAnnotationsPagedCallable", "listAnnotationsCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListCollections": {
+              "methods": ["listCollections", "listCollections", "listCollections", "listCollectionsPagedCallable", "listCollectionsCallable"]
+            },
+            "ListCorpora": {
+              "methods": ["listCorpora", "listCorpora", "listCorporaPagedCallable", "listCorporaCallable"]
+            },
+            "ListDataSchemas": {
+              "methods": ["listDataSchemas", "listDataSchemas", "listDataSchemas", "listDataSchemasPagedCallable", "listDataSchemasCallable"]
+            },
+            "ListIndexEndpoints": {
+              "methods": ["listIndexEndpoints", "listIndexEndpoints", "listIndexEndpoints", "listIndexEndpointsPagedCallable", "listIndexEndpointsCallable"]
+            },
+            "ListIndexes": {
+              "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "ListSearchConfigs": {
+              "methods": ["listSearchConfigs", "listSearchConfigs", "listSearchConfigs", "listSearchConfigsPagedCallable", "listSearchConfigsCallable"]
+            },
+            "ListSearchHypernyms": {
+              "methods": ["listSearchHypernyms", "listSearchHypernyms", "listSearchHypernyms", "listSearchHypernymsPagedCallable", "listSearchHypernymsCallable"]
+            },
+            "RemoveCollectionItem": {
+              "methods": ["removeCollectionItem", "removeCollectionItem", "removeCollectionItemCallable"]
+            },
+            "RemoveIndexAsset": {
+              "methods": ["removeIndexAssetAsync", "removeIndexAssetOperationCallable", "removeIndexAssetCallable"]
+            },
+            "SearchAssets": {
+              "methods": ["searchAssets", "searchAssetsPagedCallable", "searchAssetsCallable"]
+            },
+            "SearchIndexEndpoint": {
+              "methods": ["searchIndexEndpoint", "searchIndexEndpointPagedCallable", "searchIndexEndpointCallable"]
+            },
+            "UndeployIndex": {
+              "methods": ["undeployIndexAsync", "undeployIndexOperationCallable", "undeployIndexCallable"]
+            },
+            "UpdateAnnotation": {
+              "methods": ["updateAnnotation", "updateAnnotation", "updateAnnotationCallable"]
+            },
+            "UpdateAsset": {
+              "methods": ["updateAsset", "updateAsset", "updateAssetCallable"]
+            },
+            "UpdateCollection": {
+              "methods": ["updateCollection", "updateCollection", "updateCollectionCallable"]
+            },
+            "UpdateCorpus": {
+              "methods": ["updateCorpus", "updateCorpus", "updateCorpusCallable"]
+            },
+            "UpdateDataSchema": {
+              "methods": ["updateDataSchema", "updateDataSchema", "updateDataSchemaCallable"]
+            },
+            "UpdateIndex": {
+              "methods": ["updateIndexAsync", "updateIndexAsync", "updateIndexOperationCallable", "updateIndexCallable"]
+            },
+            "UpdateIndexEndpoint": {
+              "methods": ["updateIndexEndpointAsync", "updateIndexEndpointAsync", "updateIndexEndpointOperationCallable", "updateIndexEndpointCallable"]
+            },
+            "UpdateSearchConfig": {
+              "methods": ["updateSearchConfig", "updateSearchConfig", "updateSearchConfigCallable"]
+            },
+            "UpdateSearchHypernym": {
+              "methods": ["updateSearchHypernym", "updateSearchHypernym", "updateSearchHypernymCallable"]
+            },
+            "UploadAsset": {
+              "methods": ["uploadAssetAsync", "uploadAssetOperationCallable", "uploadAssetCallable"]
+            },
+            "ViewCollectionItems": {
+              "methods": ["viewCollectionItems", "viewCollectionItems", "viewCollectionItems", "viewCollectionItemsPagedCallable", "viewCollectionItemsCallable"]
+            },
+            "ViewIndexedAssets": {
+              "methods": ["viewIndexedAssets", "viewIndexedAssets", "viewIndexedAssets", "viewIndexedAssetsPagedCallable", "viewIndexedAssetsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

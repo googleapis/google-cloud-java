@@ -1,0 +1,18 @@
+{
+  "api_shortname": "visionai",
+  "name_pretty": "Vision AI API",
+  "product_documentation": "https://cloud.google.com/vision-ai/docs",
+  "api_description": "Vertex AI Vision is an AI-powered platform to ingest, analyze and store video data. ",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-visionai/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-visionai",
+  "distribution_name": "com.google.cloud:google-cloud-visionai",
+  "api_id": "visionai.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rest_documentation": "https://cloud.google.com/vision-ai/docs/reference/rest",
+  "rpc_documentation": "https://cloud.google.com/vision-ai/docs/reference/rpc"
+}
