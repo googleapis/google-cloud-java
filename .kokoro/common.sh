@@ -222,6 +222,7 @@ function generate_graalvm_modules_list() {
       fi
     done
   fi
+  modules_assigned_list+=("google-cloud-examples/native-image-sample")  # Add to the original array
   module_list=$(
     IFS=,
     echo "${modules_assigned_list[*]}"
