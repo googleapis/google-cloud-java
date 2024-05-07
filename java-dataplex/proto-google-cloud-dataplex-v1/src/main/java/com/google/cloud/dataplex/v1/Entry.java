@@ -322,9 +322,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry. The key is either the resource
-   * name of the aspect type (if the aspect is attached directly to the entry)
-   * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+   * Optional. The Aspects attached to the Entry.
+   * The format for the key can be one of the following:
+   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+   * directly to the entry)
+   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+   * attached to an entry's path)
    * </pre>
    *
    * <code>
@@ -348,9 +351,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry. The key is either the resource
-   * name of the aspect type (if the aspect is attached directly to the entry)
-   * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+   * Optional. The Aspects attached to the Entry.
+   * The format for the key can be one of the following:
+   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+   * directly to the entry)
+   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+   * attached to an entry's path)
    * </pre>
    *
    * <code>
@@ -365,9 +371,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry. The key is either the resource
-   * name of the aspect type (if the aspect is attached directly to the entry)
-   * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+   * Optional. The Aspects attached to the Entry.
+   * The format for the key can be one of the following:
+   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+   * directly to the entry)
+   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+   * attached to an entry's path)
    * </pre>
    *
    * <code>
@@ -390,9 +399,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry. The key is either the resource
-   * name of the aspect type (if the aspect is attached directly to the entry)
-   * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+   * Optional. The Aspects attached to the Entry.
+   * The format for the key can be one of the following:
+   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+   * directly to the entry)
+   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+   * attached to an entry's path)
    * </pre>
    *
    * <code>
@@ -1857,9 +1869,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -1883,9 +1898,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -1900,9 +1918,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -1925,9 +1946,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -1956,9 +1980,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -1983,9 +2010,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -2007,9 +2037,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>
@@ -2032,9 +2065,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry. The key is either the resource
-     * name of the aspect type (if the aspect is attached directly to the entry)
-     * or "aspectType&#64;path" if the aspect is attached to an entry's path.
+     * Optional. The Aspects attached to the Entry.
+     * The format for the key can be one of the following:
+     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
+     * directly to the entry)
+     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
+     * attached to an entry's path)
      * </pre>
      *
      * <code>

@@ -41,6 +41,10 @@ public final class VertexRagServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_RagResource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_RagResource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_RagContexts_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RagContexts_fieldAccessorTable;
@@ -68,35 +72,42 @@ public final class VertexRagServiceProto {
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\"G\n\010RagQuery\022\023\n\004text\030\001 \001(\tB\003\340A\001H\000\022"
           + "\035\n\020similarity_top_k\030\002 \001(\005B\003\340A\001B\007\n\005query\""
-          + "\263\002\n\027RetrieveContextsRequest\022c\n\020vertex_ra"
+          + "\335\004\n\027RetrieveContextsRequest\022c\n\020vertex_ra"
           + "g_store\030\002 \001(\0132G.google.cloud.aiplatform."
           + "v1beta1.RetrieveContextsRequest.VertexRa"
           + "gStoreH\000\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locati"
           + "ons.googleapis.com/Location\022=\n\005query\030\003 \001"
           + "(\0132).google.cloud.aiplatform.v1beta1.Rag"
-          + "QueryB\003\340A\002\032*\n\016VertexRagStore\022\030\n\013rag_corp"
-          + "ora\030\001 \003(\tB\003\340A\002B\r\n\013data_source\"\224\001\n\013RagCon"
-          + "texts\022F\n\010contexts\030\001 \003(\01324.google.cloud.a"
-          + "iplatform.v1beta1.RagContexts.Context\032=\n"
-          + "\007Context\022\022\n\nsource_uri\030\001 \001(\t\022\014\n\004text\030\002 \001"
-          + "(\t\022\020\n\010distance\030\003 \001(\001\"Z\n\030RetrieveContexts"
-          + "Response\022>\n\010contexts\030\001 \001(\0132,.google.clou"
-          + "d.aiplatform.v1beta1.RagContexts2\300\002\n\020Ver"
-          + "texRagService\022\334\001\n\020RetrieveContexts\0228.goo"
-          + "gle.cloud.aiplatform.v1beta1.RetrieveCon"
-          + "textsRequest\0329.google.cloud.aiplatform.v"
-          + "1beta1.RetrieveContextsResponse\"S\332A\014pare"
-          + "nt,query\202\323\344\223\002>\"9/v1beta1/{parent=project"
-          + "s/*/locations/*}:retrieveContexts:\001*\032M\312A"
-          + "\031aiplatform.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\354\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\025Ver"
-          + "texRagServiceProtoP\001ZCcloud.google.com/g"
-          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
-          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
-          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
-          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
-          + "o3"
+          + "QueryB\003\340A\002\032\323\002\n\016VertexRagStore\022\032\n\013rag_cor"
+          + "pora\030\001 \003(\tB\005\030\001\340A\001\022o\n\rrag_resources\030\003 \003(\013"
+          + "2S.google.cloud.aiplatform.v1beta1.Retri"
+          + "eveContextsRequest.VertexRagStore.RagRes"
+          + "ourceB\003\340A\001\022+\n\031vector_distance_threshold\030"
+          + "\002 \001(\001B\003\340A\001H\000\210\001\001\032i\n\013RagResource\022?\n\nrag_co"
+          + "rpus\030\001 \001(\tB+\340A\001\372A%\n#aiplatform.googleapi"
+          + "s.com/RagCorpus\022\031\n\014rag_file_ids\030\002 \003(\tB\003\340"
+          + "A\001B\034\n\032_vector_distance_thresholdB\r\n\013data"
+          + "_source\"\224\001\n\013RagContexts\022F\n\010contexts\030\001 \003("
+          + "\01324.google.cloud.aiplatform.v1beta1.RagC"
+          + "ontexts.Context\032=\n\007Context\022\022\n\nsource_uri"
+          + "\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010distance\030\003 \001(\001\"Z"
+          + "\n\030RetrieveContextsResponse\022>\n\010contexts\030\001"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.R"
+          + "agContexts2\300\002\n\020VertexRagService\022\334\001\n\020Retr"
+          + "ieveContexts\0228.google.cloud.aiplatform.v"
+          + "1beta1.RetrieveContextsRequest\0329.google."
+          + "cloud.aiplatform.v1beta1.RetrieveContext"
+          + "sResponse\"S\332A\014parent,query\202\323\344\223\002>\"9/v1bet"
+          + "a1/{parent=projects/*/locations/*}:retri"
+          + "eveContexts:\001*\032M\312A\031aiplatform.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformB\354\001\n#com.google.cloud.aipla"
+          + "tform.v1beta1B\025VertexRagServiceProtoP\001ZC"
+          + "cloud.google.com/go/aiplatform/apiv1beta"
+          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
+          + "orm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -131,7 +142,17 @@ public final class VertexRagServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_descriptor,
             new java.lang.String[] {
-              "RagCorpora",
+              "RagCorpora", "RagResources", "VectorDistanceThreshold",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_RagResource_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_RagResource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RetrieveContextsRequest_VertexRagStore_RagResource_descriptor,
+            new java.lang.String[] {
+              "RagCorpus", "RagFileIds",
             });
     internal_static_google_cloud_aiplatform_v1beta1_RagContexts_descriptor =
         getDescriptor().getMessageTypes().get(2);

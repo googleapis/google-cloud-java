@@ -179,6 +179,17 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>UNIQUENESS_EXPECTATION = 8;</code>
      */
     UNIQUENESS_EXPECTATION(8),
+    /**
+     *
+     *
+     * <pre>
+     * Please see
+     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#sqlAssertion.
+     * </pre>
+     *
+     * <code>SQL_ASSERTION = 9;</code>
+     */
+    SQL_ASSERTION(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -280,6 +291,17 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>UNIQUENESS_EXPECTATION = 8;</code>
      */
     public static final int UNIQUENESS_EXPECTATION_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Please see
+     * https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#sqlAssertion.
+     * </pre>
+     *
+     * <code>SQL_ASSERTION = 9;</code>
+     */
+    public static final int SQL_ASSERTION_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -323,6 +345,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
           return TABLE_CONDITION_EXPECTATION;
         case 8:
           return UNIQUENESS_EXPECTATION;
+        case 9:
+          return SQL_ASSERTION;
         default:
           return null;
       }
@@ -1139,6 +1163,25 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     return nullRowCount_;
   }
 
+  public static final int ASSERTION_ROW_COUNT_FIELD_NUMBER = 13;
+  private long assertionRowCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The number of rows returned by the sql statement in the SqlAssertion rule.
+   * This field is only valid for SqlAssertion rules.
+   * </pre>
+   *
+   * <code>int64 assertion_row_count = 13;</code>
+   *
+   * @return The assertionRowCount.
+   */
+  @java.lang.Override
+  public long getAssertionRowCount() {
+    return assertionRowCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1196,6 +1239,9 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     if (nullRowCount_ != 0L) {
       output.writeInt64(12, nullRowCount_);
     }
+    if (assertionRowCount_ != 0L) {
+      output.writeInt64(13, assertionRowCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1248,6 +1294,9 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     if (nullRowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, nullRowCount_);
     }
+    if (assertionRowCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, assertionRowCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1277,6 +1326,7 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     if (getEvaluatedRowCount() != other.getEvaluatedRowCount()) return false;
     if (getPassedRowCount() != other.getPassedRowCount()) return false;
     if (getNullRowCount() != other.getNullRowCount()) return false;
+    if (getAssertionRowCount() != other.getAssertionRowCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1315,6 +1365,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPassedRowCount());
     hash = (37 * hash) + NULL_ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNullRowCount());
+    hash = (37 * hash) + ASSERTION_ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAssertionRowCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1468,6 +1520,7 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       evaluatedRowCount_ = 0L;
       passedRowCount_ = 0L;
       nullRowCount_ = 0L;
+      assertionRowCount_ = 0L;
       return this;
     }
 
@@ -1539,6 +1592,9 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.nullRowCount_ = nullRowCount_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.assertionRowCount_ = assertionRowCount_;
       }
     }
 
@@ -1633,6 +1689,9 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
       }
       if (other.getNullRowCount() != 0L) {
         setNullRowCount(other.getNullRowCount());
+      }
+      if (other.getAssertionRowCount() != 0L) {
+        setAssertionRowCount(other.getAssertionRowCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1732,6 +1791,12 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 104:
+              {
+                assertionRowCount_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2780,6 +2845,62 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
     public Builder clearNullRowCount() {
       bitField0_ = (bitField0_ & ~0x00000800);
       nullRowCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long assertionRowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows returned by the sql statement in the SqlAssertion rule.
+     * This field is only valid for SqlAssertion rules.
+     * </pre>
+     *
+     * <code>int64 assertion_row_count = 13;</code>
+     *
+     * @return The assertionRowCount.
+     */
+    @java.lang.Override
+    public long getAssertionRowCount() {
+      return assertionRowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows returned by the sql statement in the SqlAssertion rule.
+     * This field is only valid for SqlAssertion rules.
+     * </pre>
+     *
+     * <code>int64 assertion_row_count = 13;</code>
+     *
+     * @param value The assertionRowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssertionRowCount(long value) {
+
+      assertionRowCount_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows returned by the sql statement in the SqlAssertion rule.
+     * This field is only valid for SqlAssertion rules.
+     * </pre>
+     *
+     * <code>int64 assertion_row_count = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAssertionRowCount() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      assertionRowCount_ = 0L;
       onChanged();
       return this;
     }

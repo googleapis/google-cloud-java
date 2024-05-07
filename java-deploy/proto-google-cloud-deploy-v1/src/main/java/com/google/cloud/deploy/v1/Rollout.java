@@ -935,7 +935,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Rollout`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+   * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -959,7 +960,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Rollout`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+   * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2074,7 +2076,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Name of the `ControllerRollout`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2098,7 +2100,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Name of the `ControllerRollout`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3273,7 +3275,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Rollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+     * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3296,7 +3299,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Rollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+     * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3319,7 +3323,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Rollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+     * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3341,7 +3346,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Rollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+     * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3359,7 +3365,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Rollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
+     * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6380,7 +6387,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Name of the `ControllerRollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6403,7 +6410,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Name of the `ControllerRollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6426,7 +6433,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Name of the `ControllerRollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6448,7 +6455,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Name of the `ControllerRollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6466,7 +6473,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Name of the `ControllerRollout`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

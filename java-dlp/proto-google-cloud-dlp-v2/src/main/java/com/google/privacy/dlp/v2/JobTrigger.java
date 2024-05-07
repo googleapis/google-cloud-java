@@ -23,7 +23,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Contains a configuration to make dlp api calls on a repeating basis.
+ * Contains a configuration to make api calls on a repeating basis.
  * See
  * https://cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
  * to learn more.
@@ -2318,7 +2318,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains a configuration to make dlp api calls on a repeating basis.
+   * Contains a configuration to make api calls on a repeating basis.
    * See
    * https://cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
    * to learn more.

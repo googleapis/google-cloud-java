@@ -28,76 +28,151 @@ public interface VertexRagStoreOrBuilder
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @return A list containing the ragCorpora.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getRagCorporaList();
   /**
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @return The count of ragCorpora.
    */
+  @java.lang.Deprecated
   int getRagCorporaCount();
   /**
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @param index The index of the element to return.
    * @return The ragCorpora at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getRagCorpora(int index);
   /**
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @param index The index of the value to return.
    * @return The bytes of the ragCorpora at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getRagCorporaBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+      getRagResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource getRagResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getRagResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>
+      getRagResourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder getRagResourcesOrBuilder(
+      int index);
 
   /**
    *
@@ -123,4 +198,33 @@ public interface VertexRagStoreOrBuilder
    * @return The similarityTopK.
    */
   int getSimilarityTopK();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return results with vector distance smaller than the
+   * threshold.
+   * </pre>
+   *
+   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vectorDistanceThreshold field is set.
+   */
+  boolean hasVectorDistanceThreshold();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return results with vector distance smaller than the
+   * threshold.
+   * </pre>
+   *
+   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vectorDistanceThreshold.
+   */
+  double getVectorDistanceThreshold();
 }
