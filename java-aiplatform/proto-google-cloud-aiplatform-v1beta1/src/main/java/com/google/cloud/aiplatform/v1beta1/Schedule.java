@@ -1271,6 +1271,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CREATE_PIPELINE_JOB_REQUEST(14),
     CREATE_MODEL_MONITORING_JOB_REQUEST(15),
+    CREATE_NOTEBOOK_EXECUTION_JOB_REQUEST(20),
     REQUEST_NOT_SET(0);
     private final int value;
 
@@ -1293,6 +1294,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
           return CREATE_PIPELINE_JOB_REQUEST;
         case 15:
           return CREATE_MODEL_MONITORING_JOB_REQUEST;
+        case 20:
+          return CREATE_NOTEBOOK_EXECUTION_JOB_REQUEST;
         case 0:
           return REQUEST_NOT_SET;
         default:
@@ -1522,6 +1525,67 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest) request_;
     }
     return com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest.getDefaultInstance();
+  }
+
+  public static final int CREATE_NOTEBOOK_EXECUTION_JOB_REQUEST_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   *
+   * @return Whether the createNotebookExecutionJobRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateNotebookExecutionJobRequest() {
+    return requestCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   *
+   * @return The createNotebookExecutionJobRequest.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+      getCreateNotebookExecutionJobRequest() {
+    if (requestCase_ == 20) {
+      return (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequestOrBuilder
+      getCreateNotebookExecutionJobRequestOrBuilder() {
+    if (requestCase_ == 20) {
+      return (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+        .getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -2299,6 +2363,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(19, getUpdateTime());
     }
+    if (requestCase_ == 20) {
+      output.writeMessage(
+          20, (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2371,6 +2439,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getUpdateTime());
+    }
+    if (requestCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2445,6 +2518,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       case 15:
         if (!getCreateModelMonitoringJobRequest()
             .equals(other.getCreateModelMonitoringJobRequest())) return false;
+        break;
+      case 20:
+        if (!getCreateNotebookExecutionJobRequest()
+            .equals(other.getCreateNotebookExecutionJobRequest())) return false;
         break;
       case 0:
       default:
@@ -2524,6 +2601,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       case 15:
         hash = (37 * hash) + CREATE_MODEL_MONITORING_JOB_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getCreateModelMonitoringJobRequest().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + CREATE_NOTEBOOK_EXECUTION_JOB_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateNotebookExecutionJobRequest().hashCode();
         break;
       case 0:
       default:
@@ -2690,6 +2771,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       if (createModelMonitoringJobRequestBuilder_ != null) {
         createModelMonitoringJobRequestBuilder_.clear();
       }
+      if (createNotebookExecutionJobRequestBuilder_ != null) {
+        createNotebookExecutionJobRequestBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       startTime_ = null;
@@ -2779,63 +2863,63 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Schedule result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.maxRunCount_ = maxRunCount_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.startedRunCount_ = startedRunCount_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.nextRunTime_ =
             nextRunTimeBuilder_ == null ? nextRunTime_ : nextRunTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.lastPauseTime_ =
             lastPauseTimeBuilder_ == null ? lastPauseTime_ : lastPauseTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.lastResumeTime_ =
             lastResumeTimeBuilder_ == null ? lastResumeTime_ : lastResumeTimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.maxConcurrentRunCount_ = maxConcurrentRunCount_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.allowQueueing_ = allowQueueing_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.catchUp_ = catchUp_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.lastScheduledRunResponse_ =
             lastScheduledRunResponseBuilder_ == null
                 ? lastScheduledRunResponse_
@@ -2855,6 +2939,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       if (requestCase_ == 15 && createModelMonitoringJobRequestBuilder_ != null) {
         result.request_ = createModelMonitoringJobRequestBuilder_.build();
+      }
+      if (requestCase_ == 20 && createNotebookExecutionJobRequestBuilder_ != null) {
+        result.request_ = createNotebookExecutionJobRequestBuilder_.build();
       }
     }
 
@@ -2905,12 +2992,12 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.Schedule.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -2979,6 +3066,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             mergeCreateModelMonitoringJobRequest(other.getCreateModelMonitoringJobRequest());
             break;
           }
+        case CREATE_NOTEBOOK_EXECUTION_JOB_REQUEST:
+          {
+            mergeCreateNotebookExecutionJobRequest(other.getCreateNotebookExecutionJobRequest());
+            break;
+          }
         case REQUEST_NOT_SET:
           {
             break;
@@ -3013,55 +3105,55 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getNextRunTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getLastPauseTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getLastResumeTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 74
             case 82:
@@ -3074,19 +3166,19 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 88:
               {
                 maxConcurrentRunCount_ = input.readInt64();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 88
             case 96:
               {
                 allowQueueing_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 96
             case 104:
               {
                 catchUp_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 104
             case 114:
@@ -3107,28 +3199,36 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 maxRunCount_ = input.readInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 128
             case 136:
               {
                 startedRunCount_ = input.readInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 136
             case 146:
               {
                 input.readMessage(
                     getLastScheduledRunResponseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getCreateNotebookExecutionJobRequestFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                requestCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3852,6 +3952,247 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return createModelMonitoringJobRequestBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest,
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.Builder,
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequestOrBuilder>
+        createNotebookExecutionJobRequestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     *
+     * @return Whether the createNotebookExecutionJobRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateNotebookExecutionJobRequest() {
+      return requestCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     *
+     * @return The createNotebookExecutionJobRequest.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+        getCreateNotebookExecutionJobRequest() {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        if (requestCase_ == 20) {
+          return (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+            .getDefaultInstance();
+      } else {
+        if (requestCase_ == 20) {
+          return createNotebookExecutionJobRequestBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    public Builder setCreateNotebookExecutionJobRequest(
+        com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest value) {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        request_ = value;
+        onChanged();
+      } else {
+        createNotebookExecutionJobRequestBuilder_.setMessage(value);
+      }
+      requestCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    public Builder setCreateNotebookExecutionJobRequest(
+        com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.Builder
+            builderForValue) {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        request_ = builderForValue.build();
+        onChanged();
+      } else {
+        createNotebookExecutionJobRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    public Builder mergeCreateNotebookExecutionJobRequest(
+        com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest value) {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        if (requestCase_ == 20
+            && request_
+                != com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+                    .getDefaultInstance()) {
+          request_ =
+              com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest)
+                          request_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          request_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestCase_ == 20) {
+          createNotebookExecutionJobRequestBuilder_.mergeFrom(value);
+        } else {
+          createNotebookExecutionJobRequestBuilder_.setMessage(value);
+        }
+      }
+      requestCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    public Builder clearCreateNotebookExecutionJobRequest() {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        if (requestCase_ == 20) {
+          requestCase_ = 0;
+          request_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestCase_ == 20) {
+          requestCase_ = 0;
+          request_ = null;
+        }
+        createNotebookExecutionJobRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.Builder
+        getCreateNotebookExecutionJobRequestBuilder() {
+      return getCreateNotebookExecutionJobRequestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequestOrBuilder
+        getCreateNotebookExecutionJobRequestOrBuilder() {
+      if ((requestCase_ == 20) && (createNotebookExecutionJobRequestBuilder_ != null)) {
+        return createNotebookExecutionJobRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestCase_ == 20) {
+          return (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request for [NotebookService.CreateNotebookExecutionJob][].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest create_notebook_execution_job_request = 20;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest,
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.Builder,
+            com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequestOrBuilder>
+        getCreateNotebookExecutionJobRequestFieldBuilder() {
+      if (createNotebookExecutionJobRequestBuilder_ == null) {
+        if (!(requestCase_ == 20)) {
+          request_ =
+              com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest
+                  .getDefaultInstance();
+        }
+        createNotebookExecutionJobRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest,
+                com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest.Builder,
+                com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequestOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest) request_,
+                getParentForChildren(),
+                isClean());
+        request_ = null;
+      }
+      requestCase_ = 20;
+      onChanged();
+      return createNotebookExecutionJobRequestBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -3914,7 +4255,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3931,7 +4272,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3953,7 +4294,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4026,7 +4367,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4045,7 +4386,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4069,7 +4410,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4094,7 +4435,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4136,7 +4477,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4157,7 +4498,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4174,7 +4515,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -4185,7 +4526,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -4202,7 +4543,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -4223,7 +4564,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -4297,7 +4638,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4347,7 +4688,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4372,7 +4713,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4393,7 +4734,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -4404,7 +4745,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -4425,7 +4766,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -4450,7 +4791,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -4549,7 +4890,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRunCount(long value) {
 
       maxRunCount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4570,7 +4911,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRunCount() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       maxRunCount_ = 0L;
       onChanged();
       return this;
@@ -4607,7 +4948,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartedRunCount(long value) {
 
       startedRunCount_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4623,7 +4964,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartedRunCount() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       startedRunCount_ = 0L;
       onChanged();
       return this;
@@ -4663,7 +5004,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4706,7 +5047,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4725,7 +5066,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;
@@ -4751,7 +5092,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4795,7 +5136,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4816,7 +5157,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4833,7 +5174,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4844,7 +5185,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4861,7 +5202,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4882,7 +5223,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4954,7 +5295,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4998,7 +5339,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5019,7 +5360,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5036,7 +5377,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5047,7 +5388,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5064,7 +5405,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5085,7 +5426,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -5159,7 +5500,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextRunTime field is set.
      */
     public boolean hasNextRunTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5207,7 +5548,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         nextRunTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5230,7 +5571,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         nextRunTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5249,7 +5590,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNextRunTime(com.google.protobuf.Timestamp value) {
       if (nextRunTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && nextRunTime_ != null
             && nextRunTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getNextRunTimeBuilder().mergeFrom(value);
@@ -5260,7 +5601,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         nextRunTimeBuilder_.mergeFrom(value);
       }
       if (nextRunTime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5279,7 +5620,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNextRunTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       nextRunTime_ = null;
       if (nextRunTimeBuilder_ != null) {
         nextRunTimeBuilder_.dispose();
@@ -5302,7 +5643,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getNextRunTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getNextRunTimeFieldBuilder().getBuilder();
     }
@@ -5379,7 +5720,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastPauseTime field is set.
      */
     public boolean hasLastPauseTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5425,7 +5766,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastPauseTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5447,7 +5788,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastPauseTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5465,7 +5806,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastPauseTime(com.google.protobuf.Timestamp value) {
       if (lastPauseTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && lastPauseTime_ != null
             && lastPauseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastPauseTimeBuilder().mergeFrom(value);
@@ -5476,7 +5817,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         lastPauseTimeBuilder_.mergeFrom(value);
       }
       if (lastPauseTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5494,7 +5835,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastPauseTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       lastPauseTime_ = null;
       if (lastPauseTimeBuilder_ != null) {
         lastPauseTimeBuilder_.dispose();
@@ -5516,7 +5857,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastPauseTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getLastPauseTimeFieldBuilder().getBuilder();
     }
@@ -5591,7 +5932,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastResumeTime field is set.
      */
     public boolean hasLastResumeTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5637,7 +5978,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastResumeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5659,7 +6000,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastResumeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5677,7 +6018,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastResumeTime(com.google.protobuf.Timestamp value) {
       if (lastResumeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && lastResumeTime_ != null
             && lastResumeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastResumeTimeBuilder().mergeFrom(value);
@@ -5688,7 +6029,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         lastResumeTimeBuilder_.mergeFrom(value);
       }
       if (lastResumeTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5706,7 +6047,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastResumeTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       lastResumeTime_ = null;
       if (lastResumeTimeBuilder_ != null) {
         lastResumeTimeBuilder_.dispose();
@@ -5728,7 +6069,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastResumeTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getLastResumeTimeFieldBuilder().getBuilder();
     }
@@ -5817,7 +6158,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConcurrentRunCount(long value) {
 
       maxConcurrentRunCount_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5835,7 +6176,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConcurrentRunCount() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       maxConcurrentRunCount_ = 0L;
       onChanged();
       return this;
@@ -5876,7 +6217,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowQueueing(boolean value) {
 
       allowQueueing_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5894,7 +6235,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowQueueing() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       allowQueueing_ = false;
       onChanged();
       return this;
@@ -5935,7 +6276,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setCatchUp(boolean value) {
 
       catchUp_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5953,7 +6294,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCatchUp() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       catchUp_ = false;
       onChanged();
       return this;
@@ -5982,7 +6323,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastScheduledRunResponse field is set.
      */
     public boolean hasLastScheduledRunResponse() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -6033,7 +6374,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastScheduledRunResponseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6058,7 +6399,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastScheduledRunResponseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6079,7 +6420,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLastScheduledRunResponse(
         com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse value) {
       if (lastScheduledRunResponseBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && lastScheduledRunResponse_ != null
             && lastScheduledRunResponse_
                 != com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()) {
@@ -6091,7 +6432,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         lastScheduledRunResponseBuilder_.mergeFrom(value);
       }
       if (lastScheduledRunResponse_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6111,7 +6452,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastScheduledRunResponse() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       lastScheduledRunResponse_ = null;
       if (lastScheduledRunResponseBuilder_ != null) {
         lastScheduledRunResponseBuilder_.dispose();
@@ -6136,7 +6477,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder
         getLastScheduledRunResponseBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getLastScheduledRunResponseFieldBuilder().getBuilder();
     }

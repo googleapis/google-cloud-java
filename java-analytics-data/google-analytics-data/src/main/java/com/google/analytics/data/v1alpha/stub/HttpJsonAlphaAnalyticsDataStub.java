@@ -18,20 +18,29 @@ package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetReportTaskRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListReportTasksRequest;
+import com.google.analytics.data.v1alpha.ListReportTasksResponse;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.QueryReportTaskRequest;
+import com.google.analytics.data.v1alpha.QueryReportTaskResponse;
 import com.google.analytics.data.v1alpha.RecurringAudienceList;
+import com.google.analytics.data.v1alpha.ReportTask;
+import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
 import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
@@ -74,7 +83,9 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(AudienceList.getDescriptor())
+          .add(ReportTask.getDescriptor())
           .add(AudienceListMetadata.getDescriptor())
+          .add(ReportTaskMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<RunFunnelReportRequest, RunFunnelReportResponse>
@@ -421,6 +432,154 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateReportTaskRequest, Operation>
+      createReportTaskMethodDescriptor =
+          ApiMethodDescriptor.<CreateReportTaskRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/CreateReportTask")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateReportTaskRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/reportTasks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("reportTask", request.getReportTask(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateReportTaskRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskMethodDescriptor =
+          ApiMethodDescriptor.<QueryReportTaskRequest, QueryReportTaskResponse>newBuilder()
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/QueryReportTask")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryReportTaskRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/reportTasks/*}:query",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryReportTaskResponse>newBuilder()
+                      .setDefaultInstance(QueryReportTaskResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetReportTaskRequest, ReportTask>
+      getReportTaskMethodDescriptor =
+          ApiMethodDescriptor.<GetReportTaskRequest, ReportTask>newBuilder()
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/GetReportTask")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetReportTaskRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/reportTasks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReportTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReportTask>newBuilder()
+                      .setDefaultInstance(ReportTask.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListReportTasksRequest, ListReportTasksResponse>
+      listReportTasksMethodDescriptor =
+          ApiMethodDescriptor.<ListReportTasksRequest, ListReportTasksResponse>newBuilder()
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/ListReportTasks")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListReportTasksRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/reportTasks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReportTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReportTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListReportTasksResponse>newBuilder()
+                      .setDefaultInstance(ListReportTasksResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportCallable;
   private final UnaryCallable<CreateAudienceListRequest, Operation> createAudienceListCallable;
@@ -444,6 +603,16 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private final UnaryCallable<
           ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable;
+  private final UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable;
+  private final OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationCallable;
+  private final UnaryCallable<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskCallable;
+  private final UnaryCallable<GetReportTaskRequest, ReportTask> getReportTaskCallable;
+  private final UnaryCallable<ListReportTasksRequest, ListReportTasksResponse>
+      listReportTasksCallable;
+  private final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
+      listReportTasksPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -602,6 +771,52 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
+        HttpJsonCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
+            .setMethodDescriptor(createReportTaskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
+        queryReportTaskTransportSettings =
+            HttpJsonCallSettings.<QueryReportTaskRequest, QueryReportTaskResponse>newBuilder()
+                .setMethodDescriptor(queryReportTaskMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetReportTaskRequest, ReportTask> getReportTaskTransportSettings =
+        HttpJsonCallSettings.<GetReportTaskRequest, ReportTask>newBuilder()
+            .setMethodDescriptor(getReportTaskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListReportTasksRequest, ListReportTasksResponse>
+        listReportTasksTransportSettings =
+            HttpJsonCallSettings.<ListReportTasksRequest, ListReportTasksResponse>newBuilder()
+                .setMethodDescriptor(listReportTasksMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.runFunnelReportCallable =
         callableFactory.createUnaryCallable(
@@ -660,6 +875,27 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             listRecurringAudienceListsTransportSettings,
             settings.listRecurringAudienceListsSettings(),
             clientContext);
+    this.createReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            createReportTaskTransportSettings, settings.createReportTaskSettings(), clientContext);
+    this.createReportTaskOperationCallable =
+        callableFactory.createOperationCallable(
+            createReportTaskTransportSettings,
+            settings.createReportTaskOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.queryReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            queryReportTaskTransportSettings, settings.queryReportTaskSettings(), clientContext);
+    this.getReportTaskCallable =
+        callableFactory.createUnaryCallable(
+            getReportTaskTransportSettings, settings.getReportTaskSettings(), clientContext);
+    this.listReportTasksCallable =
+        callableFactory.createUnaryCallable(
+            listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.listReportTasksPagedCallable =
+        callableFactory.createPagedCallable(
+            listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -677,6 +913,10 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(createRecurringAudienceListMethodDescriptor);
     methodDescriptors.add(getRecurringAudienceListMethodDescriptor);
     methodDescriptors.add(listRecurringAudienceListsMethodDescriptor);
+    methodDescriptors.add(createReportTaskMethodDescriptor);
+    methodDescriptors.add(queryReportTaskMethodDescriptor);
+    methodDescriptors.add(getReportTaskMethodDescriptor);
+    methodDescriptors.add(listReportTasksMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -751,6 +991,38 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
       listRecurringAudienceListsPagedCallable() {
     return listRecurringAudienceListsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReportTaskRequest, Operation> createReportTaskCallable() {
+    return createReportTaskCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationCallable() {
+    return createReportTaskOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryReportTaskRequest, QueryReportTaskResponse> queryReportTaskCallable() {
+    return queryReportTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReportTaskRequest, ReportTask> getReportTaskCallable() {
+    return getReportTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportTasksRequest, ListReportTasksResponse> listReportTasksCallable() {
+    return listReportTasksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
+      listReportTasksPagedCallable() {
+    return listReportTasksPagedCallable;
   }
 
   @Override

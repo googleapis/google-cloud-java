@@ -279,7 +279,7 @@ public final class LogsProto {
           + "_UNSPECIFIED\020\000\022\r\n\tON_DEMAND\020\001\022\014\n\010SCHEDUL"
           + "E\020\002\"9\n\005Scope\022\025\n\021SCOPE_UNSPECIFIED\020\000\022\010\n\004F"
           + "ULL\020\001\022\017\n\013INCREMENTAL\020\002B\010\n\006resultB\020\n\016appl"
-          + "iedConfigs\"\351\006\n\031DataQualityScanRuleResult"
+          + "iedConfigs\"\231\007\n\031DataQualityScanRuleResult"
           + "\022\016\n\006job_id\030\001 \001(\t\022\023\n\013data_source\030\002 \001(\t\022\016\n"
           + "\006column\030\003 \001(\t\022\021\n\trule_name\030\004 \001(\t\022O\n\trule"
           + "_type\030\005 \001(\0162<.google.cloud.dataplex.v1.D"
@@ -291,19 +291,21 @@ public final class LogsProto {
           + "e.cloud.dataplex.v1.DataQualityScanRuleR"
           + "esult.Result\022\033\n\023evaluated_row_count\030\n \001("
           + "\003\022\030\n\020passed_row_count\030\013 \001(\003\022\026\n\016null_row_"
-          + "count\030\014 \001(\003\"\377\001\n\010RuleType\022\031\n\025RULE_TYPE_UN"
-          + "SPECIFIED\020\000\022\030\n\024NON_NULL_EXPECTATION\020\001\022\025\n"
-          + "\021RANGE_EXPECTATION\020\002\022\025\n\021REGEX_EXPECTATIO"
-          + "N\020\003\022\035\n\031ROW_CONDITION_EXPECTATION\020\004\022\023\n\017SE"
-          + "T_EXPECTATION\020\005\022\037\n\033STATISTIC_RANGE_EXPEC"
-          + "TATION\020\006\022\037\n\033TABLE_CONDITION_EXPECTATION\020"
-          + "\007\022\032\n\026UNIQUENESS_EXPECTATION\020\010\"M\n\016Evaluat"
-          + "ionType\022\037\n\033EVALUATION_TYPE_UNSPECIFIED\020\000"
-          + "\022\013\n\007PER_ROW\020\001\022\r\n\tAGGREGATE\020\002\"8\n\006Result\022\026"
-          + "\n\022RESULT_UNSPECIFIED\020\000\022\n\n\006PASSED\020\001\022\n\n\006FA"
-          + "ILED\020\002Be\n\034com.google.cloud.dataplex.v1B\t"
-          + "LogsProtoP\001Z8cloud.google.com/go/dataple"
-          + "x/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "count\030\014 \001(\003\022\033\n\023assertion_row_count\030\r \001(\003"
+          + "\"\222\002\n\010RuleType\022\031\n\025RULE_TYPE_UNSPECIFIED\020\000"
+          + "\022\030\n\024NON_NULL_EXPECTATION\020\001\022\025\n\021RANGE_EXPE"
+          + "CTATION\020\002\022\025\n\021REGEX_EXPECTATION\020\003\022\035\n\031ROW_"
+          + "CONDITION_EXPECTATION\020\004\022\023\n\017SET_EXPECTATI"
+          + "ON\020\005\022\037\n\033STATISTIC_RANGE_EXPECTATION\020\006\022\037\n"
+          + "\033TABLE_CONDITION_EXPECTATION\020\007\022\032\n\026UNIQUE"
+          + "NESS_EXPECTATION\020\010\022\021\n\rSQL_ASSERTION\020\t\"M\n"
+          + "\016EvaluationType\022\037\n\033EVALUATION_TYPE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007PER_ROW\020\001\022\r\n\tAGGREGATE\020\002\"8\n\006"
+          + "Result\022\026\n\022RESULT_UNSPECIFIED\020\000\022\n\n\006PASSED"
+          + "\020\001\022\n\n\006FAILED\020\002Be\n\034com.google.cloud.datap"
+          + "lex.v1B\tLogsProtoP\001Z8cloud.google.com/go"
+          + "/dataplex/apiv1/dataplexpb;dataplexpbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -554,6 +556,7 @@ public final class LogsProto {
               "EvaluatedRowCount",
               "PassedRowCount",
               "NullRowCount",
+              "AssertionRowCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

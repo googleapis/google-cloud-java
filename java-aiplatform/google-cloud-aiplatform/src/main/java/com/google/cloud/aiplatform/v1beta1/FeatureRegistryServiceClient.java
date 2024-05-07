@@ -481,7 +481,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create FeatureGroups. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featureGroup Required. The FeatureGroup to create.
    * @param featureGroupId Required. The ID to use for this FeatureGroup, which will become the
    *     final component of the FeatureGroup's resource name.
@@ -527,7 +527,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create FeatureGroups. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featureGroup Required. The FeatureGroup to create.
    * @param featureGroupId Required. The ID to use for this FeatureGroup, which will become the
    *     final component of the FeatureGroup's resource name.

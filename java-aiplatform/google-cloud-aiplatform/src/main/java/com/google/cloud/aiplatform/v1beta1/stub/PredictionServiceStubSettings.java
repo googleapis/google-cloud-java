@@ -43,7 +43,6 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
@@ -150,8 +149,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       generateContentSettings;
   private final ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentSettings;
-  private final ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody>
-      chatCompletionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -287,11 +284,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return streamGenerateContentSettings;
   }
 
-  /** Returns the object with the settings used for calls to chatCompletions. */
-  public ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsSettings() {
-    return chatCompletionsSettings;
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -412,7 +404,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     countTokensSettings = settingsBuilder.countTokensSettings().build();
     generateContentSettings = settingsBuilder.generateContentSettings().build();
     streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
-    chatCompletionsSettings = settingsBuilder.chatCompletionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -451,8 +442,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ServerStreamingCallSettings.Builder<
             GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings;
-    private final ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
-        chatCompletionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -511,7 +500,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
-      chatCompletionsSettings = ServerStreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -551,7 +539,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       countTokensSettings = settings.countTokensSettings.toBuilder();
       generateContentSettings = settings.generateContentSettings.toBuilder();
       streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
-      chatCompletionsSettings = settings.chatCompletionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -629,11 +616,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .streamGenerateContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .chatCompletionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -754,12 +736,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings() {
       return streamGenerateContentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to chatCompletions. */
-    public ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
-        chatCompletionsSettings() {
-      return chatCompletionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

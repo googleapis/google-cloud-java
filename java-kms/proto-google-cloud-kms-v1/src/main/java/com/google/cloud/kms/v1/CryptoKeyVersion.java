@@ -435,6 +435,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * EdDSA on the Curve25519 in pure mode (taking data as input).
+     * </pre>
+     *
+     * <code>EC_SIGN_ED25519 = 40;</code>
+     */
+    EC_SIGN_ED25519(40),
+    /**
+     *
+     *
+     * <pre>
      * HMAC-SHA256 signing with a 256 bit key.
      * </pre>
      *
@@ -795,6 +805,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * EdDSA on the Curve25519 in pure mode (taking data as input).
+     * </pre>
+     *
+     * <code>EC_SIGN_ED25519 = 40;</code>
+     */
+    public static final int EC_SIGN_ED25519_VALUE = 40;
+    /**
+     *
+     *
+     * <pre>
      * HMAC-SHA256 signing with a 256 bit key.
      * </pre>
      *
@@ -934,6 +954,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return EC_SIGN_P384_SHA384;
         case 31:
           return EC_SIGN_SECP256K1_SHA256;
+        case 40:
+          return EC_SIGN_ED25519;
         case 32:
           return HMAC_SHA256;
         case 33:

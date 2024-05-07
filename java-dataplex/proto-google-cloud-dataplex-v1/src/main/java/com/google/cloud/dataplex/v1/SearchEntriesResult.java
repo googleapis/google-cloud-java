@@ -39,12 +39,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
   }
 
   private SearchEntriesResult() {
-    entry_ = "";
-    displayName_ = "";
-    entryType_ = "";
-    fullyQualifiedName_ = "";
-    description_ = "";
-    relativeResource_ = "";
     linkedResource_ = "";
   }
 
@@ -821,401 +815,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
-  public static final int ENTRY_FIELD_NUMBER = 1;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object entry_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of the entry.
-   * </pre>
-   *
-   * <code>string entry = 1 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1250
-   * @return The entry.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getEntry() {
-    java.lang.Object ref = entry_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      entry_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of the entry.
-   * </pre>
-   *
-   * <code>string entry = 1 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1250
-   * @return The bytes for entry.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getEntryBytes() {
-    java.lang.Object ref = entry_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      entry_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object displayName_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Display name.
-   * </pre>
-   *
-   * <code>string display_name = 2 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1253
-   * @return The displayName.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getDisplayName() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      displayName_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Display name.
-   * </pre>
-   *
-   * <code>string display_name = 2 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1253
-   * @return The bytes for displayName.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getDisplayNameBytes() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      displayName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ENTRY_TYPE_FIELD_NUMBER = 3;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object entryType_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * The entry type.
-   * </pre>
-   *
-   * <code>string entry_type = 3 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1256
-   * @return The entryType.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getEntryType() {
-    java.lang.Object ref = entryType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      entryType_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The entry type.
-   * </pre>
-   *
-   * <code>string entry_type = 3 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1256
-   * @return The bytes for entryType.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getEntryTypeBytes() {
-    java.lang.Object ref = entryType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      entryType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int MODIFY_TIME_FIELD_NUMBER = 4;
-  private com.google.protobuf.Timestamp modifyTime_;
-  /**
-   *
-   *
-   * <pre>
-   * The last modification timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.modify_time is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1259
-   * @return Whether the modifyTime field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean hasModifyTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The last modification timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.modify_time is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1259
-   * @return The modifyTime.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.Timestamp getModifyTime() {
-    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The last modification timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
-    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
-  }
-
-  public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object fullyQualifiedName_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Fully qualified name.
-   * </pre>
-   *
-   * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-   *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-   * @return The fullyQualifiedName.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getFullyQualifiedName() {
-    java.lang.Object ref = fullyQualifiedName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      fullyQualifiedName_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Fully qualified name.
-   * </pre>
-   *
-   * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-   *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-   * @return The bytes for fullyQualifiedName.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getFullyQualifiedNameBytes() {
-    java.lang.Object ref = fullyQualifiedName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      fullyQualifiedName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DESCRIPTION_FIELD_NUMBER = 6;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object description_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Entry description.
-   * </pre>
-   *
-   * <code>string description = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1265
-   * @return The description.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      description_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Entry description.
-   * </pre>
-   *
-   * <code>string description = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1265
-   * @return The bytes for description.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getDescriptionBytes() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      description_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int RELATIVE_RESOURCE_FIELD_NUMBER = 7;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object relativeResource_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Relative resource name.
-   * </pre>
-   *
-   * <code>string relative_resource = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1268
-   * @return The relativeResource.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.lang.String getRelativeResource() {
-    java.lang.Object ref = relativeResource_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      relativeResource_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Relative resource name.
-   * </pre>
-   *
-   * <code>string relative_resource = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1268
-   * @return The bytes for relativeResource.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getRelativeResourceBytes() {
-    java.lang.Object ref = relativeResource_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      relativeResource_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int LINKED_RESOURCE_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -1282,7 +881,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasDataplexEntry() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -1332,7 +931,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasSnippets() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -1381,34 +980,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entry_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entry_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, entryType_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(4, getModifyTime());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fullyQualifiedName_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativeResource_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, relativeResource_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkedResource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, linkedResource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getDataplexEntry());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(12, getSnippets());
     }
     getUnknownFields().writeTo(output);
@@ -1420,34 +998,13 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entry_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entry_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, entryType_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getModifyTime());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fullyQualifiedName_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativeResource_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, relativeResource_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkedResource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, linkedResource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getDataplexEntry());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSnippets());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1466,16 +1023,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     com.google.cloud.dataplex.v1.SearchEntriesResult other =
         (com.google.cloud.dataplex.v1.SearchEntriesResult) obj;
 
-    if (!getEntry().equals(other.getEntry())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getEntryType().equals(other.getEntryType())) return false;
-    if (hasModifyTime() != other.hasModifyTime()) return false;
-    if (hasModifyTime()) {
-      if (!getModifyTime().equals(other.getModifyTime())) return false;
-    }
-    if (!getFullyQualifiedName().equals(other.getFullyQualifiedName())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getRelativeResource().equals(other.getRelativeResource())) return false;
     if (!getLinkedResource().equals(other.getLinkedResource())) return false;
     if (hasDataplexEntry() != other.hasDataplexEntry()) return false;
     if (hasDataplexEntry()) {
@@ -1496,22 +1043,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENTRY_FIELD_NUMBER;
-    hash = (53 * hash) + getEntry().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + ENTRY_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getEntryType().hashCode();
-    if (hasModifyTime()) {
-      hash = (37 * hash) + MODIFY_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getModifyTime().hashCode();
-    }
-    hash = (37 * hash) + FULLY_QUALIFIED_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getFullyQualifiedName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + RELATIVE_RESOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getRelativeResource().hashCode();
     hash = (37 * hash) + LINKED_RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getLinkedResource().hashCode();
     if (hasDataplexEntry()) {
@@ -1662,7 +1193,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getModifyTimeFieldBuilder();
         getDataplexEntryFieldBuilder();
         getSnippetsFieldBuilder();
       }
@@ -1672,17 +1202,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      entry_ = "";
-      displayName_ = "";
-      entryType_ = "";
-      modifyTime_ = null;
-      if (modifyTimeBuilder_ != null) {
-        modifyTimeBuilder_.dispose();
-        modifyTimeBuilder_ = null;
-      }
-      fullyQualifiedName_ = "";
-      description_ = "";
-      relativeResource_ = "";
       linkedResource_ = "";
       dataplexEntry_ = null;
       if (dataplexEntryBuilder_ != null) {
@@ -1731,39 +1250,17 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     private void buildPartial0(com.google.cloud.dataplex.v1.SearchEntriesResult result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.entry_ = entry_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.displayName_ = displayName_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.entryType_ = entryType_;
-      }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.modifyTime_ = modifyTimeBuilder_ == null ? modifyTime_ : modifyTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.fullyQualifiedName_ = fullyQualifiedName_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.description_ = description_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.relativeResource_ = relativeResource_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.linkedResource_ = linkedResource_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.dataplexEntry_ =
             dataplexEntryBuilder_ == null ? dataplexEntry_ : dataplexEntryBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.snippets_ = snippetsBuilder_ == null ? snippets_ : snippetsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1814,42 +1311,9 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.dataplex.v1.SearchEntriesResult other) {
       if (other == com.google.cloud.dataplex.v1.SearchEntriesResult.getDefaultInstance())
         return this;
-      if (!other.getEntry().isEmpty()) {
-        entry_ = other.entry_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      if (!other.getEntryType().isEmpty()) {
-        entryType_ = other.entryType_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (other.hasModifyTime()) {
-        mergeModifyTime(other.getModifyTime());
-      }
-      if (!other.getFullyQualifiedName().isEmpty()) {
-        fullyQualifiedName_ = other.fullyQualifiedName_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      if (!other.getDescription().isEmpty()) {
-        description_ = other.description_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      if (!other.getRelativeResource().isEmpty()) {
-        relativeResource_ = other.relativeResource_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
       if (!other.getLinkedResource().isEmpty()) {
         linkedResource_ = other.linkedResource_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDataplexEntry()) {
@@ -1884,64 +1348,22 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                entry_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-            case 18:
-              {
-                displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-            case 26:
-              {
-                entryType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-            case 34:
-              {
-                input.readMessage(getModifyTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-            case 42:
-              {
-                fullyQualifiedName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-            case 50:
-              {
-                description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-            case 58:
-              {
-                relativeResource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 58
             case 66:
               {
                 linkedResource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getDataplexEntryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
             case 98:
               {
                 input.readMessage(getSnippetsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 98
             default:
@@ -1962,929 +1384,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     }
 
     private int bitField0_;
-
-    private java.lang.Object entry_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of the entry.
-     * </pre>
-     *
-     * <code>string entry = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1250
-     * @return The entry.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getEntry() {
-      java.lang.Object ref = entry_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        entry_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of the entry.
-     * </pre>
-     *
-     * <code>string entry = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1250
-     * @return The bytes for entry.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getEntryBytes() {
-      java.lang.Object ref = entry_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        entry_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of the entry.
-     * </pre>
-     *
-     * <code>string entry = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1250
-     * @param value The entry to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setEntry(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      entry_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of the entry.
-     * </pre>
-     *
-     * <code>string entry = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1250
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearEntry() {
-      entry_ = getDefaultInstance().getEntry();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of the entry.
-     * </pre>
-     *
-     * <code>string entry = 1 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1250
-     * @param value The bytes for entry to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setEntryBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      entry_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object displayName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Display name.
-     * </pre>
-     *
-     * <code>string display_name = 2 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1253
-     * @return The displayName.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Display name.
-     * </pre>
-     *
-     * <code>string display_name = 2 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1253
-     * @return The bytes for displayName.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Display name.
-     * </pre>
-     *
-     * <code>string display_name = 2 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1253
-     * @param value The displayName to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setDisplayName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      displayName_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Display name.
-     * </pre>
-     *
-     * <code>string display_name = 2 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1253
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearDisplayName() {
-      displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Display name.
-     * </pre>
-     *
-     * <code>string display_name = 2 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.display_name is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1253
-     * @param value The bytes for displayName to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      displayName_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object entryType_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The entry type.
-     * </pre>
-     *
-     * <code>string entry_type = 3 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1256
-     * @return The entryType.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getEntryType() {
-      java.lang.Object ref = entryType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        entryType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The entry type.
-     * </pre>
-     *
-     * <code>string entry_type = 3 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1256
-     * @return The bytes for entryType.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getEntryTypeBytes() {
-      java.lang.Object ref = entryType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        entryType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The entry type.
-     * </pre>
-     *
-     * <code>string entry_type = 3 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1256
-     * @param value The entryType to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setEntryType(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      entryType_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The entry type.
-     * </pre>
-     *
-     * <code>string entry_type = 3 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1256
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearEntryType() {
-      entryType_ = getDefaultInstance().getEntryType();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The entry type.
-     * </pre>
-     *
-     * <code>string entry_type = 3 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.entry_type is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1256
-     * @param value The bytes for entryType to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setEntryTypeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      entryType_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Timestamp modifyTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        modifyTimeBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.modify_time is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1259
-     * @return Whether the modifyTime field is set.
-     */
-    @java.lang.Deprecated
-    public boolean hasModifyTime() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.modify_time is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1259
-     * @return The modifyTime.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.Timestamp getModifyTime() {
-      if (modifyTimeBuilder_ == null) {
-        return modifyTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : modifyTime_;
-      } else {
-        return modifyTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setModifyTime(com.google.protobuf.Timestamp value) {
-      if (modifyTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        modifyTime_ = value;
-      } else {
-        modifyTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setModifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (modifyTimeBuilder_ == null) {
-        modifyTime_ = builderForValue.build();
-      } else {
-        modifyTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder mergeModifyTime(com.google.protobuf.Timestamp value) {
-      if (modifyTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
-            && modifyTime_ != null
-            && modifyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getModifyTimeBuilder().mergeFrom(value);
-        } else {
-          modifyTime_ = value;
-        }
-      } else {
-        modifyTimeBuilder_.mergeFrom(value);
-      }
-      if (modifyTime_ != null) {
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder clearModifyTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      modifyTime_ = null;
-      if (modifyTimeBuilder_ != null) {
-        modifyTimeBuilder_.dispose();
-        modifyTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.Timestamp.Builder getModifyTimeBuilder() {
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return getModifyTimeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
-      if (modifyTimeBuilder_ != null) {
-        return modifyTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return modifyTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : modifyTime_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The last modification timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp modify_time = 4 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        getModifyTimeFieldBuilder() {
-      if (modifyTimeBuilder_ == null) {
-        modifyTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getModifyTime(), getParentForChildren(), isClean());
-        modifyTime_ = null;
-      }
-      return modifyTimeBuilder_;
-    }
-
-    private java.lang.Object fullyQualifiedName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Fully qualified name.
-     * </pre>
-     *
-     * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-     *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-     * @return The fullyQualifiedName.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getFullyQualifiedName() {
-      java.lang.Object ref = fullyQualifiedName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fullyQualifiedName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Fully qualified name.
-     * </pre>
-     *
-     * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-     *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-     * @return The bytes for fullyQualifiedName.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getFullyQualifiedNameBytes() {
-      java.lang.Object ref = fullyQualifiedName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        fullyQualifiedName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Fully qualified name.
-     * </pre>
-     *
-     * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-     *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-     * @param value The fullyQualifiedName to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setFullyQualifiedName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      fullyQualifiedName_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Fully qualified name.
-     * </pre>
-     *
-     * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-     *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearFullyQualifiedName() {
-      fullyQualifiedName_ = getDefaultInstance().getFullyQualifiedName();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Fully qualified name.
-     * </pre>
-     *
-     * <code>string fully_qualified_name = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.fully_qualified_name is deprecated.
-     *     See google/cloud/dataplex/v1/catalog.proto;l=1262
-     * @param value The bytes for fullyQualifiedName to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setFullyQualifiedNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      fullyQualifiedName_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object description_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Entry description.
-     * </pre>
-     *
-     * <code>string description = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1265
-     * @return The description.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Entry description.
-     * </pre>
-     *
-     * <code>string description = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1265
-     * @return The bytes for description.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Entry description.
-     * </pre>
-     *
-     * <code>string description = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1265
-     * @param value The description to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setDescription(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      description_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Entry description.
-     * </pre>
-     *
-     * <code>string description = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1265
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearDescription() {
-      description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Entry description.
-     * </pre>
-     *
-     * <code>string description = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.description is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1265
-     * @param value The bytes for description to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      description_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object relativeResource_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Relative resource name.
-     * </pre>
-     *
-     * <code>string relative_resource = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1268
-     * @return The relativeResource.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getRelativeResource() {
-      java.lang.Object ref = relativeResource_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        relativeResource_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Relative resource name.
-     * </pre>
-     *
-     * <code>string relative_resource = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1268
-     * @return The bytes for relativeResource.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getRelativeResourceBytes() {
-      java.lang.Object ref = relativeResource_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        relativeResource_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Relative resource name.
-     * </pre>
-     *
-     * <code>string relative_resource = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1268
-     * @param value The relativeResource to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setRelativeResource(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      relativeResource_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Relative resource name.
-     * </pre>
-     *
-     * <code>string relative_resource = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1268
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearRelativeResource() {
-      relativeResource_ = getDefaultInstance().getRelativeResource();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Relative resource name.
-     * </pre>
-     *
-     * <code>string relative_resource = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.relative_resource is deprecated. See
-     *     google/cloud/dataplex/v1/catalog.proto;l=1268
-     * @param value The bytes for relativeResource to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setRelativeResourceBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      relativeResource_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
 
     private java.lang.Object linkedResource_ = "";
     /**
@@ -2948,7 +1447,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       linkedResource_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2965,7 +1464,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      */
     public Builder clearLinkedResource() {
       linkedResource_ = getDefaultInstance().getLinkedResource();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2987,7 +1486,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       linkedResource_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3010,7 +1509,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * @return Whether the dataplexEntry field is set.
      */
     public boolean hasDataplexEntry() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3050,7 +1549,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       } else {
         dataplexEntryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3069,7 +1568,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       } else {
         dataplexEntryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3084,7 +1583,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
       if (dataplexEntryBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && dataplexEntry_ != null
             && dataplexEntry_ != com.google.cloud.dataplex.v1.Entry.getDefaultInstance()) {
           getDataplexEntryBuilder().mergeFrom(value);
@@ -3095,7 +1594,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         dataplexEntryBuilder_.mergeFrom(value);
       }
       if (dataplexEntry_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -3110,7 +1609,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      */
     public Builder clearDataplexEntry() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000002);
       dataplexEntry_ = null;
       if (dataplexEntryBuilder_ != null) {
         dataplexEntryBuilder_.dispose();
@@ -3129,7 +1628,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      */
     public com.google.cloud.dataplex.v1.Entry.Builder getDataplexEntryBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataplexEntryFieldBuilder().getBuilder();
     }
@@ -3195,7 +1694,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * @return Whether the snippets field is set.
      */
     public boolean hasSnippets() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3235,7 +1734,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       } else {
         snippetsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3255,7 +1754,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       } else {
         snippetsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3270,7 +1769,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSnippets(com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets value) {
       if (snippetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && snippets_ != null
             && snippets_
                 != com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.getDefaultInstance()) {
@@ -3282,7 +1781,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         snippetsBuilder_.mergeFrom(value);
       }
       if (snippets_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -3297,7 +1796,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
      */
     public Builder clearSnippets() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000004);
       snippets_ = null;
       if (snippetsBuilder_ != null) {
         snippetsBuilder_.dispose();
@@ -3316,7 +1815,7 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets = 12;</code>
      */
     public com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.Builder getSnippetsBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSnippetsFieldBuilder().getBuilder();
     }

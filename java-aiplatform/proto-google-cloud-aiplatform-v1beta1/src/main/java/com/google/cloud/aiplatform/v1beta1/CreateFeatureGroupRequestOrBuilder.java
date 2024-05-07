@@ -30,7 +30,7 @@ public interface CreateFeatureGroupRequestOrBuilder
    * <pre>
    * Required. The resource name of the Location to create FeatureGroups.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface CreateFeatureGroupRequestOrBuilder
    * <pre>
    * Required. The resource name of the Location to create FeatureGroups.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

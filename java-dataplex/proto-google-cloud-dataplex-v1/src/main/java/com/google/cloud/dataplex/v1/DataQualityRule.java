@@ -6373,6 +6373,668 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface SqlAssertionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The SQL statement.
+     * </pre>
+     *
+     * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sqlStatement.
+     */
+    java.lang.String getSqlStatement();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The SQL statement.
+     * </pre>
+     *
+     * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sqlStatement.
+     */
+    com.google.protobuf.ByteString getSqlStatementBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Queries for rows returned by the provided SQL statement. If any rows are
+   * are returned, this rule fails.
+   *
+   * The SQL statement needs to use BigQuery standard SQL syntax, and must not
+   * contain any semicolons.
+   *
+   * ${data()} can be used to reference the rows being evaluated, i.e. the table
+   * after all additional filters (row filters, incremental data filters,
+   * sampling) are applied.
+   *
+   * Example: SELECT * FROM ${data()} WHERE price &lt; 0
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.SqlAssertion}
+   */
+  public static final class SqlAssertion extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
+      SqlAssertionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SqlAssertion.newBuilder() to construct.
+    private SqlAssertion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SqlAssertion() {
+      sqlStatement_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SqlAssertion();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.class,
+              com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder.class);
+    }
+
+    public static final int SQL_STATEMENT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sqlStatement_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The SQL statement.
+     * </pre>
+     *
+     * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sqlStatement.
+     */
+    @java.lang.Override
+    public java.lang.String getSqlStatement() {
+      java.lang.Object ref = sqlStatement_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sqlStatement_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The SQL statement.
+     * </pre>
+     *
+     * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sqlStatement.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSqlStatementBytes() {
+      java.lang.Object ref = sqlStatement_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sqlStatement_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sqlStatement_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sqlStatement_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sqlStatement_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sqlStatement_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion other =
+          (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) obj;
+
+      if (!getSqlStatement().equals(other.getSqlStatement())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SQL_STATEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getSqlStatement().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Queries for rows returned by the provided SQL statement. If any rows are
+     * are returned, this rule fails.
+     *
+     * The SQL statement needs to use BigQuery standard SQL syntax, and must not
+     * contain any semicolons.
+     *
+     * ${data()} can be used to reference the rows being evaluated, i.e. the table
+     * after all additional filters (row filters, incremental data filters,
+     * sampling) are applied.
+     *
+     * Example: SELECT * FROM ${data()} WHERE price &lt; 0
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.SqlAssertion}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sqlStatement_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion build() {
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion buildPartial() {
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion result =
+            new com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sqlStatement_ = sqlStatement_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion other) {
+        if (other == com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance())
+          return this;
+        if (!other.getSqlStatement().isEmpty()) {
+          sqlStatement_ = other.sqlStatement_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sqlStatement_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object sqlStatement_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The SQL statement.
+       * </pre>
+       *
+       * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sqlStatement.
+       */
+      public java.lang.String getSqlStatement() {
+        java.lang.Object ref = sqlStatement_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sqlStatement_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The SQL statement.
+       * </pre>
+       *
+       * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for sqlStatement.
+       */
+      public com.google.protobuf.ByteString getSqlStatementBytes() {
+        java.lang.Object ref = sqlStatement_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sqlStatement_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The SQL statement.
+       * </pre>
+       *
+       * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sqlStatement to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSqlStatement(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sqlStatement_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The SQL statement.
+       * </pre>
+       *
+       * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSqlStatement() {
+        sqlStatement_ = getDefaultInstance().getSqlStatement();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The SQL statement.
+       * </pre>
+       *
+       * <code>string sql_statement = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for sqlStatement to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSqlStatementBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sqlStatement_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.SqlAssertion)
+    private static final com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SqlAssertion> PARSER =
+        new com.google.protobuf.AbstractParser<SqlAssertion>() {
+          @java.lang.Override
+          public SqlAssertion parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SqlAssertion> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SqlAssertion> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int ruleTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -6390,6 +7052,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     STATISTIC_RANGE_EXPECTATION(101),
     ROW_CONDITION_EXPECTATION(200),
     TABLE_CONDITION_EXPECTATION(201),
+    SQL_ASSERTION(202),
     RULETYPE_NOT_SET(0);
     private final int value;
 
@@ -6424,6 +7087,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return ROW_CONDITION_EXPECTATION;
         case 201:
           return TABLE_CONDITION_EXPECTATION;
+        case 202:
+          return SQL_ASSERTION;
         case 0:
           return RULETYPE_NOT_SET;
         default:
@@ -6911,6 +7576,61 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         .getDefaultInstance();
   }
 
+  public static final int SQL_ASSERTION_FIELD_NUMBER = 202;
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   *
+   * @return Whether the sqlAssertion field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlAssertion() {
+    return ruleTypeCase_ == 202;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   *
+   * @return The sqlAssertion.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getSqlAssertion() {
+    if (ruleTypeCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_;
+    }
+    return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder
+      getSqlAssertionOrBuilder() {
+    if (ruleTypeCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_;
+    }
+    return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+  }
+
   public static final int COLUMN_FIELD_NUMBER = 500;
 
   @SuppressWarnings("serial")
@@ -7231,6 +7951,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           201, (com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation) ruleType_);
     }
+    if (ruleTypeCase_ == 202) {
+      output.writeMessage(
+          202, (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 500, column_);
     }
@@ -7301,6 +8025,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               201,
               (com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation) ruleType_);
     }
+    if (ruleTypeCase_ == 202) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              202, (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500, column_);
     }
@@ -7370,6 +8099,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (!getTableConditionExpectation().equals(other.getTableConditionExpectation()))
           return false;
         break;
+      case 202:
+        if (!getSqlAssertion().equals(other.getSqlAssertion())) return false;
+        break;
       case 0:
       default:
     }
@@ -7431,6 +8163,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       case 201:
         hash = (37 * hash) + TABLE_CONDITION_EXPECTATION_FIELD_NUMBER;
         hash = (53 * hash) + getTableConditionExpectation().hashCode();
+        break;
+      case 202:
+        hash = (37 * hash) + SQL_ASSERTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlAssertion().hashCode();
         break;
       case 0:
       default:
@@ -7598,6 +8334,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       if (tableConditionExpectationBuilder_ != null) {
         tableConditionExpectationBuilder_.clear();
       }
+      if (sqlAssertionBuilder_ != null) {
+        sqlAssertionBuilder_.clear();
+      }
       column_ = "";
       ignoreNull_ = false;
       dimension_ = "";
@@ -7643,22 +8382,22 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.column_ = column_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.ignoreNull_ = ignoreNull_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.dimension_ = dimension_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.threshold_ = threshold_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.description_ = description_;
       }
     }
@@ -7689,6 +8428,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (ruleTypeCase_ == 201 && tableConditionExpectationBuilder_ != null) {
         result.ruleType_ = tableConditionExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 202 && sqlAssertionBuilder_ != null) {
+        result.ruleType_ = sqlAssertionBuilder_.build();
       }
     }
 
@@ -7739,7 +8481,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()) return this;
       if (!other.getColumn().isEmpty()) {
         column_ = other.column_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.getIgnoreNull() != false) {
@@ -7747,7 +8489,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDimension().isEmpty()) {
         dimension_ = other.dimension_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.getThreshold() != 0D) {
@@ -7755,12 +8497,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       switch (other.getRuleTypeCase()) {
@@ -7802,6 +8544,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         case TABLE_CONDITION_EXPECTATION:
           {
             mergeTableConditionExpectation(other.getTableConditionExpectation());
+            break;
+          }
+        case SQL_ASSERTION:
+          {
+            mergeSqlAssertion(other.getSqlAssertion());
             break;
           }
         case RULETYPE_NOT_SET:
@@ -7890,40 +8637,46 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 ruleTypeCase_ = 201;
                 break;
               } // case 1610
+            case 1618:
+              {
+                input.readMessage(getSqlAssertionFieldBuilder().getBuilder(), extensionRegistry);
+                ruleTypeCase_ = 202;
+                break;
+              } // case 1618
             case 4002:
               {
                 column_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 4002
             case 4008:
               {
                 ignoreNull_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 4008
             case 4018:
               {
                 dimension_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 4018
             case 4025:
               {
                 threshold_ = input.readDouble();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 4025
             case 4034:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 4034
             case 4042:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 4042
             default:
@@ -9868,6 +10621,230 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return tableConditionExpectationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion,
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder>
+        sqlAssertionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     *
+     * @return Whether the sqlAssertion field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlAssertion() {
+      return ruleTypeCase_ == 202;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     *
+     * @return The sqlAssertion.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getSqlAssertion() {
+      if (sqlAssertionBuilder_ == null) {
+        if (ruleTypeCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+      } else {
+        if (ruleTypeCase_ == 202) {
+          return sqlAssertionBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    public Builder setSqlAssertion(
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion value) {
+      if (sqlAssertionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ruleType_ = value;
+        onChanged();
+      } else {
+        sqlAssertionBuilder_.setMessage(value);
+      }
+      ruleTypeCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    public Builder setSqlAssertion(
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder builderForValue) {
+      if (sqlAssertionBuilder_ == null) {
+        ruleType_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlAssertionBuilder_.setMessage(builderForValue.build());
+      }
+      ruleTypeCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    public Builder mergeSqlAssertion(
+        com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion value) {
+      if (sqlAssertionBuilder_ == null) {
+        if (ruleTypeCase_ == 202
+            && ruleType_
+                != com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance()) {
+          ruleType_ =
+              com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ruleType_ = value;
+        }
+        onChanged();
+      } else {
+        if (ruleTypeCase_ == 202) {
+          sqlAssertionBuilder_.mergeFrom(value);
+        } else {
+          sqlAssertionBuilder_.setMessage(value);
+        }
+      }
+      ruleTypeCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    public Builder clearSqlAssertion() {
+      if (sqlAssertionBuilder_ == null) {
+        if (ruleTypeCase_ == 202) {
+          ruleTypeCase_ = 0;
+          ruleType_ = null;
+          onChanged();
+        }
+      } else {
+        if (ruleTypeCase_ == 202) {
+          ruleTypeCase_ = 0;
+          ruleType_ = null;
+        }
+        sqlAssertionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder
+        getSqlAssertionBuilder() {
+      return getSqlAssertionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder
+        getSqlAssertionOrBuilder() {
+      if ((ruleTypeCase_ == 202) && (sqlAssertionBuilder_ != null)) {
+        return sqlAssertionBuilder_.getMessageOrBuilder();
+      } else {
+        if (ruleTypeCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which evaluates the number of rows returned for the
+     * provided statement.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion,
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder>
+        getSqlAssertionFieldBuilder() {
+      if (sqlAssertionBuilder_ == null) {
+        if (!(ruleTypeCase_ == 202)) {
+          ruleType_ =
+              com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
+        }
+        sqlAssertionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion,
+                com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion) ruleType_,
+                getParentForChildren(),
+                isClean());
+        ruleType_ = null;
+      }
+      ruleTypeCase_ = 202;
+      onChanged();
+      return sqlAssertionBuilder_;
+    }
+
     private java.lang.Object column_ = "";
     /**
      *
@@ -9930,7 +10907,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       column_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -9947,7 +10924,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearColumn() {
       column_ = getDefaultInstance().getColumn();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -9969,7 +10946,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       column_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10023,7 +11000,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public Builder setIgnoreNull(boolean value) {
 
       ignoreNull_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10048,7 +11025,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIgnoreNull() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ignoreNull_ = false;
       onChanged();
       return this;
@@ -10122,7 +11099,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       dimension_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10141,7 +11118,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearDimension() {
       dimension_ = getDefaultInstance().getDimension();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -10165,7 +11142,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       dimension_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10211,7 +11188,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public Builder setThreshold(double value) {
 
       threshold_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10232,7 +11209,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearThreshold() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       threshold_ = 0D;
       onChanged();
       return this;
@@ -10318,7 +11295,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -10341,7 +11318,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -10369,7 +11346,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -10442,7 +11419,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -10461,7 +11438,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -10485,7 +11462,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

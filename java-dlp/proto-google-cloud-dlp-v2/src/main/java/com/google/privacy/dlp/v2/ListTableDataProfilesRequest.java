@@ -215,7 +215,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    *
    * Supported fields are:
    *
-   * - `project_id`: The GCP project ID.
+   * - `project_id`: The Google Cloud project ID.
    * - `dataset_id`: The ID of a BigQuery dataset.
    * - `table_id`: The ID of a BigQuery table.
    * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -259,7 +259,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    *
    * Supported fields are:
    *
-   * - `project_id`: The GCP project ID.
+   * - `project_id`: The Google Cloud project ID.
    * - `dataset_id`: The ID of a BigQuery dataset.
    * - `table_id`: The ID of a BigQuery table.
    * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -305,7 +305,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values:
-   *     - `project_id` - The GCP project ID.
+   *     - `project_id` - The Google Cloud project ID.
    *     - `dataset_id` - The BigQuery dataset ID.
    *     - `table_id` - The ID of the BigQuery table.
    *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -353,7 +353,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
    * * Supported fields/values:
-   *     - `project_id` - The GCP project ID.
+   *     - `project_id` - The Google Cloud project ID.
    *     - `dataset_id` - The BigQuery dataset ID.
    *     - `table_id` - The ID of the BigQuery table.
    *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -1131,7 +1131,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *
      * Supported fields are:
      *
-     * - `project_id`: The GCP project ID.
+     * - `project_id`: The Google Cloud project ID.
      * - `dataset_id`: The ID of a BigQuery dataset.
      * - `table_id`: The ID of a BigQuery table.
      * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -1174,7 +1174,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *
      * Supported fields are:
      *
-     * - `project_id`: The GCP project ID.
+     * - `project_id`: The Google Cloud project ID.
      * - `dataset_id`: The ID of a BigQuery dataset.
      * - `table_id`: The ID of a BigQuery table.
      * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -1217,7 +1217,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *
      * Supported fields are:
      *
-     * - `project_id`: The GCP project ID.
+     * - `project_id`: The Google Cloud project ID.
      * - `dataset_id`: The ID of a BigQuery dataset.
      * - `table_id`: The ID of a BigQuery table.
      * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -1259,7 +1259,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *
      * Supported fields are:
      *
-     * - `project_id`: The GCP project ID.
+     * - `project_id`: The Google Cloud project ID.
      * - `dataset_id`: The ID of a BigQuery dataset.
      * - `table_id`: The ID of a BigQuery table.
      * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -1297,7 +1297,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *
      * Supported fields are:
      *
-     * - `project_id`: The GCP project ID.
+     * - `project_id`: The Google Cloud project ID.
      * - `dataset_id`: The ID of a BigQuery dataset.
      * - `table_id`: The ID of a BigQuery table.
      * - `sensitivity_level`: How sensitive the data in a table is, at most.
@@ -1339,7 +1339,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values:
-     *     - `project_id` - The GCP project ID.
+     *     - `project_id` - The Google Cloud project ID.
      *     - `dataset_id` - The BigQuery dataset ID.
      *     - `table_id` - The ID of the BigQuery table.
      *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -1386,7 +1386,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values:
-     *     - `project_id` - The GCP project ID.
+     *     - `project_id` - The Google Cloud project ID.
      *     - `dataset_id` - The BigQuery dataset ID.
      *     - `table_id` - The ID of the BigQuery table.
      *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -1433,7 +1433,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values:
-     *     - `project_id` - The GCP project ID.
+     *     - `project_id` - The Google Cloud project ID.
      *     - `dataset_id` - The BigQuery dataset ID.
      *     - `table_id` - The ID of the BigQuery table.
      *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -1479,7 +1479,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values:
-     *     - `project_id` - The GCP project ID.
+     *     - `project_id` - The Google Cloud project ID.
      *     - `dataset_id` - The BigQuery dataset ID.
      *     - `table_id` - The ID of the BigQuery table.
      *     - `sensitivity_level` - HIGH|MODERATE|LOW
@@ -1521,7 +1521,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
      * * Supported fields/values:
-     *     - `project_id` - The GCP project ID.
+     *     - `project_id` - The Google Cloud project ID.
      *     - `dataset_id` - The BigQuery dataset ID.
      *     - `table_id` - The ID of the BigQuery table.
      *     - `sensitivity_level` - HIGH|MODERATE|LOW

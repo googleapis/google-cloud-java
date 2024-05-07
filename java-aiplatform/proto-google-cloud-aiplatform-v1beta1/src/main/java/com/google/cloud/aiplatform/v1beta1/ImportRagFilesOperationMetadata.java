@@ -133,6 +133,63 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     return ragCorpusId_;
   }
 
+  public static final int IMPORT_RAG_FILES_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig importRagFilesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importRagFilesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportRagFilesConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importRagFilesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig getImportRagFilesConfig() {
+    return importRagFilesConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()
+        : importRagFilesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder
+      getImportRagFilesConfigOrBuilder() {
+    return importRagFilesConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()
+        : importRagFilesConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +210,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     if (ragCorpusId_ != 0L) {
       output.writeInt64(2, ragCorpusId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getImportRagFilesConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -167,6 +227,10 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     }
     if (ragCorpusId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, ragCorpusId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getImportRagFilesConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -189,6 +253,10 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       if (!getGenericMetadata().equals(other.getGenericMetadata())) return false;
     }
     if (getRagCorpusId() != other.getRagCorpusId()) return false;
+    if (hasImportRagFilesConfig() != other.hasImportRagFilesConfig()) return false;
+    if (hasImportRagFilesConfig()) {
+      if (!getImportRagFilesConfig().equals(other.getImportRagFilesConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -206,6 +274,10 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     }
     hash = (37 * hash) + RAG_CORPUS_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRagCorpusId());
+    if (hasImportRagFilesConfig()) {
+      hash = (37 * hash) + IMPORT_RAG_FILES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getImportRagFilesConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,6 +423,7 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGenericMetadataFieldBuilder();
+        getImportRagFilesConfigFieldBuilder();
       }
     }
 
@@ -364,6 +437,11 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         genericMetadataBuilder_ = null;
       }
       ragCorpusId_ = 0L;
+      importRagFilesConfig_ = null;
+      if (importRagFilesConfigBuilder_ != null) {
+        importRagFilesConfigBuilder_.dispose();
+        importRagFilesConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -411,6 +489,13 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ragCorpusId_ = ragCorpusId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importRagFilesConfig_ =
+            importRagFilesConfigBuilder_ == null
+                ? importRagFilesConfig_
+                : importRagFilesConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -470,6 +555,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       if (other.getRagCorpusId() != 0L) {
         setRagCorpusId(other.getRagCorpusId());
       }
+      if (other.hasImportRagFilesConfig()) {
+        mergeImportRagFilesConfig(other.getImportRagFilesConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -508,6 +596,13 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getImportRagFilesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -770,6 +865,215 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       ragCorpusId_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig importRagFilesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig,
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder>
+        importRagFilesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the importRagFilesConfig field is set.
+     */
+    public boolean hasImportRagFilesConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The importRagFilesConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig getImportRagFilesConfig() {
+      if (importRagFilesConfigBuilder_ == null) {
+        return importRagFilesConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()
+            : importRagFilesConfig_;
+      } else {
+        return importRagFilesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportRagFilesConfig(
+        com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig value) {
+      if (importRagFilesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importRagFilesConfig_ = value;
+      } else {
+        importRagFilesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportRagFilesConfig(
+        com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder builderForValue) {
+      if (importRagFilesConfigBuilder_ == null) {
+        importRagFilesConfig_ = builderForValue.build();
+      } else {
+        importRagFilesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeImportRagFilesConfig(
+        com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig value) {
+      if (importRagFilesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && importRagFilesConfig_ != null
+            && importRagFilesConfig_
+                != com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()) {
+          getImportRagFilesConfigBuilder().mergeFrom(value);
+        } else {
+          importRagFilesConfig_ = value;
+        }
+      } else {
+        importRagFilesConfigBuilder_.mergeFrom(value);
+      }
+      if (importRagFilesConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearImportRagFilesConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      importRagFilesConfig_ = null;
+      if (importRagFilesConfigBuilder_ != null) {
+        importRagFilesConfigBuilder_.dispose();
+        importRagFilesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder
+        getImportRagFilesConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getImportRagFilesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder
+        getImportRagFilesConfigOrBuilder() {
+      if (importRagFilesConfigBuilder_ != null) {
+        return importRagFilesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return importRagFilesConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.getDefaultInstance()
+            : importRagFilesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The config that was passed in the ImportRagFilesRequest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig,
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder>
+        getImportRagFilesConfigFieldBuilder() {
+      if (importRagFilesConfigBuilder_ == null) {
+        importRagFilesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig,
+                com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder>(
+                getImportRagFilesConfig(), getParentForChildren(), isClean());
+        importRagFilesConfig_ = null;
+      }
+      return importRagFilesConfigBuilder_;
     }
 
     @java.lang.Override

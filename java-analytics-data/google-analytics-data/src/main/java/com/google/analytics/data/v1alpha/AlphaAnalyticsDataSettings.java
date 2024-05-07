@@ -18,6 +18,7 @@ package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.analytics.data.v1alpha.stub.AlphaAnalyticsDataStubSettings;
 import com.google.api.core.ApiFunction;
@@ -143,6 +144,35 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
       listRecurringAudienceListsSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings())
         .listRecurringAudienceListsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createReportTask. */
+  public UnaryCallSettings<CreateReportTaskRequest, Operation> createReportTaskSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).createReportTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createReportTask. */
+  public OperationCallSettings<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+      createReportTaskOperationSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).createReportTaskOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryReportTask. */
+  public UnaryCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
+      queryReportTaskSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).queryReportTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getReportTask. */
+  public UnaryCallSettings<GetReportTaskRequest, ReportTask> getReportTaskSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getReportTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listReportTasks. */
+  public PagedCallSettings<
+          ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+      listReportTasksSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).listReportTasksSettings();
   }
 
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
@@ -321,6 +351,36 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
             ListRecurringAudienceListsPagedResponse>
         listRecurringAudienceListsSettings() {
       return getStubSettingsBuilder().listRecurringAudienceListsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReportTask. */
+    public UnaryCallSettings.Builder<CreateReportTaskRequest, Operation>
+        createReportTaskSettings() {
+      return getStubSettingsBuilder().createReportTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReportTask. */
+    public OperationCallSettings.Builder<CreateReportTaskRequest, ReportTask, ReportTaskMetadata>
+        createReportTaskOperationSettings() {
+      return getStubSettingsBuilder().createReportTaskOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryReportTask. */
+    public UnaryCallSettings.Builder<QueryReportTaskRequest, QueryReportTaskResponse>
+        queryReportTaskSettings() {
+      return getStubSettingsBuilder().queryReportTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReportTask. */
+    public UnaryCallSettings.Builder<GetReportTaskRequest, ReportTask> getReportTaskSettings() {
+      return getStubSettingsBuilder().getReportTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listReportTasks. */
+    public PagedCallSettings.Builder<
+            ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
+        listReportTasksSettings() {
+      return getStubSettingsBuilder().listReportTasksSettings();
     }
 
     @Override

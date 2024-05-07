@@ -139,7 +139,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Name of the `DeliveryPipeline`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+   * The `deliveryPipeline` component must match
+   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -163,7 +165,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Name of the `DeliveryPipeline`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+   * The `deliveryPipeline` component must match
+   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1536,7 +1540,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Name of the `DeliveryPipeline`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+     * The `deliveryPipeline` component must match
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1559,7 +1565,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Name of the `DeliveryPipeline`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+     * The `deliveryPipeline` component must match
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1582,7 +1590,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Name of the `DeliveryPipeline`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+     * The `deliveryPipeline` component must match
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1604,7 +1614,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Name of the `DeliveryPipeline`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+     * The `deliveryPipeline` component must match
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1622,7 +1634,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Name of the `DeliveryPipeline`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
+     * The `deliveryPipeline` component must match
+     * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

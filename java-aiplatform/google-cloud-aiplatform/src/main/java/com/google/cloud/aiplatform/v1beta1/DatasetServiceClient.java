@@ -235,6 +235,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateDatasetVersion</td>
+ *      <td><p> Updates a DatasetVersion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDatasetVersion(UpdateDatasetVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDatasetVersion(DatasetVersion datasetVersion, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDatasetVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteDatasetVersion</td>
  *      <td><p> Deletes a Dataset version.</td>
  *      <td>
@@ -1741,6 +1759,101 @@ public class DatasetServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateDatasetVersionRequest, Operation>
       createDatasetVersionCallable() {
     return stub.createDatasetVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DatasetVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DatasetVersion response =
+   *       datasetServiceClient.updateDatasetVersion(datasetVersion, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param datasetVersion Required. The DatasetVersion which replaces the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+   *     <p>&#42; `display_name`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetVersion updateDatasetVersion(
+      DatasetVersion datasetVersion, FieldMask updateMask) {
+    UpdateDatasetVersionRequest request =
+        UpdateDatasetVersionRequest.newBuilder()
+            .setDatasetVersion(datasetVersion)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDatasetVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DatasetVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   UpdateDatasetVersionRequest request =
+   *       UpdateDatasetVersionRequest.newBuilder()
+   *           .setDatasetVersion(DatasetVersion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DatasetVersion response = datasetServiceClient.updateDatasetVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetVersion updateDatasetVersion(UpdateDatasetVersionRequest request) {
+    return updateDatasetVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DatasetVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   UpdateDatasetVersionRequest request =
+   *       UpdateDatasetVersionRequest.newBuilder()
+   *           .setDatasetVersion(DatasetVersion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DatasetVersion> future =
+   *       datasetServiceClient.updateDatasetVersionCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionCallable() {
+    return stub.updateDatasetVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

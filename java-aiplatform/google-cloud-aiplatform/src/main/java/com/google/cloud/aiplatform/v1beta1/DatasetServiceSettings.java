@@ -165,6 +165,12 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     return ((DatasetServiceStubSettings) getStubSettings()).createDatasetVersionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDatasetVersion. */
+  public UnaryCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).updateDatasetVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteDatasetVersion. */
   public UnaryCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).deleteDatasetVersionSettings();
@@ -443,6 +449,12 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
         createDatasetVersionOperationSettings() {
       return getStubSettingsBuilder().createDatasetVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatasetVersion. */
+    public UnaryCallSettings.Builder<UpdateDatasetVersionRequest, DatasetVersion>
+        updateDatasetVersionSettings() {
+      return getStubSettingsBuilder().updateDatasetVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteDatasetVersion. */

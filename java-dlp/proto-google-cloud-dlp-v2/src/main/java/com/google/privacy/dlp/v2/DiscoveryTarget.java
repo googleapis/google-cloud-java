@@ -71,6 +71,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIG_QUERY_TARGET(1),
+    CLOUD_SQL_TARGET(2),
     TARGET_NOT_SET(0);
     private final int value;
 
@@ -91,6 +92,8 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       switch (value) {
         case 1:
           return BIG_QUERY_TARGET;
+        case 2:
+          return CLOUD_SQL_TARGET;
         case 0:
           return TARGET_NOT_SET;
         default:
@@ -161,6 +164,60 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.getDefaultInstance();
   }
 
+  public static final int CLOUD_SQL_TARGET_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   *
+   * @return Whether the cloudSqlTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlTarget() {
+    return targetCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   *
+   * @return The cloudSqlTarget.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget getCloudSqlTarget() {
+    if (targetCase_ == 2) {
+      return (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder getCloudSqlTargetOrBuilder() {
+    if (targetCase_ == 2) {
+      return (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -178,6 +235,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     if (targetCase_ == 1) {
       output.writeMessage(1, (com.google.privacy.dlp.v2.BigQueryDiscoveryTarget) target_);
     }
+    if (targetCase_ == 2) {
+      output.writeMessage(2, (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -191,6 +251,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.privacy.dlp.v2.BigQueryDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -213,6 +278,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 1:
         if (!getBigQueryTarget().equals(other.getBigQueryTarget())) return false;
         break;
+      case 2:
+        if (!getCloudSqlTarget().equals(other.getCloudSqlTarget())) return false;
+        break;
       case 0:
       default:
     }
@@ -231,6 +299,10 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 1:
         hash = (37 * hash) + BIG_QUERY_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getBigQueryTarget().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + CLOUD_SQL_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlTarget().hashCode();
         break;
       case 0:
       default:
@@ -377,6 +449,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       if (bigQueryTargetBuilder_ != null) {
         bigQueryTargetBuilder_.clear();
       }
+      if (cloudSqlTargetBuilder_ != null) {
+        cloudSqlTargetBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -423,6 +498,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       result.target_ = this.target_;
       if (targetCase_ == 1 && bigQueryTargetBuilder_ != null) {
         result.target_ = bigQueryTargetBuilder_.build();
+      }
+      if (targetCase_ == 2 && cloudSqlTargetBuilder_ != null) {
+        result.target_ = cloudSqlTargetBuilder_.build();
       }
     }
 
@@ -477,6 +555,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             mergeBigQueryTarget(other.getBigQueryTarget());
             break;
           }
+        case CLOUD_SQL_TARGET:
+          {
+            mergeCloudSqlTarget(other.getCloudSqlTarget());
+            break;
+          }
         case TARGET_NOT_SET:
           {
             break;
@@ -514,6 +597,12 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
                 targetCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getCloudSqlTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -763,6 +852,224 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 1;
       onChanged();
       return bigQueryTargetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget,
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder>
+        cloudSqlTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     *
+     * @return Whether the cloudSqlTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlTarget() {
+      return targetCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     *
+     * @return The cloudSqlTarget.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget getCloudSqlTarget() {
+      if (cloudSqlTargetBuilder_ == null) {
+        if (targetCase_ == 2) {
+          return (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+      } else {
+        if (targetCase_ == 2) {
+          return cloudSqlTargetBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    public Builder setCloudSqlTarget(com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget value) {
+      if (cloudSqlTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        cloudSqlTargetBuilder_.setMessage(value);
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    public Builder setCloudSqlTarget(
+        com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder builderForValue) {
+      if (cloudSqlTargetBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlTargetBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    public Builder mergeCloudSqlTarget(com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget value) {
+      if (cloudSqlTargetBuilder_ == null) {
+        if (targetCase_ == 2
+            && target_ != com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance()) {
+          target_ =
+              com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.newBuilder(
+                      (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 2) {
+          cloudSqlTargetBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlTargetBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    public Builder clearCloudSqlTarget() {
+      if (cloudSqlTargetBuilder_ == null) {
+        if (targetCase_ == 2) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 2) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        cloudSqlTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    public com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder getCloudSqlTargetBuilder() {
+      return getCloudSqlTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder getCloudSqlTargetOrBuilder() {
+      if ((targetCase_ == 2) && (cloudSqlTargetBuilder_ != null)) {
+        return cloudSqlTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 2) {
+          return (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL target for Discovery. The first target to match a table will be
+     * the one applied.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget,
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder>
+        getCloudSqlTargetFieldBuilder() {
+      if (cloudSqlTargetBuilder_ == null) {
+        if (!(targetCase_ == 2)) {
+          target_ = com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
+        }
+        cloudSqlTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget,
+                com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder,
+                com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder>(
+                (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 2;
+      onChanged();
+      return cloudSqlTargetBuilder_;
     }
 
     @java.lang.Override

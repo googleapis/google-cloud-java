@@ -658,49 +658,6 @@ public final class PredictionServiceGrpc {
     return getStreamGenerateContentMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest, com.google.api.HttpBody>
-      getChatCompletionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ChatCompletions",
-      requestType = com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest.class,
-      responseType = com.google.api.HttpBody.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest, com.google.api.HttpBody>
-      getChatCompletionsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest, com.google.api.HttpBody>
-        getChatCompletionsMethod;
-    if ((getChatCompletionsMethod = PredictionServiceGrpc.getChatCompletionsMethod) == null) {
-      synchronized (PredictionServiceGrpc.class) {
-        if ((getChatCompletionsMethod = PredictionServiceGrpc.getChatCompletionsMethod) == null) {
-          PredictionServiceGrpc.getChatCompletionsMethod =
-              getChatCompletionsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest,
-                          com.google.api.HttpBody>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ChatCompletions"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.api.HttpBody.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new PredictionServiceMethodDescriptorSupplier("ChatCompletions"))
-                      .build();
-        }
-      }
-    }
-    return getChatCompletionsMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
@@ -969,20 +926,6 @@ public final class PredictionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStreamGenerateContentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exposes an OpenAI-compatible endpoint for chat completions.
-     * </pre>
-     */
-    default void chatCompletions(
-        com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getChatCompletionsMethod(), responseObserver);
     }
   }
 
@@ -1256,22 +1199,6 @@ public final class PredictionServiceGrpc {
           request,
           responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exposes an OpenAI-compatible endpoint for chat completions.
-     * </pre>
-     */
-    public void chatCompletions(
-        com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
-          getChannel().newCall(getChatCompletionsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
   }
 
   /**
@@ -1430,19 +1357,6 @@ public final class PredictionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Exposes an OpenAI-compatible endpoint for chat completions.
-     * </pre>
-     */
-    public java.util.Iterator<com.google.api.HttpBody> chatCompletions(
-        com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
-          getChannel(), getChatCompletionsMethod(), getCallOptions(), request);
-    }
   }
 
   /**
@@ -1589,11 +1503,10 @@ public final class PredictionServiceGrpc {
   private static final int METHODID_COUNT_TOKENS = 6;
   private static final int METHODID_GENERATE_CONTENT = 7;
   private static final int METHODID_STREAM_GENERATE_CONTENT = 8;
-  private static final int METHODID_CHAT_COMPLETIONS = 9;
-  private static final int METHODID_STREAM_DIRECT_PREDICT = 10;
-  private static final int METHODID_STREAM_DIRECT_RAW_PREDICT = 11;
-  private static final int METHODID_STREAMING_PREDICT = 12;
-  private static final int METHODID_STREAMING_RAW_PREDICT = 13;
+  private static final int METHODID_STREAM_DIRECT_PREDICT = 9;
+  private static final int METHODID_STREAM_DIRECT_RAW_PREDICT = 10;
+  private static final int METHODID_STREAMING_PREDICT = 11;
+  private static final int METHODID_STREAMING_RAW_PREDICT = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1669,11 +1582,6 @@ public final class PredictionServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>)
                   responseObserver);
-          break;
-        case METHODID_CHAT_COMPLETIONS:
-          serviceImpl.chatCompletions(
-              (com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1807,12 +1715,6 @@ public final class PredictionServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
                     com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>(
                     service, METHODID_STREAM_GENERATE_CONTENT)))
-        .addMethod(
-            getChatCompletionsMethod(),
-            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                new MethodHandlers<
-                    com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest,
-                    com.google.api.HttpBody>(service, METHODID_CHAT_COMPLETIONS)))
         .build();
   }
 
@@ -1877,7 +1779,6 @@ public final class PredictionServiceGrpc {
                       .addMethod(getCountTokensMethod())
                       .addMethod(getGenerateContentMethod())
                       .addMethod(getStreamGenerateContentMethod())
-                      .addMethod(getChatCompletionsMethod())
                       .build();
         }
       }

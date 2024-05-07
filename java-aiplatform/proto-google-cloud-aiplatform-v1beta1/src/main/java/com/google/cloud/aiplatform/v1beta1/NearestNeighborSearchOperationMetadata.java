@@ -398,6 +398,16 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_ENCODING = 13;</code>
        */
       INVALID_ENCODING(13),
+      /**
+       *
+       *
+       * <pre>
+       * Token restrict value is invalid.
+       * </pre>
+       *
+       * <code>INVALID_TOKEN_VALUE = 15;</code>
+       */
+      INVALID_TOKEN_VALUE(15),
       UNRECOGNIZED(-1),
       ;
 
@@ -543,6 +553,16 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_ENCODING = 13;</code>
        */
       public static final int INVALID_ENCODING_VALUE = 13;
+      /**
+       *
+       *
+       * <pre>
+       * Token restrict value is invalid.
+       * </pre>
+       *
+       * <code>INVALID_TOKEN_VALUE = 15;</code>
+       */
+      public static final int INVALID_TOKEN_VALUE_VALUE = 15;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -596,6 +616,8 @@ public final class NearestNeighborSearchOperationMetadata
             return INVALID_NUMERIC_VALUE;
           case 13:
             return INVALID_ENCODING;
+          case 15:
+            return INVALID_TOKEN_VALUE;
           default:
             return null;
         }
