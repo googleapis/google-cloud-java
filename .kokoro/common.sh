@@ -157,6 +157,7 @@ function run_graalvm_tests() {
 
   printf "Running GraalVM ITs on:\n%s\n" "$gapic_projects"
 
+  set -x
   mvn test -Pnative --projects "$gapic_projects" \
     "${INTEGRATION_TEST_ARGS}" \
     -B -ntp -fae \
@@ -168,6 +169,7 @@ function run_graalvm_tests() {
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true
+  set +x
 
   RETURN_CODE=$?
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
