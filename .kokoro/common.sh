@@ -16,7 +16,7 @@
 # TODO: remove java-core once we figure out how setup_cloud understands Maven's
 # "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
-native_image_sample_dir="google-cloud-example/native-image-sample"
+native_image_sample_dir="google-cloud-examples/native-image-sample"
 
 function retry_with_backoff {
   attempts_left=$1
