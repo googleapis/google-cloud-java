@@ -2026,6 +2026,52 @@ public final class DlpServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteTableDataProfileRequest, com.google.protobuf.Empty>
+      getDeleteTableDataProfileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTableDataProfile",
+      requestType = com.google.privacy.dlp.v2.DeleteTableDataProfileRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteTableDataProfileRequest, com.google.protobuf.Empty>
+      getDeleteTableDataProfileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.DeleteTableDataProfileRequest, com.google.protobuf.Empty>
+        getDeleteTableDataProfileMethod;
+    if ((getDeleteTableDataProfileMethod = DlpServiceGrpc.getDeleteTableDataProfileMethod)
+        == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getDeleteTableDataProfileMethod = DlpServiceGrpc.getDeleteTableDataProfileMethod)
+            == null) {
+          DlpServiceGrpc.getDeleteTableDataProfileMethod =
+              getDeleteTableDataProfileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.DeleteTableDataProfileRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTableDataProfile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DeleteTableDataProfileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("DeleteTableDataProfile"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTableDataProfileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
           com.google.privacy.dlp.v2.HybridInspectResponse>
       getHybridInspectDlpJobMethod;
@@ -2110,6 +2156,270 @@ public final class DlpServiceGrpc {
       }
     }
     return getFinishDlpJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.CreateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getCreateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateConnection",
+      requestType = com.google.privacy.dlp.v2.CreateConnectionRequest.class,
+      responseType = com.google.privacy.dlp.v2.Connection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.CreateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getCreateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.CreateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+        getCreateConnectionMethod;
+    if ((getCreateConnectionMethod = DlpServiceGrpc.getCreateConnectionMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getCreateConnectionMethod = DlpServiceGrpc.getCreateConnectionMethod) == null) {
+          DlpServiceGrpc.getCreateConnectionMethod =
+              getCreateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.CreateConnectionRequest,
+                          com.google.privacy.dlp.v2.Connection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.CreateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.Connection.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("CreateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getCreateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getGetConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConnection",
+      requestType = com.google.privacy.dlp.v2.GetConnectionRequest.class,
+      responseType = com.google.privacy.dlp.v2.Connection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getGetConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.GetConnectionRequest, com.google.privacy.dlp.v2.Connection>
+        getGetConnectionMethod;
+    if ((getGetConnectionMethod = DlpServiceGrpc.getGetConnectionMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getGetConnectionMethod = DlpServiceGrpc.getGetConnectionMethod) == null) {
+          DlpServiceGrpc.getGetConnectionMethod =
+              getGetConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.GetConnectionRequest,
+                          com.google.privacy.dlp.v2.Connection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.GetConnectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.Connection.getDefaultInstance()))
+                      .setSchemaDescriptor(new DlpServiceMethodDescriptorSupplier("GetConnection"))
+                      .build();
+        }
+      }
+    }
+    return getGetConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListConnectionsRequest,
+          com.google.privacy.dlp.v2.ListConnectionsResponse>
+      getListConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConnections",
+      requestType = com.google.privacy.dlp.v2.ListConnectionsRequest.class,
+      responseType = com.google.privacy.dlp.v2.ListConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListConnectionsRequest,
+          com.google.privacy.dlp.v2.ListConnectionsResponse>
+      getListConnectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.ListConnectionsRequest,
+            com.google.privacy.dlp.v2.ListConnectionsResponse>
+        getListConnectionsMethod;
+    if ((getListConnectionsMethod = DlpServiceGrpc.getListConnectionsMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getListConnectionsMethod = DlpServiceGrpc.getListConnectionsMethod) == null) {
+          DlpServiceGrpc.getListConnectionsMethod =
+              getListConnectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.ListConnectionsRequest,
+                          com.google.privacy.dlp.v2.ListConnectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConnections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListConnectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListConnectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("ListConnections"))
+                      .build();
+        }
+      }
+    }
+    return getListConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.SearchConnectionsRequest,
+          com.google.privacy.dlp.v2.SearchConnectionsResponse>
+      getSearchConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchConnections",
+      requestType = com.google.privacy.dlp.v2.SearchConnectionsRequest.class,
+      responseType = com.google.privacy.dlp.v2.SearchConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.SearchConnectionsRequest,
+          com.google.privacy.dlp.v2.SearchConnectionsResponse>
+      getSearchConnectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.SearchConnectionsRequest,
+            com.google.privacy.dlp.v2.SearchConnectionsResponse>
+        getSearchConnectionsMethod;
+    if ((getSearchConnectionsMethod = DlpServiceGrpc.getSearchConnectionsMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getSearchConnectionsMethod = DlpServiceGrpc.getSearchConnectionsMethod) == null) {
+          DlpServiceGrpc.getSearchConnectionsMethod =
+              getSearchConnectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.SearchConnectionsRequest,
+                          com.google.privacy.dlp.v2.SearchConnectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchConnections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.SearchConnectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.SearchConnectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("SearchConnections"))
+                      .build();
+        }
+      }
+    }
+    return getSearchConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteConnectionRequest, com.google.protobuf.Empty>
+      getDeleteConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConnection",
+      requestType = com.google.privacy.dlp.v2.DeleteConnectionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteConnectionRequest, com.google.protobuf.Empty>
+      getDeleteConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.DeleteConnectionRequest, com.google.protobuf.Empty>
+        getDeleteConnectionMethod;
+    if ((getDeleteConnectionMethod = DlpServiceGrpc.getDeleteConnectionMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getDeleteConnectionMethod = DlpServiceGrpc.getDeleteConnectionMethod) == null) {
+          DlpServiceGrpc.getDeleteConnectionMethod =
+              getDeleteConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.DeleteConnectionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DeleteConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("DeleteConnection"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.UpdateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getUpdateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateConnection",
+      requestType = com.google.privacy.dlp.v2.UpdateConnectionRequest.class,
+      responseType = com.google.privacy.dlp.v2.Connection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.UpdateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+      getUpdateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.UpdateConnectionRequest, com.google.privacy.dlp.v2.Connection>
+        getUpdateConnectionMethod;
+    if ((getUpdateConnectionMethod = DlpServiceGrpc.getUpdateConnectionMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getUpdateConnectionMethod = DlpServiceGrpc.getUpdateConnectionMethod) == null) {
+          DlpServiceGrpc.getUpdateConnectionMethod =
+              getUpdateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.UpdateConnectionRequest,
+                          com.google.privacy.dlp.v2.Connection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.UpdateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.Connection.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("UpdateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateConnectionMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -2831,7 +3141,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists project data profiles for an organization.
      * </pre>
      */
     default void listProjectDataProfiles(
@@ -2846,7 +3156,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists table data profiles for an organization.
      * </pre>
      */
     default void listTableDataProfiles(
@@ -2861,7 +3171,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists column data profiles for an organization.
      * </pre>
      */
     default void listColumnDataProfiles(
@@ -2919,6 +3229,21 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Delete a TableDataProfile. Will not prevent the profile from being
+     * regenerated if the table is still included in a discovery configuration.
+     * </pre>
+     */
+    default void deleteTableDataProfile(
+        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTableDataProfileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Inspect hybrid content and store findings to a job.
      * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
@@ -2945,6 +3270,92 @@ public final class DlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFinishDlpJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Connection to an external data source.
+     * </pre>
+     */
+    default void createConnection(
+        com.google.privacy.dlp.v2.CreateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Connection by name.
+     * </pre>
+     */
+    default void getConnection(
+        com.google.privacy.dlp.v2.GetConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a parent.
+     * </pre>
+     */
+    default void listConnections(
+        com.google.privacy.dlp.v2.ListConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Connections in a parent.
+     * </pre>
+     */
+    default void searchConnections(
+        com.google.privacy.dlp.v2.SearchConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.SearchConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Connection.
+     * </pre>
+     */
+    default void deleteConnection(
+        com.google.privacy.dlp.v2.DeleteConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Connection.
+     * </pre>
+     */
+    default void updateConnection(
+        com.google.privacy.dlp.v2.UpdateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateConnectionMethod(), responseObserver);
     }
   }
 
@@ -3730,7 +4141,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists project data profiles for an organization.
      * </pre>
      */
     public void listProjectDataProfiles(
@@ -3747,7 +4158,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists table data profiles for an organization.
      * </pre>
      */
     public void listTableDataProfiles(
@@ -3764,7 +4175,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists column data profiles for an organization.
      * </pre>
      */
     public void listColumnDataProfiles(
@@ -3830,6 +4241,23 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Delete a TableDataProfile. Will not prevent the profile from being
+     * regenerated if the table is still included in a discovery configuration.
+     * </pre>
+     */
+    public void deleteTableDataProfile(
+        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTableDataProfileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Inspect hybrid content and store findings to a job.
      * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
@@ -3858,6 +4286,104 @@ public final class DlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFinishDlpJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Connection to an external data source.
+     * </pre>
+     */
+    public void createConnection(
+        com.google.privacy.dlp.v2.CreateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Connection by name.
+     * </pre>
+     */
+    public void getConnection(
+        com.google.privacy.dlp.v2.GetConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a parent.
+     * </pre>
+     */
+    public void listConnections(
+        com.google.privacy.dlp.v2.ListConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListConnectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Connections in a parent.
+     * </pre>
+     */
+    public void searchConnections(
+        com.google.privacy.dlp.v2.SearchConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.SearchConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchConnectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Connection.
+     * </pre>
+     */
+    public void deleteConnection(
+        com.google.privacy.dlp.v2.DeleteConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Connection.
+     * </pre>
+     */
+    public void updateConnection(
+        com.google.privacy.dlp.v2.UpdateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4501,7 +5027,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists project data profiles for an organization.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListProjectDataProfilesResponse listProjectDataProfiles(
@@ -4514,7 +5040,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists table data profiles for an organization.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListTableDataProfilesResponse listTableDataProfiles(
@@ -4527,7 +5053,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists column data profiles for an organization.
      * </pre>
      */
     public com.google.privacy.dlp.v2.ListColumnDataProfilesResponse listColumnDataProfiles(
@@ -4579,6 +5105,20 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Delete a TableDataProfile. Will not prevent the profile from being
+     * regenerated if the table is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTableDataProfile(
+        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTableDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Inspect hybrid content and store findings to a job.
      * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
@@ -4602,6 +5142,84 @@ public final class DlpServiceGrpc {
         com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFinishDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Connection to an external data source.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection createConnection(
+        com.google.privacy.dlp.v2.CreateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Connection by name.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection getConnection(
+        com.google.privacy.dlp.v2.GetConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a parent.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListConnectionsResponse listConnections(
+        com.google.privacy.dlp.v2.ListConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Connections in a parent.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.SearchConnectionsResponse searchConnections(
+        com.google.privacy.dlp.v2.SearchConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Connection.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConnection(
+        com.google.privacy.dlp.v2.DeleteConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Connection.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection updateConnection(
+        com.google.privacy.dlp.v2.UpdateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
   }
 
@@ -5269,7 +5887,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists project data profiles for an organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5283,7 +5901,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists table data profiles for an organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5297,7 +5915,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Lists data profiles for an organization.
+     * Lists column data profiles for an organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5353,6 +5971,20 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Delete a TableDataProfile. Will not prevent the profile from being
+     * regenerated if the table is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteTableDataProfile(com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTableDataProfileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Inspect hybrid content and store findings to a job.
      * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
@@ -5377,6 +6009,86 @@ public final class DlpServiceGrpc {
         finishDlpJob(com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFinishDlpJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Connection to an external data source.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.Connection>
+        createConnection(com.google.privacy.dlp.v2.CreateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Connection by name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.Connection>
+        getConnection(com.google.privacy.dlp.v2.GetConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a parent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.ListConnectionsResponse>
+        listConnections(com.google.privacy.dlp.v2.ListConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Connections in a parent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.SearchConnectionsResponse>
+        searchConnections(com.google.privacy.dlp.v2.SearchConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteConnection(com.google.privacy.dlp.v2.DeleteConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.Connection>
+        updateConnection(com.google.privacy.dlp.v2.UpdateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()), request);
     }
   }
 
@@ -5423,8 +6135,15 @@ public final class DlpServiceGrpc {
   private static final int METHODID_GET_PROJECT_DATA_PROFILE = 40;
   private static final int METHODID_GET_TABLE_DATA_PROFILE = 41;
   private static final int METHODID_GET_COLUMN_DATA_PROFILE = 42;
-  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 43;
-  private static final int METHODID_FINISH_DLP_JOB = 44;
+  private static final int METHODID_DELETE_TABLE_DATA_PROFILE = 43;
+  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 44;
+  private static final int METHODID_FINISH_DLP_JOB = 45;
+  private static final int METHODID_CREATE_CONNECTION = 46;
+  private static final int METHODID_GET_CONNECTION = 47;
+  private static final int METHODID_LIST_CONNECTIONS = 48;
+  private static final int METHODID_SEARCH_CONNECTIONS = 49;
+  private static final int METHODID_DELETE_CONNECTION = 50;
+  private static final int METHODID_UPDATE_CONNECTION = 51;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5691,6 +6410,11 @@ public final class DlpServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ColumnDataProfile>)
                   responseObserver);
           break;
+        case METHODID_DELETE_TABLE_DATA_PROFILE:
+          serviceImpl.deleteTableDataProfile(
+              (com.google.privacy.dlp.v2.DeleteTableDataProfileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_HYBRID_INSPECT_DLP_JOB:
           serviceImpl.hybridInspectDlpJob(
               (com.google.privacy.dlp.v2.HybridInspectDlpJobRequest) request,
@@ -5701,6 +6425,38 @@ public final class DlpServiceGrpc {
           serviceImpl.finishDlpJob(
               (com.google.privacy.dlp.v2.FinishDlpJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_CONNECTION:
+          serviceImpl.createConnection(
+              (com.google.privacy.dlp.v2.CreateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection>) responseObserver);
+          break;
+        case METHODID_GET_CONNECTION:
+          serviceImpl.getConnection(
+              (com.google.privacy.dlp.v2.GetConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection>) responseObserver);
+          break;
+        case METHODID_LIST_CONNECTIONS:
+          serviceImpl.listConnections(
+              (com.google.privacy.dlp.v2.ListConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListConnectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_CONNECTIONS:
+          serviceImpl.searchConnections(
+              (com.google.privacy.dlp.v2.SearchConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.SearchConnectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CONNECTION:
+          serviceImpl.deleteConnection(
+              (com.google.privacy.dlp.v2.DeleteConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_CONNECTION:
+          serviceImpl.updateConnection(
+              (com.google.privacy.dlp.v2.UpdateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.Connection>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -6008,6 +6764,12 @@ public final class DlpServiceGrpc {
                     com.google.privacy.dlp.v2.ColumnDataProfile>(
                     service, METHODID_GET_COLUMN_DATA_PROFILE)))
         .addMethod(
+            getDeleteTableDataProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteTableDataProfileRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TABLE_DATA_PROFILE)))
+        .addMethod(
             getHybridInspectDlpJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6020,6 +6782,44 @@ public final class DlpServiceGrpc {
                 new MethodHandlers<
                     com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>(
                     service, METHODID_FINISH_DLP_JOB)))
+        .addMethod(
+            getCreateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateConnectionRequest,
+                    com.google.privacy.dlp.v2.Connection>(service, METHODID_CREATE_CONNECTION)))
+        .addMethod(
+            getGetConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetConnectionRequest,
+                    com.google.privacy.dlp.v2.Connection>(service, METHODID_GET_CONNECTION)))
+        .addMethod(
+            getListConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListConnectionsRequest,
+                    com.google.privacy.dlp.v2.ListConnectionsResponse>(
+                    service, METHODID_LIST_CONNECTIONS)))
+        .addMethod(
+            getSearchConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.SearchConnectionsRequest,
+                    com.google.privacy.dlp.v2.SearchConnectionsResponse>(
+                    service, METHODID_SEARCH_CONNECTIONS)))
+        .addMethod(
+            getDeleteConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteConnectionRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CONNECTION)))
+        .addMethod(
+            getUpdateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateConnectionRequest,
+                    com.google.privacy.dlp.v2.Connection>(service, METHODID_UPDATE_CONNECTION)))
         .build();
   }
 
@@ -6114,8 +6914,15 @@ public final class DlpServiceGrpc {
                       .addMethod(getGetProjectDataProfileMethod())
                       .addMethod(getGetTableDataProfileMethod())
                       .addMethod(getGetColumnDataProfileMethod())
+                      .addMethod(getDeleteTableDataProfileMethod())
                       .addMethod(getHybridInspectDlpJobMethod())
                       .addMethod(getFinishDlpJobMethod())
+                      .addMethod(getCreateConnectionMethod())
+                      .addMethod(getGetConnectionMethod())
+                      .addMethod(getListConnectionsMethod())
+                      .addMethod(getSearchConnectionsMethod())
+                      .addMethod(getDeleteConnectionMethod())
+                      .addMethod(getUpdateConnectionMethod())
                       .build();
         }
       }

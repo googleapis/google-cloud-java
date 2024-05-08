@@ -556,7 +556,11 @@ public class VertexRagDataServiceClientTest {
   @Test
   public void importRagFilesTest() throws Exception {
     ImportRagFilesResponse expectedResponse =
-        ImportRagFilesResponse.newBuilder().setImportedRagFilesCount(1148003429).build();
+        ImportRagFilesResponse.newBuilder()
+            .setImportedRagFilesCount(1148003429)
+            .setFailedRagFilesCount(-854525026)
+            .setSkippedRagFilesCount(-1294759791)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("importRagFilesTest")
@@ -604,7 +608,11 @@ public class VertexRagDataServiceClientTest {
   @Test
   public void importRagFilesTest2() throws Exception {
     ImportRagFilesResponse expectedResponse =
-        ImportRagFilesResponse.newBuilder().setImportedRagFilesCount(1148003429).build();
+        ImportRagFilesResponse.newBuilder()
+            .setImportedRagFilesCount(1148003429)
+            .setFailedRagFilesCount(-854525026)
+            .setSkippedRagFilesCount(-1294759791)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("importRagFilesTest")

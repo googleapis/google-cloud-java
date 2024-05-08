@@ -400,6 +400,46 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_JSON = 14;</code>
      */
     TYPE_JSON(14),
+    /**
+     *
+     *
+     * <pre>
+     * Interval type.
+     * </pre>
+     *
+     * <code>TYPE_INTERVAL = 15;</code>
+     */
+    TYPE_INTERVAL(15),
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Date&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_DATE = 16;</code>
+     */
+    TYPE_RANGE_DATE(16),
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Datetime&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_DATETIME = 17;</code>
+     */
+    TYPE_RANGE_DATETIME(17),
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Timestamp&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_TIMESTAMP = 18;</code>
+     */
+    TYPE_RANGE_TIMESTAMP(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -554,6 +594,46 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_JSON = 14;</code>
      */
     public static final int TYPE_JSON_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Interval type.
+     * </pre>
+     *
+     * <code>TYPE_INTERVAL = 15;</code>
+     */
+    public static final int TYPE_INTERVAL_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Date&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_DATE = 16;</code>
+     */
+    public static final int TYPE_RANGE_DATE_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Datetime&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_DATETIME = 17;</code>
+     */
+    public static final int TYPE_RANGE_DATETIME_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * `Range&lt;Timestamp&gt;` type.
+     * </pre>
+     *
+     * <code>TYPE_RANGE_TIMESTAMP = 18;</code>
+     */
+    public static final int TYPE_RANGE_TIMESTAMP_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -609,6 +689,14 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
           return TYPE_BIGNUMERIC;
         case 14:
           return TYPE_JSON;
+        case 15:
+          return TYPE_INTERVAL;
+        case 16:
+          return TYPE_RANGE_DATE;
+        case 17:
+          return TYPE_RANGE_DATETIME;
+        case 18:
+          return TYPE_RANGE_TIMESTAMP;
         default:
           return null;
       }

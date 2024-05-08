@@ -362,6 +362,44 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   *
+   * @return Whether the sqlAssertion field is set.
+   */
+  boolean hasSqlAssertion();
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   *
+   * @return The sqlAssertion.
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion getSqlAssertion();
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which evaluates the number of rows returned for the
+   * provided statement.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion sql_assertion = 202;</code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionOrBuilder getSqlAssertionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The unnested column which this rule is evaluated against.
    * </pre>
    *

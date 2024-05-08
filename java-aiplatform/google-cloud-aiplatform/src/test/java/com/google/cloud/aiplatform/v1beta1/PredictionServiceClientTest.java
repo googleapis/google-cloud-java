@@ -1012,62 +1012,6 @@ public class PredictionServiceClientTest {
   }
 
   @Test
-  public void chatCompletionsTest() throws Exception {
-    HttpBody expectedResponse =
-        HttpBody.newBuilder()
-            .setContentType("contentType-389131437")
-            .setData(ByteString.EMPTY)
-            .addAllExtensions(new ArrayList<Any>())
-            .build();
-    mockPredictionService.addResponse(expectedResponse);
-    ChatCompletionsRequest request =
-        ChatCompletionsRequest.newBuilder()
-            .setEndpoint(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-                    .toString())
-            .setHttpBody(HttpBody.newBuilder().build())
-            .build();
-
-    MockStreamObserver<HttpBody> responseObserver = new MockStreamObserver<>();
-
-    ServerStreamingCallable<ChatCompletionsRequest, HttpBody> callable =
-        client.chatCompletionsCallable();
-    callable.serverStreamingCall(request, responseObserver);
-
-    List<HttpBody> actualResponses = responseObserver.future().get();
-    Assert.assertEquals(1, actualResponses.size());
-    Assert.assertEquals(expectedResponse, actualResponses.get(0));
-  }
-
-  @Test
-  public void chatCompletionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPredictionService.addException(exception);
-    ChatCompletionsRequest request =
-        ChatCompletionsRequest.newBuilder()
-            .setEndpoint(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-                    .toString())
-            .setHttpBody(HttpBody.newBuilder().build())
-            .build();
-
-    MockStreamObserver<HttpBody> responseObserver = new MockStreamObserver<>();
-
-    ServerStreamingCallable<ChatCompletionsRequest, HttpBody> callable =
-        client.chatCompletionsCallable();
-    callable.serverStreamingCall(request, responseObserver);
-
-    try {
-      List<HttpBody> actualResponses = responseObserver.future().get();
-      Assert.fail("No exception thrown");
-    } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

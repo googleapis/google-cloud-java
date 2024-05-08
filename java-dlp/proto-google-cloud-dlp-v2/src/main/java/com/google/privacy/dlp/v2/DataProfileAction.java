@@ -96,12 +96,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Changed one of the following profile metrics:
-     * * Table data risk score
-     * * Table sensitivity score
-     * * Table resource visibility
-     * * Table encryption type
-     * * Table predicted infoTypes
-     * * Table other infoTypes
+     * * Data risk score
+     * * Sensitivity score
+     * * Resource visibility
+     * * Encryption type
+     * * Predicted infoTypes
+     * * Other infoTypes
      * </pre>
      *
      * <code>CHANGED_PROFILE = 2;</code>
@@ -155,12 +155,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Changed one of the following profile metrics:
-     * * Table data risk score
-     * * Table sensitivity score
-     * * Table resource visibility
-     * * Table encryption type
-     * * Table predicted infoTypes
-     * * Table other infoTypes
+     * * Data risk score
+     * * Sensitivity score
+     * * Resource visibility
+     * * Encryption type
+     * * Predicted infoTypes
+     * * Other infoTypes
      * </pre>
      *
      * <code>CHANGED_PROFILE = 2;</code>
@@ -284,8 +284,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -298,8 +304,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -312,8 +324,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -371,8 +389,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -388,8 +412,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -407,8 +437,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in a new row in
-     * BigQuery.
+     * in an existing dataset. Each re-generation will result in new rows in
+     * BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished. The Pub/Sub notification is sent before the streaming
+     * buffer is guaranteed to be written, so data may not be instantly
+     * visible to queries by the time your topic receives the Pub/Sub
+     * notification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -798,8 +834,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -814,8 +856,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -836,8 +884,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -860,8 +914,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -882,8 +942,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -911,8 +977,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -932,8 +1004,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -948,8 +1026,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -968,8 +1052,14 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in a new row in
-       * BigQuery.
+       * in an existing dataset. Each re-generation will result in new rows in
+       * BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished. The Pub/Sub notification is sent before the streaming
+       * buffer is guaranteed to be written, so data may not be instantly
+       * visible to queries by the time your topic receives the Pub/Sub
+       * notification.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -1267,7 +1357,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The resource name of the table.
+       * The name of the profiled resource.
        * </pre>
        *
        * <code>RESOURCE_NAME = 2;</code>
@@ -1300,7 +1390,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The resource name of the table.
+       * The name of the profiled resource.
        * </pre>
        *
        * <code>RESOURCE_NAME = 2;</code>

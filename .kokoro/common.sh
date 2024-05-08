@@ -129,46 +129,48 @@ function generate_modified_modules_list() {
 function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
   # --also-make-dependents to run other modules that use the affected module
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
-    -Penable-integration-tests \
+  mvn verify -Penable-integration-tests --projects "$1" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
     -Djacoco.skip=true \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-    -fae \
-    -T 1C \
-    verify
+    -T 1C
 
   RETURN_CODE=$?
   printf "Finished Integration Tests for:\n%s\n" "$1"
 }
 
 function run_graalvm_tests() {
-  printf "Running GraalVM ITs on:\n%s\n" "$1"
+  IFS=, read -ra individual_modules <<< "$1"
+  projects_to_install=()
+  for module in "${individual_modules[@]}"; do
+    p=$(echo "$module" | cut -d '-' -f2-) # Convert from 'java-x-y-z' to 'x-y-z'
+    projects_to_install+=("java-$p/google-cloud-$p"); # Create reference to GAPIC project
+  done
+  IFS=, gapic_projects="${projects_to_install[*]}" # Convert to comma-separated string
 
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
+  printf "Running GraalVM ITs on:\n%s\n" "$gapic_projects"
+
+  mvn test -Pnative --projects "$gapic_projects" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Pnative \
-    -fae \
-    test
+    -Danimal.sniffer.skip=true
 
   RETURN_CODE=$?
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
@@ -177,7 +179,7 @@ function run_graalvm_tests() {
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 10 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
@@ -230,18 +232,56 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  retry_with_backoff 3 10 \
-    mvn -B \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  if [ -z "$1" ]; then
+    mvn install \
+      -B -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C
+  else
+    IFS=, read -ra individual_modules <<< "$1"
+    projects_to_install=()
+    for module in "${individual_modules[@]}"; do
+      p=$(echo "$module" | cut -d '-' -f2-) # Convert from 'java-x-y-z' to 'x-y-z'
+      projects_to_install+=("java-$p/google-cloud-$p"); # Create reference to GAPIC project
+    done
+    IFS=, gapic_projects="${projects_to_install[*]}" # Convert to comma-separated string
+
+    # When working with a maven multi-module project containing other multi-module projects,
+    # to build a module with its dependencies and without building its dependents:
+    # Perform the install command on a grandchild module with the --also-make flag.
+    #
+    # Examples:
+    #
+    #   mvn install --projects java-asset --also-make
+    #      ! Does not work. Maven reactor will not build java-asset's child modules, such as the
+    #        gapic, proto, and grpc modules.
+    #
+    #   mvn install --projects java-kms --also-make-dependents
+    #      ! Does not work. Maven reactor will include java-kmsinventory in its build.
+    #
+    #   mvn install --projects java-kms/google-cloud-kms --also-make
+    #      Correctly builds dependencies without building dependents.
+    mvn install --projects "$gapic_projects" --also-make \
+      -B -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C
+  fi
 }

@@ -79,6 +79,47 @@ public interface GroundingMetadataOrBuilder
    *
    *
    * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchEntryPoint field is set.
+   */
+  boolean hasSearchEntryPoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchEntryPoint.
+   */
+  com.google.cloud.aiplatform.v1beta1.SearchEntryPoint getSearchEntryPoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google search entry for the following-up web searches.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SearchEntryPointOrBuilder getSearchEntryPointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Queries executed by the retrieval tools.
    * </pre>
    *

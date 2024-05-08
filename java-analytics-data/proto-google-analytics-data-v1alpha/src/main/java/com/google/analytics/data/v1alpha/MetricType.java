@@ -374,7 +374,7 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(6);
+        .get(7);
   }
 
   private static final MetricType[] VALUES = values();

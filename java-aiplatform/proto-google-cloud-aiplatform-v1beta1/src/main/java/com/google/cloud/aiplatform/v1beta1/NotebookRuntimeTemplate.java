@@ -92,10 +92,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The resource name of the NotebookRuntimeTemplate.
+   * The resource name of the NotebookRuntimeTemplate.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -115,10 +115,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The resource name of the NotebookRuntimeTemplate.
+   * The resource name of the NotebookRuntimeTemplate.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -1934,10 +1934,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The resource name of the NotebookRuntimeTemplate.
+     * The resource name of the NotebookRuntimeTemplate.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -1956,10 +1956,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The resource name of the NotebookRuntimeTemplate.
+     * The resource name of the NotebookRuntimeTemplate.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -1978,10 +1978,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The resource name of the NotebookRuntimeTemplate.
+     * The resource name of the NotebookRuntimeTemplate.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1999,10 +1999,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The resource name of the NotebookRuntimeTemplate.
+     * The resource name of the NotebookRuntimeTemplate.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -2016,10 +2016,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The resource name of the NotebookRuntimeTemplate.
+     * The resource name of the NotebookRuntimeTemplate.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

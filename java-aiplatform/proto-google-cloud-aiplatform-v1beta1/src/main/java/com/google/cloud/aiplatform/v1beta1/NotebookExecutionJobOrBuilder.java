@@ -71,7 +71,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS url pointing to the ipynb file. Format:
+   * The Cloud Storage url pointing to the ipynb file. Format:
    * `gs://bucket/notebook_file.ipynb`
    * </pre>
    *
@@ -86,7 +86,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS url pointing to the ipynb file. Format:
+   * The Cloud Storage url pointing to the ipynb file. Format:
    * `gs://bucket/notebook_file.ipynb`
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS url pointing to the ipynb file. Format:
+   * The Cloud Storage url pointing to the ipynb file. Format:
    * `gs://bucket/notebook_file.ipynb`
    * </pre>
    *
@@ -159,7 +159,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS location to upload the result to. Format:
+   * The Cloud Storage location to upload the result to. Format:
    * `gs://bucket-name`
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS location to upload the result to. Format:
+   * The Cloud Storage location to upload the result to. Format:
    * `gs://bucket-name`
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
-   * The GCS location to upload the result to. Format:
+   * The Cloud Storage location to upload the result to. Format:
    * `gs://bucket-name`
    * </pre>
    *
