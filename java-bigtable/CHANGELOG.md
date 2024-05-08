@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.39.1](https://github.com/googleapis/java-bigtable/compare/v2.39.0...v2.39.1) (2024-05-08)
+
+
+### Bug Fixes
+
+* Batch time series data when exporting client-side metric ([#2222](https://github.com/googleapis/java-bigtable/issues/2222)) ([1f9f169](https://github.com/googleapis/java-bigtable/commit/1f9f1698339ae470d821963e1037e0132016d216))
+* Remove stale module from bom ([#2218](https://github.com/googleapis/java-bigtable/issues/2218)) ([7145864](https://github.com/googleapis/java-bigtable/commit/7145864868b3f7df69f9b2db7a822f9faf903f33))
+
 ## [2.39.0](https://github.com/googleapis/java-bigtable/compare/v2.38.0...v2.39.0) (2024-04-29)
 
 
