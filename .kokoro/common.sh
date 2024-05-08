@@ -16,6 +16,7 @@
 # TODO: remove java-core once we figure out how setup_cloud understands Maven's
 # "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
+native_image_sample_dir="google-cloud-example/native-image-sample"
 
 function retry_with_backoff {
   attempts_left=$1
@@ -110,7 +111,7 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E "(java-.*|${native_image_sample_dir})" || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
