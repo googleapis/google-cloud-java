@@ -134,7 +134,7 @@ public final class GenerativeModel {
      * Sets the name of the generative model. This is required for building a GenerativeModel
      * instance. Supported format: "gemini-pro", "models/gemini-pro",
      * "publishers/google/models/gemini-pro", where "gemini-pro" is the model name. Valid model
-     * names can be found in the Gemini models documentation
+     * names can be found in the Gemini models documentation:
      * https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
      */
     @CanIgnoreReturnValue
@@ -217,13 +217,9 @@ public final class GenerativeModel {
    * @return a new {@link GenerativeModel} instance with the specified GenerationConfig.
    */
   public GenerativeModel withGenerationConfig(GenerationConfig generationConfig) {
+    checkNotNull(generationConfig, "GenerationConfig can't be null.");
     return new GenerativeModel(
-        modelName,
-        generationConfig,
-        ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools),
-        systemInstruction,
-        vertexAi);
+        modelName, generationConfig, safetySettings, tools, systemInstruction, vertexAi);
   }
 
   /**
@@ -234,11 +230,14 @@ public final class GenerativeModel {
    * @return a new {@link GenerativeModel} instance with the specified safetySettings.
    */
   public GenerativeModel withSafetySettings(List<SafetySetting> safetySettings) {
+    checkNotNull(
+        safetySettings,
+        "safetySettings can't be null. Use an empty list if no safety settings is intended.");
     return new GenerativeModel(
         modelName,
         generationConfig,
         ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools),
+        tools,
         systemInstruction,
         vertexAi);
   }
@@ -251,10 +250,11 @@ public final class GenerativeModel {
    * @return a new {@link GenerativeModel} instance with the specified tools.
    */
   public GenerativeModel withTools(List<Tool> tools) {
+    checkNotNull(tools, "tools can't be null. Use an empty list if no tool is to be used.");
     return new GenerativeModel(
         modelName,
         generationConfig,
-        ImmutableList.copyOf(safetySettings),
+        safetySettings,
         ImmutableList.copyOf(tools),
         systemInstruction,
         vertexAi);
@@ -268,11 +268,15 @@ public final class GenerativeModel {
    * @return a new {@link GenerativeModel} instance with the specified tools.
    */
   public GenerativeModel withSystemInstruction(Content systemInstruction) {
+    checkNotNull(
+        systemInstruction,
+        "system instruction can't be null. "
+            + "Use Optional.empty() if no system instruction should be provided.");
     return new GenerativeModel(
         modelName,
         generationConfig,
-        ImmutableList.copyOf(safetySettings),
-        ImmutableList.copyOf(tools),
+        safetySettings,
+        tools,
         Optional.of(systemInstruction),
         vertexAi);
   }
@@ -506,7 +510,6 @@ public final class GenerativeModel {
    */
   private GenerateContentRequest buildGenerateContentRequest(List<Content> contents) {
     checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
-
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder()
             .setModel(resourceName)
