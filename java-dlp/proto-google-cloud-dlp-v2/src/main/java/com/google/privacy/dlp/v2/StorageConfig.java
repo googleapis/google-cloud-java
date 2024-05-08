@@ -288,6 +288,17 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * since the last time the JobTrigger executed. This will be based on the
      * time of the execution of the last run of the JobTrigger or the timespan
      * end_time used in the last run of the JobTrigger.
+     *
+     * **For BigQuery**
+     *
+     * Inspect jobs triggered by automatic population will scan data that is at
+     * least three hours old when the job starts. This is because streaming
+     * buffer rows are not read during inspection and reading up to the current
+     * timestamp will result in skipped rows.
+     *
+     * See the [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+     * related to this operation.
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
@@ -601,6 +612,17 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * since the last time the JobTrigger executed. This will be based on the
      * time of the execution of the last run of the JobTrigger or the timespan
      * end_time used in the last run of the JobTrigger.
+     *
+     * **For BigQuery**
+     *
+     * Inspect jobs triggered by automatic population will scan data that is at
+     * least three hours old when the job starts. This is because streaming
+     * buffer rows are not read during inspection and reading up to the current
+     * timestamp will result in skipped rows.
+     *
+     * See the [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+     * related to this operation.
      * </pre>
      *
      * <code>bool enable_auto_population_of_timespan_config = 4;</code>
@@ -1959,6 +1981,17 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * since the last time the JobTrigger executed. This will be based on the
        * time of the execution of the last run of the JobTrigger or the timespan
        * end_time used in the last run of the JobTrigger.
+       *
+       * **For BigQuery**
+       *
+       * Inspect jobs triggered by automatic population will scan data that is at
+       * least three hours old when the job starts. This is because streaming
+       * buffer rows are not read during inspection and reading up to the current
+       * timestamp will result in skipped rows.
+       *
+       * See the [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+       * related to this operation.
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
@@ -1978,6 +2011,17 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * since the last time the JobTrigger executed. This will be based on the
        * time of the execution of the last run of the JobTrigger or the timespan
        * end_time used in the last run of the JobTrigger.
+       *
+       * **For BigQuery**
+       *
+       * Inspect jobs triggered by automatic population will scan data that is at
+       * least three hours old when the job starts. This is because streaming
+       * buffer rows are not read during inspection and reading up to the current
+       * timestamp will result in skipped rows.
+       *
+       * See the [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+       * related to this operation.
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
@@ -2001,6 +2045,17 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * since the last time the JobTrigger executed. This will be based on the
        * time of the execution of the last run of the JobTrigger or the timespan
        * end_time used in the last run of the JobTrigger.
+       *
+       * **For BigQuery**
+       *
+       * Inspect jobs triggered by automatic population will scan data that is at
+       * least three hours old when the job starts. This is because streaming
+       * buffer rows are not read during inspection and reading up to the current
+       * timestamp will result in skipped rows.
+       *
+       * See the [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+       * related to this operation.
        * </pre>
        *
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>

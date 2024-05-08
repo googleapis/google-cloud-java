@@ -253,4 +253,88 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createReportTask(
+      CreateReportTaskRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateReportTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryReportTask(
+      QueryReportTaskRequest request, StreamObserver<QueryReportTaskResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryReportTaskResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryReportTaskResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryReportTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryReportTaskResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getReportTask(
+      GetReportTaskRequest request, StreamObserver<ReportTask> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportTask) {
+      requests.add(request);
+      responseObserver.onNext(((ReportTask) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReportTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportTask.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listReportTasks(
+      ListReportTasksRequest request, StreamObserver<ListReportTasksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListReportTasksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListReportTasksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListReportTasks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListReportTasksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

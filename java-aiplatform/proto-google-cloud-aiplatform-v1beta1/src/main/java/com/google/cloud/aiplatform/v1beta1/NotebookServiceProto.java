@@ -101,6 +101,10 @@ public final class NotebookServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_StartNotebookRuntimeResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CreateNotebookExecutionJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CreateNotebookExecutionJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_fieldAccessorTable;
@@ -201,123 +205,129 @@ public final class NotebookServiceProto {
           + "\020generic_metadata\030\001 \001(\01329.google.cloud.a"
           + "iplatform.v1beta1.GenericOperationMetada"
           + "ta\022\030\n\020progress_message\030\002 \001(\t\"\036\n\034StartNot"
-          + "ebookRuntimeResponse\"\264\001\n\036GetNotebookExec"
-          + "utionJobRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.a"
-          + "iplatform.googleapis.com/NotebookExecuti"
-          + "onJob\022L\n\004view\030\006 \001(\01629.google.cloud.aipla"
-          + "tform.v1beta1.NotebookExecutionJobViewB\003"
-          + "\340A\001\"\210\002\n ListNotebookExecutionJobsRequest"
-          + "\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goog"
-          + "leapis.com/Location\022\023\n\006filter\030\002 \001(\tB\003\340A\001"
-          + "\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npage_token\030\004"
-          + " \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\022L\n\004view"
-          + "\030\006 \001(\01629.google.cloud.aiplatform.v1beta1"
-          + ".NotebookExecutionJobViewB\003\340A\001\"\224\001\n!ListN"
-          + "otebookExecutionJobsResponse\022V\n\027notebook"
-          + "_execution_jobs\030\001 \003(\01325.google.cloud.aip"
-          + "latform.v1beta1.NotebookExecutionJob\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"i\n!DeleteNotebookE"
-          + "xecutionJobRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0"
-          + "\n.aiplatform.googleapis.com/NotebookExec"
-          + "utionJob*\224\001\n\030NotebookExecutionJobView\022+\n"
-          + "\'NOTEBOOK_EXECUTION_JOB_VIEW_UNSPECIFIED"
-          + "\020\000\022%\n!NOTEBOOK_EXECUTION_JOB_VIEW_BASIC\020"
-          + "\001\022$\n NOTEBOOK_EXECUTION_JOB_VIEW_FULL\020\0022"
-          + "\326\033\n\017NotebookService\022\370\002\n\035CreateNotebookRu"
-          + "ntimeTemplate\022E.google.cloud.aiplatform."
-          + "v1beta1.CreateNotebookRuntimeTemplateReq"
-          + "uest\032\035.google.longrunning.Operation\"\360\001\312A"
-          + "I\n\027NotebookRuntimeTemplate\022.CreateNotebo"
-          + "okRuntimeTemplateOperationMetadata\332A=par"
-          + "ent,notebook_runtime_template,notebook_r"
-          + "untime_template_id\202\323\344\223\002^\"A/v1beta1/{pare"
-          + "nt=projects/*/locations/*}/notebookRunti"
-          + "meTemplates:\031notebook_runtime_template\022\354"
-          + "\001\n\032GetNotebookRuntimeTemplate\022B.google.c"
-          + "loud.aiplatform.v1beta1.GetNotebookRunti"
-          + "meTemplateRequest\0328.google.cloud.aiplatf"
-          + "orm.v1beta1.NotebookRuntimeTemplate\"P\332A\004"
-          + "name\202\323\344\223\002C\022A/v1beta1/{name=projects/*/lo"
-          + "cations/*/notebookRuntimeTemplates/*}\022\377\001"
-          + "\n\034ListNotebookRuntimeTemplates\022D.google."
-          + "cloud.aiplatform.v1beta1.ListNotebookRun"
-          + "timeTemplatesRequest\032E.google.cloud.aipl"
-          + "atform.v1beta1.ListNotebookRuntimeTempla"
-          + "tesResponse\"R\332A\006parent\202\323\344\223\002C\022A/v1beta1/{"
-          + "parent=projects/*/locations/*}/notebookR"
-          + "untimeTemplates\022\213\002\n\035DeleteNotebookRuntim"
-          + "eTemplate\022E.google.cloud.aiplatform.v1be"
-          + "ta1.DeleteNotebookRuntimeTemplateRequest"
-          + "\032\035.google.longrunning.Operation\"\203\001\312A0\n\025g"
-          + "oogle.protobuf.Empty\022\027DeleteOperationMet"
-          + "adata\332A\004name\202\323\344\223\002C*A/v1beta1/{name=proje"
-          + "cts/*/locations/*/notebookRuntimeTemplat"
-          + "es/*}\022\307\002\n\025AssignNotebookRuntime\022=.google"
-          + ".cloud.aiplatform.v1beta1.AssignNotebook"
-          + "RuntimeRequest\032\035.google.longrunning.Oper"
-          + "ation\"\317\001\312A9\n\017NotebookRuntime\022&AssignNote"
-          + "bookRuntimeOperationMetadata\332AEparent,no"
-          + "tebook_runtime_template,notebook_runtime"
-          + ",notebook_runtime_id\202\323\344\223\002E\"@/v1beta1/{pa"
-          + "rent=projects/*/locations/*}/notebookRun"
-          + "times:assign:\001*\022\314\001\n\022GetNotebookRuntime\022:"
-          + ".google.cloud.aiplatform.v1beta1.GetNote"
-          + "bookRuntimeRequest\0320.google.cloud.aiplat"
-          + "form.v1beta1.NotebookRuntime\"H\332A\004name\202\323\344"
-          + "\223\002;\0229/v1beta1/{name=projects/*/locations"
-          + "/*/notebookRuntimes/*}\022\337\001\n\024ListNotebookR"
-          + "untimes\022<.google.cloud.aiplatform.v1beta"
-          + "1.ListNotebookRuntimesRequest\032=.google.c"
-          + "loud.aiplatform.v1beta1.ListNotebookRunt"
-          + "imesResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1beta1/"
-          + "{parent=projects/*/locations/*}/notebook"
-          + "Runtimes\022\362\001\n\025DeleteNotebookRuntime\022=.goo"
-          + "gle.cloud.aiplatform.v1beta1.DeleteNoteb"
-          + "ookRuntimeRequest\032\035.google.longrunning.O"
-          + "peration\"{\312A0\n\025google.protobuf.Empty\022\027De"
-          + "leteOperationMetadata\332A\004name\202\323\344\223\002;*9/v1b"
-          + "eta1/{name=projects/*/locations/*/notebo"
-          + "okRuntimes/*}\022\231\002\n\026UpgradeNotebookRuntime"
-          + "\022>.google.cloud.aiplatform.v1beta1.Upgra"
-          + "deNotebookRuntimeRequest\032\035.google.longru"
-          + "nning.Operation\"\237\001\312AI\n\036UpgradeNotebookRu"
-          + "ntimeResponse\022\'UpgradeNotebookRuntimeOpe"
-          + "rationMetadata\332A\004name\202\323\344\223\002F\"A/v1beta1/{n"
-          + "ame=projects/*/locations/*/notebookRunti"
-          + "mes/*}:upgrade:\001*\022\217\002\n\024StartNotebookRunti"
-          + "me\022<.google.cloud.aiplatform.v1beta1.Sta"
-          + "rtNotebookRuntimeRequest\032\035.google.longru"
-          + "nning.Operation\"\231\001\312AE\n\034StartNotebookRunt"
-          + "imeResponse\022%StartNotebookRuntimeOperati"
-          + "onMetadata\332A\004name\202\323\344\223\002D\"?/v1beta1/{name="
+          + "ebookRuntimeResponse\"\342\001\n!CreateNotebookE"
+          + "xecutionJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!locations.googleapis.com/Location\022Z\n"
+          + "\026notebook_execution_job\030\002 \001(\01325.google.c"
+          + "loud.aiplatform.v1beta1.NotebookExecutio"
+          + "nJobB\003\340A\002\022&\n\031notebook_execution_job_id\030\003"
+          + " \001(\tB\003\340A\001\"\264\001\n\036GetNotebookExecutionJobReq"
+          + "uest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.aiplatform.g"
+          + "oogleapis.com/NotebookExecutionJob\022L\n\004vi"
+          + "ew\030\006 \001(\01629.google.cloud.aiplatform.v1bet"
+          + "a1.NotebookExecutionJobViewB\003\340A\001\"\210\002\n Lis"
+          + "tNotebookExecutionJobsRequest\0229\n\006parent\030"
+          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
+          + "Location\022\023\n\006filter\030\002 \001(\tB\003\340A\001\022\026\n\tpage_si"
+          + "ze\030\003 \001(\005B\003\340A\001\022\027\n\npage_token\030\004 \001(\tB\003\340A\001\022\025"
+          + "\n\010order_by\030\005 \001(\tB\003\340A\001\022L\n\004view\030\006 \001(\01629.go"
+          + "ogle.cloud.aiplatform.v1beta1.NotebookEx"
+          + "ecutionJobViewB\003\340A\001\"\224\001\n!ListNotebookExec"
+          + "utionJobsResponse\022V\n\027notebook_execution_"
+          + "jobs\030\001 \003(\01325.google.cloud.aiplatform.v1b"
+          + "eta1.NotebookExecutionJob\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\"i\n!DeleteNotebookExecutionJob"
+          + "Request\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.aiplatfor"
+          + "m.googleapis.com/NotebookExecutionJob*\224\001"
+          + "\n\030NotebookExecutionJobView\022+\n\'NOTEBOOK_E"
+          + "XECUTION_JOB_VIEW_UNSPECIFIED\020\000\022%\n!NOTEB"
+          + "OOK_EXECUTION_JOB_VIEW_BASIC\020\001\022$\n NOTEBO"
+          + "OK_EXECUTION_JOB_VIEW_FULL\020\0022\326\033\n\017Noteboo"
+          + "kService\022\370\002\n\035CreateNotebookRuntimeTempla"
+          + "te\022E.google.cloud.aiplatform.v1beta1.Cre"
+          + "ateNotebookRuntimeTemplateRequest\032\035.goog"
+          + "le.longrunning.Operation\"\360\001\312AI\n\027Notebook"
+          + "RuntimeTemplate\022.CreateNotebookRuntimeTe"
+          + "mplateOperationMetadata\332A=parent,noteboo"
+          + "k_runtime_template,notebook_runtime_temp"
+          + "late_id\202\323\344\223\002^\"A/v1beta1/{parent=projects"
+          + "/*/locations/*}/notebookRuntimeTemplates"
+          + ":\031notebook_runtime_template\022\354\001\n\032GetNoteb"
+          + "ookRuntimeTemplate\022B.google.cloud.aiplat"
+          + "form.v1beta1.GetNotebookRuntimeTemplateR"
+          + "equest\0328.google.cloud.aiplatform.v1beta1"
+          + ".NotebookRuntimeTemplate\"P\332A\004name\202\323\344\223\002C\022"
+          + "A/v1beta1/{name=projects/*/locations/*/n"
+          + "otebookRuntimeTemplates/*}\022\377\001\n\034ListNoteb"
+          + "ookRuntimeTemplates\022D.google.cloud.aipla"
+          + "tform.v1beta1.ListNotebookRuntimeTemplat"
+          + "esRequest\032E.google.cloud.aiplatform.v1be"
+          + "ta1.ListNotebookRuntimeTemplatesResponse"
+          + "\"R\332A\006parent\202\323\344\223\002C\022A/v1beta1/{parent=proj"
+          + "ects/*/locations/*}/notebookRuntimeTempl"
+          + "ates\022\213\002\n\035DeleteNotebookRuntimeTemplate\022E"
+          + ".google.cloud.aiplatform.v1beta1.DeleteN"
+          + "otebookRuntimeTemplateRequest\032\035.google.l"
+          + "ongrunning.Operation\"\203\001\312A0\n\025google.proto"
+          + "buf.Empty\022\027DeleteOperationMetadata\332A\004nam"
+          + "e\202\323\344\223\002C*A/v1beta1/{name=projects/*/locat"
+          + "ions/*/notebookRuntimeTemplates/*}\022\307\002\n\025A"
+          + "ssignNotebookRuntime\022=.google.cloud.aipl"
+          + "atform.v1beta1.AssignNotebookRuntimeRequ"
+          + "est\032\035.google.longrunning.Operation\"\317\001\312A9"
+          + "\n\017NotebookRuntime\022&AssignNotebookRuntime"
+          + "OperationMetadata\332AEparent,notebook_runt"
+          + "ime_template,notebook_runtime,notebook_r"
+          + "untime_id\202\323\344\223\002E\"@/v1beta1/{parent=projec"
+          + "ts/*/locations/*}/notebookRuntimes:assig"
+          + "n:\001*\022\314\001\n\022GetNotebookRuntime\022:.google.clo"
+          + "ud.aiplatform.v1beta1.GetNotebookRuntime"
+          + "Request\0320.google.cloud.aiplatform.v1beta"
+          + "1.NotebookRuntime\"H\332A\004name\202\323\344\223\002;\0229/v1bet"
+          + "a1/{name=projects/*/locations/*/notebook"
+          + "Runtimes/*}\022\337\001\n\024ListNotebookRuntimes\022<.g"
+          + "oogle.cloud.aiplatform.v1beta1.ListNoteb"
+          + "ookRuntimesRequest\032=.google.cloud.aiplat"
+          + "form.v1beta1.ListNotebookRuntimesRespons"
+          + "e\"J\332A\006parent\202\323\344\223\002;\0229/v1beta1/{parent=pro"
+          + "jects/*/locations/*}/notebookRuntimes\022\362\001"
+          + "\n\025DeleteNotebookRuntime\022=.google.cloud.a"
+          + "iplatform.v1beta1.DeleteNotebookRuntimeR"
+          + "equest\032\035.google.longrunning.Operation\"{\312"
+          + "A0\n\025google.protobuf.Empty\022\027DeleteOperati"
+          + "onMetadata\332A\004name\202\323\344\223\002;*9/v1beta1/{name="
           + "projects/*/locations/*/notebookRuntimes/"
-          + "*}:start:\001*\022\340\001\n\027GetNotebookExecutionJob\022"
-          + "?.google.cloud.aiplatform.v1beta1.GetNot"
-          + "ebookExecutionJobRequest\0325.google.cloud."
-          + "aiplatform.v1beta1.NotebookExecutionJob\""
-          + "M\332A\004name\202\323\344\223\002@\022>/v1beta1/{name=projects/"
-          + "*/locations/*/notebookExecutionJobs/*}\022\363"
-          + "\001\n\031ListNotebookExecutionJobs\022A.google.cl"
-          + "oud.aiplatform.v1beta1.ListNotebookExecu"
-          + "tionJobsRequest\032B.google.cloud.aiplatfor"
-          + "m.v1beta1.ListNotebookExecutionJobsRespo"
-          + "nse\"O\332A\006parent\202\323\344\223\002@\022>/v1beta1/{parent=p"
-          + "rojects/*/locations/*}/notebookExecution"
-          + "Jobs\022\202\002\n\032DeleteNotebookExecutionJob\022B.go"
-          + "ogle.cloud.aiplatform.v1beta1.DeleteNote"
-          + "bookExecutionJobRequest\032\035.google.longrun"
-          + "ning.Operation\"\200\001\312A0\n\025google.protobuf.Em"
-          + "pty\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002"
-          + "@*>/v1beta1/{name=projects/*/locations/*"
-          + "/notebookExecutionJobs/*}\032M\312A\031aiplatform"
-          + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\353\001\n#com.google."
-          + "cloud.aiplatform.v1beta1B\024NotebookServic"
-          + "eProtoP\001ZCcloud.google.com/go/aiplatform"
-          + "/apiv1beta1/aiplatformpb;aiplatformpb\252\002\037"
-          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
-          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clou"
-          + "d::AIPlatform::V1beta1b\006proto3"
+          + "*}\022\231\002\n\026UpgradeNotebookRuntime\022>.google.c"
+          + "loud.aiplatform.v1beta1.UpgradeNotebookR"
+          + "untimeRequest\032\035.google.longrunning.Opera"
+          + "tion\"\237\001\312AI\n\036UpgradeNotebookRuntimeRespon"
+          + "se\022\'UpgradeNotebookRuntimeOperationMetad"
+          + "ata\332A\004name\202\323\344\223\002F\"A/v1beta1/{name=project"
+          + "s/*/locations/*/notebookRuntimes/*}:upgr"
+          + "ade:\001*\022\217\002\n\024StartNotebookRuntime\022<.google"
+          + ".cloud.aiplatform.v1beta1.StartNotebookR"
+          + "untimeRequest\032\035.google.longrunning.Opera"
+          + "tion\"\231\001\312AE\n\034StartNotebookRuntimeResponse"
+          + "\022%StartNotebookRuntimeOperationMetadata\332"
+          + "A\004name\202\323\344\223\002D\"?/v1beta1/{name=projects/*/"
+          + "locations/*/notebookRuntimes/*}:start:\001*"
+          + "\022\340\001\n\027GetNotebookExecutionJob\022?.google.cl"
+          + "oud.aiplatform.v1beta1.GetNotebookExecut"
+          + "ionJobRequest\0325.google.cloud.aiplatform."
+          + "v1beta1.NotebookExecutionJob\"M\332A\004name\202\323\344"
+          + "\223\002@\022>/v1beta1/{name=projects/*/locations"
+          + "/*/notebookExecutionJobs/*}\022\363\001\n\031ListNote"
+          + "bookExecutionJobs\022A.google.cloud.aiplatf"
+          + "orm.v1beta1.ListNotebookExecutionJobsReq"
+          + "uest\032B.google.cloud.aiplatform.v1beta1.L"
+          + "istNotebookExecutionJobsResponse\"O\332A\006par"
+          + "ent\202\323\344\223\002@\022>/v1beta1/{parent=projects/*/l"
+          + "ocations/*}/notebookExecutionJobs\022\202\002\n\032De"
+          + "leteNotebookExecutionJob\022B.google.cloud."
+          + "aiplatform.v1beta1.DeleteNotebookExecuti"
+          + "onJobRequest\032\035.google.longrunning.Operat"
+          + "ion\"\200\001\312A0\n\025google.protobuf.Empty\022\027Delete"
+          + "OperationMetadata\332A\004name\202\323\344\223\002@*>/v1beta1"
+          + "/{name=projects/*/locations/*/notebookEx"
+          + "ecutionJobs/*}\032M\312A\031aiplatform.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformB\353\001\n#com.google.cloud.aipla"
+          + "tform.v1beta1B\024NotebookServiceProtoP\001ZCc"
+          + "loud.google.com/go/aiplatform/apiv1beta1"
+          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
+          + "rm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -474,8 +484,16 @@ public final class NotebookServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StartNotebookRuntimeResponse_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_CreateNotebookExecutionJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_aiplatform_v1beta1_CreateNotebookExecutionJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CreateNotebookExecutionJobRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "NotebookExecutionJob", "NotebookExecutionJobId",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetNotebookExecutionJobRequest_descriptor,
@@ -483,7 +501,7 @@ public final class NotebookServiceProto {
               "Name", "View",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsRequest_descriptor,
@@ -491,7 +509,7 @@ public final class NotebookServiceProto {
               "Parent", "Filter", "PageSize", "PageToken", "OrderBy", "View",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListNotebookExecutionJobsResponse_descriptor,
@@ -499,7 +517,7 @@ public final class NotebookServiceProto {
               "NotebookExecutionJobs", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeleteNotebookExecutionJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteNotebookExecutionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteNotebookExecutionJobRequest_descriptor,

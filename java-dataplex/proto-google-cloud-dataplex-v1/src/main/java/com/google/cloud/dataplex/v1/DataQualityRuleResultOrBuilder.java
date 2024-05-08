@@ -165,4 +165,20 @@ public interface DataQualityRuleResultOrBuilder
    * @return The bytes for failingRowsQuery.
    */
   com.google.protobuf.ByteString getFailingRowsQueryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of rows returned by the sql statement in the
+   * SqlAssertion rule.
+   *
+   * This field is only valid for SqlAssertion rules.
+   * </pre>
+   *
+   * <code>int64 assertion_row_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The assertionRowCount.
+   */
+  long getAssertionRowCount();
 }

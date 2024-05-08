@@ -38,16 +38,17 @@ RETURN_CODE=0
 case ${JOB_TYPE} in
   test)
     retry_with_backoff 3 10 \
-      mvn -B -ntp \
-      -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -Dmaven.wagon.http.retryHandler.count=5 \
-      -T 1C \
-      test
+      mvn test \
+        -B -ntp \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -T 1C
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
@@ -59,7 +60,7 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
       setup_cloud "$module_list"
-      install_modules
+      install_modules "$module_list"
       run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
@@ -69,7 +70,7 @@ case ${JOB_TYPE} in
     generate_graalvm_presubmit_modules_list
     printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
     setup_cloud "$module_list"
-    install_modules
+    install_modules "$module_list"
     run_graalvm_tests "$module_list"
     ;;
   graalvm)
@@ -77,21 +78,10 @@ case ${JOB_TYPE} in
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
-      install_modules
+      install_modules "$module_list"
       run_graalvm_tests "$module_list"
     else
       echo "Not running GraalVM checks -- No changes in relevant modules"
-    fi
-    ;;
-  graalvm17)
-    generate_graalvm_modules_list
-    if [ ! -z "${module_list}" ]; then
-      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
-      setup_cloud "$module_list"
-      install_modules
-      run_graalvm_tests "$module_list"
-    else
-      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
     fi
     ;;
   *) ;;

@@ -282,7 +282,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Google Cloud Storage location of the RagFile.
-   * It does not support wildcards in the GCS uri for now.
+   * It does not support wildcards in the Cloud Storage uri for now.
    * </pre>
    *
    * <code>
@@ -300,7 +300,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Google Cloud Storage location of the RagFile.
-   * It does not support wildcards in the GCS uri for now.
+   * It does not support wildcards in the Cloud Storage uri for now.
    * </pre>
    *
    * <code>
@@ -321,7 +321,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Google Cloud Storage location of the RagFile.
-   * It does not support wildcards in the GCS uri for now.
+   * It does not support wildcards in the Cloud Storage uri for now.
    * </pre>
    *
    * <code>
@@ -1432,7 +1432,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1450,7 +1450,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1478,7 +1478,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1503,7 +1503,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1526,7 +1526,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1562,7 +1562,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1590,7 +1590,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1605,7 +1605,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>
@@ -1628,7 +1628,7 @@ public final class RagFile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Google Cloud Storage location of the RagFile.
-     * It does not support wildcards in the GCS uri for now.
+     * It does not support wildcards in the Cloud Storage uri for now.
      * </pre>
      *
      * <code>

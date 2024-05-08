@@ -72,4 +72,46 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    * @return The ragCorpusId.
    */
   long getRagCorpusId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importRagFilesConfig field is set.
+   */
+  boolean hasImportRagFilesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importRagFilesConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig getImportRagFilesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The config that was passed in the ImportRagFilesRequest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ImportRagFilesConfig import_rag_files_config = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder
+      getImportRagFilesConfigOrBuilder();
 }

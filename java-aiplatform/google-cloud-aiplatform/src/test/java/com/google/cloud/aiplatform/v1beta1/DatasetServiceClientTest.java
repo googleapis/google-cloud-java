@@ -862,6 +862,56 @@ public class DatasetServiceClientTest {
   }
 
   @Test
+  public void updateDatasetVersionTest() throws Exception {
+    DatasetVersion expectedResponse =
+        DatasetVersion.newBuilder()
+            .setName(
+                DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatasetVersion actualResponse = client.updateDatasetVersion(datasetVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDatasetVersionRequest actualRequest =
+        ((UpdateDatasetVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(datasetVersion, actualRequest.getDatasetVersion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDatasetVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatasetVersion(datasetVersion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteDatasetVersionTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =

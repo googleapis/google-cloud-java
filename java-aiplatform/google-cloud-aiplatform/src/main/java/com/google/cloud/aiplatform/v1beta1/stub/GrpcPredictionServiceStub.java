@@ -29,7 +29,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
@@ -219,17 +218,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<ChatCompletionsRequest, HttpBody>
-      chatCompletionsMethodDescriptor =
-          MethodDescriptor.<ChatCompletionsRequest, HttpBody>newBuilder()
-              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/ChatCompletions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ChatCompletionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -297,7 +285,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       generateContentCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
-  private final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -466,16 +453,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       return builder.build();
                     })
                 .build();
-    GrpcCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsTransportSettings =
-        GrpcCallSettings.<ChatCompletionsRequest, HttpBody>newBuilder()
-            .setMethodDescriptor(chatCompletionsMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
-                  return builder.build();
-                })
-            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -577,9 +554,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
             streamGenerateContentTransportSettings,
             settings.streamGenerateContentSettings(),
             clientContext);
-    this.chatCompletionsCallable =
-        callableFactory.createServerStreamingCallable(
-            chatCompletionsTransportSettings, settings.chatCompletionsSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -679,11 +653,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     return streamGenerateContentCallable;
-  }
-
-  @Override
-  public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
-    return chatCompletionsCallable;
   }
 
   @Override

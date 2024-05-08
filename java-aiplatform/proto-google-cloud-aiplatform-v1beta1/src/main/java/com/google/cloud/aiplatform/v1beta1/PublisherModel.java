@@ -10872,6 +10872,49 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the deployTaskName field is set.
+       */
+      boolean hasDeployTaskName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The deployTaskName.
+       */
+      java.lang.String getDeployTaskName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for deployTaskName.
+       */
+      com.google.protobuf.ByteString getDeployTaskNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. The title of the regional resource reference.
        * </pre>
        *
@@ -10946,6 +10989,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       private Deploy() {
         modelDisplayName_ = "";
         artifactUri_ = "";
+        deployTaskName_ = "";
         title_ = "";
         publicArtifactUri_ = "";
       }
@@ -11435,6 +11479,78 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int DEPLOY_TASK_NAME_FIELD_NUMBER = 10;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object deployTaskName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the deployTaskName field is set.
+       */
+      @java.lang.Override
+      public boolean hasDeployTaskName() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The deployTaskName.
+       */
+      @java.lang.Override
+      public java.lang.String getDeployTaskName() {
+        java.lang.Object ref = deployTaskName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deployTaskName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the deploy task (e.g., "text to image
+       * generation").
+       * </pre>
+       *
+       * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for deployTaskName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDeployTaskNameBytes() {
+        java.lang.Object ref = deployTaskName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          deployTaskName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int TITLE_FIELD_NUMBER = 8;
 
       @SuppressWarnings("serial")
@@ -11582,6 +11698,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicArtifactUri_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, publicArtifactUri_);
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 10, deployTaskName_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -11623,6 +11742,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicArtifactUri_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, publicArtifactUri_);
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, deployTaskName_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -11650,6 +11772,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           if (!getContainerSpec().equals(other.getContainerSpec())) return false;
         }
         if (!getArtifactUri().equals(other.getArtifactUri())) return false;
+        if (hasDeployTaskName() != other.hasDeployTaskName()) return false;
+        if (hasDeployTaskName()) {
+          if (!getDeployTaskName().equals(other.getDeployTaskName())) return false;
+        }
         if (!getTitle().equals(other.getTitle())) return false;
         if (!getPublicArtifactUri().equals(other.getPublicArtifactUri())) return false;
         if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
@@ -11689,6 +11815,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         hash = (37 * hash) + ARTIFACT_URI_FIELD_NUMBER;
         hash = (53 * hash) + getArtifactUri().hashCode();
+        if (hasDeployTaskName()) {
+          hash = (37 * hash) + DEPLOY_TASK_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getDeployTaskName().hashCode();
+        }
         hash = (37 * hash) + TITLE_FIELD_NUMBER;
         hash = (53 * hash) + getTitle().hashCode();
         hash = (37 * hash) + PUBLIC_ARTIFACT_URI_FIELD_NUMBER;
@@ -11890,6 +12020,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             containerSpecBuilder_ = null;
           }
           artifactUri_ = "";
+          deployTaskName_ = "";
           title_ = "";
           publicArtifactUri_ = "";
           predictionResourcesCase_ = 0;
@@ -11956,9 +12087,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             result.artifactUri_ = artifactUri_;
           }
           if (((from_bitField0_ & 0x00000080) != 0)) {
-            result.title_ = title_;
+            result.deployTaskName_ = deployTaskName_;
+            to_bitField0_ |= 0x00000004;
           }
           if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
             result.publicArtifactUri_ = publicArtifactUri_;
           }
           result.bitField0_ |= to_bitField0_;
@@ -12044,14 +12179,19 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000040;
             onChanged();
           }
+          if (other.hasDeployTaskName()) {
+            deployTaskName_ = other.deployTaskName_;
+            bitField0_ |= 0x00000080;
+            onChanged();
+          }
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
-            bitField0_ |= 0x00000080;
+            bitField0_ |= 0x00000100;
             onChanged();
           }
           if (!other.getPublicArtifactUri().isEmpty()) {
             publicArtifactUri_ = other.publicArtifactUri_;
-            bitField0_ |= 0x00000100;
+            bitField0_ |= 0x00000200;
             onChanged();
           }
           switch (other.getPredictionResourcesCase()) {
@@ -12153,15 +12293,21 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                 case 66:
                   {
                     title_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 66
                 case 74:
                   {
                     publicArtifactUri_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000100;
+                    bitField0_ |= 0x00000200;
                     break;
                   } // case 74
+                case 82:
+                  {
+                    deployTaskName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 82
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13448,6 +13594,138 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object deployTaskName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the deployTaskName field is set.
+         */
+        public boolean hasDeployTaskName() {
+          return ((bitField0_ & 0x00000080) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The deployTaskName.
+         */
+        public java.lang.String getDeployTaskName() {
+          java.lang.Object ref = deployTaskName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deployTaskName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The bytes for deployTaskName.
+         */
+        public com.google.protobuf.ByteString getDeployTaskNameBytes() {
+          java.lang.Object ref = deployTaskName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            deployTaskName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The deployTaskName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeployTaskName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deployTaskName_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDeployTaskName() {
+          deployTaskName_ = getDefaultInstance().getDeployTaskName();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the deploy task (e.g., "text to image
+         * generation").
+         * </pre>
+         *
+         * <code>optional string deploy_task_name = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes for deployTaskName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeployTaskNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          deployTaskName_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object title_ = "";
         /**
          *
@@ -13510,7 +13788,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           title_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -13527,7 +13805,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearTitle() {
           title_ = getDefaultInstance().getTitle();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
           return this;
         }
@@ -13549,7 +13827,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           title_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -13619,7 +13897,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           publicArtifactUri_ = value;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -13637,7 +13915,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearPublicArtifactUri() {
           publicArtifactUri_ = getDefaultInstance().getPublicArtifactUri();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
           return this;
         }
@@ -13660,7 +13938,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           publicArtifactUri_ = value;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }

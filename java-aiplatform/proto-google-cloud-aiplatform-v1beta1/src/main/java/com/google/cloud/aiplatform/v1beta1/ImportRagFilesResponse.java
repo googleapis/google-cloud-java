@@ -80,6 +80,42 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     return importedRagFilesCount_;
   }
 
+  public static final int FAILED_RAG_FILES_COUNT_FIELD_NUMBER = 2;
+  private long failedRagFilesCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The number of RagFiles that had failed while importing into the RagCorpus.
+   * </pre>
+   *
+   * <code>int64 failed_rag_files_count = 2;</code>
+   *
+   * @return The failedRagFilesCount.
+   */
+  @java.lang.Override
+  public long getFailedRagFilesCount() {
+    return failedRagFilesCount_;
+  }
+
+  public static final int SKIPPED_RAG_FILES_COUNT_FIELD_NUMBER = 3;
+  private long skippedRagFilesCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The number of RagFiles that was skipped while importing into the RagCorpus.
+   * </pre>
+   *
+   * <code>int64 skipped_rag_files_count = 3;</code>
+   *
+   * @return The skippedRagFilesCount.
+   */
+  @java.lang.Override
+  public long getSkippedRagFilesCount() {
+    return skippedRagFilesCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -97,6 +133,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     if (importedRagFilesCount_ != 0L) {
       output.writeInt64(1, importedRagFilesCount_);
     }
+    if (failedRagFilesCount_ != 0L) {
+      output.writeInt64(2, failedRagFilesCount_);
+    }
+    if (skippedRagFilesCount_ != 0L) {
+      output.writeInt64(3, skippedRagFilesCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -108,6 +150,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     size = 0;
     if (importedRagFilesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, importedRagFilesCount_);
+    }
+    if (failedRagFilesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, failedRagFilesCount_);
+    }
+    if (skippedRagFilesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, skippedRagFilesCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -126,6 +174,8 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
         (com.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse) obj;
 
     if (getImportedRagFilesCount() != other.getImportedRagFilesCount()) return false;
+    if (getFailedRagFilesCount() != other.getFailedRagFilesCount()) return false;
+    if (getSkippedRagFilesCount() != other.getSkippedRagFilesCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -139,6 +189,10 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + IMPORTED_RAG_FILES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedRagFilesCount());
+    hash = (37 * hash) + FAILED_RAG_FILES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailedRagFilesCount());
+    hash = (37 * hash) + SKIPPED_RAG_FILES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSkippedRagFilesCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -281,6 +335,8 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       importedRagFilesCount_ = 0L;
+      failedRagFilesCount_ = 0L;
+      skippedRagFilesCount_ = 0L;
       return this;
     }
 
@@ -319,6 +375,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.importedRagFilesCount_ = importedRagFilesCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.failedRagFilesCount_ = failedRagFilesCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skippedRagFilesCount_ = skippedRagFilesCount_;
       }
     }
 
@@ -371,6 +433,12 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
       if (other.getImportedRagFilesCount() != 0L) {
         setImportedRagFilesCount(other.getImportedRagFilesCount());
       }
+      if (other.getFailedRagFilesCount() != 0L) {
+        setFailedRagFilesCount(other.getFailedRagFilesCount());
+      }
+      if (other.getSkippedRagFilesCount() != 0L) {
+        setSkippedRagFilesCount(other.getSkippedRagFilesCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -403,6 +471,18 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                failedRagFilesCount_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+            case 24:
+              {
+                skippedRagFilesCount_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -471,6 +551,112 @@ public final class ImportRagFilesResponse extends com.google.protobuf.GeneratedM
     public Builder clearImportedRagFilesCount() {
       bitField0_ = (bitField0_ & ~0x00000001);
       importedRagFilesCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long failedRagFilesCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that had failed while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 failed_rag_files_count = 2;</code>
+     *
+     * @return The failedRagFilesCount.
+     */
+    @java.lang.Override
+    public long getFailedRagFilesCount() {
+      return failedRagFilesCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that had failed while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 failed_rag_files_count = 2;</code>
+     *
+     * @param value The failedRagFilesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedRagFilesCount(long value) {
+
+      failedRagFilesCount_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that had failed while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 failed_rag_files_count = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedRagFilesCount() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      failedRagFilesCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long skippedRagFilesCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that was skipped while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 skipped_rag_files_count = 3;</code>
+     *
+     * @return The skippedRagFilesCount.
+     */
+    @java.lang.Override
+    public long getSkippedRagFilesCount() {
+      return skippedRagFilesCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that was skipped while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 skipped_rag_files_count = 3;</code>
+     *
+     * @param value The skippedRagFilesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkippedRagFilesCount(long value) {
+
+      skippedRagFilesCount_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of RagFiles that was skipped while importing into the RagCorpus.
+     * </pre>
+     *
+     * <code>int64 skipped_rag_files_count = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkippedRagFilesCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      skippedRagFilesCount_ = 0L;
       onChanged();
       return this;
     }

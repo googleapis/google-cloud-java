@@ -16,11 +16,17 @@
             "CreateRecurringAudienceList": {
               "methods": ["createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceListCallable"]
             },
+            "CreateReportTask": {
+              "methods": ["createReportTaskAsync", "createReportTaskAsync", "createReportTaskAsync", "createReportTaskOperationCallable", "createReportTaskCallable"]
+            },
             "GetAudienceList": {
               "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
             },
             "GetRecurringAudienceList": {
               "methods": ["getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceListCallable"]
+            },
+            "GetReportTask": {
+              "methods": ["getReportTask", "getReportTask", "getReportTask", "getReportTaskCallable"]
             },
             "ListAudienceLists": {
               "methods": ["listAudienceLists", "listAudienceLists", "listAudienceLists", "listAudienceListsPagedCallable", "listAudienceListsCallable"]
@@ -28,8 +34,14 @@
             "ListRecurringAudienceLists": {
               "methods": ["listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceListsPagedCallable", "listRecurringAudienceListsCallable"]
             },
+            "ListReportTasks": {
+              "methods": ["listReportTasks", "listReportTasks", "listReportTasks", "listReportTasksPagedCallable", "listReportTasksCallable"]
+            },
             "QueryAudienceList": {
               "methods": ["queryAudienceList", "queryAudienceList", "queryAudienceListCallable"]
+            },
+            "QueryReportTask": {
+              "methods": ["queryReportTask", "queryReportTask", "queryReportTaskCallable"]
             },
             "RunFunnelReport": {
               "methods": ["runFunnelReport", "runFunnelReportCallable"]

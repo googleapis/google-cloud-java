@@ -71,11 +71,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster. Format is
+   * Optional. Information specifying a GKE Cluster. Format is
    * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
-   * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cluster.
    */
@@ -95,11 +97,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster. Format is
+   * Optional. Information specifying a GKE Cluster. Format is
    * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
-   * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cluster.
    */
@@ -507,11 +511,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster. Format is
+     * Optional. Information specifying a GKE Cluster. Format is
      * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
-     * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The cluster.
      */
@@ -530,11 +536,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster. Format is
+     * Optional. Information specifying a GKE Cluster. Format is
      * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
-     * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for cluster.
      */
@@ -553,11 +561,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster. Format is
+     * Optional. Information specifying a GKE Cluster. Format is
      * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
-     * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The cluster to set.
      * @return This builder for chaining.
@@ -575,11 +585,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster. Format is
+     * Optional. Information specifying a GKE Cluster. Format is
      * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
-     * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -593,11 +605,13 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster. Format is
+     * Optional. Information specifying a GKE Cluster. Format is
      * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
-     * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string cluster = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for cluster to set.
      * @return This builder for chaining.
