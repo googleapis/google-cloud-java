@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.routeoptimization.v1",
+  "libraryPackage": "com.google.maps.routeoptimization.v1",
+  "services": {
+    "RouteOptimization": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RouteOptimizationClient",
+          "rpcs": {
+            "BatchOptimizeTours": {
+              "methods": ["batchOptimizeToursAsync", "batchOptimizeToursOperationCallable", "batchOptimizeToursCallable"]
+            },
+            "OptimizeTours": {
+              "methods": ["optimizeTours", "optimizeToursCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
