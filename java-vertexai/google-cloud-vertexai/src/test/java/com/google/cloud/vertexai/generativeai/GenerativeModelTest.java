@@ -325,16 +325,16 @@ public final class GenerativeModelTest {
   }
 
   @Test
-  public void testGenerateContentwithSystemInstructions() throws Exception {
-    String systemInstructionText =
-        "You're a helpful assistant that starts all its answers with: \"COOL\"";
-    Content systemInstructions = ContentMaker.fromString(systemInstructionText);
-
-    model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstruction(systemInstructions);
-
+  public void testGenerateContentwithSystemInstruction() throws Exception {
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
         .thenReturn(mockGenerateContentResponse);
+
+    String systemInstructionText =
+        "You're a helpful assistant that starts all its answers with: \"COOL\"";
+    Content systemInstruction = ContentMaker.fromString(systemInstructionText);
+
+    model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstruction(systemInstruction);
 
     Content content = ContentMaker.fromString(TEXT);
     GenerateContentResponse unused = model.generateContent(Arrays.asList(content));
