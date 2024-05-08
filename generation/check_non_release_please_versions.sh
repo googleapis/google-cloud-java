@@ -4,6 +4,7 @@ set -e
 
 violations=0
 for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
+  echo $pomFile
   if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || \
       [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
       [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
@@ -13,6 +14,10 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
   fi
   if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then
     # Skip the template files
+    continue
+  fi
+  if [[ "${pomFile}" =~ .*native-image-sample* ]]; then
+    echo "Skipping version check for native-image-sample"
     continue
   fi
 
