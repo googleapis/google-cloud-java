@@ -56,6 +56,9 @@ function retry_with_backoff {
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
+  echo "parse_submodules: $1"
+  declare -p IFS
+
   pushd "$1" >/dev/null
 
   # New-line-delimited string containing the current folder's pom.xml <module> names.
@@ -84,6 +87,9 @@ function parse_submodules() {
 #
 # See also parse_submodules()
 function parse_all_submodules() {
+  echo "parse_all_submodules: $1"
+  declare -p IFS
+
   # Parse the comma-delimited input into an array.
   OLD_IFS="$IFS"
   IFS=',' read -ra input_modules <<< "$1"
@@ -92,7 +98,6 @@ function parse_all_submodules() {
   all_submodules_array=()
   for module in "${input_modules[@]}"; do
     # For each module, parse its submodules and store the result in an array.
-    declare -p module
     parse_submodules "$module"
     all_submodules_array+=("$submodules")
   done
