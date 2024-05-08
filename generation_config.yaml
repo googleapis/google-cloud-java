@@ -1072,6 +1072,28 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/iot/v1
 
+- api_shortname: routeoptimization
+  name_pretty: Route Optimization API
+  product_documentation: https://developers.google.com/maps/documentation/route-optimization
+  api_description: The Route Optimization API assigns tasks and routes to a vehicle
+    fleet, optimizing against the objectives and constraints that you supply for your
+    transportation goals.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-routeoptimization
+  api_id: routeoptimization.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/routeoptimization/v1
+  library_name: java-maps-routeoptimization
+  requires_billing: true
+  rest_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rest/
+  rpc_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rpc
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
