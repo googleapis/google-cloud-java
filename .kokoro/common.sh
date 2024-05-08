@@ -85,6 +85,17 @@ function setup_cloud() {
   trap destroy EXIT
 }
 
+# Fetch parent directory from provided file path
+fetch_parent_directory() {
+  local element="$1"
+
+  if [[ "$element" == ${native_image_sample_dir}* ]]; then
+    echo "${native_image_sample_dir}"
+  else
+    echo "${element%%/*}"
+  fi
+}
+
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
@@ -114,7 +125,14 @@ function generate_modified_modules_list() {
     modules=$(echo "${modified_files}" | grep -E "(java-.*|${native_image_sample_dir})" || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
-      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
+
+      # Process list to only contain unique parent directory names
+      processed_list=()
+      for module in "${modules[@]}"; do
+          processed_list+=($(fetch_parent_directory "$module"))
+      done
+      modules=($(printf '%s\n' "${processed_list[@]}" | sort -u))
+
       for module in $modules; do
         if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
           modified_module_list+=("${module}")
