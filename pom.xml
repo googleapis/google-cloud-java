@@ -108,6 +108,7 @@
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
+    <module>java-java-maps-routeoptimization</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
