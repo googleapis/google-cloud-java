@@ -70,8 +70,6 @@ case ${JOB_TYPE} in
     generate_graalvm_presubmit_modules_list
     printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
     setup_cloud "$module_list"
-    echo "Post-setup_cloud:"
-    declare -p IFS
     install_modules "$module_list"
     run_graalvm_tests "$module_list"
     ;;
