@@ -53,6 +53,55 @@ function retry_with_backoff {
   return $exit_code
 }
 
+# Given a folder containing a maven multi-module, assign the variable 'submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+function parse_submodules() {
+  pushd "$1" >/dev/null
+
+  # New-line-delimited string containing the current folder's pom.xml <module> names.
+  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules \
+        | grep '<.*>.*</.*>' \
+        | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+
+  submodules_array=()
+  for submodule in $mvn_submodules; do
+    # Each entry = <folder>/<submodule>
+    submodules_array+=("$1/${submodule}");
+  done
+
+  # Convert from array to comma-delimited string
+  submodules=$(
+    IFS=,
+    echo "${submodules_array[*]}"
+  )
+  export submodules
+
+  popd >/dev/null
+}
+
+# Given a list of folders containing maven multi-modules, assign the variable 'all_submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+#
+# See also parse_submodules()
+function parse_all_submodules() {
+  # Parse the comma-delimited input into an array.
+  IFS=',' read -ra input_modules <<< "$1"
+
+  all_submodules_array=()
+  for module in "${input_modules[@]}"; do
+    # For each module, parse its submodules and store the result in an array.
+    parse_submodules "$module"
+    all_submodules_array+=("$submodules")
+  done
+
+  # Convert from array to comma-delimited string
+  all_submodules=$(
+    IFS=,
+    echo "${all_submodules_array[*]}"
+  )
+  export all_submodules
+}
+
 ## Helper functions
 function now() { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n'; }
 function msg() { println "$*" >&2; }
@@ -124,9 +173,11 @@ function generate_modified_modules_list() {
 }
 
 function run_integration_tests() {
-  printf "Running Integration Tests for:\n%s\n" "$1"
-  # --also-make-dependents to run other modules that use the affected module
-  mvn verify -Penable-integration-tests --projects "$1" \
+  parse_all_submodules "$1"
+  printf "Running integration tests for modules:\n%s\n" "$1"
+  printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
+
+  mvn verify -Penable-integration-tests --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
@@ -143,21 +194,15 @@ function run_integration_tests() {
     -T 1C
 
   RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "$1"
+  printf "Finished integration tests for modules:\n%s\n" "$1"
 }
 
 function run_graalvm_tests() {
-  IFS=, read -ra individual_modules <<< "$1"
-  projects_to_install=()
-  for module in "${individual_modules[@]}"; do
-    p=$(echo "$module" | cut -d '-' -f2-) # Convert from 'java-x-y-z' to 'x-y-z'
-    projects_to_install+=("java-$p/google-cloud-$p"); # Create reference to GAPIC project
-  done
-  IFS=, gapic_projects="${projects_to_install[*]}" # Convert to comma-separated string
+  parse_all_submodules "$1"
+  printf "Running GraalVM ITs for modules:\n%s\n" "$1"
+  printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
-  printf "Running GraalVM ITs on:\n%s\n" "$gapic_projects"
-
-  mvn test -Pnative --projects "$gapic_projects" \
+  mvn test -Pnative --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
@@ -170,7 +215,7 @@ function run_graalvm_tests() {
     -Danimal.sniffer.skip=true
 
   RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
+  printf "Finished GraalVM ITs for modules:\n%s\n" "$1"
 }
 
 function generate_graalvm_presubmit_modules_list() {
@@ -244,13 +289,9 @@ function install_modules() {
       -Djacoco.skip=true \
       -T 1C
   else
-    IFS=, read -ra individual_modules <<< "$1"
-    projects_to_install=()
-    for module in "${individual_modules[@]}"; do
-      p=$(echo "$module" | cut -d '-' -f2-) # Convert from 'java-x-y-z' to 'x-y-z'
-      projects_to_install+=("java-$p/google-cloud-$p"); # Create reference to GAPIC project
-    done
-    IFS=, gapic_projects="${projects_to_install[*]}" # Convert to comma-separated string
+    printf "Installing modules:\n%s\n" "$1"
+    parse_all_submodules "$1"
+    printf "Installing submodules:\n%s\n" "$all_submodules"
 
     # When working with a maven multi-module project containing other multi-module projects,
     # to build a module with its dependencies and without building its dependents:
@@ -267,7 +308,7 @@ function install_modules() {
     #
     #   mvn install --projects java-kms/google-cloud-kms --also-make
     #      Correctly builds dependencies without building dependents.
-    mvn install --projects "$gapic_projects" --also-make \
+    mvn install --projects "$all_submodules" --also-make \
       -B -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
