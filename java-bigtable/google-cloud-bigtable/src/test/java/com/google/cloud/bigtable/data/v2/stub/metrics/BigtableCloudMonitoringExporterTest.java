@@ -50,7 +50,9 @@ import io.opentelemetry.sdk.metrics.internal.data.ImmutableLongPointData;
 import io.opentelemetry.sdk.metrics.internal.data.ImmutableMetricData;
 import io.opentelemetry.sdk.metrics.internal.data.ImmutableSumData;
 import io.opentelemetry.sdk.resources.Resource;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -218,6 +220,80 @@ public class BigtableCloudMonitoringExporterTest {
     assertThat(timeSeries.getPoints(0).getInterval().getStartTime().getNanos())
         .isEqualTo(startEpoch);
     assertThat(timeSeries.getPoints(0).getInterval().getEndTime().getNanos()).isEqualTo(endEpoch);
+  }
+
+  @Test
+  public void testExportingSumDataInBatches() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    long startEpoch = 10;
+    long endEpoch = 15;
+
+    Collection<MetricData> toExport = new ArrayList<>();
+    for (int i = 0; i < 250; i++) {
+      Attributes testAttributes =
+          Attributes.builder()
+              .put(BIGTABLE_PROJECT_ID_KEY, projectId)
+              .put(INSTANCE_ID_KEY, instanceId)
+              .put(TABLE_ID_KEY, tableId + i)
+              .put(CLUSTER_ID_KEY, cluster)
+              .put(ZONE_ID_KEY, zone)
+              .put(APP_PROFILE_KEY, appProfileId)
+              .build();
+      LongPointData longPointData =
+          ImmutableLongPointData.create(startEpoch, endEpoch, testAttributes, i);
+
+      MetricData longData =
+          ImmutableMetricData.createLongSum(
+              resource,
+              scope,
+              "bigtable.googleapis.com/internal/client/retry_count",
+              "description",
+              "1",
+              ImmutableSumData.create(
+                  true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+      toExport.add(longData);
+    }
+
+    exporter.export(toExport);
+
+    assertThat(argumentCaptor.getAllValues()).hasSize(2);
+    CreateTimeSeriesRequest firstRequest = argumentCaptor.getAllValues().get(0);
+    CreateTimeSeriesRequest secondRequest = argumentCaptor.getAllValues().get(1);
+
+    assertThat(firstRequest.getTimeSeriesList()).hasSize(200);
+    assertThat(secondRequest.getTimeSeriesList()).hasSize(50);
+
+    for (int i = 0; i < 250; i++) {
+      TimeSeries timeSeries;
+      if (i < 200) {
+        timeSeries = firstRequest.getTimeSeriesList().get(i);
+      } else {
+        timeSeries = secondRequest.getTimeSeriesList().get(i - 200);
+      }
+
+      assertThat(timeSeries.getResource().getLabelsMap())
+          .containsExactly(
+              BIGTABLE_PROJECT_ID_KEY.getKey(), projectId,
+              INSTANCE_ID_KEY.getKey(), instanceId,
+              TABLE_ID_KEY.getKey(), tableId + i,
+              CLUSTER_ID_KEY.getKey(), cluster,
+              ZONE_ID_KEY.getKey(), zone);
+
+      assertThat(timeSeries.getMetric().getLabelsMap()).hasSize(2);
+      assertThat(timeSeries.getMetric().getLabelsMap())
+          .containsAtLeast(APP_PROFILE_KEY.getKey(), appProfileId, CLIENT_UID_KEY.getKey(), taskId);
+      assertThat(timeSeries.getPoints(0).getValue().getInt64Value()).isEqualTo(i);
+      assertThat(timeSeries.getPoints(0).getInterval().getStartTime().getNanos())
+          .isEqualTo(startEpoch);
+      assertThat(timeSeries.getPoints(0).getInterval().getEndTime().getNanos()).isEqualTo(endEpoch);
+    }
   }
 
   @Test
