@@ -15,9 +15,6 @@
 
 set -eo pipefail
 
-echo "Script start:"
-declare -p IFS
-
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
@@ -37,9 +34,6 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
 fi
 
 RETURN_CODE=0
-
-echo "Pre-case:"
-declare -p IFS
 
 case ${JOB_TYPE} in
   test)
@@ -73,23 +67,15 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-presubmit)
-    echo "In-case graalvm-presubmit:"
-    declare -p IFS
     generate_graalvm_presubmit_modules_list
-    echo "Post-generate_graalvm_presubmit_modules_list:"
-    declare -p IFS
     printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
     setup_cloud "$module_list"
     echo "Post-setup_cloud:"
     declare -p IFS
     install_modules "$module_list"
-    echo "Post-install_modules:"
-    declare -p IFS
     run_graalvm_tests "$module_list"
     ;;
   graalvm)
-    echo "In-case graalvm:"
-    declare -p IFS
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
