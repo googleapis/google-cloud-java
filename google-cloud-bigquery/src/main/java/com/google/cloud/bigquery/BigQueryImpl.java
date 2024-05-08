@@ -427,7 +427,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     if (!idRandom) {
-      if (createException instanceof BigQueryException && createException.getCause() != null) {
+      if (createException instanceof BigQueryException
+          && createException.getCause() != null
+          && createException.getCause().getMessage() != null) {
 
         /*GoogleJsonResponseException createExceptionCause =
         (GoogleJsonResponseException) createException.getCause();*/
