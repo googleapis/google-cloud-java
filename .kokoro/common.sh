@@ -85,11 +85,14 @@ function parse_submodules() {
 # See also parse_submodules()
 function parse_all_submodules() {
   # Parse the comma-delimited input into an array.
+  OLD_IFS="$IFS"
   IFS=',' read -ra input_modules <<< "$1"
+  IFS="$OLD_IFS"
 
   all_submodules_array=()
   for module in "${input_modules[@]}"; do
     # For each module, parse its submodules and store the result in an array.
+    declare -p module
     parse_submodules "$module"
     all_submodules_array+=("$submodules")
   done
@@ -173,8 +176,8 @@ function generate_modified_modules_list() {
 }
 
 function run_integration_tests() {
-  parse_all_submodules "$1"
   printf "Running integration tests for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
   printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
 
   mvn verify -Penable-integration-tests --projects "$all_submodules" \
@@ -198,8 +201,8 @@ function run_integration_tests() {
 }
 
 function run_graalvm_tests() {
-  parse_all_submodules "$1"
   printf "Running GraalVM ITs for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
   printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
   mvn test -Pnative --projects "$all_submodules" \
