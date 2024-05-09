@@ -16,9 +16,11 @@
 
 package com.google.cloud.grpc;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
 import com.google.cloud.grpc.proto.AffinityConfig;
@@ -47,6 +49,7 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,11 +93,14 @@ public class GcpManagedChannel extends ManagedChannel {
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int minSize = 0;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
+  private Duration affinityKeyLifetime = Duration.ZERO;
 
   @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity = new HashMap<>();
 
   @VisibleForTesting
   final Map<String, ChannelRef> affinityKeyToChannelRef = new ConcurrentHashMap<>();
+
+  @VisibleForTesting final Map<String, Long> affinityKeyLastUsed = new ConcurrentHashMap<>();
 
   // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
   private final Map<Integer, Map<String, Integer>> fallbackMap = new ConcurrentHashMap<>();
@@ -128,6 +134,7 @@ public class GcpManagedChannel extends ManagedChannel {
       String.format("pool-%d", channelPoolIndex.incrementAndGet());
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
   private ScheduledExecutorService logMetricService;
+  private ScheduledExecutorService keysCleanupService;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -184,12 +191,12 @@ public class GcpManagedChannel extends ManagedChannel {
             "Created with api config: %s, and options: %s",
             apiConfig == null ? "null" : TextFormat.shortDebugString(apiConfig), options));
     initOptions();
-    if (options.getResiliencyOptions() != null) {
-      fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
-      unresponsiveDetectionEnabled =
-          options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
-      unresponsiveMs = options.getResiliencyOptions().getUnresponsiveDetectionMs();
-      unresponsiveDropCount = options.getResiliencyOptions().getUnresponsiveDetectionDroppedCount();
+    GcpResiliencyOptions resiliencyOptions = options.getResiliencyOptions();
+    if (resiliencyOptions != null) {
+      fallbackEnabled = resiliencyOptions.isNotReadyFallbackEnabled();
+      unresponsiveDetectionEnabled = resiliencyOptions.isUnresponsiveDetectionEnabled();
+      unresponsiveMs = resiliencyOptions.getUnresponsiveDetectionMs();
+      unresponsiveDropCount = resiliencyOptions.getUnresponsiveDetectionDroppedCount();
     } else {
       fallbackEnabled = false;
       unresponsiveDetectionEnabled = false;
@@ -197,6 +204,11 @@ public class GcpManagedChannel extends ManagedChannel {
       unresponsiveDropCount = 0;
     }
     initMinChannels();
+    GcpChannelPoolOptions channelPoolOptions = options.getChannelPoolOptions();
+    if (channelPoolOptions != null) {
+      affinityKeyLifetime = channelPoolOptions.getAffinityKeyLifetime();
+      initCleanupTask(channelPoolOptions.getCleanupInterval());
+    }
   }
 
   /**
@@ -221,6 +233,16 @@ public class GcpManagedChannel extends ManagedChannel {
       logger.finer(log("Pool size adjusted to %d", poolSize));
       this.maxSize = poolSize;
     }
+  }
+
+  private void cleanupAffinityKeys() {
+    final long cutoff = System.nanoTime() - affinityKeyLifetime.toNanos();
+    affinityKeyLastUsed.forEach(
+        (String key, Long time) -> {
+          if (time < cutoff) {
+            unbind(Collections.singletonList(key));
+          }
+        });
   }
 
   private Supplier<String> log(Supplier<String> messageSupplier) {
@@ -249,6 +271,18 @@ public class GcpManagedChannel extends ManagedChannel {
       maxConcurrentStreamsLowWatermark = poolOptions.getConcurrentStreamsLowWatermark();
     }
     initMetrics();
+  }
+
+  private synchronized void initCleanupTask(Duration cleanupInterval) {
+    if (cleanupInterval.isZero() || keysCleanupService != null) {
+      return;
+    }
+    keysCleanupService = Executors.newSingleThreadScheduledExecutor();
+    keysCleanupService.scheduleAtFixedRate(
+        this::cleanupAffinityKeys,
+        cleanupInterval.toMillis(),
+        cleanupInterval.toMillis(),
+        MILLISECONDS);
   }
 
   private synchronized void initLogMetrics() {
@@ -1058,6 +1092,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return pickLeastBusyChannel(/* forFallback= */ false);
     }
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
+    affinityKeyLastUsed.put(key, System.nanoTime());
     if (mappedChannel == null) {
       ChannelRef channelRef = pickLeastBusyChannel(/*forFallback= */ false);
       bind(channelRef, Collections.singletonList(key));
@@ -1391,6 +1426,7 @@ public class GcpManagedChannel extends ManagedChannel {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
       }
+      affinityKeyLastUsed.put(affinityKey, System.nanoTime());
       channelRef.affinityCountIncr();
     }
   }
@@ -1402,6 +1438,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     for (String affinityKey : affinityKeys) {
       ChannelRef channelRef = affinityKeyToChannelRef.remove(affinityKey);
+      affinityKeyLastUsed.remove(affinityKey);
       if (channelRef != null) {
         channelRef.affinityCountDecr();
         logger.finest(log("Unbinding key %s from channel %d.", affinityKey, channelRef.getId()));

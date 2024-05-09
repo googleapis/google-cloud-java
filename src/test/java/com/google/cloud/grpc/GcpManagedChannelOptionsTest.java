@@ -29,6 +29,7 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
 import io.opencensus.metrics.Metrics;
+import java.time.Duration;
 import java.util.Collections;
 import org.junit.Rule;
 import org.junit.Test;
@@ -181,6 +182,8 @@ public final class GcpManagedChannelOptionsTest {
                     .setMinSize(2)
                     .setConcurrentStreamsLowWatermark(10)
                     .setUseRoundRobinOnBind(true)
+                    .setAffinityKeyLifetime(Duration.ofSeconds(3600))
+                    .setCleanupInterval(Duration.ofSeconds(30))
                     .build())
             .build();
 
@@ -190,5 +193,59 @@ public final class GcpManagedChannelOptionsTest {
     assertThat(channelPoolOptions.getMinSize()).isEqualTo(2);
     assertThat(channelPoolOptions.getConcurrentStreamsLowWatermark()).isEqualTo(10);
     assertThat(channelPoolOptions.isUseRoundRobinOnBind()).isTrue();
+    assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ofSeconds(3600));
+    assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ofSeconds(30));
+  }
+
+  @Test
+  public void testAffinityKeysCleanupZeroByDefault() {
+    final GcpManagedChannelOptions opts =
+        GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(GcpChannelPoolOptions.newBuilder().build())
+            .build();
+    final GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
+    assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ZERO);
+    assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ZERO);
+  }
+
+  @Test
+  public void testCleanupDefault() {
+    GcpManagedChannelOptions opts =
+        GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setAffinityKeyLifetime(Duration.ofSeconds(3600))
+                    .build())
+            .build();
+    GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
+    assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ofSeconds(3600));
+    assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ofSeconds(360));
+
+    opts =
+        GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setCleanupInterval(Duration.ZERO)
+                    .setAffinityKeyLifetime(Duration.ofSeconds(3600))
+                    .build())
+            .build();
+    channelPoolOptions = opts.getChannelPoolOptions();
+    assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ofSeconds(3600));
+    assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ofSeconds(360));
+  }
+
+  @Test
+  public void testCleanupMustNotBeZero() {
+    exceptionRule.expect(IllegalArgumentException.class);
+    exceptionRule.expectMessage(
+        "Cleanup interval must not be zero when affinity key interval is above zero.");
+
+    GcpManagedChannelOptions.newBuilder()
+        .withChannelPoolOptions(
+            GcpChannelPoolOptions.newBuilder()
+                .setAffinityKeyLifetime(Duration.ofSeconds(3600))
+                .setCleanupInterval(Duration.ZERO)
+                .build())
+        .build();
   }
 }

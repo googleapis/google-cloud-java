@@ -20,6 +20,7 @@ import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -169,12 +170,18 @@ public class GcpManagedChannelOptions {
     private final int concurrentStreamsLowWatermark;
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
+    // How long to keep an affinity key after its last use.
+    private final Duration affinityKeyLifetime;
+    // How frequently affinity key cleanup process runs.
+    private final Duration cleanupInterval;
 
     public GcpChannelPoolOptions(Builder builder) {
       maxSize = builder.maxSize;
       minSize = builder.minSize;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
+      affinityKeyLifetime = builder.affinityKeyLifetime;
+      cleanupInterval = builder.cleanupInterval;
     }
 
     public int getMaxSize() {
@@ -189,6 +196,18 @@ public class GcpManagedChannelOptions {
       return concurrentStreamsLowWatermark;
     }
 
+    public boolean isUseRoundRobinOnBind() {
+      return useRoundRobinOnBind;
+    }
+
+    public Duration getAffinityKeyLifetime() {
+      return affinityKeyLifetime;
+    }
+
+    public Duration getCleanupInterval() {
+      return cleanupInterval;
+    }
+
     /** Creates a new GcpChannelPoolOptions.Builder. */
     public static GcpChannelPoolOptions.Builder newBuilder() {
       return new GcpChannelPoolOptions.Builder();
@@ -197,10 +216,6 @@ public class GcpManagedChannelOptions {
     /** Creates a new GcpChannelPoolOptions.Builder from GcpChannelPoolOptions. */
     public static GcpChannelPoolOptions.Builder newBuilder(GcpChannelPoolOptions options) {
       return new GcpChannelPoolOptions.Builder(options);
-    }
-
-    public boolean isUseRoundRobinOnBind() {
-      return useRoundRobinOnBind;
     }
 
     @Override
@@ -215,6 +230,8 @@ public class GcpManagedChannelOptions {
       private int minSize = 0;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
+      private Duration affinityKeyLifetime = Duration.ZERO;
+      private Duration cleanupInterval = Duration.ZERO;
 
       public Builder() {}
 
@@ -227,6 +244,8 @@ public class GcpManagedChannelOptions {
         this.minSize = options.getMinSize();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
+        this.affinityKeyLifetime = options.getAffinityKeyLifetime();
+        this.cleanupInterval = options.getCleanupInterval();
       }
 
       public GcpChannelPoolOptions build() {
@@ -277,6 +296,37 @@ public class GcpManagedChannelOptions {
        */
       public Builder setUseRoundRobinOnBind(boolean enabled) {
         this.useRoundRobinOnBind = enabled;
+        return this;
+      }
+
+      /**
+       * How long to keep an affinity key after its last use. Zero value means keeping keys forever.
+       *
+       * @param affinityKeyLifetime time since last use of a key to include the key in a cleanup.
+       */
+      public Builder setAffinityKeyLifetime(Duration affinityKeyLifetime) {
+        Preconditions.checkArgument(
+            !affinityKeyLifetime.isNegative(), "Affinity key lifetime may not be negative.");
+        this.affinityKeyLifetime = affinityKeyLifetime;
+        if (!affinityKeyLifetime.isZero() && this.cleanupInterval.isZero()) {
+          this.cleanupInterval = affinityKeyLifetime.dividedBy(10);
+        }
+        return this;
+      }
+
+      /**
+       * How frequently affinity key cleanup process should run. Zero value disables cleanup
+       * process. If affinityKeyLifetime is not zero, this defaults to affinityKeyLifetime / 10.
+       *
+       * @param cleanupInterval frequency of affinity key cleanup.
+       */
+      public Builder setCleanupInterval(Duration cleanupInterval) {
+        Preconditions.checkArgument(
+            !cleanupInterval.isNegative(), "Cleanup interval must not be negative.");
+        Preconditions.checkArgument(
+            !cleanupInterval.isZero() || this.affinityKeyLifetime.isZero(),
+            "Cleanup interval must not be zero when affinity key interval is above zero.");
+        this.cleanupInterval = cleanupInterval;
         return this;
       }
     }

@@ -48,6 +48,7 @@ import io.opencensus.metrics.LabelValue;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -1444,6 +1445,72 @@ public final class GcpManagedChannelTest {
     exec.awaitTermination(100, TimeUnit.MILLISECONDS);
 
     assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(gcpChannel.getMaxSize());
+  }
+
+  @Test
+  public void testAffinityKeysCleanup() throws InterruptedException {
+    // Creating a pool with affinity keys cleanup options.
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setMinSize(3)
+                                .setMaxSize(3)
+                                .setAffinityKeyLifetime(Duration.ofMillis(200))
+                                .build())
+                        .build())
+                .build();
+
+    final String liveKey = "live-key";
+    ChannelRef ch0 = pool.getChannelRef(liveKey);
+    assertThat(ch0.getId()).isEqualTo(0);
+    ch0.activeStreamsCountIncr();
+    ch0.activeStreamsCountIncr();
+
+    ChannelRef ch1 = pool.getChannelRef(null);
+    assertThat(ch1.getId()).isEqualTo(1);
+    ch1.activeStreamsCountIncr();
+
+    final String expKey = "expiring-key";
+    ChannelRef ch2 = pool.getChannelRef(expKey);
+    // Should bind on the fly to the least busy channel, which is 2.
+    assertThat(ch2.getId()).isEqualTo(2);
+    ch2.activeStreamsCountIncr();
+    ch2.activeStreamsCountIncr();
+    ch2.activeStreamsCountIncr();
+
+    assertThat(pool.affinityKeyToChannelRef.keySet().size()).isEqualTo(2);
+    assertThat(pool.affinityKeyToChannelRef.get(liveKey)).isEqualTo(ch0);
+    assertThat(pool.affinityKeyToChannelRef.get(expKey)).isEqualTo(ch2);
+
+    // Still picks channel 2 because of affinity even though it is the busiest.
+    assertThat(pool.getChannelRef(expKey).getId()).isEqualTo(2);
+
+    // Halfway through affinity lifetime we use the live key again.
+    TimeUnit.MILLISECONDS.sleep(100);
+    ch0 = pool.getChannelRef(liveKey);
+    // Make sure affinity still works.
+    assertThat(ch0.getId()).isEqualTo(0);
+
+    // Wait the remaining time and check that there is still affinity for the live key
+    // but no affinity for the expired key.
+
+    TimeUnit.MILLISECONDS.sleep(150);
+
+    assertThat(pool.affinityKeyToChannelRef.keySet().size()).isEqualTo(1);
+    assertThat(pool.affinityKeyToChannelRef.get(liveKey)).isEqualTo(ch0);
+    assertThat(pool.affinityKeyLastUsed.get(expKey)).isNull();
+
+    // Should pick channel 1 as least busy because the affinity key was cleaned up.
+    assertThat(pool.getChannelRef(expKey).getId()).isEqualTo(1);
+
+    // Make sure affinity key gets cleaned up on unbind.
+    pool.unbind(Collections.singletonList(expKey));
+    assertThat(pool.affinityKeyLastUsed.size()).isEqualTo(1);
+    assertThat(pool.affinityKeyLastUsed.get(expKey)).isNull();
   }
 
   static class FakeManagedChannel extends ManagedChannel {
