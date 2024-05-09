@@ -7,9 +7,6 @@
     <name>Native Image Sample</name>
 
     <properties>
-        <!-- Java 8 because the Kokoro Sample test uses that Java version -->
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <enforcer.skip>true</enforcer.skip>
     </properties>
@@ -89,8 +86,8 @@
         </plugins>
     </build>
 
-    <!-- Native Profile-->
     <profiles>
+        <!-- Native Profile-->
         <profile>
             <id>native</id>
 
@@ -157,6 +154,56 @@
                                     <goal>test</goal>
                                 </goals>
                                 <phase>test</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Checkstyle plugin -->
+        <profile>
+            <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
+            <id>checkstyle-tests</id>
+            <activation>
+                <jdk>[1.11,)</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.puppycrawl.tools</groupId>
+                                <artifactId>checkstyle</artifactId>
+                                <version>10.16.0</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>checkstyle</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <headerLocation>java.header</headerLocation>
+                                    <configLocation>license-checks.xml</configLocation>
+                                    <consoleOutput>true</consoleOutput>
+                                    <failOnViolation>true</failOnViolation>
+                                    <violationSeverity>error</violationSeverity>
+                                    <failsOnError>true</failsOnError>
+                                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                                    <!-- Explicitly set the source directory to avoid running checkstyle on generated sources. -->
+                                    <sourceDirectories>
+                                        <sourceDirectory>src/main</sourceDirectory>
+                                    </sourceDirectories>
+                                    <testSourceDirectories>
+                                        <testSourceDirectory>src/test</testSourceDirectory>
+                                    </testSourceDirectories>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

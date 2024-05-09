@@ -35,26 +35,23 @@ import java.io.IOException;
  */
 public class NativeImageSecretManagerSample {
 
-  private static final String NATIVE_TEST_SECRET_ID = "native-secretmanager-test-secret";
-
-  /** Runs the Secret Manager sample application. */
   public static void main(String[] args) throws IOException {
+    String secretId = "native-secretmanager-test-secret";
     String projectId = ServiceOptions.getDefaultProjectId();
 
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-      if (!hasSecret(client, projectId, NATIVE_TEST_SECRET_ID)) {
-        createSecret(client, projectId, NATIVE_TEST_SECRET_ID);
+      if (!hasSecret(client, projectId, secretId)) {
+        createSecret(client, projectId, secretId);
       } else {
-        System.out.println("Project already has secret: " + NATIVE_TEST_SECRET_ID);
+        System.out.println("Project already has secret: " + secretId);
       }
 
-      SecretVersion version = addSecretVersion(client, projectId, NATIVE_TEST_SECRET_ID);
+      SecretVersion version = addSecretVersion(client, projectId, secretId);
       printSecretVersion(client, version);
     }
   }
 
   static void createSecret(SecretManagerServiceClient client, String projectId, String secretId) {
-
     Secret secret =
         Secret.newBuilder()
             .setReplication(
@@ -104,6 +101,9 @@ public class NativeImageSecretManagerSample {
   /**
    * Returns the secret ID from the fully-qualified secret name which has the format:
    * projects/YOUR_PROJECT_ID/secrets/YOUR_SECRET_ID.
+   *
+   * @param secret {@link Secret} to extract id from.
+   * @return a {@link String} representing the secret id
    */
   private static String extractSecretId(Secret secret) {
     String[] secretNameTokens = secret.getName().split("/");

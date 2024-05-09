@@ -37,12 +37,6 @@ public class ITNativeImageSecretManager {
   private static String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private ByteArrayOutputStream bout;
 
-  @Before
-  public void setUp() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-  }
-
   @AfterClass
   public static void afterAll() throws Exception {
     try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
@@ -54,6 +48,12 @@ public class ITNativeImageSecretManager {
 
       client.deleteSecret(deleteRequest);
     }
+  }
+
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bout));
   }
 
   @Test
