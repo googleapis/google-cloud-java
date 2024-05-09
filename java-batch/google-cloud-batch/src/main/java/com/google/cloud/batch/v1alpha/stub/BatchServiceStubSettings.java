@@ -67,6 +67,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -132,6 +133,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
   private final UnaryCallSettings<DeleteJobRequest, Operation> deleteJobSettings;
   private final OperationCallSettings<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationSettings;
+  private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
@@ -406,6 +408,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     return deleteJobOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateJob. */
+  public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
+    return updateJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings() {
@@ -587,6 +594,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     getJobSettings = settingsBuilder.getJobSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
     deleteJobOperationSettings = settingsBuilder.deleteJobOperationSettings().build();
+    updateJobSettings = settingsBuilder.updateJobSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
     listTasksSettings = settingsBuilder.listTasksSettings().build();
@@ -609,6 +617,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     private final UnaryCallSettings.Builder<DeleteJobRequest, Operation> deleteJobSettings;
     private final OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings;
@@ -691,6 +700,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteJobOperationSettings = OperationCallSettings.newBuilder();
+      updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
@@ -709,6 +719,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               createJobSettings,
               getJobSettings,
               deleteJobSettings,
+              updateJobSettings,
               listJobsSettings,
               getTaskSettings,
               listTasksSettings,
@@ -729,6 +740,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
       getJobSettings = settings.getJobSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
       deleteJobOperationSettings = settings.deleteJobOperationSettings.toBuilder();
+      updateJobSettings = settings.updateJobSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
       listTasksSettings = settings.listTasksSettings.toBuilder();
@@ -747,6 +759,7 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
               createJobSettings,
               getJobSettings,
               deleteJobSettings,
+              updateJobSettings,
               listJobsSettings,
               getTaskSettings,
               listTasksSettings,
@@ -796,6 +809,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
 
       builder
           .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -933,6 +951,11 @@ public class BatchServiceStubSettings extends StubSettings<BatchServiceStubSetti
     public OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings() {
       return deleteJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateJob. */
+    public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
+      return updateJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to listJobs. */

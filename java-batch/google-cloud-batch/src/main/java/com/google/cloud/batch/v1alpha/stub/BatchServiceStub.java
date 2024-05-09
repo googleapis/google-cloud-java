@@ -42,6 +42,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -85,6 +86,10 @@ public abstract class BatchServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateJobCallable()");
   }
 
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {

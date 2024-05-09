@@ -161,6 +161,47 @@ public final class BatchServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+      getUpdateJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateJob",
+      requestType = com.google.cloud.batch.v1alpha.UpdateJobRequest.class,
+      responseType = com.google.cloud.batch.v1alpha.Job.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+      getUpdateJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.batch.v1alpha.UpdateJobRequest, com.google.cloud.batch.v1alpha.Job>
+        getUpdateJobMethod;
+    if ((getUpdateJobMethod = BatchServiceGrpc.getUpdateJobMethod) == null) {
+      synchronized (BatchServiceGrpc.class) {
+        if ((getUpdateJobMethod = BatchServiceGrpc.getUpdateJobMethod) == null) {
+          BatchServiceGrpc.getUpdateJobMethod =
+              getUpdateJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.batch.v1alpha.UpdateJobRequest,
+                          com.google.cloud.batch.v1alpha.Job>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.batch.v1alpha.UpdateJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.batch.v1alpha.Job.getDefaultInstance()))
+                      .setSchemaDescriptor(new BatchServiceMethodDescriptorSupplier("UpdateJob"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.batch.v1alpha.ListJobsRequest,
           com.google.cloud.batch.v1alpha.ListJobsResponse>
       getListJobsMethod;
@@ -633,6 +674,19 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    default void updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -829,6 +883,20 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public void updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -1018,6 +1086,19 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -1183,6 +1264,19 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.batch.v1alpha.Job>
+        updateJob(com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List all Jobs for a project within a region.
      * </pre>
      */
@@ -1297,14 +1391,15 @@ public final class BatchServiceGrpc {
   private static final int METHODID_CREATE_JOB = 0;
   private static final int METHODID_GET_JOB = 1;
   private static final int METHODID_DELETE_JOB = 2;
-  private static final int METHODID_LIST_JOBS = 3;
-  private static final int METHODID_GET_TASK = 4;
-  private static final int METHODID_LIST_TASKS = 5;
-  private static final int METHODID_CREATE_RESOURCE_ALLOWANCE = 6;
-  private static final int METHODID_GET_RESOURCE_ALLOWANCE = 7;
-  private static final int METHODID_DELETE_RESOURCE_ALLOWANCE = 8;
-  private static final int METHODID_LIST_RESOURCE_ALLOWANCES = 9;
-  private static final int METHODID_UPDATE_RESOURCE_ALLOWANCE = 10;
+  private static final int METHODID_UPDATE_JOB = 3;
+  private static final int METHODID_LIST_JOBS = 4;
+  private static final int METHODID_GET_TASK = 5;
+  private static final int METHODID_LIST_TASKS = 6;
+  private static final int METHODID_CREATE_RESOURCE_ALLOWANCE = 7;
+  private static final int METHODID_GET_RESOURCE_ALLOWANCE = 8;
+  private static final int METHODID_DELETE_RESOURCE_ALLOWANCE = 9;
+  private static final int METHODID_LIST_RESOURCE_ALLOWANCES = 10;
+  private static final int METHODID_UPDATE_RESOURCE_ALLOWANCE = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1337,6 +1432,11 @@ public final class BatchServiceGrpc {
           serviceImpl.deleteJob(
               (com.google.cloud.batch.v1alpha.DeleteJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_JOB:
+          serviceImpl.updateJob(
+              (com.google.cloud.batch.v1alpha.UpdateJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job>) responseObserver);
           break;
         case METHODID_LIST_JOBS:
           serviceImpl.listJobs(
@@ -1421,6 +1521,12 @@ public final class BatchServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.batch.v1alpha.DeleteJobRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.UpdateJobRequest,
+                    com.google.cloud.batch.v1alpha.Job>(service, METHODID_UPDATE_JOB)))
         .addMethod(
             getListJobsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1528,6 +1634,7 @@ public final class BatchServiceGrpc {
                       .addMethod(getCreateJobMethod())
                       .addMethod(getGetJobMethod())
                       .addMethod(getDeleteJobMethod())
+                      .addMethod(getUpdateJobMethod())
                       .addMethod(getListJobsMethod())
                       .addMethod(getGetTaskMethod())
                       .addMethod(getListTasksMethod())

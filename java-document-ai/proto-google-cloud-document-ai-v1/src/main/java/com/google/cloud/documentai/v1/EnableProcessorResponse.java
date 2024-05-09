@@ -24,8 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Response message for the
- * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor] method.
- * Intentionally empty proto for adding fields in future.
+ * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor]
+ * method. Intentionally empty proto for adding fields in future.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.EnableProcessorResponse}
@@ -219,8 +219,8 @@ public final class EnableProcessorResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Response message for the
-   * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor] method.
-   * Intentionally empty proto for adding fields in future.
+   * [EnableProcessor][google.cloud.documentai.v1.DocumentProcessorService.EnableProcessor]
+   * method. Intentionally empty proto for adding fields in future.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.EnableProcessorResponse}
