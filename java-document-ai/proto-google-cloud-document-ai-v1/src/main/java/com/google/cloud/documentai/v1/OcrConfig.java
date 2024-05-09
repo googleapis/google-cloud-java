@@ -1873,13 +1873,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Turn on font identification model and return font style information.
-   * Deprecated, use [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info] instead.
+   * Deprecated, use
+   * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info]
+   * instead.
    * </pre>
    *
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1/document_io.proto;l=163
+   *     google/cloud/documentai/v1/document_io.proto;l=165
    * @return The computeStyleInfo.
    */
   @java.lang.Override
@@ -3091,13 +3093,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn on font identification model and return font style information.
-     * Deprecated, use [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info] instead.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
      * </pre>
      *
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1/document_io.proto;l=163
+     *     google/cloud/documentai/v1/document_io.proto;l=165
      * @return The computeStyleInfo.
      */
     @java.lang.Override
@@ -3110,13 +3114,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn on font identification model and return font style information.
-     * Deprecated, use [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info] instead.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
      * </pre>
      *
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1/document_io.proto;l=163
+     *     google/cloud/documentai/v1/document_io.proto;l=165
      * @param value The computeStyleInfo to set.
      * @return This builder for chaining.
      */
@@ -3133,13 +3139,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn on font identification model and return font style information.
-     * Deprecated, use [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info] instead.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
      * </pre>
      *
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1/document_io.proto;l=163
+     *     google/cloud/documentai/v1/document_io.proto;l=165
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

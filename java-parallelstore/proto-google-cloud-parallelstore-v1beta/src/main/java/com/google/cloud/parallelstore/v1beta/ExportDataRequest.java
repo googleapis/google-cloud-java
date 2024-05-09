@@ -74,7 +74,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    SOURCE_PATH(2),
+    SOURCE_PARALLELSTORE(2),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -94,7 +94,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public static SourceCase forNumber(int value) {
       switch (value) {
         case 2:
-          return SOURCE_PATH;
+          return SOURCE_PARALLELSTORE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -120,7 +120,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    DESTINATION_GCS_URI(3),
+    DESTINATION_GCS_BUCKET(3),
     DESTINATION_NOT_SET(0);
     private final int value;
 
@@ -140,7 +140,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public static DestinationCase forNumber(int value) {
       switch (value) {
         case 3:
-          return DESTINATION_GCS_URI;
+          return DESTINATION_GCS_BUCKET;
         case 0:
           return DESTINATION_NOT_SET;
         default:
@@ -157,150 +157,111 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     return DestinationCase.forNumber(destinationCase_);
   }
 
-  public static final int SOURCE_PATH_FIELD_NUMBER = 2;
+  public static final int SOURCE_PARALLELSTORE_FIELD_NUMBER = 2;
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore source.
    * </pre>
    *
-   * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
    *
-   * @return Whether the sourcePath field is set.
+   * @return Whether the sourceParallelstore field is set.
    */
-  public boolean hasSourcePath() {
+  @java.lang.Override
+  public boolean hasSourceParallelstore() {
     return sourceCase_ == 2;
   }
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore source.
    * </pre>
    *
-   * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
    *
-   * @return The sourcePath.
+   * @return The sourceParallelstore.
    */
-  public java.lang.String getSourcePath() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore() {
     if (sourceCase_ == 2) {
-      ref = source_;
+      return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
     }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (sourceCase_ == 2) {
-        source_ = s;
-      }
-      return s;
-    }
+    return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore source.
    * </pre>
    *
-   * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for sourcePath.
+   * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
    */
-  public com.google.protobuf.ByteString getSourcePathBytes() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder
+      getSourceParallelstoreOrBuilder() {
     if (sourceCase_ == 2) {
-      ref = source_;
+      return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
     }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      if (sourceCase_ == 2) {
-        source_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
   }
 
-  public static final int DESTINATION_GCS_URI_FIELD_NUMBER = 3;
+  public static final int DESTINATION_GCS_BUCKET_FIELD_NUMBER = 3;
   /**
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage destination.
    * </pre>
    *
-   * <code>string destination_gcs_uri = 3;</code>
+   * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+   * </code>
    *
-   * @return Whether the destinationGcsUri field is set.
+   * @return Whether the destinationGcsBucket field is set.
    */
-  public boolean hasDestinationGcsUri() {
+  @java.lang.Override
+  public boolean hasDestinationGcsBucket() {
     return destinationCase_ == 3;
   }
   /**
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage destination.
    * </pre>
    *
-   * <code>string destination_gcs_uri = 3;</code>
+   * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+   * </code>
    *
-   * @return The destinationGcsUri.
+   * @return The destinationGcsBucket.
    */
-  public java.lang.String getDestinationGcsUri() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket() {
     if (destinationCase_ == 3) {
-      ref = destination_;
+      return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
     }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (destinationCase_ == 3) {
-        destination_ = s;
-      }
-      return s;
-    }
+    return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage destination.
    * </pre>
    *
-   * <code>string destination_gcs_uri = 3;</code>
-   *
-   * @return The bytes for destinationGcsUri.
+   * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+   * </code>
    */
-  public com.google.protobuf.ByteString getDestinationGcsUriBytes() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder
+      getDestinationGcsBucketOrBuilder() {
     if (destinationCase_ == 3) {
-      ref = destination_;
+      return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
     }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      if (destinationCase_ == 3) {
-        destination_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -455,10 +416,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (sourceCase_ == 2) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
+      output.writeMessage(2, (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_);
     }
     if (destinationCase_ == 3) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
+      output.writeMessage(
+          3, (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
@@ -476,10 +438,14 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (sourceCase_ == 2) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_);
     }
     if (destinationCase_ == 3) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
@@ -505,7 +471,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
-        if (!getSourcePath().equals(other.getSourcePath())) return false;
+        if (!getSourceParallelstore().equals(other.getSourceParallelstore())) return false;
         break;
       case 0:
       default:
@@ -513,7 +479,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 3:
-        if (!getDestinationGcsUri().equals(other.getDestinationGcsUri())) return false;
+        if (!getDestinationGcsBucket().equals(other.getDestinationGcsBucket())) return false;
         break;
       case 0:
       default:
@@ -535,16 +501,16 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getRequestId().hashCode();
     switch (sourceCase_) {
       case 2:
-        hash = (37 * hash) + SOURCE_PATH_FIELD_NUMBER;
-        hash = (53 * hash) + getSourcePath().hashCode();
+        hash = (37 * hash) + SOURCE_PARALLELSTORE_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceParallelstore().hashCode();
         break;
       case 0:
       default:
     }
     switch (destinationCase_) {
       case 3:
-        hash = (37 * hash) + DESTINATION_GCS_URI_FIELD_NUMBER;
-        hash = (53 * hash) + getDestinationGcsUri().hashCode();
+        hash = (37 * hash) + DESTINATION_GCS_BUCKET_FIELD_NUMBER;
+        hash = (53 * hash) + getDestinationGcsBucket().hashCode();
         break;
       case 0:
       default:
@@ -690,6 +656,12 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (sourceParallelstoreBuilder_ != null) {
+        sourceParallelstoreBuilder_.clear();
+      }
+      if (destinationGcsBucketBuilder_ != null) {
+        destinationGcsBucketBuilder_.clear();
+      }
       name_ = "";
       requestId_ = "";
       sourceCase_ = 0;
@@ -745,8 +717,14 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.parallelstore.v1beta.ExportDataRequest result) {
       result.sourceCase_ = sourceCase_;
       result.source_ = this.source_;
+      if (sourceCase_ == 2 && sourceParallelstoreBuilder_ != null) {
+        result.source_ = sourceParallelstoreBuilder_.build();
+      }
       result.destinationCase_ = destinationCase_;
       result.destination_ = this.destination_;
+      if (destinationCase_ == 3 && destinationGcsBucketBuilder_ != null) {
+        result.destination_ = destinationGcsBucketBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -806,11 +784,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
       }
       switch (other.getSourceCase()) {
-        case SOURCE_PATH:
+        case SOURCE_PARALLELSTORE:
           {
-            sourceCase_ = 2;
-            source_ = other.source_;
-            onChanged();
+            mergeSourceParallelstore(other.getSourceParallelstore());
             break;
           }
         case SOURCE_NOT_SET:
@@ -819,11 +795,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
           }
       }
       switch (other.getDestinationCase()) {
-        case DESTINATION_GCS_URI:
+        case DESTINATION_GCS_BUCKET:
           {
-            destinationCase_ = 3;
-            destination_ = other.destination_;
-            onChanged();
+            mergeDestinationGcsBucket(other.getDestinationGcsBucket());
             break;
           }
         case DESTINATION_NOT_SET:
@@ -865,16 +839,16 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
               } // case 10
             case 18:
               {
-                java.lang.String s = input.readStringRequireUtf8();
+                input.readMessage(
+                    getSourceParallelstoreFieldBuilder().getBuilder(), extensionRegistry);
                 sourceCase_ = 2;
-                source_ = s;
                 break;
               } // case 18
             case 26:
               {
-                java.lang.String s = input.readStringRequireUtf8();
+                input.readMessage(
+                    getDestinationGcsBucketFieldBuilder().getBuilder(), extensionRegistry);
                 destinationCase_ = 3;
-                destination_ = s;
                 break;
               } // case 26
             case 34:
@@ -930,119 +904,150 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>
+        sourceParallelstoreBuilder_;
     /**
      *
      *
      * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
+     * Parallelstore source.
      * </pre>
      *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
      *
-     * @return Whether the sourcePath field is set.
+     * @return Whether the sourceParallelstore field is set.
      */
     @java.lang.Override
-    public boolean hasSourcePath() {
+    public boolean hasSourceParallelstore() {
       return sourceCase_ == 2;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
+     * Parallelstore source.
      * </pre>
      *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
      *
-     * @return The sourcePath.
+     * @return The sourceParallelstore.
      */
     @java.lang.Override
-    public java.lang.String getSourcePath() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 2) {
-        ref = source_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore() {
+      if (sourceParallelstoreBuilder_ == null) {
         if (sourceCase_ == 2) {
-          source_ = s;
+          return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
         }
-        return s;
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
-     * </pre>
-     *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for sourcePath.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSourcePathBytes() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 2) {
-        ref = source_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (sourceCase_ == 2) {
-          source_ = b;
+          return sourceParallelstoreBuilder_.getMessage();
         }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
+     * Parallelstore source.
      * </pre>
      *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The sourcePath to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
      */
-    public Builder setSourcePath(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      sourceCase_ = 2;
-      source_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
-     * </pre>
-     *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSourcePath() {
-      if (sourceCase_ == 2) {
-        sourceCase_ = 0;
-        source_ = null;
+    public Builder setSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore value) {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
         onChanged();
+      } else {
+        sourceParallelstoreBuilder_.setMessage(value);
+      }
+      sourceCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parallelstore source.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
+     */
+    public Builder setSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder builderForValue) {
+      if (sourceParallelstoreBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        sourceParallelstoreBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parallelstore source.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
+     */
+    public Builder mergeSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore value) {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (sourceCase_ == 2
+            && source_
+                != com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.parallelstore.v1beta.SourceParallelstore.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 2) {
+          sourceParallelstoreBuilder_.mergeFrom(value);
+        } else {
+          sourceParallelstoreBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parallelstore source.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
+     */
+    public Builder clearSourceParallelstore() {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (sourceCase_ == 2) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 2) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        sourceParallelstoreBuilder_.clear();
       }
       return this;
     }
@@ -1050,139 +1055,220 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Root directory path to the Paralellstore filesystem, starting
-     * with '/'. Sets to '/' if no value is set.
+     * Parallelstore source.
      * </pre>
      *
-     * <code>string source_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for sourcePath to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
      */
-    public Builder setSourcePathBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder
+        getSourceParallelstoreBuilder() {
+      return getSourceParallelstoreFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parallelstore source.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder
+        getSourceParallelstoreOrBuilder() {
+      if ((sourceCase_ == 2) && (sourceParallelstoreBuilder_ != null)) {
+        return sourceParallelstoreBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 2) {
+          return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
-      checkByteStringIsUtf8(value);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parallelstore source.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>
+        getSourceParallelstoreFieldBuilder() {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (!(sourceCase_ == 2)) {
+          source_ = com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
+        }
+        sourceParallelstoreBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+                com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+                com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
       sourceCase_ = 2;
-      source_ = value;
       onChanged();
-      return this;
+      return sourceParallelstoreBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>
+        destinationGcsBucketBuilder_;
     /**
      *
      *
      * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+     * Cloud Storage destination.
      * </pre>
      *
-     * <code>string destination_gcs_uri = 3;</code>
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
      *
-     * @return Whether the destinationGcsUri field is set.
+     * @return Whether the destinationGcsBucket field is set.
      */
     @java.lang.Override
-    public boolean hasDestinationGcsUri() {
+    public boolean hasDestinationGcsBucket() {
       return destinationCase_ == 3;
     }
     /**
      *
      *
      * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+     * Cloud Storage destination.
      * </pre>
      *
-     * <code>string destination_gcs_uri = 3;</code>
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
      *
-     * @return The destinationGcsUri.
+     * @return The destinationGcsBucket.
      */
     @java.lang.Override
-    public java.lang.String getDestinationGcsUri() {
-      java.lang.Object ref = "";
-      if (destinationCase_ == 3) {
-        ref = destination_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket() {
+      if (destinationGcsBucketBuilder_ == null) {
         if (destinationCase_ == 3) {
-          destination_ = s;
+          return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
         }
-        return s;
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
-     * </pre>
-     *
-     * <code>string destination_gcs_uri = 3;</code>
-     *
-     * @return The bytes for destinationGcsUri.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDestinationGcsUriBytes() {
-      java.lang.Object ref = "";
-      if (destinationCase_ == 3) {
-        ref = destination_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (destinationCase_ == 3) {
-          destination_ = b;
+          return destinationGcsBucketBuilder_.getMessage();
         }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+     * Cloud Storage destination.
      * </pre>
      *
-     * <code>string destination_gcs_uri = 3;</code>
-     *
-     * @param value The destinationGcsUri to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
      */
-    public Builder setDestinationGcsUri(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      destinationCase_ = 3;
-      destination_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
-     * </pre>
-     *
-     * <code>string destination_gcs_uri = 3;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDestinationGcsUri() {
-      if (destinationCase_ == 3) {
-        destinationCase_ = 0;
-        destination_ = null;
+    public Builder setDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket value) {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
         onChanged();
+      } else {
+        destinationGcsBucketBuilder_.setMessage(value);
+      }
+      destinationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage destination.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
+     */
+    public Builder setDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder builderForValue) {
+      if (destinationGcsBucketBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationGcsBucketBuilder_.setMessage(builderForValue.build());
+      }
+      destinationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage destination.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
+     */
+    public Builder mergeDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket value) {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (destinationCase_ == 3
+            && destination_
+                != com.google.cloud.parallelstore.v1beta.DestinationGcsBucket
+                    .getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 3) {
+          destinationGcsBucketBuilder_.mergeFrom(value);
+        } else {
+          destinationGcsBucketBuilder_.setMessage(value);
+        }
+      }
+      destinationCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage destination.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
+     */
+    public Builder clearDestinationGcsBucket() {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (destinationCase_ == 3) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 3) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        destinationGcsBucketBuilder_.clear();
       }
       return this;
     }
@@ -1190,24 +1276,71 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI to a Cloud Storage object in format:
-     * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+     * Cloud Storage destination.
      * </pre>
      *
-     * <code>string destination_gcs_uri = 3;</code>
-     *
-     * @param value The bytes for destinationGcsUri to set.
-     * @return This builder for chaining.
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
      */
-    public Builder setDestinationGcsUriBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder
+        getDestinationGcsBucketBuilder() {
+      return getDestinationGcsBucketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage destination.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder
+        getDestinationGcsBucketOrBuilder() {
+      if ((destinationCase_ == 3) && (destinationGcsBucketBuilder_ != null)) {
+        return destinationGcsBucketBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 3) {
+          return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
       }
-      checkByteStringIsUtf8(value);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage destination.
+     * </pre>
+     *
+     * <code>.google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>
+        getDestinationGcsBucketFieldBuilder() {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (!(destinationCase_ == 3)) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+        }
+        destinationGcsBucketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
       destinationCase_ = 3;
-      destination_ = value;
       onChanged();
-      return this;
+      return destinationGcsBucketBuilder_;
     }
 
     private java.lang.Object name_ = "";

@@ -47,6 +47,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -92,6 +93,14 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1alpha.BatchService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
+      MethodDescriptor.<UpdateJobRequest, Job>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -197,6 +206,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
@@ -290,6 +300,16 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
+        GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
+            .setMethodDescriptor(updateJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
                   return builder.build();
                 })
             .build();
@@ -417,6 +437,9 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateJobCallable =
+        callableFactory.createUnaryCallable(
+            updateJobTransportSettings, settings.updateJobSettings(), clientContext);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -505,6 +528,11 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   public OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable() {
     return deleteJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return updateJobCallable;
   }
 
   @Override

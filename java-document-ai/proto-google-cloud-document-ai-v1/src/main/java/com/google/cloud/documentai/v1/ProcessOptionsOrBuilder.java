@@ -160,9 +160,11 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Override the schema of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will return an Invalid
-   * Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't support schema override.
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
+   * support schema override.
    * </pre>
    *
    * <code>
@@ -176,9 +178,11 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Override the schema of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will return an Invalid
-   * Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't support schema override.
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
+   * support schema override.
    * </pre>
    *
    * <code>
@@ -192,9 +196,11 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Override the schema of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will return an Invalid
-   * Argument error if this field is set when the underlying
-   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't support schema override.
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] doesn't
+   * support schema override.
    * </pre>
    *
    * <code>

@@ -24,7 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Response message for the
- * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes] method.
+ * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesResponse}
@@ -303,7 +304,8 @@ public final class FetchProcessorTypesResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * Response message for the
-   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes] method.
+   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesResponse}

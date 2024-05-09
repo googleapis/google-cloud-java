@@ -24,7 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Response message for the
- * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument] method.
+ * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentResponse}
@@ -553,7 +554,8 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Response message for the
-   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument] method.
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ReviewDocumentResponse}
