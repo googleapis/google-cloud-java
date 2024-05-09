@@ -35,79 +35,78 @@ import java.io.IOException;
  */
 public class NativeImageSecretManagerSample {
 
-    private static final String NATIVE_TEST_SECRET_ID = "native-secretmanager-test-secret";
+  private static final String NATIVE_TEST_SECRET_ID = "native-secretmanager-test-secret";
 
-    /** Runs the Secret Manager sample application. */
-    public static void main(String[] args) throws IOException {
-        String projectId = ServiceOptions.getDefaultProjectId();
+  /** Runs the Secret Manager sample application. */
+  public static void main(String[] args) throws IOException {
+    String projectId = ServiceOptions.getDefaultProjectId();
 
-        try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-            if (!hasSecret(client, projectId, NATIVE_TEST_SECRET_ID)) {
-                createSecret(client, projectId, NATIVE_TEST_SECRET_ID);
-            } else {
-                System.out.println("Project already has secret: " + NATIVE_TEST_SECRET_ID);
-            }
+    try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
+      if (!hasSecret(client, projectId, NATIVE_TEST_SECRET_ID)) {
+        createSecret(client, projectId, NATIVE_TEST_SECRET_ID);
+      } else {
+        System.out.println("Project already has secret: " + NATIVE_TEST_SECRET_ID);
+      }
 
-            SecretVersion version = addSecretVersion(client, projectId, NATIVE_TEST_SECRET_ID);
-            printSecretVersion(client, version);
-        }
+      SecretVersion version = addSecretVersion(client, projectId, NATIVE_TEST_SECRET_ID);
+      printSecretVersion(client, version);
+    }
+  }
+
+  static void createSecret(SecretManagerServiceClient client, String projectId, String secretId) {
+
+    Secret secret =
+        Secret.newBuilder()
+            .setReplication(
+                Replication.newBuilder()
+                    .setAutomatic(Replication.Automatic.newBuilder().build())
+                    .build())
+            .build();
+    ProjectName projectName = ProjectName.of(projectId);
+    Secret createdSecret = client.createSecret(projectName, secretId, secret);
+    System.out.println("Created secret: " + createdSecret.getName());
+  }
+
+  static boolean hasSecret(SecretManagerServiceClient client, String projectId, String secretId) {
+
+    ProjectName projectName = ProjectName.of(projectId);
+    ListSecretsPagedResponse pagedResponse = client.listSecrets(projectName);
+
+    for (Secret secret : pagedResponse.iterateAll()) {
+      String otherSecretId = extractSecretId(secret);
+      if (secretId.equals(otherSecretId)) {
+        return true;
+      }
     }
 
-    static void createSecret(SecretManagerServiceClient client, String projectId, String secretId) {
+    return false;
+  }
 
-        Secret secret =
-                Secret.newBuilder()
-                        .setReplication(
-                                Replication.newBuilder()
-                                        .setAutomatic(Replication.Automatic.newBuilder().build())
-                                        .build())
-                        .build();
-        ProjectName projectName = ProjectName.of(projectId);
-        Secret createdSecret = client.createSecret(projectName, secretId, secret);
-        System.out.println("Created secret: " + createdSecret.getName());
-    }
+  static SecretVersion addSecretVersion(
+      SecretManagerServiceClient client, String projectId, String secretId) {
 
-    static boolean hasSecret(SecretManagerServiceClient client, String projectId, String secretId) {
+    SecretName secretName = SecretName.of(projectId, secretId);
+    SecretPayload payload =
+        SecretPayload.newBuilder().setData(ByteString.copyFromUtf8("Hello World")).build();
 
-        ProjectName projectName = ProjectName.of(projectId);
-        ListSecretsPagedResponse pagedResponse = client.listSecrets(projectName);
+    SecretVersion version = client.addSecretVersion(secretName, payload);
+    System.out.println("Added Secret Version: " + version.getName());
+    return version;
+  }
 
-        for (Secret secret : pagedResponse.iterateAll()) {
-            String otherSecretId = extractSecretId(secret);
-            if (secretId.equals(otherSecretId)) {
-                return true;
-            }
-        }
+  static void printSecretVersion(SecretManagerServiceClient client, SecretVersion version) {
+    AccessSecretVersionResponse response = client.accessSecretVersion(version.getName());
+    String payload = response.getPayload().getData().toStringUtf8();
+    System.out.println("Reading secret value: " + payload);
+    System.out.println("(Note: Don't print secret values in prod!)");
+  }
 
-        return false;
-    }
-
-    static SecretVersion addSecretVersion(
-            SecretManagerServiceClient client, String projectId, String secretId) {
-
-        SecretName secretName = SecretName.of(projectId, secretId);
-        SecretPayload payload =
-                SecretPayload.newBuilder().setData(ByteString.copyFromUtf8("Hello World")).build();
-
-        SecretVersion version = client.addSecretVersion(secretName, payload);
-        System.out.println("Added Secret Version: " + version.getName());
-        return version;
-    }
-
-    static void printSecretVersion(SecretManagerServiceClient client, SecretVersion version) {
-        AccessSecretVersionResponse response = client.accessSecretVersion(version.getName());
-        String payload = response.getPayload().getData().toStringUtf8();
-        System.out.println("Reading secret value: " + payload);
-        System.out.println("(Note: Don't print secret values in prod!)");
-    }
-
-    /**
-     * Returns the secret ID from the fully-qualified secret name which has the format:
-     * projects/YOUR_PROJECT_ID/secrets/YOUR_SECRET_ID.
-     */
-    private static String extractSecretId(Secret secret) {
-        String[] secretNameTokens = secret.getName().split("/");
-        return secretNameTokens[secretNameTokens.length - 1];
-    }
+  /**
+   * Returns the secret ID from the fully-qualified secret name which has the format:
+   * projects/YOUR_PROJECT_ID/secrets/YOUR_SECRET_ID.
+   */
+  private static String extractSecretId(Secret secret) {
+    String[] secretNameTokens = secret.getName().split("/");
+    return secretNameTokens[secretNameTokens.length - 1];
+  }
 }
-

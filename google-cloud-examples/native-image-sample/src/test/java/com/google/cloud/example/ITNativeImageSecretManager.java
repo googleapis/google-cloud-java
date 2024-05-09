@@ -33,38 +33,38 @@ import org.junit.Test;
 
 public class ITNativeImageSecretManager {
 
-    private static final String NATIVE_TEST_SECRET_ID = "native-test-secret" + UUID.randomUUID();
-    private static String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-    private ByteArrayOutputStream bout;
+  private static final String NATIVE_TEST_SECRET_ID = "native-test-secret" + UUID.randomUUID();
+  private static String PROJECT_ID = ServiceOptions.getDefaultProjectId();
+  private ByteArrayOutputStream bout;
 
-    @Before
-    public void setUp() {
-        bout = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(bout));
+  @Before
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bout));
+  }
+
+  @AfterClass
+  public static void afterAll() throws Exception {
+    try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
+
+      // Delete the secret created by quickstart
+      SecretName name = SecretName.of(PROJECT_ID, NATIVE_TEST_SECRET_ID);
+      DeleteSecretRequest deleteRequest =
+          DeleteSecretRequest.newBuilder().setName(name.toString()).build();
+
+      client.deleteSecret(deleteRequest);
     }
+  }
 
-    @AfterClass
-    public static void afterAll() throws Exception {
-        try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-
-            // Delete the secret created by quickstart
-            SecretName name = SecretName.of(PROJECT_ID, NATIVE_TEST_SECRET_ID);
-            DeleteSecretRequest deleteRequest =
-                    DeleteSecretRequest.newBuilder().setName(name.toString()).build();
-
-            client.deleteSecret(deleteRequest);
-        }
+  @Test
+  public void testCreateAndPrintSecret() throws IOException {
+    try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
+      NativeImageSecretManagerSample.createSecret(client, PROJECT_ID, NATIVE_TEST_SECRET_ID);
+      SecretVersion version =
+          NativeImageSecretManagerSample.addSecretVersion(
+              client, PROJECT_ID, NATIVE_TEST_SECRET_ID);
+      NativeImageSecretManagerSample.printSecretVersion(client, version);
+      assertThat(bout.toString()).contains("Reading secret value: Hello World");
     }
-
-    @Test
-    public void testCreateAndPrintSecret() throws IOException {
-        try (SecretManagerServiceClient client = SecretManagerServiceClient.create()) {
-            NativeImageSecretManagerSample.createSecret(client, PROJECT_ID, NATIVE_TEST_SECRET_ID);
-            SecretVersion version =
-                    NativeImageSecretManagerSample.addSecretVersion(
-                            client, PROJECT_ID, NATIVE_TEST_SECRET_ID);
-            NativeImageSecretManagerSample.printSecretVersion(client, version);
-            assertThat(bout.toString()).contains("Reading secret value: Hello World");
-        }
-    }
+  }
 }
