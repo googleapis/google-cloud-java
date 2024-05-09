@@ -200,7 +200,6 @@
     <module>java-workflows</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
-    <module>google-cloud-examples/native-image-sample</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->
