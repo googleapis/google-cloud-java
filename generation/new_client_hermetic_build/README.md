@@ -33,7 +33,7 @@ file as an example.
 Not all the `new-client.py` arguments are available in the Github Action.
 Please refer to
 [this
-section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client_hermetic_build/README.md#advanced-options)
+section](/generation/new_client_hermetic_build/README.md#advanced-options)
 
 ### API short name (`api_shortname`)
 
