@@ -1,6 +1,6 @@
 gapic_generator_version: 2.40.0
 protoc_version: '25.3'
-googleapis_commitish: e5b8ffad92c2cda2de65ee6e466cd53f3334837e
+googleapis_commitish: 25a1a57957d9e4bf431897d280b2569b26dc9165
 libraries_bom_version: 26.38.0
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 63cc541da2c45fcfca2136c43e638da1fbae174d
@@ -1175,6 +1175,28 @@ libraries:
   GAPICs:
   - proto_path: google/maps/places/v1
 
+- api_shortname: routeoptimization
+  name_pretty: Route Optimization API
+  product_documentation: https://developers.google.com/maps/documentation/route-optimization
+  api_description: The Route Optimization API assigns tasks and routes to a vehicle
+    fleet, optimizing against the objectives and constraints that you supply for your
+    transportation goals.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-maps-routeoptimization/latest/overview
+  release_level: preview
+  distribution_name: com.google.maps:google-maps-routeoptimization
+  api_id: routeoptimization.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.maps
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/maps/routeoptimization/v1
+  library_name: maps-routeoptimization
+  requires_billing: true
+  rest_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rest/
+  rpc_documentation: 
+    https://developers.google.com/maps/documentation/route-optimization/reference/rpc
 - api_shortname: maps-routing
   name_pretty: Routes API
   product_documentation: https://developers.google.com/maps/documentation/routes

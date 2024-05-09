@@ -28,81 +28,78 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage source.
    * </pre>
    *
-   * <code>string source_gcs_uri = 2;</code>
+   * <code>.google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 2;</code>
    *
-   * @return Whether the sourceGcsUri field is set.
+   * @return Whether the sourceGcsBucket field is set.
    */
-  boolean hasSourceGcsUri();
+  boolean hasSourceGcsBucket();
   /**
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage source.
    * </pre>
    *
-   * <code>string source_gcs_uri = 2;</code>
+   * <code>.google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 2;</code>
    *
-   * @return The sourceGcsUri.
+   * @return The sourceGcsBucket.
    */
-  java.lang.String getSourceGcsUri();
+  com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket();
   /**
    *
    *
    * <pre>
-   * URI to a Cloud Storage object in format:
-   * 'gs://&lt;bucket_name&gt;/&lt;path_inside_bucket&gt;'.
+   * Cloud Storage source.
    * </pre>
    *
-   * <code>string source_gcs_uri = 2;</code>
-   *
-   * @return The bytes for sourceGcsUri.
+   * <code>.google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 2;</code>
    */
-  com.google.protobuf.ByteString getSourceGcsUriBytes();
+  com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder getSourceGcsBucketOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore destination.
    * </pre>
    *
-   * <code>string destination_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 3;
+   * </code>
    *
-   * @return Whether the destinationPath field is set.
+   * @return Whether the destinationParallelstore field is set.
    */
-  boolean hasDestinationPath();
+  boolean hasDestinationParallelstore();
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore destination.
    * </pre>
    *
-   * <code>string destination_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 3;
+   * </code>
    *
-   * @return The destinationPath.
+   * @return The destinationParallelstore.
    */
-  java.lang.String getDestinationPath();
+  com.google.cloud.parallelstore.v1beta.DestinationParallelstore getDestinationParallelstore();
   /**
    *
    *
    * <pre>
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with '/'. Sets to '/' if no value is set.
+   * Parallelstore destination.
    * </pre>
    *
-   * <code>string destination_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for destinationPath.
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 3;
+   * </code>
    */
-  com.google.protobuf.ByteString getDestinationPathBytes();
+  com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder
+      getDestinationParallelstoreOrBuilder();
 
   /**
    *

@@ -28,8 +28,8 @@ public interface ListProcessorsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) which owns this collection of Processors.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent (project and location) which owns this collection of
+   * Processors. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -43,8 +43,8 @@ public interface ListProcessorsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) which owns this collection of Processors.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent (project and location) which owns this collection of
+   * Processors. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

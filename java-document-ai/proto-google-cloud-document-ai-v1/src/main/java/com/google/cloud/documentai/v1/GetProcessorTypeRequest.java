@@ -24,7 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Request message for the
- * [GetProcessorType][google.cloud.documentai.v1.DocumentProcessorService.GetProcessorType] method.
+ * [GetProcessorType][google.cloud.documentai.v1.DocumentProcessorService.GetProcessorType]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.GetProcessorTypeRequest}
@@ -284,7 +285,8 @@ public final class GetProcessorTypeRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Request message for the
-   * [GetProcessorType][google.cloud.documentai.v1.DocumentProcessorService.GetProcessorType] method.
+   * [GetProcessorType][google.cloud.documentai.v1.DocumentProcessorService.GetProcessorType]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.GetProcessorTypeRequest}

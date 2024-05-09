@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0 (2024-05-08)
+
+### Features
+
+* adding system instruction support ([#10775](https://github.com/googleapis/google-cloud-java/issues/10775)) ([b90c291](https://github.com/googleapis/google-cloud-java/commit/b90c291ed20702162bd7b231d548b4a15e67b1c5))
+
+
+
 ## 1.2.0 (2024-04-25)
 
 ### Features

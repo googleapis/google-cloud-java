@@ -28,7 +28,9 @@ public interface ListEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
+   * Required. The resource name of the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
+   * evaluations for.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -43,7 +45,9 @@ public interface ListEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list evaluations for.
+   * Required. The resource name of the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion] to list
+   * evaluations for.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *

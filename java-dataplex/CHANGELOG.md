@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.41.0 (2024-05-08)
+
+### Features
+
+* An existing field `entry` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `display_name` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `entry_type` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `modify_time` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `fully_qualified_name` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `description` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* An existing field `relative_resource` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult`
+* updated client libraries for Dataplex Catalog: removed deprecated fields, updated comments ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `description` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `display_name` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `entry_type` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `entry` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `fully_qualified_name` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `modify_time` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing field `relative_resource` is removed from message `.google.cloud.dataplex.v1.SearchEntriesResult` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `aspects` in message `.google.cloud.dataplex.v1.Entry` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `filter` in message `.google.cloud.dataplex.v1.ListEntriesRequest` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+
+
+
 ## 1.40.0 (2024-04-25)
 
 * No change
