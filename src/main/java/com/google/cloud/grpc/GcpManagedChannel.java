@@ -80,6 +80,8 @@ public class GcpManagedChannel extends ManagedChannel {
       Context.keyWithDefault("DisableAffinity", false);
   public static final CallOptions.Key<Boolean> DISABLE_AFFINITY_KEY =
       CallOptions.Key.createWithDefault("DisableAffinity", false);
+  public static final Context.Key<String> AFFINITY_CTX_KEY = Context.key("AffinityKey");
+  public static final CallOptions.Key<String> AFFINITY_KEY = CallOptions.Key.create("AffinityKey");
 
   @GuardedBy("this")
   private Integer bindingIndex = -1;
@@ -1269,14 +1271,30 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
-    AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
-    if (affinity == null
-        || callOptions.getOption(DISABLE_AFFINITY_KEY)
+    if (callOptions.getOption(DISABLE_AFFINITY_KEY)
         || DISABLE_AFFINITY_CTX_KEY.get(Context.current())) {
       return new GcpClientCall.SimpleGcpClientCall<>(
           getChannelRef(null), methodDescriptor, callOptions);
     }
-    return new GcpClientCall<>(this, methodDescriptor, callOptions, affinity);
+
+    AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
+    String key = keyFromOptsCtx(callOptions);
+    if (affinity != null && key == null) {
+      return new GcpClientCall<>(this, methodDescriptor, callOptions, affinity);
+    }
+
+    return new GcpClientCall.SimpleGcpClientCall<>(
+        getChannelRef(key), methodDescriptor, callOptions);
+  }
+
+  @Nullable
+  private String keyFromOptsCtx(CallOptions callOptions) {
+    String key = callOptions.getOption(AFFINITY_KEY);
+    if (key != null) {
+      return key;
+    }
+
+    return AFFINITY_CTX_KEY.get(Context.current());
   }
 
   @Override

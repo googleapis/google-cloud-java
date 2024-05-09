@@ -1420,6 +1420,190 @@ public final class SpannerIntegrationTest {
   }
 
   @Test
+  public void testExecuteStreamingSqlWithAffinityViaContext() throws Exception {
+    SpannerStub stub = getSpannerStub();
+    String sessionName = createAsyncSessions(stub).get(0);
+    ExecuteSqlRequest executeSqlRequest =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(sessionName)
+            .setSql("select * FROM Users")
+            .build();
+    List<AsyncResponseObserver<PartialResultSet>> resps = new ArrayList<>();
+    AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.executeStreamingSql(executeSqlRequest, resp);
+    // The ChannelRef which is bound with the current affinity key.
+    ChannelRef currentChannel = gcpChannel.affinityKeyToChannelRef.get(sessionName);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+
+    final String key = "overriden-key";
+
+    // Override affinity key via context.
+    Context ctx = Context.current().withValue(GcpManagedChannel.AFFINITY_CTX_KEY, key);
+    ctx.run(
+        () -> {
+          AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+          resps.add(r);
+          stub.executeStreamingSql(executeSqlRequest, r);
+        });
+
+    ChannelRef newChannel = gcpChannel.affinityKeyToChannelRef.get(key);
+    // Make sure it is mapped to a different channel, because current channel is the busiest.
+    assertThat(currentChannel.getId()).isNotEqualTo(newChannel.getId());
+    assertEquals(1, newChannel.getActiveStreamsCount());
+
+    // Make another call.
+    ctx.run(
+        () -> {
+          AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+          resps.add(r);
+          stub.executeStreamingSql(executeSqlRequest, r);
+        });
+    assertEquals(2, newChannel.getActiveStreamsCount());
+
+    // Make sure non-overriden affinty still works.
+    resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.executeStreamingSql(executeSqlRequest, resp);
+    assertEquals(2, currentChannel.getActiveStreamsCount());
+
+    // Complete the requests.
+    resps.forEach(
+        r -> {
+          try {
+            r.get();
+          } catch (InterruptedException e) {
+            // Noop if interrupted.
+          }
+        });
+  }
+
+  @Test
+  public void testExecuteStreamingSqlWithAffinityViaCallOptions() throws Exception {
+    SpannerStub stub = getSpannerStub();
+    String sessionName = createAsyncSessions(stub).get(0);
+    ExecuteSqlRequest executeSqlRequest =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(sessionName)
+            .setSql("select * FROM Users")
+            .build();
+    List<AsyncResponseObserver<PartialResultSet>> resps = new ArrayList<>();
+    AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.executeStreamingSql(executeSqlRequest, resp);
+    // The ChannelRef which is bound with the current affinity key.
+    ChannelRef currentChannel = gcpChannel.affinityKeyToChannelRef.get(sessionName);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+
+    final String key = "overriden-key";
+
+    // Override affinity key via call options.
+    resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.withOption(GcpManagedChannel.AFFINITY_KEY, key)
+        .executeStreamingSql(executeSqlRequest, resp);
+
+    ChannelRef newChannel = gcpChannel.affinityKeyToChannelRef.get(key);
+    // Make sure it is mapped to a different channel, because current channel is the busiest.
+    assertThat(currentChannel.getId()).isNotEqualTo(newChannel.getId());
+    assertEquals(1, newChannel.getActiveStreamsCount());
+
+    // Make another call.
+    resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.withOption(GcpManagedChannel.AFFINITY_KEY, key)
+        .executeStreamingSql(executeSqlRequest, resp);
+    assertEquals(2, newChannel.getActiveStreamsCount());
+
+    // Make sure non-overriden affinty still works.
+    resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.executeStreamingSql(executeSqlRequest, resp);
+    assertEquals(2, currentChannel.getActiveStreamsCount());
+
+    // Complete the requests.
+    resps.forEach(
+        r -> {
+          try {
+            r.get();
+          } catch (InterruptedException e) {
+            // Noop if interrupted.
+          }
+        });
+  }
+
+  @Test
+  public void testExecuteStreamingSqlWithAffinityViaContextAndCallOptions() throws Exception {
+    SpannerStub stub = getSpannerStub();
+    String sessionName = createAsyncSessions(stub).get(0);
+    ExecuteSqlRequest executeSqlRequest =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(sessionName)
+            .setSql("select * FROM Users")
+            .build();
+    List<AsyncResponseObserver<PartialResultSet>> resps = new ArrayList<>();
+    AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.executeStreamingSql(executeSqlRequest, resp);
+    // The ChannelRef which is bound with the current affinity key.
+    ChannelRef currentChannel = gcpChannel.affinityKeyToChannelRef.get(sessionName);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+
+    final String contextKey = "context-key";
+    final String optionsKey = "options-key";
+
+    // Override affinity key via context.
+    Context ctx = Context.current().withValue(GcpManagedChannel.AFFINITY_CTX_KEY, contextKey);
+    ctx.run(
+        () -> {
+          AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+          resps.add(r);
+          stub.executeStreamingSql(executeSqlRequest, r);
+        });
+
+    ChannelRef contextChannel = gcpChannel.affinityKeyToChannelRef.get(contextKey);
+    // Make sure it is mapped to a different channel, because current channel is the busiest.
+    assertThat(currentChannel.getId()).isNotEqualTo(contextChannel.getId());
+    assertEquals(1, contextChannel.getActiveStreamsCount());
+
+    // Make another call overriding affinity with call options.
+    resp = new AsyncResponseObserver<>();
+    resps.add(resp);
+    stub.withOption(GcpManagedChannel.AFFINITY_KEY, optionsKey)
+        .executeStreamingSql(executeSqlRequest, resp);
+    // Make sure it is mapped to a different channel, because the current channel and "context"
+    // channel are the busiest.
+    ChannelRef optionsChannel = gcpChannel.affinityKeyToChannelRef.get(optionsKey);
+    assertThat(currentChannel.getId()).isNotEqualTo(optionsChannel.getId());
+    assertThat(optionsChannel.getId()).isNotEqualTo(contextChannel.getId());
+    assertEquals(1, optionsChannel.getActiveStreamsCount());
+
+    // Now make a call with context and call options affinity keys.
+    ctx.run(
+        () -> {
+          AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+          resps.add(r);
+          stub.withOption(GcpManagedChannel.AFFINITY_KEY, optionsKey)
+              .executeStreamingSql(executeSqlRequest, r);
+        });
+    // Make sure affinity from call options is prevailing.
+    assertEquals(2, optionsChannel.getActiveStreamsCount());
+
+    // Complete the requests.
+    resps.forEach(
+        r -> {
+          try {
+            r.get();
+          } catch (InterruptedException e) {
+            // Noop if interrupted.
+          }
+        });
+  }
+
+  @Test
   public void testPartitionQueryAsync() throws Exception {
     SpannerStub stub = getSpannerStub();
     List<String> respNames = createAsyncSessions(stub);
