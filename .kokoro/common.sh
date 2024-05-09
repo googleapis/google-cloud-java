@@ -13,10 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# TODO: remove java-core once we figure out how setup_cloud understands Maven's
-# "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
-native_image_sample_dir="google-cloud-examples/native-image-sample"
 
 function retry_with_backoff {
   attempts_left=$1
@@ -134,17 +131,6 @@ function setup_cloud() {
   trap destroy EXIT
 }
 
-# Fetch parent directory from provided file path
-fetch_parent_directory() {
-  local element="$1"
-
-  if [[ "$element" == ${native_image_sample_dir}* ]]; then
-    echo "${native_image_sample_dir}"
-  else
-    echo "${element%%/*}"
-  fi
-}
-
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
@@ -171,17 +157,10 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E "(java-.*|${native_image_sample_dir})" || true)
+    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
-
-      # Process list to only contain unique parent directory names
-      processed_list=()
-      for module in "${modules[@]}"; do
-          processed_list+=($(fetch_parent_directory "$module"))
-      done
-      modules=($(printf '%s\n' "${processed_list[@]}" | sort -u))
-
+      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
         if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
           modified_module_list+=("${module}")
