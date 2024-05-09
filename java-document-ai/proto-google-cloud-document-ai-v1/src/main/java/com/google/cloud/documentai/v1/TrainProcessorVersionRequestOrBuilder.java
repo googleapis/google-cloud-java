@@ -115,8 +115,9 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new version for.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new
+   * version for. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -130,8 +131,9 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new version for.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new
+   * version for. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -228,7 +230,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -242,7 +245,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -256,7 +260,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -270,8 +275,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This processor version
-   * must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This
+   * processor version must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *
@@ -284,8 +289,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This processor version
-   * must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This
+   * processor version must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *

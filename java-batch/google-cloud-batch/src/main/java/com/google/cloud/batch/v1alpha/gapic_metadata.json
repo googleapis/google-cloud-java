@@ -46,6 +46,9 @@
             "ListTasks": {
               "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
             },
+            "UpdateJob": {
+              "methods": ["updateJob", "updateJob", "updateJobCallable"]
+            },
             "UpdateResourceAllowance": {
               "methods": ["updateResourceAllowance", "updateResourceAllowance", "updateResourceAllowanceCallable"]
             }

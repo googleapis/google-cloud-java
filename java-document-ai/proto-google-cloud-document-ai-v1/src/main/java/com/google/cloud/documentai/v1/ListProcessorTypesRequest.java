@@ -24,8 +24,9 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Request message for the
- * [ListProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.ListProcessorTypes] method.
- * Some processor types may require the project be added to an allowlist.
+ * [ListProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.ListProcessorTypes]
+ * method. Some processor types may require the project be added to an
+ * allowlist.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ListProcessorTypesRequest}
@@ -377,8 +378,9 @@ public final class ListProcessorTypesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Request message for the
-   * [ListProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.ListProcessorTypes] method.
-   * Some processor types may require the project be added to an allowlist.
+   * [ListProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.ListProcessorTypes]
+   * method. Some processor types may require the project be added to an
+   * allowlist.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ListProcessorTypesRequest}

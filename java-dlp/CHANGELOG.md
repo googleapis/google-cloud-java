@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.47.0 (2024-05-08)
+
+### Features
+
+* Add field to InspectJobs num_rows_processed for BigQuery inspect jobs ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* Add new countries for supported detectors ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* add RPCs for deleting TableDataProfiles ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* Add RPCs for enabling discovery of Cloud SQL ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* Updated method documentation ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+
+
+
 ## 3.46.0 (2024-04-25)
 
 * No change

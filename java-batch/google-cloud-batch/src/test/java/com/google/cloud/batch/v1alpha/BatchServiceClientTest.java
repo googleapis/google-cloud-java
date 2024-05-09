@@ -352,6 +352,59 @@ public class BatchServiceClientTest {
   }
 
   @Test
+  public void updateJobTest() throws Exception {
+    Job expectedResponse =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setUid("uid115792")
+            .setPriority(-1165461084)
+            .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
+            .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLogsPolicy(LogsPolicy.newBuilder().build())
+            .addAllNotifications(new ArrayList<JobNotification>())
+            .build();
+    mockBatchService.addResponse(expectedResponse);
+
+    Job job = Job.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Job actualResponse = client.updateJob(job, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBatchService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateJobRequest actualRequest = ((UpdateJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(job, actualRequest.getJob());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBatchService.addException(exception);
+
+    try {
+      Job job = Job.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateJob(job, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listJobsTest() throws Exception {
     Job responsesElement = Job.newBuilder().build();
     ListJobsResponse expectedResponse =

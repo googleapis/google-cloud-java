@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0 (2024-05-08)
+
+### Features
+
+* update comment of Places API ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+
+
+
 ## 0.13.0 (2024-04-25)
 
 ### Features

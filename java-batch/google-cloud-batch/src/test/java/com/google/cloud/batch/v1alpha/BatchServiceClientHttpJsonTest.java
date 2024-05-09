@@ -368,6 +368,94 @@ public class BatchServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateJobTest() throws Exception {
+    Job expectedResponse =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setUid("uid115792")
+            .setPriority(-1165461084)
+            .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
+            .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLogsPolicy(LogsPolicy.newBuilder().build())
+            .addAllNotifications(new ArrayList<JobNotification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Job job =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setUid("uid115792")
+            .setPriority(-1165461084)
+            .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
+            .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLogsPolicy(LogsPolicy.newBuilder().build())
+            .addAllNotifications(new ArrayList<JobNotification>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Job actualResponse = client.updateJob(job, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Job job =
+          Job.newBuilder()
+              .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setUid("uid115792")
+              .setPriority(-1165461084)
+              .addAllTaskGroups(new ArrayList<TaskGroup>())
+              .addAllDependencies(new ArrayList<JobDependency>())
+              .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setStatus(JobStatus.newBuilder().build())
+              .setNotification(JobNotification.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setLogsPolicy(LogsPolicy.newBuilder().build())
+              .addAllNotifications(new ArrayList<JobNotification>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateJob(job, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listJobsTest() throws Exception {
     Job responsesElement = Job.newBuilder().build();
     ListJobsResponse expectedResponse =

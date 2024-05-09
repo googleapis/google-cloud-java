@@ -116,6 +116,7 @@
     <module>java-maps-addressvalidation</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
+    <module>java-maps-routeoptimization</module>
     <module>java-maps-routing</module>
     <module>java-maps-solar</module>
     <module>java-mediatranslation</module>
@@ -199,7 +200,6 @@
     <module>java-workflows</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
-    <module>google-cloud-examples/native-image-sample</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->

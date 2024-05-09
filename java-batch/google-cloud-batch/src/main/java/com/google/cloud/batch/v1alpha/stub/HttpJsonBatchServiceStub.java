@@ -55,6 +55,7 @@ import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
 import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
 import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -192,6 +193,42 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
           .setOperationSnapshotFactory(
               (DeleteJobRequest request, Operation response) ->
                   HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
+      ApiMethodDescriptor.<UpdateJobRequest, Job>newBuilder()
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateJob")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateJobRequest>newBuilder()
+                  .setPath(
+                      "/v1alpha/{job.name=projects/*/locations/*/jobs/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "job.name", request.getJob().getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Job>newBuilder()
+                  .setDefaultInstance(Job.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
           .build();
 
   private static final ApiMethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -571,6 +608,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
@@ -695,6 +733,17 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
+        HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
+            .setMethodDescriptor(updateJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
                   return builder.build();
                 })
             .build();
@@ -833,6 +882,9 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateJobCallable =
+        callableFactory.createUnaryCallable(
+            updateJobTransportSettings, settings.updateJobSettings(), clientContext);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -904,6 +956,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     methodDescriptors.add(createJobMethodDescriptor);
     methodDescriptors.add(getJobMethodDescriptor);
     methodDescriptors.add(deleteJobMethodDescriptor);
+    methodDescriptors.add(updateJobMethodDescriptor);
     methodDescriptors.add(listJobsMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
     methodDescriptors.add(listTasksMethodDescriptor);
@@ -940,6 +993,11 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   public OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable() {
     return deleteJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return updateJobCallable;
   }
 
   @Override

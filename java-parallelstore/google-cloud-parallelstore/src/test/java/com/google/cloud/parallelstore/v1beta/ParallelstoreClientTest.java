@@ -570,8 +570,9 @@ public class ParallelstoreClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ImportDataRequest actualRequest = ((ImportDataRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getSourceGcsUri(), actualRequest.getSourceGcsUri());
-    Assert.assertEquals(request.getDestinationPath(), actualRequest.getDestinationPath());
+    Assert.assertEquals(request.getSourceGcsBucket(), actualRequest.getSourceGcsBucket());
+    Assert.assertEquals(
+        request.getDestinationParallelstore(), actualRequest.getDestinationParallelstore());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
     Assert.assertTrue(
@@ -624,8 +625,8 @@ public class ParallelstoreClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportDataRequest actualRequest = ((ExportDataRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getSourcePath(), actualRequest.getSourcePath());
-    Assert.assertEquals(request.getDestinationGcsUri(), actualRequest.getDestinationGcsUri());
+    Assert.assertEquals(request.getSourceParallelstore(), actualRequest.getSourceParallelstore());
+    Assert.assertEquals(request.getDestinationGcsBucket(), actualRequest.getDestinationGcsBucket());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
     Assert.assertTrue(

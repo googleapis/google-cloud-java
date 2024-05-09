@@ -322,8 +322,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-     * request when the batch process started.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -335,8 +336,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-     * request when the batch process started.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -385,8 +387,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage output destination (in the request as
-     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-     * document if it was successful, otherwise empty.
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+     * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
      * <code>string output_gcs_destination = 3;</code>
@@ -399,8 +401,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage output destination (in the request as
-     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-     * document if it was successful, otherwise empty.
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+     * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
      * <code>string output_gcs_destination = 3;</code>
@@ -499,8 +501,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-     * request when the batch process started.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -523,8 +526,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-     * request when the batch process started.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -599,8 +603,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage output destination (in the request as
-     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-     * document if it was successful, otherwise empty.
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+     * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
      * <code>string output_gcs_destination = 3;</code>
@@ -624,8 +628,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage output destination (in the request as
-     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-     * document if it was successful, otherwise empty.
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+     * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
      * <code>string output_gcs_destination = 3;</code>
@@ -1171,8 +1175,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-       * request when the batch process started.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1194,8 +1199,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-       * request when the batch process started.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1217,8 +1223,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-       * request when the batch process started.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1239,8 +1246,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-       * request when the batch process started.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1257,8 +1265,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source] field in the
-       * request when the batch process started.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1459,8 +1468,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The Cloud Storage output destination (in the request as
-       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-       * document if it was successful, otherwise empty.
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+       * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
        * <code>string output_gcs_destination = 3;</code>
@@ -1483,8 +1492,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The Cloud Storage output destination (in the request as
-       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-       * document if it was successful, otherwise empty.
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+       * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
        * <code>string output_gcs_destination = 3;</code>
@@ -1507,8 +1516,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The Cloud Storage output destination (in the request as
-       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-       * document if it was successful, otherwise empty.
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+       * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
        * <code>string output_gcs_destination = 3;</code>
@@ -1530,8 +1539,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The Cloud Storage output destination (in the request as
-       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-       * document if it was successful, otherwise empty.
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+       * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
        * <code>string output_gcs_destination = 3;</code>
@@ -1549,8 +1558,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The Cloud Storage output destination (in the request as
-       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri]) of the processed
-       * document if it was successful, otherwise empty.
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
+       * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
        * <code>string output_gcs_destination = 3;</code>
