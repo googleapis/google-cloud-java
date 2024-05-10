@@ -505,6 +505,16 @@ public final class GenerativeModel {
   }
 
   /**
+   * Removes the role in the system instruction content.
+   *
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} instance
+   * @return a {@link com.google.cloud.vertexai.api.Content} instance with the role removed
+   */
+  private Content removeRoleInSystemInstructionContent(Content systemInstruction) {
+    return systemInstruction.toBuilder().clearRole().build();
+  }
+
+  /**
    * Builds a {@link com.google.cloud.vertexai.api.GenerateContentRequest} based on a list of
    * contents and model configurations.
    */
@@ -519,7 +529,8 @@ public final class GenerativeModel {
             .addAllTools(tools);
 
     if (systemInstruction.isPresent()) {
-      requestBuilder.setSystemInstruction(systemInstruction.get());
+      requestBuilder.setSystemInstruction(
+          removeRoleInSystemInstructionContent(systemInstruction.get()));
     }
 
     return requestBuilder.build();
