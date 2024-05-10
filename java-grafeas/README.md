@@ -99,6 +99,10 @@ use this Grafeas Client Library.
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
+## Transport
+
+Grafeas uses gRPC for the transport layer.
+
 ## Supported Java Versions
 
 Java 8 or above is required for using this client.
@@ -191,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/io.grafeas/grafeas.svg
-[maven-version-link]: https://central.sonatype.com/artifact/io.grafeas/grafeas/2.36.0
+[maven-version-link]: https://central.sonatype.com/artifact/io.grafeas/grafeas/2.44.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
