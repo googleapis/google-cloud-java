@@ -17,7 +17,7 @@
 package com.google.cloud.kms.v1.samples;
 
 // [START cloudkms_v1_generated_KeyManagementService_Encrypt_StringBytestring_sync]
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.AutokeyConfigName;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.protobuf.ByteString;
@@ -36,8 +36,7 @@ public class SyncEncryptStringBytestring {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (KeyManagementServiceClient keyManagementServiceClient =
         KeyManagementServiceClient.create()) {
-      String name =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]").toString();
+      String name = AutokeyConfigName.of("[FOLDER]").toString();
       ByteString plaintext = ByteString.EMPTY;
       EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
     }

@@ -3717,8 +3717,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (KeyManagementServiceClient keyManagementServiceClient =
    *     KeyManagementServiceClient.create()) {
-   *   String name =
-   *       CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]").toString();
+   *   String name = AutokeyConfigName.of("[FOLDER]").toString();
    *   ByteString plaintext = ByteString.EMPTY;
    *   EncryptResponse response = keyManagementServiceClient.encrypt(name, plaintext);
    * }

@@ -420,6 +420,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     TPU_PODSLICE_V4(214467530),
     /** <code>URL_MAPS = 378660743;</code> */
     URL_MAPS(378660743),
+    /** <code>VARIABLE_IPV6_PUBLIC_DELEGATED_PREFIXES = 128400161;</code> */
+    VARIABLE_IPV6_PUBLIC_DELEGATED_PREFIXES(128400161),
     /** <code>VPN_GATEWAYS = 35620282;</code> */
     VPN_GATEWAYS(35620282),
     /** <code>VPN_TUNNELS = 104327296;</code> */
@@ -776,6 +778,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int TPU_PODSLICE_V4_VALUE = 214467530;
     /** <code>URL_MAPS = 378660743;</code> */
     public static final int URL_MAPS_VALUE = 378660743;
+    /** <code>VARIABLE_IPV6_PUBLIC_DELEGATED_PREFIXES = 128400161;</code> */
+    public static final int VARIABLE_IPV6_PUBLIC_DELEGATED_PREFIXES_VALUE = 128400161;
     /** <code>VPN_GATEWAYS = 35620282;</code> */
     public static final int VPN_GATEWAYS_VALUE = 35620282;
     /** <code>VPN_TUNNELS = 104327296;</code> */
@@ -1129,6 +1133,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return TPU_PODSLICE_V4;
         case 378660743:
           return URL_MAPS;
+        case 128400161:
+          return VARIABLE_IPV6_PUBLIC_DELEGATED_PREFIXES;
         case 35620282:
           return VPN_GATEWAYS;
         case 104327296:

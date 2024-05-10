@@ -207,7 +207,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /.
+   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
@@ -219,7 +219,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /.
+   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
@@ -231,7 +231,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /.
+   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
