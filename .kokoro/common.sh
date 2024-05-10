@@ -125,7 +125,7 @@ function setup_cloud() {
 
   destroy() {
     arguments=$?
-    time source ./.cloud/helpers/destroy.sh
+    time source ../.cloud/helpers/destroy.sh
     exit $arguments
   }
   trap destroy EXIT
