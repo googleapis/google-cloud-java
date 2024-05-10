@@ -457,9 +457,8 @@ public final class GenerativeModel {
    * @param text a text message to send to the generative model
    * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
    *     generateContent request
-   * @throws IOException if an I/O error occurs while making the API call
    */
-  public ApiFuture<GenerateContentResponse> generateContentAsync(String text) throws IOException {
+  public ApiFuture<GenerateContentResponse> generateContentAsync(String text) {
     return generateContentAsync(ContentMaker.fromString(text));
   }
 
