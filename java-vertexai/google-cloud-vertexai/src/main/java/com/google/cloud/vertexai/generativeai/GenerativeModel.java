@@ -109,7 +109,19 @@ public final class GenerativeModel {
     this.generationConfig = generationConfig;
     this.safetySettings = safetySettings;
     this.tools = tools;
-    this.systemInstruction = systemInstruction;
+    // We remove the role in the system instruction content because it's officially documented
+    // to be used without role specified:
+    // https://cloud.google.com/vertex-ai/generative-ai/docs/samples/generativeaionvertexai-gemini-system-instruction
+    // However, it's safe to have the role specified since it's currently ignored by
+    // the API. We don't want to be more restrictive than the API but also we
+    // don't want to depend on the API implementation detail. Thus we remove the
+    // role here.
+    if (systemInstruction.isPresent()) {
+      this.systemInstruction =
+          Optional.of(removeRoleInSystemInstructionContent(systemInstruction.get()));
+    } else {
+      this.systemInstruction = Optional.empty();
+    }
   }
 
   /** Builder class for {@link GenerativeModel}. */
@@ -502,6 +514,16 @@ public final class GenerativeModel {
   private ApiFuture<GenerateContentResponse> generateContentAsync(GenerateContentRequest request)
       throws IOException {
     return vertexAi.getPredictionServiceClient().generateContentCallable().futureCall(request);
+  }
+
+  /**
+   * Removes the role in the system instruction content.
+   *
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} instance
+   * @return a {@link com.google.cloud.vertexai.api.Content} instance with the role removed
+   */
+  private Content removeRoleInSystemInstructionContent(Content systemInstruction) {
+    return systemInstruction.toBuilder().clearRole().build();
   }
 
   /**

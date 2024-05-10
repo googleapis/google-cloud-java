@@ -344,6 +344,7 @@ public final class GenerativeModelTest {
     verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getSystemInstruction().getParts(0).getText())
         .isEqualTo(systemInstructionText);
+    assertThat(request.getValue().getSystemInstruction().getRole()).isEqualTo("");
   }
 
   @Test
