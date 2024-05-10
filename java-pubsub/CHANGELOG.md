@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.129.4](https://github.com/googleapis/java-pubsub/compare/v1.129.3...v1.129.4) (2024-05-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.0 ([#2016](https://github.com/googleapis/java-pubsub/issues/2016)) ([beee523](https://github.com/googleapis/java-pubsub/commit/beee523ffc501a33b99a4ee82ccdb04b83391403))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.1 ([#2021](https://github.com/googleapis/java-pubsub/issues/2021)) ([0873594](https://github.com/googleapis/java-pubsub/commit/0873594c000f470c6193ebe8b4d091701670ef06))
+* Update dependency com.google.cloud:google-cloud-storage to v2.38.0 ([#2019](https://github.com/googleapis/java-pubsub/issues/2019)) ([ba3dffc](https://github.com/googleapis/java-pubsub/commit/ba3dffc3ac8cf173362307c24bc46e815c64db40))
+
 ## [1.129.3](https://github.com/googleapis/java-pubsub/compare/v1.129.2...v1.129.3) (2024-05-06)
 
 
