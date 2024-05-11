@@ -240,6 +240,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= GenAiTuningServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing GenAI Tuning Jobs.
+ *
+ * <p>Sample for GenAiTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenAiTuningServiceClient genAiTuningServiceClient = GenAiTuningServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   TuningJob tuningJob = TuningJob.newBuilder().build();
+ *   TuningJob response = genAiTuningServiceClient.createTuningJob(parent, tuningJob);
+ * }
+ * }</pre>
+ *
  * <p>======================= IndexEndpointServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's IndexEndpoints.
