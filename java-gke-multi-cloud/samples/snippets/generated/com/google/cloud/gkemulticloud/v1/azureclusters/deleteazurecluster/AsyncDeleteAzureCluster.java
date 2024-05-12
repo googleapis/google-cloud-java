@@ -42,6 +42,7 @@ public class AsyncDeleteAzureCluster {
               .setAllowMissing(true)
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setIgnoreErrors(true)
               .build();
       ApiFuture<Operation> future =
           azureClustersClient.deleteAzureClusterCallable().futureCall(request);

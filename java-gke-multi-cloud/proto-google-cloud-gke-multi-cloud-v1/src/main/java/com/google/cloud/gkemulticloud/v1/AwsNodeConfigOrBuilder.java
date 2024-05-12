@@ -315,8 +315,8 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
-   * pool.
+   * Required. The name or ARN of the AWS IAM instance profile to assign to
+   * nodes in the pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -328,8 +328,8 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
-   * pool.
+   * Required. The name or ARN of the AWS IAM instance profile to assign to
+   * nodes in the pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>

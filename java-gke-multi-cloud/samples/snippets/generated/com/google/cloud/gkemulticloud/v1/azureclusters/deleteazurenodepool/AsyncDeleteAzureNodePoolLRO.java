@@ -46,6 +46,7 @@ public class AsyncDeleteAzureNodePoolLRO {
               .setValidateOnly(true)
               .setAllowMissing(true)
               .setEtag("etag3123477")
+              .setIgnoreErrors(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           azureClustersClient.deleteAzureNodePoolOperationCallable().futureCall(request);

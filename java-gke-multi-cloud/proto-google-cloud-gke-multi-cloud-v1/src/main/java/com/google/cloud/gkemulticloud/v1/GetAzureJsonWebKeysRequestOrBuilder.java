@@ -30,7 +30,7 @@ public interface GetAzureJsonWebKeysRequestOrBuilder
    * <pre>
    * Required. The AzureCluster, which owns the JsonWebKeys.
    * Format:
-   * projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface GetAzureJsonWebKeysRequestOrBuilder
    * <pre>
    * Required. The AzureCluster, which owns the JsonWebKeys.
    * Format:
-   * projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * </pre>
    *
    * <code>
