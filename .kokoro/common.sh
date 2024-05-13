@@ -125,6 +125,13 @@ function setup_cloud() {
 
   destroy() {
     arguments=$?
+    echo "Exiting via destroy()"
+
+    ## Get the directory of the build script
+    scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+    ## cd to the parent directory, i.e. the root of the git repo
+    cd ${scriptDir}/..
+
     time source ./.cloud/helpers/destroy.sh
     exit $arguments
   }
