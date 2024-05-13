@@ -132,7 +132,6 @@
                             <mainClass>com.google.cloud.example.NativeImageSecretManagerSample</mainClass>
                             <buildArgs>
                                 <buildArg>--no-fallback</buildArg>
-                                <buildArg>--no-server</buildArg>
                             </buildArgs>
                         </configuration>
                         <executions>
