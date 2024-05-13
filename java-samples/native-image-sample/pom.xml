@@ -85,7 +85,7 @@
     <profiles>
         <!-- Native Profile-->
         <profile>
-            <id>native-2</id>
+            <id>native</id>
 
             <dependencies>
                 <!-- Add this dependency to resolve class org.opentest4j.TestAbortedException -->
