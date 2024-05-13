@@ -3,8 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-   <!-- For common testing configurations. Your application doesn't need to include
-   this if you are just performing native image compilation and not running any tests.  -->
     <parent>
         <artifactId>google-cloud-samples</artifactId>
         <groupId>com.google.cloud</groupId>
@@ -48,7 +46,7 @@
                 </configuration>
             </plugin>
 
-           <!-- This plugin enables building the application to a JAR *not* using Native Image -->
+           <!-- This plugin enables building the application to a JAR *not* using native image compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -118,7 +116,6 @@
                             </dependency>
                         </dependencies>
                         <configuration>
-                            <!-- Include all tests during native image testing. -->
                             <excludes combine.self="override" />
                             <includes>
                                 <include>**/IT*.java</include>
@@ -137,6 +134,8 @@
                             </buildArgs>
                         </configuration>
                         <executions>
+
+                            <!-- Configuration to build sample with native image compilation -->
                             <execution>
                                 <id>build-native</id>
                                 <goals>
@@ -145,6 +144,8 @@
                                 </goals>
                                 <phase>package</phase>
                             </execution>
+
+                            <!-- Configuration to run ITNativeImageSecretManager with native image compilation -->
                             <execution>
                                 <id>test-native</id>
                                 <goals>
