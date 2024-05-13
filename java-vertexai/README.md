@@ -8,7 +8,7 @@ Java idiomatic SDK for [Vertex AI][product-docs].
 - [Product Documentation][product-docs]
 
 
-## Add Dependency
+## Add dependency
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
@@ -32,7 +32,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   </dependency>
 ```
 
-If you are using Maven without the BOM, add this to your dependencies:
+If you're using Maven without the BOM, add the following to your dependencies:
 
 <!-- {x-version-update-start:google-cloud-vertexai:released} -->
 
@@ -59,35 +59,48 @@ libraryDependencies += "com.google.cloud" % "google-cloud-vertexai" % "1.3.0"
 
 ## Authentication
 
-See the [Authentication][authentication] section in the base directory's README.
+To learn how to authenticate to the API, see the [Authentication][authentication].
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Vertex AI APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Vertex AI API calls.
+When a client application makes a call to the Vertex AI API, the application
+must be granted the [authorization scopes][auth-scopes] that are required for
+the API. Additionally, the authenticated principal must have the
+[IAM role(s)][predefined-iam-roles] that are required to access the Google Cloud
+resources being called.
 
 ## Getting Started
 
+Follow the instructions in this section to get started using the Vertex AI SDK for Java.
+
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Vertex AI [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Vertex AI.
-[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
-[installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
-`gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+To use the Vertex AI SDK for Java, you must have completed the following:
 
-To acquire user credentials to use for [Application Default Credentials][adc], run `gcloud auth application-default login`.
+*   [Create a Google Cloud project][create-project].
+*   [Enable the Vertex AI API][enable-api] for your project.
+*   [Enable billing][enable-billing] for your project.
+*   [Install the Google Cloud Command Line Interface][cloud-cli] and run the
+    following commands in command line:
 
-### Installation and setup
+    ```sh
+    gcloud auth login &&
+    gcloud config set project <var>PROJECT_ID</var>
+    ```
 
-You'll need to obtain the `google-cloud-vertexai` library.  See the [Add Dependency](#add-dependency) section
-to add `google-cloud-vertexai` as a dependency in your code.
+To acquire user credentials to use for [Application Default Credentials][adc],
+run `gcloud auth application-default login`.
 
-## About Vertex AI
+### Install and setup the SDK
 
-[Vertex AI][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It was previously known as AI Platform. Vertex AI offers both novices and experts the best workbench for the entire machine learning development lifecycle. This SDK currently only supports Generative AI service on the Vertex AI platform. To access the full set of services on the Vertex AI, consider using the [`google-cloud-aiplatform` client libraries][aiplatform-client-libraries].
+You must install the `google-cloud-vertexai` library.  See the
+[Add Dependency](#add-dependency) section
+to learn how to add `google-cloud-vertexai` as a dependency in your code.
 
-### Vertex AI SDK
-Vertex AI provides [Generative AI Studio](generative-ai-studio) that supports text generation from multi-modality input via a set of most advanced models from Google. This brings out a wide range of applications.
+### Use the Vertex AI SDK for Java
+
+The following sections show you how to perform common tasks by using the
+Vertex AI SDK for Java.
 
 #### Basic Text Generation
 Vertex AI SDK allows you to access the service programmatically. The following code snippet is the most basic usage of SDK
@@ -116,8 +129,9 @@ public class Main {
 }
 ```
 
-#### Text Generation with Streaming
-To get a streamed output, you can use the `generateContentStream` method
+#### Stream generated output
+
+To get a streamed output, you can use the `generateContentStream` method:
 
 ```java
 package <your package name>
@@ -178,8 +192,10 @@ public class Main {
 }
 ```
 
-#### Text Generation from Multi-modal Input
-To generate text based on data of multiple modalities, one needs to make a `Content`, which is made easier by `ContentMaker`:
+#### Generate text from multi-modal input
+
+To generate text from a prompt that contains multiple modalities of data, use
+`ContentMaker` to make a `Content`:
 
 ```java
 package <your package name>;
@@ -260,8 +276,10 @@ public class Main {
 }
 ```
 
-#### Using ChatSession for Multi-turn Conversation
-Yeah, we know, that isn't the most intuitive and easy way to chat with a model. Therefore we provide a `Chat` class:
+#### Use `ChatSession` for multi-turn chat
+
+The Vertex AI SDK for Java provides a `ChatSession` class that lets you easily
+chat with the model:
 
 ```java
 package <your package name>;
@@ -305,19 +323,21 @@ public class Main {
 }
 ```
 
-#### Generation with customized configurations
+#### Update configurations
 
 The Vertex AI SDK for Java provides configurations for customizing content
 generation. You can configure options like
-[GenerationConfig][generationconfig-ref] and [SafetySetting][safetysetting-ref],
-or add [Tool][tool-ref] for function calling.
+[GenerationConfig][generationconfig-ref], [SafetySetting][safetysetting-ref], and
+[system instructions][system-instruction], or add [Tool][tool-ref] for function
+calling.
 
-You can choose between two configuration approaches: set configs during model
-instantiation for consistency across all text generations, or adjust them on a
-per-request basis for fine-grained control.
+You can choose between two configuration approaches: 1) set configurations
+during model instantiation for consistency across all text generations, or 2)
+adjust them on a per-request basis for fine-grained control.
 
 ##### Model level configurations
 
+Below is an example of configure `GenerationConfig` for a `GenerativeModel`:
 ```java
 package <PACKAGE_NAME>
 
@@ -355,9 +375,45 @@ public class Main {
 }
 ```
 
-##### Request level configurations
+And an example of configuring preambles as a [system instruction][system-instruction].
+```java
+package <your package name>
 
-Our SDK provides fluent APIs to control request level configurations.
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.generativeai.ContentMaker;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = <your project id>;
+  private static final String LOCATION = <location>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
+
+      GenerativeModel model =
+          new GenerativeModel.Builder()
+              .setModelName("gemino-pro")
+              .setVertexAi(vertexAi)
+              .setSystemInstruction(
+                ContentMaker.fromString(
+                  "You're a helpful assistant that starts all its answers with: \"COOL\"")
+                  )
+              .build();
+
+      GenerateContentResponse response = model.generateContent("How are you?");
+      // Do something with the response
+    }
+  }
+}
+```
+
+
+##### Update request-level configurations
+
+The Vertex AI SDK for Java provides fluent APIs to control request-level
+configurations.
 
 ```java
 package <PACKAGE_NAME>
@@ -450,8 +506,9 @@ public class Main {
 ```
 
 
-#### Using ChatSession for Function-calling
-In a chat, we can also do function calling.
+#### Use ChatSession for function calling
+
+You can perfrom a function call in a `ChatSession` as follows:
 
 ```java
 package <your package name>;
@@ -606,8 +663,10 @@ public class Main {
 }
 ```
 
-#### ApiEndpoint
-To use a different API endpoint, one can set it when instantiating `VertexAI`.
+#### Change API endpoints
+
+To use a different API endpoint, specify the endpoint that you want to use when
+you instantiate `VertexAI`:
 
 ```java
 package <your package name>
@@ -688,7 +747,7 @@ This library follows [Semantic Versioning](http://semver.org/).
 
 
 
-## Contributing
+## Contribute to this library
 
 
 Contributions to this library are always welcome and highly encouraged.
@@ -756,3 +815,4 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [generationconfig-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.GenerationConfig.Builder
 [safetysetting-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.SafetySetting.Builder
 [tool-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.Tool.Builder
+[system-instruction]: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/system-instructions

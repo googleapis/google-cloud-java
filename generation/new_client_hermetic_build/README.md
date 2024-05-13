@@ -28,6 +28,13 @@ in the Buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml)
 file as an example.
 
+
+:warning: **IMPORTANT:**
+Not all the `new-client.py` arguments are available in the Github Action.
+Please refer to
+[this
+section](/generation/new_client_hermetic_build/README.md#advanced-options)
+
 ### API short name (`api_shortname`)
 
 As a convenience for the subsequent commands, we need an identifier for the
@@ -138,6 +145,94 @@ In order to avoid both libraries going to the default `java-alloydb` folder,
 we can override this behavior by specifying a value like `alloydb-connectors`
 so the AlloyDB Connectors goes to `java-alloydb-connectors`.
 
+## Prerequisites (for local environment)
+
+This section is only needed for the first _local_ run of this script. 
+
+### Checkout google-cloud-java repository
+
+```
+$ git clone https://github.com/googleapis/google-cloud-java
+$ git checkout main
+$ git pull
+```
+
+### Install pyenv
+
+Install pyenv
+
+```
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+| bash
+```
+
+Append the following lines to `$HOME/.bashrc`.
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+Logout the shell and login again. You should be at the home directory.
+
+Assuming you have the following folder structure:
+```
+~ (Home)
+    -> IdeaProjects/
+        -> google-cloud-java
+    -> ...
+```
+You can run these next commands in the home directory (or IdeaProjects). Otherwise, run it at `google-cloud-java`'s parent directory.
+
+Confirm pyenv installation succeeded:
+
+```
+~$ pyenv
+pyenv 2.3.4
+Usage: pyenv <command> [<args>]
+
+Some useful pyenv commands are:
+   activate    Activate virtual environment
+   commands    List all available pyenv commands
+   deactivate   Deactivate virtual environment
+...
+```
+
+### Install Python 3.9 via pyenv
+
+```
+~$ pyenv install 3.9.13
+Downloading Python-3.9.13.tar.xz...
+-> https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz
+Installing Python-3.9.13...
+WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
+Installed Python-3.9.13 to /usr/local/google/home/suztomo/.pyenv/versions/3.9.13
+```
+
+### Install Python v3.9.13 locally
+
+Run this command
+
+```
+$ pyenv local 3.9.13
+```
+
+Confirm `python3.9` is installed:
+```
+$ which python3.9
+/usr/local/google/home/suztomo/.pyenv/shims/python3.9
+```
+
+### Install Python packages
+
+At the root of google-cloud-java repository clone, run:
+
+```
+$ python3.9 -m pip install -r generation/new_client_hermetic_build/requirements.txt
+```
+
 ## Advanced Options
 
 In case the steps above don't show you how to specify the desired options, you
@@ -155,3 +250,17 @@ was modified (or the script exited because the library already existed).
 
 Please create a PR explaining what commands you used and make sure the
 add-new-client-config.py arguments were listed).
+
+### Special case example: Google Maps
+
+Sometimes, a library generation requires special handling for
+Maven coordinates or API ID, especially when the library is not
+specific to Google Cloud. The table below is the summary of the
+special cases:
+
+| API paths         | `--api_shortname`           | `--distribution-name`                                  |
+|-------------------|-----------------------------|--------------------------------------------------------|
+| google/shopping/* | `shopping-<API short name>` | `com.google.shipping:google-shopping-<API short name>` |
+| google/maps/*     | `maps-<API short name>`     | `com.google.maps:google-maps-<API short name>`         |
+
+where `<API short name>` is the value from Cloud Drop file.
