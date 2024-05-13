@@ -154,6 +154,7 @@
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
+    <module>java-samples</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
     <module>java-securesourcemanager</module>
