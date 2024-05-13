@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-policy-troubleshooter",
   "distribution_name": "com.google.cloud:google-cloud-policy-troubleshooter",
-  "api_id": "policy-troubleshooter.googleapis.com",
+  "api_id": "policytroubleshooter.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

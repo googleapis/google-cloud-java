@@ -483,6 +483,193 @@ public final class AlphaAnalyticsDataGrpc {
     return getListRecurringAudienceListsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+          com.google.longrunning.Operation>
+      getCreateReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReportTask",
+      requestType = com.google.analytics.data.v1alpha.CreateReportTaskRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+          com.google.longrunning.Operation>
+      getCreateReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+            com.google.longrunning.Operation>
+        getCreateReportTaskMethod;
+    if ((getCreateReportTaskMethod = AlphaAnalyticsDataGrpc.getCreateReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getCreateReportTaskMethod = AlphaAnalyticsDataGrpc.getCreateReportTaskMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getCreateReportTaskMethod =
+              getCreateReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.CreateReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("CreateReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+      getQueryReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryReportTask",
+      requestType = com.google.analytics.data.v1alpha.QueryReportTaskRequest.class,
+      responseType = com.google.analytics.data.v1alpha.QueryReportTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+      getQueryReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+            com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+        getQueryReportTaskMethod;
+    if ((getQueryReportTaskMethod = AlphaAnalyticsDataGrpc.getQueryReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getQueryReportTaskMethod = AlphaAnalyticsDataGrpc.getQueryReportTaskMethod) == null) {
+          AlphaAnalyticsDataGrpc.getQueryReportTaskMethod =
+              getQueryReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+                          com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.QueryReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.QueryReportTaskResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("QueryReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getQueryReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetReportTaskRequest,
+          com.google.analytics.data.v1alpha.ReportTask>
+      getGetReportTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportTask",
+      requestType = com.google.analytics.data.v1alpha.GetReportTaskRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ReportTask.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetReportTaskRequest,
+          com.google.analytics.data.v1alpha.ReportTask>
+      getGetReportTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetReportTaskRequest,
+            com.google.analytics.data.v1alpha.ReportTask>
+        getGetReportTaskMethod;
+    if ((getGetReportTaskMethod = AlphaAnalyticsDataGrpc.getGetReportTaskMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetReportTaskMethod = AlphaAnalyticsDataGrpc.getGetReportTaskMethod) == null) {
+          AlphaAnalyticsDataGrpc.getGetReportTaskMethod =
+              getGetReportTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetReportTaskRequest,
+                          com.google.analytics.data.v1alpha.ReportTask>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReportTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetReportTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ReportTask.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("GetReportTask"))
+                      .build();
+        }
+      }
+    }
+    return getGetReportTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListReportTasksRequest,
+          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+      getListReportTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReportTasks",
+      requestType = com.google.analytics.data.v1alpha.ListReportTasksRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ListReportTasksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListReportTasksRequest,
+          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+      getListReportTasksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.ListReportTasksRequest,
+            com.google.analytics.data.v1alpha.ListReportTasksResponse>
+        getListReportTasksMethod;
+    if ((getListReportTasksMethod = AlphaAnalyticsDataGrpc.getListReportTasksMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getListReportTasksMethod = AlphaAnalyticsDataGrpc.getListReportTasksMethod) == null) {
+          AlphaAnalyticsDataGrpc.getListReportTasksMethod =
+              getListReportTasksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.ListReportTasksRequest,
+                          com.google.analytics.data.v1alpha.ListReportTasksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReportTasks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListReportTasksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListReportTasksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("ListReportTasks"))
+                      .build();
+        }
+      }
+    }
+    return getListReportTasksMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlphaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataStub> factory =
@@ -782,6 +969,74 @@ public final class AlphaAnalyticsDataGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListRecurringAudienceListsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * </pre>
+     */
+    default void createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    default void queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    default void getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReportTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    default void listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ListReportTasksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReportTasksMethod(), responseObserver);
     }
   }
 
@@ -1088,6 +1343,82 @@ public final class AlphaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * </pre>
+     */
+    public void createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public void queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public void getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportTaskMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public void listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ListReportTasksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReportTasksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1342,6 +1673,67 @@ public final class AlphaAnalyticsDataGrpc {
             com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRecurringAudienceListsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReportTask(
+        com.google.analytics.data.v1alpha.CreateReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.QueryReportTaskResponse queryReportTask(
+        com.google.analytics.data.v1alpha.QueryReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ReportTask getReportTask(
+        com.google.analytics.data.v1alpha.GetReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListReportTasksResponse listReportTasks(
+        com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportTasksMethod(), getCallOptions(), request);
     }
   }
 
@@ -1607,6 +1999,70 @@ public final class AlphaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRecurringAudienceListsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the creation of a report task. This method quickly
+     * returns a report task and initiates a long running
+     * asynchronous request to form a customized report of your Google Analytics
+     * event data.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createReportTask(com.google.analytics.data.v1alpha.CreateReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report task's content. After requesting the `CreateReportTask`,
+     * you are able to retrieve the report content once the report is
+     * ACTIVE. This method will return an error if the report task's state is not
+     * `ACTIVE`. A query response will return the tabular row &amp; column values of
+     * the report.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.QueryReportTaskResponse>
+        queryReportTask(com.google.analytics.data.v1alpha.QueryReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets report metadata about a specific report task. After creating a report
+     * task, use this method to check its processing state or inspect its
+     * report definition.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ReportTask>
+        getReportTask(com.google.analytics.data.v1alpha.GetReportTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all report tasks for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ListReportTasksResponse>
+        listReportTasks(com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReportTasksMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_FUNNEL_REPORT = 0;
@@ -1618,6 +2074,10 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_CREATE_RECURRING_AUDIENCE_LIST = 6;
   private static final int METHODID_GET_RECURRING_AUDIENCE_LIST = 7;
   private static final int METHODID_LIST_RECURRING_AUDIENCE_LISTS = 8;
+  private static final int METHODID_CREATE_REPORT_TASK = 9;
+  private static final int METHODID_QUERY_REPORT_TASK = 10;
+  private static final int METHODID_GET_REPORT_TASK = 11;
+  private static final int METHODID_LIST_REPORT_TASKS = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1692,6 +2152,31 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_REPORT_TASK:
+          serviceImpl.createReportTask(
+              (com.google.analytics.data.v1alpha.CreateReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_QUERY_REPORT_TASK:
+          serviceImpl.queryReportTask(
+              (com.google.analytics.data.v1alpha.QueryReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.QueryReportTaskResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPORT_TASK:
+          serviceImpl.getReportTask(
+              (com.google.analytics.data.v1alpha.GetReportTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ReportTask>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_REPORT_TASKS:
+          serviceImpl.listReportTasks(
+              (com.google.analytics.data.v1alpha.ListReportTasksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.ListReportTasksResponse>)
                   responseObserver);
           break;
         default:
@@ -1774,6 +2259,33 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
                     com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>(
                     service, METHODID_LIST_RECURRING_AUDIENCE_LISTS)))
+        .addMethod(
+            getCreateReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.CreateReportTaskRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_REPORT_TASK)))
+        .addMethod(
+            getQueryReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.QueryReportTaskRequest,
+                    com.google.analytics.data.v1alpha.QueryReportTaskResponse>(
+                    service, METHODID_QUERY_REPORT_TASK)))
+        .addMethod(
+            getGetReportTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetReportTaskRequest,
+                    com.google.analytics.data.v1alpha.ReportTask>(
+                    service, METHODID_GET_REPORT_TASK)))
+        .addMethod(
+            getListReportTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.ListReportTasksRequest,
+                    com.google.analytics.data.v1alpha.ListReportTasksResponse>(
+                    service, METHODID_LIST_REPORT_TASKS)))
         .build();
   }
 
@@ -1834,6 +2346,10 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getCreateRecurringAudienceListMethod())
                       .addMethod(getGetRecurringAudienceListMethod())
                       .addMethod(getListRecurringAudienceListsMethod())
+                      .addMethod(getCreateReportTaskMethod())
+                      .addMethod(getQueryReportTaskMethod())
+                      .addMethod(getGetReportTaskMethod())
+                      .addMethod(getListReportTasksMethod())
                       .build();
         }
       }

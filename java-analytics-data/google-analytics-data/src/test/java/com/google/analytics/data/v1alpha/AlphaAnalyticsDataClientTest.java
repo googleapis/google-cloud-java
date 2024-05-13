@@ -18,6 +18,7 @@ package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -864,6 +865,321 @@ public class AlphaAnalyticsDataClientTest {
     try {
       String parent = "parent-995424086";
       client.listRecurringAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReportTaskTest() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createReportTaskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlphaAnalyticsData.addResponse(resultOperation);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    ReportTask reportTask = ReportTask.newBuilder().build();
+
+    ReportTask actualResponse = client.createReportTaskAsync(parent, reportTask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReportTaskRequest actualRequest = ((CreateReportTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(reportTask, actualRequest.getReportTask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReportTaskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      ReportTask reportTask = ReportTask.newBuilder().build();
+      client.createReportTaskAsync(parent, reportTask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createReportTaskTest2() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createReportTaskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlphaAnalyticsData.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    ReportTask reportTask = ReportTask.newBuilder().build();
+
+    ReportTask actualResponse = client.createReportTaskAsync(parent, reportTask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReportTaskRequest actualRequest = ((CreateReportTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(reportTask, actualRequest.getReportTask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReportTaskExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ReportTask reportTask = ReportTask.newBuilder().build();
+      client.createReportTaskAsync(parent, reportTask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void queryReportTaskTest() throws Exception {
+    QueryReportTaskResponse expectedResponse =
+        QueryReportTaskResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<DimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<MetricHeader>())
+            .addAllRows(new ArrayList<Row>())
+            .addAllTotals(new ArrayList<Row>())
+            .addAllMaximums(new ArrayList<Row>())
+            .addAllMinimums(new ArrayList<Row>())
+            .setRowCount(1340416618)
+            .setMetadata(ResponseMetaData.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QueryReportTaskResponse actualResponse = client.queryReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryReportTaskRequest actualRequest = ((QueryReportTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryReportTaskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.queryReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportTaskTest() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    ReportTaskName name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]");
+
+    ReportTask actualResponse = client.getReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReportTaskRequest actualRequest = ((GetReportTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReportTaskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      ReportTaskName name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]");
+      client.getReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportTaskTest2() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ReportTask actualResponse = client.getReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReportTaskRequest actualRequest = ((GetReportTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReportTaskExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportTasksTest() throws Exception {
+    ReportTask responsesElement = ReportTask.newBuilder().build();
+    ListReportTasksResponse expectedResponse =
+        ListReportTasksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportTasks(Arrays.asList(responsesElement))
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListReportTasksPagedResponse pagedListResponse = client.listReportTasks(parent);
+
+    List<ReportTask> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReportTasksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReportTasksRequest actualRequest = ((ListReportTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReportTasksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listReportTasks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportTasksTest2() throws Exception {
+    ReportTask responsesElement = ReportTask.newBuilder().build();
+    ListReportTasksResponse expectedResponse =
+        ListReportTasksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportTasks(Arrays.asList(responsesElement))
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListReportTasksPagedResponse pagedListResponse = client.listReportTasks(parent);
+
+    List<ReportTask> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReportTasksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReportTasksRequest actualRequest = ((ListReportTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReportTasksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listReportTasks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

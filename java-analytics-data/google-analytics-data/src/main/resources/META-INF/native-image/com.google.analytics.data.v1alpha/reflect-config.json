@@ -117,6 +117,87 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.data.v1alpha.Cohort",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.Cohort$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortReportSettings",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortReportSettings$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortSpec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortSpec$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortsRange",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortsRange$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CohortsRange$Granularity",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.data.v1alpha.CreateAudienceListRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -145,6 +226,24 @@
   },
   {
     "name": "com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CreateReportTaskRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.CreateReportTaskRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -693,6 +792,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.data.v1alpha.GetReportTaskRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.GetReportTaskRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.data.v1alpha.InListFilter",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -775,6 +892,69 @@
   },
   {
     "name": "com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ListReportTasksRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ListReportTasksRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ListReportTasksResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ListReportTasksResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.Metric",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.Metric$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.MetricAggregation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -873,6 +1053,69 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.data.v1alpha.OrderBy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$DimensionOrderBy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$DimensionOrderBy$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$DimensionOrderBy$OrderType",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$MetricOrderBy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.OrderBy$MetricOrderBy$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.data.v1alpha.PropertyQuota",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -927,6 +1170,42 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.data.v1alpha.QueryReportTaskRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.QueryReportTaskRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.QueryReportTaskResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.QueryReportTaskResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.data.v1alpha.QuotaStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -955,6 +1234,150 @@
   },
   {
     "name": "com.google.analytics.data.v1alpha.RecurringAudienceList$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$ReportDefinition",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$ReportDefinition$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$ReportMetadata",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$ReportMetadata$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTask$ReportMetadata$State",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTaskMetadata",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ReportTaskMetadata$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData$SchemaRestrictionResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData$SchemaRestrictionResponse$ActiveMetricRestriction",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData$SchemaRestrictionResponse$ActiveMetricRestriction$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.ResponseMetaData$SchemaRestrictionResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.data.v1alpha.RestrictedMetricType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

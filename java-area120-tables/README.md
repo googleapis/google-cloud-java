@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.46.0</version>
+  <version>0.47.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.area120:google-area120-tables:0.46.0'
+implementation 'com.google.area120:google-area120-tables:0.47.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.46.0"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.47.0"
 ```
 <!-- {x-version-update-end} -->
 
@@ -201,7 +201,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.area120/google-area120-tables.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.area120/google-area120-tables/0.45.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.area120/google-area120-tables/0.46.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

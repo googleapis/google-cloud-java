@@ -18,6 +18,7 @@ package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListReportTasksPagedResponse;
 
 import com.google.analytics.data.v1alpha.stub.HttpJsonAlphaAnalyticsDataStub;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -928,6 +929,355 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     try {
       String parent = "properties/propertie-2024";
       client.listRecurringAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReportTaskTest() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createReportTaskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    ReportTask reportTask = ReportTask.newBuilder().build();
+
+    ReportTask actualResponse = client.createReportTaskAsync(parent, reportTask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createReportTaskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      ReportTask reportTask = ReportTask.newBuilder().build();
+      client.createReportTaskAsync(parent, reportTask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createReportTaskTest2() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createReportTaskTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "properties/propertie-2024";
+    ReportTask reportTask = ReportTask.newBuilder().build();
+
+    ReportTask actualResponse = client.createReportTaskAsync(parent, reportTask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createReportTaskExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      ReportTask reportTask = ReportTask.newBuilder().build();
+      client.createReportTaskAsync(parent, reportTask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void queryReportTaskTest() throws Exception {
+    QueryReportTaskResponse expectedResponse =
+        QueryReportTaskResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<DimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<MetricHeader>())
+            .addAllRows(new ArrayList<Row>())
+            .addAllTotals(new ArrayList<Row>())
+            .addAllMaximums(new ArrayList<Row>())
+            .addAllMinimums(new ArrayList<Row>())
+            .setRowCount(1340416618)
+            .setMetadata(ResponseMetaData.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-1983/reportTasks/reportTask-1983";
+
+    QueryReportTaskResponse actualResponse = client.queryReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryReportTaskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-1983/reportTasks/reportTask-1983";
+      client.queryReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportTaskTest() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReportTaskName name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]");
+
+    ReportTask actualResponse = client.getReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReportTaskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReportTaskName name = ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]");
+      client.getReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportTaskTest2() throws Exception {
+    ReportTask expectedResponse =
+        ReportTask.newBuilder()
+            .setName(ReportTaskName.of("[PROPERTY]", "[REPORT_TASK]").toString())
+            .setReportDefinition(ReportTask.ReportDefinition.newBuilder().build())
+            .setReportMetadata(ReportTask.ReportMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-1983/reportTasks/reportTask-1983";
+
+    ReportTask actualResponse = client.getReportTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReportTaskExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-1983/reportTasks/reportTask-1983";
+      client.getReportTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportTasksTest() throws Exception {
+    ReportTask responsesElement = ReportTask.newBuilder().build();
+    ListReportTasksResponse expectedResponse =
+        ListReportTasksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportTasks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListReportTasksPagedResponse pagedListResponse = client.listReportTasks(parent);
+
+    List<ReportTask> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReportTasksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReportTasksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listReportTasks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportTasksTest2() throws Exception {
+    ReportTask responsesElement = ReportTask.newBuilder().build();
+    ListReportTasksResponse expectedResponse =
+        ListReportTasksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportTasks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListReportTasksPagedResponse pagedListResponse = client.listReportTasks(parent);
+
+    List<ReportTask> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReportTasksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReportTasksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listReportTasks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

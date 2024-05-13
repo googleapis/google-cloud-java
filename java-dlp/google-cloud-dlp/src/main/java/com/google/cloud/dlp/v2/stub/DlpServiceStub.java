@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -25,12 +26,15 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -40,16 +44,19 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -67,6 +74,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -90,8 +99,11 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -348,6 +360,10 @@ public abstract class DlpServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getColumnDataProfileCallable()");
   }
 
+  public UnaryCallable<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTableDataProfileCallable()");
+  }
+
   public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable() {
     throw new UnsupportedOperationException("Not implemented: hybridInspectDlpJobCallable()");
@@ -355,6 +371,41 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
     throw new UnsupportedOperationException("Not implemented: finishDlpJobCallable()");
+  }
+
+  public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createConnectionCallable()");
+  }
+
+  public UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getConnectionCallable()");
+  }
+
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listConnectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listConnectionsCallable()");
+  }
+
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchConnectionsPagedCallable()");
+  }
+
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchConnectionsCallable()");
+  }
+
+  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteConnectionCallable()");
+  }
+
+  public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateConnectionCallable()");
   }
 
   @Override

@@ -23,7 +23,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for the [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
+ * Request message for the
+ * [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
  * method.
  * </pre>
  *
@@ -282,7 +283,8 @@ public final class GetProcessorRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for the [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
+   * Request message for the
+   * [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
    * method.
    * </pre>
    *

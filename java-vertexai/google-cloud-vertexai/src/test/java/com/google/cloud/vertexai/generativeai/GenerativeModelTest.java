@@ -325,6 +325,29 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void testGenerateContentwithSystemInstruction() throws Exception {
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
+
+    String systemInstructionText =
+        "You're a helpful assistant that starts all its answers with: \"COOL\"";
+    Content systemInstruction = ContentMaker.fromString(systemInstructionText);
+
+    model = new GenerativeModel(MODEL_NAME, vertexAi).withSystemInstruction(systemInstruction);
+
+    Content content = ContentMaker.fromString(TEXT);
+    GenerateContentResponse unused = model.generateContent(Arrays.asList(content));
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).call(request.capture());
+    assertThat(request.getValue().getSystemInstruction().getParts(0).getText())
+        .isEqualTo(systemInstructionText);
+    assertThat(request.getValue().getSystemInstruction().getRole()).isEqualTo("");
+  }
+
+  @Test
   public void testGenerateContentwithDefaultGenerationConfig() throws Exception {
     model =
         new GenerativeModel.Builder()

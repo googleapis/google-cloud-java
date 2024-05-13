@@ -22,6 +22,7 @@ pushd "$helperDir/.." >/dev/null
 source ./helpers/common.sh
 allModules=$(listAllModules)
 activeModules=$(getActiveTerraformModules)
+OLD_IFS="$IFS"
 IFS=','
 for module in $allModules; do
   friendlyName=$(getFriendlyOutputName "$module")
@@ -34,6 +35,7 @@ for module in $allModules; do
     source "../$module/.cloud/predestroy.sh"
   fi
 done
+IFS="$OLD_IFS"
 
 terraform destroy -auto-approve
 popd >/dev/null

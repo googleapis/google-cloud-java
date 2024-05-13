@@ -133,6 +133,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateJob</td>
+ *      <td><p> Update a Job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateJob(UpdateJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateJob(Job job, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListJobs</td>
  *      <td><p> List all Jobs for a project within a region.</td>
  *      <td>
@@ -805,6 +823,96 @@ public class BatchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     return stub.deleteJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   Job job = Job.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Job response = batchServiceClient.updateJob(job, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param job Required. The Job to update. Only fields specified in `update_mask` are updated.
+   * @param updateMask Required. Mask of fields to update.
+   *     <p>UpdateJob request now only supports update on `task_count` field in a job's first task
+   *     group. Other fields will be ignored.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job updateJob(Job job, FieldMask updateMask) {
+    UpdateJobRequest request =
+        UpdateJobRequest.newBuilder().setJob(job).setUpdateMask(updateMask).build();
+    return updateJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Job response = batchServiceClient.updateJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job updateJob(UpdateJobRequest request) {
+    return updateJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Job> future = batchServiceClient.updateJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return stub.updateJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

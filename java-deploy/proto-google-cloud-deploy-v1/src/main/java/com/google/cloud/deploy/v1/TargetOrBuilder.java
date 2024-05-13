@@ -29,7 +29,8 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/targets/{target}`.
+   * The `target` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42,7 +43,8 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/targets/{target}`.
+   * The `target` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1241,6 +1241,20 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
+     * Number of rows scanned post sampling and time filtering (Applicable for
+     * row based stores such as BigQuery).
+     * </pre>
+     *
+     * <code>int64 num_rows_processed = 5;</code>
+     *
+     * @return The numRowsProcessed.
+     */
+    long getNumRowsProcessed();
+
+    /**
+     *
+     *
+     * <pre>
      * Statistics related to the processing of hybrid inspect.
      * </pre>
      *
@@ -1429,6 +1443,25 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       return infoTypeStats_.get(index);
     }
 
+    public static final int NUM_ROWS_PROCESSED_FIELD_NUMBER = 5;
+    private long numRowsProcessed_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of rows scanned post sampling and time filtering (Applicable for
+     * row based stores such as BigQuery).
+     * </pre>
+     *
+     * <code>int64 num_rows_processed = 5;</code>
+     *
+     * @return The numRowsProcessed.
+     */
+    @java.lang.Override
+    public long getNumRowsProcessed() {
+      return numRowsProcessed_;
+    }
+
     public static final int HYBRID_STATS_FIELD_NUMBER = 7;
     private com.google.privacy.dlp.v2.HybridInspectStatistics hybridStats_;
     /**
@@ -1502,6 +1535,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       for (int i = 0; i < infoTypeStats_.size(); i++) {
         output.writeMessage(3, infoTypeStats_.get(i));
       }
+      if (numRowsProcessed_ != 0L) {
+        output.writeInt64(5, numRowsProcessed_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(7, getHybridStats());
       }
@@ -1522,6 +1558,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       }
       for (int i = 0; i < infoTypeStats_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, infoTypeStats_.get(i));
+      }
+      if (numRowsProcessed_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, numRowsProcessed_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getHybridStats());
@@ -1545,6 +1584,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       if (getProcessedBytes() != other.getProcessedBytes()) return false;
       if (getTotalEstimatedBytes() != other.getTotalEstimatedBytes()) return false;
       if (!getInfoTypeStatsList().equals(other.getInfoTypeStatsList())) return false;
+      if (getNumRowsProcessed() != other.getNumRowsProcessed()) return false;
       if (hasHybridStats() != other.hasHybridStats()) return false;
       if (hasHybridStats()) {
         if (!getHybridStats().equals(other.getHybridStats())) return false;
@@ -1568,6 +1608,8 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         hash = (37 * hash) + INFO_TYPE_STATS_FIELD_NUMBER;
         hash = (53 * hash) + getInfoTypeStatsList().hashCode();
       }
+      hash = (37 * hash) + NUM_ROWS_PROCESSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNumRowsProcessed());
       if (hasHybridStats()) {
         hash = (37 * hash) + HYBRID_STATS_FIELD_NUMBER;
         hash = (53 * hash) + getHybridStats().hashCode();
@@ -1733,6 +1775,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           infoTypeStatsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
+        numRowsProcessed_ = 0L;
         hybridStats_ = null;
         if (hybridStatsBuilder_ != null) {
           hybridStatsBuilder_.dispose();
@@ -1794,8 +1837,11 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.totalEstimatedBytes_ = totalEstimatedBytes_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.numRowsProcessed_ = numRowsProcessed_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.hybridStats_ =
               hybridStatsBuilder_ == null ? hybridStats_ : hybridStatsBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -1884,6 +1930,9 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             }
           }
         }
+        if (other.getNumRowsProcessed() != 0L) {
+          setNumRowsProcessed(other.getNumRowsProcessed());
+        }
         if (other.hasHybridStats()) {
           mergeHybridStats(other.getHybridStats());
         }
@@ -1938,10 +1987,16 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
                   }
                   break;
                 } // case 26
+              case 40:
+                {
+                  numRowsProcessed_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
               case 58:
                 {
                   input.readMessage(getHybridStatsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 58
               default:
@@ -2441,6 +2496,62 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return infoTypeStatsBuilder_;
       }
 
+      private long numRowsProcessed_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of rows scanned post sampling and time filtering (Applicable for
+       * row based stores such as BigQuery).
+       * </pre>
+       *
+       * <code>int64 num_rows_processed = 5;</code>
+       *
+       * @return The numRowsProcessed.
+       */
+      @java.lang.Override
+      public long getNumRowsProcessed() {
+        return numRowsProcessed_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of rows scanned post sampling and time filtering (Applicable for
+       * row based stores such as BigQuery).
+       * </pre>
+       *
+       * <code>int64 num_rows_processed = 5;</code>
+       *
+       * @param value The numRowsProcessed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumRowsProcessed(long value) {
+
+        numRowsProcessed_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of rows scanned post sampling and time filtering (Applicable for
+       * row based stores such as BigQuery).
+       * </pre>
+       *
+       * <code>int64 num_rows_processed = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNumRowsProcessed() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        numRowsProcessed_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private com.google.privacy.dlp.v2.HybridInspectStatistics hybridStats_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.HybridInspectStatistics,
@@ -2459,7 +2570,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        * @return Whether the hybridStats field is set.
        */
       public boolean hasHybridStats() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -2499,7 +2610,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         } else {
           hybridStatsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2519,7 +2630,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         } else {
           hybridStatsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2534,7 +2645,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        */
       public Builder mergeHybridStats(com.google.privacy.dlp.v2.HybridInspectStatistics value) {
         if (hybridStatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && hybridStats_ != null
               && hybridStats_
                   != com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()) {
@@ -2546,7 +2657,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           hybridStatsBuilder_.mergeFrom(value);
         }
         if (hybridStats_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -2561,7 +2672,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
        */
       public Builder clearHybridStats() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         hybridStats_ = null;
         if (hybridStatsBuilder_ != null) {
           hybridStatsBuilder_.dispose();
@@ -2580,7 +2691,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
        */
       public com.google.privacy.dlp.v2.HybridInspectStatistics.Builder getHybridStatsBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getHybridStatsFieldBuilder().getBuilder();
       }

@@ -146,7 +146,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The input data used to train a new [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * The input data used to train a new
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -472,7 +473,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The input data used to train a new [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * The input data used to train a new
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.TrainProcessorVersionRequest.InputData}
@@ -2000,8 +2002,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of steps to run for model tuning. Valid values are between
-     * 1 and 400. If not provided, recommended steps will be used.
+     * Optional. The number of steps to run for model tuning. Valid values are
+     * between 1 and 400. If not provided, recommended steps will be used.
      * </pre>
      *
      * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2014,9 +2016,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The multiplier to apply to the recommended learning rate. Valid values
-     * are between 0.1 and 10. If not provided, recommended learning rate will
-     * be used.
+     * Optional. The multiplier to apply to the recommended learning rate. Valid
+     * values are between 0.1 and 10. If not provided, recommended learning rate
+     * will be used.
      * </pre>
      *
      * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2078,8 +2080,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of steps to run for model tuning. Valid values are between
-     * 1 and 400. If not provided, recommended steps will be used.
+     * Optional. The number of steps to run for model tuning. Valid values are
+     * between 1 and 400. If not provided, recommended steps will be used.
      * </pre>
      *
      * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2097,9 +2099,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The multiplier to apply to the recommended learning rate. Valid values
-     * are between 0.1 and 10. If not provided, recommended learning rate will
-     * be used.
+     * Optional. The multiplier to apply to the recommended learning rate. Valid
+     * values are between 0.1 and 10. If not provided, recommended learning rate
+     * will be used.
      * </pre>
      *
      * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2535,8 +2537,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The number of steps to run for model tuning. Valid values are between
-       * 1 and 400. If not provided, recommended steps will be used.
+       * Optional. The number of steps to run for model tuning. Valid values are
+       * between 1 and 400. If not provided, recommended steps will be used.
        * </pre>
        *
        * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2551,8 +2553,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The number of steps to run for model tuning. Valid values are between
-       * 1 and 400. If not provided, recommended steps will be used.
+       * Optional. The number of steps to run for model tuning. Valid values are
+       * between 1 and 400. If not provided, recommended steps will be used.
        * </pre>
        *
        * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2571,8 +2573,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The number of steps to run for model tuning. Valid values are between
-       * 1 and 400. If not provided, recommended steps will be used.
+       * Optional. The number of steps to run for model tuning. Valid values are
+       * between 1 and 400. If not provided, recommended steps will be used.
        * </pre>
        *
        * <code>int32 train_steps = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2591,9 +2593,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The multiplier to apply to the recommended learning rate. Valid values
-       * are between 0.1 and 10. If not provided, recommended learning rate will
-       * be used.
+       * Optional. The multiplier to apply to the recommended learning rate. Valid
+       * values are between 0.1 and 10. If not provided, recommended learning rate
+       * will be used.
        * </pre>
        *
        * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2608,9 +2610,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The multiplier to apply to the recommended learning rate. Valid values
-       * are between 0.1 and 10. If not provided, recommended learning rate will
-       * be used.
+       * Optional. The multiplier to apply to the recommended learning rate. Valid
+       * values are between 0.1 and 10. If not provided, recommended learning rate
+       * will be used.
        * </pre>
        *
        * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2629,9 +2631,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Optional. The multiplier to apply to the recommended learning rate. Valid values
-       * are between 0.1 and 10. If not provided, recommended learning rate will
-       * be used.
+       * Optional. The multiplier to apply to the recommended learning rate. Valid
+       * values are between 0.1 and 10. If not provided, recommended learning rate
+       * will be used.
        * </pre>
        *
        * <code>float learning_rate_multiplier = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2906,8 +2908,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new version for.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new
+   * version for. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -2932,8 +2935,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to create the new version for.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * Required. The parent (project, location and processor) to create the new
+   * version for. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`.
    * </pre>
    *
    * <code>
@@ -3073,7 +3077,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -3090,7 +3095,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -3109,7 +3115,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -3132,8 +3139,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This processor version
-   * must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This
+   * processor version must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *
@@ -3157,8 +3164,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The processor version to use as a base for training. This processor version
-   * must be a child of `parent`. Format:
+   * Optional. The processor version to use as a base for training. This
+   * processor version must be a child of `parent`. Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
    * </pre>
    *
@@ -4312,8 +4319,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new version for.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new
+     * version for. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -4337,8 +4345,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new version for.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new
+     * version for. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -4362,8 +4371,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new version for.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new
+     * version for. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -4386,8 +4396,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new version for.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new
+     * version for. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -4406,8 +4417,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to create the new version for.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`.
+     * Required. The parent (project, location and processor) to create the new
+     * version for. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`.
      * </pre>
      *
      * <code>
@@ -4848,7 +4860,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4864,7 +4877,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4887,7 +4901,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4912,7 +4927,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4935,7 +4951,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4967,7 +4984,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -4988,7 +5006,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -5005,7 +5024,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -5027,7 +5047,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -5056,8 +5077,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This processor version
-     * must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This
+     * processor version must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -5080,8 +5101,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This processor version
-     * must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This
+     * processor version must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -5104,8 +5125,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This processor version
-     * must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This
+     * processor version must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -5127,8 +5148,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This processor version
-     * must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This
+     * processor version must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *
@@ -5146,8 +5167,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The processor version to use as a base for training. This processor version
-     * must be a child of `parent`. Format:
+     * Optional. The processor version to use as a base for training. This
+     * processor version must be a child of `parent`. Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
      * </pre>
      *

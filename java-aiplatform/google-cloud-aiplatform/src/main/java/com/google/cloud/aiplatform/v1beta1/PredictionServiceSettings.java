@@ -160,11 +160,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).streamGenerateContentSettings();
   }
 
-  /** Returns the object with the settings used for calls to chatCompletions. */
-  public ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsSettings() {
-    return ((PredictionServiceStubSettings) getStubSettings()).chatCompletionsSettings();
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -362,12 +357,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings() {
       return getStubSettingsBuilder().streamGenerateContentSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to chatCompletions. */
-    public ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
-        chatCompletionsSettings() {
-      return getStubSettingsBuilder().chatCompletionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

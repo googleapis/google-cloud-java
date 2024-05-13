@@ -62,5 +62,43 @@ public interface DiscoveryTargetOrBuilder
    */
   com.google.privacy.dlp.v2.BigQueryDiscoveryTargetOrBuilder getBigQueryTargetOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   *
+   * @return Whether the cloudSqlTarget field is set.
+   */
+  boolean hasCloudSqlTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   *
+   * @return The cloudSqlTarget.
+   */
+  com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget getCloudSqlTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL target for Discovery. The first target to match a table will be
+   * the one applied.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudSqlDiscoveryTarget cloud_sql_target = 2;</code>
+   */
+  com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder getCloudSqlTargetOrBuilder();
+
   com.google.privacy.dlp.v2.DiscoveryTarget.TargetCase getTargetCase();
 }

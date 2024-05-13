@@ -28,7 +28,8 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of
+   * [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * Format: `projects/{project}/locations/{location}/processors/{processor}`,
    * or
@@ -46,7 +47,8 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of
+   * [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * Format: `projects/{project}/locations/{location}/processors/{processor}`,
    * or

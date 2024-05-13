@@ -78,6 +78,9 @@
             },
             "UpdateDataset": {
               "methods": ["updateDataset", "updateDataset", "updateDatasetCallable"]
+            },
+            "UpdateDatasetVersion": {
+              "methods": ["updateDatasetVersion", "updateDatasetVersion", "updateDatasetVersionCallable"]
             }
           }
         }
@@ -1300,9 +1303,6 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
-            "ChatCompletions": {
-              "methods": ["chatCompletionsCallable"]
-            },
             "CountTokens": {
               "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
             },

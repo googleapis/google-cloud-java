@@ -13,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# TODO: remove java-core once we figure out how setup_cloud understands Maven's
-# "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 
 function retry_with_backoff {
   attempts_left=$1
@@ -53,6 +51,55 @@ function retry_with_backoff {
   fi
 
   return $exit_code
+}
+
+# Given a folder containing a maven multi-module, assign the variable 'submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+function parse_submodules() {
+  pushd "$1" >/dev/null
+
+  # New-line-delimited string containing the current folder's pom.xml <module> names.
+  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules \
+        | grep '<.*>.*</.*>' \
+        | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+
+  submodules_array=()
+  for submodule in $mvn_submodules; do
+    # Each entry = <folder>/<submodule>
+    submodules_array+=("$1/${submodule}");
+  done
+
+  # Convert from array to comma-delimited string
+  submodules=$(
+    IFS=,
+    echo "${submodules_array[*]}"
+  )
+  export submodules
+
+  popd >/dev/null
+}
+
+# Given a list of folders containing maven multi-modules, assign the variable 'all_submodules' to a
+# comma-delimited list of <folder>/<submodule>.
+#
+# See also parse_submodules()
+function parse_all_submodules() {
+  # Parse the comma-delimited input into an array.
+  IFS=',' read -ra input_modules <<< "$1"
+
+  all_submodules_array=()
+  for module in "${input_modules[@]}"; do
+    # For each module, parse its submodules and store the result in an array.
+    parse_submodules "$module"
+    all_submodules_array+=("$submodules")
+  done
+
+  # Convert from array to comma-delimited string
+  all_submodules=$(
+    IFS=,
+    echo "${all_submodules_array[*]}"
+  )
+  export all_submodules
 }
 
 ## Helper functions
@@ -126,57 +173,56 @@ function generate_modified_modules_list() {
 }
 
 function run_integration_tests() {
-  printf "Running Integration Tests for:\n%s\n" "$1"
-  # --also-make-dependents to run other modules that use the affected module
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
-    -Penable-integration-tests \
+  printf "Running integration tests for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
+  printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
+
+  mvn verify -Penable-integration-tests --projects "$all_submodules" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
     -Djacoco.skip=true \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-    -fae \
-    -T 1C \
-    verify
+    -T 1C
 
   RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "$1"
+  printf "Finished integration tests for modules:\n%s\n" "$1"
 }
 
 function run_graalvm_tests() {
-  printf "Running GraalVM ITs on:\n%s\n" "$1"
+  printf "Running GraalVM ITs for modules:\n%s\n" "$1"
+  parse_all_submodules "$1"
+  printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    --also-make-dependents \
-    -ntp \
+  mvn test -Pnative --projects "$all_submodules" \
+    ${INTEGRATION_TEST_ARGS} \
+    -B -ntp -fae \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
-    -Pnative \
-    -fae \
-    test
+    -T 1C
 
   RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
+  printf "Finished GraalVM ITs for modules:\n%s\n" "$1"
 }
 
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 10 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
@@ -229,18 +275,52 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  retry_with_backoff 3 10 \
-    mvn -B \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  if [ -z "$1" ]; then
+    mvn install \
+      -B -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C
+  else
+    printf "Installing modules:\n%s\n" "$1"
+    parse_all_submodules "$1"
+    printf "Installing submodules:\n%s\n" "$all_submodules"
+
+    # When working with a maven multi-module project containing other multi-module projects,
+    # to build a module with its dependencies and without building its dependents:
+    # Perform the install command on a grandchild module with the --also-make flag.
+    #
+    # Examples:
+    #
+    #   mvn install --projects java-asset --also-make
+    #      ! Does not work. Maven reactor will not build java-asset's child modules, such as the
+    #        gapic, proto, and grpc modules.
+    #
+    #   mvn install --projects java-kms --also-make-dependents
+    #      ! Does not work. Maven reactor will include java-kmsinventory in its build.
+    #
+    #   mvn install --projects java-kms/google-cloud-kms --also-make
+    #      Correctly builds dependencies without building dependents.
+    mvn install --projects "$all_submodules" --also-make \
+      -B -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C
+  fi
 }

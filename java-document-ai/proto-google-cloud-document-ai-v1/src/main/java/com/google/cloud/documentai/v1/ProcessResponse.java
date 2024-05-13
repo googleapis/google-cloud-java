@@ -24,7 +24,8 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * Response message for the
- * [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument] method.
+ * [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ProcessResponse}
@@ -349,7 +350,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Response message for the
-   * [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument] method.
+   * [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ProcessResponse}

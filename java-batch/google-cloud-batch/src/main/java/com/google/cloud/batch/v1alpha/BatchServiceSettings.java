@@ -106,6 +106,11 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
     return ((BatchServiceStubSettings) getStubSettings()).deleteJobOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateJob. */
+  public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).updateJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings() {
@@ -305,6 +310,11 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
     public OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings() {
       return getStubSettingsBuilder().deleteJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateJob. */
+    public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
+      return getStubSettingsBuilder().updateJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to listJobs. */

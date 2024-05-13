@@ -298,6 +298,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Kazakhstan.
+     * </pre>
+     *
+     * <code>KAZAKHSTAN = 47;</code>
+     */
+    KAZAKHSTAN(47),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Korea.
      * </pre>
      *
@@ -388,6 +398,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Russia.
+     * </pre>
+     *
+     * <code>RUSSIA = 44;</code>
+     */
+    RUSSIA(44),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Singapore.
      * </pre>
      *
@@ -468,6 +488,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Ukraine.
+     * </pre>
+     *
+     * <code>UKRAINE = 45;</code>
+     */
+    UKRAINE(45),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in the United Kingdom.
      * </pre>
      *
@@ -494,6 +524,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>URUGUAY = 38;</code>
      */
     URUGUAY(38),
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in Uzbekistan.
+     * </pre>
+     *
+     * <code>UZBEKISTAN = 46;</code>
+     */
+    UZBEKISTAN(46),
     /**
      *
      *
@@ -742,6 +782,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Kazakhstan.
+     * </pre>
+     *
+     * <code>KAZAKHSTAN = 47;</code>
+     */
+    public static final int KAZAKHSTAN_VALUE = 47;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Korea.
      * </pre>
      *
@@ -832,6 +882,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Russia.
+     * </pre>
+     *
+     * <code>RUSSIA = 44;</code>
+     */
+    public static final int RUSSIA_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Singapore.
      * </pre>
      *
@@ -912,6 +972,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Ukraine.
+     * </pre>
+     *
+     * <code>UKRAINE = 45;</code>
+     */
+    public static final int UKRAINE_VALUE = 45;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in the United Kingdom.
      * </pre>
      *
@@ -938,6 +1008,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>URUGUAY = 38;</code>
      */
     public static final int URUGUAY_VALUE = 38;
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in Uzbekistan.
+     * </pre>
+     *
+     * <code>UZBEKISTAN = 46;</code>
+     */
+    public static final int UZBEKISTAN_VALUE = 46;
     /**
      *
      *
@@ -1027,6 +1107,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return ITALY;
         case 20:
           return JAPAN;
+        case 47:
+          return KAZAKHSTAN;
         case 21:
           return KOREA;
         case 22:
@@ -1045,6 +1127,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return POLAND;
         case 28:
           return PORTUGAL;
+        case 44:
+          return RUSSIA;
         case 29:
           return SINGAPORE;
         case 30:
@@ -1061,12 +1145,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return THAILAND;
         case 35:
           return TURKEY;
+        case 45:
+          return UKRAINE;
         case 36:
           return UNITED_KINGDOM;
         case 37:
           return UNITED_STATES;
         case 38:
           return URUGUAY;
+        case 46:
+          return UZBEKISTAN;
         case 39:
           return VENEZUELA;
         case 40:

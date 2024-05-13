@@ -5500,7 +5500,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Release`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+   * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5524,7 +5525,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Release`. Format is
-   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+   * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8211,7 +8213,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Release`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+     * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8234,7 +8237,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Release`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+     * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8257,7 +8261,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Release`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+     * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8279,7 +8284,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Release`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+     * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8297,7 +8303,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Release`. Format is
-     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
+     * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

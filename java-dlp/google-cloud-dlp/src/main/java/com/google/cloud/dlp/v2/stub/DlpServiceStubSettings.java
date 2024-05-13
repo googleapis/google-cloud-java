@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -25,6 +26,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedRespo
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -58,6 +60,8 @@ import com.google.common.collect.Lists;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -67,16 +71,19 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -94,6 +101,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -117,8 +126,11 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -267,9 +279,21 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getTableDataProfileSettings;
   private final UnaryCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
       getColumnDataProfileSettings;
+  private final UnaryCallSettings<DeleteTableDataProfileRequest, Empty>
+      deleteTableDataProfileSettings;
   private final UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings;
   private final UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+  private final UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings;
+  private final UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings;
+  private final PagedCallSettings<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      listConnectionsSettings;
+  private final PagedCallSettings<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      searchConnectionsSettings;
+  private final UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings;
+  private final UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings;
 
   private static final PagedListDescriptor<
           ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
@@ -642,6 +666,85 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListConnectionsRequest, ListConnectionsResponse, Connection>
+      LIST_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListConnectionsRequest, ListConnectionsResponse, Connection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListConnectionsRequest injectToken(
+                ListConnectionsRequest payload, String token) {
+              return ListConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListConnectionsRequest injectPageSize(
+                ListConnectionsRequest payload, int pageSize) {
+              return ListConnectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Connection> extractResources(ListConnectionsResponse payload) {
+              return payload.getConnectionsList() == null
+                  ? ImmutableList.<Connection>of()
+                  : payload.getConnectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+      SEARCH_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchConnectionsRequest, SearchConnectionsResponse, Connection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchConnectionsRequest injectToken(
+                SearchConnectionsRequest payload, String token) {
+              return SearchConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchConnectionsRequest injectPageSize(
+                SearchConnectionsRequest payload, int pageSize) {
+              return SearchConnectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Connection> extractResources(SearchConnectionsResponse payload) {
+              return payload.getConnectionsList() == null
+                  ? ImmutableList.<Connection>of()
+                  : payload.getConnectionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInspectTemplatesRequest,
           ListInspectTemplatesResponse,
@@ -847,6 +950,44 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
                       PageContext.create(
                           callable, LIST_COLUMN_DATA_PROFILES_PAGE_STR_DESC, request, context);
               return ListColumnDataProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      LIST_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> callable,
+                ListConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListConnectionsResponse> futureResponse) {
+              PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> pageContext =
+                  PageContext.create(callable, LIST_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      SEARCH_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchConnectionsRequest,
+              SearchConnectionsResponse,
+              SearchConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse> callable,
+                SearchConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchConnectionsResponse> futureResponse) {
+              PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return SearchConnectionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1112,6 +1253,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return getColumnDataProfileSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteTableDataProfile. */
+  public UnaryCallSettings<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileSettings() {
+    return deleteTableDataProfileSettings;
+  }
+
   /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
   public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings() {
@@ -1121,6 +1267,40 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   /** Returns the object with the settings used for calls to finishDlpJob. */
   public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
     return finishDlpJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConnection. */
+  public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
+    return createConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getConnection. */
+  public UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings() {
+    return getConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listConnections. */
+  public PagedCallSettings<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      listConnectionsSettings() {
+    return listConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchConnections. */
+  public PagedCallSettings<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      searchConnectionsSettings() {
+    return searchConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnection. */
+  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+    return deleteConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConnection. */
+  public UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings() {
+    return updateConnectionSettings;
   }
 
   public DlpServiceStub createStub() throws IOException {
@@ -1276,8 +1456,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     getProjectDataProfileSettings = settingsBuilder.getProjectDataProfileSettings().build();
     getTableDataProfileSettings = settingsBuilder.getTableDataProfileSettings().build();
     getColumnDataProfileSettings = settingsBuilder.getColumnDataProfileSettings().build();
+    deleteTableDataProfileSettings = settingsBuilder.deleteTableDataProfileSettings().build();
     hybridInspectDlpJobSettings = settingsBuilder.hybridInspectDlpJobSettings().build();
     finishDlpJobSettings = settingsBuilder.finishDlpJobSettings().build();
+    createConnectionSettings = settingsBuilder.createConnectionSettings().build();
+    getConnectionSettings = settingsBuilder.getConnectionSettings().build();
+    listConnectionsSettings = settingsBuilder.listConnectionsSettings().build();
+    searchConnectionsSettings = settingsBuilder.searchConnectionsSettings().build();
+    deleteConnectionSettings = settingsBuilder.deleteConnectionSettings().build();
+    updateConnectionSettings = settingsBuilder.updateConnectionSettings().build();
   }
 
   /** Builder for DlpServiceStubSettings. */
@@ -1387,9 +1574,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         getTableDataProfileSettings;
     private final UnaryCallSettings.Builder<GetColumnDataProfileRequest, ColumnDataProfile>
         getColumnDataProfileSettings;
+    private final UnaryCallSettings.Builder<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileSettings;
     private final UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings;
     private final UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+    private final UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
+        createConnectionSettings;
+    private final UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+        listConnectionsSettings;
+    private final PagedCallSettings.Builder<
+            SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+        searchConnectionsSettings;
+    private final UnaryCallSettings.Builder<DeleteConnectionRequest, Empty>
+        deleteConnectionSettings;
+    private final UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
+        updateConnectionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1403,6 +1605,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1430,6 +1633,8 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1490,8 +1695,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getProjectDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTableDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getColumnDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTableDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       hybridInspectDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       finishDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listConnectionsSettings = PagedCallSettings.newBuilder(LIST_CONNECTIONS_PAGE_STR_FACT);
+      searchConnectionsSettings = PagedCallSettings.newBuilder(SEARCH_CONNECTIONS_PAGE_STR_FACT);
+      deleteConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1538,8 +1750,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getProjectDataProfileSettings,
               getTableDataProfileSettings,
               getColumnDataProfileSettings,
+              deleteTableDataProfileSettings,
               hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              finishDlpJobSettings,
+              createConnectionSettings,
+              getConnectionSettings,
+              listConnectionsSettings,
+              searchConnectionsSettings,
+              deleteConnectionSettings,
+              updateConnectionSettings);
       initDefaults(this);
     }
 
@@ -1589,8 +1808,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getProjectDataProfileSettings = settings.getProjectDataProfileSettings.toBuilder();
       getTableDataProfileSettings = settings.getTableDataProfileSettings.toBuilder();
       getColumnDataProfileSettings = settings.getColumnDataProfileSettings.toBuilder();
+      deleteTableDataProfileSettings = settings.deleteTableDataProfileSettings.toBuilder();
       hybridInspectDlpJobSettings = settings.hybridInspectDlpJobSettings.toBuilder();
       finishDlpJobSettings = settings.finishDlpJobSettings.toBuilder();
+      createConnectionSettings = settings.createConnectionSettings.toBuilder();
+      getConnectionSettings = settings.getConnectionSettings.toBuilder();
+      listConnectionsSettings = settings.listConnectionsSettings.toBuilder();
+      searchConnectionsSettings = settings.searchConnectionsSettings.toBuilder();
+      deleteConnectionSettings = settings.deleteConnectionSettings.toBuilder();
+      updateConnectionSettings = settings.updateConnectionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1637,8 +1863,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getProjectDataProfileSettings,
               getTableDataProfileSettings,
               getColumnDataProfileSettings,
+              deleteTableDataProfileSettings,
               hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              finishDlpJobSettings,
+              createConnectionSettings,
+              getConnectionSettings,
+              listConnectionsSettings,
+              searchConnectionsSettings,
+              deleteConnectionSettings,
+              updateConnectionSettings);
     }
 
     private static Builder createDefault() {
@@ -1882,6 +2115,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .deleteTableDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .hybridInspectDlpJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1890,6 +2128,36 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .finishDlpJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -2184,6 +2452,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       return getColumnDataProfileSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTableDataProfile. */
+    public UnaryCallSettings.Builder<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileSettings() {
+      return deleteTableDataProfileSettings;
+    }
+
     /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
     public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings() {
@@ -2193,6 +2467,42 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     /** Returns the builder for the settings used for calls to finishDlpJob. */
     public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
       return finishDlpJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConnection. */
+    public UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
+        createConnectionSettings() {
+      return createConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getConnection. */
+    public UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings() {
+      return getConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listConnections. */
+    public PagedCallSettings.Builder<
+            ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+        listConnectionsSettings() {
+      return listConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchConnections. */
+    public PagedCallSettings.Builder<
+            SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+        searchConnectionsSettings() {
+      return searchConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnection. */
+    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+      return deleteConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConnection. */
+    public UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
+        updateConnectionSettings() {
+      return updateConnectionSettings;
     }
 
     @Override

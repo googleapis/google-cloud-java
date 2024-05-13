@@ -54,6 +54,18 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
+   * May contain public items.
+   * For example, if a GCS bucket has uniform bucket level access disabled, some
+   * objects inside it may be public.
+   * </pre>
+   *
+   * <code>RESOURCE_VISIBILITY_INCONCLUSIVE = 15;</code>
+   */
+  RESOURCE_VISIBILITY_INCONCLUSIVE(15),
+  /**
+   *
+   *
+   * <pre>
    * Visible only to specific users.
    * </pre>
    *
@@ -83,6 +95,18 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
    * <code>RESOURCE_VISIBILITY_PUBLIC = 10;</code>
    */
   public static final int RESOURCE_VISIBILITY_PUBLIC_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * May contain public items.
+   * For example, if a GCS bucket has uniform bucket level access disabled, some
+   * objects inside it may be public.
+   * </pre>
+   *
+   * <code>RESOURCE_VISIBILITY_INCONCLUSIVE = 15;</code>
+   */
+  public static final int RESOURCE_VISIBILITY_INCONCLUSIVE_VALUE = 15;
   /**
    *
    *
@@ -122,6 +146,8 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
         return RESOURCE_VISIBILITY_UNSPECIFIED;
       case 10:
         return RESOURCE_VISIBILITY_PUBLIC;
+      case 15:
+        return RESOURCE_VISIBILITY_INCONCLUSIVE;
       case 20:
         return RESOURCE_VISIBILITY_RESTRICTED;
       default:

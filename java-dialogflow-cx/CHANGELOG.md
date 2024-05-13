@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.54.0 (2024-05-08)
+
+### Features
+
+* added Conversation History API ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* added Language Info to webhook Request ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* improve doc for SecuritySetting.retention_window_days ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+
+
+
 ## 0.53.0 (2024-04-25)
 
 * No change

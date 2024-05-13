@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.43.0 (2024-05-08)
+
+### Features
+
+* Update description on allowed_locations in LocationPolicy field ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+
+
+
 ## 0.42.0 (2024-04-25)
 
 ### Features

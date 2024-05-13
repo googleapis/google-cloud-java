@@ -40,6 +40,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
   private VertexRagStore() {
     ragCorpora_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    ragResources_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -63,6 +64,1036 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.VertexRagStore.Builder.class);
   }
 
+  public interface RagResourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RagCorpora resource name.
+     * Format:
+     * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+     * </pre>
+     *
+     * <code>
+     * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The ragCorpus.
+     */
+    java.lang.String getRagCorpus();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RagCorpora resource name.
+     * Format:
+     * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+     * </pre>
+     *
+     * <code>
+     * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for ragCorpus.
+     */
+    com.google.protobuf.ByteString getRagCorpusBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the ragFileIds.
+     */
+    java.util.List<java.lang.String> getRagFileIdsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of ragFileIds.
+     */
+    int getRagFileIdsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ragFileIds at the given index.
+     */
+    java.lang.String getRagFileIds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ragFileIds at the given index.
+     */
+    com.google.protobuf.ByteString getRagFileIdsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The definition of the Rag resource.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource}
+   */
+  public static final class RagResource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)
+      RagResourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RagResource.newBuilder() to construct.
+    private RagResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RagResource() {
+      ragCorpus_ = "";
+      ragFileIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RagResource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_RagResource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_RagResource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.class,
+              com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder.class);
+    }
+
+    public static final int RAG_CORPUS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ragCorpus_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RagCorpora resource name.
+     * Format:
+     * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+     * </pre>
+     *
+     * <code>
+     * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The ragCorpus.
+     */
+    @java.lang.Override
+    public java.lang.String getRagCorpus() {
+      java.lang.Object ref = ragCorpus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ragCorpus_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RagCorpora resource name.
+     * Format:
+     * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+     * </pre>
+     *
+     * <code>
+     * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for ragCorpus.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRagCorpusBytes() {
+      java.lang.Object ref = ragCorpus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ragCorpus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RAG_FILE_IDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList ragFileIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the ragFileIds.
+     */
+    public com.google.protobuf.ProtocolStringList getRagFileIdsList() {
+      return ragFileIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of ragFileIds.
+     */
+    public int getRagFileIdsCount() {
+      return ragFileIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The ragFileIds at the given index.
+     */
+    public java.lang.String getRagFileIds(int index) {
+      return ragFileIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. rag_file_id. The files should be in the same rag_corpus set in
+     * rag_corpus field.
+     * </pre>
+     *
+     * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the ragFileIds at the given index.
+     */
+    public com.google.protobuf.ByteString getRagFileIdsBytes(int index) {
+      return ragFileIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ragCorpus_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ragCorpus_);
+      }
+      for (int i = 0; i < ragFileIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ragFileIds_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ragCorpus_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ragCorpus_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < ragFileIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(ragFileIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRagFileIdsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource other =
+          (com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource) obj;
+
+      if (!getRagCorpus().equals(other.getRagCorpus())) return false;
+      if (!getRagFileIdsList().equals(other.getRagFileIdsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RAG_CORPUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRagCorpus().hashCode();
+      if (getRagFileIdsCount() > 0) {
+        hash = (37 * hash) + RAG_FILE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getRagFileIdsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The definition of the Rag resource.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_RagResource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_RagResource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.class,
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        ragCorpus_ = "";
+        ragFileIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_RagResource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource build() {
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource result =
+            new com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ragCorpus_ = ragCorpus_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          ragFileIds_.makeImmutable();
+          result.ragFileIds_ = ragFileIds_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.getDefaultInstance())
+          return this;
+        if (!other.getRagCorpus().isEmpty()) {
+          ragCorpus_ = other.ragCorpus_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.ragFileIds_.isEmpty()) {
+          if (ragFileIds_.isEmpty()) {
+            ragFileIds_ = other.ragFileIds_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureRagFileIdsIsMutable();
+            ragFileIds_.addAll(other.ragFileIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  ragCorpus_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureRagFileIdsIsMutable();
+                  ragFileIds_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object ragCorpus_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RagCorpora resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+       * </pre>
+       *
+       * <code>
+       * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The ragCorpus.
+       */
+      public java.lang.String getRagCorpus() {
+        java.lang.Object ref = ragCorpus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ragCorpus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RagCorpora resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+       * </pre>
+       *
+       * <code>
+       * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for ragCorpus.
+       */
+      public com.google.protobuf.ByteString getRagCorpusBytes() {
+        java.lang.Object ref = ragCorpus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          ragCorpus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RagCorpora resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+       * </pre>
+       *
+       * <code>
+       * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The ragCorpus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRagCorpus(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragCorpus_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RagCorpora resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+       * </pre>
+       *
+       * <code>
+       * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRagCorpus() {
+        ragCorpus_ = getDefaultInstance().getRagCorpus();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RagCorpora resource name.
+       * Format:
+       * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
+       * </pre>
+       *
+       * <code>
+       * string rag_corpus = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for ragCorpus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRagCorpusBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ragCorpus_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList ragFileIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureRagFileIdsIsMutable() {
+        if (!ragFileIds_.isModifiable()) {
+          ragFileIds_ = new com.google.protobuf.LazyStringArrayList(ragFileIds_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the ragFileIds.
+       */
+      public com.google.protobuf.ProtocolStringList getRagFileIdsList() {
+        ragFileIds_.makeImmutable();
+        return ragFileIds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of ragFileIds.
+       */
+      public int getRagFileIdsCount() {
+        return ragFileIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The ragFileIds at the given index.
+       */
+      public java.lang.String getRagFileIds(int index) {
+        return ragFileIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the ragFileIds at the given index.
+       */
+      public com.google.protobuf.ByteString getRagFileIdsBytes(int index) {
+        return ragFileIds_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The ragFileIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRagFileIds(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRagFileIdsIsMutable();
+        ragFileIds_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The ragFileIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRagFileIds(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRagFileIdsIsMutable();
+        ragFileIds_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The ragFileIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRagFileIds(java.lang.Iterable<java.lang.String> values) {
+        ensureRagFileIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ragFileIds_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRagFileIds() {
+        ragFileIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. rag_file_id. The files should be in the same rag_corpus set in
+       * rag_corpus field.
+       * </pre>
+       *
+       * <code>repeated string rag_file_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the ragFileIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRagFileIdsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureRagFileIdsIsMutable();
+        ragFileIds_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource)
+    private static final com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RagResource> PARSER =
+        new com.google.protobuf.AbstractParser<RagResource>() {
+          @java.lang.Override
+          public RagResource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RagResource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RagResource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int RAG_CORPORA_FIELD_NUMBER = 1;
 
@@ -73,19 +1104,18 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @return A list containing the ragCorpora.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getRagCorporaList() {
     return ragCorpora_;
   }
@@ -93,19 +1123,18 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @return The count of ragCorpora.
    */
+  @java.lang.Deprecated
   public int getRagCorporaCount() {
     return ragCorpora_.size();
   }
@@ -113,20 +1142,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @param index The index of the element to return.
    * @return The ragCorpora at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getRagCorpora(int index) {
     return ragCorpora_.get(index);
   }
@@ -134,22 +1162,121 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Vertex RAG Store corpus resource name:
-   *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-   * Currently only one corpus is allowed.
-   * In the future we may open up multiple corpora support. However, they should
-   * be from the same project and location.
+   * Optional. Deprecated. Please use rag_resources instead.
    * </pre>
    *
    * <code>
-   * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
    * @param index The index of the value to return.
    * @return The bytes of the ragCorpora at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getRagCorporaBytes(int index) {
     return ragCorpora_.getByteString(index);
+  }
+
+  public static final int RAG_RESOURCES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+      ragResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+      getRagResourcesList() {
+    return ragResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>
+      getRagResourcesOrBuilderList() {
+    return ragResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRagResourcesCount() {
+    return ragResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource getRagResources(int index) {
+    return ragResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The representation of the rag source. It can be used to specify
+   * corpus only or ragfiles. Currently only support one corpus or multiple
+   * files from one corpus. In the future we may open up multiple corpora
+   * support.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder
+      getRagResourcesOrBuilder(int index) {
+    return ragResources_.get(index);
   }
 
   public static final int SIMILARITY_TOP_K_FIELD_NUMBER = 2;
@@ -185,6 +1312,43 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     return similarityTopK_;
   }
 
+  public static final int VECTOR_DISTANCE_THRESHOLD_FIELD_NUMBER = 3;
+  private double vectorDistanceThreshold_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return results with vector distance smaller than the
+   * threshold.
+   * </pre>
+   *
+   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vectorDistanceThreshold field is set.
+   */
+  @java.lang.Override
+  public boolean hasVectorDistanceThreshold() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return results with vector distance smaller than the
+   * threshold.
+   * </pre>
+   *
+   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vectorDistanceThreshold.
+   */
+  @java.lang.Override
+  public double getVectorDistanceThreshold() {
+    return vectorDistanceThreshold_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -204,6 +1368,12 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(2, similarityTopK_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeDouble(3, vectorDistanceThreshold_);
+    }
+    for (int i = 0; i < ragResources_.size(); i++) {
+      output.writeMessage(4, ragResources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -225,6 +1395,12 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, similarityTopK_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, vectorDistanceThreshold_);
+    }
+    for (int i = 0; i < ragResources_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, ragResources_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -242,9 +1418,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1beta1.VertexRagStore) obj;
 
     if (!getRagCorporaList().equals(other.getRagCorporaList())) return false;
+    if (!getRagResourcesList().equals(other.getRagResourcesList())) return false;
     if (hasSimilarityTopK() != other.hasSimilarityTopK()) return false;
     if (hasSimilarityTopK()) {
       if (getSimilarityTopK() != other.getSimilarityTopK()) return false;
+    }
+    if (hasVectorDistanceThreshold() != other.hasVectorDistanceThreshold()) return false;
+    if (hasVectorDistanceThreshold()) {
+      if (java.lang.Double.doubleToLongBits(getVectorDistanceThreshold())
+          != java.lang.Double.doubleToLongBits(other.getVectorDistanceThreshold())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -261,9 +1443,20 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RAG_CORPORA_FIELD_NUMBER;
       hash = (53 * hash) + getRagCorporaList().hashCode();
     }
+    if (getRagResourcesCount() > 0) {
+      hash = (37 * hash) + RAG_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getRagResourcesList().hashCode();
+    }
     if (hasSimilarityTopK()) {
       hash = (37 * hash) + SIMILARITY_TOP_K_FIELD_NUMBER;
       hash = (53 * hash) + getSimilarityTopK();
+    }
+    if (hasVectorDistanceThreshold()) {
+      hash = (37 * hash) + VECTOR_DISTANCE_THRESHOLD_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getVectorDistanceThreshold()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -405,7 +1598,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       ragCorpora_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (ragResourcesBuilder_ == null) {
+        ragResources_ = java.util.Collections.emptyList();
+      } else {
+        ragResources_ = null;
+        ragResourcesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       similarityTopK_ = 0;
+      vectorDistanceThreshold_ = 0D;
       return this;
     }
 
@@ -433,11 +1634,25 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.VertexRagStore buildPartial() {
       com.google.cloud.aiplatform.v1beta1.VertexRagStore result =
           new com.google.cloud.aiplatform.v1beta1.VertexRagStore(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore result) {
+      if (ragResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          ragResources_ = java.util.Collections.unmodifiableList(ragResources_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.ragResources_ = ragResources_;
+      } else {
+        result.ragResources_ = ragResourcesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.VertexRagStore result) {
@@ -447,9 +1662,13 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         result.ragCorpora_ = ragCorpora_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.similarityTopK_ = similarityTopK_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vectorDistanceThreshold_ = vectorDistanceThreshold_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -510,8 +1729,38 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (ragResourcesBuilder_ == null) {
+        if (!other.ragResources_.isEmpty()) {
+          if (ragResources_.isEmpty()) {
+            ragResources_ = other.ragResources_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRagResourcesIsMutable();
+            ragResources_.addAll(other.ragResources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.ragResources_.isEmpty()) {
+          if (ragResourcesBuilder_.isEmpty()) {
+            ragResourcesBuilder_.dispose();
+            ragResourcesBuilder_ = null;
+            ragResources_ = other.ragResources_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            ragResourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRagResourcesFieldBuilder()
+                    : null;
+          } else {
+            ragResourcesBuilder_.addAllMessages(other.ragResources_);
+          }
+        }
+      }
       if (other.hasSimilarityTopK()) {
         setSimilarityTopK(other.getSimilarityTopK());
+      }
+      if (other.hasVectorDistanceThreshold()) {
+        setVectorDistanceThreshold(other.getVectorDistanceThreshold());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -549,9 +1798,29 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 similarityTopK_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
+            case 25:
+              {
+                vectorDistanceThreshold_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 25
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.parser(),
+                        extensionRegistry);
+                if (ragResourcesBuilder_ == null) {
+                  ensureRagResourcesIsMutable();
+                  ragResources_.add(m);
+                } else {
+                  ragResourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -584,19 +1853,18 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @return A list containing the ragCorpora.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getRagCorporaList() {
       ragCorpora_.makeImmutable();
       return ragCorpora_;
@@ -605,19 +1873,18 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @return The count of ragCorpora.
      */
+    @java.lang.Deprecated
     public int getRagCorporaCount() {
       return ragCorpora_.size();
     }
@@ -625,20 +1892,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param index The index of the element to return.
      * @return The ragCorpora at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getRagCorpora(int index) {
       return ragCorpora_.get(index);
     }
@@ -646,20 +1912,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param index The index of the value to return.
      * @return The bytes of the ragCorpora at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getRagCorporaBytes(int index) {
       return ragCorpora_.getByteString(index);
     }
@@ -667,21 +1932,20 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param index The index to set the value at.
      * @param value The ragCorpora to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRagCorpora(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -696,20 +1960,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param value The ragCorpora to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addRagCorpora(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -724,20 +1987,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param values The ragCorpora to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllRagCorpora(java.lang.Iterable<java.lang.String> values) {
       ensureRagCorporaIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ragCorpora_);
@@ -749,19 +2011,18 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRagCorpora() {
       ragCorpora_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -773,20 +2034,19 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Vertex RAG Store corpus resource name:
-     *   `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`
-     * Currently only one corpus is allowed.
-     * In the future we may open up multiple corpora support. However, they should
-     * be from the same project and location.
+     * Optional. Deprecated. Please use rag_resources instead.
      * </pre>
      *
      * <code>
-     * repeated string rag_corpora = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * repeated string rag_corpora = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.rag_corpora is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/tool.proto;l=201
      * @param value The bytes of the ragCorpora to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addRagCorporaBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -797,6 +2057,464 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+        ragResources_ = java.util.Collections.emptyList();
+
+    private void ensureRagResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        ragResources_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>(
+                ragResources_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>
+        ragResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+        getRagResourcesList() {
+      if (ragResourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(ragResources_);
+      } else {
+        return ragResourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getRagResourcesCount() {
+      if (ragResourcesBuilder_ == null) {
+        return ragResources_.size();
+      } else {
+        return ragResourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource getRagResources(
+        int index) {
+      if (ragResourcesBuilder_ == null) {
+        return ragResources_.get(index);
+      } else {
+        return ragResourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagResources(
+        int index, com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource value) {
+      if (ragResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRagResourcesIsMutable();
+        ragResources_.set(index, value);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagResources(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder builderForValue) {
+      if (ragResourcesBuilder_ == null) {
+        ensureRagResourcesIsMutable();
+        ragResources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        ragResourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRagResources(
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource value) {
+      if (ragResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRagResourcesIsMutable();
+        ragResources_.add(value);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRagResources(
+        int index, com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource value) {
+      if (ragResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRagResourcesIsMutable();
+        ragResources_.add(index, value);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRagResources(
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder builderForValue) {
+      if (ragResourcesBuilder_ == null) {
+        ensureRagResourcesIsMutable();
+        ragResources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        ragResourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRagResources(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder builderForValue) {
+      if (ragResourcesBuilder_ == null) {
+        ensureRagResourcesIsMutable();
+        ragResources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        ragResourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllRagResources(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource>
+            values) {
+      if (ragResourcesBuilder_ == null) {
+        ensureRagResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ragResources_);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRagResources() {
+      if (ragResourcesBuilder_ == null) {
+        ragResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeRagResources(int index) {
+      if (ragResourcesBuilder_ == null) {
+        ensureRagResourcesIsMutable();
+        ragResources_.remove(index);
+        onChanged();
+      } else {
+        ragResourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder
+        getRagResourcesBuilder(int index) {
+      return getRagResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder
+        getRagResourcesOrBuilder(int index) {
+      if (ragResourcesBuilder_ == null) {
+        return ragResources_.get(index);
+      } else {
+        return ragResourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>
+        getRagResourcesOrBuilderList() {
+      if (ragResourcesBuilder_ != null) {
+        return ragResourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(ragResources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder
+        addRagResourcesBuilder() {
+      return getRagResourcesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder
+        addRagResourcesBuilder(int index) {
+      return getRagResourcesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The representation of the rag source. It can be used to specify
+     * corpus only or ragfiles. Currently only support one corpus or multiple
+     * files from one corpus. In the future we may open up multiple corpora
+     * support.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource rag_resources = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder>
+        getRagResourcesBuilderList() {
+      return getRagResourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>
+        getRagResourcesFieldBuilder() {
+      if (ragResourcesBuilder_ == null) {
+        ragResourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource,
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResource.Builder,
+                com.google.cloud.aiplatform.v1beta1.VertexRagStore.RagResourceOrBuilder>(
+                ragResources_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        ragResources_ = null;
+      }
+      return ragResourcesBuilder_;
     }
 
     private int similarityTopK_;
@@ -813,7 +2531,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSimilarityTopK() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -845,7 +2563,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public Builder setSimilarityTopK(int value) {
 
       similarityTopK_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -861,8 +2579,88 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSimilarityTopK() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       similarityTopK_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double vectorDistanceThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return results with vector distance smaller than the
+     * threshold.
+     * </pre>
+     *
+     * <code>
+     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vectorDistanceThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasVectorDistanceThreshold() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return results with vector distance smaller than the
+     * threshold.
+     * </pre>
+     *
+     * <code>
+     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vectorDistanceThreshold.
+     */
+    @java.lang.Override
+    public double getVectorDistanceThreshold() {
+      return vectorDistanceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return results with vector distance smaller than the
+     * threshold.
+     * </pre>
+     *
+     * <code>
+     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The vectorDistanceThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVectorDistanceThreshold(double value) {
+
+      vectorDistanceThreshold_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return results with vector distance smaller than the
+     * threshold.
+     * </pre>
+     *
+     * <code>
+     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVectorDistanceThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      vectorDistanceThreshold_ = 0D;
       onChanged();
       return this;
     }

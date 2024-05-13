@@ -63,6 +63,7 @@ import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateDatasetVersionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -152,6 +153,10 @@ public abstract class DatasetServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateDatasetVersionRequest, Operation> createDatasetVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetVersionCallable()");
+  }
+
+  public UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion> updateDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetVersionCallable()");
   }
 
   public OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
