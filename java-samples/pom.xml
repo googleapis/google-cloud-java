@@ -16,6 +16,10 @@
         <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
     </parent>
 
+    <modules>
+        <module>native-image-sample</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>com.google.truth</groupId>
