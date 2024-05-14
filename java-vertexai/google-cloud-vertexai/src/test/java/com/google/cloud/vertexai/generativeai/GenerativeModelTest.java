@@ -108,9 +108,7 @@ public final class GenerativeModelTest {
                   .setVertexAiSearch(
                       VertexAISearch.newBuilder()
                           .setDatastore(
-                              String.format(
-                                  "projects/%s/locations/%s/collections/%s/dataStores/%s",
-                                  PROJECT, "global", "default_collection", "test_123")))
+                              "projects/test_project/locations/global/collections/default_collection/dataStores/test_123"))
                   .setDisableAttribution(false))
           .build();
 
@@ -158,6 +156,19 @@ public final class GenerativeModelTest {
   @Test
   public void testInstantiateGenerativeModel() {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
+    assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
+    assertThat(model.getGenerationConfig()).isEqualTo(GenerationConfig.getDefaultInstance());
+    assertThat(model.getSafetySettings()).isEmpty();
+    assertThat(model.getTools()).isEmpty();
+  }
+
+  @Test
+  public void
+      testInstantiateGenerativeModel_withModelNameStartingFromProjects_modelNameIsCorrect() {
+    model =
+        new GenerativeModel(
+            "projects/test_project/locations/test_location/publishers/google/models/gemini-pro",
+            vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
     assertThat(model.getGenerationConfig()).isEqualTo(GenerationConfig.getDefaultInstance());
     assertThat(model.getSafetySettings()).isEmpty();
@@ -286,6 +297,32 @@ public final class GenerativeModelTest {
         ArgumentCaptor.forClass(GenerateContentRequest.class);
     verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
+    assertThat(request.getValue().getModel())
+        .isEqualTo(
+            "projects/test_project/locations/test_location/publishers/google/models/gemini-pro");
+  }
+
+  @Test
+  public void testGenerateContentwithText_withFullModelName_requestHasCorrectResourceName()
+      throws Exception {
+    model =
+        new GenerativeModel(
+            "projects/another_project/locations/europe-west4/publishers/google/models/another_model",
+            vertexAi);
+
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(mockGenerateContentResponse);
+
+    GenerateContentResponse unused = model.generateContent(TEXT);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).call(request.capture());
+    assertThat(request.getValue().getModel())
+        .isEqualTo(
+            "projects/another_project/locations/europe-west4/publishers/google/models/another_model");
+    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
   @Test
@@ -344,6 +381,7 @@ public final class GenerativeModelTest {
     verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getSystemInstruction().getParts(0).getText())
         .isEqualTo(systemInstructionText);
+    assertThat(request.getValue().getSystemInstruction().getRole()).isEqualTo("");
   }
 
   @Test

@@ -125,6 +125,13 @@ function setup_cloud() {
 
   destroy() {
     arguments=$?
+    echo "Exiting via destroy()"
+
+    ## Get the directory of the build script
+    scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+    ## cd to the parent directory, i.e. the root of the git repo
+    cd ${scriptDir}/..
+
     time source ./.cloud/helpers/destroy.sh
     exit $arguments
   }
@@ -212,8 +219,7 @@ function run_graalvm_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -T 1C
+    -Danimal.sniffer.skip=true
 
   RETURN_CODE=$?
   printf "Finished GraalVM ITs for modules:\n%s\n" "$1"

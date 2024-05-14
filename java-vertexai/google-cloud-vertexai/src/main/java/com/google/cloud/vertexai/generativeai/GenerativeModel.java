@@ -99,17 +99,26 @@ public final class GenerativeModel {
     checkNotNull(safetySettings, "ImmutableList<SafetySettings> can't be null.");
     checkNotNull(tools, "ImmutableList<Tool> can't be null.");
 
-    modelName = reconcileModelName(modelName);
-    this.modelName = modelName;
-    this.resourceName =
-        String.format(
-            "projects/%s/locations/%s/publishers/google/models/%s",
-            vertexAi.getProjectId(), vertexAi.getLocation(), modelName);
+    this.resourceName = getResourceName(modelName, vertexAi);
+    // reconcileModelName should be called after getResourceName.
+    this.modelName = reconcileModelName(modelName);
     this.vertexAi = vertexAi;
     this.generationConfig = generationConfig;
     this.safetySettings = safetySettings;
     this.tools = tools;
-    this.systemInstruction = systemInstruction;
+    // We remove the role in the system instruction content because it's officially documented
+    // to be used without role specified:
+    // https://cloud.google.com/vertex-ai/generative-ai/docs/samples/generativeaionvertexai-gemini-system-instruction
+    // However, it's safe to have the role specified since it's currently ignored by
+    // the API. We don't want to be more restrictive than the API but also we
+    // don't want to depend on the API implementation detail. Thus we remove the
+    // role here.
+    if (systemInstruction.isPresent()) {
+      this.systemInstruction =
+          Optional.of(removeRoleInSystemInstructionContent(systemInstruction.get()));
+    } else {
+      this.systemInstruction = Optional.empty();
+    }
   }
 
   /** Builder class for {@link GenerativeModel}. */
@@ -145,7 +154,7 @@ public final class GenerativeModel {
               + " https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models"
               + " to find the right model name.");
 
-      this.modelName = reconcileModelName(modelName);
+      this.modelName = modelName;
       return this;
     }
 
@@ -505,6 +514,16 @@ public final class GenerativeModel {
   }
 
   /**
+   * Removes the role in the system instruction content.
+   *
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} instance
+   * @return a {@link com.google.cloud.vertexai.api.Content} instance with the role removed
+   */
+  private Content removeRoleInSystemInstructionContent(Content systemInstruction) {
+    return systemInstruction.toBuilder().clearRole().build();
+  }
+
+  /**
    * Builds a {@link com.google.cloud.vertexai.api.GenerateContentRequest} based on a list of
    * contents and model configurations.
    */
@@ -562,10 +581,28 @@ public final class GenerativeModel {
   private static String reconcileModelName(String modelName) {
     for (String prefix : Constants.MODEL_NAME_PREFIXES) {
       if (modelName.startsWith(prefix)) {
-        modelName = modelName.substring(prefix.length());
+        modelName = modelName.substring(modelName.lastIndexOf('/') + 1);
         break;
       }
     }
     return modelName;
+  }
+
+  /**
+   * Computes resourceName based on original modelName. Note: this should happen before the
+   * modelName is reconciled.
+   */
+  private static String getResourceName(String modelName, VertexAI vertexAi) {
+    if (modelName.startsWith(Constants.MODEL_NAME_PREFIX_PROJECTS)) {
+      return modelName;
+    } else if (modelName.startsWith(Constants.MODEL_NAME_PREFIX_PUBLISHERS)) {
+      return String.format(
+          "projects/%s/locations/%s/%s",
+          vertexAi.getProjectId(), vertexAi.getLocation(), modelName);
+    } else {
+      return String.format(
+          "projects/%s/locations/%s/publishers/google/models/%s",
+          vertexAi.getProjectId(), vertexAi.getLocation(), reconcileModelName(modelName));
+    }
   }
 }
