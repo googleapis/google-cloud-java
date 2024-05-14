@@ -1810,6 +1810,33 @@ public class StreamWriterTest {
   }
 
   @Test
+  public void testInternalQuotaError_MaxWaitTimeExceed_RetrySuccess() throws Exception {
+    // In order for the test to succeed, the given request must complete successfully even after all
+    // the retries. The fake server is configured to fail 3 times with a quota error. This means the
+    // client will perform retry with exponential backoff. The fake server injects 1 second of delay
+    // for each response. In addition, the exponential backoff injects a couple of seconds of delay.
+    // This yields an overall delay of about 5 seconds before the request succeeds. If the request
+    // send timestamp was being set only once, this would eventually exceed the 4 second timeout
+    // limit, and throw an exception. With the current behavior, the request send timestamp is reset
+    // each time a retry is performed, so we never exceed the 4 second timeout limit.
+    StreamWriter.setMaxRequestCallbackWaitTime(java.time.Duration.ofSeconds(4));
+    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    StreamWriter writer = getTestStreamWriterRetryEnabled();
+    testBigQueryWrite.addStatusException(
+        com.google.rpc.Status.newBuilder().setCode(Code.RESOURCE_EXHAUSTED.ordinal()).build());
+    testBigQueryWrite.addStatusException(
+        com.google.rpc.Status.newBuilder().setCode(Code.RESOURCE_EXHAUSTED.ordinal()).build());
+    testBigQueryWrite.addStatusException(
+        com.google.rpc.Status.newBuilder().setCode(Code.RESOURCE_EXHAUSTED.ordinal()).build());
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 =
+        writer.append(createProtoRows(new String[] {"A"}));
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    writer.close();
+  }
+
+  @Test
   public void testAppendSuccessAndInternalErrorRetrySuccessExclusive() throws Exception {
     // Ensure we return an error from the fake server when a retry is in progress
     testBigQueryWrite.setReturnErrorDuringExclusiveStreamRetry(true);

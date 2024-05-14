@@ -699,7 +699,10 @@ class ConnectionWorker implements AutoCloseable {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
         // Check whether we should error out the current append loop.
         if (inflightRequestQueue.size() > 0) {
-          throwIfWaitCallbackTooLong(inflightRequestQueue.getFirst().requestCreationTimeStamp);
+          Instant sendInstant = inflightRequestQueue.getFirst().requestSendTimeStamp;
+          if (sendInstant != null) {
+            throwIfWaitCallbackTooLong(sendInstant);
+          }
         }
 
         // Copy the streamConnectionIsConnected guarded by lock to a local variable.
@@ -711,7 +714,9 @@ class ConnectionWorker implements AutoCloseable {
           // from inflightRequestQueue and prepent them onto the waitinRequestQueue. They need to be
           // prepended as they need to be sent before new requests.
           while (!inflightRequestQueue.isEmpty()) {
-            waitingRequestQueue.addFirst(inflightRequestQueue.pollLast());
+            AppendRequestAndResponse requestWrapper = inflightRequestQueue.pollLast();
+            requestWrapper.requestSendTimeStamp = null;
+            waitingRequestQueue.addFirst(requestWrapper);
           }
 
           // If any of the inflight messages were meant to be ignored during requestCallback, they
@@ -721,7 +726,6 @@ class ConnectionWorker implements AutoCloseable {
         while (!this.waitingRequestQueue.isEmpty()) {
           AppendRequestAndResponse requestWrapper = this.waitingRequestQueue.pollFirst();
           waitForBackoffIfNecessary(requestWrapper);
-          requestWrapper.trySetRequestInsertQueueTime();
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
         }
@@ -760,6 +764,7 @@ class ConnectionWorker implements AutoCloseable {
         firstRequestForTableOrSchemaSwitch = true;
       }
       while (!localQueue.isEmpty()) {
+        localQueue.peekFirst().setRequestSendQueueTime();
         AppendRowsRequest originalRequest = localQueue.pollFirst().message;
         AppendRowsRequest.Builder originalRequestBuilder = originalRequest.toBuilder();
         // Always respect the first writer schema seen by the loop.
@@ -1217,6 +1222,7 @@ class ConnectionWorker implements AutoCloseable {
   private AppendRequestAndResponse pollInflightRequestQueue(boolean pollLast) {
     AppendRequestAndResponse requestWrapper =
         pollLast ? inflightRequestQueue.pollLast() : inflightRequestQueue.poll();
+    requestWrapper.requestSendTimeStamp = null;
     --this.inflightRequests;
     this.inflightBytes -= requestWrapper.messageSize;
     this.inflightReduced.signal();
@@ -1256,7 +1262,9 @@ class ConnectionWorker implements AutoCloseable {
 
     TimedAttemptSettings attemptSettings;
 
-    Instant requestCreationTimeStamp;
+    // Time at which request was last sent over the network.
+    // If a response is no longer expected this is set back to null.
+    Instant requestSendTimeStamp;
 
     AppendRequestAndResponse(
         AppendRowsRequest message, StreamWriter streamWriter, RetrySettings retrySettings) {
@@ -1276,11 +1284,8 @@ class ConnectionWorker implements AutoCloseable {
       }
     }
 
-    void trySetRequestInsertQueueTime() {
-      // Only set the first time the caller tries to set the timestamp.
-      if (requestCreationTimeStamp == null) {
-        requestCreationTimeStamp = Instant.now();
-      }
+    void setRequestSendQueueTime() {
+      requestSendTimeStamp = Instant.now();
     }
   }
 
