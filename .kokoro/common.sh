@@ -219,8 +219,7 @@ function run_graalvm_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -T 1C
+    -Danimal.sniffer.skip=true
 
   RETURN_CODE=$?
   printf "Finished GraalVM ITs for modules:\n%s\n" "$1"
