@@ -58,16 +58,18 @@ function retry_with_backoff {
 function parse_submodules() {
   pushd "$1" >/dev/null
 
-  # New-line-delimited string containing the current folder's pom.xml <module> names.
-  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules \
-        | grep '<.*>.*</.*>' \
-        | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-
   submodules_array=()
-  for submodule in $mvn_submodules; do
-    # Each entry = <folder>/<submodule>
-    submodules_array+=("$1/${submodule}");
-  done
+  mvn_submodules=$(mvn help:evaluate -Dexpression=project.modules)
+  if mvn_submodules=$(grep '<.*>.*</.*>' <<< "$mvn_submodules"); then
+    mvn_submodules=$(sed -e 's/<.*>\(.*\)<\/.*>/\1/g' <<< "$mvn_submodules")
+    for submodule in $mvn_submodules; do
+      # Each entry = <folder>/<submodule>
+      submodules_array+=("$1/${submodule}");
+    done
+  else
+    # If this module contains no submodules, select the module itself.
+    submodules_array+=("$1");
+  fi
 
   # Convert from array to comma-delimited string
   submodules=$(
