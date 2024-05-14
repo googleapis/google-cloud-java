@@ -20,8 +20,12 @@ import com.google.common.collect.ImmutableSet;
 
 /** A class that holds all constants for vertexai/generativeai. */
 public final class Constants {
+  public static final String MODEL_NAME_PREFIX_PROJECTS = "projects/";
+  public static final String MODEL_NAME_PREFIX_PUBLISHERS = "publishers/";
+  public static final String MODEL_NAME_PREFIX_MODELS = "models/";
   public static final ImmutableSet<String> MODEL_NAME_PREFIXES =
-      ImmutableSet.of("publishers/google/models/", "models/");
+      ImmutableSet.of(
+          MODEL_NAME_PREFIX_PROJECTS, MODEL_NAME_PREFIX_PUBLISHERS, MODEL_NAME_PREFIX_MODELS);
 
   private Constants() {}
 }
