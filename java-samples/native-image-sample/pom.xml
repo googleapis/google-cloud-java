@@ -85,6 +85,7 @@
 
     <profiles>
         <!-- Native Profile-->
+        <!-- TODO(10840): Use maven properties to track versions once https://github.com/googleapis/java-shared-config/pull/824 is merged. -->
         <profile>
             <id>native</id>
 
