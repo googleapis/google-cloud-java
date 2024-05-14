@@ -74,10 +74,14 @@ popd
 rm -rf tmp-googleapis
 sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${latest_commit}/" "${generation_config}"
 
-
 git add "${generation_config}"
-# use --allow-empty because (rarely) there's no change.
-git commit --allow-empty -m "${title}"
+changed_files=$(git diff --cached --name-only)
+if [[ "${changed_files}" == "" ]]; then
+    echo "The latest googleapis commit is not changed."
+    echo "Skip committing to the pull request."
+    exit 0
+fi
+git commit -m "${title}"
 if [ -z "${pr_num}" ]; then
   git remote add remote_repo https://cloud-java-bot:"${GH_TOKEN}@github.com/${repo}.git"
   git fetch -q --unshallow remote_repo
