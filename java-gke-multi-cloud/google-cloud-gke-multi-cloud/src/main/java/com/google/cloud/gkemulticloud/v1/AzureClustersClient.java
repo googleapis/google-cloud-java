@@ -2043,6 +2043,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setAllowMissing(true)
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   azureClustersClient.deleteAzureClusterAsync(request).get();
    * }
@@ -2082,6 +2083,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setAllowMissing(true)
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       azureClustersClient.deleteAzureClusterOperationCallable().futureCall(request);
@@ -2121,6 +2123,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setAllowMissing(true)
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       azureClustersClient.deleteAzureClusterCallable().futureCall(request);
@@ -3047,6 +3050,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   azureClustersClient.deleteAzureNodePoolAsync(request).get();
    * }
@@ -3086,6 +3090,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       azureClustersClient.deleteAzureNodePoolOperationCallable().futureCall(request);
@@ -3125,6 +3130,7 @@ public class AzureClustersClient implements BackgroundResource {
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .setEtag("etag3123477")
+   *           .setIgnoreErrors(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       azureClustersClient.deleteAzureNodePoolCallable().futureCall(request);
@@ -3280,7 +3286,7 @@ public class AzureClustersClient implements BackgroundResource {
    * }</pre>
    *
    * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
-   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AzureJsonWebKeys getAzureJsonWebKeys(AzureClusterName azureCluster) {
@@ -3311,7 +3317,7 @@ public class AzureClustersClient implements BackgroundResource {
    * }</pre>
    *
    * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
-   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AzureJsonWebKeys getAzureJsonWebKeys(String azureCluster) {

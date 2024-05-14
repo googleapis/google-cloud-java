@@ -48,11 +48,11 @@ public final class SpaceSetupProto {
           + "equest\022)\n\005space\030\001 \001(\0132\025.google.chat.v1.S"
           + "paceB\003\340A\002\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\0224\n\013me"
           + "mberships\030\004 \003(\0132\032.google.chat.v1.Members"
-          + "hipB\003\340A\001B\232\001\n\022com.google.chat.v1B\017SpaceSe"
+          + "hipB\003\340A\001B\250\001\n\022com.google.chat.v1B\017SpaceSe"
           + "tupProtoP\001Z,cloud.google.com/go/chat/api"
-          + "v1/chatpb;chatpb\252\002\023Google.Apps.Chat.V1\312\002"
-          + "\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Cha"
-          + "t::V1b\006proto3"
+          + "v1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google."
+          + "Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Goo"
+          + "gle::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -64,11 +64,11 @@ public final class SpaceReadStateProto {
           + "tateRequest\022=\n\020space_read_state\030\001 \001(\0132\036."
           + "google.chat.v1.SpaceReadStateB\003\340A\002\0224\n\013up"
           + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
-          + "askB\003\340A\002B\236\001\n\022com.google.chat.v1B\023SpaceRe"
+          + "askB\003\340A\002B\254\001\n\022com.google.chat.v1B\023SpaceRe"
           + "adStateProtoP\001Z,cloud.google.com/go/chat"
-          + "/apiv1/chatpb;chatpb\252\002\023Google.Apps.Chat."
-          + "V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps:"
-          + ":Chat::V1b\006proto3"
+          + "/apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Goo"
+          + "gle.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002"
+          + "\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

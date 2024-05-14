@@ -45,11 +45,11 @@ public final class ActionStatusProto {
           + "ogle.chat.v1\032\025google/rpc/code.proto\"R\n\014A"
           + "ctionStatus\022%\n\013status_code\030\001 \001(\0162\020.googl"
           + "e.rpc.Code\022\033\n\023user_facing_message\030\002 \001(\tB"
-          + "\234\001\n\022com.google.chat.v1B\021ActionStatusProt"
+          + "\252\001\n\022com.google.chat.v1B\021ActionStatusProt"
           + "oP\001Z,cloud.google.com/go/chat/apiv1/chat"
-          + "pb;chatpb\252\002\023Google.Apps.Chat.V1\312\002\023Google"
-          + "\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006"
-          + "proto3"
+          + "pb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Ch"
+          + "at.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Ap"
+          + "ps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

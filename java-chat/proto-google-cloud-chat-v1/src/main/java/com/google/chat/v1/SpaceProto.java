@@ -127,11 +127,11 @@ public final class SpaceProto {
           + "aceRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031chat.g"
           + "oogleapis.com/Space\"C\n\033CompleteImportSpa"
           + "ceResponse\022$\n\005space\030\001 \001(\0132\025.google.chat."
-          + "v1.SpaceB\225\001\n\022com.google.chat.v1B\nSpacePr"
+          + "v1.SpaceB\243\001\n\022com.google.chat.v1B\nSpacePr"
           + "otoP\001Z,cloud.google.com/go/chat/apiv1/ch"
-          + "atpb;chatpb\252\002\023Google.Apps.Chat.V1\312\002\023Goog"
-          + "le\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1"
-          + "b\006proto3"
+          + "atpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps."
+          + "Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::"
+          + "Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

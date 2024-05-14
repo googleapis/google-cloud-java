@@ -1560,7 +1560,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -1580,7 +1580,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
    * @return The type.
    */
   @java.lang.Override
@@ -1658,7 +1658,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
    * @return The threaded.
    */
   @java.lang.Override
@@ -1994,13 +1994,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Whether the Chat app was installed by a Google Workspace
-   * administrator. Administrators can install a Chat app for their domain,
-   * organizational unit, or a group of users.
+   * Output only. For direct message (DM) spaces with a Chat app, whether the
+   * space was created by a Google Workspace administrator. Administrators can
+   * install and set up a direct message with a Chat app on behalf of users in
+   * their organization.
    *
-   * Administrators can only install Chat apps for direct messaging between
-   * users and the app. To support admin install, your app must feature direct
-   * messaging.
+   * To support admin install, your Chat app must feature direct messaging.
    * </pre>
    *
    * <code>bool admin_installed = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2781,7 +2780,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -2801,7 +2800,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -2824,7 +2823,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
      * @return The type.
      */
     @java.lang.Override
@@ -2845,7 +2844,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -2871,7 +2870,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3045,7 +3044,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
      * @return The threaded.
      */
     @java.lang.Override
@@ -3064,7 +3063,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -3087,7 +3086,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4058,13 +4057,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether the Chat app was installed by a Google Workspace
-     * administrator. Administrators can install a Chat app for their domain,
-     * organizational unit, or a group of users.
+     * Output only. For direct message (DM) spaces with a Chat app, whether the
+     * space was created by a Google Workspace administrator. Administrators can
+     * install and set up a direct message with a Chat app on behalf of users in
+     * their organization.
      *
-     * Administrators can only install Chat apps for direct messaging between
-     * users and the app. To support admin install, your app must feature direct
-     * messaging.
+     * To support admin install, your Chat app must feature direct messaging.
      * </pre>
      *
      * <code>bool admin_installed = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4079,13 +4077,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether the Chat app was installed by a Google Workspace
-     * administrator. Administrators can install a Chat app for their domain,
-     * organizational unit, or a group of users.
+     * Output only. For direct message (DM) spaces with a Chat app, whether the
+     * space was created by a Google Workspace administrator. Administrators can
+     * install and set up a direct message with a Chat app on behalf of users in
+     * their organization.
      *
-     * Administrators can only install Chat apps for direct messaging between
-     * users and the app. To support admin install, your app must feature direct
-     * messaging.
+     * To support admin install, your Chat app must feature direct messaging.
      * </pre>
      *
      * <code>bool admin_installed = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4104,13 +4101,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether the Chat app was installed by a Google Workspace
-     * administrator. Administrators can install a Chat app for their domain,
-     * organizational unit, or a group of users.
+     * Output only. For direct message (DM) spaces with a Chat app, whether the
+     * space was created by a Google Workspace administrator. Administrators can
+     * install and set up a direct message with a Chat app on behalf of users in
+     * their organization.
      *
-     * Administrators can only install Chat apps for direct messaging between
-     * users and the app. To support admin install, your app must feature direct
-     * messaging.
+     * To support admin install, your Chat app must feature direct messaging.
      * </pre>
      *
      * <code>bool admin_installed = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -44,6 +44,7 @@ public class SyncDeleteAzureNodePool {
               .setValidateOnly(true)
               .setAllowMissing(true)
               .setEtag("etag3123477")
+              .setIgnoreErrors(true)
               .build();
       azureClustersClient.deleteAzureNodePoolAsync(request).get();
     }

@@ -65,7 +65,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=112
    * @return The type.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=124
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -388,13 +388,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether the Chat app was installed by a Google Workspace
-   * administrator. Administrators can install a Chat app for their domain,
-   * organizational unit, or a group of users.
+   * Output only. For direct message (DM) spaces with a Chat app, whether the
+   * space was created by a Google Workspace administrator. Administrators can
+   * install and set up a direct message with a Chat app on behalf of users in
+   * their organization.
    *
-   * Administrators can only install Chat apps for direct messaging between
-   * users and the app. To support admin install, your app must feature direct
-   * messaging.
+   * To support admin install, your Chat app must feature direct messaging.
    * </pre>
    *
    * <code>bool admin_installed = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

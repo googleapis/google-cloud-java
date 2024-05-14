@@ -105,11 +105,12 @@ public final class MembershipProto {
           + "tMembershipRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A "
           + "\n\036chat.googleapis.com/Membership\"O\n\027Dele"
           + "teMembershipRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A"
-          + " \n\036chat.googleapis.com/MembershipB\232\001\n\022co"
+          + " \n\036chat.googleapis.com/MembershipB\250\001\n\022co"
           + "m.google.chat.v1B\017MembershipProtoP\001Z,clo"
           + "ud.google.com/go/chat/apiv1/chatpb;chatp"
-          + "b\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Ch"
-          + "at\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "b\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023"
+          + "Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
