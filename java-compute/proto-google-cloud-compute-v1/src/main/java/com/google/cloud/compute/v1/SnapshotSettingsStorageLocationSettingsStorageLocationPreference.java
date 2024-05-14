@@ -77,7 +77,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
    *
    *
    * <pre>
-   * Name of the location. It should be one of the GCS buckets.
+   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -92,7 +92,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
    *
    *
    * <pre>
-   * Name of the location. It should be one of the GCS buckets.
+   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -115,7 +115,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
    *
    *
    * <pre>
-   * Name of the location. It should be one of the GCS buckets.
+   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -543,7 +543,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -557,7 +557,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -579,7 +579,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -601,7 +601,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -622,7 +622,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -639,7 +639,7 @@ public final class SnapshotSettingsStorageLocationSettingsStorageLocationPrefere
      *
      *
      * <pre>
-     * Name of the location. It should be one of the GCS buckets.
+     * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

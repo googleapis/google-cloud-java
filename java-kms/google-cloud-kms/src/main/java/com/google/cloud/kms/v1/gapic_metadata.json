@@ -5,6 +5,72 @@
   "protoPackage": "google.cloud.kms.v1",
   "libraryPackage": "com.google.cloud.kms.v1",
   "services": {
+    "Autokey": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutokeyClient",
+          "rpcs": {
+            "CreateKeyHandle": {
+              "methods": ["createKeyHandleAsync", "createKeyHandleAsync", "createKeyHandleAsync", "createKeyHandleOperationCallable", "createKeyHandleCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetKeyHandle": {
+              "methods": ["getKeyHandle", "getKeyHandle", "getKeyHandle", "getKeyHandleCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListKeyHandles": {
+              "methods": ["listKeyHandles", "listKeyHandles", "listKeyHandles", "listKeyHandlesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AutokeyAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutokeyAdminClient",
+          "rpcs": {
+            "GetAutokeyConfig": {
+              "methods": ["getAutokeyConfig", "getAutokeyConfig", "getAutokeyConfig", "getAutokeyConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "ShowEffectiveAutokeyConfig": {
+              "methods": ["showEffectiveAutokeyConfig", "showEffectiveAutokeyConfig", "showEffectiveAutokeyConfig", "showEffectiveAutokeyConfigCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAutokeyConfig": {
+              "methods": ["updateAutokeyConfig", "updateAutokeyConfig", "updateAutokeyConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "EkmService": {
       "clients": {
         "grpc": {

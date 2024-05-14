@@ -86,7 +86,7 @@ if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
 fi
 # copy generation configuration from target branch to current branch.
 git show "${target_branch}":"${generation_config}" > "${baseline_generation_config}"
-config_diff=$(diff "${generation_config}" "${baseline_generation_config}")
+config_diff=$(diff "${generation_config}" "${baseline_generation_config}" || true)
 
 # run hermetic code generation docker image.
 docker run \

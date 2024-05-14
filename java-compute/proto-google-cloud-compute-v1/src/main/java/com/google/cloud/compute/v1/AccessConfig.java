@@ -771,7 +771,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -786,7 +786,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -809,7 +809,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
    * </pre>
    *
    * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2293,7 +2293,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2307,7 +2307,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2329,7 +2329,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2351,7 +2351,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2372,7 +2372,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
@@ -2389,7 +2389,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be created for first IP in associated external IPv6 range.
      * </pre>
      *
      * <code>optional string public_ptr_domain_name = 316599167;</code>
