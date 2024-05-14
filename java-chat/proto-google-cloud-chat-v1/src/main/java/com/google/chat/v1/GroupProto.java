@@ -42,11 +42,12 @@ public final class GroupProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032google/chat/v1/group.proto\022\016google.cha"
-          + "t.v1\"\025\n\005Group\022\014\n\004name\030\001 \001(\tB\225\001\n\022com.goog"
+          + "t.v1\"\025\n\005Group\022\014\n\004name\030\001 \001(\tB\243\001\n\022com.goog"
           + "le.chat.v1B\nGroupProtoP\001Z,cloud.google.c"
-          + "om/go/chat/apiv1/chatpb;chatpb\252\002\023Google."
-          + "Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Goo"
-          + "gle::Apps::Chat::V1b\006proto3"
+          + "om/go/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIP"
+          + "roto\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps"
+          + "\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

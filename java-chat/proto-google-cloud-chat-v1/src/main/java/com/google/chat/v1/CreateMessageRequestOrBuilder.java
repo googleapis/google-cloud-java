@@ -109,7 +109,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=502
+   *     google/chat/v1/message.proto;l=503
    * @return The threadKey.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=502
+   *     google/chat/v1/message.proto;l=503
    * @return The bytes for threadKey.
    */
   @java.lang.Deprecated

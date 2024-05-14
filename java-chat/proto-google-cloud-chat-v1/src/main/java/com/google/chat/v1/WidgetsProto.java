@@ -129,11 +129,12 @@ public final class WidgetsProto {
           + "\n\005OFFER\020\036\022\n\n\006PERSON\020\013\022\t\n\005PHONE\020\r\022\023\n\017REST"
           + "AURANT_ICON\020\007\022\021\n\rSHOPPING_CART\020\010\022\010\n\004STAR"
           + "\020\005\022\t\n\005STORE\020\026\022\n\n\006TICKET\020\004\022\t\n\005TRAIN\020\027\022\020\n\014"
-          + "VIDEO_CAMERA\020\034\022\016\n\nVIDEO_PLAY\020\035B\006\n\004dataB\227"
+          + "VIDEO_CAMERA\020\034\022\016\n\nVIDEO_PLAY\020\035B\006\n\004dataB\245"
           + "\001\n\022com.google.chat.v1B\014WidgetsProtoP\001Z,c"
           + "loud.google.com/go/chat/apiv1/chatpb;cha"
-          + "tpb\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\"
-          + "Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "tpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312"
+          + "\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Ch"
+          + "at::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

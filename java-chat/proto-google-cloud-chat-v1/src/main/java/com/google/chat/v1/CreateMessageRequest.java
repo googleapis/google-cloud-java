@@ -373,7 +373,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=502
+   *     google/chat/v1/message.proto;l=503
    * @return The threadKey.
    */
   @java.lang.Override
@@ -406,7 +406,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=502
+   *     google/chat/v1/message.proto;l=503
    * @return The bytes for threadKey.
    */
   @java.lang.Override
@@ -1408,7 +1408,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=502
+     *     google/chat/v1/message.proto;l=503
      * @return The threadKey.
      */
     @java.lang.Deprecated
@@ -1440,7 +1440,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=502
+     *     google/chat/v1/message.proto;l=503
      * @return The bytes for threadKey.
      */
     @java.lang.Deprecated
@@ -1472,7 +1472,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=502
+     *     google/chat/v1/message.proto;l=503
      * @param value The threadKey to set.
      * @return This builder for chaining.
      */
@@ -1503,7 +1503,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=502
+     *     google/chat/v1/message.proto;l=503
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1530,7 +1530,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=502
+     *     google/chat/v1/message.proto;l=503
      * @param value The bytes for threadKey to set.
      * @return This builder for chaining.
      */

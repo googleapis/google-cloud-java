@@ -163,11 +163,12 @@ public final class ChatServiceProto {
           + "pis.com/auth/chat.spaces.readonly,https:"
           + "//www.googleapis.com/auth/chat.users.rea"
           + "dstate,https://www.googleapis.com/auth/c"
-          + "hat.users.readstate.readonlyB\233\001\n\022com.goo"
+          + "hat.users.readstate.readonlyB\251\001\n\022com.goo"
           + "gle.chat.v1B\020ChatServiceProtoP\001Z,cloud.g"
-          + "oogle.com/go/chat/apiv1/chatpb;chatpb\252\002\023"
-          + "Google.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V"
-          + "1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "oogle.com/go/chat/apiv1/chatpb;chatpb\242\002\013"
+          + "DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023Goog"
+          + "le\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

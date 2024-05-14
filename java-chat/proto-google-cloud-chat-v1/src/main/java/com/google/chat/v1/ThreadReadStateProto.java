@@ -56,11 +56,11 @@ public final class ThreadReadStateProto {
           + "ad}/threadReadState2\017threadReadState\"V\n\031"
           + "GetThreadReadStateRequest\0229\n\004name\030\001 \001(\tB"
           + "+\340A\002\372A%\n#chat.googleapis.com/ThreadReadS"
-          + "tateB\237\001\n\022com.google.chat.v1B\024ThreadReadS"
+          + "tateB\255\001\n\022com.google.chat.v1B\024ThreadReadS"
           + "tateProtoP\001Z,cloud.google.com/go/chat/ap"
-          + "iv1/chatpb;chatpb\252\002\023Google.Apps.Chat.V1\312"
-          + "\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Ch"
-          + "at::V1b\006proto3"
+          + "iv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google"
+          + ".Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Go"
+          + "ogle::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

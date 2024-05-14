@@ -43,11 +43,11 @@ public final class SlashCommandProto {
     java.lang.String[] descriptorData = {
       "\n\"google/chat/v1/slash_command.proto\022\016go"
           + "ogle.chat.v1\"\"\n\014SlashCommand\022\022\n\ncommand_"
-          + "id\030\001 \001(\003B\234\001\n\022com.google.chat.v1B\021SlashCo"
+          + "id\030\001 \001(\003B\252\001\n\022com.google.chat.v1B\021SlashCo"
           + "mmandProtoP\001Z,cloud.google.com/go/chat/a"
-          + "piv1/chatpb;chatpb\252\002\023Google.Apps.Chat.V1"
-          + "\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::C"
-          + "hat::V1b\006proto3"
+          + "piv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Googl"
+          + "e.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026G"
+          + "oogle::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

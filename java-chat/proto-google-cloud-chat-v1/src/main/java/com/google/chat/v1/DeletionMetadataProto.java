@@ -48,11 +48,12 @@ public final class DeletionMetadataProto {
           + "Type\022\035\n\031DELETION_TYPE_UNSPECIFIED\020\000\022\013\n\007C"
           + "REATOR\020\001\022\017\n\013SPACE_OWNER\020\002\022\t\n\005ADMIN\020\003\022\026\n\022"
           + "APP_MESSAGE_EXPIRY\020\004\022\023\n\017CREATOR_VIA_APP\020"
-          + "\005\022\027\n\023SPACE_OWNER_VIA_APP\020\006B\240\001\n\022com.googl"
+          + "\005\022\027\n\023SPACE_OWNER_VIA_APP\020\006B\256\001\n\022com.googl"
           + "e.chat.v1B\025DeletionMetadataProtoP\001Z,clou"
           + "d.google.com/go/chat/apiv1/chatpb;chatpb"
-          + "\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Cha"
-          + "t\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023G"
+          + "oogle\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
