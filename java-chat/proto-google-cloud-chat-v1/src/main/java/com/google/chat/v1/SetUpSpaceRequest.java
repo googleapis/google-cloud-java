@@ -251,14 +251,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
    *
    * The set currently allows up to 20 memberships (in addition to the caller).
    *
-   * The `Membership.member` field must contain a `user` with `name` populated
-   * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-   * add human users when setting up a space (adding Chat apps is only supported
-   * for direct message setup with the calling app). You can also add members
-   * using the user's email as an alias for {user}. For example, the `user.name`
-   * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-   * external Google Workspace domains, user's email must be used for
-   * `{user}`.
+   * For human membership, the `Membership.member` field must contain a `user`
+   * with `name` populated (format: `users/{user}`) and `type` set to
+   * `User.Type.HUMAN`. You can only add human users when setting up a space
+   * (adding Chat apps is only supported for direct message setup with the
+   * calling app). You can also add members using the user's email as an alias
+   * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+   * To invite Gmail users or users from external Google Workspace domains,
+   * user's email must be used for `{user}`.
    *
    * Optional when setting `Space.spaceType` to `SPACE`.
    *
@@ -290,14 +290,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
    *
    * The set currently allows up to 20 memberships (in addition to the caller).
    *
-   * The `Membership.member` field must contain a `user` with `name` populated
-   * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-   * add human users when setting up a space (adding Chat apps is only supported
-   * for direct message setup with the calling app). You can also add members
-   * using the user's email as an alias for {user}. For example, the `user.name`
-   * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-   * external Google Workspace domains, user's email must be used for
-   * `{user}`.
+   * For human membership, the `Membership.member` field must contain a `user`
+   * with `name` populated (format: `users/{user}`) and `type` set to
+   * `User.Type.HUMAN`. You can only add human users when setting up a space
+   * (adding Chat apps is only supported for direct message setup with the
+   * calling app). You can also add members using the user's email as an alias
+   * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+   * To invite Gmail users or users from external Google Workspace domains,
+   * user's email must be used for `{user}`.
    *
    * Optional when setting `Space.spaceType` to `SPACE`.
    *
@@ -330,14 +330,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
    *
    * The set currently allows up to 20 memberships (in addition to the caller).
    *
-   * The `Membership.member` field must contain a `user` with `name` populated
-   * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-   * add human users when setting up a space (adding Chat apps is only supported
-   * for direct message setup with the calling app). You can also add members
-   * using the user's email as an alias for {user}. For example, the `user.name`
-   * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-   * external Google Workspace domains, user's email must be used for
-   * `{user}`.
+   * For human membership, the `Membership.member` field must contain a `user`
+   * with `name` populated (format: `users/{user}`) and `type` set to
+   * `User.Type.HUMAN`. You can only add human users when setting up a space
+   * (adding Chat apps is only supported for direct message setup with the
+   * calling app). You can also add members using the user's email as an alias
+   * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+   * To invite Gmail users or users from external Google Workspace domains,
+   * user's email must be used for `{user}`.
    *
    * Optional when setting `Space.spaceType` to `SPACE`.
    *
@@ -369,14 +369,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
    *
    * The set currently allows up to 20 memberships (in addition to the caller).
    *
-   * The `Membership.member` field must contain a `user` with `name` populated
-   * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-   * add human users when setting up a space (adding Chat apps is only supported
-   * for direct message setup with the calling app). You can also add members
-   * using the user's email as an alias for {user}. For example, the `user.name`
-   * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-   * external Google Workspace domains, user's email must be used for
-   * `{user}`.
+   * For human membership, the `Membership.member` field must contain a `user`
+   * with `name` populated (format: `users/{user}`) and `type` set to
+   * `User.Type.HUMAN`. You can only add human users when setting up a space
+   * (adding Chat apps is only supported for direct message setup with the
+   * calling app). You can also add members using the user's email as an alias
+   * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+   * To invite Gmail users or users from external Google Workspace domains,
+   * user's email must be used for `{user}`.
    *
    * Optional when setting `Space.spaceType` to `SPACE`.
    *
@@ -408,14 +408,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
    *
    * The set currently allows up to 20 memberships (in addition to the caller).
    *
-   * The `Membership.member` field must contain a `user` with `name` populated
-   * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-   * add human users when setting up a space (adding Chat apps is only supported
-   * for direct message setup with the calling app). You can also add members
-   * using the user's email as an alias for {user}. For example, the `user.name`
-   * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-   * external Google Workspace domains, user's email must be used for
-   * `{user}`.
+   * For human membership, the `Membership.member` field must contain a `user`
+   * with `name` populated (format: `users/{user}`) and `type` set to
+   * `User.Type.HUMAN`. You can only add human users when setting up a space
+   * (adding Chat apps is only supported for direct message setup with the
+   * calling app). You can also add members using the user's email as an alias
+   * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+   * To invite Gmail users or users from external Google Workspace domains,
+   * user's email must be used for `{user}`.
    *
    * Optional when setting `Space.spaceType` to `SPACE`.
    *
@@ -1425,14 +1425,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1467,14 +1467,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1509,14 +1509,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1551,14 +1551,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1599,14 +1599,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1645,14 +1645,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1693,14 +1693,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1741,14 +1741,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1786,14 +1786,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1832,14 +1832,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1878,14 +1878,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1923,14 +1923,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -1968,14 +1968,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -2006,14 +2006,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -2048,14 +2048,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -2091,14 +2091,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -2130,14 +2130,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *
@@ -2169,14 +2169,14 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
      *
      * The set currently allows up to 20 memberships (in addition to the caller).
      *
-     * The `Membership.member` field must contain a `user` with `name` populated
-     * (format: `users/{user}`) and `type` set to `User.Type.HUMAN`. You can only
-     * add human users when setting up a space (adding Chat apps is only supported
-     * for direct message setup with the calling app). You can also add members
-     * using the user's email as an alias for {user}. For example, the `user.name`
-     * can be `users/example&#64;gmail.com`." To invite Gmail users or users from
-     * external Google Workspace domains, user's email must be used for
-     * `{user}`.
+     * For human membership, the `Membership.member` field must contain a `user`
+     * with `name` populated (format: `users/{user}`) and `type` set to
+     * `User.Type.HUMAN`. You can only add human users when setting up a space
+     * (adding Chat apps is only supported for direct message setup with the
+     * calling app). You can also add members using the user's email as an alias
+     * for {user}. For example, the `user.name` can be `users/example&#64;gmail.com`.
+     * To invite Gmail users or users from external Google Workspace domains,
+     * user's email must be used for `{user}`.
      *
      * Optional when setting `Space.spaceType` to `SPACE`.
      *

@@ -427,6 +427,8 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;
                           })
@@ -701,6 +703,8 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(
+                                fields, "ignoreErrors", request.getIgnoreErrors());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             return fields;

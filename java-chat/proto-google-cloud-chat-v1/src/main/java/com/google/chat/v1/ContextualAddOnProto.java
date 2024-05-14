@@ -75,11 +75,12 @@ public final class ContextualAddOnProto {
           + "-\n\007widgets\030\002 \003(\0132\034.google.chat.v1.Widget"
           + "Markup\032Z\n\nCardAction\022\024\n\014action_label\030\001 \001"
           + "(\t\0226\n\010on_click\030\002 \001(\0132$.google.chat.v1.Wi"
-          + "dgetMarkup.OnClickB\237\001\n\022com.google.chat.v"
+          + "dgetMarkup.OnClickB\255\001\n\022com.google.chat.v"
           + "1B\024ContextualAddOnProtoP\001Z,cloud.google."
-          + "com/go/chat/apiv1/chatpb;chatpb\252\002\023Google"
-          + ".Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Go"
-          + "ogle::Apps::Chat::V1b\006proto3"
+          + "com/go/chat/apiv1/chatpb;chatpb\242\002\013DYNAPI"
+          + "Proto\252\002\023Google.Apps.Chat.V1\312\002\023Google\\App"
+          + "s\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

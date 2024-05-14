@@ -43,11 +43,12 @@ public final class MatchedUrlProto {
     java.lang.String[] descriptorData = {
       "\n google/chat/v1/matched_url.proto\022\016goog"
           + "le.chat.v1\032\037google/api/field_behavior.pr"
-          + "oto\"\036\n\nMatchedUrl\022\020\n\003url\030\002 \001(\tB\003\340A\003B\232\001\n\022"
+          + "oto\"\036\n\nMatchedUrl\022\020\n\003url\030\002 \001(\tB\003\340A\003B\250\001\n\022"
           + "com.google.chat.v1B\017MatchedUrlProtoP\001Z,c"
           + "loud.google.com/go/chat/apiv1/chatpb;cha"
-          + "tpb\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\"
-          + "Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "tpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312"
+          + "\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Ch"
+          + "at::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

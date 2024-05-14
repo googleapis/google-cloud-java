@@ -43,6 +43,7 @@ public class AsyncDeleteAzureClusterLRO {
               .setAllowMissing(true)
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setIgnoreErrors(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           azureClustersClient.deleteAzureClusterOperationCallable().futureCall(request);

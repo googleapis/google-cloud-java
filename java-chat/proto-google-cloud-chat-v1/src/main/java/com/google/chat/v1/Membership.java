@@ -683,8 +683,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Group the membership corresponds to.
-   * Only supports read operations. Other operations, like creating or
-   * updating a membership, aren't currently supported.
+   * Only supports read operations. Other operations, like
+   * creating or updating a membership, aren't currently supported.
    * </pre>
    *
    * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -700,8 +700,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Group the membership corresponds to.
-   * Only supports read operations. Other operations, like creating or
-   * updating a membership, aren't currently supported.
+   * Only supports read operations. Other operations, like
+   * creating or updating a membership, aren't currently supported.
    * </pre>
    *
    * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -720,8 +720,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Google Group the membership corresponds to.
-   * Only supports read operations. Other operations, like creating or
-   * updating a membership, aren't currently supported.
+   * Only supports read operations. Other operations, like
+   * creating or updating a membership, aren't currently supported.
    * </pre>
    *
    * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2003,8 +2003,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2020,8 +2020,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2047,8 +2047,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2071,8 +2071,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2092,8 +2092,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2124,8 +2124,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2151,8 +2151,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2165,8 +2165,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>
@@ -2187,8 +2187,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Google Group the membership corresponds to.
-     * Only supports read operations. Other operations, like creating or
-     * updating a membership, aren't currently supported.
+     * Only supports read operations. Other operations, like
+     * creating or updating a membership, aren't currently supported.
      * </pre>
      *
      * <code>.google.chat.v1.Group group_member = 5;</code>

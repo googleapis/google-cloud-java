@@ -210,11 +210,11 @@ public final class MessageProto {
           + "\003\340A\004B\010\n\006action\"6\n\006Dialog\022,\n\004body\030\001 \001(\0132\031"
           + ".google.apps.card.v1.CardB\003\340A\004\"F\n\nCardWi"
           + "thId\022\017\n\007card_id\030\001 \001(\t\022\'\n\004card\030\002 \001(\0132\031.go"
-          + "ogle.apps.card.v1.CardB\227\001\n\022com.google.ch"
+          + "ogle.apps.card.v1.CardB\245\001\n\022com.google.ch"
           + "at.v1B\014MessageProtoP\001Z,cloud.google.com/"
-          + "go/chat/apiv1/chatpb;chatpb\252\002\023Google.App"
-          + "s.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google"
-          + "::Apps::Chat::V1b\006proto3"
+          + "go/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProt"
+          + "o\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Ch"
+          + "at\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

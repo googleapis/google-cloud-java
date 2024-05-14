@@ -86,11 +86,11 @@ public final class AttachmentProto {
           + "ssage\022\025\n\010filename\030\004 \001(\tB\003\340A\002\"Z\n\030UploadAt"
           + "tachmentResponse\022>\n\023attachment_data_ref\030"
           + "\001 \001(\0132!.google.chat.v1.AttachmentDataRef"
-          + "B\232\001\n\022com.google.chat.v1B\017AttachmentProto"
+          + "B\250\001\n\022com.google.chat.v1B\017AttachmentProto"
           + "P\001Z,cloud.google.com/go/chat/apiv1/chatp"
-          + "b;chatpb\252\002\023Google.Apps.Chat.V1\312\002\023Google\\"
-          + "Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006p"
-          + "roto3"
+          + "b;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Cha"
+          + "t.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::App"
+          + "s::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

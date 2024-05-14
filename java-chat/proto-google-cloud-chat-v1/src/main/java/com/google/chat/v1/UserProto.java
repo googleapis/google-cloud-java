@@ -48,11 +48,11 @@ public final class UserProto {
           + "ain_id\030\006 \001(\t\022\'\n\004type\030\005 \001(\0162\031.google.chat"
           + ".v1.User.Type\022\031\n\014is_anonymous\030\007 \001(\010B\003\340A\003"
           + "\"0\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005HUMAN\020"
-          + "\001\022\007\n\003BOT\020\002B\224\001\n\022com.google.chat.v1B\tUserP"
+          + "\001\022\007\n\003BOT\020\002B\242\001\n\022com.google.chat.v1B\tUserP"
           + "rotoP\001Z,cloud.google.com/go/chat/apiv1/c"
-          + "hatpb;chatpb\252\002\023Google.Apps.Chat.V1\312\002\023Goo"
-          + "gle\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V"
-          + "1b\006proto3"
+          + "hatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps"
+          + ".Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google:"
+          + ":Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

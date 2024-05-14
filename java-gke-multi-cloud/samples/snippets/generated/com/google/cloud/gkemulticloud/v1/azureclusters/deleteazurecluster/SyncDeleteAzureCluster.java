@@ -41,6 +41,7 @@ public class SyncDeleteAzureCluster {
               .setAllowMissing(true)
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setIgnoreErrors(true)
               .build();
       azureClustersClient.deleteAzureClusterAsync(request).get();
     }
