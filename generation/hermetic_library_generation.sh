@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # This script should be run at the root of the repository.
 # This script is used to, when a pull request changes the generation
 # configuration (generation_config.yaml by default):
@@ -78,9 +79,9 @@ git checkout "${target_branch}"
 git checkout "${current_branch}"
 # if the last commit doesn't contain changes to generation configuration,
 # do not generate again as the result will be the same.
-contains_config_change=$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r | grep "${generation_config}")
-if [[ "${contains_config_change}" == "" ]]; then
-    echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process."
+change_of_last_commit="$(git diff-tree --no-commit-id --name-only HEAD~1..HEAD -r)"
+if [[ ! ("${change_of_last_commit}" == *"${generation_config}"*) ]]; then
+    echo "The last commit doesn't contain any changes to the generation_config.yaml, skipping the whole generation process." || true
     exit 0
 fi
 # copy generation configuration from target branch to current branch.
