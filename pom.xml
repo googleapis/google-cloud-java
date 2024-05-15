@@ -191,6 +191,7 @@
     <module>java-video-stitcher</module>
     <module>java-video-transcoder</module>
     <module>java-vision</module>
+    <module>java-visionai</module>
     <module>java-vmmigration</module>
     <module>java-vmwareengine</module>
     <module>java-vpcaccess</module>
