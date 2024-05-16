@@ -9,11 +9,16 @@ set -e
 function runRegexOnPoms {
   perl_command=$1
   search=$2
+  excludes=$3
   for pomFile in $(find . -mindepth 2 -maxdepth 3 -name pom.xml |sort --dictionary-order); do
     if [[ $pomFile =~ .*google-cloud-jar-parent.* ]] || \
        [[ $pomFile =~ .*google-cloud-pom-parent.* ]] || \
        [[ $pomFile =~ .*java-shared-dependencies.* ]]; then
       continue
+    fi
+
+    if [ -n "${excludes}" ] && [[ $pomFile =~ .*"${excludes}".* ]]; then
+        continue
     fi
 
     if grep -q "${search}" "$pomFile" && [[ $(wc -c < "$pomFile") !=  $(perl -0pe "$perl_command" "$pomFile" | wc -c) ]]; then
@@ -54,8 +59,9 @@ function removeManagedDependency {
 
 function removeElement {
   element=$1
+  excludes=$2
   perl_command="s/\s*<${element}>.*?<\/${element}>//s"
-  runRegexOnPoms "$perl_command" "<${element}>"
+  runRegexOnPoms "$perl_command" "<${element}>" "${excludes}"
 }
 
 function setGrafeasCheckstyleHeaderConfig {
@@ -80,7 +86,9 @@ removeElement 'organization'
 removeElement 'scm'
 removeElement 'issueManagement'
 removeElement 'licenses'
-removeElement 'profiles'
+# Do not remove profiles in java-compute because the profile is used to
+# speed up native image test, see https://github.com/googleapis/google-cloud-java/pull/10827
+removeElement 'profiles' 'java-compute'
 removeElement 'junit.version'
 removeElement 'build'
 removeElement 'url'
