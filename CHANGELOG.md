@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.0 (2024-05-09)
+
+### Features
+
+* Affinity keys cleanup. Allow setting keys lifetime (#174)
+* Manual affinity via call options or context (#175)
+
 ## 1.5.0 (2023-11-08)
 
 ### Features
