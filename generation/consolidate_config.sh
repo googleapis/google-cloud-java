@@ -13,7 +13,7 @@ function runRegexOnPoms {
     if [[ $pomFile =~ .*google-cloud-jar-parent.* ]] || \
        [[ $pomFile =~ .*google-cloud-pom-parent.* ]] || \
        [[ $pomFile =~ .*java-shared-dependencies.* ]] || \
-       [[ $pomFile =~ .*native-image-sample.* ]]; then
+       [[ $pomFile =~ .*java-samples.* ]]; then
       continue
     fi
 
