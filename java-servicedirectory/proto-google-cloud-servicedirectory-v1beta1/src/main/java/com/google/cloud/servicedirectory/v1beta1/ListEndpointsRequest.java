@@ -130,7 +130,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return.
+   * Optional. The maximum number of items to return. The default value is 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -950,7 +950,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.
+     * Optional. The maximum number of items to return. The default value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -965,7 +965,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.
+     * Optional. The maximum number of items to return. The default value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -984,7 +984,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return.
+     * Optional. The maximum number of items to return. The default value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

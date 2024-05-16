@@ -28,89 +28,179 @@ public interface TransferOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return Whether the createTime field is set.
+   * @return Whether the sourceParallelstore field is set.
    */
-  boolean hasCreateTime();
+  boolean hasSourceParallelstore();
   /**
    *
    *
    * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The createTime.
+   * @return The sourceParallelstore.
    */
-  com.google.protobuf.Timestamp getCreateTime();
+  com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore();
   /**
    *
    *
    * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+  com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder
+      getSourceParallelstoreOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Cloud Storage source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return Whether the endTime field is set.
+   * @return Whether the sourceGcsBucket field is set.
    */
-  boolean hasEndTime();
+  boolean hasSourceGcsBucket();
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Cloud Storage source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The endTime.
+   * @return The sourceGcsBucket.
    */
-  com.google.protobuf.Timestamp getEndTime();
+  com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket();
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Cloud Storage source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder getSourceGcsBucketOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Cloud Storage destination.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationGcsBucket field is set.
+   */
+  boolean hasDestinationGcsBucket();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationGcsBucket.
+   */
+  com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder
+      getDestinationGcsBucketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationParallelstore field is set.
+   */
+  boolean hasDestinationParallelstore();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationParallelstore.
+   */
+  com.google.cloud.parallelstore.v1beta.DestinationParallelstore getDestinationParallelstore();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder
+      getDestinationParallelstoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the progress of the transfer operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the counters field is set.
    */
@@ -119,10 +209,12 @@ public interface TransferOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Information about the progress of the transfer operation.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The counters.
    */
@@ -131,10 +223,12 @@ public interface TransferOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Information about the progress of the transfer operation.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.parallelstore.v1beta.TransferCountersOrBuilder getCountersOrBuilder();
 
@@ -142,60 +236,12 @@ public interface TransferOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. The origin of the data transfer.
+   * Output only. The type of transfer occurring.
    * </pre>
    *
-   * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The source.
-   */
-  java.lang.String getSource();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The origin of the data transfer.
-   * </pre>
-   *
-   * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for source.
-   */
-  com.google.protobuf.ByteString getSourceBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The destination of the data transfer.
-   * </pre>
-   *
-   * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The destination.
-   */
-  java.lang.String getDestination();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The destination of the data transfer.
-   * </pre>
-   *
-   * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for destination.
-   */
-  com.google.protobuf.ByteString getDestinationBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The type of transfer occurring.
-   * </pre>
-   *
-   * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for transferType.
    */
@@ -204,12 +250,19 @@ public interface TransferOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * The type of transfer occurring.
+   * Output only. The type of transfer occurring.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The transferType.
    */
   com.google.cloud.parallelstore.v1beta.TransferType getTransferType();
+
+  com.google.cloud.parallelstore.v1beta.TransferOperationMetadata.SourceCase getSourceCase();
+
+  com.google.cloud.parallelstore.v1beta.TransferOperationMetadata.DestinationCase
+      getDestinationCase();
 }

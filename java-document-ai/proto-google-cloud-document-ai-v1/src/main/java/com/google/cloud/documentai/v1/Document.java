@@ -15871,7 +15871,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is strikethrough.
+         * Whether the text is strikethrough. This feature is not supported yet.
          * </pre>
          *
          * <code>bool strikeout = 8;</code>
@@ -15884,7 +15884,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is a subscript.
+         * Whether the text is a subscript. This feature is not supported yet.
          * </pre>
          *
          * <code>bool subscript = 9;</code>
@@ -15897,7 +15897,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is a superscript.
+         * Whether the text is a superscript. This feature is not supported yet.
          * </pre>
          *
          * <code>bool superscript = 10;</code>
@@ -15910,7 +15910,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is in small caps.
+         * Whether the text is in small caps. This feature is not supported yet.
          * </pre>
          *
          * <code>bool smallcaps = 11;</code>
@@ -16230,7 +16230,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is strikethrough.
+         * Whether the text is strikethrough. This feature is not supported yet.
          * </pre>
          *
          * <code>bool strikeout = 8;</code>
@@ -16248,7 +16248,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is a subscript.
+         * Whether the text is a subscript. This feature is not supported yet.
          * </pre>
          *
          * <code>bool subscript = 9;</code>
@@ -16266,7 +16266,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is a superscript.
+         * Whether the text is a superscript. This feature is not supported yet.
          * </pre>
          *
          * <code>bool superscript = 10;</code>
@@ -16284,7 +16284,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Whether the text is in small caps.
+         * Whether the text is in small caps. This feature is not supported yet.
          * </pre>
          *
          * <code>bool smallcaps = 11;</code>
@@ -17582,7 +17582,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is strikethrough.
+           * Whether the text is strikethrough. This feature is not supported yet.
            * </pre>
            *
            * <code>bool strikeout = 8;</code>
@@ -17597,7 +17597,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is strikethrough.
+           * Whether the text is strikethrough. This feature is not supported yet.
            * </pre>
            *
            * <code>bool strikeout = 8;</code>
@@ -17616,7 +17616,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is strikethrough.
+           * Whether the text is strikethrough. This feature is not supported yet.
            * </pre>
            *
            * <code>bool strikeout = 8;</code>
@@ -17635,7 +17635,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a subscript.
+           * Whether the text is a subscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool subscript = 9;</code>
@@ -17650,7 +17650,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a subscript.
+           * Whether the text is a subscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool subscript = 9;</code>
@@ -17669,7 +17669,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a subscript.
+           * Whether the text is a subscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool subscript = 9;</code>
@@ -17688,7 +17688,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a superscript.
+           * Whether the text is a superscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool superscript = 10;</code>
@@ -17703,7 +17703,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a superscript.
+           * Whether the text is a superscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool superscript = 10;</code>
@@ -17722,7 +17722,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is a superscript.
+           * Whether the text is a superscript. This feature is not supported yet.
            * </pre>
            *
            * <code>bool superscript = 10;</code>
@@ -17741,7 +17741,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is in small caps.
+           * Whether the text is in small caps. This feature is not supported yet.
            * </pre>
            *
            * <code>bool smallcaps = 11;</code>
@@ -17756,7 +17756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is in small caps.
+           * Whether the text is in small caps. This feature is not supported yet.
            * </pre>
            *
            * <code>bool smallcaps = 11;</code>
@@ -17775,7 +17775,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Whether the text is in small caps.
+           * Whether the text is in small caps. This feature is not supported yet.
            * </pre>
            *
            * <code>bool smallcaps = 11;</code>

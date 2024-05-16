@@ -39,8 +39,6 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   private TransferOperationMetadata() {
-    source_ = "";
-    destination_ = "";
     transferType_ = 0;
   }
 
@@ -66,105 +64,335 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   private int bitField0_;
-  public static final int CREATE_TIME_FIELD_NUMBER = 1;
-  private com.google.protobuf.Timestamp createTime_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the createTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The createTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getCreateTime() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. CCFE supplied fields BEGIN
-   * The time the operation was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object source_;
+
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SOURCE_PARALLELSTORE(7),
+    SOURCE_GCS_BUCKET(8),
+    SOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return SOURCE_PARALLELSTORE;
+        case 8:
+          return SOURCE_GCS_BUCKET;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
   }
 
-  public static final int END_TIME_FIELD_NUMBER = 2;
-  private com.google.protobuf.Timestamp endTime_;
+  private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object destination_;
+
+  public enum DestinationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DESTINATION_GCS_BUCKET(9),
+    DESTINATION_PARALLELSTORE(10),
+    DESTINATION_NOT_SET(0);
+    private final int value;
+
+    private DestinationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DestinationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DestinationCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return DESTINATION_GCS_BUCKET;
+        case 10:
+          return DESTINATION_PARALLELSTORE;
+        case 0:
+          return DESTINATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DestinationCase getDestinationCase() {
+    return DestinationCase.forNumber(destinationCase_);
+  }
+
+  public static final int SOURCE_PARALLELSTORE_FIELD_NUMBER = 7;
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return Whether the endTime field is set.
+   * @return Whether the sourceParallelstore field is set.
    */
   @java.lang.Override
-  public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+  public boolean hasSourceParallelstore() {
+    return sourceCase_ == 7;
   }
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The endTime.
+   * @return The sourceParallelstore.
    */
   @java.lang.Override
-  public com.google.protobuf.Timestamp getEndTime() {
-    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  public com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore() {
+    if (sourceCase_ == 7) {
+      return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
+    }
+    return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Parallelstore source.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  public com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder
+      getSourceParallelstoreOrBuilder() {
+    if (sourceCase_ == 7) {
+      return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
+    }
+    return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
+  }
+
+  public static final int SOURCE_GCS_BUCKET_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the sourceGcsBucket field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceGcsBucket() {
+    return sourceCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The sourceGcsBucket.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_;
+    }
+    return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder
+      getSourceGcsBucketOrBuilder() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_;
+    }
+    return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
+  }
+
+  public static final int DESTINATION_GCS_BUCKET_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationGcsBucket field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationGcsBucket() {
+    return destinationCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationGcsBucket.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket() {
+    if (destinationCase_ == 9) {
+      return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
+    }
+    return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder
+      getDestinationGcsBucketOrBuilder() {
+    if (destinationCase_ == 9) {
+      return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
+    }
+    return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+  }
+
+  public static final int DESTINATION_PARALLELSTORE_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationParallelstore field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationParallelstore() {
+    return destinationCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationParallelstore.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationParallelstore
+      getDestinationParallelstore() {
+    if (destinationCase_ == 10) {
+      return (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_;
+    }
+    return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parallelstore destination.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder
+      getDestinationParallelstoreOrBuilder() {
+    if (destinationCase_ == 10) {
+      return (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_;
+    }
+    return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
   }
 
   public static final int COUNTERS_FIELD_NUMBER = 3;
@@ -173,25 +401,29 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Information about the progress of the transfer operation.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the counters field is set.
    */
   @java.lang.Override
   public boolean hasCounters() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Information about the progress of the transfer operation.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The counters.
    */
@@ -205,10 +437,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Information about the progress of the transfer operation.
+   * Output only. Information about the progress of the transfer operation.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.parallelstore.v1beta.TransferCountersOrBuilder getCountersOrBuilder() {
@@ -217,118 +451,18 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         : counters_;
   }
 
-  public static final int SOURCE_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object source_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Required. The origin of the data transfer.
-   * </pre>
-   *
-   * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The source.
-   */
-  @java.lang.Override
-  public java.lang.String getSource() {
-    java.lang.Object ref = source_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      source_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The origin of the data transfer.
-   * </pre>
-   *
-   * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for source.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getSourceBytes() {
-    java.lang.Object ref = source_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      source_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DESTINATION_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object destination_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Required. The destination of the data transfer.
-   * </pre>
-   *
-   * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The destination.
-   */
-  @java.lang.Override
-  public java.lang.String getDestination() {
-    java.lang.Object ref = destination_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      destination_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The destination of the data transfer.
-   * </pre>
-   *
-   * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for destination.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDestinationBytes() {
-    java.lang.Object ref = destination_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      destination_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 6;
   private int transferType_ = 0;
   /**
    *
    *
    * <pre>
-   * The type of transfer occurring.
+   * Output only. The type of transfer occurring.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for transferType.
    */
@@ -340,10 +474,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The type of transfer occurring.
+   * Output only. The type of transfer occurring.
    * </pre>
    *
-   * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The transferType.
    */
@@ -371,24 +507,26 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getEndTime());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getCounters());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, source_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, destination_);
     }
     if (transferType_
         != com.google.cloud.parallelstore.v1beta.TransferType.TRANSFER_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(6, transferType_);
+    }
+    if (sourceCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_);
+    }
+    if (sourceCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_);
+    }
+    if (destinationCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_);
+    }
+    if (destinationCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -400,24 +538,32 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCounters());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, source_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, destination_);
     }
     if (transferType_
         != com.google.cloud.parallelstore.v1beta.TransferType.TRANSFER_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, transferType_);
+    }
+    if (sourceCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_);
+    }
+    if (sourceCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_);
+    }
+    if (destinationCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_);
+    }
+    if (destinationCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -435,21 +581,34 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     com.google.cloud.parallelstore.v1beta.TransferOperationMetadata other =
         (com.google.cloud.parallelstore.v1beta.TransferOperationMetadata) obj;
 
-    if (hasCreateTime() != other.hasCreateTime()) return false;
-    if (hasCreateTime()) {
-      if (!getCreateTime().equals(other.getCreateTime())) return false;
-    }
-    if (hasEndTime() != other.hasEndTime()) return false;
-    if (hasEndTime()) {
-      if (!getEndTime().equals(other.getEndTime())) return false;
-    }
     if (hasCounters() != other.hasCounters()) return false;
     if (hasCounters()) {
       if (!getCounters().equals(other.getCounters())) return false;
     }
-    if (!getSource().equals(other.getSource())) return false;
-    if (!getDestination().equals(other.getDestination())) return false;
     if (transferType_ != other.transferType_) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 7:
+        if (!getSourceParallelstore().equals(other.getSourceParallelstore())) return false;
+        break;
+      case 8:
+        if (!getSourceGcsBucket().equals(other.getSourceGcsBucket())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getDestinationCase().equals(other.getDestinationCase())) return false;
+    switch (destinationCase_) {
+      case 9:
+        if (!getDestinationGcsBucket().equals(other.getDestinationGcsBucket())) return false;
+        break;
+      case 10:
+        if (!getDestinationParallelstore().equals(other.getDestinationParallelstore()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -461,24 +620,36 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasCreateTime()) {
-      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateTime().hashCode();
-    }
-    if (hasEndTime()) {
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime().hashCode();
-    }
     if (hasCounters()) {
       hash = (37 * hash) + COUNTERS_FIELD_NUMBER;
       hash = (53 * hash) + getCounters().hashCode();
     }
-    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSource().hashCode();
-    hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-    hash = (53 * hash) + getDestination().hashCode();
     hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + transferType_;
+    switch (sourceCase_) {
+      case 7:
+        hash = (37 * hash) + SOURCE_PARALLELSTORE_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceParallelstore().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + SOURCE_GCS_BUCKET_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceGcsBucket().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (destinationCase_) {
+      case 9:
+        hash = (37 * hash) + DESTINATION_GCS_BUCKET_FIELD_NUMBER;
+        hash = (53 * hash) + getDestinationGcsBucket().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + DESTINATION_PARALLELSTORE_FIELD_NUMBER;
+        hash = (53 * hash) + getDestinationParallelstore().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -620,8 +791,6 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCreateTimeFieldBuilder();
-        getEndTimeFieldBuilder();
         getCountersFieldBuilder();
       }
     }
@@ -630,24 +799,28 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
+      if (sourceParallelstoreBuilder_ != null) {
+        sourceParallelstoreBuilder_.clear();
       }
-      endTime_ = null;
-      if (endTimeBuilder_ != null) {
-        endTimeBuilder_.dispose();
-        endTimeBuilder_ = null;
+      if (sourceGcsBucketBuilder_ != null) {
+        sourceGcsBucketBuilder_.clear();
+      }
+      if (destinationGcsBucketBuilder_ != null) {
+        destinationGcsBucketBuilder_.clear();
+      }
+      if (destinationParallelstoreBuilder_ != null) {
+        destinationParallelstoreBuilder_.clear();
       }
       counters_ = null;
       if (countersBuilder_ != null) {
         countersBuilder_.dispose();
         countersBuilder_ = null;
       }
-      source_ = "";
-      destination_ = "";
       transferType_ = 0;
+      sourceCase_ = 0;
+      source_ = null;
+      destinationCase_ = 0;
+      destination_ = null;
       return this;
     }
 
@@ -679,6 +852,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -687,28 +861,34 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         com.google.cloud.parallelstore.v1beta.TransferOperationMetadata result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.counters_ = countersBuilder_ == null ? counters_ : countersBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.source_ = source_;
-      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.destination_ = destination_;
+        result.counters_ = countersBuilder_ == null ? counters_ : countersBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.transferType_ = transferType_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.parallelstore.v1beta.TransferOperationMetadata result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 7 && sourceParallelstoreBuilder_ != null) {
+        result.source_ = sourceParallelstoreBuilder_.build();
+      }
+      if (sourceCase_ == 8 && sourceGcsBucketBuilder_ != null) {
+        result.source_ = sourceGcsBucketBuilder_.build();
+      }
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 9 && destinationGcsBucketBuilder_ != null) {
+        result.destination_ = destinationGcsBucketBuilder_.build();
+      }
+      if (destinationCase_ == 10 && destinationParallelstoreBuilder_ != null) {
+        result.destination_ = destinationParallelstoreBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -759,27 +939,43 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       if (other
           == com.google.cloud.parallelstore.v1beta.TransferOperationMetadata.getDefaultInstance())
         return this;
-      if (other.hasCreateTime()) {
-        mergeCreateTime(other.getCreateTime());
-      }
-      if (other.hasEndTime()) {
-        mergeEndTime(other.getEndTime());
-      }
       if (other.hasCounters()) {
         mergeCounters(other.getCounters());
       }
-      if (!other.getSource().isEmpty()) {
-        source_ = other.source_;
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
-      if (!other.getDestination().isEmpty()) {
-        destination_ = other.destination_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
       if (other.transferType_ != 0) {
         setTransferTypeValue(other.getTransferTypeValue());
+      }
+      switch (other.getSourceCase()) {
+        case SOURCE_PARALLELSTORE:
+          {
+            mergeSourceParallelstore(other.getSourceParallelstore());
+            break;
+          }
+        case SOURCE_GCS_BUCKET:
+          {
+            mergeSourceGcsBucket(other.getSourceGcsBucket());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getDestinationCase()) {
+        case DESTINATION_GCS_BUCKET:
+          {
+            mergeDestinationGcsBucket(other.getDestinationGcsBucket());
+            break;
+          }
+        case DESTINATION_PARALLELSTORE:
+          {
+            mergeDestinationParallelstore(other.getDestinationParallelstore());
+            break;
+          }
+        case DESTINATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -807,42 +1003,45 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-            case 18:
-              {
-                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
             case 26:
               {
                 input.readMessage(getCountersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-            case 34:
-              {
-                source_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-            case 42:
-              {
-                destination_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 42
+              } // case 26
             case 48:
               {
                 transferType_ = input.readEnum();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                input.readMessage(
+                    getSourceParallelstoreFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getSourceGcsBucketFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDestinationGcsBucketFieldBuilder().getBuilder(), extensionRegistry);
+                destinationCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getDestinationParallelstoreFieldBuilder().getBuilder(), extensionRegistry);
+                destinationCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -860,128 +1059,192 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       return this;
     }
 
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int destinationCase_ = 0;
+    private java.lang.Object destination_;
+
+    public DestinationCase getDestinationCase() {
+      return DestinationCase.forNumber(destinationCase_);
+    }
+
+    public Builder clearDestination() {
+      destinationCase_ = 0;
+      destination_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
-    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        createTimeBuilder_;
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>
+        sourceParallelstoreBuilder_;
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return Whether the createTime field is set.
+     * @return Whether the sourceParallelstore field is set.
      */
-    public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override
+    public boolean hasSourceParallelstore() {
+      return sourceCase_ == 7;
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return The createTime.
+     * @return The sourceParallelstore.
      */
-    public com.google.protobuf.Timestamp getCreateTime() {
-      if (createTimeBuilder_ == null) {
-        return createTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : createTime_;
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore() {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (sourceCase_ == 7) {
+          return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       } else {
-        return createTimeBuilder_.getMessage();
+        if (sourceCase_ == 7) {
+          return sourceParallelstoreBuilder_.getMessage();
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
+    public Builder setSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore value) {
+      if (sourceParallelstoreBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        createTime_ = value;
+        source_ = value;
+        onChanged();
       } else {
-        createTimeBuilder_.setMessage(value);
+        sourceParallelstoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      sourceCase_ = 7;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (createTimeBuilder_ == null) {
-        createTime_ = builderForValue.build();
+    public Builder setSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder builderForValue) {
+      if (sourceParallelstoreBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
       } else {
-        createTimeBuilder_.setMessage(builderForValue.build());
+        sourceParallelstoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      sourceCase_ = 7;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
-            && createTime_ != null
-            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getCreateTimeBuilder().mergeFrom(value);
+    public Builder mergeSourceParallelstore(
+        com.google.cloud.parallelstore.v1beta.SourceParallelstore value) {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (sourceCase_ == 7
+            && source_
+                != com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.parallelstore.v1beta.SourceParallelstore.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
-          createTime_ = value;
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 7) {
+          sourceParallelstoreBuilder_.mergeFrom(value);
+        } else {
+          sourceParallelstoreBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceParallelstore() {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (sourceCase_ == 7) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
         }
       } else {
-        createTimeBuilder_.mergeFrom(value);
-      }
-      if (createTime_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
+        if (sourceCase_ == 7) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        sourceParallelstoreBuilder_.clear();
       }
       return this;
     }
@@ -989,199 +1252,230 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder
+        getSourceParallelstoreBuilder() {
+      return getSourceParallelstoreFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return getCreateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
-     * </pre>
-     *
-     * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      if (createTimeBuilder_ != null) {
-        return createTimeBuilder_.getMessageOrBuilder();
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder
+        getSourceParallelstoreOrBuilder() {
+      if ((sourceCase_ == 7) && (sourceParallelstoreBuilder_ != null)) {
+        return sourceParallelstoreBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : createTime_;
+        if (sourceCase_ == 7) {
+          return (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_;
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. CCFE supplied fields BEGIN
-     * The time the operation was created.
+     * Output only. Parallelstore source.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.parallelstore.v1beta.SourceParallelstore source_parallelstore = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        getCreateTimeFieldBuilder() {
-      if (createTimeBuilder_ == null) {
-        createTimeBuilder_ =
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>
+        getSourceParallelstoreFieldBuilder() {
+      if (sourceParallelstoreBuilder_ == null) {
+        if (!(sourceCase_ == 7)) {
+          source_ = com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
+        }
+        sourceParallelstoreBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(), getParentForChildren(), isClean());
-        createTime_ = null;
+                com.google.cloud.parallelstore.v1beta.SourceParallelstore,
+                com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
+                com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.SourceParallelstore) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
       }
-      return createTimeBuilder_;
+      sourceCase_ = 7;
+      onChanged();
+      return sourceParallelstoreBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        endTimeBuilder_;
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucket,
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder>
+        sourceGcsBucketBuilder_;
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return Whether the endTime field is set.
+     * @return Whether the sourceGcsBucket field is set.
      */
-    public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+    @java.lang.Override
+    public boolean hasSourceGcsBucket() {
+      return sourceCase_ == 8;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return The endTime.
+     * @return The sourceGcsBucket.
      */
-    public com.google.protobuf.Timestamp getEndTime() {
-      if (endTimeBuilder_ == null) {
-        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket() {
+      if (sourceGcsBucketBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_;
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
       } else {
-        return endTimeBuilder_.getMessage();
+        if (sourceCase_ == 8) {
+          return sourceGcsBucketBuilder_.getMessage();
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setEndTime(com.google.protobuf.Timestamp value) {
-      if (endTimeBuilder_ == null) {
+    public Builder setSourceGcsBucket(com.google.cloud.parallelstore.v1beta.SourceGcsBucket value) {
+      if (sourceGcsBucketBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        endTime_ = value;
+        source_ = value;
+        onChanged();
       } else {
-        endTimeBuilder_.setMessage(value);
+        sourceGcsBucketBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      sourceCase_ = 8;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (endTimeBuilder_ == null) {
-        endTime_ = builderForValue.build();
+    public Builder setSourceGcsBucket(
+        com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder builderForValue) {
+      if (sourceGcsBucketBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
       } else {
-        endTimeBuilder_.setMessage(builderForValue.build());
+        sourceGcsBucketBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      sourceCase_ = 8;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
-      if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
-            && endTime_ != null
-            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getEndTimeBuilder().mergeFrom(value);
+    public Builder mergeSourceGcsBucket(
+        com.google.cloud.parallelstore.v1beta.SourceGcsBucket value) {
+      if (sourceGcsBucketBuilder_ == null) {
+        if (sourceCase_ == 8
+            && source_
+                != com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.parallelstore.v1beta.SourceGcsBucket.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
-          endTime_ = value;
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 8) {
+          sourceGcsBucketBuilder_.mergeFrom(value);
+        } else {
+          sourceGcsBucketBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceGcsBucket() {
+      if (sourceGcsBucketBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
         }
       } else {
-        endTimeBuilder_.mergeFrom(value);
-      }
-      if (endTime_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        sourceGcsBucketBuilder_.clear();
       }
       return this;
     }
@@ -1189,79 +1483,542 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      endTime_ = null;
-      if (endTimeBuilder_ != null) {
-        endTimeBuilder_.dispose();
-        endTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
+    public com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder
+        getSourceGcsBucketBuilder() {
+      return getSourceGcsBucketFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getEndTimeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The time the operation finished running.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      if (endTimeBuilder_ != null) {
-        return endTimeBuilder_.getMessageOrBuilder();
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder
+        getSourceGcsBucketOrBuilder() {
+      if ((sourceCase_ == 8) && (sourceGcsBucketBuilder_ != null)) {
+        return sourceGcsBucketBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_;
+        }
+        return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Cloud Storage source.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * .google.cloud.parallelstore.v1beta.SourceGcsBucket source_gcs_bucket = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        getEndTimeFieldBuilder() {
-      if (endTimeBuilder_ == null) {
-        endTimeBuilder_ =
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucket,
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder>
+        getSourceGcsBucketFieldBuilder() {
+      if (sourceGcsBucketBuilder_ == null) {
+        if (!(sourceCase_ == 8)) {
+          source_ = com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
+        }
+        sourceGcsBucketBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(), getParentForChildren(), isClean());
-        endTime_ = null;
+                com.google.cloud.parallelstore.v1beta.SourceGcsBucket,
+                com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder,
+                com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.SourceGcsBucket) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
       }
-      return endTimeBuilder_;
+      sourceCase_ = 8;
+      onChanged();
+      return sourceGcsBucketBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>
+        destinationGcsBucketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the destinationGcsBucket field is set.
+     */
+    @java.lang.Override
+    public boolean hasDestinationGcsBucket() {
+      return destinationCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The destinationGcsBucket.
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket() {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (destinationCase_ == 9) {
+          return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+      } else {
+        if (destinationCase_ == 9) {
+          return destinationGcsBucketBuilder_.getMessage();
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket value) {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
+        onChanged();
+      } else {
+        destinationGcsBucketBuilder_.setMessage(value);
+      }
+      destinationCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder builderForValue) {
+      if (destinationGcsBucketBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationGcsBucketBuilder_.setMessage(builderForValue.build());
+      }
+      destinationCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDestinationGcsBucket(
+        com.google.cloud.parallelstore.v1beta.DestinationGcsBucket value) {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (destinationCase_ == 9
+            && destination_
+                != com.google.cloud.parallelstore.v1beta.DestinationGcsBucket
+                    .getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 9) {
+          destinationGcsBucketBuilder_.mergeFrom(value);
+        } else {
+          destinationGcsBucketBuilder_.setMessage(value);
+        }
+      }
+      destinationCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDestinationGcsBucket() {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (destinationCase_ == 9) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 9) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        destinationGcsBucketBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder
+        getDestinationGcsBucketBuilder() {
+      return getDestinationGcsBucketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder
+        getDestinationGcsBucketOrBuilder() {
+      if ((destinationCase_ == 9) && (destinationGcsBucketBuilder_ != null)) {
+        return destinationGcsBucketBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 9) {
+          return (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_;
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud Storage destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationGcsBucket destination_gcs_bucket = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>
+        getDestinationGcsBucketFieldBuilder() {
+      if (destinationGcsBucketBuilder_ == null) {
+        if (!(destinationCase_ == 9)) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
+        }
+        destinationGcsBucketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucket,
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
+                com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.DestinationGcsBucket) destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
+      destinationCase_ = 9;
+      onChanged();
+      return destinationGcsBucketBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstore,
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder>
+        destinationParallelstoreBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the destinationParallelstore field is set.
+     */
+    @java.lang.Override
+    public boolean hasDestinationParallelstore() {
+      return destinationCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The destinationParallelstore.
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DestinationParallelstore
+        getDestinationParallelstore() {
+      if (destinationParallelstoreBuilder_ == null) {
+        if (destinationCase_ == 10) {
+          return (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_;
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
+      } else {
+        if (destinationCase_ == 10) {
+          return destinationParallelstoreBuilder_.getMessage();
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationParallelstore(
+        com.google.cloud.parallelstore.v1beta.DestinationParallelstore value) {
+      if (destinationParallelstoreBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
+        onChanged();
+      } else {
+        destinationParallelstoreBuilder_.setMessage(value);
+      }
+      destinationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationParallelstore(
+        com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder builderForValue) {
+      if (destinationParallelstoreBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationParallelstoreBuilder_.setMessage(builderForValue.build());
+      }
+      destinationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDestinationParallelstore(
+        com.google.cloud.parallelstore.v1beta.DestinationParallelstore value) {
+      if (destinationParallelstoreBuilder_ == null) {
+        if (destinationCase_ == 10
+            && destination_
+                != com.google.cloud.parallelstore.v1beta.DestinationParallelstore
+                    .getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationParallelstore.newBuilder(
+                      (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 10) {
+          destinationParallelstoreBuilder_.mergeFrom(value);
+        } else {
+          destinationParallelstoreBuilder_.setMessage(value);
+        }
+      }
+      destinationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDestinationParallelstore() {
+      if (destinationParallelstoreBuilder_ == null) {
+        if (destinationCase_ == 10) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 10) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        destinationParallelstoreBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder
+        getDestinationParallelstoreBuilder() {
+      return getDestinationParallelstoreFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder
+        getDestinationParallelstoreOrBuilder() {
+      if ((destinationCase_ == 10) && (destinationParallelstoreBuilder_ != null)) {
+        return destinationParallelstoreBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 10) {
+          return (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_;
+        }
+        return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parallelstore destination.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1beta.DestinationParallelstore destination_parallelstore = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstore,
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder,
+            com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder>
+        getDestinationParallelstoreFieldBuilder() {
+      if (destinationParallelstoreBuilder_ == null) {
+        if (!(destinationCase_ == 10)) {
+          destination_ =
+              com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
+        }
+        destinationParallelstoreBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.parallelstore.v1beta.DestinationParallelstore,
+                com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder,
+                com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder>(
+                (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
+      destinationCase_ = 10;
+      onChanged();
+      return destinationParallelstoreBuilder_;
     }
 
     private com.google.cloud.parallelstore.v1beta.TransferCounters counters_;
@@ -1274,24 +2031,28 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the counters field is set.
      */
     public boolean hasCounters() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The counters.
      */
@@ -1308,10 +2069,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCounters(com.google.cloud.parallelstore.v1beta.TransferCounters value) {
       if (countersBuilder_ == null) {
@@ -1322,7 +2085,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       } else {
         countersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1330,10 +2093,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCounters(
         com.google.cloud.parallelstore.v1beta.TransferCounters.Builder builderForValue) {
@@ -1342,7 +2107,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       } else {
         countersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1350,14 +2115,16 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCounters(com.google.cloud.parallelstore.v1beta.TransferCounters value) {
       if (countersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && counters_ != null
             && counters_
                 != com.google.cloud.parallelstore.v1beta.TransferCounters.getDefaultInstance()) {
@@ -1369,7 +2136,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         countersBuilder_.mergeFrom(value);
       }
       if (counters_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1378,13 +2145,15 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCounters() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       counters_ = null;
       if (countersBuilder_ != null) {
         countersBuilder_.dispose();
@@ -1397,13 +2166,15 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.parallelstore.v1beta.TransferCounters.Builder getCountersBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCountersFieldBuilder().getBuilder();
     }
@@ -1411,10 +2182,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.parallelstore.v1beta.TransferCountersOrBuilder getCountersOrBuilder() {
       if (countersBuilder_ != null) {
@@ -1429,10 +2202,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Information about the progress of the transfer operation.
+     * Output only. Information about the progress of the transfer operation.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferCounters counters = 3;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferCounters counters = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.parallelstore.v1beta.TransferCounters,
@@ -1451,227 +2226,17 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       return countersBuilder_;
     }
 
-    private java.lang.Object source_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. The origin of the data transfer.
-     * </pre>
-     *
-     * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The source.
-     */
-    public java.lang.String getSource() {
-      java.lang.Object ref = source_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        source_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The origin of the data transfer.
-     * </pre>
-     *
-     * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for source.
-     */
-    public com.google.protobuf.ByteString getSourceBytes() {
-      java.lang.Object ref = source_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        source_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The origin of the data transfer.
-     * </pre>
-     *
-     * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The source to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSource(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      source_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The origin of the data transfer.
-     * </pre>
-     *
-     * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearSource() {
-      source_ = getDefaultInstance().getSource();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The origin of the data transfer.
-     * </pre>
-     *
-     * <code>string source = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The bytes for source to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      source_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object destination_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. The destination of the data transfer.
-     * </pre>
-     *
-     * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The destination.
-     */
-    public java.lang.String getDestination() {
-      java.lang.Object ref = destination_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        destination_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The destination of the data transfer.
-     * </pre>
-     *
-     * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for destination.
-     */
-    public com.google.protobuf.ByteString getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The destination of the data transfer.
-     * </pre>
-     *
-     * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The destination to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDestination(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      destination_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The destination of the data transfer.
-     * </pre>
-     *
-     * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDestination() {
-      destination_ = getDefaultInstance().getDestination();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The destination of the data transfer.
-     * </pre>
-     *
-     * <code>string destination = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The bytes for destination to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDestinationBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      destination_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private int transferType_ = 0;
     /**
      *
      *
      * <pre>
-     * The type of transfer occurring.
+     * Output only. The type of transfer occurring.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for transferType.
      */
@@ -1683,10 +2248,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The type of transfer occurring.
+     * Output only. The type of transfer occurring.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for transferType to set.
      * @return This builder for chaining.
@@ -1701,10 +2268,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The type of transfer occurring.
+     * Output only. The type of transfer occurring.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The transferType.
      */
@@ -1720,10 +2289,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The type of transfer occurring.
+     * Output only. The type of transfer occurring.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The transferType to set.
      * @return This builder for chaining.
@@ -1741,10 +2312,12 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The type of transfer occurring.
+     * Output only. The type of transfer occurring.
      * </pre>
      *
-     * <code>.google.cloud.parallelstore.v1beta.TransferType transfer_type = 6;</code>
+     * <code>
+     * .google.cloud.parallelstore.v1beta.TransferType transfer_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

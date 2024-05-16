@@ -28,12 +28,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The resource name of the processor version.
+   * Identifier. The resource name of the processor version.
    * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The resource name of the processor version.
+   * Identifier. The resource name of the processor version.
    * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -117,10 +117,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The state of the processor version.
+   * Output only. The state of the processor version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.ProcessorVersion.State state = 6;</code>
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -129,10 +131,12 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * The state of the processor version.
+   * Output only. The state of the processor version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1.ProcessorVersion.State state = 6;</code>
+   * <code>
+   * .google.cloud.documentai.v1.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
