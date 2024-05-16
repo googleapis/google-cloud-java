@@ -19,6 +19,8 @@ on:
 
 jobs:
   library_generation:
+    # skip pull requests come from a forked repository
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     env:
       library_generation_image_tag: 2.40.0
