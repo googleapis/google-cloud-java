@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.19.3](https://github.com/googleapis/java-datastore/compare/v2.19.2...v2.19.3) (2024-05-16)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#1390](https://github.com/googleapis/java-datastore/issues/1390)) ([80dbca1](https://github.com/googleapis/java-datastore/commit/80dbca1246facf21b08d33e5c6a09b9708b6ce63))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.1 ([#1443](https://github.com/googleapis/java-datastore/issues/1443)) ([79f6c46](https://github.com/googleapis/java-datastore/commit/79f6c46bdbabc66082f23e9562ee9541e0fdeac9))
+
 ## [2.19.2](https://github.com/googleapis/java-datastore/compare/v2.19.1...v2.19.2) (2024-05-03)
 
 
