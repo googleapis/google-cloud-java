@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <name>Google Cloud Client Library for Java Samples</name>
+    <artifactId>google-cloud-samples</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-jar-parent</artifactId>
+        <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+        <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+    </parent>
+
+    <modules>
+        <module>native-image-sample</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.truth</groupId>
+            <artifactId>truth</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <configuration>
+                        <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

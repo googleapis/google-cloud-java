@@ -12,7 +12,8 @@ function runRegexOnPoms {
   for pomFile in $(find . -mindepth 2 -maxdepth 3 -name pom.xml |sort --dictionary-order); do
     if [[ $pomFile =~ .*google-cloud-jar-parent.* ]] || \
        [[ $pomFile =~ .*google-cloud-pom-parent.* ]] || \
-       [[ $pomFile =~ .*java-shared-dependencies.* ]]; then
+       [[ $pomFile =~ .*java-shared-dependencies.* ]] || \
+       [[ $pomFile =~ .*java-samples.* ]]; then
       continue
     fi
 
