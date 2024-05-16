@@ -77,4 +77,12 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>native</id>
+      <properties>
+        <test>com.google.cloud.compute.v1.integration.ITAddressesTest</test>
+      </properties>
+    </profile>
+  </profiles>
 </project>
