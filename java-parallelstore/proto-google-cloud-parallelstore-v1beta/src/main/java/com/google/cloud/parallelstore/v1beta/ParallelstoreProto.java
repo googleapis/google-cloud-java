@@ -201,78 +201,97 @@ public final class ParallelstoreProto {
           + "ame\030\001 \001(\tB-\340A\002\372A\'\n%parallelstore.googlea"
           + "pis.com/Instance\022\037\n\nrequest_id\030\004 \001(\tB\013\340A"
           + "\001\342\214\317\327\010\002\010\001B\010\n\006sourceB\r\n\013destination\"\024\n\022Im"
-          + "portDataResponse\"n\n\022ImportDataMetadata\022X"
-          + "\n\022operation_metadata\030\001 \001(\0132<.google.clou"
-          + "d.parallelstore.v1beta.TransferOperation"
-          + "Metadata\"\024\n\022ExportDataResponse\"n\n\022Export"
-          + "DataMetadata\022X\n\022operation_metadata\030\001 \001(\013"
-          + "2<.google.cloud.parallelstore.v1beta.Tra"
-          + "nsferOperationMetadata\"\302\002\n\031TransferOpera"
-          + "tionMetadata\0224\n\013create_time\030\001 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022E\n"
-          + "\010counters\030\003 \001(\01323.google.cloud.parallels"
-          + "tore.v1beta.TransferCounters\022\023\n\006source\030\004"
-          + " \001(\tB\003\340A\002\022\030\n\013destination\030\005 \001(\tB\003\340A\002\022F\n\rt"
-          + "ransfer_type\030\006 \001(\0162/.google.cloud.parall"
-          + "elstore.v1beta.TransferType\"\234\001\n\020Transfer"
-          + "Counters\022\025\n\robjects_found\030\001 \001(\003\022\023\n\013bytes"
-          + "_found\030\002 \001(\003\022\027\n\017objects_skipped\030\003 \001(\003\022\025\n"
-          + "\rbytes_skipped\030\004 \001(\003\022\026\n\016objects_copied\030\005"
-          + " \001(\003\022\024\n\014bytes_copied\030\006 \001(\003*E\n\014TransferTy"
-          + "pe\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\n\n\006IMP"
-          + "ORT\020\001\022\n\n\006EXPORT\020\0022\315\014\n\rParallelstore\022\306\001\n\r"
-          + "ListInstances\0227.google.cloud.parallelsto"
-          + "re.v1beta.ListInstancesRequest\0328.google."
+          + "portDataResponse\"\333\002\n\022ImportDataMetadata\022"
+          + "X\n\022operation_metadata\030\001 \001(\0132<.google.clo"
+          + "ud.parallelstore.v1beta.TransferOperatio"
+          + "nMetadata\0224\n\013create_time\030\002 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\003 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006ta"
+          + "rget\030\004 \001(\tB\003\340A\003\022\021\n\004verb\030\005 \001(\tB\003\340A\003\022\033\n\016st"
+          + "atus_message\030\006 \001(\tB\003\340A\003\022#\n\026requested_can"
+          + "cellation\030\007 \001(\010B\003\340A\003\022\030\n\013api_version\030\010 \001("
+          + "\tB\003\340A\003\"\024\n\022ExportDataResponse\"\333\002\n\022ExportD"
+          + "ataMetadata\022X\n\022operation_metadata\030\001 \001(\0132"
+          + "<.google.cloud.parallelstore.v1beta.Tran"
+          + "sferOperationMetadata\0224\n\013create_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010e"
+          + "nd_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\022\023\n\006target\030\004 \001(\tB\003\340A\003\022\021\n\004verb\030\005 \001("
+          + "\tB\003\340A\003\022\033\n\016status_message\030\006 \001(\tB\003\340A\003\022#\n\026r"
+          + "equested_cancellation\030\007 \001(\010B\003\340A\003\022\030\n\013api_"
+          + "version\030\010 \001(\tB\003\340A\003\"\307\004\n\031TransferOperation"
+          + "Metadata\022[\n\024source_parallelstore\030\007 \001(\01326"
+          + ".google.cloud.parallelstore.v1beta.Sourc"
+          + "eParallelstoreB\003\340A\003H\000\022T\n\021source_gcs_buck"
+          + "et\030\010 \001(\01322.google.cloud.parallelstore.v1"
+          + "beta.SourceGcsBucketB\003\340A\003H\000\022^\n\026destinati"
+          + "on_gcs_bucket\030\t \001(\01327.google.cloud.paral"
+          + "lelstore.v1beta.DestinationGcsBucketB\003\340A"
+          + "\003H\001\022e\n\031destination_parallelstore\030\n \001(\0132;"
+          + ".google.cloud.parallelstore.v1beta.Desti"
+          + "nationParallelstoreB\003\340A\003H\001\022J\n\010counters\030\003"
+          + " \001(\01323.google.cloud.parallelstore.v1beta"
+          + ".TransferCountersB\003\340A\003\022K\n\rtransfer_type\030"
+          + "\006 \001(\0162/.google.cloud.parallelstore.v1bet"
+          + "a.TransferTypeB\003\340A\003B\010\n\006sourceB\r\n\013destina"
+          + "tion\"\234\001\n\020TransferCounters\022\025\n\robjects_fou"
+          + "nd\030\001 \001(\003\022\023\n\013bytes_found\030\002 \001(\003\022\027\n\017objects"
+          + "_skipped\030\003 \001(\003\022\025\n\rbytes_skipped\030\004 \001(\003\022\026\n"
+          + "\016objects_copied\030\005 \001(\003\022\024\n\014bytes_copied\030\006 "
+          + "\001(\003*E\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNS"
+          + "PECIFIED\020\000\022\n\n\006IMPORT\020\001\022\n\n\006EXPORT\020\0022\315\014\n\rP"
+          + "arallelstore\022\306\001\n\rListInstances\0227.google."
           + "cloud.parallelstore.v1beta.ListInstances"
-          + "Response\"B\332A\006parent\202\323\344\223\0023\0221/v1beta/{pare"
-          + "nt=projects/*/locations/*}/instances\022\263\001\n"
-          + "\013GetInstance\0225.google.cloud.parallelstor"
-          + "e.v1beta.GetInstanceRequest\032+.google.clo"
-          + "ud.parallelstore.v1beta.Instance\"@\332A\004nam"
-          + "e\202\323\344\223\0023\0221/v1beta/{name=projects/*/locati"
-          + "ons/*/instances/*}\022\355\001\n\016CreateInstance\0228."
-          + "google.cloud.parallelstore.v1beta.Create"
-          + "InstanceRequest\032\035.google.longrunning.Ope"
-          + "ration\"\201\001\312A\035\n\010Instance\022\021OperationMetadat"
-          + "a\332A\033parent,instance,instance_id\202\323\344\223\002=\"1/"
-          + "v1beta/{parent=projects/*/locations/*}/i"
-          + "nstances:\010instance\022\357\001\n\016UpdateInstance\0228."
-          + "google.cloud.parallelstore.v1beta.Update"
-          + "InstanceRequest\032\035.google.longrunning.Ope"
-          + "ration\"\203\001\312A\035\n\010Instance\022\021OperationMetadat"
-          + "a\332A\024instance,update_mask\202\323\344\223\002F2:/v1beta/"
-          + "{instance.name=projects/*/locations/*/in"
-          + "stances/*}:\010instance\022\330\001\n\016DeleteInstance\022"
-          + "8.google.cloud.parallelstore.v1beta.Dele"
-          + "teInstanceRequest\032\035.google.longrunning.O"
-          + "peration\"m\312A*\n\025google.protobuf.Empty\022\021Op"
-          + "erationMetadata\332A\004name\202\323\344\223\0023*1/v1beta/{n"
-          + "ame=projects/*/locations/*/instances/*}\022"
-          + "\325\001\n\nImportData\0224.google.cloud.parallelst"
-          + "ore.v1beta.ImportDataRequest\032\035.google.lo"
-          + "ngrunning.Operation\"r\312A(\n\022ImportDataResp"
-          + "onse\022\022ImportDataMetadata\202\323\344\223\002A\"</v1beta/"
-          + "{name=projects/*/locations/*/instances/*"
-          + "}:importData:\001*\022\325\001\n\nExportData\0224.google."
-          + "cloud.parallelstore.v1beta.ExportDataReq"
-          + "uest\032\035.google.longrunning.Operation\"r\312A("
-          + "\n\022ExportDataResponse\022\022ExportDataMetadata"
-          + "\202\323\344\223\002A\"</v1beta/{name=projects/*/locatio"
-          + "ns/*/instances/*}:exportData:\001*\032P\312A\034para"
-          + "llelstore.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\246\003\n%co"
-          + "m.google.cloud.parallelstore.v1betaB\022Par"
-          + "allelstoreProtoP\001ZKcloud.google.com/go/p"
-          + "arallelstore/apiv1beta/parallelstorepb;p"
-          + "arallelstorepb\252\002!Google.Cloud.Parallelst"
-          + "ore.V1Beta\312\002!Google\\Cloud\\Parallelstore\\"
-          + "V1beta\352\002$Google::Cloud::Parallelstore::V"
-          + "1beta\352AN\n\036compute.googleapis.com/Network"
-          + "\022,projects/{project}/global/networks/{ne"
-          + "twork}\352AY\n\036compute.googleapis.com/Addres"
-          + "s\0227projects/{project}/regions/{region}/a"
-          + "ddresses/{address}b\006proto3"
+          + "Request\0328.google.cloud.parallelstore.v1b"
+          + "eta.ListInstancesResponse\"B\332A\006parent\202\323\344\223"
+          + "\0023\0221/v1beta/{parent=projects/*/locations"
+          + "/*}/instances\022\263\001\n\013GetInstance\0225.google.c"
+          + "loud.parallelstore.v1beta.GetInstanceReq"
+          + "uest\032+.google.cloud.parallelstore.v1beta"
+          + ".Instance\"@\332A\004name\202\323\344\223\0023\0221/v1beta/{name="
+          + "projects/*/locations/*/instances/*}\022\355\001\n\016"
+          + "CreateInstance\0228.google.cloud.parallelst"
+          + "ore.v1beta.CreateInstanceRequest\032\035.googl"
+          + "e.longrunning.Operation\"\201\001\312A\035\n\010Instance\022"
+          + "\021OperationMetadata\332A\033parent,instance,ins"
+          + "tance_id\202\323\344\223\002=\"1/v1beta/{parent=projects"
+          + "/*/locations/*}/instances:\010instance\022\357\001\n\016"
+          + "UpdateInstance\0228.google.cloud.parallelst"
+          + "ore.v1beta.UpdateInstanceRequest\032\035.googl"
+          + "e.longrunning.Operation\"\203\001\312A\035\n\010Instance\022"
+          + "\021OperationMetadata\332A\024instance,update_mas"
+          + "k\202\323\344\223\002F2:/v1beta/{instance.name=projects"
+          + "/*/locations/*/instances/*}:\010instance\022\330\001"
+          + "\n\016DeleteInstance\0228.google.cloud.parallel"
+          + "store.v1beta.DeleteInstanceRequest\032\035.goo"
+          + "gle.longrunning.Operation\"m\312A*\n\025google.p"
+          + "rotobuf.Empty\022\021OperationMetadata\332A\004name\202"
+          + "\323\344\223\0023*1/v1beta/{name=projects/*/location"
+          + "s/*/instances/*}\022\325\001\n\nImportData\0224.google"
+          + ".cloud.parallelstore.v1beta.ImportDataRe"
+          + "quest\032\035.google.longrunning.Operation\"r\312A"
+          + "(\n\022ImportDataResponse\022\022ImportDataMetadat"
+          + "a\202\323\344\223\002A\"</v1beta/{name=projects/*/locati"
+          + "ons/*/instances/*}:importData:\001*\022\325\001\n\nExp"
+          + "ortData\0224.google.cloud.parallelstore.v1b"
+          + "eta.ExportDataRequest\032\035.google.longrunni"
+          + "ng.Operation\"r\312A(\n\022ExportDataResponse\022\022E"
+          + "xportDataMetadata\202\323\344\223\002A\"</v1beta/{name=p"
+          + "rojects/*/locations/*/instances/*}:expor"
+          + "tData:\001*\032P\312A\034parallelstore.googleapis.co"
+          + "m\322A.https://www.googleapis.com/auth/clou"
+          + "d-platformB\246\003\n%com.google.cloud.parallel"
+          + "store.v1betaB\022ParallelstoreProtoP\001ZKclou"
+          + "d.google.com/go/parallelstore/apiv1beta/"
+          + "parallelstorepb;parallelstorepb\252\002!Google"
+          + ".Cloud.Parallelstore.V1Beta\312\002!Google\\Clo"
+          + "ud\\Parallelstore\\V1beta\352\002$Google::Cloud:"
+          + ":Parallelstore::V1beta\352AN\n\036compute.googl"
+          + "eapis.com/Network\022,projects/{project}/gl"
+          + "obal/networks/{network}\352AY\n\036compute.goog"
+          + "leapis.com/Address\0227projects/{project}/r"
+          + "egions/{region}/addresses/{address}b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -450,6 +469,13 @@ public final class ParallelstoreProto {
             internal_static_google_cloud_parallelstore_v1beta_ImportDataMetadata_descriptor,
             new java.lang.String[] {
               "OperationMetadata",
+              "CreateTime",
+              "EndTime",
+              "Target",
+              "Verb",
+              "StatusMessage",
+              "RequestedCancellation",
+              "ApiVersion",
             });
     internal_static_google_cloud_parallelstore_v1beta_ExportDataResponse_descriptor =
         getDescriptor().getMessageTypes().get(16);
@@ -464,6 +490,13 @@ public final class ParallelstoreProto {
             internal_static_google_cloud_parallelstore_v1beta_ExportDataMetadata_descriptor,
             new java.lang.String[] {
               "OperationMetadata",
+              "CreateTime",
+              "EndTime",
+              "Target",
+              "Verb",
+              "StatusMessage",
+              "RequestedCancellation",
+              "ApiVersion",
             });
     internal_static_google_cloud_parallelstore_v1beta_TransferOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(18);
@@ -471,7 +504,14 @@ public final class ParallelstoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_parallelstore_v1beta_TransferOperationMetadata_descriptor,
             new java.lang.String[] {
-              "CreateTime", "EndTime", "Counters", "Source", "Destination", "TransferType",
+              "SourceParallelstore",
+              "SourceGcsBucket",
+              "DestinationGcsBucket",
+              "DestinationParallelstore",
+              "Counters",
+              "TransferType",
+              "Source",
+              "Destination",
             });
     internal_static_google_cloud_parallelstore_v1beta_TransferCounters_descriptor =
         getDescriptor().getMessageTypes().get(19);

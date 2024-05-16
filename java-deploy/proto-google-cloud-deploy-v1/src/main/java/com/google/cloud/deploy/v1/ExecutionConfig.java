@@ -806,6 +806,25 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         : executionTimeout_;
   }
 
+  public static final int VERBOSE_FIELD_NUMBER = 8;
+  private boolean verbose_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, additional logging will be enabled when running builds
+   * in this execution environment.
+   * </pre>
+   *
+   * <code>bool verbose = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The verbose.
+   */
+  @java.lang.Override
+  public boolean getVerbose() {
+    return verbose_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -845,6 +864,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getExecutionTimeout());
+    }
+    if (verbose_ != false) {
+      output.writeBool(8, verbose_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -889,6 +911,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getExecutionTimeout());
     }
+    if (verbose_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, verbose_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -913,6 +938,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     if (hasExecutionTimeout()) {
       if (!getExecutionTimeout().equals(other.getExecutionTimeout())) return false;
     }
+    if (getVerbose() != other.getVerbose()) return false;
     if (!getExecutionEnvironmentCase().equals(other.getExecutionEnvironmentCase())) return false;
     switch (executionEnvironmentCase_) {
       case 2:
@@ -949,6 +975,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + EXECUTION_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getExecutionTimeout().hashCode();
     }
+    hash = (37 * hash) + VERBOSE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerbose());
     switch (executionEnvironmentCase_) {
       case 2:
         hash = (37 * hash) + DEFAULT_POOL_FIELD_NUMBER;
@@ -1125,6 +1153,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
+      verbose_ = false;
       executionEnvironmentCase_ = 0;
       executionEnvironment_ = null;
       return this;
@@ -1187,6 +1216,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         result.executionTimeout_ =
             executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.verbose_ = verbose_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1274,6 +1306,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasExecutionTimeout()) {
         mergeExecutionTimeout(other.getExecutionTimeout());
+      }
+      if (other.getVerbose() != false) {
+        setVerbose(other.getVerbose());
       }
       switch (other.getExecutionEnvironmentCase()) {
         case DEFAULT_POOL:
@@ -1373,6 +1408,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                verbose_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2698,6 +2739,62 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         executionTimeout_ = null;
       }
       return executionTimeoutBuilder_;
+    }
+
+    private boolean verbose_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, additional logging will be enabled when running builds
+     * in this execution environment.
+     * </pre>
+     *
+     * <code>bool verbose = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The verbose.
+     */
+    @java.lang.Override
+    public boolean getVerbose() {
+      return verbose_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, additional logging will be enabled when running builds
+     * in this execution environment.
+     * </pre>
+     *
+     * <code>bool verbose = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The verbose to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerbose(boolean value) {
+
+      verbose_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, additional logging will be enabled when running builds
+     * in this execution environment.
+     * </pre>
+     *
+     * <code>bool verbose = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerbose() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      verbose_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

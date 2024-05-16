@@ -38,7 +38,12 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
     super(builder);
   }
 
-  private ImportDataMetadata() {}
+  private ImportDataMetadata() {
+    target_ = "";
+    verb_ = "";
+    statusMessage_ = "";
+    apiVersion_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -116,6 +121,330 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
         : operationMetadata_;
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 2;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation finished running.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation finished running.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the operation finished running.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+
+  public static final int TARGET_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined resource path for the target of the operation.
+   * </pre>
+   *
+   * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The target.
+   */
+  @java.lang.Override
+  public java.lang.String getTarget() {
+    java.lang.Object ref = target_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      target_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined resource path for the target of the operation.
+   * </pre>
+   *
+   * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for target.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetBytes() {
+    java.lang.Object ref = target_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      target_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VERB_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object verb_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the verb executed by the operation.
+   * </pre>
+   *
+   * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The verb.
+   */
+  @java.lang.Override
+  public java.lang.String getVerb() {
+    java.lang.Object ref = verb_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      verb_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the verb executed by the operation.
+   * </pre>
+   *
+   * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for verb.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVerbBytes() {
+    java.lang.Object ref = verb_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      verb_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_MESSAGE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The statusMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getStatusMessage() {
+    java.lang.Object ref = statusMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for statusMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStatusMessageBytes() {
+    java.lang.Object ref = statusMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      statusMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUESTED_CANCELLATION_FIELD_NUMBER = 7;
+  private boolean requestedCancellation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identifies whether the user has requested cancellation
+   * of the operation. Operations that have successfully been cancelled
+   * have [Operation.error][] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+   * `Code.CANCELLED`.
+   * </pre>
+   *
+   * <code>bool requested_cancellation = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The requestedCancellation.
+   */
+  @java.lang.Override
+  public boolean getRequestedCancellation() {
+    return requestedCancellation_;
+  }
+
+  public static final int API_VERSION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. API version used to start the operation.
+   * </pre>
+   *
+   * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The apiVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getApiVersion() {
+    java.lang.Object ref = apiVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      apiVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. API version used to start the operation.
+   * </pre>
+   *
+   * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for apiVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApiVersionBytes() {
+    java.lang.Object ref = apiVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      apiVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -133,6 +462,27 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getOperationMetadata());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, target_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, verb_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, statusMessage_);
+    }
+    if (requestedCancellation_ != false) {
+      output.writeBool(7, requestedCancellation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, apiVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -144,6 +494,27 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOperationMetadata());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, target_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, verb_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, statusMessage_);
+    }
+    if (requestedCancellation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, requestedCancellation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, apiVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -165,6 +536,19 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
     if (hasOperationMetadata()) {
       if (!getOperationMetadata().equals(other.getOperationMetadata())) return false;
     }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasEndTime() != other.hasEndTime()) return false;
+    if (hasEndTime()) {
+      if (!getEndTime().equals(other.getEndTime())) return false;
+    }
+    if (!getTarget().equals(other.getTarget())) return false;
+    if (!getVerb().equals(other.getVerb())) return false;
+    if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+    if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
+    if (!getApiVersion().equals(other.getApiVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +564,24 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + OPERATION_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getOperationMetadata().hashCode();
     }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
+    }
+    hash = (37 * hash) + TARGET_FIELD_NUMBER;
+    hash = (53 * hash) + getTarget().hashCode();
+    hash = (37 * hash) + VERB_FIELD_NUMBER;
+    hash = (53 * hash) + getVerb().hashCode();
+    hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusMessage().hashCode();
+    hash = (37 * hash) + REQUESTED_CANCELLATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
+    hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getApiVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +724,8 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getOperationMetadataFieldBuilder();
+        getCreateTimeFieldBuilder();
+        getEndTimeFieldBuilder();
       }
     }
 
@@ -334,6 +738,21 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
         operationMetadataBuilder_.dispose();
         operationMetadataBuilder_ = null;
       }
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
+        endTimeBuilder_ = null;
+      }
+      target_ = "";
+      verb_ = "";
+      statusMessage_ = "";
+      requestedCancellation_ = false;
+      apiVersion_ = "";
       return this;
     }
 
@@ -377,6 +796,29 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
                 ? operationMetadata_
                 : operationMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.verb_ = verb_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requestedCancellation_ = requestedCancellation_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.apiVersion_ = apiVersion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -430,6 +872,35 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
       if (other.hasOperationMetadata()) {
         mergeOperationMetadata(other.getOperationMetadata());
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
+      }
+      if (!other.getTarget().isEmpty()) {
+        target_ = other.target_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getVerb().isEmpty()) {
+        verb_ = other.verb_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getStatusMessage().isEmpty()) {
+        statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.getRequestedCancellation() != false) {
+        setRequestedCancellation(other.getRequestedCancellation());
+      }
+      if (!other.getApiVersion().isEmpty()) {
+        apiVersion_ = other.apiVersion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -463,6 +934,48 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                target_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                verb_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                statusMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 56:
+              {
+                requestedCancellation_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 66:
+              {
+                apiVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -681,6 +1194,888 @@ public final class ImportDataMetadata extends com.google.protobuf.GeneratedMessa
         operationMetadata_ = null;
       }
       return operationMetadataBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    public boolean hasEndTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
+        } else {
+          endTime_ = value;
+        }
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+      if (endTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEndTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
+        endTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the operation finished running.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
+    }
+
+    private java.lang.Object target_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined resource path for the target of the operation.
+     * </pre>
+     *
+     * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The target.
+     */
+    public java.lang.String getTarget() {
+      java.lang.Object ref = target_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        target_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined resource path for the target of the operation.
+     * </pre>
+     *
+     * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for target.
+     */
+    public com.google.protobuf.ByteString getTargetBytes() {
+      java.lang.Object ref = target_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        target_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined resource path for the target of the operation.
+     * </pre>
+     *
+     * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The target to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTarget(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      target_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined resource path for the target of the operation.
+     * </pre>
+     *
+     * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTarget() {
+      target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined resource path for the target of the operation.
+     * </pre>
+     *
+     * <code>string target = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for target to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      target_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object verb_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the verb executed by the operation.
+     * </pre>
+     *
+     * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The verb.
+     */
+    public java.lang.String getVerb() {
+      java.lang.Object ref = verb_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verb_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the verb executed by the operation.
+     * </pre>
+     *
+     * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for verb.
+     */
+    public com.google.protobuf.ByteString getVerbBytes() {
+      java.lang.Object ref = verb_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        verb_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the verb executed by the operation.
+     * </pre>
+     *
+     * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The verb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerb(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      verb_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the verb executed by the operation.
+     * </pre>
+     *
+     * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerb() {
+      verb_ = getDefaultInstance().getVerb();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the verb executed by the operation.
+     * </pre>
+     *
+     * <code>string verb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for verb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerbBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      verb_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object statusMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The statusMessage.
+     */
+    public java.lang.String getStatusMessage() {
+      java.lang.Object ref = statusMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for statusMessage.
+     */
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
+      java.lang.Object ref = statusMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        statusMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The statusMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      statusMessage_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusMessage() {
+      statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>string status_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for statusMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      statusMessage_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private boolean requestedCancellation_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether the user has requested cancellation
+     * of the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The requestedCancellation.
+     */
+    @java.lang.Override
+    public boolean getRequestedCancellation() {
+      return requestedCancellation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether the user has requested cancellation
+     * of the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The requestedCancellation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestedCancellation(boolean value) {
+
+      requestedCancellation_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether the user has requested cancellation
+     * of the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestedCancellation() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      requestedCancellation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object apiVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. API version used to start the operation.
+     * </pre>
+     *
+     * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The apiVersion.
+     */
+    public java.lang.String getApiVersion() {
+      java.lang.Object ref = apiVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. API version used to start the operation.
+     * </pre>
+     *
+     * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for apiVersion.
+     */
+    public com.google.protobuf.ByteString getApiVersionBytes() {
+      java.lang.Object ref = apiVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        apiVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. API version used to start the operation.
+     * </pre>
+     *
+     * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The apiVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApiVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      apiVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. API version used to start the operation.
+     * </pre>
+     *
+     * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApiVersion() {
+      apiVersion_ = getDefaultInstance().getApiVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. API version used to start the operation.
+     * </pre>
+     *
+     * <code>string api_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for apiVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApiVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      apiVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

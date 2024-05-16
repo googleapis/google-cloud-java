@@ -322,5 +322,19 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, additional logging will be enabled when running builds
+   * in this execution environment.
+   * </pre>
+   *
+   * <code>bool verbose = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The verbose.
+   */
+  boolean getVerbose();
+
   com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentCase getExecutionEnvironmentCase();
 }
