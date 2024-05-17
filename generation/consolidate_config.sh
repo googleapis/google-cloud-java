@@ -58,8 +58,24 @@ function removeManagedDependency {
 }
 
 function removeElement {
-  element=$1
-  excludes=$2
+  while [[ $# -gt 0 ]]; do
+  key="$1"
+  case "${key}" in
+    --element)
+      element="$2"
+      shift
+      ;;
+    --excludes)
+      excludes="$2"
+      shift
+      ;;
+    *)
+      echo "Invalid option: [$1]"
+      exit 1
+      ;;
+  esac
+  shift
+  done
   perl_command="s/\s*<${element}>.*?<\/${element}>//s"
   runRegexOnPoms "$perl_command" "<${element}>" "${excludes}"
 }
@@ -80,18 +96,18 @@ removeManagedDependency 'google-cloud-pubsub'
 removeManagedDependency 'proto-google-cloud-pubsub-v1'
 removeManagedDependency 'google-cloud-pubsub-bom'
 removeManagedDependency 'google-api-services-translate'
-removeElement 'reporting'
-removeElement 'developers'
-removeElement 'organization'
-removeElement 'scm'
-removeElement 'issueManagement'
-removeElement 'licenses'
+removeElement --element 'reporting'
+removeElement --element 'developers'
+removeElement --element 'organization'
+removeElement --element 'scm'
+removeElement --element 'issueManagement'
+removeElement --element 'licenses'
 # Do not remove profiles in java-compute because the profile is used to
 # speed up native image test, see https://github.com/googleapis/google-cloud-java/pull/10827
-removeElement 'profiles' 'java-compute'
-removeElement 'junit.version'
-removeElement 'build'
-removeElement 'url'
+removeElement --element 'profiles' --excludes 'java-compute'
+removeElement --element 'junit.version'
+removeElement --element 'build'
+removeElement --element 'url'
 removeArtifact 'plugin' 'nexus-staging-maven-plugin' 'plugins'
 removeArtifact 'dependency' 'checkstyle' 'plugins'
 removeArtifactVersion 'dependency' 'junit'
