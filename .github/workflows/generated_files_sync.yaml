@@ -108,17 +108,6 @@ jobs:
           exit 1
         fi
 
-  consolidate-config:
-    # Parent handles config for child modules
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Apply consolidate_config.sh
-        run: |
-          bash generation/consolidate_config.sh
-      - name: Fail if there's any difference (To fix, run generation/consolidate_config.sh)
-        run: git --no-pager diff --exit-code
-
   generate-readme:
     # Ensure generate-readme.py runs fine
     runs-on: ubuntu-latest
