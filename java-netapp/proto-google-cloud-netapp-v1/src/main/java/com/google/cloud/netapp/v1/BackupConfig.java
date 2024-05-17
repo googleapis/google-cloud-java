@@ -237,6 +237,43 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     return scheduledBackupEnabled_;
   }
 
+  public static final int BACKUP_CHAIN_BYTES_FIELD_NUMBER = 4;
+  private long backupChainBytes_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of all backups in a chain in bytes = baseline
+   * backup size + sum(incremental backup size).
+   * </pre>
+   *
+   * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the backupChainBytes field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupChainBytes() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of all backups in a chain in bytes = baseline
+   * backup size + sum(incremental backup size).
+   * </pre>
+   *
+   * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupChainBytes.
+   */
+  @java.lang.Override
+  public long getBackupChainBytes() {
+    return backupChainBytes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -259,6 +296,9 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(3, scheduledBackupEnabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(4, backupChainBytes_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -283,6 +323,9 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, scheduledBackupEnabled_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, backupChainBytes_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -304,6 +347,10 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasScheduledBackupEnabled()) {
       if (getScheduledBackupEnabled() != other.getScheduledBackupEnabled()) return false;
     }
+    if (hasBackupChainBytes() != other.hasBackupChainBytes()) return false;
+    if (hasBackupChainBytes()) {
+      if (getBackupChainBytes() != other.getBackupChainBytes()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -324,6 +371,10 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasScheduledBackupEnabled()) {
       hash = (37 * hash) + SCHEDULED_BACKUP_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getScheduledBackupEnabled());
+    }
+    if (hasBackupChainBytes()) {
+      hash = (37 * hash) + BACKUP_CHAIN_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBackupChainBytes());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -467,6 +518,7 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       backupPolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       backupVault_ = "";
       scheduledBackupEnabled_ = false;
+      backupChainBytes_ = 0L;
       return this;
     }
 
@@ -514,6 +566,10 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.scheduledBackupEnabled_ = scheduledBackupEnabled_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.backupChainBytes_ = backupChainBytes_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -581,6 +637,9 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasScheduledBackupEnabled()) {
         setScheduledBackupEnabled(other.getScheduledBackupEnabled());
       }
+      if (other.hasBackupChainBytes()) {
+        setBackupChainBytes(other.getBackupChainBytes());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -626,6 +685,12 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                backupChainBytes_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1044,6 +1109,82 @@ public final class BackupConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearScheduledBackupEnabled() {
       bitField0_ = (bitField0_ & ~0x00000004);
       scheduledBackupEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private long backupChainBytes_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in a chain in bytes = baseline
+     * backup size + sum(incremental backup size).
+     * </pre>
+     *
+     * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the backupChainBytes field is set.
+     */
+    @java.lang.Override
+    public boolean hasBackupChainBytes() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in a chain in bytes = baseline
+     * backup size + sum(incremental backup size).
+     * </pre>
+     *
+     * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupChainBytes.
+     */
+    @java.lang.Override
+    public long getBackupChainBytes() {
+      return backupChainBytes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in a chain in bytes = baseline
+     * backup size + sum(incremental backup size).
+     * </pre>
+     *
+     * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupChainBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupChainBytes(long value) {
+
+      backupChainBytes_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in a chain in bytes = baseline
+     * backup size + sum(incremental backup size).
+     * </pre>
+     *
+     * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupChainBytes() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      backupChainBytes_ = 0L;
       onChanged();
       return this;
     }

@@ -104,6 +104,10 @@ public final class VolumeProto {
       internal_static_google_cloud_netapp_v1_BackupConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_BackupConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_TieringPolicy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -139,7 +143,7 @@ public final class VolumeProto {
           + "Volume\022\r\n\005force\030\002 \001(\010\"c\n\023RevertVolumeReq"
           + "uest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034netapp.googl"
           + "eapis.com/Volume\022\030\n\013snapshot_id\030\002 \001(\tB\003\340"
-          + "A\002\"\255\016\n\006Volume\022\021\n\004name\030\001 \001(\tB\003\340A\010\0228\n\005stat"
+          + "A\002\"\204\017\n\006Volume\022\021\n\004name\030\001 \001(\tB\003\340A\010\0228\n\005stat"
           + "e\030\002 \001(\0162$.google.cloud.netapp.v1.Volume."
           + "StateB\003\340A\003\022\032\n\rstate_details\030\003 \001(\tB\003\340A\003\0224"
           + "\n\013create_time\030\004 \001(\0132\032.google.protobuf.Ti"
@@ -177,68 +181,78 @@ public final class VolumeProto {
           + "\003\022@\n\rbackup_config\030\036 \001(\0132$.google.cloud."
           + "netapp.v1.BackupConfigH\000\210\001\001\022I\n\022restricte"
           + "d_actions\030\037 \003(\0162(.google.cloud.netapp.v1"
-          + ".RestrictedActionB\003\340A\001\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\005State\022\025"
-          + "\n\021STATE_UNSPECIFIED\020\000\022\t\n\005READY\020\001\022\014\n\010CREA"
-          + "TING\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDATING\020\004\022\r\n\tRE"
-          + "STORING\020\005\022\014\n\010DISABLED\020\006\022\t\n\005ERROR\020\007:l\352Ai\n"
-          + "\034netapp.googleapis.com/Volume\0228projects/"
-          + "{project}/locations/{location}/volumes/{"
-          + "volume}*\007volumes2\006volumeB\020\n\016_backup_conf"
-          + "ig\"R\n\014ExportPolicy\022B\n\005rules\030\001 \003(\0132..goog"
-          + "le.cloud.netapp.v1.SimpleExportPolicyRul"
-          + "eB\003\340A\002\"\374\004\n\026SimpleExportPolicyRule\022\034\n\017all"
-          + "owed_clients\030\001 \001(\tH\000\210\001\001\022\034\n\017has_root_acce"
-          + "ss\030\002 \001(\tH\001\210\001\001\022<\n\013access_type\030\003 \001(\0162\".goo"
-          + "gle.cloud.netapp.v1.AccessTypeH\002\210\001\001\022\022\n\005n"
-          + "fsv3\030\004 \001(\010H\003\210\001\001\022\022\n\005nfsv4\030\005 \001(\010H\004\210\001\001\022!\n\024k"
-          + "erberos_5_read_only\030\006 \001(\010H\005\210\001\001\022\"\n\025kerber"
-          + "os_5_read_write\030\007 \001(\010H\006\210\001\001\022\"\n\025kerberos_5"
-          + "i_read_only\030\010 \001(\010H\007\210\001\001\022#\n\026kerberos_5i_re"
-          + "ad_write\030\t \001(\010H\010\210\001\001\022\"\n\025kerberos_5p_read_"
-          + "only\030\n \001(\010H\t\210\001\001\022#\n\026kerberos_5p_read_writ"
-          + "e\030\013 \001(\010H\n\210\001\001B\022\n\020_allowed_clientsB\022\n\020_has"
-          + "_root_accessB\016\n\014_access_typeB\010\n\006_nfsv3B\010"
-          + "\n\006_nfsv4B\027\n\025_kerberos_5_read_onlyB\030\n\026_ke"
-          + "rberos_5_read_writeB\030\n\026_kerberos_5i_read"
-          + "_onlyB\031\n\027_kerberos_5i_read_writeB\030\n\026_ker"
-          + "beros_5p_read_onlyB\031\n\027_kerberos_5p_read_"
-          + "write\"\232\003\n\016SnapshotPolicy\022\024\n\007enabled\030\001 \001("
-          + "\010H\000\210\001\001\022D\n\017hourly_schedule\030\002 \001(\0132&.google"
-          + ".cloud.netapp.v1.HourlyScheduleH\001\210\001\001\022B\n\016"
-          + "daily_schedule\030\003 \001(\0132%.google.cloud.neta"
-          + "pp.v1.DailyScheduleH\002\210\001\001\022D\n\017weekly_sched"
-          + "ule\030\004 \001(\0132&.google.cloud.netapp.v1.Weekl"
-          + "yScheduleH\003\210\001\001\022F\n\020monthly_schedule\030\005 \001(\013"
-          + "2\'.google.cloud.netapp.v1.MonthlySchedul"
-          + "eH\004\210\001\001B\n\n\010_enabledB\022\n\020_hourly_scheduleB\021"
-          + "\n\017_daily_scheduleB\022\n\020_weekly_scheduleB\023\n"
-          + "\021_monthly_schedule\"f\n\016HourlySchedule\022\036\n\021"
-          + "snapshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minute\030\002"
-          + " \001(\001H\001\210\001\001B\024\n\022_snapshots_to_keepB\t\n\007_minu"
-          + "te\"\201\001\n\rDailySchedule\022\036\n\021snapshots_to_kee"
-          + "p\030\001 \001(\001H\000\210\001\001\022\023\n\006minute\030\002 \001(\001H\001\210\001\001\022\021\n\004hou"
-          + "r\030\003 \001(\001H\002\210\001\001B\024\n\022_snapshots_to_keepB\t\n\007_m"
-          + "inuteB\007\n\005_hour\"\234\001\n\016WeeklySchedule\022\036\n\021sna"
-          + "pshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minute\030\002 \001("
-          + "\001H\001\210\001\001\022\021\n\004hour\030\003 \001(\001H\002\210\001\001\022\020\n\003day\030\004 \001(\tH\003"
-          + "\210\001\001B\024\n\022_snapshots_to_keepB\t\n\007_minuteB\007\n\005"
-          + "_hourB\006\n\004_day\"\261\001\n\017MonthlySchedule\022\036\n\021sna"
-          + "pshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minute\030\002 \001("
-          + "\001H\001\210\001\001\022\021\n\004hour\030\003 \001(\001H\002\210\001\001\022\032\n\rdays_of_mon"
-          + "th\030\004 \001(\tH\003\210\001\001B\024\n\022_snapshots_to_keepB\t\n\007_"
-          + "minuteB\007\n\005_hourB\020\n\016_days_of_month\"}\n\013Mou"
-          + "ntOption\022\016\n\006export\030\001 \001(\t\022\023\n\013export_full\030"
-          + "\002 \001(\t\0223\n\010protocol\030\003 \001(\0162!.google.cloud.n"
-          + "etapp.v1.Protocols\022\024\n\014instructions\030\004 \001(\t"
-          + "\"Q\n\021RestoreParameters\022\031\n\017source_snapshot"
-          + "\030\001 \001(\tH\000\022\027\n\rsource_backup\030\002 \001(\tH\000B\010\n\006sou"
-          + "rce\"\335\001\n\014BackupConfig\022C\n\017backup_policies\030"
-          + "\001 \003(\tB*\340A\001\372A$\n\"netapp.googleapis.com/Bac"
-          + "kupPolicy\022?\n\014backup_vault\030\002 \001(\tB)\340A\001\372A#\n"
-          + "!netapp.googleapis.com/BackupVault\022*\n\030sc"
-          + "heduled_backup_enabled\030\003 \001(\010B\003\340A\001H\000\210\001\001B\033"
-          + "\n\031_scheduled_backup_enabled*E\n\tProtocols"
+          + ".RestrictedActionB\003\340A\001\022B\n\016tiering_policy"
+          + "\030\" \001(\0132%.google.cloud.netapp.v1.TieringP"
+          + "olicyH\001\210\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"{\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002\022\014\n\010DE"
+          + "LETING\020\003\022\014\n\010UPDATING\020\004\022\r\n\tRESTORING\020\005\022\014\n"
+          + "\010DISABLED\020\006\022\t\n\005ERROR\020\007:l\352Ai\n\034netapp.goog"
+          + "leapis.com/Volume\0228projects/{project}/lo"
+          + "cations/{location}/volumes/{volume}*\007vol"
+          + "umes2\006volumeB\020\n\016_backup_configB\021\n\017_tieri"
+          + "ng_policy\"R\n\014ExportPolicy\022B\n\005rules\030\001 \003(\013"
+          + "2..google.cloud.netapp.v1.SimpleExportPo"
+          + "licyRuleB\003\340A\002\"\374\004\n\026SimpleExportPolicyRule"
+          + "\022\034\n\017allowed_clients\030\001 \001(\tH\000\210\001\001\022\034\n\017has_ro"
+          + "ot_access\030\002 \001(\tH\001\210\001\001\022<\n\013access_type\030\003 \001("
+          + "\0162\".google.cloud.netapp.v1.AccessTypeH\002\210"
+          + "\001\001\022\022\n\005nfsv3\030\004 \001(\010H\003\210\001\001\022\022\n\005nfsv4\030\005 \001(\010H\004\210"
+          + "\001\001\022!\n\024kerberos_5_read_only\030\006 \001(\010H\005\210\001\001\022\"\n"
+          + "\025kerberos_5_read_write\030\007 \001(\010H\006\210\001\001\022\"\n\025ker"
+          + "beros_5i_read_only\030\010 \001(\010H\007\210\001\001\022#\n\026kerbero"
+          + "s_5i_read_write\030\t \001(\010H\010\210\001\001\022\"\n\025kerberos_5"
+          + "p_read_only\030\n \001(\010H\t\210\001\001\022#\n\026kerberos_5p_re"
+          + "ad_write\030\013 \001(\010H\n\210\001\001B\022\n\020_allowed_clientsB"
+          + "\022\n\020_has_root_accessB\016\n\014_access_typeB\010\n\006_"
+          + "nfsv3B\010\n\006_nfsv4B\027\n\025_kerberos_5_read_only"
+          + "B\030\n\026_kerberos_5_read_writeB\030\n\026_kerberos_"
+          + "5i_read_onlyB\031\n\027_kerberos_5i_read_writeB"
+          + "\030\n\026_kerberos_5p_read_onlyB\031\n\027_kerberos_5"
+          + "p_read_write\"\232\003\n\016SnapshotPolicy\022\024\n\007enabl"
+          + "ed\030\001 \001(\010H\000\210\001\001\022D\n\017hourly_schedule\030\002 \001(\0132&"
+          + ".google.cloud.netapp.v1.HourlyScheduleH\001"
+          + "\210\001\001\022B\n\016daily_schedule\030\003 \001(\0132%.google.clo"
+          + "ud.netapp.v1.DailyScheduleH\002\210\001\001\022D\n\017weekl"
+          + "y_schedule\030\004 \001(\0132&.google.cloud.netapp.v"
+          + "1.WeeklyScheduleH\003\210\001\001\022F\n\020monthly_schedul"
+          + "e\030\005 \001(\0132\'.google.cloud.netapp.v1.Monthly"
+          + "ScheduleH\004\210\001\001B\n\n\010_enabledB\022\n\020_hourly_sch"
+          + "eduleB\021\n\017_daily_scheduleB\022\n\020_weekly_sche"
+          + "duleB\023\n\021_monthly_schedule\"f\n\016HourlySched"
+          + "ule\022\036\n\021snapshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006m"
+          + "inute\030\002 \001(\001H\001\210\001\001B\024\n\022_snapshots_to_keepB\t"
+          + "\n\007_minute\"\201\001\n\rDailySchedule\022\036\n\021snapshots"
+          + "_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minute\030\002 \001(\001H\001\210\001\001"
+          + "\022\021\n\004hour\030\003 \001(\001H\002\210\001\001B\024\n\022_snapshots_to_kee"
+          + "pB\t\n\007_minuteB\007\n\005_hour\"\234\001\n\016WeeklySchedule"
+          + "\022\036\n\021snapshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minu"
+          + "te\030\002 \001(\001H\001\210\001\001\022\021\n\004hour\030\003 \001(\001H\002\210\001\001\022\020\n\003day\030"
+          + "\004 \001(\tH\003\210\001\001B\024\n\022_snapshots_to_keepB\t\n\007_min"
+          + "uteB\007\n\005_hourB\006\n\004_day\"\261\001\n\017MonthlySchedule"
+          + "\022\036\n\021snapshots_to_keep\030\001 \001(\001H\000\210\001\001\022\023\n\006minu"
+          + "te\030\002 \001(\001H\001\210\001\001\022\021\n\004hour\030\003 \001(\001H\002\210\001\001\022\032\n\rdays"
+          + "_of_month\030\004 \001(\tH\003\210\001\001B\024\n\022_snapshots_to_ke"
+          + "epB\t\n\007_minuteB\007\n\005_hourB\020\n\016_days_of_month"
+          + "\"}\n\013MountOption\022\016\n\006export\030\001 \001(\t\022\023\n\013expor"
+          + "t_full\030\002 \001(\t\0223\n\010protocol\030\003 \001(\0162!.google."
+          + "cloud.netapp.v1.Protocols\022\024\n\014instruction"
+          + "s\030\004 \001(\t\"Q\n\021RestoreParameters\022\031\n\017source_s"
+          + "napshot\030\001 \001(\tH\000\022\027\n\rsource_backup\030\002 \001(\tH\000"
+          + "B\010\n\006source\"\232\002\n\014BackupConfig\022C\n\017backup_po"
+          + "licies\030\001 \003(\tB*\340A\001\372A$\n\"netapp.googleapis."
+          + "com/BackupPolicy\022?\n\014backup_vault\030\002 \001(\tB)"
+          + "\340A\001\372A#\n!netapp.googleapis.com/BackupVaul"
+          + "t\022*\n\030scheduled_backup_enabled\030\003 \001(\010B\003\340A\001"
+          + "H\000\210\001\001\022$\n\022backup_chain_bytes\030\004 \001(\003B\003\340A\003H\001"
+          + "\210\001\001B\033\n\031_scheduled_backup_enabledB\025\n\023_bac"
+          + "kup_chain_bytes\"\371\001\n\rTieringPolicy\022O\n\013tie"
+          + "r_action\030\001 \001(\01620.google.cloud.netapp.v1."
+          + "TieringPolicy.TierActionB\003\340A\001H\000\210\001\001\022(\n\026co"
+          + "oling_threshold_days\030\002 \001(\005B\003\340A\001H\001\210\001\001\"B\n\n"
+          + "TierAction\022\033\n\027TIER_ACTION_UNSPECIFIED\020\000\022"
+          + "\013\n\007ENABLED\020\001\022\n\n\006PAUSED\020\002B\016\n\014_tier_action"
+          + "B\031\n\027_cooling_threshold_days*E\n\tProtocols"
           + "\022\031\n\025PROTOCOLS_UNSPECIFIED\020\000\022\t\n\005NFSV3\020\001\022\t"
           + "\n\005NFSV4\020\002\022\007\n\003SMB\020\003*W\n\nAccessType\022\033\n\027ACCE"
           + "SS_TYPE_UNSPECIFIED\020\000\022\r\n\tREAD_ONLY\020\001\022\016\n\n"
@@ -361,6 +375,7 @@ public final class VolumeProto {
               "HasReplication",
               "BackupConfig",
               "RestrictedActions",
+              "TieringPolicy",
             });
     internal_static_google_cloud_netapp_v1_Volume_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_Volume_descriptor.getNestedTypes().get(0);
@@ -458,7 +473,15 @@ public final class VolumeProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_BackupConfig_descriptor,
             new java.lang.String[] {
-              "BackupPolicies", "BackupVault", "ScheduledBackupEnabled",
+              "BackupPolicies", "BackupVault", "ScheduledBackupEnabled", "BackupChainBytes",
+            });
+    internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_netapp_v1_TieringPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor,
+            new java.lang.String[] {
+              "TierAction", "CoolingThresholdDays",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

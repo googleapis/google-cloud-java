@@ -28,6 +28,11 @@ public final class CommonProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_LocationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_LocationMetadata_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -37,20 +42,40 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/netapp/v1/common.proto\022\026g"
-          + "oogle.cloud.netapp.v1*U\n\014ServiceLevel\022\035\n"
-          + "\031SERVICE_LEVEL_UNSPECIFIED\020\000\022\013\n\007PREMIUM\020"
-          + "\001\022\013\n\007EXTREME\020\002\022\014\n\010STANDARD\020\003*U\n\016Encrypti"
-          + "onType\022\037\n\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022"
-          + "\023\n\017SERVICE_MANAGED\020\001\022\r\n\tCLOUD_KMS\020\002B\255\001\n\032"
-          + "com.google.cloud.netapp.v1B\013CommonProtoP"
-          + "\001Z2cloud.google.com/go/netapp/apiv1/neta"
-          + "pppb;netapppb\252\002\026Google.Cloud.NetApp.V1\312\002"
-          + "\026Google\\Cloud\\NetApp\\V1\352\002\031Google::Cloud:"
-          + ":NetApp::V1b\006proto3"
+          + "oogle.cloud.netapp.v1\032\037google/api/field_"
+          + "behavior.proto\"_\n\020LocationMetadata\022K\n\030su"
+          + "pported_service_levels\030\001 \003(\0162$.google.cl"
+          + "oud.netapp.v1.ServiceLevelB\003\340A\003*_\n\014Servi"
+          + "ceLevel\022\035\n\031SERVICE_LEVEL_UNSPECIFIED\020\000\022\013"
+          + "\n\007PREMIUM\020\001\022\013\n\007EXTREME\020\002\022\014\n\010STANDARD\020\003\022\010"
+          + "\n\004FLEX\020\004*U\n\016EncryptionType\022\037\n\033ENCRYPTION"
+          + "_TYPE_UNSPECIFIED\020\000\022\023\n\017SERVICE_MANAGED\020\001"
+          + "\022\r\n\tCLOUD_KMS\020\002B\255\001\n\032com.google.cloud.net"
+          + "app.v1B\013CommonProtoP\001Z2cloud.google.com/"
+          + "go/netapp/apiv1/netapppb;netapppb\252\002\026Goog"
+          + "le.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp"
+          + "\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
+    internal_static_google_cloud_netapp_v1_LocationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_netapp_v1_LocationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_LocationMetadata_descriptor,
+            new java.lang.String[] {
+              "SupportedServiceLevels",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

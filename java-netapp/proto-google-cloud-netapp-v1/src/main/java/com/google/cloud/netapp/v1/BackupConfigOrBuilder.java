@@ -148,4 +148,33 @@ public interface BackupConfigOrBuilder
    * @return The scheduledBackupEnabled.
    */
   boolean getScheduledBackupEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of all backups in a chain in bytes = baseline
+   * backup size + sum(incremental backup size).
+   * </pre>
+   *
+   * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the backupChainBytes field is set.
+   */
+  boolean hasBackupChainBytes();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of all backups in a chain in bytes = baseline
+   * backup size + sum(incremental backup size).
+   * </pre>
+   *
+   * <code>optional int64 backup_chain_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupChainBytes.
+   */
+  long getBackupChainBytes();
 }

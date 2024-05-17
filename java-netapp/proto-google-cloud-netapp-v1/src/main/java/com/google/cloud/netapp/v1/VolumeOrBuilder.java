@@ -1043,4 +1043,39 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire of restrictedActions at the given index.
    */
   int getRestrictedActionsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
+   *
+   * @return Whether the tieringPolicy field is set.
+   */
+  boolean hasTieringPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
+   *
+   * @return The tieringPolicy.
+   */
+  com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 34;</code>
+   */
+  com.google.cloud.netapp.v1.TieringPolicyOrBuilder getTieringPolicyOrBuilder();
 }
