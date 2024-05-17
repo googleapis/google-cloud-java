@@ -710,6 +710,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -779,6 +780,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -848,6 +850,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -931,6 +934,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1014,6 +1018,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1178,6 +1183,7 @@ public class NetAppClientTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

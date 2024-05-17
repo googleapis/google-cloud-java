@@ -787,6 +787,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -862,6 +863,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -937,6 +939,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1021,6 +1024,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1105,6 +1109,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1148,6 +1153,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1212,6 +1218,7 @@ public class NetAppClientHttpJsonTest {
               .setHasReplication(true)
               .setBackupConfig(BackupConfig.newBuilder().build())
               .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+              .setTieringPolicy(TieringPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1346,6 +1353,7 @@ public class NetAppClientHttpJsonTest {
             .setHasReplication(true)
             .setBackupConfig(BackupConfig.newBuilder().build())
             .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -69,6 +69,16 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 3;</code>
    */
   STANDARD(3),
+  /**
+   *
+   *
+   * <pre>
+   * Flex service level.
+   * </pre>
+   *
+   * <code>FLEX = 4;</code>
+   */
+  FLEX(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -112,6 +122,16 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 3;</code>
    */
   public static final int STANDARD_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Flex service level.
+   * </pre>
+   *
+   * <code>FLEX = 4;</code>
+   */
+  public static final int FLEX_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +165,8 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
         return EXTREME;
       case 3:
         return STANDARD;
+      case 4:
+        return FLEX;
       default:
         return null;
     }
