@@ -126,52 +126,55 @@ public final class PlacesServiceProto {
           + "annotations.proto\032\027google/api/client.pro"
           + "to\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032\036google/geo/type/"
-          + "viewport.proto\032\'google/maps/places/v1/ev"
-          + "_charging.proto\032$google/maps/places/v1/g"
-          + "eometry.proto\032!google/maps/places/v1/pla"
-          + "ce.proto\032\030google/type/latlng.proto\"\243\004\n\023S"
-          + "earchNearbyRequest\022\025\n\rlanguage_code\030\001 \001("
-          + "\t\022\023\n\013region_code\030\002 \001(\t\022\026\n\016included_types"
-          + "\030\003 \003(\t\022\026\n\016excluded_types\030\004 \003(\t\022\036\n\026includ"
-          + "ed_primary_types\030\005 \003(\t\022\036\n\026excluded_prima"
-          + "ry_types\030\006 \003(\t\022\030\n\020max_result_count\030\007 \001(\005"
-          + "\022a\n\024location_restriction\030\010 \001(\0132>.google."
-          + "maps.places.v1.SearchNearbyRequest.Locat"
-          + "ionRestrictionB\003\340A\002\022R\n\017rank_preference\030\t"
-          + " \001(\01629.google.maps.places.v1.SearchNearb"
-          + "yRequest.RankPreference\032N\n\023LocationRestr"
-          + "iction\022/\n\006circle\030\002 \001(\0132\035.google.maps.pla"
-          + "ces.v1.CircleH\000B\006\n\004type\"O\n\016RankPreferenc"
-          + "e\022\037\n\033RANK_PREFERENCE_UNSPECIFIED\020\000\022\014\n\010DI"
-          + "STANCE\020\001\022\016\n\nPOPULARITY\020\002\"D\n\024SearchNearby"
-          + "Response\022,\n\006places\030\001 \003(\0132\034.google.maps.p"
-          + "laces.v1.Place\"\342\007\n\021SearchTextRequest\022\027\n\n"
-          + "text_query\030\001 \001(\tB\003\340A\002\022\025\n\rlanguage_code\030\002"
-          + " \001(\t\022\023\n\013region_code\030\003 \001(\t\022P\n\017rank_prefer"
-          + "ence\030\004 \001(\01627.google.maps.places.v1.Searc"
-          + "hTextRequest.RankPreference\022\025\n\rincluded_"
-          + "type\030\006 \001(\t\022\020\n\010open_now\030\007 \001(\010\022\022\n\nmin_rati"
-          + "ng\030\t \001(\001\022\030\n\020max_result_count\030\n \001(\005\0227\n\014pr"
-          + "ice_levels\030\013 \003(\0162!.google.maps.places.v1"
-          + ".PriceLevel\022\035\n\025strict_type_filtering\030\014 \001"
-          + "(\010\022L\n\rlocation_bias\030\r \001(\01325.google.maps."
-          + "places.v1.SearchTextRequest.LocationBias"
-          + "\022Z\n\024location_restriction\030\016 \001(\0132<.google."
-          + "maps.places.v1.SearchTextRequest.Locatio"
-          + "nRestriction\022K\n\nev_options\030\017 \001(\01322.googl"
-          + "e.maps.places.v1.SearchTextRequest.EVOpt"
-          + "ionsB\003\340A\001\032w\n\014LocationBias\022.\n\trectangle\030\001"
-          + " \001(\0132\031.google.geo.type.ViewportH\000\022/\n\006cir"
-          + "cle\030\002 \001(\0132\035.google.maps.places.v1.Circle"
-          + "H\000B\006\n\004type\032M\n\023LocationRestriction\022.\n\trec"
+          + "viewport.proto\032.google/maps/places/v1/co"
+          + "ntextual_content.proto\032\'google/maps/plac"
+          + "es/v1/ev_charging.proto\032$google/maps/pla"
+          + "ces/v1/geometry.proto\032!google/maps/place"
+          + "s/v1/place.proto\032\030google/type/latlng.pro"
+          + "to\"\243\004\n\023SearchNearbyRequest\022\025\n\rlanguage_c"
+          + "ode\030\001 \001(\t\022\023\n\013region_code\030\002 \001(\t\022\026\n\016includ"
+          + "ed_types\030\003 \003(\t\022\026\n\016excluded_types\030\004 \003(\t\022\036"
+          + "\n\026included_primary_types\030\005 \003(\t\022\036\n\026exclud"
+          + "ed_primary_types\030\006 \003(\t\022\030\n\020max_result_cou"
+          + "nt\030\007 \001(\005\022a\n\024location_restriction\030\010 \001(\0132>"
+          + ".google.maps.places.v1.SearchNearbyReque"
+          + "st.LocationRestrictionB\003\340A\002\022R\n\017rank_pref"
+          + "erence\030\t \001(\01629.google.maps.places.v1.Sea"
+          + "rchNearbyRequest.RankPreference\032N\n\023Locat"
+          + "ionRestriction\022/\n\006circle\030\002 \001(\0132\035.google."
+          + "maps.places.v1.CircleH\000B\006\n\004type\"O\n\016RankP"
+          + "reference\022\037\n\033RANK_PREFERENCE_UNSPECIFIED"
+          + "\020\000\022\014\n\010DISTANCE\020\001\022\016\n\nPOPULARITY\020\002\"D\n\024Sear"
+          + "chNearbyResponse\022,\n\006places\030\001 \003(\0132\034.googl"
+          + "e.maps.places.v1.Place\"\342\007\n\021SearchTextReq"
+          + "uest\022\027\n\ntext_query\030\001 \001(\tB\003\340A\002\022\025\n\rlanguag"
+          + "e_code\030\002 \001(\t\022\023\n\013region_code\030\003 \001(\t\022P\n\017ran"
+          + "k_preference\030\004 \001(\01627.google.maps.places."
+          + "v1.SearchTextRequest.RankPreference\022\025\n\ri"
+          + "ncluded_type\030\006 \001(\t\022\020\n\010open_now\030\007 \001(\010\022\022\n\n"
+          + "min_rating\030\t \001(\001\022\030\n\020max_result_count\030\n \001"
+          + "(\005\0227\n\014price_levels\030\013 \003(\0162!.google.maps.p"
+          + "laces.v1.PriceLevel\022\035\n\025strict_type_filte"
+          + "ring\030\014 \001(\010\022L\n\rlocation_bias\030\r \001(\01325.goog"
+          + "le.maps.places.v1.SearchTextRequest.Loca"
+          + "tionBias\022Z\n\024location_restriction\030\016 \001(\0132<"
+          + ".google.maps.places.v1.SearchTextRequest"
+          + ".LocationRestriction\022K\n\nev_options\030\017 \001(\013"
+          + "22.google.maps.places.v1.SearchTextReque"
+          + "st.EVOptionsB\003\340A\001\032w\n\014LocationBias\022.\n\trec"
           + "tangle\030\001 \001(\0132\031.google.geo.type.ViewportH"
-          + "\000B\006\n\004type\032x\n\tEVOptions\022%\n\030minimum_chargi"
-          + "ng_rate_kw\030\001 \001(\001B\003\340A\001\022D\n\017connector_types"
-          + "\030\002 \003(\0162&.google.maps.places.v1.EVConnect"
-          + "orTypeB\003\340A\001\"N\n\016RankPreference\022\037\n\033RANK_PR"
-          + "EFERENCE_UNSPECIFIED\020\000\022\014\n\010DISTANCE\020\001\022\r\n\t"
-          + "RELEVANCE\020\002\"B\n\022SearchTextResponse\022,\n\006pla"
-          + "ces\030\001 \003(\0132\034.google.maps.places.v1.Place\""
+          + "\000\022/\n\006circle\030\002 \001(\0132\035.google.maps.places.v"
+          + "1.CircleH\000B\006\n\004type\032M\n\023LocationRestrictio"
+          + "n\022.\n\trectangle\030\001 \001(\0132\031.google.geo.type.V"
+          + "iewportH\000B\006\n\004type\032x\n\tEVOptions\022%\n\030minimu"
+          + "m_charging_rate_kw\030\001 \001(\001B\003\340A\001\022D\n\017connect"
+          + "or_types\030\002 \003(\0162&.google.maps.places.v1.E"
+          + "VConnectorTypeB\003\340A\001\"N\n\016RankPreference\022\037\n"
+          + "\033RANK_PREFERENCE_UNSPECIFIED\020\000\022\014\n\010DISTAN"
+          + "CE\020\001\022\r\n\tRELEVANCE\020\002\"\211\001\n\022SearchTextRespon"
+          + "se\022,\n\006places\030\001 \003(\0132\034.google.maps.places."
+          + "v1.Place\022E\n\023contextual_contents\030\003 \003(\0132(."
+          + "google.maps.places.v1.ContextualContent\""
           + "\246\001\n\024GetPhotoMediaRequest\0226\n\004name\030\001 \001(\tB("
           + "\340A\002\372A\"\n places.googleapis.com/PhotoMedia"
           + "\022\031\n\014max_width_px\030\002 \001(\005B\003\340A\001\022\032\n\rmax_heigh"
@@ -269,6 +272,7 @@ public final class PlacesServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.geo.type.ViewportProto.getDescriptor(),
+              com.google.maps.places.v1.ContextualContentProto.getDescriptor(),
               com.google.maps.places.v1.EvChargingProto.getDescriptor(),
               com.google.maps.places.v1.GeometryProto.getDescriptor(),
               com.google.maps.places.v1.PlaceProto.getDescriptor(),
@@ -358,7 +362,7 @@ public final class PlacesServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_SearchTextResponse_descriptor,
             new java.lang.String[] {
-              "Places",
+              "Places", "ContextualContents",
             });
     internal_static_google_maps_places_v1_GetPhotoMediaRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -505,6 +509,7 @@ public final class PlacesServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.geo.type.ViewportProto.getDescriptor();
+    com.google.maps.places.v1.ContextualContentProto.getDescriptor();
     com.google.maps.places.v1.EvChargingProto.getDescriptor();
     com.google.maps.places.v1.GeometryProto.getDescriptor();
     com.google.maps.places.v1.PlaceProto.getDescriptor();

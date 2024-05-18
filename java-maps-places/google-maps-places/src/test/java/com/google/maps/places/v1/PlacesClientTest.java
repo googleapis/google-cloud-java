@@ -148,7 +148,10 @@ public class PlacesClientTest {
   @Test
   public void searchTextTest() throws Exception {
     SearchTextResponse expectedResponse =
-        SearchTextResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchTextResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllContextualContents(new ArrayList<ContextualContent>())
+            .build();
     mockPlaces.addResponse(expectedResponse);
 
     SearchTextRequest request =
@@ -363,6 +366,8 @@ public class PlacesClientTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -460,6 +465,8 @@ public class PlacesClientTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 

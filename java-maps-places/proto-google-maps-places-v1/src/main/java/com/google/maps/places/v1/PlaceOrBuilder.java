@@ -2099,4 +2099,98 @@ public interface PlaceOrBuilder
    * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
    */
   com.google.maps.places.v1.EVChargeOptionsOrBuilder getEvChargeOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
+   *
+   * @return Whether the generativeSummary field is set.
+   */
+  boolean hasGenerativeSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
+   *
+   * @return The generativeSummary.
+   */
+  com.google.maps.places.v1.Place.GenerativeSummary getGenerativeSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
+   */
+  com.google.maps.places.v1.Place.GenerativeSummaryOrBuilder getGenerativeSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the area that the place is in.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
+   *
+   * @return Whether the areaSummary field is set.
+   */
+  boolean hasAreaSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the area that the place is in.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
+   *
+   * @return The areaSummary.
+   */
+  com.google.maps.places.v1.Place.AreaSummary getAreaSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * AI-generated summary of the area that the place is in.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
+   */
+  com.google.maps.places.v1.Place.AreaSummaryOrBuilder getAreaSummaryOrBuilder();
 }

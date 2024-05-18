@@ -139,7 +139,10 @@ public class PlacesClientHttpJsonTest {
   @Test
   public void searchTextTest() throws Exception {
     SearchTextResponse expectedResponse =
-        SearchTextResponse.newBuilder().addAllPlaces(new ArrayList<Place>()).build();
+        SearchTextResponse.newBuilder()
+            .addAllPlaces(new ArrayList<Place>())
+            .addAllContextualContents(new ArrayList<ContextualContent>())
+            .build();
     mockService.addResponse(expectedResponse);
 
     SearchTextRequest request =
@@ -360,6 +363,8 @@ public class PlacesClientHttpJsonTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -463,6 +468,8 @@ public class PlacesClientHttpJsonTest {
             .setAccessibilityOptions(Place.AccessibilityOptions.newBuilder().build())
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
+            .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
+            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
