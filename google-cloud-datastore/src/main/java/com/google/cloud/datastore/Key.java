@@ -145,7 +145,7 @@ public final class Key extends IncompleteKey {
   /** Returns the key in an encoded form that can be used as part of a URL. */
   public String toUrlSafe() {
     try {
-      return URLEncoder.encode(TextFormat.printToString(toPb()), UTF_8.name());
+      return URLEncoder.encode(TextFormat.printer().printToString(toPb()), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("Unexpected encoding exception", e);
     }
