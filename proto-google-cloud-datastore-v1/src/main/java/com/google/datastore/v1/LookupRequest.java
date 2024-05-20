@@ -299,6 +299,71 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     return keys_.get(index);
   }
 
+  public static final int PROPERTY_MASK_FIELD_NUMBER = 5;
+  private com.google.datastore.v1.PropertyMask propertyMask_;
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropertyMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   *
+   * @return The propertyMask.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMask getPropertyMask() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -318,6 +383,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < keys_.size(); i++) {
       output.writeMessage(3, keys_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getPropertyMask());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectId_);
@@ -339,6 +407,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < keys_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, keys_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPropertyMask());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
@@ -368,6 +439,10 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getReadOptions().equals(other.getReadOptions())) return false;
     }
     if (!getKeysList().equals(other.getKeysList())) return false;
+    if (hasPropertyMask() != other.hasPropertyMask()) return false;
+    if (hasPropertyMask()) {
+      if (!getPropertyMask().equals(other.getPropertyMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -390,6 +465,10 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     if (getKeysCount() > 0) {
       hash = (37 * hash) + KEYS_FIELD_NUMBER;
       hash = (53 * hash) + getKeysList().hashCode();
+    }
+    if (hasPropertyMask()) {
+      hash = (37 * hash) + PROPERTY_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyMask().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -532,6 +611,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReadOptionsFieldBuilder();
         getKeysFieldBuilder();
+        getPropertyMaskFieldBuilder();
       }
     }
 
@@ -553,6 +633,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         keysBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -613,6 +698,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         result.readOptions_ =
             readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.propertyMask_ =
+            propertyMaskBuilder_ == null ? propertyMask_ : propertyMaskBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -702,6 +792,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasPropertyMask()) {
+        mergePropertyMask(other.getPropertyMask());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -746,6 +839,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(getPropertyMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 66:
               {
                 projectId_ = input.readStringRequireUtf8();
@@ -1547,6 +1646,236 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         keys_ = null;
       }
       return keysBuilder_;
+    }
+
+    private com.google.datastore.v1.PropertyMask propertyMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        propertyMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     *
+     * @return Whether the propertyMask field is set.
+     */
+    public boolean hasPropertyMask() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     *
+     * @return The propertyMask.
+     */
+    public com.google.datastore.v1.PropertyMask getPropertyMask() {
+      if (propertyMaskBuilder_ == null) {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      } else {
+        return propertyMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        propertyMask_ = value;
+      } else {
+        propertyMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask.Builder builderForValue) {
+      if (propertyMaskBuilder_ == null) {
+        propertyMask_ = builderForValue.build();
+      } else {
+        propertyMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public Builder mergePropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && propertyMask_ != null
+            && propertyMask_ != com.google.datastore.v1.PropertyMask.getDefaultInstance()) {
+          getPropertyMaskBuilder().mergeFrom(value);
+        } else {
+          propertyMask_ = value;
+        }
+      } else {
+        propertyMaskBuilder_.mergeFrom(value);
+      }
+      if (propertyMask_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public Builder clearPropertyMask() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public com.google.datastore.v1.PropertyMask.Builder getPropertyMaskBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getPropertyMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+      if (propertyMaskBuilder_ != null) {
+        return propertyMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return. Defaults to returning all properties.
+     *
+     * If this field is set and an entity has a property not referenced in the
+     * mask, it will be absent from [LookupResponse.found.entity.properties][].
+     *
+     * The entity's key is always returned.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        getPropertyMaskFieldBuilder() {
+      if (propertyMaskBuilder_ == null) {
+        propertyMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyMask,
+                com.google.datastore.v1.PropertyMask.Builder,
+                com.google.datastore.v1.PropertyMaskOrBuilder>(
+                getPropertyMask(), getParentForChildren(), isClean());
+        propertyMask_ = null;
+      }
+      return propertyMaskBuilder_;
     }
 
     @java.lang.Override

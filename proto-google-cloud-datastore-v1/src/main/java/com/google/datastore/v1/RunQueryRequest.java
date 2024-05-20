@@ -433,6 +433,68 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
 
+  public static final int PROPERTY_MASK_FIELD_NUMBER = 10;
+  private com.google.datastore.v1.PropertyMask propertyMask_;
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropertyMask() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   *
+   * @return The propertyMask.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMask getPropertyMask() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+
   public static final int EXPLAIN_OPTIONS_FIELD_NUMBER = 12;
   private com.google.datastore.v1.ExplainOptions explainOptions_;
   /**
@@ -451,7 +513,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasExplainOptions() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -525,6 +587,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getPropertyMask());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(12, getExplainOptions());
     }
     getUnknownFields().writeTo(output);
@@ -559,6 +624,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getPropertyMask());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getExplainOptions());
     }
     size += getUnknownFields().getSerializedSize();
@@ -585,6 +653,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (hasReadOptions() != other.hasReadOptions()) return false;
     if (hasReadOptions()) {
       if (!getReadOptions().equals(other.getReadOptions())) return false;
+    }
+    if (hasPropertyMask() != other.hasPropertyMask()) return false;
+    if (hasPropertyMask()) {
+      if (!getPropertyMask().equals(other.getPropertyMask())) return false;
     }
     if (hasExplainOptions() != other.hasExplainOptions()) return false;
     if (hasExplainOptions()) {
@@ -623,6 +695,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (hasReadOptions()) {
       hash = (37 * hash) + READ_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getReadOptions().hashCode();
+    }
+    if (hasPropertyMask()) {
+      hash = (37 * hash) + PROPERTY_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyMask().hashCode();
     }
     if (hasExplainOptions()) {
       hash = (37 * hash) + EXPLAIN_OPTIONS_FIELD_NUMBER;
@@ -782,6 +858,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPartitionIdFieldBuilder();
         getReadOptionsFieldBuilder();
+        getPropertyMaskFieldBuilder();
         getExplainOptionsFieldBuilder();
       }
     }
@@ -807,6 +884,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (gqlQueryBuilder_ != null) {
         gqlQueryBuilder_.clear();
+      }
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
       }
       explainOptions_ = null;
       if (explainOptionsBuilder_ != null) {
@@ -870,9 +952,14 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.propertyMask_ =
+            propertyMaskBuilder_ == null ? propertyMask_ : propertyMaskBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.explainOptions_ =
             explainOptionsBuilder_ == null ? explainOptions_ : explainOptionsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -948,6 +1035,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasReadOptions()) {
         mergeReadOptions(other.getReadOptions());
+      }
+      if (other.hasPropertyMask()) {
+        mergePropertyMask(other.getPropertyMask());
       }
       if (other.hasExplainOptions()) {
         mergeExplainOptions(other.getExplainOptions());
@@ -1030,10 +1120,16 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(getPropertyMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             case 98:
               {
                 input.readMessage(getExplainOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 98
             default:
@@ -2104,6 +2200,227 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       return gqlQueryBuilder_;
     }
 
+    private com.google.datastore.v1.PropertyMask propertyMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        propertyMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     *
+     * @return Whether the propertyMask field is set.
+     */
+    public boolean hasPropertyMask() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     *
+     * @return The propertyMask.
+     */
+    public com.google.datastore.v1.PropertyMask getPropertyMask() {
+      if (propertyMaskBuilder_ == null) {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      } else {
+        return propertyMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        propertyMask_ = value;
+      } else {
+        propertyMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask.Builder builderForValue) {
+      if (propertyMaskBuilder_ == null) {
+        propertyMask_ = builderForValue.build();
+      } else {
+        propertyMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public Builder mergePropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && propertyMask_ != null
+            && propertyMask_ != com.google.datastore.v1.PropertyMask.getDefaultInstance()) {
+          getPropertyMaskBuilder().mergeFrom(value);
+        } else {
+          propertyMask_ = value;
+        }
+      } else {
+        propertyMaskBuilder_.mergeFrom(value);
+      }
+      if (propertyMask_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public Builder clearPropertyMask() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public com.google.datastore.v1.PropertyMask.Builder getPropertyMaskBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getPropertyMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+      if (propertyMaskBuilder_ != null) {
+        return propertyMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to return.
+     * This field must not be set for a projection query.
+     *
+     * See
+     * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        getPropertyMaskFieldBuilder() {
+      if (propertyMaskBuilder_ == null) {
+        propertyMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyMask,
+                com.google.datastore.v1.PropertyMask.Builder,
+                com.google.datastore.v1.PropertyMaskOrBuilder>(
+                getPropertyMask(), getParentForChildren(), isClean());
+        propertyMask_ = null;
+      }
+      return propertyMaskBuilder_;
+    }
+
     private com.google.datastore.v1.ExplainOptions explainOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.ExplainOptions,
@@ -2125,7 +2442,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the explainOptions field is set.
      */
     public boolean hasExplainOptions() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2171,7 +2488,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         explainOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2194,7 +2511,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         explainOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2212,7 +2529,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeExplainOptions(com.google.datastore.v1.ExplainOptions value) {
       if (explainOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && explainOptions_ != null
             && explainOptions_ != com.google.datastore.v1.ExplainOptions.getDefaultInstance()) {
           getExplainOptionsBuilder().mergeFrom(value);
@@ -2223,7 +2540,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
         explainOptionsBuilder_.mergeFrom(value);
       }
       if (explainOptions_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2241,7 +2558,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearExplainOptions() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       explainOptions_ = null;
       if (explainOptionsBuilder_ != null) {
         explainOptionsBuilder_.dispose();
@@ -2263,7 +2580,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.datastore.v1.ExplainOptions.Builder getExplainOptionsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getExplainOptionsFieldBuilder().getBuilder();
     }

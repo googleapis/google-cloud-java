@@ -246,6 +246,62 @@ public interface MutationOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  boolean hasPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   *
+   * @return The propertyMask.
+   */
+  com.google.datastore.v1.PropertyMask getPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   */
+  com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder();
+
   com.google.datastore.v1.Mutation.OperationCase getOperationCase();
 
   com.google.datastore.v1.Mutation.ConflictDetectionStrategyCase getConflictDetectionStrategyCase();

@@ -170,4 +170,54 @@ public interface LookupRequestOrBuilder
    * </code>
    */
   com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  boolean hasPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   *
+   * @return The propertyMask.
+   */
+  com.google.datastore.v1.PropertyMask getPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return. Defaults to returning all properties.
+   *
+   * If this field is set and an entity has a property not referenced in the
+   * mask, it will be absent from [LookupResponse.found.entity.properties][].
+   *
+   * The entity's key is always returned.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
+   */
+  com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder();
 }

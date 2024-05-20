@@ -60,6 +60,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.Mutation.class, com.google.datastore.v1.Mutation.Builder.class);
   }
 
+  private int bitField0_;
   private int operationCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -476,6 +477,77 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
 
+  public static final int PROPERTY_MASK_FIELD_NUMBER = 9;
+  private com.google.datastore.v1.PropertyMask propertyMask_;
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropertyMask() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   *
+   * @return The propertyMask.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMask getPropertyMask() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties to write in this mutation.
+   * None of the properties in the mask may have a reserved name, except for
+   * `__key__`.
+   * This field is ignored for `delete`.
+   *
+   * If the entity already exists, only properties referenced in the mask are
+   * updated, others are left untouched.
+   * Properties referenced in the mask but not in the entity are deleted.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+    return propertyMask_ == null
+        ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+        : propertyMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -504,6 +576,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     if (conflictDetectionStrategyCase_ == 8) {
       output.writeInt64(8, (long) ((java.lang.Long) conflictDetectionStrategy_));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(9, getPropertyMask());
     }
     if (conflictDetectionStrategyCase_ == 11) {
       output.writeMessage(11, (com.google.protobuf.Timestamp) conflictDetectionStrategy_);
@@ -542,6 +617,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               8, (long) ((java.lang.Long) conflictDetectionStrategy_));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPropertyMask());
+    }
     if (conflictDetectionStrategyCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -562,6 +640,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.datastore.v1.Mutation other = (com.google.datastore.v1.Mutation) obj;
 
+    if (hasPropertyMask() != other.hasPropertyMask()) return false;
+    if (hasPropertyMask()) {
+      if (!getPropertyMask().equals(other.getPropertyMask())) return false;
+    }
     if (!getOperationCase().equals(other.getOperationCase())) return false;
     switch (operationCase_) {
       case 4:
@@ -602,6 +684,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPropertyMask()) {
+      hash = (37 * hash) + PROPERTY_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyMask().hashCode();
+    }
     switch (operationCase_) {
       case 4:
         hash = (37 * hash) + INSERT_FIELD_NUMBER;
@@ -762,10 +848,19 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.datastore.v1.Mutation.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPropertyMaskFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -786,6 +881,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.clear();
+      }
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
       }
       operationCase_ = 0;
       operation_ = null;
@@ -827,6 +927,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.datastore.v1.Mutation result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.propertyMask_ =
+            propertyMaskBuilder_ == null ? propertyMask_ : propertyMaskBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.datastore.v1.Mutation result) {
@@ -896,6 +1003,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.datastore.v1.Mutation other) {
       if (other == com.google.datastore.v1.Mutation.getDefaultInstance()) return this;
+      if (other.hasPropertyMask()) {
+        mergePropertyMask(other.getPropertyMask());
+      }
       switch (other.getOperationCase()) {
         case INSERT:
           {
@@ -994,6 +1104,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
                 conflictDetectionStrategyCase_ = 8;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(getPropertyMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
             case 90:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
@@ -2204,6 +2320,254 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       conflictDetectionStrategyCase_ = 11;
       onChanged();
       return updateTimeBuilder_;
+    }
+
+    private com.google.datastore.v1.PropertyMask propertyMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        propertyMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     *
+     * @return Whether the propertyMask field is set.
+     */
+    public boolean hasPropertyMask() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     *
+     * @return The propertyMask.
+     */
+    public com.google.datastore.v1.PropertyMask getPropertyMask() {
+      if (propertyMaskBuilder_ == null) {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      } else {
+        return propertyMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        propertyMask_ = value;
+      } else {
+        propertyMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public Builder setPropertyMask(com.google.datastore.v1.PropertyMask.Builder builderForValue) {
+      if (propertyMaskBuilder_ == null) {
+        propertyMask_ = builderForValue.build();
+      } else {
+        propertyMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public Builder mergePropertyMask(com.google.datastore.v1.PropertyMask value) {
+      if (propertyMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && propertyMask_ != null
+            && propertyMask_ != com.google.datastore.v1.PropertyMask.getDefaultInstance()) {
+          getPropertyMaskBuilder().mergeFrom(value);
+        } else {
+          propertyMask_ = value;
+        }
+      } else {
+        propertyMaskBuilder_.mergeFrom(value);
+      }
+      if (propertyMask_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public Builder clearPropertyMask() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      propertyMask_ = null;
+      if (propertyMaskBuilder_ != null) {
+        propertyMaskBuilder_.dispose();
+        propertyMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public com.google.datastore.v1.PropertyMask.Builder getPropertyMaskBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getPropertyMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    public com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder() {
+      if (propertyMaskBuilder_ != null) {
+        return propertyMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return propertyMask_ == null
+            ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
+            : propertyMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties to write in this mutation.
+     * None of the properties in the mask may have a reserved name, except for
+     * `__key__`.
+     * This field is ignored for `delete`.
+     *
+     * If the entity already exists, only properties referenced in the mask are
+     * updated, others are left untouched.
+     * Properties referenced in the mask but not in the entity are deleted.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.PropertyMask property_mask = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.PropertyMask,
+            com.google.datastore.v1.PropertyMask.Builder,
+            com.google.datastore.v1.PropertyMaskOrBuilder>
+        getPropertyMaskFieldBuilder() {
+      if (propertyMaskBuilder_ == null) {
+        propertyMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyMask,
+                com.google.datastore.v1.PropertyMask.Builder,
+                com.google.datastore.v1.PropertyMaskOrBuilder>(
+                getPropertyMask(), getParentForChildren(), isClean());
+        propertyMask_ = null;
+      }
+      return propertyMaskBuilder_;
     }
 
     @java.lang.Override

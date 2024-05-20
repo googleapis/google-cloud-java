@@ -233,6 +233,53 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   *
+   * @return Whether the propertyMask field is set.
+   */
+  boolean hasPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   *
+   * @return The propertyMask.
+   */
+  com.google.datastore.v1.PropertyMask getPropertyMask();
+  /**
+   *
+   *
+   * <pre>
+   * The properties to return.
+   * This field must not be set for a projection query.
+   *
+   * See
+   * [LookupRequest.property_mask][google.datastore.v1.LookupRequest.property_mask].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.PropertyMask property_mask = 10;</code>
+   */
+  com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Explain options for the query. If set, additional query
    * statistics will be returned. If not, only query results will be returned.
    * </pre>
