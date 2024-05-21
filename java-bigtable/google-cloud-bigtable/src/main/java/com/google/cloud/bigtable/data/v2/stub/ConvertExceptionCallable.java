@@ -77,10 +77,18 @@ final class ConvertExceptionCallable<RequestT, ResponseT>
   private Throwable convertException(Throwable t) {
     // Long lived connections sometimes are disconnected via an RST frame or a goaway. These errors
     // are transient and should be retried.
-    if (isRstStreamError(t) || isGoAway(t)) {
+    if (isRstStreamError(t) || isGoAway(t) || isRetriableAuthError(t)) {
       return new InternalException(t, ((InternalException) t).getStatusCode(), true);
     }
     return t;
+  }
+
+  private boolean isRetriableAuthError(Throwable t) {
+    if (t instanceof InternalException && t.getMessage() != null) {
+      String error = t.getMessage();
+      return error.contains("Authentication backend internal server error. Please retry");
+    }
+    return false;
   }
 
   private boolean isRstStreamError(Throwable t) {

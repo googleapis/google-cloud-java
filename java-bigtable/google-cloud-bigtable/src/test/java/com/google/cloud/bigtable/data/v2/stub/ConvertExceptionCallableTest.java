@@ -59,6 +59,32 @@ public class ConvertExceptionCallableTest {
     assertTrue(actualException.isRetryable());
   }
 
+  @Test
+  public void retriableAuthExceptionConvertedToRetryableTest() {
+    ApiException originalException =
+        new InternalException(
+            new StatusRuntimeException(
+                Status.INTERNAL.withDescription(
+                    "Authentication backend internal server error. Please retry")),
+            GrpcStatusCode.of(Status.Code.INTERNAL),
+            false);
+    assertFalse(originalException.isRetryable());
+    SettableExceptionCallable<String, String> settableExceptionCallable =
+        new SettableExceptionCallable<>(originalException);
+    ConvertExceptionCallable<String, String> convertStreamExceptionCallable =
+        new ConvertExceptionCallable<>(settableExceptionCallable);
+
+    Throwable actualError = null;
+    try {
+      convertStreamExceptionCallable.all().call("fake-request");
+    } catch (Throwable t) {
+      actualError = t;
+    }
+    assert actualError instanceof InternalException;
+    InternalException actualException = (InternalException) actualError;
+    assertTrue(actualException.isRetryable());
+  }
+
   private static final class SettableExceptionCallable<RequestT, ResponseT>
       extends ServerStreamingCallable<RequestT, ResponseT> {
     private final Throwable throwable;
