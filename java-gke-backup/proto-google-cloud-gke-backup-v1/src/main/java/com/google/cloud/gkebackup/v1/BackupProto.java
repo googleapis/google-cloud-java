@@ -58,7 +58,7 @@ public final class BackupProto {
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032&google/cloud/gkebackup/v1/commo"
           + "n.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\350\r\n\006Backup\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 "
+          + "\"\206\016\n\006Backup\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 "
           + "\001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.google.p"
           + "rotobuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 "
           + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006"
@@ -87,27 +87,28 @@ public final class BackupProto {
           + "size_bytes\030\027 \001(\003B\003\340A\003\022\021\n\004etag\030\030 \001(\tB\003\340A\003"
           + "\022\030\n\013description\030\031 \001(\tB\003\340A\001\022\026\n\tpod_count\030"
           + "\032 \001(\005B\003\340A\003\022%\n\030config_backup_size_bytes\030\033"
-          + " \001(\003B\003\340A\003\032\266\002\n\017ClusterMetadata\022\024\n\007cluster"
-          + "\030\001 \001(\tB\003\340A\003\022\030\n\013k8s_version\030\002 \001(\tB\003\340A\003\022j\n"
-          + "\023backup_crd_versions\030\003 \003(\0132H.google.clou"
-          + "d.gkebackup.v1.Backup.ClusterMetadata.Ba"
-          + "ckupCrdVersionsEntryB\003\340A\003\022\032\n\013gke_version"
-          + "\030\004 \001(\tB\003\340A\003H\000\022\035\n\016anthos_version\030\005 \001(\tB\003\340"
-          + "A\003H\000\0328\n\026BackupCrdVersionsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\022\n\020platform_versi"
-          + "on\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"f\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\014\n\010CREATING\020\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tSUCC"
-          + "EEDED\020\003\022\n\n\006FAILED\020\004\022\014\n\010DELETING\020\005:x\352Au\n\037"
-          + "gkebackup.googleapis.com/Backup\022Rproject"
-          + "s/{project}/locations/{location}/backupP"
-          + "lans/{backup_plan}/backups/{backup}B\016\n\014b"
-          + "ackup_scopeB\302\001\n\035com.google.cloud.gkeback"
-          + "up.v1B\013BackupProtoP\001Z;cloud.google.com/g"
-          + "o/gkebackup/apiv1/gkebackuppb;gkebackupp"
-          + "b\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Google\\C"
-          + "loud\\GkeBackup\\V1\352\002\034Google::Cloud::GkeBa"
-          + "ckup::V1b\006proto3"
+          + " \001(\003B\003\340A\003\022\034\n\017permissive_mode\030\034 \001(\010B\003\340A\003\032"
+          + "\266\002\n\017ClusterMetadata\022\024\n\007cluster\030\001 \001(\tB\003\340A"
+          + "\003\022\030\n\013k8s_version\030\002 \001(\tB\003\340A\003\022j\n\023backup_cr"
+          + "d_versions\030\003 \003(\0132H.google.cloud.gkebacku"
+          + "p.v1.Backup.ClusterMetadata.BackupCrdVer"
+          + "sionsEntryB\003\340A\003\022\032\n\013gke_version\030\004 \001(\tB\003\340A"
+          + "\003H\000\022\035\n\016anthos_version\030\005 \001(\tB\003\340A\003H\000\0328\n\026Ba"
+          + "ckupCrdVersionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001B\022\n\020platform_version\032-\n\013Labe"
+          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
+          + "f\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREAT"
+          + "ING\020\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n"
+          + "\006FAILED\020\004\022\014\n\010DELETING\020\005:x\352Au\n\037gkebackup."
+          + "googleapis.com/Backup\022Rprojects/{project"
+          + "}/locations/{location}/backupPlans/{back"
+          + "up_plan}/backups/{backup}B\016\n\014backup_scop"
+          + "eB\302\001\n\035com.google.cloud.gkebackup.v1B\013Bac"
+          + "kupProtoP\001Z;cloud.google.com/go/gkebacku"
+          + "p/apiv1/gkebackuppb;gkebackuppb\252\002\031Google"
+          + ".Cloud.GkeBackup.V1\312\002\031Google\\Cloud\\GkeBa"
+          + "ckup\\V1\352\002\034Google::Cloud::GkeBackup::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,6 +152,7 @@ public final class BackupProto {
               "Description",
               "PodCount",
               "ConfigBackupSizeBytes",
+              "PermissiveMode",
               "BackupScope",
             });
     internal_static_google_cloud_gkebackup_v1_Backup_ClusterMetadata_descriptor =

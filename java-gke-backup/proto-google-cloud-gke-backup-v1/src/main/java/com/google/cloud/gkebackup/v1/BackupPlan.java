@@ -3081,6 +3081,23 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If false, Backups will fail when Backup for GKE detects
+     * Kubernetes configuration that is non-standard or
+     * requires additional setup to restore.
+     *
+     * Default: False
+     * </pre>
+     *
+     * <code>bool permissive_mode = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The permissiveMode.
+     */
+    boolean getPermissiveMode();
+
     com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.BackupScopeCase getBackupScopeCase();
   }
   /**
@@ -3430,6 +3447,28 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           : encryptionKey_;
     }
 
+    public static final int PERMISSIVE_MODE_FIELD_NUMBER = 7;
+    private boolean permissiveMode_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If false, Backups will fail when Backup for GKE detects
+     * Kubernetes configuration that is non-standard or
+     * requires additional setup to restore.
+     *
+     * Default: False
+     * </pre>
+     *
+     * <code>bool permissive_mode = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The permissiveMode.
+     */
+    @java.lang.Override
+    public boolean getPermissiveMode() {
+      return permissiveMode_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3461,6 +3500,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(6, getEncryptionKey());
+      }
+      if (permissiveMode_ != false) {
+        output.writeBool(7, permissiveMode_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3495,6 +3537,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEncryptionKey());
       }
+      if (permissiveMode_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, permissiveMode_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3517,6 +3562,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (hasEncryptionKey()) {
         if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
       }
+      if (getPermissiveMode() != other.getPermissiveMode()) return false;
       if (!getBackupScopeCase().equals(other.getBackupScopeCase())) return false;
       switch (backupScopeCase_) {
         case 1:
@@ -3550,6 +3596,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getEncryptionKey().hashCode();
       }
+      hash = (37 * hash) + PERMISSIVE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPermissiveMode());
       switch (backupScopeCase_) {
         case 1:
           hash = (37 * hash) + ALL_NAMESPACES_FIELD_NUMBER;
@@ -3731,6 +3779,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           encryptionKeyBuilder_.dispose();
           encryptionKeyBuilder_ = null;
         }
+        permissiveMode_ = false;
         backupScopeCase_ = 0;
         backupScope_ = null;
         return this;
@@ -3781,6 +3830,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           result.encryptionKey_ =
               encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.permissiveMode_ = permissiveMode_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3853,6 +3905,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasEncryptionKey()) {
           mergeEncryptionKey(other.getEncryptionKey());
+        }
+        if (other.getPermissiveMode() != false) {
+          setPermissiveMode(other.getPermissiveMode());
         }
         switch (other.getBackupScopeCase()) {
           case ALL_NAMESPACES:
@@ -3939,6 +3994,12 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 50
+              case 56:
+                {
+                  permissiveMode_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4836,6 +4897,71 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           encryptionKey_ = null;
         }
         return encryptionKeyBuilder_;
+      }
+
+      private boolean permissiveMode_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If false, Backups will fail when Backup for GKE detects
+       * Kubernetes configuration that is non-standard or
+       * requires additional setup to restore.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool permissive_mode = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The permissiveMode.
+       */
+      @java.lang.Override
+      public boolean getPermissiveMode() {
+        return permissiveMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If false, Backups will fail when Backup for GKE detects
+       * Kubernetes configuration that is non-standard or
+       * requires additional setup to restore.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool permissive_mode = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The permissiveMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermissiveMode(boolean value) {
+
+        permissiveMode_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If false, Backups will fail when Backup for GKE detects
+       * Kubernetes configuration that is non-standard or
+       * requires additional setup to restore.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool permissive_mode = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPermissiveMode() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        permissiveMode_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

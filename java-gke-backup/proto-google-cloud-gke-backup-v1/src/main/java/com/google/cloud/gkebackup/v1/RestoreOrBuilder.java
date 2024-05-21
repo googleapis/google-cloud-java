@@ -557,4 +557,136 @@ public interface RestoreOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the filter field is set.
+   */
+  boolean hasFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The filter.
+   */
+  com.google.cloud.gkebackup.v1.Restore.Filter getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder getFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+      getVolumeDataRestorePolicyOverridesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride getVolumeDataRestorePolicyOverrides(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getVolumeDataRestorePolicyOverridesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
+      getVolumeDataRestorePolicyOverridesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder
+      getVolumeDataRestorePolicyOverridesOrBuilder(int index);
 }
