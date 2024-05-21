@@ -996,7 +996,6 @@ libraries:
   client_documentation: "https://cloud.google.com/java/docs/reference/grafeas/latest/overview"
   release_level: stable
   distribution_name: "io.grafeas:grafeas"
-  api_id: ""
   codeowner_team: "@googleapis/aap-dpes"
   library_name: grafeas
   requires_billing: false
