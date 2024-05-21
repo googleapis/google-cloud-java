@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.39.3](https://github.com/googleapis/java-bigtable/compare/v2.39.2...v2.39.3) (2024-05-21)
+
+
+### Bug Fixes
+
+* Retry INTERNAL retriable auth errors ([#2239](https://github.com/googleapis/java-bigtable/issues/2239)) ([4cdb6da](https://github.com/googleapis/java-bigtable/commit/4cdb6da8920cd3346a9d79d67432cef588d93bb0))
+
 ## [2.39.2](https://github.com/googleapis/java-bigtable/compare/v2.39.1...v2.39.2) (2024-05-09)
 
 
