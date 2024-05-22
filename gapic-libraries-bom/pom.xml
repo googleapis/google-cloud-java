@@ -1132,6 +1132,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-visionai-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-visionai:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vmmigration-bom</artifactId>
         <version>1.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
         <type>pom</type>
