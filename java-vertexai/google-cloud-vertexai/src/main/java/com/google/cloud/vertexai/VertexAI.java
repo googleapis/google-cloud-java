@@ -27,6 +27,7 @@ import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.LlmUtilityServiceClient;
 import com.google.cloud.vertexai.api.LlmUtilityServiceSettings;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
@@ -67,6 +68,11 @@ public class VertexAI implements AutoCloseable {
   private final transient Supplier<PredictionServiceClient> predictionClientSupplier;
   private final transient Supplier<LlmUtilityServiceClient> llmClientSupplier;
 
+  @InternalApi
+  static Optional<String> getEnvironmentVariable(String envKey) {
+    return Optional.ofNullable(System.getenv(envKey));
+  }
+
   /**
    * Constructs a VertexAI instance.
    *
@@ -77,6 +83,29 @@ public class VertexAI implements AutoCloseable {
     this(
         projectId,
         location,
+        Transport.GRPC,
+        ImmutableList.of(),
+        /* credentials= */ Optional.empty(),
+        /* apiEndpoint= */ Optional.empty(),
+        /* predictionClientSupplierOpt= */ Optional.empty(),
+        /* llmClientSupplierOpt= */ Optional.empty());
+  }
+
+  /**
+   * Constructs a VertexAI instance.
+   *
+   * <p><b>Note:</b> SDK infers location from runtime environment first. If there is no location
+   * inferred from runtime environment, SDK will default location to `us-central1`.
+   *
+   * <p>SDK will infer projectId from runtime environment and GoogleCredentials.
+   *
+   * @throws java.lang.IllegalArgumentException If there is not projectId inferred from either
+   *     runtime environment or GoogleCredentials
+   */
+  public VertexAI() {
+    this(
+        null,
+        null,
         Transport.GRPC,
         ImmutableList.of(),
         /* credentials= */ Optional.empty(),
@@ -98,12 +127,8 @@ public class VertexAI implements AutoCloseable {
       throw new IllegalArgumentException(
           "At most one of Credentials and scopes should be specified.");
     }
-    checkArgument(!Strings.isNullOrEmpty(projectId), "projectId can't be null or empty");
-    checkArgument(!Strings.isNullOrEmpty(location), "location can't be null or empty");
     checkNotNull(transport, "transport can't be null");
-
-    this.projectId = projectId;
-    this.location = location;
+    this.location = Strings.isNullOrEmpty(location) ? inferLocation() : location;
     this.transport = transport;
 
     if (credentials.isPresent()) {
@@ -118,13 +143,15 @@ public class VertexAI implements AutoCloseable {
                   .build();
     }
 
+    this.projectId = Strings.isNullOrEmpty(projectId) ? inferProjectId() : projectId;
     this.predictionClientSupplier =
         Suppliers.memoize(predictionClientSupplierOpt.orElse(this::newPredictionServiceClient));
 
     this.llmClientSupplier =
         Suppliers.memoize(llmClientSupplierOpt.orElse(this::newLlmUtilityClient));
 
-    this.apiEndpoint = apiEndpoint.orElse(String.format("%s-aiplatform.googleapis.com", location));
+    this.apiEndpoint =
+        apiEndpoint.orElse(String.format("%s-aiplatform.googleapis.com", this.location));
   }
 
   /** Builder for {@link VertexAI}. */
@@ -141,8 +168,6 @@ public class VertexAI implements AutoCloseable {
     private Supplier<LlmUtilityServiceClient> llmClientSupplier;
 
     public VertexAI build() {
-      checkNotNull(projectId, "projectId must be set.");
-      checkNotNull(location, "location must be set.");
 
       return new VertexAI(
           projectId,
@@ -337,6 +362,32 @@ public class VertexAI implements AutoCloseable {
     } finally {
       defaultCredentialsProviderLogger.setLevel(previousLevel);
     }
+  }
+
+  private String inferProjectId() {
+    final String projectNotFoundErrorMessage =
+        ("Unable to infer your project. Please provide a project Id by one of the following:"
+            + "\n- Passing a constructor argument by using new VertexAI(String projectId, String"
+            + " location)"
+            + "\n- Setting project using 'gcloud config set project my-project'");
+    final Optional<String> projectIdOptional =
+        getEnvironmentVariable(Constants.GOOGLE_CLOUD_PROJECT);
+    if (projectIdOptional.isPresent()) {
+      return projectIdOptional.get();
+    }
+    try {
+      return Optional.ofNullable((GoogleCredentials) this.credentialsProvider.getCredentials())
+          .map((credentials) -> credentials.getQuotaProjectId())
+          .orElseThrow(() -> new IllegalArgumentException(projectNotFoundErrorMessage));
+    } catch (IOException e) {
+      throw new IllegalArgumentException(projectNotFoundErrorMessage, e);
+    }
+  }
+
+  private String inferLocation() {
+    return getEnvironmentVariable(Constants.GOOGLE_CLOUD_REGION)
+        .orElse(
+            getEnvironmentVariable(Constants.CLOUD_ML_REGION).orElse(Constants.DEFAULT_LOCATION));
   }
 
   private LlmUtilityServiceSettings getLlmUtilityServiceClientSettings() throws IOException {

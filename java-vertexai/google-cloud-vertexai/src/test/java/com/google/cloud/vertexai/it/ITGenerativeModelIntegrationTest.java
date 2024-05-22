@@ -130,12 +130,7 @@ public class ITGenerativeModelIntegrationTest {
 
   @Test
   public void generateContent_restTransport_nonEmptyCandidateList() throws IOException {
-    try (VertexAI vertexAiViaRest =
-        new VertexAI.Builder()
-            .setProjectId(PROJECT_ID)
-            .setLocation(LOCATION)
-            .setTransport(Transport.REST)
-            .build()) {
+    try (VertexAI vertexAiViaRest = new VertexAI.Builder().setTransport(Transport.REST).build()) {
       GenerativeModel textModelWithRest = new GenerativeModel(MODEL_NAME_TEXT, vertexAiViaRest);
       GenerateContentResponse response = textModelWithRest.generateContent(TEXT);
 
@@ -145,9 +140,14 @@ public class ITGenerativeModelIntegrationTest {
 
   @Test
   public void generateContent_withPlainText_nonEmptyCandidateList() throws IOException {
-    GenerateContentResponse response = textModel.generateContent(TEXT);
+    try (final VertexAI vertexAiInferredArgs = new VertexAI()) {
+      final GenerativeModel textModel =
+          new GenerativeModel(MODEL_NAME_TEXT, vertexAiInferredArgs)
+              .withGenerationConfig(GenerationConfig.newBuilder().setTemperature(0).build());
+      GenerateContentResponse response = textModel.generateContent(TEXT);
 
-    assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
+      assertNonEmptyAndLogResponse(name.getMethodName(), TEXT, response);
+    }
   }
 
   @Test

@@ -39,7 +39,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-/** This class holds a generative model that can complete what you provided. */
+/**
+ * This class holds a generative model that can complete what you provided. This class is
+ * thread-safe.
+ *
+ * <p>Note: The instances of {@link ChatSession} returned by {@link GenerativeModel#startChat()} are
+ * NOT thread-safe.
+ */
 public final class GenerativeModel {
   private final String modelName;
   private final String resourceName;
@@ -645,6 +651,11 @@ public final class GenerativeModel {
     return systemInstruction;
   }
 
+  /**
+   * Returns a new {@link ChatSession} instance that can be used to start a chat with this model.
+   *
+   * <p>Note: the returned {@link ChatSession} instance is NOT thread-safe.
+   */
   public ChatSession startChat() {
     return new ChatSession(this);
   }
