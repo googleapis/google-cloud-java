@@ -998,7 +998,6 @@ libraries:
   distribution_name: "io.grafeas:grafeas"
   codeowner_team: "@googleapis/aap-dpes"
   library_name: grafeas
-  requires_billing: false
   GAPICs:
   - proto_path: grafeas/v1
 
