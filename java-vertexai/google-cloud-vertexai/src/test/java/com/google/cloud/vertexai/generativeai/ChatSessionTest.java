@@ -169,6 +169,7 @@ public final class ChatSessionTest {
     when(mockServerStreamIterator.hasNext()).thenReturn(true, true, false);
     when(mockServerStreamIterator.next())
         .thenReturn(RESPONSE_STREAM_CHUNK1_RESPONSE, RESPONSE_STREAM_CHUNK2_RESPONSE);
+    System.out.println(responseStream);
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
