@@ -12,6 +12,6 @@
   "distribution_name": "io.grafeas:grafeas",
   "api_id": "containeranalysis.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": false,
+  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes"
 }
