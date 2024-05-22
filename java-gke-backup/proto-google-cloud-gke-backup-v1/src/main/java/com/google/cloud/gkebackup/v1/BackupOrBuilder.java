@@ -835,5 +835,24 @@ public interface BackupOrBuilder
    */
   long getConfigBackupSizeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If false, Backup will fail when Backup for GKE detects
+   * Kubernetes configuration that is non-standard or
+   * requires additional setup to restore.
+   *
+   * Inherited from the parent BackupPlan's
+   * [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
+   * value.
+   * </pre>
+   *
+   * <code>bool permissive_mode = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The permissiveMode.
+   */
+  boolean getPermissiveMode();
+
   com.google.cloud.gkebackup.v1.Backup.BackupScopeCase getBackupScopeCase();
 }

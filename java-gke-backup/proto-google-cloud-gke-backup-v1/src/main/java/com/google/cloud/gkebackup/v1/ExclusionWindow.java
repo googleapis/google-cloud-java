@@ -1100,8 +1100,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Specifies duration of the window. Restrictions for duration based
-   * on the recurrence type to allow some time for backup to happen:
+   * Required. Specifies duration of the window.
+   * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+   * Additional restrictions based on the recurrence type to allow some time for
+   * backup to happen:
    * - single_occurrence_date:  no restriction, but UI may warn about this when
    * duration &gt;= target RPO
    * - daily window: duration &lt; 24 hours
@@ -1122,8 +1124,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Specifies duration of the window. Restrictions for duration based
-   * on the recurrence type to allow some time for backup to happen:
+   * Required. Specifies duration of the window.
+   * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+   * Additional restrictions based on the recurrence type to allow some time for
+   * backup to happen:
    * - single_occurrence_date:  no restriction, but UI may warn about this when
    * duration &gt;= target RPO
    * - daily window: duration &lt; 24 hours
@@ -1144,8 +1148,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Specifies duration of the window. Restrictions for duration based
-   * on the recurrence type to allow some time for backup to happen:
+   * Required. Specifies duration of the window.
+   * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+   * Additional restrictions based on the recurrence type to allow some time for
+   * backup to happen:
    * - single_occurrence_date:  no restriction, but UI may warn about this when
    * duration &gt;= target RPO
    * - daily window: duration &lt; 24 hours
@@ -2027,8 +2033,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2049,8 +2057,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2075,8 +2085,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2105,8 +2117,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2132,8 +2146,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2167,8 +2183,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2194,8 +2212,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2216,8 +2236,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours
@@ -2240,8 +2262,10 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Specifies duration of the window. Restrictions for duration based
-     * on the recurrence type to allow some time for backup to happen:
+     * Required. Specifies duration of the window.
+     * Duration must be &gt;= 5 minutes and &lt; (target RPO - 20 minutes).
+     * Additional restrictions based on the recurrence type to allow some time for
+     * backup to happen:
      * - single_occurrence_date:  no restriction, but UI may warn about this when
      * duration &gt;= target RPO
      * - daily window: duration &lt; 24 hours

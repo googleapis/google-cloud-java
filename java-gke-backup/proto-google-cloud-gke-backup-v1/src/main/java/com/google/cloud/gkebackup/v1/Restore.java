@@ -48,6 +48,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     stateReason_ = "";
     etag_ = "";
+    volumeDataRestorePolicyOverrides_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -310,6 +311,1815 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.gkebackup.v1.Restore.State)
+  }
+
+  public interface FilterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.Restore.Filter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> getInclusionFiltersList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.ResourceSelector getInclusionFilters(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getInclusionFiltersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+        getInclusionFiltersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getInclusionFiltersOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> getExclusionFiltersList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.ResourceSelector getExclusionFilters(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getExclusionFiltersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+        getExclusionFiltersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getExclusionFiltersOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines the filter for `Restore`. This filter can be used to further
+   * refine the resource selection of the `Restore` beyond the coarse-grained
+   * scope defined in the `RestorePlan`. `exclusion_filters` take precedence
+   * over `inclusion_filters`. If a resource matches both `inclusion_filters`
+   * and `exclusion_filters`, it will not be restored.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.Restore.Filter}
+   */
+  public static final class Filter extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.Restore.Filter)
+      FilterOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Filter.newBuilder() to construct.
+    private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Filter() {
+      inclusionFilters_ = java.util.Collections.emptyList();
+      exclusionFilters_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Filter();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_Restore_Filter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_Restore_Filter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.Restore.Filter.class,
+              com.google.cloud.gkebackup.v1.Restore.Filter.Builder.class);
+    }
+
+    public static final int INCLUSION_FILTERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> inclusionFilters_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector>
+        getInclusionFiltersList() {
+      return inclusionFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+        getInclusionFiltersOrBuilderList() {
+      return inclusionFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getInclusionFiltersCount() {
+      return inclusionFilters_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.ResourceSelector getInclusionFilters(int index) {
+      return inclusionFilters_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Selects resources for restoration. If specified, only resources
+     * which match `inclusion_filters` will be selected for restoration. A
+     * resource will be selected if it matches any `ResourceSelector` of the
+     * `inclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getInclusionFiltersOrBuilder(
+        int index) {
+      return inclusionFilters_.get(index);
+    }
+
+    public static final int EXCLUSION_FILTERS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> exclusionFilters_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector>
+        getExclusionFiltersList() {
+      return exclusionFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+        getExclusionFiltersOrBuilderList() {
+      return exclusionFilters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getExclusionFiltersCount() {
+      return exclusionFilters_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.ResourceSelector getExclusionFilters(int index) {
+      return exclusionFilters_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes resources from restoration. If specified,
+     * a resource will not be restored if it matches
+     * any `ResourceSelector` of the `exclusion_filters`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getExclusionFiltersOrBuilder(
+        int index) {
+      return exclusionFilters_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < inclusionFilters_.size(); i++) {
+        output.writeMessage(1, inclusionFilters_.get(i));
+      }
+      for (int i = 0; i < exclusionFilters_.size(); i++) {
+        output.writeMessage(2, exclusionFilters_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < inclusionFilters_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, inclusionFilters_.get(i));
+      }
+      for (int i = 0; i < exclusionFilters_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, exclusionFilters_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gkebackup.v1.Restore.Filter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.Restore.Filter other =
+          (com.google.cloud.gkebackup.v1.Restore.Filter) obj;
+
+      if (!getInclusionFiltersList().equals(other.getInclusionFiltersList())) return false;
+      if (!getExclusionFiltersList().equals(other.getExclusionFiltersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getInclusionFiltersCount() > 0) {
+        hash = (37 * hash) + INCLUSION_FILTERS_FIELD_NUMBER;
+        hash = (53 * hash) + getInclusionFiltersList().hashCode();
+      }
+      if (getExclusionFiltersCount() > 0) {
+        hash = (37 * hash) + EXCLUSION_FILTERS_FIELD_NUMBER;
+        hash = (53 * hash) + getExclusionFiltersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.gkebackup.v1.Restore.Filter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines the filter for `Restore`. This filter can be used to further
+     * refine the resource selection of the `Restore` beyond the coarse-grained
+     * scope defined in the `RestorePlan`. `exclusion_filters` take precedence
+     * over `inclusion_filters`. If a resource matches both `inclusion_filters`
+     * and `exclusion_filters`, it will not be restored.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.Restore.Filter}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.Restore.Filter)
+        com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_Restore_Filter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_Restore_Filter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.Restore.Filter.class,
+                com.google.cloud.gkebackup.v1.Restore.Filter.Builder.class);
+      }
+
+      // Construct using com.google.cloud.gkebackup.v1.Restore.Filter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (inclusionFiltersBuilder_ == null) {
+          inclusionFilters_ = java.util.Collections.emptyList();
+        } else {
+          inclusionFilters_ = null;
+          inclusionFiltersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (exclusionFiltersBuilder_ == null) {
+          exclusionFilters_ = java.util.Collections.emptyList();
+        } else {
+          exclusionFilters_ = null;
+          exclusionFiltersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_Restore_Filter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.Restore.Filter getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.Restore.Filter build() {
+        com.google.cloud.gkebackup.v1.Restore.Filter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.Restore.Filter buildPartial() {
+        com.google.cloud.gkebackup.v1.Restore.Filter result =
+            new com.google.cloud.gkebackup.v1.Restore.Filter(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.google.cloud.gkebackup.v1.Restore.Filter result) {
+        if (inclusionFiltersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            inclusionFilters_ = java.util.Collections.unmodifiableList(inclusionFilters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.inclusionFilters_ = inclusionFilters_;
+        } else {
+          result.inclusionFilters_ = inclusionFiltersBuilder_.build();
+        }
+        if (exclusionFiltersBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            exclusionFilters_ = java.util.Collections.unmodifiableList(exclusionFilters_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.exclusionFilters_ = exclusionFilters_;
+        } else {
+          result.exclusionFilters_ = exclusionFiltersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.gkebackup.v1.Restore.Filter result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gkebackup.v1.Restore.Filter) {
+          return mergeFrom((com.google.cloud.gkebackup.v1.Restore.Filter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.gkebackup.v1.Restore.Filter other) {
+        if (other == com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()) return this;
+        if (inclusionFiltersBuilder_ == null) {
+          if (!other.inclusionFilters_.isEmpty()) {
+            if (inclusionFilters_.isEmpty()) {
+              inclusionFilters_ = other.inclusionFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureInclusionFiltersIsMutable();
+              inclusionFilters_.addAll(other.inclusionFilters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.inclusionFilters_.isEmpty()) {
+            if (inclusionFiltersBuilder_.isEmpty()) {
+              inclusionFiltersBuilder_.dispose();
+              inclusionFiltersBuilder_ = null;
+              inclusionFilters_ = other.inclusionFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              inclusionFiltersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getInclusionFiltersFieldBuilder()
+                      : null;
+            } else {
+              inclusionFiltersBuilder_.addAllMessages(other.inclusionFilters_);
+            }
+          }
+        }
+        if (exclusionFiltersBuilder_ == null) {
+          if (!other.exclusionFilters_.isEmpty()) {
+            if (exclusionFilters_.isEmpty()) {
+              exclusionFilters_ = other.exclusionFilters_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureExclusionFiltersIsMutable();
+              exclusionFilters_.addAll(other.exclusionFilters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.exclusionFilters_.isEmpty()) {
+            if (exclusionFiltersBuilder_.isEmpty()) {
+              exclusionFiltersBuilder_.dispose();
+              exclusionFiltersBuilder_ = null;
+              exclusionFilters_ = other.exclusionFilters_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              exclusionFiltersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getExclusionFiltersFieldBuilder()
+                      : null;
+            } else {
+              exclusionFiltersBuilder_.addAllMessages(other.exclusionFilters_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.gkebackup.v1.ResourceSelector m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.ResourceSelector.parser(),
+                          extensionRegistry);
+                  if (inclusionFiltersBuilder_ == null) {
+                    ensureInclusionFiltersIsMutable();
+                    inclusionFilters_.add(m);
+                  } else {
+                    inclusionFiltersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.gkebackup.v1.ResourceSelector m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.ResourceSelector.parser(),
+                          extensionRegistry);
+                  if (exclusionFiltersBuilder_ == null) {
+                    ensureExclusionFiltersIsMutable();
+                    exclusionFilters_.add(m);
+                  } else {
+                    exclusionFiltersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> inclusionFilters_ =
+          java.util.Collections.emptyList();
+
+      private void ensureInclusionFiltersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          inclusionFilters_ =
+              new java.util.ArrayList<com.google.cloud.gkebackup.v1.ResourceSelector>(
+                  inclusionFilters_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.ResourceSelector,
+              com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+              com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          inclusionFiltersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector>
+          getInclusionFiltersList() {
+        if (inclusionFiltersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(inclusionFilters_);
+        } else {
+          return inclusionFiltersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getInclusionFiltersCount() {
+        if (inclusionFiltersBuilder_ == null) {
+          return inclusionFilters_.size();
+        } else {
+          return inclusionFiltersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector getInclusionFilters(int index) {
+        if (inclusionFiltersBuilder_ == null) {
+          return inclusionFilters_.get(index);
+        } else {
+          return inclusionFiltersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (inclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.set(index, value);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (inclusionFiltersBuilder_ == null) {
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addInclusionFilters(com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (inclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.add(value);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addInclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (inclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.add(index, value);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addInclusionFilters(
+          com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (inclusionFiltersBuilder_ == null) {
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addInclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (inclusionFiltersBuilder_ == null) {
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllInclusionFilters(
+          java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.ResourceSelector> values) {
+        if (inclusionFiltersBuilder_ == null) {
+          ensureInclusionFiltersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inclusionFilters_);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearInclusionFilters() {
+        if (inclusionFiltersBuilder_ == null) {
+          inclusionFilters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeInclusionFilters(int index) {
+        if (inclusionFiltersBuilder_ == null) {
+          ensureInclusionFiltersIsMutable();
+          inclusionFilters_.remove(index);
+          onChanged();
+        } else {
+          inclusionFiltersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder getInclusionFiltersBuilder(
+          int index) {
+        return getInclusionFiltersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getInclusionFiltersOrBuilder(
+          int index) {
+        if (inclusionFiltersBuilder_ == null) {
+          return inclusionFilters_.get(index);
+        } else {
+          return inclusionFiltersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          getInclusionFiltersOrBuilderList() {
+        if (inclusionFiltersBuilder_ != null) {
+          return inclusionFiltersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(inclusionFilters_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder addInclusionFiltersBuilder() {
+        return getInclusionFiltersFieldBuilder()
+            .addBuilder(com.google.cloud.gkebackup.v1.ResourceSelector.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder addInclusionFiltersBuilder(
+          int index) {
+        return getInclusionFiltersFieldBuilder()
+            .addBuilder(index, com.google.cloud.gkebackup.v1.ResourceSelector.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Selects resources for restoration. If specified, only resources
+       * which match `inclusion_filters` will be selected for restoration. A
+       * resource will be selected if it matches any `ResourceSelector` of the
+       * `inclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector inclusion_filters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector.Builder>
+          getInclusionFiltersBuilderList() {
+        return getInclusionFiltersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.ResourceSelector,
+              com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+              com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          getInclusionFiltersFieldBuilder() {
+        if (inclusionFiltersBuilder_ == null) {
+          inclusionFiltersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.ResourceSelector,
+                  com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+                  com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>(
+                  inclusionFilters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          inclusionFilters_ = null;
+        }
+        return inclusionFiltersBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector> exclusionFilters_ =
+          java.util.Collections.emptyList();
+
+      private void ensureExclusionFiltersIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          exclusionFilters_ =
+              new java.util.ArrayList<com.google.cloud.gkebackup.v1.ResourceSelector>(
+                  exclusionFilters_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.ResourceSelector,
+              com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+              com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          exclusionFiltersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector>
+          getExclusionFiltersList() {
+        if (exclusionFiltersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(exclusionFilters_);
+        } else {
+          return exclusionFiltersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getExclusionFiltersCount() {
+        if (exclusionFiltersBuilder_ == null) {
+          return exclusionFilters_.size();
+        } else {
+          return exclusionFiltersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector getExclusionFilters(int index) {
+        if (exclusionFiltersBuilder_ == null) {
+          return exclusionFilters_.get(index);
+        } else {
+          return exclusionFiltersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (exclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.set(index, value);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (exclusionFiltersBuilder_ == null) {
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addExclusionFilters(com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (exclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.add(value);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addExclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector value) {
+        if (exclusionFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.add(index, value);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addExclusionFilters(
+          com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (exclusionFiltersBuilder_ == null) {
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addExclusionFilters(
+          int index, com.google.cloud.gkebackup.v1.ResourceSelector.Builder builderForValue) {
+        if (exclusionFiltersBuilder_ == null) {
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllExclusionFilters(
+          java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.ResourceSelector> values) {
+        if (exclusionFiltersBuilder_ == null) {
+          ensureExclusionFiltersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusionFilters_);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearExclusionFilters() {
+        if (exclusionFiltersBuilder_ == null) {
+          exclusionFilters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeExclusionFilters(int index) {
+        if (exclusionFiltersBuilder_ == null) {
+          ensureExclusionFiltersIsMutable();
+          exclusionFilters_.remove(index);
+          onChanged();
+        } else {
+          exclusionFiltersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder getExclusionFiltersBuilder(
+          int index) {
+        return getExclusionFiltersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder getExclusionFiltersOrBuilder(
+          int index) {
+        if (exclusionFiltersBuilder_ == null) {
+          return exclusionFilters_.get(index);
+        } else {
+          return exclusionFiltersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          getExclusionFiltersOrBuilderList() {
+        if (exclusionFiltersBuilder_ != null) {
+          return exclusionFiltersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(exclusionFilters_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder addExclusionFiltersBuilder() {
+        return getExclusionFiltersFieldBuilder()
+            .addBuilder(com.google.cloud.gkebackup.v1.ResourceSelector.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.ResourceSelector.Builder addExclusionFiltersBuilder(
+          int index) {
+        return getExclusionFiltersFieldBuilder()
+            .addBuilder(index, com.google.cloud.gkebackup.v1.ResourceSelector.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Excludes resources from restoration. If specified,
+       * a resource will not be restored if it matches
+       * any `ResourceSelector` of the `exclusion_filters`.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.ResourceSelector exclusion_filters = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.ResourceSelector.Builder>
+          getExclusionFiltersBuilderList() {
+        return getExclusionFiltersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.ResourceSelector,
+              com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+              com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>
+          getExclusionFiltersFieldBuilder() {
+        if (exclusionFiltersBuilder_ == null) {
+          exclusionFiltersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.ResourceSelector,
+                  com.google.cloud.gkebackup.v1.ResourceSelector.Builder,
+                  com.google.cloud.gkebackup.v1.ResourceSelectorOrBuilder>(
+                  exclusionFilters_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          exclusionFilters_ = null;
+        }
+        return exclusionFiltersBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.Restore.Filter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.Restore.Filter)
+    private static final com.google.cloud.gkebackup.v1.Restore.Filter DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gkebackup.v1.Restore.Filter();
+    }
+
+    public static com.google.cloud.gkebackup.v1.Restore.Filter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Filter> PARSER =
+        new com.google.protobuf.AbstractParser<Filter>() {
+          @java.lang.Override
+          public Filter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Filter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Filter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.Restore.Filter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -1155,6 +2965,174 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 18;
+  private com.google.cloud.gkebackup.v1.Restore.Filter filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.Restore.Filter getFilter() {
+    return filter_ == null
+        ? com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()
+        : filter_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+   * scope of the restore will remain the same as defined in the `RestorePlan`.
+   * If this is specified, and no resources are matched by the
+   * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+   * nothing will be restored. This filter can only be specified if the value of
+   * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+   * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+   * `MERGE_REPLACE_ON_CONFLICT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder getFilterOrBuilder() {
+    return filter_ == null
+        ? com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()
+        : filter_;
+  }
+
+  public static final int VOLUME_DATA_RESTORE_POLICY_OVERRIDES_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+      volumeDataRestorePolicyOverrides_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+      getVolumeDataRestorePolicyOverridesList() {
+    return volumeDataRestorePolicyOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
+      getVolumeDataRestorePolicyOverridesOrBuilderList() {
+    return volumeDataRestorePolicyOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getVolumeDataRestorePolicyOverridesCount() {
+    return volumeDataRestorePolicyOverrides_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride
+      getVolumeDataRestorePolicyOverrides(int index) {
+    return volumeDataRestorePolicyOverrides_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Overrides the volume data restore policies selected in
+   * the Restore Config for override-scoped resources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder
+      getVolumeDataRestorePolicyOverridesOrBuilder(int index) {
+    return volumeDataRestorePolicyOverrides_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1218,6 +3196,12 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, etag_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(18, getFilter());
+    }
+    for (int i = 0; i < volumeDataRestorePolicyOverrides_.size(); i++) {
+      output.writeMessage(19, volumeDataRestorePolicyOverrides_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1286,6 +3270,14 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, etag_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getFilter());
+    }
+    for (int i = 0; i < volumeDataRestorePolicyOverrides_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, volumeDataRestorePolicyOverrides_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1330,6 +3322,12 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     if (getResourcesFailedCount() != other.getResourcesFailedCount()) return false;
     if (getVolumesRestoredCount() != other.getVolumesRestoredCount()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter().equals(other.getFilter())) return false;
+    }
+    if (!getVolumeDataRestorePolicyOverridesList()
+        .equals(other.getVolumeDataRestorePolicyOverridesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1385,6 +3383,14 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getVolumesRestoredCount();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+    }
+    if (getVolumeDataRestorePolicyOverridesCount() > 0) {
+      hash = (37 * hash) + VOLUME_DATA_RESTORE_POLICY_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + getVolumeDataRestorePolicyOverridesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1551,6 +3557,8 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getRestoreConfigFieldBuilder();
         getCompleteTimeFieldBuilder();
+        getFilterFieldBuilder();
+        getVolumeDataRestorePolicyOverridesFieldBuilder();
       }
     }
 
@@ -1591,6 +3599,18 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
       resourcesFailedCount_ = 0;
       volumesRestoredCount_ = 0;
       etag_ = "";
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        volumeDataRestorePolicyOverrides_ = java.util.Collections.emptyList();
+      } else {
+        volumeDataRestorePolicyOverrides_ = null;
+        volumeDataRestorePolicyOverridesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -1618,11 +3638,25 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.Restore buildPartial() {
       com.google.cloud.gkebackup.v1.Restore result =
           new com.google.cloud.gkebackup.v1.Restore(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.gkebackup.v1.Restore result) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)) {
+          volumeDataRestorePolicyOverrides_ =
+              java.util.Collections.unmodifiableList(volumeDataRestorePolicyOverrides_);
+          bitField0_ = (bitField0_ & ~0x00040000);
+        }
+        result.volumeDataRestorePolicyOverrides_ = volumeDataRestorePolicyOverrides_;
+      } else {
+        result.volumeDataRestorePolicyOverrides_ = volumeDataRestorePolicyOverridesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.gkebackup.v1.Restore result) {
@@ -1685,6 +3719,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1797,6 +3835,37 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasFilter()) {
+        mergeFilter(other.getFilter());
+      }
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        if (!other.volumeDataRestorePolicyOverrides_.isEmpty()) {
+          if (volumeDataRestorePolicyOverrides_.isEmpty()) {
+            volumeDataRestorePolicyOverrides_ = other.volumeDataRestorePolicyOverrides_;
+            bitField0_ = (bitField0_ & ~0x00040000);
+          } else {
+            ensureVolumeDataRestorePolicyOverridesIsMutable();
+            volumeDataRestorePolicyOverrides_.addAll(other.volumeDataRestorePolicyOverrides_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.volumeDataRestorePolicyOverrides_.isEmpty()) {
+          if (volumeDataRestorePolicyOverridesBuilder_.isEmpty()) {
+            volumeDataRestorePolicyOverridesBuilder_.dispose();
+            volumeDataRestorePolicyOverridesBuilder_ = null;
+            volumeDataRestorePolicyOverrides_ = other.volumeDataRestorePolicyOverrides_;
+            bitField0_ = (bitField0_ & ~0x00040000);
+            volumeDataRestorePolicyOverridesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVolumeDataRestorePolicyOverridesFieldBuilder()
+                    : null;
+          } else {
+            volumeDataRestorePolicyOverridesBuilder_.addAllMessages(
+                other.volumeDataRestorePolicyOverrides_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1932,6 +4001,26 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+            case 154:
+              {
+                com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride m =
+                    input.readMessage(
+                        com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.parser(),
+                        extensionRegistry);
+                if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+                  ensureVolumeDataRestorePolicyOverridesIsMutable();
+                  volumeDataRestorePolicyOverrides_.add(m);
+                } else {
+                  volumeDataRestorePolicyOverridesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4145,6 +6234,698 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00010000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.gkebackup.v1.Restore.Filter filter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.Restore.Filter,
+            com.google.cloud.gkebackup.v1.Restore.Filter.Builder,
+            com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder>
+        filterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the filter field is set.
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filter.
+     */
+    public com.google.cloud.gkebackup.v1.Restore.Filter getFilter() {
+      if (filterBuilder_ == null) {
+        return filter_ == null
+            ? com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()
+            : filter_;
+      } else {
+        return filterBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilter(com.google.cloud.gkebackup.v1.Restore.Filter value) {
+      if (filterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+      } else {
+        filterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilter(com.google.cloud.gkebackup.v1.Restore.Filter.Builder builderForValue) {
+      if (filterBuilder_ == null) {
+        filter_ = builderForValue.build();
+      } else {
+        filterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFilter(com.google.cloud.gkebackup.v1.Restore.Filter value) {
+      if (filterBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && filter_ != null
+            && filter_ != com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()) {
+          getFilterBuilder().mergeFrom(value);
+        } else {
+          filter_ = value;
+        }
+      } else {
+        filterBuilder_.mergeFrom(value);
+      }
+      if (filter_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFilter() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.Restore.Filter.Builder getFilterBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getFilterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder getFilterOrBuilder() {
+      if (filterBuilder_ != null) {
+        return filterBuilder_.getMessageOrBuilder();
+      } else {
+        return filter_ == null
+            ? com.google.cloud.gkebackup.v1.Restore.Filter.getDefaultInstance()
+            : filter_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Filters resources for `Restore`. If not specified, the
+     * scope of the restore will remain the same as defined in the `RestorePlan`.
+     * If this is specified, and no resources are matched by the
+     * `inclusion_filters` or everyting is excluded by the `exclusion_filters`,
+     * nothing will be restored. This filter can only be specified if the value of
+     * [namespaced_resource_restore_mode][google.cloud.gkebackup.v1.RestoreConfig.namespaced_resource_restore_mode]
+     * is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or
+     * `MERGE_REPLACE_ON_CONFLICT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.Restore.Filter filter = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.Restore.Filter,
+            com.google.cloud.gkebackup.v1.Restore.Filter.Builder,
+            com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder>
+        getFilterFieldBuilder() {
+      if (filterBuilder_ == null) {
+        filterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.Restore.Filter,
+                com.google.cloud.gkebackup.v1.Restore.Filter.Builder,
+                com.google.cloud.gkebackup.v1.Restore.FilterOrBuilder>(
+                getFilter(), getParentForChildren(), isClean());
+        filter_ = null;
+      }
+      return filterBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+        volumeDataRestorePolicyOverrides_ = java.util.Collections.emptyList();
+
+    private void ensureVolumeDataRestorePolicyOverridesIsMutable() {
+      if (!((bitField0_ & 0x00040000) != 0)) {
+        volumeDataRestorePolicyOverrides_ =
+            new java.util.ArrayList<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>(
+                volumeDataRestorePolicyOverrides_);
+        bitField0_ |= 0x00040000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride,
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder,
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
+        volumeDataRestorePolicyOverridesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+        getVolumeDataRestorePolicyOverridesList() {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(volumeDataRestorePolicyOverrides_);
+      } else {
+        return volumeDataRestorePolicyOverridesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getVolumeDataRestorePolicyOverridesCount() {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        return volumeDataRestorePolicyOverrides_.size();
+      } else {
+        return volumeDataRestorePolicyOverridesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride
+        getVolumeDataRestorePolicyOverrides(int index) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        return volumeDataRestorePolicyOverrides_.get(index);
+      } else {
+        return volumeDataRestorePolicyOverridesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVolumeDataRestorePolicyOverrides(
+        int index, com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride value) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.set(index, value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVolumeDataRestorePolicyOverrides(
+        int index,
+        com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder builderForValue) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyOverrides(
+        com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride value) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.add(value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyOverrides(
+        int index, com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride value) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.add(index, value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyOverrides(
+        com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder builderForValue) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.add(builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyOverrides(
+        int index,
+        com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder builderForValue) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllVolumeDataRestorePolicyOverrides(
+        java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride>
+            values) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, volumeDataRestorePolicyOverrides_);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVolumeDataRestorePolicyOverrides() {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        volumeDataRestorePolicyOverrides_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00040000);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeVolumeDataRestorePolicyOverrides(int index) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        ensureVolumeDataRestorePolicyOverridesIsMutable();
+        volumeDataRestorePolicyOverrides_.remove(index);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyOverridesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder
+        getVolumeDataRestorePolicyOverridesBuilder(int index) {
+      return getVolumeDataRestorePolicyOverridesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder
+        getVolumeDataRestorePolicyOverridesOrBuilder(int index) {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        return volumeDataRestorePolicyOverrides_.get(index);
+      } else {
+        return volumeDataRestorePolicyOverridesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
+        getVolumeDataRestorePolicyOverridesOrBuilderList() {
+      if (volumeDataRestorePolicyOverridesBuilder_ != null) {
+        return volumeDataRestorePolicyOverridesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(volumeDataRestorePolicyOverrides_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder
+        addVolumeDataRestorePolicyOverridesBuilder() {
+      return getVolumeDataRestorePolicyOverridesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder
+        addVolumeDataRestorePolicyOverridesBuilder(int index) {
+      return getVolumeDataRestorePolicyOverridesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Overrides the volume data restore policies selected in
+     * the Restore Config for override-scoped resources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride volume_data_restore_policy_overrides = 19 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder>
+        getVolumeDataRestorePolicyOverridesBuilderList() {
+      return getVolumeDataRestorePolicyOverridesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride,
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder,
+            com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>
+        getVolumeDataRestorePolicyOverridesFieldBuilder() {
+      if (volumeDataRestorePolicyOverridesBuilder_ == null) {
+        volumeDataRestorePolicyOverridesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride,
+                com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride.Builder,
+                com.google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverrideOrBuilder>(
+                volumeDataRestorePolicyOverrides_,
+                ((bitField0_ & 0x00040000) != 0),
+                getParentForChildren(),
+                isClean());
+        volumeDataRestorePolicyOverrides_ = null;
+      }
+      return volumeDataRestorePolicyOverridesBuilder_;
     }
 
     @java.lang.Override

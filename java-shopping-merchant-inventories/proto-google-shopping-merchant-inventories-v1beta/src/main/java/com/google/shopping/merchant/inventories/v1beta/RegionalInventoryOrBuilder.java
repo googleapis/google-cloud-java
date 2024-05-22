@@ -221,7 +221,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -235,7 +235,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -249,7 +249,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -264,7 +264,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -276,7 +276,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -288,7 +288,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -300,7 +300,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -313,7 +313,7 @@ public interface RegionalInventoryOrBuilder
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *

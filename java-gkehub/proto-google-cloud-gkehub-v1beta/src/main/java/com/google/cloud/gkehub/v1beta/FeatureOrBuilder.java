@@ -55,7 +55,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -65,7 +65,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -78,7 +78,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -88,7 +88,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -102,7 +102,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * GCP labels for this Feature.
+   * Labels for this Feature.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -154,8 +154,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Hub-wide Feature configuration. If this Feature does not support
+   * any Hub-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -169,8 +169,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Hub-wide Feature configuration. If this Feature does not support
+   * any Hub-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -184,8 +184,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Hub-wide Feature configuration. If this Feature does not support any
-   * Hub-wide configuration, this field may be unused.
+   * Optional. Hub-wide Feature configuration. If this Feature does not support
+   * any Hub-wide configuration, this field may be unused.
    * </pre>
    *
    * <code>
@@ -198,12 +198,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -226,12 +227,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -258,12 +260,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -287,12 +290,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -319,12 +323,13 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Membership-specific configuration for this Feature. If this Feature does
-   * not support any per-Membership configuration, this field may be unused.
+   * Optional. Membership-specific configuration for this Feature. If this
+   * Feature does not support any per-Membership configuration, this field may
+   * be unused.
    *
    * The keys indicate which Membership the configuration is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
@@ -395,7 +400,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -416,7 +421,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -441,7 +446,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -463,7 +468,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
@@ -488,7 +493,7 @@ public interface FeatureOrBuilder
    *
    * The keys indicate which Membership the state is for, in the form:
    *
-   *     projects/{p}/locations/{l}/memberships/{m}
+   * `projects/{p}/locations/{l}/memberships/{m}`
    *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
