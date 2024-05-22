@@ -1502,8 +1502,8 @@ libraries:
 - api_shortname: publicca
   name_pretty: Public Certificate Authority API
   product_documentation: https://cloud.google.com/certificate-manager/docs/public-ca
-  api_description: The Public Certificate Authority API may be used to create and manage ACME
-    external account binding keys associated with Google Trust Services'
+  api_description: The Public Certificate Authority API may be used to create and
+    manage ACME external account binding keys associated with Google Trust Services'
     publicly trusted certificate authority.
   rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
   GAPICs:
@@ -2065,6 +2065,23 @@ libraries:
   - proto_path: google/cloud/vision/v1p3beta1
   - proto_path: google/cloud/vision/v1p4beta1
 
+- api_shortname: visionai
+  name_pretty: Vision AI API
+  product_documentation: https://cloud.google.com/vision-ai/docs
+  api_description: Vertex AI Vision is an AI-powered platform to ingest, analyze and
+    store video data.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-visionai/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-visionai
+  api_id: visionai.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/visionai/v1
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/vision-ai/docs/reference/rpc
 - api_shortname: vmmigration
   name_pretty: VM Migration
   product_documentation: n/a
