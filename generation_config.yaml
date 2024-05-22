@@ -1513,13 +1513,15 @@ libraries:
   - proto_path: google/devtools/cloudprofiler/v2
 
 - api_shortname: publicca
-  name_pretty: Public Certificate Authority
-  product_documentation: https://cloud.google.com/certificate-manager/docs/public-ca/
-  api_description: Certificate Manager's Public Certificate Authority (CA) functionality
-    allows you to provision and deploy widely trusted X.509 certificates after validating
-    that the certificate requester controls the domains.
+  name_pretty: Public Certificate Authority API
+  product_documentation: https://cloud.google.com/certificate-manager/docs/public-ca
+  api_description: The Public Certificate Authority API may be used to create and manage ACME
+    external account binding keys associated with Google Trust Services'
+    publicly trusted certificate authority.
+  rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
   GAPICs:
   - proto_path: google/cloud/security/publicca/v1beta1
+  - proto_path: google/cloud/security/publicca/v1
 
 - api_shortname: rapidmigrationassessment
   name_pretty: Rapid Migration Assessment API
