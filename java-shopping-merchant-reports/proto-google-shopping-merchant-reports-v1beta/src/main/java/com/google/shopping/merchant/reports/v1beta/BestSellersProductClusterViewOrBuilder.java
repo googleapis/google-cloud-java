@@ -566,9 +566,9 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    *
    * <pre>
-   * Whether the product cluster is `IN_STOCK` in your product feed in at least
-   * one of the countries, `OUT_OF_STOCK` in your product feed in all countries,
-   * or `NOT_IN_INVENTORY` at all.
+   * Whether the product cluster is `IN_STOCK` in your product data source in at
+   * least one of the countries, `OUT_OF_STOCK` in your product data source in
+   * all countries, or `NOT_IN_INVENTORY` at all.
    *
    * The field doesn't take the Best sellers report country filter into account.
    * </pre>
@@ -584,9 +584,9 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    *
    * <pre>
-   * Whether the product cluster is `IN_STOCK` in your product feed in at least
-   * one of the countries, `OUT_OF_STOCK` in your product feed in all countries,
-   * or `NOT_IN_INVENTORY` at all.
+   * Whether the product cluster is `IN_STOCK` in your product data source in at
+   * least one of the countries, `OUT_OF_STOCK` in your product data source in
+   * all countries, or `NOT_IN_INVENTORY` at all.
    *
    * The field doesn't take the Best sellers report country filter into account.
    * </pre>
@@ -602,9 +602,9 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    *
    * <pre>
-   * Whether the product cluster is `IN_STOCK` in your product feed in at least
-   * one of the countries, `OUT_OF_STOCK` in your product feed in all countries,
-   * or `NOT_IN_INVENTORY` at all.
+   * Whether the product cluster is `IN_STOCK` in your product data source in at
+   * least one of the countries, `OUT_OF_STOCK` in your product data source in
+   * all countries, or `NOT_IN_INVENTORY` at all.
    *
    * The field doesn't take the Best sellers report country filter into account.
    * </pre>
@@ -623,8 +623,8 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    * <pre>
    * Whether there is at least one product of the brand currently `IN_STOCK` in
-   * your product feed in at least one of the countries, all products are
-   * `OUT_OF_STOCK` in your product feed in all countries, or
+   * your product data source in at least one of the countries, all products are
+   * `OUT_OF_STOCK` in your product data source in all countries, or
    * `NOT_IN_INVENTORY`.
    *
    * The field doesn't take the Best sellers report country filter into account.
@@ -642,8 +642,8 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    * <pre>
    * Whether there is at least one product of the brand currently `IN_STOCK` in
-   * your product feed in at least one of the countries, all products are
-   * `OUT_OF_STOCK` in your product feed in all countries, or
+   * your product data source in at least one of the countries, all products are
+   * `OUT_OF_STOCK` in your product data source in all countries, or
    * `NOT_IN_INVENTORY`.
    *
    * The field doesn't take the Best sellers report country filter into account.
@@ -661,8 +661,8 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    * <pre>
    * Whether there is at least one product of the brand currently `IN_STOCK` in
-   * your product feed in at least one of the countries, all products are
-   * `OUT_OF_STOCK` in your product feed in all countries, or
+   * your product data source in at least one of the countries, all products are
+   * `OUT_OF_STOCK` in your product data source in all countries, or
    * `NOT_IN_INVENTORY`.
    *
    * The field doesn't take the Best sellers report country filter into account.

@@ -28,7 +28,42 @@ public interface MembershipFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   *
+   * @return Whether the servicemesh field is set.
+   */
+  boolean hasServicemesh();
+  /**
+   *
+   *
+   * <pre>
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   *
+   * @return The servicemesh.
+   */
+  com.google.cloud.gkehub.servicemesh.v1beta.MembershipState getServicemesh();
+  /**
+   *
+   *
+   * <pre>
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   */
+  com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder getServicemeshOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -40,7 +75,7 @@ public interface MembershipFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -52,7 +87,7 @@ public interface MembershipFeatureStateOrBuilder
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>

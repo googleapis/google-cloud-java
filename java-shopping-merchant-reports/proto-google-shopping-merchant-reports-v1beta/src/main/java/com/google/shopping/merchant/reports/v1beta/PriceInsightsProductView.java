@@ -59,6 +59,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     productTypeL3_ = "";
     productTypeL4_ = "";
     productTypeL5_ = "";
+    effectiveness_ = 0;
   }
 
   @java.lang.Override
@@ -80,6 +81,194 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         .ensureFieldAccessorsInitialized(
             com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.class,
             com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Predicted effectiveness bucket.
+   *
+   * Effectiveness indicates which products would benefit most from price
+   * changes. This rating takes into consideration the performance boost
+   * predicted by adjusting the sale price and the difference between your
+   * current price and the suggested price. Price suggestions with `HIGH`
+   * effectiveness are predicted to drive the largest increase in performance.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness}
+   */
+  public enum Effectiveness implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is unknown.
+     * </pre>
+     *
+     * <code>EFFECTIVENESS_UNSPECIFIED = 0;</code>
+     */
+    EFFECTIVENESS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is low.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    LOW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is medium.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is high.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is unknown.
+     * </pre>
+     *
+     * <code>EFFECTIVENESS_UNSPECIFIED = 0;</code>
+     */
+    public static final int EFFECTIVENESS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is low.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    public static final int LOW_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is medium.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    public static final int MEDIUM_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Effectiveness is high.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Effectiveness valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Effectiveness forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EFFECTIVENESS_UNSPECIFIED;
+        case 1:
+          return LOW;
+        case 2:
+          return MEDIUM;
+        case 3:
+          return HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Effectiveness> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Effectiveness> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Effectiveness>() {
+          public Effectiveness findValueByNumber(int number) {
+            return Effectiveness.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Effectiveness[] VALUES = values();
+
+    public static Effectiveness valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Effectiveness(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness)
   }
 
   private int bitField0_;
@@ -1256,6 +1445,50 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     return predictedConversionsChangeFraction_;
   }
 
+  public static final int EFFECTIVENESS_FIELD_NUMBER = 22;
+  private int effectiveness_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The predicted effectiveness of applying the price suggestion, bucketed.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveness.
+   */
+  @java.lang.Override
+  public int getEffectivenessValue() {
+    return effectiveness_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The predicted effectiveness of applying the price suggestion, bucketed.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+   * </code>
+   *
+   * @return The effectiveness.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+      getEffectiveness() {
+    com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness result =
+        com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+            .forNumber(effectiveness_);
+    return result == null
+        ? com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1326,6 +1559,12 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       output.writeDouble(19, predictedConversionsChangeFraction_);
+    }
+    if (effectiveness_
+        != com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+            .EFFECTIVENESS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, effectiveness_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1398,6 +1637,12 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               19, predictedConversionsChangeFraction_);
+    }
+    if (effectiveness_
+        != com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+            .EFFECTIVENESS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, effectiveness_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1500,6 +1745,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
           != java.lang.Double.doubleToLongBits(other.getPredictedConversionsChangeFraction()))
         return false;
     }
+    if (effectiveness_ != other.effectiveness_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1596,6 +1842,8 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getPredictedConversionsChangeFraction()));
     }
+    hash = (37 * hash) + EFFECTIVENESS_FIELD_NUMBER;
+    hash = (53 * hash) + effectiveness_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1781,6 +2029,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       predictedImpressionsChangeFraction_ = 0D;
       predictedClicksChangeFraction_ = 0D;
       predictedConversionsChangeFraction_ = 0D;
+      effectiveness_ = 0;
       return this;
     }
 
@@ -1897,6 +2146,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.predictedConversionsChangeFraction_ = predictedConversionsChangeFraction_;
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.effectiveness_ = effectiveness_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2034,6 +2286,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       }
       if (other.hasPredictedConversionsChangeFraction()) {
         setPredictedConversionsChangeFraction(other.getPredictedConversionsChangeFraction());
+      }
+      if (other.effectiveness_ != 0) {
+        setEffectivenessValue(other.getEffectivenessValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2175,6 +2430,12 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
                 bitField0_ |= 0x00040000;
                 break;
               } // case 153
+            case 176:
+              {
+                effectiveness_ = input.readEnum();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4548,6 +4809,112 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public Builder clearPredictedConversionsChangeFraction() {
       bitField0_ = (bitField0_ & ~0x00040000);
       predictedConversionsChangeFraction_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int effectiveness_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The predicted effectiveness of applying the price suggestion, bucketed.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for effectiveness.
+     */
+    @java.lang.Override
+    public int getEffectivenessValue() {
+      return effectiveness_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predicted effectiveness of applying the price suggestion, bucketed.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for effectiveness to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectivenessValue(int value) {
+      effectiveness_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predicted effectiveness of applying the price suggestion, bucketed.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+     * </code>
+     *
+     * @return The effectiveness.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+        getEffectiveness() {
+      com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness result =
+          com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+              .forNumber(effectiveness_);
+      return result == null
+          ? com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predicted effectiveness of applying the price suggestion, bucketed.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+     * </code>
+     *
+     * @param value The effectiveness to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveness(
+        com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00080000;
+      effectiveness_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predicted effectiveness of applying the price suggestion, bucketed.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveness() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      effectiveness_ = 0;
       onChanged();
       return this;
     }

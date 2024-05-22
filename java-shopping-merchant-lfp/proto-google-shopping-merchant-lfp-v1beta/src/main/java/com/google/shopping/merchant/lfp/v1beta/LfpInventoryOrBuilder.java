@@ -270,7 +270,7 @@ public interface LfpInventoryOrBuilder
    *
    * <pre>
    * Required. Availability of the product at this store.
-   * For accepted attribute values, see the [local product inventory feed
+   * For accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -284,7 +284,7 @@ public interface LfpInventoryOrBuilder
    *
    * <pre>
    * Required. Availability of the product at this store.
-   * For accepted attribute values, see the [local product inventory feed
+   * For accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -371,7 +371,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Supported pickup method for this offer. Unless the value is "not
    * supported", this field must be submitted together with `pickupSla`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *
@@ -386,7 +386,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Supported pickup method for this offer. Unless the value is "not
    * supported", this field must be submitted together with `pickupSla`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *
@@ -401,7 +401,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Supported pickup method for this offer. Unless the value is "not
    * supported", this field must be submitted together with `pickupSla`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *
@@ -417,7 +417,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Expected date that an order will be ready for pickup relative to
    * the order date. Must be submitted together with `pickupMethod`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *
@@ -432,7 +432,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Expected date that an order will be ready for pickup relative to
    * the order date. Must be submitted together with `pickupMethod`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *
@@ -447,7 +447,7 @@ public interface LfpInventoryOrBuilder
    * <pre>
    * Optional. Expected date that an order will be ready for pickup relative to
    * the order date. Must be submitted together with `pickupMethod`. For
-   * accepted attribute values, see the [local product inventory feed
+   * accepted attribute values, see the [local product inventory data
    * specification](https://support.google.com/merchants/answer/3061342).
    * </pre>
    *

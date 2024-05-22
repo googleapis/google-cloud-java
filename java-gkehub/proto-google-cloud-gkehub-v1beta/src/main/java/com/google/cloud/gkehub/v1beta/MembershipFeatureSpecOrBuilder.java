@@ -63,5 +63,40 @@ public interface MembershipFeatureSpecOrBuilder
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpecOrBuilder
       getConfigmanagementOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   *
+   * @return Whether the mesh field is set.
+   */
+  boolean hasMesh();
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   *
+   * @return The mesh.
+   */
+  com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec getMesh();
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   */
+  com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder getMeshOrBuilder();
+
   com.google.cloud.gkehub.v1beta.MembershipFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

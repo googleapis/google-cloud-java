@@ -70,6 +70,49 @@ public interface ReportRowOrBuilder
    *
    *
    * <pre>
+   * Fields available for query in `non_product_performance_view` table.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.NonProductPerformanceView non_product_performance_view = 7;
+   * </code>
+   *
+   * @return Whether the nonProductPerformanceView field is set.
+   */
+  boolean hasNonProductPerformanceView();
+  /**
+   *
+   *
+   * <pre>
+   * Fields available for query in `non_product_performance_view` table.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.NonProductPerformanceView non_product_performance_view = 7;
+   * </code>
+   *
+   * @return The nonProductPerformanceView.
+   */
+  com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView
+      getNonProductPerformanceView();
+  /**
+   *
+   *
+   * <pre>
+   * Fields available for query in `non_product_performance_view` table.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.NonProductPerformanceView non_product_performance_view = 7;
+   * </code>
+   */
+  com.google.shopping.merchant.reports.v1beta.NonProductPerformanceViewOrBuilder
+      getNonProductPerformanceViewOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Fields available for query in `product_view` table.
    * </pre>
    *

@@ -72,6 +72,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SERVICEMESH(100),
     METERING(104),
     CONFIGMANAGEMENT(106),
     FEATURESTATE_NOT_SET(0);
@@ -92,6 +93,8 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
 
     public static FeatureStateCase forNumber(int value) {
       switch (value) {
+        case 100:
+          return SERVICEMESH;
         case 104:
           return METERING;
         case 106:
@@ -112,12 +115,64 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     return FeatureStateCase.forNumber(featureStateCase_);
   }
 
+  public static final int SERVICEMESH_FIELD_NUMBER = 100;
+  /**
+   *
+   *
+   * <pre>
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   *
+   * @return Whether the servicemesh field is set.
+   */
+  @java.lang.Override
+  public boolean hasServicemesh() {
+    return featureStateCase_ == 100;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   *
+   * @return The servicemesh.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.servicemesh.v1beta.MembershipState getServicemesh() {
+    if (featureStateCase_ == 100) {
+      return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_;
+    }
+    return com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Service Mesh-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder
+      getServicemeshOrBuilder() {
+    if (featureStateCase_ == 100) {
+      return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_;
+    }
+    return com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+  }
+
   public static final int METERING_FIELD_NUMBER = 104;
   /**
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -132,7 +187,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -150,7 +205,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Metering-specific spec.
+   * Metering-specific state.
    * </pre>
    *
    * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -285,6 +340,10 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getState());
     }
+    if (featureStateCase_ == 100) {
+      output.writeMessage(
+          100, (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_);
+    }
     if (featureStateCase_ == 104) {
       output.writeMessage(
           104, (com.google.cloud.gkehub.metering.v1beta.MembershipState) featureState_);
@@ -304,6 +363,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getState());
+    }
+    if (featureStateCase_ == 100) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              100, (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_);
     }
     if (featureStateCase_ == 104) {
       size +=
@@ -337,6 +401,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     }
     if (!getFeatureStateCase().equals(other.getFeatureStateCase())) return false;
     switch (featureStateCase_) {
+      case 100:
+        if (!getServicemesh().equals(other.getServicemesh())) return false;
+        break;
       case 104:
         if (!getMetering().equals(other.getMetering())) return false;
         break;
@@ -362,6 +429,10 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       hash = (53 * hash) + getState().hashCode();
     }
     switch (featureStateCase_) {
+      case 100:
+        hash = (37 * hash) + SERVICEMESH_FIELD_NUMBER;
+        hash = (53 * hash) + getServicemesh().hashCode();
+        break;
       case 104:
         hash = (37 * hash) + METERING_FIELD_NUMBER;
         hash = (53 * hash) + getMetering().hashCode();
@@ -523,6 +594,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (servicemeshBuilder_ != null) {
+        servicemeshBuilder_.clear();
+      }
       if (meteringBuilder_ != null) {
         meteringBuilder_.clear();
       }
@@ -574,7 +648,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     private void buildPartial0(com.google.cloud.gkehub.v1beta.MembershipFeatureState result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -584,6 +658,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     private void buildPartialOneofs(com.google.cloud.gkehub.v1beta.MembershipFeatureState result) {
       result.featureStateCase_ = featureStateCase_;
       result.featureState_ = this.featureState_;
+      if (featureStateCase_ == 100 && servicemeshBuilder_ != null) {
+        result.featureState_ = servicemeshBuilder_.build();
+      }
       if (featureStateCase_ == 104 && meteringBuilder_ != null) {
         result.featureState_ = meteringBuilder_.build();
       }
@@ -642,6 +719,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
         mergeState(other.getState());
       }
       switch (other.getFeatureStateCase()) {
+        case SERVICEMESH:
+          {
+            mergeServicemesh(other.getServicemesh());
+            break;
+          }
         case METERING:
           {
             mergeMetering(other.getMetering());
@@ -686,9 +768,15 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
+            case 802:
+              {
+                input.readMessage(getServicemeshFieldBuilder().getBuilder(), extensionRegistry);
+                featureStateCase_ = 100;
+                break;
+              } // case 802
             case 834:
               {
                 input.readMessage(getMeteringFieldBuilder().getBuilder(), extensionRegistry);
@@ -736,6 +824,222 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipState,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Builder,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder>
+        servicemeshBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     *
+     * @return Whether the servicemesh field is set.
+     */
+    @java.lang.Override
+    public boolean hasServicemesh() {
+      return featureStateCase_ == 100;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     *
+     * @return The servicemesh.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipState getServicemesh() {
+      if (servicemeshBuilder_ == null) {
+        if (featureStateCase_ == 100) {
+          return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_;
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+      } else {
+        if (featureStateCase_ == 100) {
+          return servicemeshBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    public Builder setServicemesh(
+        com.google.cloud.gkehub.servicemesh.v1beta.MembershipState value) {
+      if (servicemeshBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featureState_ = value;
+        onChanged();
+      } else {
+        servicemeshBuilder_.setMessage(value);
+      }
+      featureStateCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    public Builder setServicemesh(
+        com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Builder builderForValue) {
+      if (servicemeshBuilder_ == null) {
+        featureState_ = builderForValue.build();
+        onChanged();
+      } else {
+        servicemeshBuilder_.setMessage(builderForValue.build());
+      }
+      featureStateCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    public Builder mergeServicemesh(
+        com.google.cloud.gkehub.servicemesh.v1beta.MembershipState value) {
+      if (servicemeshBuilder_ == null) {
+        if (featureStateCase_ == 100
+            && featureState_
+                != com.google.cloud.gkehub.servicemesh.v1beta.MembershipState
+                    .getDefaultInstance()) {
+          featureState_ =
+              com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.newBuilder(
+                      (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          featureState_ = value;
+        }
+        onChanged();
+      } else {
+        if (featureStateCase_ == 100) {
+          servicemeshBuilder_.mergeFrom(value);
+        } else {
+          servicemeshBuilder_.setMessage(value);
+        }
+      }
+      featureStateCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    public Builder clearServicemesh() {
+      if (servicemeshBuilder_ == null) {
+        if (featureStateCase_ == 100) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+          onChanged();
+        }
+      } else {
+        if (featureStateCase_ == 100) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+        }
+        servicemeshBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Builder
+        getServicemeshBuilder() {
+      return getServicemeshFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder
+        getServicemeshOrBuilder() {
+      if ((featureStateCase_ == 100) && (servicemeshBuilder_ != null)) {
+        return servicemeshBuilder_.getMessageOrBuilder();
+      } else {
+        if (featureStateCase_ == 100) {
+          return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_;
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service Mesh-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipState servicemesh = 100;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipState,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Builder,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder>
+        getServicemeshFieldBuilder() {
+      if (servicemeshBuilder_ == null) {
+        if (!(featureStateCase_ == 100)) {
+          featureState_ =
+              com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.getDefaultInstance();
+        }
+        servicemeshBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipState,
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipState.Builder,
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipStateOrBuilder>(
+                (com.google.cloud.gkehub.servicemesh.v1beta.MembershipState) featureState_,
+                getParentForChildren(),
+                isClean());
+        featureState_ = null;
+      }
+      featureStateCase_ = 100;
+      onChanged();
+      return servicemeshBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.metering.v1beta.MembershipState,
             com.google.cloud.gkehub.metering.v1beta.MembershipState.Builder,
             com.google.cloud.gkehub.metering.v1beta.MembershipStateOrBuilder>
@@ -744,7 +1048,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -759,7 +1063,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -784,7 +1088,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -806,7 +1110,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -826,7 +1130,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -859,7 +1163,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -884,7 +1188,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -896,7 +1200,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -916,7 +1220,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Metering-specific spec.
+     * Metering-specific state.
      * </pre>
      *
      * <code>.google.cloud.gkehub.metering.v1beta.MembershipState metering = 104;</code>
@@ -1190,7 +1494,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1230,7 +1534,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         stateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1249,7 +1553,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1264,7 +1568,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      */
     public Builder mergeState(com.google.cloud.gkehub.v1beta.FeatureState value) {
       if (stateBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && state_ != null
             && state_ != com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()) {
           getStateBuilder().mergeFrom(value);
@@ -1275,7 +1579,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
         stateBuilder_.mergeFrom(value);
       }
       if (state_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1290,7 +1594,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
@@ -1309,7 +1613,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public com.google.cloud.gkehub.v1beta.FeatureState.Builder getStateBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }

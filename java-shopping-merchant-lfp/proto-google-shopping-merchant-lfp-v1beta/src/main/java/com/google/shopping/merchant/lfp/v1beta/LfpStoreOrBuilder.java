@@ -345,8 +345,8 @@ public interface LfpStoreOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. The state of matching to a Google Business Profile
-   * listing. See
+   * Optional. Output only. The state of matching to a Google Business Profile.
+   * See
    * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
    * for further details if no match is found.
    * </pre>
@@ -362,8 +362,8 @@ public interface LfpStoreOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. The state of matching to a Google Business Profile
-   * listing. See
+   * Optional. Output only. The state of matching to a Google Business Profile.
+   * See
    * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
    * for further details if no match is found.
    * </pre>

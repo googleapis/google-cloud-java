@@ -25,6 +25,7 @@ package com.google.cloud.gkehub.v1beta;
  * <pre>
  * MembershipFeatureSpec contains configuration information for a single
  * Membership.
+ * NOTE: Please use snake case in your feature name.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkehub.v1beta.MembershipFeatureSpec}
@@ -72,6 +73,7 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONFIGMANAGEMENT(106),
+    MESH(116),
     FEATURESPEC_NOT_SET(0);
     private final int value;
 
@@ -92,6 +94,8 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 106:
           return CONFIGMANAGEMENT;
+        case 116:
+          return MESH;
         case 0:
           return FEATURESPEC_NOT_SET;
         default:
@@ -163,6 +167,57 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     return com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.getDefaultInstance();
   }
 
+  public static final int MESH_FIELD_NUMBER = 116;
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   *
+   * @return Whether the mesh field is set.
+   */
+  @java.lang.Override
+  public boolean hasMesh() {
+    return featureSpecCase_ == 116;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   *
+   * @return The mesh.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec getMesh() {
+    if (featureSpecCase_ == 116) {
+      return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_;
+    }
+    return com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Anthos Service Mesh-specific spec
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder getMeshOrBuilder() {
+    if (featureSpecCase_ == 116) {
+      return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_;
+    }
+    return com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -181,6 +236,10 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       output.writeMessage(
           106, (com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec) featureSpec_);
     }
+    if (featureSpecCase_ == 116) {
+      output.writeMessage(
+          116, (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -194,6 +253,11 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               106, (com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec) featureSpec_);
+    }
+    if (featureSpecCase_ == 116) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              116, (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -216,6 +280,9 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       case 106:
         if (!getConfigmanagement().equals(other.getConfigmanagement())) return false;
         break;
+      case 116:
+        if (!getMesh().equals(other.getMesh())) return false;
+        break;
       case 0:
       default:
     }
@@ -234,6 +301,10 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       case 106:
         hash = (37 * hash) + CONFIGMANAGEMENT_FIELD_NUMBER;
         hash = (53 * hash) + getConfigmanagement().hashCode();
+        break;
+      case 116:
+        hash = (37 * hash) + MESH_FIELD_NUMBER;
+        hash = (53 * hash) + getMesh().hashCode();
         break;
       case 0:
       default:
@@ -344,6 +415,7 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
    * <pre>
    * MembershipFeatureSpec contains configuration information for a single
    * Membership.
+   * NOTE: Please use snake case in your feature name.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkehub.v1beta.MembershipFeatureSpec}
@@ -380,6 +452,9 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       if (configmanagementBuilder_ != null) {
         configmanagementBuilder_.clear();
+      }
+      if (meshBuilder_ != null) {
+        meshBuilder_.clear();
       }
       featureSpecCase_ = 0;
       featureSpec_ = null;
@@ -427,6 +502,9 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       result.featureSpec_ = this.featureSpec_;
       if (featureSpecCase_ == 106 && configmanagementBuilder_ != null) {
         result.featureSpec_ = configmanagementBuilder_.build();
+      }
+      if (featureSpecCase_ == 116 && meshBuilder_ != null) {
+        result.featureSpec_ = meshBuilder_.build();
       }
     }
 
@@ -482,6 +560,11 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
             mergeConfigmanagement(other.getConfigmanagement());
             break;
           }
+        case MESH:
+          {
+            mergeMesh(other.getMesh());
+            break;
+          }
         case FEATURESPEC_NOT_SET:
           {
             break;
@@ -520,6 +603,12 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
                 featureSpecCase_ = 106;
                 break;
               } // case 850
+            case 930:
+              {
+                input.readMessage(getMeshFieldBuilder().getBuilder(), extensionRegistry);
+                featureSpecCase_ = 116;
+                break;
+              } // case 930
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -776,6 +865,217 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       featureSpecCase_ = 106;
       onChanged();
       return configmanagementBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Builder,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder>
+        meshBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     *
+     * @return Whether the mesh field is set.
+     */
+    @java.lang.Override
+    public boolean hasMesh() {
+      return featureSpecCase_ == 116;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     *
+     * @return The mesh.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec getMesh() {
+      if (meshBuilder_ == null) {
+        if (featureSpecCase_ == 116) {
+          return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_;
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+      } else {
+        if (featureSpecCase_ == 116) {
+          return meshBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    public Builder setMesh(com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec value) {
+      if (meshBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featureSpec_ = value;
+        onChanged();
+      } else {
+        meshBuilder_.setMessage(value);
+      }
+      featureSpecCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    public Builder setMesh(
+        com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Builder builderForValue) {
+      if (meshBuilder_ == null) {
+        featureSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        meshBuilder_.setMessage(builderForValue.build());
+      }
+      featureSpecCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    public Builder mergeMesh(com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec value) {
+      if (meshBuilder_ == null) {
+        if (featureSpecCase_ == 116
+            && featureSpec_
+                != com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance()) {
+          featureSpec_ =
+              com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.newBuilder(
+                      (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          featureSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (featureSpecCase_ == 116) {
+          meshBuilder_.mergeFrom(value);
+        } else {
+          meshBuilder_.setMessage(value);
+        }
+      }
+      featureSpecCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    public Builder clearMesh() {
+      if (meshBuilder_ == null) {
+        if (featureSpecCase_ == 116) {
+          featureSpecCase_ = 0;
+          featureSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (featureSpecCase_ == 116) {
+          featureSpecCase_ = 0;
+          featureSpec_ = null;
+        }
+        meshBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Builder getMeshBuilder() {
+      return getMeshFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder getMeshOrBuilder() {
+      if ((featureSpecCase_ == 116) && (meshBuilder_ != null)) {
+        return meshBuilder_.getMessageOrBuilder();
+      } else {
+        if (featureSpecCase_ == 116) {
+          return (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_;
+        }
+        return com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Anthos Service Mesh-specific spec
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Builder,
+            com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder>
+        getMeshFieldBuilder() {
+      if (meshBuilder_ == null) {
+        if (!(featureSpecCase_ == 116)) {
+          featureSpec_ =
+              com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.getDefaultInstance();
+        }
+        meshBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec,
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec.Builder,
+                com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder>(
+                (com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec) featureSpec_,
+                getParentForChildren(),
+                isClean());
+        featureSpec_ = null;
+      }
+      featureSpecCase_ = 116;
+      onChanged();
+      return meshBuilder_;
     }
 
     @java.lang.Override

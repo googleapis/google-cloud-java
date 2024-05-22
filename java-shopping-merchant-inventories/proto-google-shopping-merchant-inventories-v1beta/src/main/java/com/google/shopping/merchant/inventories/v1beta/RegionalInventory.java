@@ -27,7 +27,7 @@ package com.google.shopping.merchant.inventories.v1beta;
  * information like price and availability for a given product in a specific
  * [`region`][google.shopping.merchant.inventories.v1beta.RegionalInventory.region].
  * For a list of all accepted attribute values, see the [regional product
- * inventory feed
+ * inventory data
  * specification](https://support.google.com/merchants/answer/9698880).
  * </pre>
  *
@@ -367,7 +367,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -384,7 +384,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -409,7 +409,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Availability of the product in this region.
-   * For accepted attribute values, see the [regional product inventory feed
+   * For accepted attribute values, see the [regional product inventory data
    * specification](https://support.google.com/merchants/answer/3061342)
    * </pre>
    *
@@ -439,7 +439,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -454,7 +454,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -470,7 +470,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -485,7 +485,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -500,7 +500,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A list of custom (merchant-provided) attributes. You can also use
-   * `CustomAttribute` to submit any attribute of the feed specification in its
+   * `CustomAttribute` to submit any attribute of the data specification in its
    * generic form.
    * </pre>
    *
@@ -766,7 +766,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    * information like price and availability for a given product in a specific
    * [`region`][google.shopping.merchant.inventories.v1beta.RegionalInventory.region].
    * For a list of all accepted attribute values, see the [regional product
-   * inventory feed
+   * inventory data
    * specification](https://support.google.com/merchants/answer/9698880).
    * </pre>
    *
@@ -2015,7 +2015,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2031,7 +2031,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2055,7 +2055,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2079,7 +2079,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2102,7 +2102,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2121,7 +2121,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Availability of the product in this region.
-     * For accepted attribute values, see the [regional product inventory feed
+     * For accepted attribute values, see the [regional product inventory data
      * specification](https://support.google.com/merchants/answer/3061342)
      * </pre>
      *
@@ -2163,7 +2163,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2181,7 +2181,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2199,7 +2199,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2217,7 +2217,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2241,7 +2241,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2263,7 +2263,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2287,7 +2287,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2311,7 +2311,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2333,7 +2333,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2355,7 +2355,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2377,7 +2377,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2398,7 +2398,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2419,7 +2419,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2433,7 +2433,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2452,7 +2452,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2471,7 +2471,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2486,7 +2486,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
@@ -2501,7 +2501,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A list of custom (merchant-provided) attributes. You can also use
-     * `CustomAttribute` to submit any attribute of the feed specification in its
+     * `CustomAttribute` to submit any attribute of the data specification in its
      * generic form.
      * </pre>
      *
