@@ -172,9 +172,7 @@ public interface LiveConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Determines how the ads are tracked. If
-   * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ads are tracked.
    * </pre>
    *
    * <code>
@@ -188,9 +186,7 @@ public interface LiveConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Determines how the ads are tracked. If
-   * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ads are tracked.
    * </pre>
    *
    * <code>
@@ -293,4 +289,39 @@ public interface LiveConfigOrBuilder
    * <code>.google.cloud.video.stitcher.v1.PrefetchConfig prefetch_config = 10;</code>
    */
   com.google.cloud.video.stitcher.v1.PrefetchConfigOrBuilder getPrefetchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   *
+   * @return Whether the sourceFetchOptions field is set.
+   */
+  boolean hasSourceFetchOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   *
+   * @return The sourceFetchOptions.
+   */
+  com.google.cloud.video.stitcher.v1.FetchOptions getSourceFetchOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   */
+  com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder getSourceFetchOptionsOrBuilder();
 }

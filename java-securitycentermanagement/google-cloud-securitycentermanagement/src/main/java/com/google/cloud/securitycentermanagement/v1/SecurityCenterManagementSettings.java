@@ -22,6 +22,7 @@ import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagem
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListLocationsPagedResponse;
+import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityCenterServicesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -292,6 +293,30 @@ public class SecurityCenterManagementSettings
       validateEventThreatDetectionCustomModuleSettings() {
     return ((SecurityCenterManagementStubSettings) getStubSettings())
         .validateEventThreatDetectionCustomModuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSecurityCenterService. */
+  public UnaryCallSettings<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceSettings() {
+    return ((SecurityCenterManagementStubSettings) getStubSettings())
+        .getSecurityCenterServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSecurityCenterServices. */
+  public PagedCallSettings<
+          ListSecurityCenterServicesRequest,
+          ListSecurityCenterServicesResponse,
+          ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesSettings() {
+    return ((SecurityCenterManagementStubSettings) getStubSettings())
+        .listSecurityCenterServicesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSecurityCenterService. */
+  public UnaryCallSettings<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceSettings() {
+    return ((SecurityCenterManagementStubSettings) getStubSettings())
+        .updateSecurityCenterServiceSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -608,6 +633,27 @@ public class SecurityCenterManagementSettings
             ValidateEventThreatDetectionCustomModuleResponse>
         validateEventThreatDetectionCustomModuleSettings() {
       return getStubSettingsBuilder().validateEventThreatDetectionCustomModuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSecurityCenterService. */
+    public UnaryCallSettings.Builder<GetSecurityCenterServiceRequest, SecurityCenterService>
+        getSecurityCenterServiceSettings() {
+      return getStubSettingsBuilder().getSecurityCenterServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSecurityCenterServices. */
+    public PagedCallSettings.Builder<
+            ListSecurityCenterServicesRequest,
+            ListSecurityCenterServicesResponse,
+            ListSecurityCenterServicesPagedResponse>
+        listSecurityCenterServicesSettings() {
+      return getStubSettingsBuilder().listSecurityCenterServicesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSecurityCenterService. */
+    public UnaryCallSettings.Builder<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+        updateSecurityCenterServiceSettings() {
+      return getStubSettingsBuilder().updateSecurityCenterServiceSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

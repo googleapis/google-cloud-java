@@ -78,10 +78,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    * <pre>
    * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * `organizations/{organization}/locations/{location}`,
+   * `folders/{folder}/locations/{location}`,
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -107,10 +107,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
    *
    * <pre>
    * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * `organizations/{organization}/locations/{location}`,
+   * `folders/{folder}/locations/{location}`,
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -658,10 +658,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * `organizations/{organization}/locations/{location}`,
+     * `folders/{folder}/locations/{location}`,
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -686,10 +686,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * `organizations/{organization}/locations/{location}`,
+     * `folders/{folder}/locations/{location}`,
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -714,10 +714,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * `organizations/{organization}/locations/{location}`,
+     * `folders/{folder}/locations/{location}`,
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -741,10 +741,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * `organizations/{organization}/locations/{location}`,
+     * `folders/{folder}/locations/{location}`,
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -764,10 +764,10 @@ public final class ListEventThreatDetectionCustomModulesRequest
      *
      * <pre>
      * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * `organizations/{organization}/locations/{location}`,
+     * `folders/{folder}/locations/{location}`,
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

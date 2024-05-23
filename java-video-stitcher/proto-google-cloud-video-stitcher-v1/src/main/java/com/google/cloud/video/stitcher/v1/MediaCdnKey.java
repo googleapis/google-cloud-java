@@ -64,6 +64,716 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder.class);
   }
 
+  public interface TokenConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The query parameter in which to find the token.
+     *
+     * The name must be 1-64 characters long and match
+     * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+     * first character must be a letter, and all following characters
+     * must be a dash, underscore, letter or digit.
+     *
+     * Defaults to `edge-cache-token`.
+     * </pre>
+     *
+     * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The queryParameter.
+     */
+    java.lang.String getQueryParameter();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The query parameter in which to find the token.
+     *
+     * The name must be 1-64 characters long and match
+     * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+     * first character must be a letter, and all following characters
+     * must be a dash, underscore, letter or digit.
+     *
+     * Defaults to `edge-cache-token`.
+     * </pre>
+     *
+     * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for queryParameter.
+     */
+    com.google.protobuf.ByteString getQueryParameterBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a Media CDN token.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig}
+   */
+  public static final class TokenConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
+      TokenConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TokenConfig.newBuilder() to construct.
+    private TokenConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TokenConfig() {
+      queryParameter_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TokenConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.stitcher.v1.CdnKeysProto
+          .internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_TokenConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.stitcher.v1.CdnKeysProto
+          .internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_TokenConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.class,
+              com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder.class);
+    }
+
+    public static final int QUERY_PARAMETER_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryParameter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The query parameter in which to find the token.
+     *
+     * The name must be 1-64 characters long and match
+     * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+     * first character must be a letter, and all following characters
+     * must be a dash, underscore, letter or digit.
+     *
+     * Defaults to `edge-cache-token`.
+     * </pre>
+     *
+     * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The queryParameter.
+     */
+    @java.lang.Override
+    public java.lang.String getQueryParameter() {
+      java.lang.Object ref = queryParameter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryParameter_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The query parameter in which to find the token.
+     *
+     * The name must be 1-64 characters long and match
+     * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+     * first character must be a letter, and all following characters
+     * must be a dash, underscore, letter or digit.
+     *
+     * Defaults to `edge-cache-token`.
+     * </pre>
+     *
+     * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for queryParameter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getQueryParameterBytes() {
+      java.lang.Object ref = queryParameter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryParameter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryParameter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryParameter_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryParameter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryParameter_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig other =
+          (com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig) obj;
+
+      if (!getQueryParameter().equals(other.getQueryParameter())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUERY_PARAMETER_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryParameter().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Media CDN token.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.stitcher.v1.CdnKeysProto
+            .internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_TokenConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.stitcher.v1.CdnKeysProto
+            .internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_TokenConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.class,
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        queryParameter_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.stitcher.v1.CdnKeysProto
+            .internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_TokenConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig build() {
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig buildPartial() {
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig result =
+            new com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryParameter_ = queryParameter_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig) {
+          return mergeFrom((com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig other) {
+        if (other
+            == com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance())
+          return this;
+        if (!other.getQueryParameter().isEmpty()) {
+          queryParameter_ = other.queryParameter_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  queryParameter_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object queryParameter_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The query parameter in which to find the token.
+       *
+       * The name must be 1-64 characters long and match
+       * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+       * first character must be a letter, and all following characters
+       * must be a dash, underscore, letter or digit.
+       *
+       * Defaults to `edge-cache-token`.
+       * </pre>
+       *
+       * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The queryParameter.
+       */
+      public java.lang.String getQueryParameter() {
+        java.lang.Object ref = queryParameter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          queryParameter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The query parameter in which to find the token.
+       *
+       * The name must be 1-64 characters long and match
+       * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+       * first character must be a letter, and all following characters
+       * must be a dash, underscore, letter or digit.
+       *
+       * Defaults to `edge-cache-token`.
+       * </pre>
+       *
+       * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for queryParameter.
+       */
+      public com.google.protobuf.ByteString getQueryParameterBytes() {
+        java.lang.Object ref = queryParameter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          queryParameter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The query parameter in which to find the token.
+       *
+       * The name must be 1-64 characters long and match
+       * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+       * first character must be a letter, and all following characters
+       * must be a dash, underscore, letter or digit.
+       *
+       * Defaults to `edge-cache-token`.
+       * </pre>
+       *
+       * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The queryParameter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParameter(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryParameter_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The query parameter in which to find the token.
+       *
+       * The name must be 1-64 characters long and match
+       * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+       * first character must be a letter, and all following characters
+       * must be a dash, underscore, letter or digit.
+       *
+       * Defaults to `edge-cache-token`.
+       * </pre>
+       *
+       * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryParameter() {
+        queryParameter_ = getDefaultInstance().getQueryParameter();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The query parameter in which to find the token.
+       *
+       * The name must be 1-64 characters long and match
+       * the regular expression `[a-zA-Z]([a-zA-Z0-9_-])*` which means the
+       * first character must be a letter, and all following characters
+       * must be a dash, underscore, letter or digit.
+       *
+       * Defaults to `edge-cache-token`.
+       * </pre>
+       *
+       * <code>string query_parameter = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for queryParameter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryParameterBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        queryParameter_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
+    private static final com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig();
+    }
+
+    public static com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TokenConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TokenConfig>() {
+          @java.lang.Override
+          public TokenConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TokenConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TokenConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int PRIVATE_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString privateKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
@@ -133,6 +843,66 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TOKEN_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig tokenConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tokenConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getTokenConfig() {
+    return tokenConfig_ == null
+        ? com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance()
+        : tokenConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder
+      getTokenConfigOrBuilder() {
+    return tokenConfig_ == null
+        ? com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance()
+        : tokenConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +923,9 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyName_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getTokenConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -167,6 +940,9 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyName_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTokenConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +962,10 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPrivateKey().equals(other.getPrivateKey())) return false;
     if (!getKeyName().equals(other.getKeyName())) return false;
+    if (hasTokenConfig() != other.hasTokenConfig()) return false;
+    if (hasTokenConfig()) {
+      if (!getTokenConfig().equals(other.getTokenConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,6 +981,10 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPrivateKey().hashCode();
     hash = (37 * hash) + KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKeyName().hashCode();
+    if (hasTokenConfig()) {
+      hash = (37 * hash) + TOKEN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,10 +1114,19 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.stitcher.v1.MediaCdnKey.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTokenConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -342,6 +1135,11 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       privateKey_ = com.google.protobuf.ByteString.EMPTY;
       keyName_ = "";
+      tokenConfig_ = null;
+      if (tokenConfigBuilder_ != null) {
+        tokenConfigBuilder_.dispose();
+        tokenConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -384,6 +1182,13 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.keyName_ = keyName_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tokenConfig_ =
+            tokenConfigBuilder_ == null ? tokenConfig_ : tokenConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -439,6 +1244,9 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasTokenConfig()) {
+        mergeTokenConfig(other.getTokenConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -477,6 +1285,12 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getTokenConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -655,6 +1469,225 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig tokenConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder>
+        tokenConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tokenConfig field is set.
+     */
+    public boolean hasTokenConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tokenConfig.
+     */
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getTokenConfig() {
+      if (tokenConfigBuilder_ == null) {
+        return tokenConfig_ == null
+            ? com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance()
+            : tokenConfig_;
+      } else {
+        return tokenConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTokenConfig(
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig value) {
+      if (tokenConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenConfig_ = value;
+      } else {
+        tokenConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTokenConfig(
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder builderForValue) {
+      if (tokenConfigBuilder_ == null) {
+        tokenConfig_ = builderForValue.build();
+      } else {
+        tokenConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTokenConfig(
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig value) {
+      if (tokenConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && tokenConfig_ != null
+            && tokenConfig_
+                != com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig
+                    .getDefaultInstance()) {
+          getTokenConfigBuilder().mergeFrom(value);
+        } else {
+          tokenConfig_ = value;
+        }
+      } else {
+        tokenConfigBuilder_.mergeFrom(value);
+      }
+      if (tokenConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTokenConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      tokenConfig_ = null;
+      if (tokenConfigBuilder_ != null) {
+        tokenConfigBuilder_.dispose();
+        tokenConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder
+        getTokenConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getTokenConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder
+        getTokenConfigOrBuilder() {
+      if (tokenConfigBuilder_ != null) {
+        return tokenConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenConfig_ == null
+            ? com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance()
+            : tokenConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the URL will be signed using the Media CDN token.
+     * Otherwise, the URL would be signed using the standard Media CDN signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder>
+        getTokenConfigFieldBuilder() {
+      if (tokenConfigBuilder_ == null) {
+        tokenConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig,
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder,
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder>(
+                getTokenConfig(), getParentForChildren(), isClean());
+        tokenConfig_ = null;
+      }
+      return tokenConfigBuilder_;
     }
 
     @java.lang.Override

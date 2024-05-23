@@ -45,6 +45,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     adTagUri_ = "";
     assetId_ = "";
     adTracking_ = 0;
+    vodConfig_ = "";
   }
 
   @java.lang.Override
@@ -1100,10 +1101,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URI of the media to stitch.
+   * URI of the media to stitch. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string source_uri = 5;</code>
    *
    * @return The sourceUri.
    */
@@ -1123,10 +1126,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URI of the media to stitch.
+   * URI of the media to stitch. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string source_uri = 5;</code>
    *
    * @return The bytes for sourceUri.
    */
@@ -1151,10 +1156,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Ad tag URI.
+   * Ad tag URI. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ad_tag_uri = 6;</code>
    *
    * @return The adTagUri.
    */
@@ -1174,10 +1181,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Ad tag URI.
+   * Ad tag URI. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ad_tag_uri = 6;</code>
    *
    * @return The bytes for adTagUri.
    */
@@ -1226,18 +1235,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -1259,18 +1269,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -1283,18 +1294,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -1314,18 +1326,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -1536,6 +1549,59 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         : gamSettings_;
   }
 
+  public static final int VOD_CONFIG_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vodConfig_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the VOD config for this session, in the form of
+   * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+   * </pre>
+   *
+   * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The vodConfig.
+   */
+  @java.lang.Override
+  public java.lang.String getVodConfig() {
+    java.lang.Object ref = vodConfig_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vodConfig_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the VOD config for this session, in the form of
+   * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+   * </pre>
+   *
+   * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for vodConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVodConfigBytes() {
+    java.lang.Object ref = vodConfig_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vodConfig_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1579,6 +1645,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getGamSettings());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vodConfig_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, vodConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1627,6 +1696,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getGamSettings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vodConfig_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, vodConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1662,6 +1734,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (hasGamSettings()) {
       if (!getGamSettings().equals(other.getGamSettings())) return false;
     }
+    if (!getVodConfig().equals(other.getVodConfig())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1701,6 +1774,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GAM_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getGamSettings().hashCode();
     }
+    hash = (37 * hash) + VOD_CONFIG_FIELD_NUMBER;
+    hash = (53 * hash) + getVodConfig().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1895,6 +1970,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         gamSettingsBuilder_.dispose();
         gamSettingsBuilder_ = null;
       }
+      vodConfig_ = "";
       return this;
     }
 
@@ -1968,6 +2044,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         result.gamSettings_ =
             gamSettingsBuilder_ == null ? gamSettings_ : gamSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.vodConfig_ = vodConfig_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2055,6 +2134,11 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGamSettings()) {
         mergeGamSettings(other.getGamSettings());
+      }
+      if (!other.getVodConfig().isEmpty()) {
+        vodConfig_ = other.vodConfig_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2148,6 +2232,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 106
+            case 114:
+              {
+                vodConfig_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2594,10 +2684,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the media to stitch.
+     * URI of the media to stitch. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string source_uri = 5;</code>
      *
      * @return The sourceUri.
      */
@@ -2616,10 +2708,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the media to stitch.
+     * URI of the media to stitch. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string source_uri = 5;</code>
      *
      * @return The bytes for sourceUri.
      */
@@ -2638,10 +2732,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the media to stitch.
+     * URI of the media to stitch. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string source_uri = 5;</code>
      *
      * @param value The sourceUri to set.
      * @return This builder for chaining.
@@ -2659,10 +2755,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the media to stitch.
+     * URI of the media to stitch. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string source_uri = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -2676,10 +2774,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the media to stitch.
+     * URI of the media to stitch. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string source_uri = 5;</code>
      *
      * @param value The bytes for sourceUri to set.
      * @return This builder for chaining.
@@ -2700,10 +2800,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Ad tag URI.
+     * Ad tag URI. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ad_tag_uri = 6;</code>
      *
      * @return The adTagUri.
      */
@@ -2722,10 +2824,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Ad tag URI.
+     * Ad tag URI. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ad_tag_uri = 6;</code>
      *
      * @return The bytes for adTagUri.
      */
@@ -2744,10 +2848,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Ad tag URI.
+     * Ad tag URI. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ad_tag_uri = 6;</code>
      *
      * @param value The adTagUri to set.
      * @return This builder for chaining.
@@ -2765,10 +2871,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Ad tag URI.
+     * Ad tag URI. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ad_tag_uri = 6;</code>
      *
      * @return This builder for chaining.
      */
@@ -2782,10 +2890,12 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Ad tag URI.
+     * Ad tag URI. For most use cases, you should create a
+     * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+     * rather than setting this field directly.
      * </pre>
      *
-     * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ad_tag_uri = 6;</code>
      *
      * @param value The bytes for adTagUri to set.
      * @return This builder for chaining.
@@ -2833,18 +2943,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -2866,18 +2977,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -2890,18 +3002,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -2921,18 +3034,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -2958,18 +3072,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -2991,18 +3106,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -3022,18 +3138,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Key value pairs for ad tag macro replacement. If the
-     * specified ad tag URI has macros, this field provides the mapping
-     * to the value that will replace the macro in the ad tag URI.
-     * Macros are designated by square brackets.
-     * For example:
+     * Key value pairs for ad tag macro replacement, only available for VOD
+     * sessions that do not implement Google Ad manager ad insertion. If the
+     * specified ad tag URI has macros, this field provides the mapping to the
+     * value that will replace the macro in the ad tag URI.
+     *
+     * Macros are designated by square brackets, for example:
      *
      *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
      *
      *   Ad tag macro map: `{"geoId": "123"}`
      *
      *   Fully qualified ad tag:
-     *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+     *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
      * </pre>
      *
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -3635,6 +3752,117 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         gamSettings_ = null;
       }
       return gamSettingsBuilder_;
+    }
+
+    private java.lang.Object vodConfig_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the VOD config for this session, in the form of
+     * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+     * </pre>
+     *
+     * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The vodConfig.
+     */
+    public java.lang.String getVodConfig() {
+      java.lang.Object ref = vodConfig_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vodConfig_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the VOD config for this session, in the form of
+     * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+     * </pre>
+     *
+     * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for vodConfig.
+     */
+    public com.google.protobuf.ByteString getVodConfigBytes() {
+      java.lang.Object ref = vodConfig_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vodConfig_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the VOD config for this session, in the form of
+     * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+     * </pre>
+     *
+     * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The vodConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVodConfig(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      vodConfig_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the VOD config for this session, in the form of
+     * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+     * </pre>
+     *
+     * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVodConfig() {
+      vodConfig_ = getDefaultInstance().getVodConfig();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the VOD config for this session, in the form of
+     * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+     * </pre>
+     *
+     * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for vodConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVodConfigBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      vodConfig_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

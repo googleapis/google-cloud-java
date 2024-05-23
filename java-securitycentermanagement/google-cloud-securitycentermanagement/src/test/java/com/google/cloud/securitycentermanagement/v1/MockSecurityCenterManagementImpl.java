@@ -456,4 +456,70 @@ public class MockSecurityCenterManagementImpl extends SecurityCenterManagementIm
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getSecurityCenterService(
+      GetSecurityCenterServiceRequest request,
+      StreamObserver<SecurityCenterService> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecurityCenterService) {
+      requests.add(request);
+      responseObserver.onNext(((SecurityCenterService) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSecurityCenterService, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecurityCenterService.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSecurityCenterServices(
+      ListSecurityCenterServicesRequest request,
+      StreamObserver<ListSecurityCenterServicesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSecurityCenterServicesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSecurityCenterServicesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSecurityCenterServices, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSecurityCenterServicesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSecurityCenterService(
+      UpdateSecurityCenterServiceRequest request,
+      StreamObserver<SecurityCenterService> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecurityCenterService) {
+      requests.add(request);
+      responseObserver.onNext(((SecurityCenterService) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSecurityCenterService, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecurityCenterService.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

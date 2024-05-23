@@ -21,6 +21,7 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -31,16 +32,19 @@ import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
+import com.google.cloud.video.stitcher.v1.CreateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
+import com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest;
+import com.google.cloud.video.stitcher.v1.GetVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest;
 import com.google.cloud.video.stitcher.v1.ListCdnKeysRequest;
@@ -53,6 +57,8 @@ import com.google.cloud.video.stitcher.v1.ListSlatesRequest;
 import com.google.cloud.video.stitcher.v1.ListSlatesResponse;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsRequest;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsResponse;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse;
 import com.google.cloud.video.stitcher.v1.LiveAdTagDetail;
@@ -61,8 +67,11 @@ import com.google.cloud.video.stitcher.v1.LiveSession;
 import com.google.cloud.video.stitcher.v1.OperationMetadata;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.UpdateSlateRequest;
+import com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.VodAdTagDetail;
+import com.google.cloud.video.stitcher.v1.VodConfig;
 import com.google.cloud.video.stitcher.v1.VodSession;
 import com.google.cloud.video.stitcher.v1.VodStitchDetail;
 import com.google.longrunning.Operation;
@@ -248,6 +257,55 @@ public abstract class VideoStitcherServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteLiveConfigCallable()");
+  }
+
+  public OperationCallable<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateLiveConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateLiveConfigRequest, Operation> updateLiveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateLiveConfigCallable()");
+  }
+
+  public OperationCallable<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createVodConfigOperationCallable()");
+  }
+
+  public UnaryCallable<CreateVodConfigRequest, Operation> createVodConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createVodConfigCallable()");
+  }
+
+  public UnaryCallable<ListVodConfigsRequest, ListVodConfigsPagedResponse>
+      listVodConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listVodConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListVodConfigsRequest, ListVodConfigsResponse> listVodConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listVodConfigsCallable()");
+  }
+
+  public UnaryCallable<GetVodConfigRequest, VodConfig> getVodConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVodConfigCallable()");
+  }
+
+  public OperationCallable<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteVodConfigOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteVodConfigRequest, Operation> deleteVodConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteVodConfigCallable()");
+  }
+
+  public OperationCallable<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateVodConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateVodConfigRequest, Operation> updateVodConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateVodConfigCallable()");
   }
 
   @Override

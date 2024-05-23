@@ -80,12 +80,12 @@ public interface LiveSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
+   * Key value pairs for ad tag macro replacement, only available for live
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
    *
-   * For example:
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: "https://doubleclick.google.com/ad/1?geo_id=[geoId]"
    *
@@ -102,12 +102,12 @@ public interface LiveSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
+   * Key value pairs for ad tag macro replacement, only available for live
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
    *
-   * For example:
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: "https://doubleclick.google.com/ad/1?geo_id=[geoId]"
    *
@@ -127,12 +127,12 @@ public interface LiveSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
+   * Key value pairs for ad tag macro replacement, only available for live
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
    *
-   * For example:
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: "https://doubleclick.google.com/ad/1?geo_id=[geoId]"
    *
@@ -149,12 +149,12 @@ public interface LiveSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
+   * Key value pairs for ad tag macro replacement, only available for live
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
    *
-   * For example:
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: "https://doubleclick.google.com/ad/1?geo_id=[geoId]"
    *
@@ -175,12 +175,12 @@ public interface LiveSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
+   * Key value pairs for ad tag macro replacement, only available for live
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
    *
-   * For example:
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: "https://doubleclick.google.com/ad/1?geo_id=[geoId]"
    *
@@ -297,4 +297,31 @@ public interface LiveSessionOrBuilder
    * @return The bytes for liveConfig.
    */
   com.google.protobuf.ByteString getLiveConfigBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Determines how the ad should be tracked. This overrides the value set in
+   * the live config for this session.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.AdTracking ad_tracking = 17;</code>
+   *
+   * @return The enum numeric value on the wire for adTracking.
+   */
+  int getAdTrackingValue();
+  /**
+   *
+   *
+   * <pre>
+   * Determines how the ad should be tracked. This overrides the value set in
+   * the live config for this session.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.AdTracking ad_tracking = 17;</code>
+   *
+   * @return The adTracking.
+   */
+  com.google.cloud.video.stitcher.v1.AdTracking getAdTracking();
 }

@@ -665,9 +665,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Determines how the ads are tracked. If
-   * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ads are tracked.
    * </pre>
    *
    * <code>
@@ -684,9 +682,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Determines how the ads are tracked. If
-   * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ads are tracked.
    * </pre>
    *
    * <code>
@@ -848,6 +844,56 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         : prefetchConfig_;
   }
 
+  public static final int SOURCE_FETCH_OPTIONS_FIELD_NUMBER = 16;
+  private com.google.cloud.video.stitcher.v1.FetchOptions sourceFetchOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   *
+   * @return Whether the sourceFetchOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceFetchOptions() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   *
+   * @return The sourceFetchOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.FetchOptions getSourceFetchOptions() {
+    return sourceFetchOptions_ == null
+        ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
+        : sourceFetchOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for fetching source manifests and segments.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder getSourceFetchOptionsOrBuilder() {
+    return sourceFetchOptions_ == null
+        ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
+        : sourceFetchOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -894,6 +940,9 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getPrefetchConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(16, getSourceFetchOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -935,6 +984,9 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getPrefetchConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSourceFetchOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -965,6 +1017,10 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasPrefetchConfig() != other.hasPrefetchConfig()) return false;
     if (hasPrefetchConfig()) {
       if (!getPrefetchConfig().equals(other.getPrefetchConfig())) return false;
+    }
+    if (hasSourceFetchOptions() != other.hasSourceFetchOptions()) return false;
+    if (hasSourceFetchOptions()) {
+      if (!getSourceFetchOptions().equals(other.getSourceFetchOptions())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -998,6 +1054,10 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasPrefetchConfig()) {
       hash = (37 * hash) + PREFETCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrefetchConfig().hashCode();
+    }
+    if (hasSourceFetchOptions()) {
+      hash = (37 * hash) + SOURCE_FETCH_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceFetchOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1141,6 +1201,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGamLiveConfigFieldBuilder();
         getPrefetchConfigFieldBuilder();
+        getSourceFetchOptionsFieldBuilder();
       }
     }
 
@@ -1164,6 +1225,11 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       if (prefetchConfigBuilder_ != null) {
         prefetchConfigBuilder_.dispose();
         prefetchConfigBuilder_ = null;
+      }
+      sourceFetchOptions_ = null;
+      if (sourceFetchOptionsBuilder_ != null) {
+        sourceFetchOptionsBuilder_.dispose();
+        sourceFetchOptionsBuilder_ = null;
       }
       return this;
     }
@@ -1232,6 +1298,13 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         result.prefetchConfig_ =
             prefetchConfigBuilder_ == null ? prefetchConfig_ : prefetchConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.sourceFetchOptions_ =
+            sourceFetchOptionsBuilder_ == null
+                ? sourceFetchOptions_
+                : sourceFetchOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1316,6 +1389,9 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPrefetchConfig()) {
         mergePrefetchConfig(other.getPrefetchConfig());
       }
+      if (other.hasSourceFetchOptions()) {
+        mergeSourceFetchOptions(other.getSourceFetchOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1396,6 +1472,13 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 130:
+              {
+                input.readMessage(
+                    getSourceFetchOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2041,9 +2124,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ads are tracked. If
-     * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ads are tracked.
      * </pre>
      *
      * <code>
@@ -2060,9 +2141,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ads are tracked. If
-     * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ads are tracked.
      * </pre>
      *
      * <code>
@@ -2082,9 +2161,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ads are tracked. If
-     * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ads are tracked.
      * </pre>
      *
      * <code>
@@ -2103,9 +2180,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ads are tracked. If
-     * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ads are tracked.
      * </pre>
      *
      * <code>
@@ -2128,9 +2203,7 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ads are tracked. If
-     * [gam_live_config][google.cloud.video.stitcher.v1.LiveConfig.gam_live_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ads are tracked.
      * </pre>
      *
      * <code>
@@ -2550,6 +2623,194 @@ public final class LiveConfig extends com.google.protobuf.GeneratedMessageV3
         prefetchConfig_ = null;
       }
       return prefetchConfigBuilder_;
+    }
+
+    private com.google.cloud.video.stitcher.v1.FetchOptions sourceFetchOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.FetchOptions,
+            com.google.cloud.video.stitcher.v1.FetchOptions.Builder,
+            com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder>
+        sourceFetchOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     *
+     * @return Whether the sourceFetchOptions field is set.
+     */
+    public boolean hasSourceFetchOptions() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     *
+     * @return The sourceFetchOptions.
+     */
+    public com.google.cloud.video.stitcher.v1.FetchOptions getSourceFetchOptions() {
+      if (sourceFetchOptionsBuilder_ == null) {
+        return sourceFetchOptions_ == null
+            ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
+            : sourceFetchOptions_;
+      } else {
+        return sourceFetchOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public Builder setSourceFetchOptions(com.google.cloud.video.stitcher.v1.FetchOptions value) {
+      if (sourceFetchOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceFetchOptions_ = value;
+      } else {
+        sourceFetchOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public Builder setSourceFetchOptions(
+        com.google.cloud.video.stitcher.v1.FetchOptions.Builder builderForValue) {
+      if (sourceFetchOptionsBuilder_ == null) {
+        sourceFetchOptions_ = builderForValue.build();
+      } else {
+        sourceFetchOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public Builder mergeSourceFetchOptions(com.google.cloud.video.stitcher.v1.FetchOptions value) {
+      if (sourceFetchOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && sourceFetchOptions_ != null
+            && sourceFetchOptions_
+                != com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()) {
+          getSourceFetchOptionsBuilder().mergeFrom(value);
+        } else {
+          sourceFetchOptions_ = value;
+        }
+      } else {
+        sourceFetchOptionsBuilder_.mergeFrom(value);
+      }
+      if (sourceFetchOptions_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public Builder clearSourceFetchOptions() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      sourceFetchOptions_ = null;
+      if (sourceFetchOptionsBuilder_ != null) {
+        sourceFetchOptionsBuilder_.dispose();
+        sourceFetchOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public com.google.cloud.video.stitcher.v1.FetchOptions.Builder getSourceFetchOptionsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getSourceFetchOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    public com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder
+        getSourceFetchOptionsOrBuilder() {
+      if (sourceFetchOptionsBuilder_ != null) {
+        return sourceFetchOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceFetchOptions_ == null
+            ? com.google.cloud.video.stitcher.v1.FetchOptions.getDefaultInstance()
+            : sourceFetchOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for fetching source manifests and segments.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.FetchOptions source_fetch_options = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.FetchOptions,
+            com.google.cloud.video.stitcher.v1.FetchOptions.Builder,
+            com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder>
+        getSourceFetchOptionsFieldBuilder() {
+      if (sourceFetchOptionsBuilder_ == null) {
+        sourceFetchOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.stitcher.v1.FetchOptions,
+                com.google.cloud.video.stitcher.v1.FetchOptions.Builder,
+                com.google.cloud.video.stitcher.v1.FetchOptionsOrBuilder>(
+                getSourceFetchOptions(), getParentForChildren(), isClean());
+        sourceFetchOptions_ = null;
+      }
+      return sourceFetchOptionsBuilder_;
     }
 
     @java.lang.Override

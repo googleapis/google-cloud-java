@@ -121,10 +121,12 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Required. URI of the media to stitch.
+   * URI of the media to stitch. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string source_uri = 5;</code>
    *
    * @return The sourceUri.
    */
@@ -133,10 +135,12 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Required. URI of the media to stitch.
+   * URI of the media to stitch. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string source_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string source_uri = 5;</code>
    *
    * @return The bytes for sourceUri.
    */
@@ -146,10 +150,12 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Required. Ad tag URI.
+   * Ad tag URI. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ad_tag_uri = 6;</code>
    *
    * @return The adTagUri.
    */
@@ -158,10 +164,12 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Required. Ad tag URI.
+   * Ad tag URI. For most use cases, you should create a
+   * [VodConfig][google.cloud.video.stitcher.v1.VodConfig] with this information
+   * rather than setting this field directly.
    * </pre>
    *
-   * <code>string ad_tag_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ad_tag_uri = 6;</code>
    *
    * @return The bytes for adTagUri.
    */
@@ -171,18 +179,19 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -192,18 +201,19 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -216,18 +226,19 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -237,18 +248,19 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -262,18 +274,19 @@ public interface VodSessionOrBuilder
    *
    *
    * <pre>
-   * Key value pairs for ad tag macro replacement. If the
-   * specified ad tag URI has macros, this field provides the mapping
-   * to the value that will replace the macro in the ad tag URI.
-   * Macros are designated by square brackets.
-   * For example:
+   * Key value pairs for ad tag macro replacement, only available for VOD
+   * sessions that do not implement Google Ad manager ad insertion. If the
+   * specified ad tag URI has macros, this field provides the mapping to the
+   * value that will replace the macro in the ad tag URI.
+   *
+   * Macros are designated by square brackets, for example:
    *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
    *
    *   Ad tag macro map: `{"geoId": "123"}`
    *
    *   Fully qualified ad tag:
-   *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
+   *   `"https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
    *
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
@@ -406,4 +419,31 @@ public interface VodSessionOrBuilder
    * <code>.google.cloud.video.stitcher.v1.VodSession.GamSettings gam_settings = 13;</code>
    */
   com.google.cloud.video.stitcher.v1.VodSession.GamSettingsOrBuilder getGamSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the VOD config for this session, in the form of
+   * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+   * </pre>
+   *
+   * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The vodConfig.
+   */
+  java.lang.String getVodConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the VOD config for this session, in the form of
+   * `projects/{project}/locations/{location}/vodConfigs/{id}`.
+   * </pre>
+   *
+   * <code>string vod_config = 14 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for vodConfig.
+   */
+  com.google.protobuf.ByteString getVodConfigBytes();
 }

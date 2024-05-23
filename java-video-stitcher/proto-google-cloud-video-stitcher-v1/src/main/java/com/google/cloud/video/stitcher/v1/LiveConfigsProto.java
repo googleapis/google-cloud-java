@@ -52,37 +52,41 @@ public final class LiveConfigsProto {
       "\n1google/cloud/video/stitcher/v1/live_co"
           + "nfigs.proto\022\036google.cloud.video.stitcher"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032\036google/protobuf"
-          + "/duration.proto\"\216\006\n\nLiveConfig\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\003\022\027\n\nsource_uri\030\002 \001(\tB\003\340A\002\022\022\n\nad"
-          + "_tag_uri\030\003 \001(\t\022F\n\017gam_live_config\030\004 \001(\0132"
-          + "-.google.cloud.video.stitcher.v1.GamLive"
-          + "Config\022D\n\005state\030\005 \001(\01620.google.cloud.vid"
-          + "eo.stitcher.v1.LiveConfig.StateB\003\340A\003\022D\n\013"
-          + "ad_tracking\030\006 \001(\0162*.google.cloud.video.s"
-          + "titcher.v1.AdTrackingB\003\340A\002\022>\n\rdefault_sl"
-          + "ate\030\007 \001(\tB\'\372A$\n\"videostitcher.googleapis"
-          + ".com/Slate\022T\n\020stitching_policy\030\010 \001(\0162:.g"
-          + "oogle.cloud.video.stitcher.v1.LiveConfig"
-          + ".StitchingPolicy\022G\n\017prefetch_config\030\n \001("
-          + "\0132..google.cloud.video.stitcher.v1.Prefe"
-          + "tchConfig\"E\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003"
-          + "\"U\n\017StitchingPolicy\022 \n\034STITCHING_POLICY_"
-          + "UNSPECIFIED\020\000\022\017\n\013CUT_CURRENT\020\001\022\017\n\013COMPLE"
-          + "TE_AD\020\002:o\352Al\n\'videostitcher.googleapis.c"
-          + "om/LiveConfig\022Aprojects/{project}/locati"
-          + "ons/{location}/liveConfigs/{live_config}"
-          + "\"f\n\016PrefetchConfig\022\024\n\007enabled\030\001 \001(\010B\003\340A\002"
-          + "\022>\n\033initial_ad_request_duration\030\002 \001(\0132\031."
-          + "google.protobuf.Duration\"a\n\rGamLiveConfi"
-          + "g\022\031\n\014network_code\030\001 \001(\tB\003\340A\002\022\026\n\tasset_ke"
-          + "y\030\002 \001(\tB\003\340A\003\022\035\n\020custom_asset_key\030\003 \001(\tB\003"
-          + "\340A\003*A\n\nAdTracking\022\033\n\027AD_TRACKING_UNSPECI"
-          + "FIED\020\000\022\n\n\006CLIENT\020\001\022\n\n\006SERVER\020\002Bx\n\"com.go"
-          + "ogle.cloud.video.stitcher.v1B\020LiveConfig"
-          + "sProtoP\001Z>cloud.google.com/go/video/stit"
-          + "cher/apiv1/stitcherpb;stitcherpbb\006proto3"
+          + "ogle/api/resource.proto\0322google/cloud/vi"
+          + "deo/stitcher/v1/fetch_options.proto\032\036goo"
+          + "gle/protobuf/duration.proto\"\332\006\n\nLiveConf"
+          + "ig\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\027\n\nsource_uri\030\002 \001("
+          + "\tB\003\340A\002\022\022\n\nad_tag_uri\030\003 \001(\t\022F\n\017gam_live_c"
+          + "onfig\030\004 \001(\0132-.google.cloud.video.stitche"
+          + "r.v1.GamLiveConfig\022D\n\005state\030\005 \001(\01620.goog"
+          + "le.cloud.video.stitcher.v1.LiveConfig.St"
+          + "ateB\003\340A\003\022D\n\013ad_tracking\030\006 \001(\0162*.google.c"
+          + "loud.video.stitcher.v1.AdTrackingB\003\340A\002\022>"
+          + "\n\rdefault_slate\030\007 \001(\tB\'\372A$\n\"videostitche"
+          + "r.googleapis.com/Slate\022T\n\020stitching_poli"
+          + "cy\030\010 \001(\0162:.google.cloud.video.stitcher.v"
+          + "1.LiveConfig.StitchingPolicy\022G\n\017prefetch"
+          + "_config\030\n \001(\0132..google.cloud.video.stitc"
+          + "her.v1.PrefetchConfig\022J\n\024source_fetch_op"
+          + "tions\030\020 \001(\0132,.google.cloud.video.stitche"
+          + "r.v1.FetchOptions\"E\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010DE"
+          + "LETING\020\003\"U\n\017StitchingPolicy\022 \n\034STITCHING"
+          + "_POLICY_UNSPECIFIED\020\000\022\017\n\013CUT_CURRENT\020\001\022\017"
+          + "\n\013COMPLETE_AD\020\002:o\352Al\n\'videostitcher.goog"
+          + "leapis.com/LiveConfig\022Aprojects/{project"
+          + "}/locations/{location}/liveConfigs/{live"
+          + "_config}\"f\n\016PrefetchConfig\022\024\n\007enabled\030\001 "
+          + "\001(\010B\003\340A\002\022>\n\033initial_ad_request_duration\030"
+          + "\002 \001(\0132\031.google.protobuf.Duration\"a\n\rGamL"
+          + "iveConfig\022\031\n\014network_code\030\001 \001(\tB\003\340A\002\022\026\n\t"
+          + "asset_key\030\002 \001(\tB\003\340A\003\022\035\n\020custom_asset_key"
+          + "\030\003 \001(\tB\003\340A\003*A\n\nAdTracking\022\033\n\027AD_TRACKING"
+          + "_UNSPECIFIED\020\000\022\n\n\006CLIENT\020\001\022\n\n\006SERVER\020\002Bx"
+          + "\n\"com.google.cloud.video.stitcher.v1B\020Li"
+          + "veConfigsProtoP\001Z>cloud.google.com/go/vi"
+          + "deo/stitcher/apiv1/stitcherpb;stitcherpb"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -90,6 +94,7 @@ public final class LiveConfigsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.video.stitcher.v1.FetchOptionsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_cloud_video_stitcher_v1_LiveConfig_descriptor =
@@ -107,6 +112,7 @@ public final class LiveConfigsProto {
               "DefaultSlate",
               "StitchingPolicy",
               "PrefetchConfig",
+              "SourceFetchOptions",
             });
     internal_static_google_cloud_video_stitcher_v1_PrefetchConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -133,6 +139,7 @@ public final class LiveConfigsProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.video.stitcher.v1.FetchOptionsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
   }
 

@@ -22,6 +22,7 @@ import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagem
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListLocationsPagedResponse;
+import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityCenterServicesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -50,6 +51,7 @@ import com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomMo
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
@@ -61,12 +63,16 @@ import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthA
 import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.SecurityCenterService;
 import com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycentermanagement.v1.UpdateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse;
@@ -957,6 +963,138 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceMethodDescriptor =
+          ApiMethodDescriptor.<GetSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/GetSecurityCenterService")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSecurityCenterServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/securityCenterServices/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecurityCenterServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/locations/*/securityCenterServices/*}",
+                          "/v1/{name=organizations/*/locations/*/securityCenterServices/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecurityCenterServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityCenterService>newBuilder()
+                      .setDefaultInstance(SecurityCenterService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/ListSecurityCenterServices")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSecurityCenterServicesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/securityCenterServices",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSecurityCenterServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/locations/*}/securityCenterServices",
+                          "/v1/{parent=organizations/*/locations/*}/securityCenterServices")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSecurityCenterServicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSecurityCenterServicesResponse>newBuilder()
+                      .setDefaultInstance(ListSecurityCenterServicesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/UpdateSecurityCenterService")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSecurityCenterServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{securityCenterService.name=projects/*/locations/*/securityCenterServices/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecurityCenterServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "securityCenterService.name",
+                                request.getSecurityCenterService().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{securityCenterService.name=folders/*/locations/*/securityCenterServices/*}",
+                          "/v1/{securityCenterService.name=organizations/*/locations/*/securityCenterServices/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecurityCenterServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityCenterService",
+                                      request.getSecurityCenterService(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityCenterService>newBuilder()
+                      .setDefaultInstance(SecurityCenterService.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1111,6 +1249,15 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
           ValidateEventThreatDetectionCustomModuleRequest,
           ValidateEventThreatDetectionCustomModuleResponse>
       validateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable;
+  private final UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable;
+  private final UnaryCallable<
+          ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable;
+  private final UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1458,6 +1605,47 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetSecurityCenterServiceRequest, SecurityCenterService>
+        getSecurityCenterServiceTransportSettings =
+            HttpJsonCallSettings
+                .<GetSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+                .setMethodDescriptor(getSecurityCenterServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+        listSecurityCenterServicesTransportSettings =
+            HttpJsonCallSettings
+                .<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>newBuilder()
+                .setMethodDescriptor(listSecurityCenterServicesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+        updateSecurityCenterServiceTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+                .setMethodDescriptor(updateSecurityCenterServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "security_center_service.name",
+                          String.valueOf(request.getSecurityCenterService().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1602,6 +1790,26 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
             validateEventThreatDetectionCustomModuleTransportSettings,
             settings.validateEventThreatDetectionCustomModuleSettings(),
             clientContext);
+    this.getSecurityCenterServiceCallable =
+        callableFactory.createUnaryCallable(
+            getSecurityCenterServiceTransportSettings,
+            settings.getSecurityCenterServiceSettings(),
+            clientContext);
+    this.listSecurityCenterServicesCallable =
+        callableFactory.createUnaryCallable(
+            listSecurityCenterServicesTransportSettings,
+            settings.listSecurityCenterServicesSettings(),
+            clientContext);
+    this.listSecurityCenterServicesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSecurityCenterServicesTransportSettings,
+            settings.listSecurityCenterServicesSettings(),
+            clientContext);
+    this.updateSecurityCenterServiceCallable =
+        callableFactory.createUnaryCallable(
+            updateSecurityCenterServiceTransportSettings,
+            settings.updateSecurityCenterServiceSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1637,6 +1845,9 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
     methodDescriptors.add(updateEventThreatDetectionCustomModuleMethodDescriptor);
     methodDescriptors.add(deleteEventThreatDetectionCustomModuleMethodDescriptor);
     methodDescriptors.add(validateEventThreatDetectionCustomModuleMethodDescriptor);
+    methodDescriptors.add(getSecurityCenterServiceMethodDescriptor);
+    methodDescriptors.add(listSecurityCenterServicesMethodDescriptor);
+    methodDescriptors.add(updateSecurityCenterServiceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1821,6 +2032,30 @@ public class HttpJsonSecurityCenterManagementStub extends SecurityCenterManageme
           ValidateEventThreatDetectionCustomModuleResponse>
       validateEventThreatDetectionCustomModuleCallable() {
     return validateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable() {
+    return getSecurityCenterServiceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable() {
+    return listSecurityCenterServicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable() {
+    return listSecurityCenterServicesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable() {
+    return updateSecurityCenterServiceCallable;
   }
 
   @Override

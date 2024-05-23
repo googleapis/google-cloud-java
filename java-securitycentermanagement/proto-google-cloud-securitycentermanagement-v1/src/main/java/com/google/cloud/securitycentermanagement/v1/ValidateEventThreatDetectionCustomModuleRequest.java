@@ -82,7 +82,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    * Its format is:
    *
-   *   * "organizations/{organization}/locations/{location}".
+   *   * `organizations/{organization}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -111,7 +111,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
    *
    * Its format is:
    *
-   *   * "organizations/{organization}/locations/{location}".
+   *   * `organizations/{organization}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -688,7 +688,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     *   * "organizations/{organization}/locations/{location}".
+     *   * `organizations/{organization}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -716,7 +716,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     *   * "organizations/{organization}/locations/{location}".
+     *   * `organizations/{organization}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -744,7 +744,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     *   * "organizations/{organization}/locations/{location}".
+     *   * `organizations/{organization}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -771,7 +771,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     *   * "organizations/{organization}/locations/{location}".
+     *   * `organizations/{organization}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -794,7 +794,7 @@ public final class ValidateEventThreatDetectionCustomModuleRequest
      *
      * Its format is:
      *
-     *   * "organizations/{organization}/locations/{location}".
+     *   * `organizations/{organization}/locations/{location}`.
      * </pre>
      *
      * <code>

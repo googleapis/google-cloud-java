@@ -21,6 +21,7 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,16 +54,19 @@ import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
+import com.google.cloud.video.stitcher.v1.CreateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
+import com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest;
+import com.google.cloud.video.stitcher.v1.GetVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest;
 import com.google.cloud.video.stitcher.v1.ListCdnKeysRequest;
@@ -75,6 +79,8 @@ import com.google.cloud.video.stitcher.v1.ListSlatesRequest;
 import com.google.cloud.video.stitcher.v1.ListSlatesResponse;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsRequest;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsResponse;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse;
 import com.google.cloud.video.stitcher.v1.LiveAdTagDetail;
@@ -83,8 +89,11 @@ import com.google.cloud.video.stitcher.v1.LiveSession;
 import com.google.cloud.video.stitcher.v1.OperationMetadata;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.UpdateSlateRequest;
+import com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.VodAdTagDetail;
+import com.google.cloud.video.stitcher.v1.VodConfig;
 import com.google.cloud.video.stitcher.v1.VodSession;
 import com.google.cloud.video.stitcher.v1.VodStitchDetail;
 import com.google.common.collect.ImmutableList;
@@ -200,6 +209,22 @@ public class VideoStitcherServiceStubSettings
   private final UnaryCallSettings<DeleteLiveConfigRequest, Operation> deleteLiveConfigSettings;
   private final OperationCallSettings<DeleteLiveConfigRequest, Empty, OperationMetadata>
       deleteLiveConfigOperationSettings;
+  private final UnaryCallSettings<UpdateLiveConfigRequest, Operation> updateLiveConfigSettings;
+  private final OperationCallSettings<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationSettings;
+  private final UnaryCallSettings<CreateVodConfigRequest, Operation> createVodConfigSettings;
+  private final OperationCallSettings<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationSettings;
+  private final PagedCallSettings<
+          ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+      listVodConfigsSettings;
+  private final UnaryCallSettings<GetVodConfigRequest, VodConfig> getVodConfigSettings;
+  private final UnaryCallSettings<DeleteVodConfigRequest, Operation> deleteVodConfigSettings;
+  private final OperationCallSettings<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationSettings;
+  private final UnaryCallSettings<UpdateVodConfigRequest, Operation> updateVodConfigSettings;
+  private final OperationCallSettings<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationSettings;
 
   private static final PagedListDescriptor<ListCdnKeysRequest, ListCdnKeysResponse, CdnKey>
       LIST_CDN_KEYS_PAGE_STR_DESC =
@@ -434,6 +459,43 @@ public class VideoStitcherServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig>
+      LIST_VOD_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListVodConfigsRequest injectToken(ListVodConfigsRequest payload, String token) {
+              return ListVodConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListVodConfigsRequest injectPageSize(
+                ListVodConfigsRequest payload, int pageSize) {
+              return ListVodConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListVodConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListVodConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<VodConfig> extractResources(ListVodConfigsResponse payload) {
+              return payload.getVodConfigsList() == null
+                  ? ImmutableList.<VodConfig>of()
+                  : payload.getVodConfigsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCdnKeysRequest, ListCdnKeysResponse, ListCdnKeysPagedResponse>
       LIST_CDN_KEYS_PAGE_STR_FACT =
@@ -551,6 +613,23 @@ public class VideoStitcherServiceStubSettings
               PageContext<ListLiveConfigsRequest, ListLiveConfigsResponse, LiveConfig> pageContext =
                   PageContext.create(callable, LIST_LIVE_CONFIGS_PAGE_STR_DESC, request, context);
               return ListLiveConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+      LIST_VOD_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListVodConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListVodConfigsRequest, ListVodConfigsResponse> callable,
+                ListVodConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListVodConfigsResponse> futureResponse) {
+              PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> pageContext =
+                  PageContext.create(callable, LIST_VOD_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListVodConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -738,6 +817,62 @@ public class VideoStitcherServiceStubSettings
     return deleteLiveConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateLiveConfig. */
+  public UnaryCallSettings<UpdateLiveConfigRequest, Operation> updateLiveConfigSettings() {
+    return updateLiveConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateLiveConfig. */
+  public OperationCallSettings<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationSettings() {
+    return updateLiveConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createVodConfig. */
+  public UnaryCallSettings<CreateVodConfigRequest, Operation> createVodConfigSettings() {
+    return createVodConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createVodConfig. */
+  public OperationCallSettings<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationSettings() {
+    return createVodConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listVodConfigs. */
+  public PagedCallSettings<
+          ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+      listVodConfigsSettings() {
+    return listVodConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getVodConfig. */
+  public UnaryCallSettings<GetVodConfigRequest, VodConfig> getVodConfigSettings() {
+    return getVodConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteVodConfig. */
+  public UnaryCallSettings<DeleteVodConfigRequest, Operation> deleteVodConfigSettings() {
+    return deleteVodConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteVodConfig. */
+  public OperationCallSettings<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationSettings() {
+    return deleteVodConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateVodConfig. */
+  public UnaryCallSettings<UpdateVodConfigRequest, Operation> updateVodConfigSettings() {
+    return updateVodConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateVodConfig. */
+  public OperationCallSettings<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationSettings() {
+    return updateVodConfigOperationSettings;
+  }
+
   public VideoStitcherServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -850,6 +985,16 @@ public class VideoStitcherServiceStubSettings
     getLiveConfigSettings = settingsBuilder.getLiveConfigSettings().build();
     deleteLiveConfigSettings = settingsBuilder.deleteLiveConfigSettings().build();
     deleteLiveConfigOperationSettings = settingsBuilder.deleteLiveConfigOperationSettings().build();
+    updateLiveConfigSettings = settingsBuilder.updateLiveConfigSettings().build();
+    updateLiveConfigOperationSettings = settingsBuilder.updateLiveConfigOperationSettings().build();
+    createVodConfigSettings = settingsBuilder.createVodConfigSettings().build();
+    createVodConfigOperationSettings = settingsBuilder.createVodConfigOperationSettings().build();
+    listVodConfigsSettings = settingsBuilder.listVodConfigsSettings().build();
+    getVodConfigSettings = settingsBuilder.getVodConfigSettings().build();
+    deleteVodConfigSettings = settingsBuilder.deleteVodConfigSettings().build();
+    deleteVodConfigOperationSettings = settingsBuilder.deleteVodConfigOperationSettings().build();
+    updateVodConfigSettings = settingsBuilder.updateVodConfigSettings().build();
+    updateVodConfigOperationSettings = settingsBuilder.updateVodConfigOperationSettings().build();
   }
 
   /** Builder for VideoStitcherServiceStubSettings. */
@@ -923,6 +1068,29 @@ public class VideoStitcherServiceStubSettings
         deleteLiveConfigSettings;
     private final OperationCallSettings.Builder<DeleteLiveConfigRequest, Empty, OperationMetadata>
         deleteLiveConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateLiveConfigRequest, Operation>
+        updateLiveConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+        updateLiveConfigOperationSettings;
+    private final UnaryCallSettings.Builder<CreateVodConfigRequest, Operation>
+        createVodConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateVodConfigRequest, VodConfig, OperationMetadata>
+        createVodConfigOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+        listVodConfigsSettings;
+    private final UnaryCallSettings.Builder<GetVodConfigRequest, VodConfig> getVodConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteVodConfigRequest, Operation>
+        deleteVodConfigSettings;
+    private final OperationCallSettings.Builder<DeleteVodConfigRequest, Empty, OperationMetadata>
+        deleteVodConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateVodConfigRequest, Operation>
+        updateVodConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateVodConfigRequest, VodConfig, OperationMetadata>
+        updateVodConfigOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -931,6 +1099,9 @@ public class VideoStitcherServiceStubSettings
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -947,6 +1118,17 @@ public class VideoStitcherServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -992,6 +1174,16 @@ public class VideoStitcherServiceStubSettings
       getLiveConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteLiveConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteLiveConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateLiveConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateLiveConfigOperationSettings = OperationCallSettings.newBuilder();
+      createVodConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createVodConfigOperationSettings = OperationCallSettings.newBuilder();
+      listVodConfigsSettings = PagedCallSettings.newBuilder(LIST_VOD_CONFIGS_PAGE_STR_FACT);
+      getVodConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteVodConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteVodConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateVodConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateVodConfigOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1018,7 +1210,13 @@ public class VideoStitcherServiceStubSettings
               createLiveConfigSettings,
               listLiveConfigsSettings,
               getLiveConfigSettings,
-              deleteLiveConfigSettings);
+              deleteLiveConfigSettings,
+              updateLiveConfigSettings,
+              createVodConfigSettings,
+              listVodConfigsSettings,
+              getVodConfigSettings,
+              deleteVodConfigSettings,
+              updateVodConfigSettings);
       initDefaults(this);
     }
 
@@ -1057,6 +1255,16 @@ public class VideoStitcherServiceStubSettings
       getLiveConfigSettings = settings.getLiveConfigSettings.toBuilder();
       deleteLiveConfigSettings = settings.deleteLiveConfigSettings.toBuilder();
       deleteLiveConfigOperationSettings = settings.deleteLiveConfigOperationSettings.toBuilder();
+      updateLiveConfigSettings = settings.updateLiveConfigSettings.toBuilder();
+      updateLiveConfigOperationSettings = settings.updateLiveConfigOperationSettings.toBuilder();
+      createVodConfigSettings = settings.createVodConfigSettings.toBuilder();
+      createVodConfigOperationSettings = settings.createVodConfigOperationSettings.toBuilder();
+      listVodConfigsSettings = settings.listVodConfigsSettings.toBuilder();
+      getVodConfigSettings = settings.getVodConfigSettings.toBuilder();
+      deleteVodConfigSettings = settings.deleteVodConfigSettings.toBuilder();
+      deleteVodConfigOperationSettings = settings.deleteVodConfigOperationSettings.toBuilder();
+      updateVodConfigSettings = settings.updateVodConfigSettings.toBuilder();
+      updateVodConfigOperationSettings = settings.updateVodConfigOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1083,7 +1291,13 @@ public class VideoStitcherServiceStubSettings
               createLiveConfigSettings,
               listLiveConfigsSettings,
               getLiveConfigSettings,
-              deleteLiveConfigSettings);
+              deleteLiveConfigSettings,
+              updateLiveConfigSettings,
+              createVodConfigSettings,
+              listVodConfigsSettings,
+              getVodConfigSettings,
+              deleteVodConfigSettings,
+              updateVodConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -1218,6 +1432,36 @@ public class VideoStitcherServiceStubSettings
           .deleteLiveConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateLiveConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createVodConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listVodConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getVodConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteVodConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateVodConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createCdnKeyOperationSettings()
@@ -1394,6 +1638,102 @@ public class VideoStitcherServiceStubSettings
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateLiveConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateLiveConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LiveConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createVodConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateVodConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(VodConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteVodConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteVodConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateVodConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateVodConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(VodConfig.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1616,6 +1956,63 @@ public class VideoStitcherServiceStubSettings
     public OperationCallSettings.Builder<DeleteLiveConfigRequest, Empty, OperationMetadata>
         deleteLiveConfigOperationSettings() {
       return deleteLiveConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLiveConfig. */
+    public UnaryCallSettings.Builder<UpdateLiveConfigRequest, Operation>
+        updateLiveConfigSettings() {
+      return updateLiveConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLiveConfig. */
+    public OperationCallSettings.Builder<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+        updateLiveConfigOperationSettings() {
+      return updateLiveConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createVodConfig. */
+    public UnaryCallSettings.Builder<CreateVodConfigRequest, Operation> createVodConfigSettings() {
+      return createVodConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createVodConfig. */
+    public OperationCallSettings.Builder<CreateVodConfigRequest, VodConfig, OperationMetadata>
+        createVodConfigOperationSettings() {
+      return createVodConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listVodConfigs. */
+    public PagedCallSettings.Builder<
+            ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+        listVodConfigsSettings() {
+      return listVodConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getVodConfig. */
+    public UnaryCallSettings.Builder<GetVodConfigRequest, VodConfig> getVodConfigSettings() {
+      return getVodConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVodConfig. */
+    public UnaryCallSettings.Builder<DeleteVodConfigRequest, Operation> deleteVodConfigSettings() {
+      return deleteVodConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVodConfig. */
+    public OperationCallSettings.Builder<DeleteVodConfigRequest, Empty, OperationMetadata>
+        deleteVodConfigOperationSettings() {
+      return deleteVodConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateVodConfig. */
+    public UnaryCallSettings.Builder<UpdateVodConfigRequest, Operation> updateVodConfigSettings() {
+      return updateVodConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateVodConfig. */
+    public OperationCallSettings.Builder<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+        updateVodConfigOperationSettings() {
+      return updateVodConfigOperationSettings;
     }
 
     @Override

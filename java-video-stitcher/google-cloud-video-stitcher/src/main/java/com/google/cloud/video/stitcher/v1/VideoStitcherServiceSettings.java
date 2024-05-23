@@ -21,6 +21,7 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -266,6 +267,66 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
       deleteLiveConfigOperationSettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings())
         .deleteLiveConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLiveConfig. */
+  public UnaryCallSettings<UpdateLiveConfigRequest, Operation> updateLiveConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).updateLiveConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLiveConfig. */
+  public OperationCallSettings<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .updateLiveConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createVodConfig. */
+  public UnaryCallSettings<CreateVodConfigRequest, Operation> createVodConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).createVodConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createVodConfig. */
+  public OperationCallSettings<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .createVodConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listVodConfigs. */
+  public PagedCallSettings<
+          ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+      listVodConfigsSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).listVodConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVodConfig. */
+  public UnaryCallSettings<GetVodConfigRequest, VodConfig> getVodConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).getVodConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteVodConfig. */
+  public UnaryCallSettings<DeleteVodConfigRequest, Operation> deleteVodConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteVodConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteVodConfig. */
+  public OperationCallSettings<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .deleteVodConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateVodConfig. */
+  public UnaryCallSettings<UpdateVodConfigRequest, Operation> updateVodConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).updateVodConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateVodConfig. */
+  public OperationCallSettings<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .updateVodConfigOperationSettings();
   }
 
   public static final VideoStitcherServiceSettings create(VideoStitcherServiceStubSettings stub)
@@ -555,6 +616,63 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     public OperationCallSettings.Builder<DeleteLiveConfigRequest, Empty, OperationMetadata>
         deleteLiveConfigOperationSettings() {
       return getStubSettingsBuilder().deleteLiveConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLiveConfig. */
+    public UnaryCallSettings.Builder<UpdateLiveConfigRequest, Operation>
+        updateLiveConfigSettings() {
+      return getStubSettingsBuilder().updateLiveConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLiveConfig. */
+    public OperationCallSettings.Builder<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+        updateLiveConfigOperationSettings() {
+      return getStubSettingsBuilder().updateLiveConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createVodConfig. */
+    public UnaryCallSettings.Builder<CreateVodConfigRequest, Operation> createVodConfigSettings() {
+      return getStubSettingsBuilder().createVodConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createVodConfig. */
+    public OperationCallSettings.Builder<CreateVodConfigRequest, VodConfig, OperationMetadata>
+        createVodConfigOperationSettings() {
+      return getStubSettingsBuilder().createVodConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listVodConfigs. */
+    public PagedCallSettings.Builder<
+            ListVodConfigsRequest, ListVodConfigsResponse, ListVodConfigsPagedResponse>
+        listVodConfigsSettings() {
+      return getStubSettingsBuilder().listVodConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVodConfig. */
+    public UnaryCallSettings.Builder<GetVodConfigRequest, VodConfig> getVodConfigSettings() {
+      return getStubSettingsBuilder().getVodConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVodConfig. */
+    public UnaryCallSettings.Builder<DeleteVodConfigRequest, Operation> deleteVodConfigSettings() {
+      return getStubSettingsBuilder().deleteVodConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVodConfig. */
+    public OperationCallSettings.Builder<DeleteVodConfigRequest, Empty, OperationMetadata>
+        deleteVodConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteVodConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateVodConfig. */
+    public UnaryCallSettings.Builder<UpdateVodConfigRequest, Operation> updateVodConfigSettings() {
+      return getStubSettingsBuilder().updateVodConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateVodConfig. */
+    public OperationCallSettings.Builder<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+        updateVodConfigOperationSettings() {
+      return getStubSettingsBuilder().updateVodConfigOperationSettings();
     }
 
     @Override

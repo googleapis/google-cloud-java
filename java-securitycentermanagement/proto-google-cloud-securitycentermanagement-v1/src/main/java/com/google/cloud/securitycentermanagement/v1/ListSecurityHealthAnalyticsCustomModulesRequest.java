@@ -77,11 +77,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
-   * or
-   * "projects/{project}/locations/{location}"
+   * Required. Name of parent organization, folder, or project in which to list
+   * custom modules, specified in one of the following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -106,11 +107,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
-   * or
-   * "projects/{project}/locations/{location}"
+   * Required. Name of parent organization, folder, or project in which to list
+   * custom modules, specified in one of the following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -647,11 +649,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of parent organization, folder, or project in which to list
+     * custom modules, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -675,11 +678,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of parent organization, folder, or project in which to list
+     * custom modules, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -703,11 +707,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of parent organization, folder, or project in which to list
+     * custom modules, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -730,11 +735,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of parent organization, folder, or project in which to list
+     * custom modules, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -753,11 +759,12 @@ public final class ListSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of parent organization, folder, or project in which to list
+     * custom modules, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

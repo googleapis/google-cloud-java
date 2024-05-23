@@ -22,6 +22,7 @@ import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagem
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListLocationsPagedResponse;
+import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityCenterServicesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,7 @@ import com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomMo
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
@@ -51,12 +53,16 @@ import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthA
 import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.SecurityCenterService;
 import com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycentermanagement.v1.UpdateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse;
@@ -251,6 +257,29 @@ public abstract class SecurityCenterManagementStub implements BackgroundResource
       validateEventThreatDetectionCustomModuleCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: validateEventThreatDetectionCustomModuleCallable()");
+  }
+
+  public UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSecurityCenterServiceCallable()");
+  }
+
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSecurityCenterServicesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSecurityCenterServicesCallable()");
+  }
+
+  public UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSecurityCenterServiceCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

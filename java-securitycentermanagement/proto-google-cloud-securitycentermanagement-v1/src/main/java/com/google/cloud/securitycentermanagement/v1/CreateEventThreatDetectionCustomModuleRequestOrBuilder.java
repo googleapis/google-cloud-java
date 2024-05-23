@@ -29,10 +29,10 @@ public interface CreateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of parent for the module. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * `organizations/{organization}/locations/{location}`,
+   * `folders/{folder}/locations/{location}`,
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -47,10 +47,10 @@ public interface CreateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. Name of parent for the module. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * `organizations/{organization}/locations/{location}`,
+   * `folders/{folder}/locations/{location}`,
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

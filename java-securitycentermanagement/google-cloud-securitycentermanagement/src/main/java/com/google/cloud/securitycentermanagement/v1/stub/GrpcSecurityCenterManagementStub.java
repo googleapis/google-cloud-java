@@ -22,6 +22,7 @@ import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagem
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListLocationsPagedResponse;
+import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityCenterServicesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -45,6 +46,7 @@ import com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomMo
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.GetEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
@@ -56,12 +58,16 @@ import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthA
 import com.google.cloud.securitycentermanagement.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest;
+import com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycentermanagement.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycentermanagement.v1.SecurityCenterService;
 import com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycentermanagement.v1.UpdateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest;
 import com.google.cloud.securitycentermanagement.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycentermanagement.v1.ValidateEventThreatDetectionCustomModuleResponse;
@@ -397,6 +403,44 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       ValidateEventThreatDetectionCustomModuleResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceMethodDescriptor =
+          MethodDescriptor.<GetSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/GetSecurityCenterService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSecurityCenterServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SecurityCenterService.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesMethodDescriptor =
+          MethodDescriptor
+              .<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/ListSecurityCenterServices")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSecurityCenterServicesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSecurityCenterServicesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceMethodDescriptor =
+          MethodDescriptor.<UpdateSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycentermanagement.v1.SecurityCenterManagement/UpdateSecurityCenterService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSecurityCenterServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SecurityCenterService.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -502,6 +546,15 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
           ValidateEventThreatDetectionCustomModuleRequest,
           ValidateEventThreatDetectionCustomModuleResponse>
       validateEventThreatDetectionCustomModuleCallable;
+  private final UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable;
+  private final UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable;
+  private final UnaryCallable<
+          ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable;
+  private final UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -829,6 +882,42 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetSecurityCenterServiceRequest, SecurityCenterService>
+        getSecurityCenterServiceTransportSettings =
+            GrpcCallSettings.<GetSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+                .setMethodDescriptor(getSecurityCenterServiceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+        listSecurityCenterServicesTransportSettings =
+            GrpcCallSettings
+                .<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>newBuilder()
+                .setMethodDescriptor(listSecurityCenterServicesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+        updateSecurityCenterServiceTransportSettings =
+            GrpcCallSettings.<UpdateSecurityCenterServiceRequest, SecurityCenterService>newBuilder()
+                .setMethodDescriptor(updateSecurityCenterServiceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "security_center_service.name",
+                          String.valueOf(request.getSecurityCenterService().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -969,6 +1058,26 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
         callableFactory.createUnaryCallable(
             validateEventThreatDetectionCustomModuleTransportSettings,
             settings.validateEventThreatDetectionCustomModuleSettings(),
+            clientContext);
+    this.getSecurityCenterServiceCallable =
+        callableFactory.createUnaryCallable(
+            getSecurityCenterServiceTransportSettings,
+            settings.getSecurityCenterServiceSettings(),
+            clientContext);
+    this.listSecurityCenterServicesCallable =
+        callableFactory.createUnaryCallable(
+            listSecurityCenterServicesTransportSettings,
+            settings.listSecurityCenterServicesSettings(),
+            clientContext);
+    this.listSecurityCenterServicesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSecurityCenterServicesTransportSettings,
+            settings.listSecurityCenterServicesSettings(),
+            clientContext);
+    this.updateSecurityCenterServiceCallable =
+        callableFactory.createUnaryCallable(
+            updateSecurityCenterServiceTransportSettings,
+            settings.updateSecurityCenterServiceSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -1167,6 +1276,30 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
           ValidateEventThreatDetectionCustomModuleResponse>
       validateEventThreatDetectionCustomModuleCallable() {
     return validateEventThreatDetectionCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSecurityCenterServiceRequest, SecurityCenterService>
+      getSecurityCenterServiceCallable() {
+    return getSecurityCenterServiceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesResponse>
+      listSecurityCenterServicesCallable() {
+    return listSecurityCenterServicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSecurityCenterServicesRequest, ListSecurityCenterServicesPagedResponse>
+      listSecurityCenterServicesPagedCallable() {
+    return listSecurityCenterServicesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSecurityCenterServiceRequest, SecurityCenterService>
+      updateSecurityCenterServiceCallable() {
+    return updateSecurityCenterServiceCallable;
   }
 
   @Override
