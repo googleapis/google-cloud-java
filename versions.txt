@@ -772,3 +772,6 @@ proto-google-maps-routeoptimization-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-maps-routeoptimization-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-publicca-v1:0.40.0:0.41.0-SNAPSHOT
 grpc-google-cloud-publicca-v1:0.40.0:0.41.0-SNAPSHOT
+google-cloud-visionai:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-visionai-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-visionai-v1:0.0.0:0.0.1-SNAPSHOT
