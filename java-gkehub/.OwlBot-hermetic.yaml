@@ -22,6 +22,8 @@ deep-remove-regex:
 deep-copy-regex:
 - source: "/google/cloud/gkehub/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-gkehub/$1/proto-google-cloud-gkehub-$1/src"
+- source: "/google/cloud/gkehub/servicemesh/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-gkehub/servicemesh/$1/proto-google-cloud-gkehub-$1/src"
 - source: "/google/cloud/gkehub/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-gkehub/$1/grpc-google-cloud-gkehub-$1/src"
 
