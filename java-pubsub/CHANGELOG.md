@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.129.6](https://github.com/googleapis/java-pubsub/compare/v1.129.5...v1.129.6) (2024-05-23)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.39.0 ([#2040](https://github.com/googleapis/java-pubsub/issues/2040)) ([eb6bd9c](https://github.com/googleapis/java-pubsub/commit/eb6bd9c559073429d8338b9d8fa83e0e3f61b8e9))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.2 ([#2035](https://github.com/googleapis/java-pubsub/issues/2035)) ([40fdd7a](https://github.com/googleapis/java-pubsub/commit/40fdd7a71aa07d6c64ac6f96d7c6642af3563280))
+
 ## [1.129.5](https://github.com/googleapis/java-pubsub/compare/v1.129.4...v1.129.5) (2024-05-16)
 
 
