@@ -41,6 +41,9 @@ function find_existing_version_pom() {
 return_code=0
 
 for pom_file in $(find . -maxdepth 3 -name pom.xml|sort --dictionary-order); do
+  if [[ "${pom_file}" == *java-samples* ]]; then
+      continue
+  fi
   find_existing_version_pom "${pom_file}"
 done
 

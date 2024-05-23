@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.44.0 (2024-05-23)
+
+### Features
+
+* Add ServiceMesh feature to gkehub v1beta API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* Comments for fields in message `.google.cloud.gkehub.v1beta.Feature` are changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
+
+
 ## 1.43.0 (2024-05-08)
 
 * No change

@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>4.38.0</version>
+  <version>4.39.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:4.38.0'
+implementation 'com.google.cloud:google-cloud-speech:4.39.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.38.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.39.0"
 ```
 <!-- {x-version-update-end} -->
 

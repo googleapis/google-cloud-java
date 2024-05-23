@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.45.0 (2024-05-23)
+
+### Features
+
+* add maximum page_size to ListEndpoint API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* add maximum page_size to ListNamespace API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* add maximum page_size to ListService API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+
+
+
 ## 2.44.0 (2024-05-08)
 
 * No change

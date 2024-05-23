@@ -1,5 +1,134 @@
 # Changelog
 
+## [1.38.0](https://github.com/googleapis/google-cloud-java/compare/v1.37.0...v1.38.0) (2024-05-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* [parallelstore] An existing field `end_time` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata`
+* [parallelstore] An existing field `source` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata`
+* [parallelstore] An existing field `destination` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata`
+* [parallelstore] An existing field `create_time` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata`
+* [parallelstore] An existing field `destination_path` is renamed to `destination_parallelstore` in message `.google.cloud.parallelstore.v1beta.ImportDataRequest`
+* [parallelstore] An existing field `source_path` is renamed to `source_parallelstore` in message `.google.cloud.parallelstore.v1beta.ExportDataRequest`
+* [parallelstore] An existing field `destination_gcs_uri` is renamed to `destination_gcs_bucket` in message `.google.cloud.parallelstore.v1beta.ExportDataRequest`
+* [parallelstore] An existing field `source_gcs_uri` is renamed to `source_gcs_bucket` in message `.google.cloud.parallelstore.v1beta.ImportDataRequest`
+
+### Features
+
+* [aiplatform] Added the v1beta1 version of the GenAI Tuning Service ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* [batch] Add UpdateJob API to update the job spec, only task_count is supported now ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [batch] Update description on allowed_locations in LocationPolicy field ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [compute] Update Compute Engine API to revision 20240430 (https://github.com/googleapis/google-cloud-java/pull/900) ([9d5927e](https://github.com/googleapis/google-cloud-java/commit/9d5927e613c66620fc02a32022314feaffeac670))
+* [deploy] add Skaffold verbose support to Execution Environment properties ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [developerconnect] new module for developerconnect ([#10877](https://github.com/googleapis/google-cloud-java/issues/10877)) ([d89b9f0](https://github.com/googleapis/google-cloud-java/commit/d89b9f02daa1cb02701b5c8228fa863ccf6a9481))
+* [gke-backup] add fine-grained restore ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gke-backup] add gitops ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gke-backup] add restore order ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gke-backup] add strict-permissive mode ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gke-backup] add volume restore flexibility ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gke-multi-cloud] option to ignore_errors while deleting Azure clusters / nodepools ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* [gkehub] Add ServiceMesh feature to gkehub v1beta API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [kms] add client library for KMS Autokey service, which enables automated KMS key provision and management ([9d5927e](https://github.com/googleapis/google-cloud-java/commit/9d5927e613c66620fc02a32022314feaffeac670))
+* [maps-places] add `generative_summary` and `area_summary` for place summaries ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [maps-routeoptimization] link RPC & REST reference documentation for Route Optimization ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [netapp] Add a new Service Level FLEX ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* [netapp] Add backup chain bytes to BackupConfig in Volume ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* [netapp] Add Location metadata support ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* [netapp] Add Tiering Policy to Volume ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* [parallelstore] A new field `api_version` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `api_version` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `create_time` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `create_time` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `destination_gcs_bucket` is added to message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `destination_parallelstore` is added to message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `end_time` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `end_time` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `requested_cancellation` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `requested_cancellation` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `source_gcs_bucket` is added to message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `source_parallelstore` is added to message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `status_message` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `status_message` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `target` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `target` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `verb` is added to message `.google.cloud.parallelstore.v1beta.ExportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new field `verb` is added to message `.google.cloud.parallelstore.v1beta.ImportDataMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A new message `DestinationGcsBucket` is added ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] A new message `DestinationParallelstore` is added ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] A new message `SourceGcsBucket` is added ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] A new message `SourceParallelstore` is added ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [securitycentermanagement] Adding support for new Security Center Management Apis ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A new enum `Effectiveness` is added ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A new field `effectiveness` is added to message `.google.shopping.merchant.reports.v1beta.PriceInsightsProductView` ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] add `effectiveness` field to `price_insights_product_view` table in Reports sub-API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] add `non_product_performance_view` table to Reports sub-API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [vertexai] Allow tuned model to be used. ([#10825](https://github.com/googleapis/google-cloud-java/issues/10825)) ([9081269](https://github.com/googleapis/google-cloud-java/commit/9081269c26399a008498fbb605ef6c7d1b0c770b))
+* [video-stitcher] add apis for Create, Read, Update, Delete for VODConfigs ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [video-stitcher] added adtracking to Livesession ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [video-stitcher] added fetchoptions with custom headers for Live and VODConfigs ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [video-stitcher] added targetting parameter support to Livesession ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [video-stitcher] added token config for MediaCdnKey ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [video-stitcher] allowed usage for VODConfigs in VODSession ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [visionai] new module for visionai ([#10875](https://github.com/googleapis/google-cloud-java/issues/10875)) ([8d53590](https://github.com/googleapis/google-cloud-java/commit/8d5359002df2a96509efdc32b49409c6fb329c0b))
+* add security publicca v1 ([#10865](https://github.com/googleapis/google-cloud-java/issues/10865)) ([c3e5366](https://github.com/googleapis/google-cloud-java/commit/c3e5366ac18cded8c4e7a52bf3cdde24e4da3f76))
+
+
+### Bug Fixes
+
+* [parallelstore] An existing field `create_time` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] An existing field `destination_gcs_uri` is renamed to `destination_gcs_bucket` in message `.google.cloud.parallelstore.v1beta.ExportDataRequest` ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] An existing field `destination_path` is renamed to `destination_parallelstore` in message `.google.cloud.parallelstore.v1beta.ImportDataRequest` ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] An existing field `destination` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] An existing field `end_time` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] An existing field `source_gcs_uri` is renamed to `source_gcs_bucket` in message `.google.cloud.parallelstore.v1beta.ImportDataRequest` ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] An existing field `source_path` is renamed to `source_parallelstore` in message `.google.cloud.parallelstore.v1beta.ExportDataRequest` ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [parallelstore] An existing field `source` is removed from message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* initiate once at 2 a.m. ([#10838](https://github.com/googleapis/google-cloud-java/issues/10838)) ([db5fb77](https://github.com/googleapis/google-cloud-java/commit/db5fb77889f7b4eb397279917c288870548befe7))
+
+
+### Documentation
+
+* [batch] Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* [batch] Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* [batch] updated comments ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [chat] update Chat API comments ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* [document-ai] clarify the unavailability of some features ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [document-ai] updated comments ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* [gke-backup] update duration comment to include new validation from smart scheduling ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [gkehub] Comments for fields in message `.google.cloud.gkehub.v1beta.Feature` are changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [parallelstore] A comment for field `counters` in message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` is changed ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [parallelstore] A comment for field `transfer_type` in message `.google.cloud.parallelstore.v1beta.TransferOperationMetadata` is changed ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [securitycentermanagement] update comment formatting throughout API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [servicedirectory] add maximum page_size to ListEndpoint API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [servicedirectory] add maximum page_size to ListNamespace API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [servicedirectory] add maximum page_size to ListService API documentation ([821a3ea](https://github.com/googleapis/google-cloud-java/commit/821a3ea08819cb88d9c186178e29ad6fde611830))
+* [shopping-merchant-conversions] A comment for message `MerchantCenterDestination` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-conversions] change in wording : website -&gt; online store ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `availability` in message `.google.shopping.merchant.inventories.v1beta.LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `availability` in message `.google.shopping.merchant.inventories.v1beta.RegionalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `custom_attributes` in message `.google.shopping.merchant.inventories.v1beta.LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `custom_attributes` in message `.google.shopping.merchant.inventories.v1beta.RegionalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `pickup_method` in message `.google.shopping.merchant.inventories.v1beta.LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `pickup_sla` in message `.google.shopping.merchant.inventories.v1beta.LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for field `store_code` in message `.google.shopping.merchant.inventories.v1beta.LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for message `LocalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] A comment for message `RegionalInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-inventories] change in wording : feed specification -&gt; data specification ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for enum `StoreMatchingState` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for field `availability` in message `.google.shopping.merchant.lfp.v1beta.LfpInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for field `matching_state` in message `.google.shopping.merchant.lfp.v1beta.LfpStore` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for field `pickup_method` in message `.google.shopping.merchant.lfp.v1beta.LfpInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for field `pickup_sla` in message `.google.shopping.merchant.lfp.v1beta.LfpInventory` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] A comment for message `LfpStore` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-lfp] change in wording : feed specification -&gt; data specification ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A comment for enum `AggregatedReportingContextStatus` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A comment for field `brand_inventory_status` in message `.google.shopping.merchant.reports.v1beta.BestSellersProductClusterView` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A comment for field `inventory_status` in message `.google.shopping.merchant.reports.v1beta.BestSellersProductClusterView` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [shopping-merchant-reports] A comment for field `shipping_label` in message `.google.shopping.merchant.reports.v1beta.ProductView` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* [vertexai]Add README section for using system-instruction. ([#10835](https://github.com/googleapis/google-cloud-java/issues/10835)) ([6c1087c](https://github.com/googleapis/google-cloud-java/commit/6c1087c2c7a08cb48147c13a6d67399440140cf8))
+* [video-stitcher] Added apis for Create, Read, Update, Delete For VODConfigs. Added vodConfig usage in VODSession. Added TokenConfig for MediaCdnKey. Added targeting_parameter and ad_tracking for Livesession. Added FetchOptions for Live and VOD configs. ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
 ## [1.37.0](https://github.com/googleapis/google-cloud-java/compare/v1.36.0...v1.37.0) (2024-05-08)
 
 

@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-routing</artifactId>
-  <version>1.28.0</version>
+  <version>1.29.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-routing:1.28.0'
+implementation 'com.google.maps:google-maps-routing:1.29.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-routing" % "1.28.0"
+libraryDependencies += "com.google.maps" % "google-maps-routing" % "1.29.0"
 ```
 <!-- {x-version-update-end} -->
 

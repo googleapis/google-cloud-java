@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 (2024-05-23)
+
+### Features
+
+* Allow tuned model to be used. ([#10825](https://github.com/googleapis/google-cloud-java/issues/10825)) ([9081269](https://github.com/googleapis/google-cloud-java/commit/9081269c26399a008498fbb605ef6c7d1b0c770b))
+
+
+
 ## 1.3.0 (2024-05-08)
 
 ### Features

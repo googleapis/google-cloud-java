@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.44.0 (2024-05-23)
+
+### Features
+
+* Add UpdateJob API to update the job spec, only task_count is supported now ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* Update description on allowed_locations in LocationPolicy field ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* updated comments ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+
+
+
 ## 0.43.0 (2024-05-08)
 
 ### Features

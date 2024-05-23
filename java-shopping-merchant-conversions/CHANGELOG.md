@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 (2024-05-23)
+
+### Features
+
+* A comment for message `MerchantCenterDestination` is changed ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* change in wording : website -&gt; online store ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
+
+
 ## 0.2.0 (2024-05-08)
 
 * No change
