@@ -750,6 +750,21 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/deploy/v1
 
+- api_shortname: developerconnect
+  name_pretty: Developer Connect API
+  product_documentation: https://cloud.google.com/developer-connect/docs/overview
+  api_description: Connect third-party source code management to Google
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-developerconnect
+  api_id: developerconnect.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/developerconnect/v1
+  requires_billing: true
 - api_shortname: dialogflow
   name_pretty: Dialogflow API
   product_documentation: https://cloud.google.com/dialogflow-enterprise/
@@ -994,10 +1009,10 @@ libraries:
   name_pretty: Grafeas
   product_documentation: https://grafeas.io
   api_description: n/a
-  client_documentation: "https://cloud.google.com/java/docs/reference/grafeas/latest/overview"
+  client_documentation: https://cloud.google.com/java/docs/reference/grafeas/latest/overview
   release_level: stable
-  distribution_name: "io.grafeas:grafeas"
-  codeowner_team: "@googleapis/aap-dpes"
+  distribution_name: io.grafeas:grafeas
+  codeowner_team: '@googleapis/aap-dpes'
   library_name: grafeas
   GAPICs:
   - proto_path: grafeas/v1
