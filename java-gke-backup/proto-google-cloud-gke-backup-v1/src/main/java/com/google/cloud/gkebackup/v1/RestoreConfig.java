@@ -44,6 +44,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     namespacedResourceRestoreMode_ = 0;
     substitutionRules_ = java.util.Collections.emptyList();
     transformationRules_ = java.util.Collections.emptyList();
+    volumeDataRestorePolicyBindings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -481,6 +482,60 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FAIL_ON_CONFLICT = 2;</code>
      */
     FAIL_ON_CONFLICT(2),
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and skips the
+     * conflicting resources. If a single resource to restore exists in the
+     * cluster before restoration, the resource will be skipped, otherwise it
+     * will be restored.
+     * </pre>
+     *
+     * <code>MERGE_SKIP_ON_CONFLICT = 3;</code>
+     */
+    MERGE_SKIP_ON_CONFLICT(3),
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and skips the
+     * conflicting resources except volume data. If a PVC to restore already
+     * exists, this mode will restore/reconnect the volume without overwriting
+     * the PVC. It is similar to MERGE_SKIP_ON_CONFLICT except that it will
+     * apply the volume data policy for the conflicting PVCs:
+     * - RESTORE_VOLUME_DATA_FROM_BACKUP: restore data only and respect the
+     *   reclaim policy of the original PV;
+     * - REUSE_VOLUME_HANDLE_FROM_BACKUP: reconnect and respect the reclaim
+     *   policy of the original PV;
+     * - NO_VOLUME_DATA_RESTORATION: new provision and respect the reclaim
+     *   policy of the original PV.
+     * Note that this mode could cause data loss as the original PV can be
+     * retained or deleted depending on its reclaim policy.
+     * </pre>
+     *
+     * <code>MERGE_REPLACE_VOLUME_ON_CONFLICT = 4;</code>
+     */
+    MERGE_REPLACE_VOLUME_ON_CONFLICT(4),
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and replaces the
+     * conflicting resources with the ones in the backup. If a single resource
+     * to restore exists in the cluster before restoration, the resource will be
+     * replaced with the one from the backup. To replace an existing resource,
+     * the first attempt is to update the resource to match the one from the
+     * backup; if the update fails, the second attempt is to delete the resource
+     * and restore it from the backup.
+     * Note that this mode could cause data loss as it replaces the existing
+     * resources in the target cluster, and the original PV can be retained or
+     * deleted depending on its reclaim policy.
+     * </pre>
+     *
+     * <code>MERGE_REPLACE_ON_CONFLICT = 5;</code>
+     */
+    MERGE_REPLACE_ON_CONFLICT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -524,6 +579,60 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>FAIL_ON_CONFLICT = 2;</code>
      */
     public static final int FAIL_ON_CONFLICT_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and skips the
+     * conflicting resources. If a single resource to restore exists in the
+     * cluster before restoration, the resource will be skipped, otherwise it
+     * will be restored.
+     * </pre>
+     *
+     * <code>MERGE_SKIP_ON_CONFLICT = 3;</code>
+     */
+    public static final int MERGE_SKIP_ON_CONFLICT_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and skips the
+     * conflicting resources except volume data. If a PVC to restore already
+     * exists, this mode will restore/reconnect the volume without overwriting
+     * the PVC. It is similar to MERGE_SKIP_ON_CONFLICT except that it will
+     * apply the volume data policy for the conflicting PVCs:
+     * - RESTORE_VOLUME_DATA_FROM_BACKUP: restore data only and respect the
+     *   reclaim policy of the original PV;
+     * - REUSE_VOLUME_HANDLE_FROM_BACKUP: reconnect and respect the reclaim
+     *   policy of the original PV;
+     * - NO_VOLUME_DATA_RESTORATION: new provision and respect the reclaim
+     *   policy of the original PV.
+     * Note that this mode could cause data loss as the original PV can be
+     * retained or deleted depending on its reclaim policy.
+     * </pre>
+     *
+     * <code>MERGE_REPLACE_VOLUME_ON_CONFLICT = 4;</code>
+     */
+    public static final int MERGE_REPLACE_VOLUME_ON_CONFLICT_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * This mode merges the backup and the target cluster and replaces the
+     * conflicting resources with the ones in the backup. If a single resource
+     * to restore exists in the cluster before restoration, the resource will be
+     * replaced with the one from the backup. To replace an existing resource,
+     * the first attempt is to update the resource to match the one from the
+     * backup; if the update fails, the second attempt is to delete the resource
+     * and restore it from the backup.
+     * Note that this mode could cause data loss as it replaces the existing
+     * resources in the target cluster, and the original PV can be retained or
+     * deleted depending on its reclaim policy.
+     * </pre>
+     *
+     * <code>MERGE_REPLACE_ON_CONFLICT = 5;</code>
+     */
+    public static final int MERGE_REPLACE_ON_CONFLICT_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -555,6 +664,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return DELETE_AND_RESTORE;
         case 2:
           return FAIL_ON_CONFLICT;
+        case 3:
+          return MERGE_SKIP_ON_CONFLICT;
+        case 4:
+          return MERGE_REPLACE_VOLUME_ON_CONFLICT;
+        case 5:
+          return MERGE_REPLACE_ON_CONFLICT;
         default:
           return null;
       }
@@ -11124,6 +11239,3348 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface VolumeDataRestorePolicyBindingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+     * scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for policy.
+     */
+    int getPolicyValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+     * scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The policy.
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy getPolicy();
+
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return Whether the volumeType field is set.
+     */
+    boolean hasVolumeType();
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for volumeType.
+     */
+    int getVolumeTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return The volumeType.
+     */
+    com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType getVolumeType();
+
+    com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.ScopeCase
+        getScopeCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Binds resources in the scope to the given VolumeDataRestorePolicy.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding}
+   */
+  public static final class VolumeDataRestorePolicyBinding
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
+      VolumeDataRestorePolicyBindingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VolumeDataRestorePolicyBinding.newBuilder() to construct.
+    private VolumeDataRestorePolicyBinding(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VolumeDataRestorePolicyBinding() {
+      policy_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VolumeDataRestorePolicyBinding();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_VolumeDataRestorePolicyBinding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_VolumeDataRestorePolicyBinding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.class,
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+                  .class);
+    }
+
+    private int scopeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object scope_;
+
+    public enum ScopeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      VOLUME_TYPE(2),
+      SCOPE_NOT_SET(0);
+      private final int value;
+
+      private ScopeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ScopeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ScopeCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return VOLUME_TYPE;
+          case 0:
+            return SCOPE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ScopeCase getScopeCase() {
+      return ScopeCase.forNumber(scopeCase_);
+    }
+
+    public static final int POLICY_FIELD_NUMBER = 1;
+    private int policy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+     * scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for policy.
+     */
+    @java.lang.Override
+    public int getPolicyValue() {
+      return policy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+     * scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The policy.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy getPolicy() {
+      com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy result =
+          com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.forNumber(policy_);
+      return result == null
+          ? com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int VOLUME_TYPE_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return Whether the volumeType field is set.
+     */
+    public boolean hasVolumeType() {
+      return scopeCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for volumeType.
+     */
+    public int getVolumeTypeValue() {
+      if (scopeCase_ == 2) {
+        return (java.lang.Integer) scope_;
+      }
+      return 0;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The volume type, as determined by the PVC's bound PV,
+     * to apply the policy to.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+     *
+     * @return The volumeType.
+     */
+    public com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType getVolumeType() {
+      if (scopeCase_ == 2) {
+        com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType result =
+            com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.forNumber(
+                (java.lang.Integer) scope_);
+        return result == null
+            ? com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.UNRECOGNIZED
+            : result;
+      }
+      return com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.VOLUME_TYPE_UNSPECIFIED;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (policy_
+          != com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy
+              .VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, policy_);
+      }
+      if (scopeCase_ == 2) {
+        output.writeEnum(2, ((java.lang.Integer) scope_));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (policy_
+          != com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy
+              .VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, policy_);
+      }
+      if (scopeCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(2, ((java.lang.Integer) scope_));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding other =
+          (com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding) obj;
+
+      if (policy_ != other.policy_) return false;
+      if (!getScopeCase().equals(other.getScopeCase())) return false;
+      switch (scopeCase_) {
+        case 2:
+          if (getVolumeTypeValue() != other.getVolumeTypeValue()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + policy_;
+      switch (scopeCase_) {
+        case 2:
+          hash = (37 * hash) + VOLUME_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getVolumeTypeValue();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Binds resources in the scope to the given VolumeDataRestorePolicy.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_VolumeDataRestorePolicyBinding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_VolumeDataRestorePolicyBinding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        policy_ = 0;
+        scopeCase_ = 0;
+        scope_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_VolumeDataRestorePolicyBinding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+          getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding build() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+          buildPartial() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding result =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.policy_ = policy_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding result) {
+        result.scopeCase_ = scopeCase_;
+        result.scope_ = this.scope_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding) {
+          return mergeFrom(
+              (com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding other) {
+        if (other
+            == com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+                .getDefaultInstance()) return this;
+        if (other.policy_ != 0) {
+          setPolicyValue(other.getPolicyValue());
+        }
+        switch (other.getScopeCase()) {
+          case VOLUME_TYPE:
+            {
+              setVolumeTypeValue(other.getVolumeTypeValue());
+              break;
+            }
+          case SCOPE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  policy_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  int rawValue = input.readEnum();
+                  scopeCase_ = 2;
+                  scope_ = rawValue;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int scopeCase_ = 0;
+      private java.lang.Object scope_;
+
+      public ScopeCase getScopeCase() {
+        return ScopeCase.forNumber(scopeCase_);
+      }
+
+      public Builder clearScope() {
+        scopeCase_ = 0;
+        scope_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int policy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+       * scope.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for policy.
+       */
+      @java.lang.Override
+      public int getPolicyValue() {
+        return policy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+       * scope.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for policy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyValue(int value) {
+        policy_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+       * scope.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The policy.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy getPolicy() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy result =
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.forNumber(policy_);
+        return result == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+       * scope.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The policy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicy(
+          com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        policy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The VolumeDataRestorePolicy to apply when restoring volumes in
+       * scope.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPolicy() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        policy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @return Whether the volumeType field is set.
+       */
+      @java.lang.Override
+      public boolean hasVolumeType() {
+        return scopeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @return The enum numeric value on the wire for volumeType.
+       */
+      @java.lang.Override
+      public int getVolumeTypeValue() {
+        if (scopeCase_ == 2) {
+          return ((java.lang.Integer) scope_).intValue();
+        }
+        return 0;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for volumeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVolumeTypeValue(int value) {
+        scopeCase_ = 2;
+        scope_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @return The volumeType.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType getVolumeType() {
+        if (scopeCase_ == 2) {
+          com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType result =
+              com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.forNumber(
+                  (java.lang.Integer) scope_);
+          return result == null
+              ? com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.UNRECOGNIZED
+              : result;
+        }
+        return com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType.VOLUME_TYPE_UNSPECIFIED;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @param value The volumeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVolumeType(com.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scopeCase_ = 2;
+        scope_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The volume type, as determined by the PVC's bound PV,
+       * to apply the policy to.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.VolumeTypeEnum.VolumeType volume_type = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVolumeType() {
+        if (scopeCase_ == 2) {
+          scopeCase_ = 0;
+          scope_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding)
+    private static final com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding();
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VolumeDataRestorePolicyBinding> PARSER =
+        new com.google.protobuf.AbstractParser<VolumeDataRestorePolicyBinding>() {
+          @java.lang.Override
+          public VolumeDataRestorePolicyBinding parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VolumeDataRestorePolicyBinding> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VolumeDataRestorePolicyBinding> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RestoreOrderOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+        getGroupKindDependenciesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+        getGroupKindDependencies(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getGroupKindDependenciesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+                    .GroupKindDependencyOrBuilder>
+        getGroupKindDependenciesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder
+        getGroupKindDependenciesOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allows customers to specify dependencies between resources
+   * that Backup for GKE can use to compute a resasonable restore order.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder}
+   */
+  public static final class RestoreOrder extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
+      RestoreOrderOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RestoreOrder.newBuilder() to construct.
+    private RestoreOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RestoreOrder() {
+      groupKindDependencies_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RestoreOrder();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.class,
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder.class);
+    }
+
+    public interface GroupKindDependencyOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the satisfying field is set.
+       */
+      boolean hasSatisfying();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The satisfying.
+       */
+      com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSatisfying();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getSatisfyingOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the requiring field is set.
+       */
+      boolean hasRequiring();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The requiring.
+       */
+      com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getRequiring();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getRequiringOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines a dependency between two group kinds.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency}
+     */
+    public static final class GroupKindDependency extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+        GroupKindDependencyOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use GroupKindDependency.newBuilder() to construct.
+      private GroupKindDependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private GroupKindDependency() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new GroupKindDependency();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_GroupKindDependency_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_GroupKindDependency_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int SATISFYING_FIELD_NUMBER = 1;
+      private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the satisfying field is set.
+       */
+      @java.lang.Override
+      public boolean hasSatisfying() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The satisfying.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSatisfying() {
+        return satisfying_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+            : satisfying_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The satisfying group kind must be restored first
+       * in order to satisfy the dependency.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+          getSatisfyingOrBuilder() {
+        return satisfying_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+            : satisfying_;
+      }
+
+      public static final int REQUIRING_FIELD_NUMBER = 2;
+      private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the requiring field is set.
+       */
+      @java.lang.Override
+      public boolean hasRequiring() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The requiring.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getRequiring() {
+        return requiring_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+            : requiring_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The requiring group kind requires that the other
+       * group kind be restored first.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+          getRequiringOrBuilder() {
+        return requiring_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+            : requiring_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getSatisfying());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getRequiring());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSatisfying());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRequiring());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency other =
+            (com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency) obj;
+
+        if (hasSatisfying() != other.hasSatisfying()) return false;
+        if (hasSatisfying()) {
+          if (!getSatisfying().equals(other.getSatisfying())) return false;
+        }
+        if (hasRequiring() != other.hasRequiring()) return false;
+        if (hasRequiring()) {
+          if (!getRequiring().equals(other.getRequiring())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasSatisfying()) {
+          hash = (37 * hash) + SATISFYING_FIELD_NUMBER;
+          hash = (53 * hash) + getSatisfying().hashCode();
+        }
+        if (hasRequiring()) {
+          hash = (37 * hash) + REQUIRING_FIELD_NUMBER;
+          hash = (53 * hash) + getRequiring().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines a dependency between two group kinds.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.gkebackup.v1.RestoreProto
+              .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_GroupKindDependency_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.gkebackup.v1.RestoreProto
+              .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_GroupKindDependency_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                      .class,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getSatisfyingFieldBuilder();
+            getRequiringFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          satisfying_ = null;
+          if (satisfyingBuilder_ != null) {
+            satisfyingBuilder_.dispose();
+            satisfyingBuilder_ = null;
+          }
+          requiring_ = null;
+          if (requiringBuilder_ != null) {
+            requiringBuilder_.dispose();
+            requiringBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.gkebackup.v1.RestoreProto
+              .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_GroupKindDependency_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+            getDefaultInstanceForType() {
+          return com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+            build() {
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+            buildPartial() {
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency result =
+              new com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.satisfying_ =
+                satisfyingBuilder_ == null ? satisfying_ : satisfyingBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.requiring_ = requiringBuilder_ == null ? requiring_ : requiringBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency) {
+            return mergeFrom(
+                (com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency other) {
+          if (other
+              == com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                  .getDefaultInstance()) return this;
+          if (other.hasSatisfying()) {
+            mergeSatisfying(other.getSatisfying());
+          }
+          if (other.hasRequiring()) {
+            mergeRequiring(other.getRequiring());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getSatisfyingFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getRequiringFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+            satisfyingBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the satisfying field is set.
+         */
+        public boolean hasSatisfying() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The satisfying.
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSatisfying() {
+          if (satisfyingBuilder_ == null) {
+            return satisfying_ == null
+                ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+                : satisfying_;
+          } else {
+            return satisfyingBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setSatisfying(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+          if (satisfyingBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            satisfying_ = value;
+          } else {
+            satisfyingBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setSatisfying(
+            com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+          if (satisfyingBuilder_ == null) {
+            satisfying_ = builderForValue.build();
+          } else {
+            satisfyingBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeSatisfying(
+            com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+          if (satisfyingBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && satisfying_ != null
+                && satisfying_
+                    != com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()) {
+              getSatisfyingBuilder().mergeFrom(value);
+            } else {
+              satisfying_ = value;
+            }
+          } else {
+            satisfyingBuilder_.mergeFrom(value);
+          }
+          if (satisfying_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearSatisfying() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          satisfying_ = null;
+          if (satisfyingBuilder_ != null) {
+            satisfyingBuilder_.dispose();
+            satisfyingBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
+            getSatisfyingBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getSatisfyingFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+            getSatisfyingOrBuilder() {
+          if (satisfyingBuilder_ != null) {
+            return satisfyingBuilder_.getMessageOrBuilder();
+          } else {
+            return satisfying_ == null
+                ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+                : satisfying_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The satisfying group kind must be restored first
+         * in order to satisfy the dependency.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind satisfying = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+            getSatisfyingFieldBuilder() {
+          if (satisfyingBuilder_ == null) {
+            satisfyingBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>(
+                    getSatisfying(), getParentForChildren(), isClean());
+            satisfying_ = null;
+          }
+          return satisfyingBuilder_;
+        }
+
+        private com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+            requiringBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the requiring field is set.
+         */
+        public boolean hasRequiring() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The requiring.
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getRequiring() {
+          if (requiringBuilder_ == null) {
+            return requiring_ == null
+                ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+                : requiring_;
+          } else {
+            return requiringBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setRequiring(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+          if (requiringBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            requiring_ = value;
+          } else {
+            requiringBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setRequiring(
+            com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+          if (requiringBuilder_ == null) {
+            requiring_ = builderForValue.build();
+          } else {
+            requiringBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeRequiring(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+          if (requiringBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && requiring_ != null
+                && requiring_
+                    != com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()) {
+              getRequiringBuilder().mergeFrom(value);
+            } else {
+              requiring_ = value;
+            }
+          } else {
+            requiringBuilder_.mergeFrom(value);
+          }
+          if (requiring_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearRequiring() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          requiring_ = null;
+          if (requiringBuilder_ != null) {
+            requiringBuilder_.dispose();
+            requiringBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder getRequiringBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getRequiringFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+            getRequiringOrBuilder() {
+          if (requiringBuilder_ != null) {
+            return requiringBuilder_.getMessageOrBuilder();
+          } else {
+            return requiring_ == null
+                ? com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance()
+                : requiring_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The requiring group kind requires that the other
+         * group kind be restored first.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.RestoreConfig.GroupKind requiring = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+            getRequiringFieldBuilder() {
+          if (requiringBuilder_ == null) {
+            requiringBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>(
+                    getRequiring(), getParentForChildren(), isClean());
+            requiring_ = null;
+          }
+          return requiringBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency)
+      private static final com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+              .GroupKindDependency
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency();
+      }
+
+      public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GroupKindDependency> PARSER =
+          new com.google.protobuf.AbstractParser<GroupKindDependency>() {
+            @java.lang.Override
+            public GroupKindDependency parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<GroupKindDependency> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GroupKindDependency> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int GROUP_KIND_DEPENDENCIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+        groupKindDependencies_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+        getGroupKindDependenciesList() {
+      return groupKindDependencies_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+                    .GroupKindDependencyOrBuilder>
+        getGroupKindDependenciesOrBuilderList() {
+      return groupKindDependencies_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getGroupKindDependenciesCount() {
+      return groupKindDependencies_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+        getGroupKindDependencies(int index) {
+      return groupKindDependencies_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of group kind dependency pairs provided
+     * by the customer, that is used by Backup for GKE to
+     * generate a group kind restore order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder
+        getGroupKindDependenciesOrBuilder(int index) {
+      return groupKindDependencies_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < groupKindDependencies_.size(); i++) {
+        output.writeMessage(1, groupKindDependencies_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < groupKindDependencies_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, groupKindDependencies_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder other =
+          (com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder) obj;
+
+      if (!getGroupKindDependenciesList().equals(other.getGroupKindDependenciesList()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getGroupKindDependenciesCount() > 0) {
+        hash = (37 * hash) + GROUP_KIND_DEPENDENCIES_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupKindDependenciesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows customers to specify dependencies between resources
+     * that Backup for GKE can use to compute a resasonable restore order.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder.class);
+      }
+
+      // Construct using com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (groupKindDependenciesBuilder_ == null) {
+          groupKindDependencies_ = java.util.Collections.emptyList();
+        } else {
+          groupKindDependencies_ = null;
+          groupKindDependenciesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_RestoreOrder_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder build() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder buildPartial() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder result =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder result) {
+        if (groupKindDependenciesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            groupKindDependencies_ = java.util.Collections.unmodifiableList(groupKindDependencies_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.groupKindDependencies_ = groupKindDependencies_;
+        } else {
+          result.groupKindDependencies_ = groupKindDependenciesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder) {
+          return mergeFrom((com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder other) {
+        if (other == com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance())
+          return this;
+        if (groupKindDependenciesBuilder_ == null) {
+          if (!other.groupKindDependencies_.isEmpty()) {
+            if (groupKindDependencies_.isEmpty()) {
+              groupKindDependencies_ = other.groupKindDependencies_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureGroupKindDependenciesIsMutable();
+              groupKindDependencies_.addAll(other.groupKindDependencies_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.groupKindDependencies_.isEmpty()) {
+            if (groupKindDependenciesBuilder_.isEmpty()) {
+              groupKindDependenciesBuilder_.dispose();
+              groupKindDependenciesBuilder_ = null;
+              groupKindDependencies_ = other.groupKindDependencies_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              groupKindDependenciesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getGroupKindDependenciesFieldBuilder()
+                      : null;
+            } else {
+              groupKindDependenciesBuilder_.addAllMessages(other.groupKindDependencies_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+                              .GroupKindDependency.parser(),
+                          extensionRegistry);
+                  if (groupKindDependenciesBuilder_ == null) {
+                    ensureGroupKindDependenciesIsMutable();
+                    groupKindDependencies_.add(m);
+                  } else {
+                    groupKindDependenciesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+          groupKindDependencies_ = java.util.Collections.emptyList();
+
+      private void ensureGroupKindDependenciesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          groupKindDependencies_ =
+              new java.util.ArrayList<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>(
+                  groupKindDependencies_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency,
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder>
+          groupKindDependenciesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+          getGroupKindDependenciesList() {
+        if (groupKindDependenciesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(groupKindDependencies_);
+        } else {
+          return groupKindDependenciesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getGroupKindDependenciesCount() {
+        if (groupKindDependenciesBuilder_ == null) {
+          return groupKindDependencies_.size();
+        } else {
+          return groupKindDependenciesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+          getGroupKindDependencies(int index) {
+        if (groupKindDependenciesBuilder_ == null) {
+          return groupKindDependencies_.get(index);
+        } else {
+          return groupKindDependenciesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setGroupKindDependencies(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency value) {
+        if (groupKindDependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.set(index, value);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setGroupKindDependencies(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+              builderForValue) {
+        if (groupKindDependenciesBuilder_ == null) {
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addGroupKindDependencies(
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency value) {
+        if (groupKindDependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.add(value);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addGroupKindDependencies(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency value) {
+        if (groupKindDependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.add(index, value);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addGroupKindDependencies(
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+              builderForValue) {
+        if (groupKindDependenciesBuilder_ == null) {
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.add(builderForValue.build());
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addGroupKindDependencies(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+              builderForValue) {
+        if (groupKindDependenciesBuilder_ == null) {
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllGroupKindDependencies(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency>
+              values) {
+        if (groupKindDependenciesBuilder_ == null) {
+          ensureGroupKindDependenciesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupKindDependencies_);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearGroupKindDependencies() {
+        if (groupKindDependenciesBuilder_ == null) {
+          groupKindDependencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeGroupKindDependencies(int index) {
+        if (groupKindDependenciesBuilder_ == null) {
+          ensureGroupKindDependenciesIsMutable();
+          groupKindDependencies_.remove(index);
+          onChanged();
+        } else {
+          groupKindDependenciesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+          getGroupKindDependenciesBuilder(int index) {
+        return getGroupKindDependenciesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder
+          getGroupKindDependenciesOrBuilder(int index) {
+        if (groupKindDependenciesBuilder_ == null) {
+          return groupKindDependencies_.get(index);
+        } else {
+          return groupKindDependenciesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+                      .GroupKindDependencyOrBuilder>
+          getGroupKindDependenciesOrBuilderList() {
+        if (groupKindDependenciesBuilder_ != null) {
+          return groupKindDependenciesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(groupKindDependencies_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+          addGroupKindDependenciesBuilder() {
+        return getGroupKindDependenciesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder
+          addGroupKindDependenciesBuilder(int index) {
+        return getGroupKindDependenciesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains a list of group kind dependency pairs provided
+       * by the customer, that is used by Backup for GKE to
+       * generate a group kind restore order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency group_kind_dependencies = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder>
+          getGroupKindDependenciesBuilderList() {
+        return getGroupKindDependenciesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency,
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependencyOrBuilder>
+          getGroupKindDependenciesFieldBuilder() {
+        if (groupKindDependenciesBuilder_ == null) {
+          groupKindDependenciesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.GroupKindDependency
+                      .Builder,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder
+                      .GroupKindDependencyOrBuilder>(
+                  groupKindDependencies_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          groupKindDependencies_ = null;
+        }
+        return groupKindDependenciesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder)
+    private static final com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder();
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RestoreOrder> PARSER =
+        new com.google.protobuf.AbstractParser<RestoreOrder>() {
+          @java.lang.Override
+          public RestoreOrder parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RestoreOrder> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RestoreOrder> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int namespacedResourceRestoreScopeCase_ = 0;
 
@@ -11847,6 +15304,160 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     return transformationRules_.get(index);
   }
 
+  public static final int VOLUME_DATA_RESTORE_POLICY_BINDINGS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+      volumeDataRestorePolicyBindings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+      getVolumeDataRestorePolicyBindingsList() {
+    return volumeDataRestorePolicyBindings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
+      getVolumeDataRestorePolicyBindingsOrBuilderList() {
+    return volumeDataRestorePolicyBindings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getVolumeDataRestorePolicyBindingsCount() {
+    return volumeDataRestorePolicyBindings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+      getVolumeDataRestorePolicyBindings(int index) {
+    return volumeDataRestorePolicyBindings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder
+      getVolumeDataRestorePolicyBindingsOrBuilder(int index) {
+    return volumeDataRestorePolicyBindings_.get(index);
+  }
+
+  public static final int RESTORE_ORDER_FIELD_NUMBER = 13;
+  private com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restoreOrder_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the restoreOrder field is set.
+   */
+  @java.lang.Override
+  public boolean hasRestoreOrder() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restoreOrder.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getRestoreOrder() {
+    return restoreOrder_ == null
+        ? com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()
+        : restoreOrder_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder
+      getRestoreOrderOrBuilder() {
+    return restoreOrder_ == null
+        ? com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()
+        : restoreOrder_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -11905,6 +15516,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < transformationRules_.size(); i++) {
       output.writeMessage(11, transformationRules_.get(i));
+    }
+    for (int i = 0; i < volumeDataRestorePolicyBindings_.size(); i++) {
+      output.writeMessage(12, volumeDataRestorePolicyBindings_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(13, getRestoreOrder());
     }
     getUnknownFields().writeTo(output);
   }
@@ -11973,6 +15590,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, transformationRules_.get(i));
     }
+    for (int i = 0; i < volumeDataRestorePolicyBindings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, volumeDataRestorePolicyBindings_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRestoreOrder());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -11999,6 +15624,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSubstitutionRulesList().equals(other.getSubstitutionRulesList())) return false;
     if (!getTransformationRulesList().equals(other.getTransformationRulesList())) return false;
+    if (!getVolumeDataRestorePolicyBindingsList()
+        .equals(other.getVolumeDataRestorePolicyBindingsList())) return false;
+    if (hasRestoreOrder() != other.hasRestoreOrder()) return false;
+    if (hasRestoreOrder()) {
+      if (!getRestoreOrder().equals(other.getRestoreOrder())) return false;
+    }
     if (!getNamespacedResourceRestoreScopeCase()
         .equals(other.getNamespacedResourceRestoreScopeCase())) return false;
     switch (namespacedResourceRestoreScopeCase_) {
@@ -12048,6 +15679,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     if (getTransformationRulesCount() > 0) {
       hash = (37 * hash) + TRANSFORMATION_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getTransformationRulesList().hashCode();
+    }
+    if (getVolumeDataRestorePolicyBindingsCount() > 0) {
+      hash = (37 * hash) + VOLUME_DATA_RESTORE_POLICY_BINDINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getVolumeDataRestorePolicyBindingsList().hashCode();
+    }
+    if (hasRestoreOrder()) {
+      hash = (37 * hash) + RESTORE_ORDER_FIELD_NUMBER;
+      hash = (53 * hash) + getRestoreOrder().hashCode();
     }
     switch (namespacedResourceRestoreScopeCase_) {
       case 5:
@@ -12216,6 +15855,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         getClusterResourceRestoreScopeFieldBuilder();
         getSubstitutionRulesFieldBuilder();
         getTransformationRulesFieldBuilder();
+        getVolumeDataRestorePolicyBindingsFieldBuilder();
+        getRestoreOrderFieldBuilder();
       }
     }
 
@@ -12254,6 +15895,18 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         transformationRulesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000400);
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        volumeDataRestorePolicyBindings_ = java.util.Collections.emptyList();
+      } else {
+        volumeDataRestorePolicyBindings_ = null;
+        volumeDataRestorePolicyBindingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
+      restoreOrder_ = null;
+      if (restoreOrderBuilder_ != null) {
+        restoreOrderBuilder_.dispose();
+        restoreOrderBuilder_ = null;
+      }
       namespacedResourceRestoreScopeCase_ = 0;
       namespacedResourceRestoreScope_ = null;
       return this;
@@ -12311,6 +15964,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.transformationRules_ = transformationRulesBuilder_.build();
       }
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          volumeDataRestorePolicyBindings_ =
+              java.util.Collections.unmodifiableList(volumeDataRestorePolicyBindings_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.volumeDataRestorePolicyBindings_ = volumeDataRestorePolicyBindings_;
+      } else {
+        result.volumeDataRestorePolicyBindings_ = volumeDataRestorePolicyBindingsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.gkebackup.v1.RestoreConfig result) {
@@ -12331,6 +15994,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 ? clusterResourceRestoreScope_
                 : clusterResourceRestoreScopeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.restoreOrder_ =
+            restoreOrderBuilder_ == null ? restoreOrder_ : restoreOrderBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -12459,6 +16127,37 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             transformationRulesBuilder_.addAllMessages(other.transformationRules_);
           }
         }
+      }
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        if (!other.volumeDataRestorePolicyBindings_.isEmpty()) {
+          if (volumeDataRestorePolicyBindings_.isEmpty()) {
+            volumeDataRestorePolicyBindings_ = other.volumeDataRestorePolicyBindings_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureVolumeDataRestorePolicyBindingsIsMutable();
+            volumeDataRestorePolicyBindings_.addAll(other.volumeDataRestorePolicyBindings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.volumeDataRestorePolicyBindings_.isEmpty()) {
+          if (volumeDataRestorePolicyBindingsBuilder_.isEmpty()) {
+            volumeDataRestorePolicyBindingsBuilder_.dispose();
+            volumeDataRestorePolicyBindingsBuilder_ = null;
+            volumeDataRestorePolicyBindings_ = other.volumeDataRestorePolicyBindings_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            volumeDataRestorePolicyBindingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVolumeDataRestorePolicyBindingsFieldBuilder()
+                    : null;
+          } else {
+            volumeDataRestorePolicyBindingsBuilder_.addAllMessages(
+                other.volumeDataRestorePolicyBindings_);
+          }
+        }
+      }
+      if (other.hasRestoreOrder()) {
+        mergeRestoreOrder(other.getRestoreOrder());
       }
       switch (other.getNamespacedResourceRestoreScopeCase()) {
         case ALL_NAMESPACES:
@@ -12603,6 +16302,27 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding m =
+                    input.readMessage(
+                        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+                            .parser(),
+                        extensionRegistry);
+                if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+                  ensureVolumeDataRestorePolicyBindingsIsMutable();
+                  volumeDataRestorePolicyBindings_.add(m);
+                } else {
+                  volumeDataRestorePolicyBindingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getRestoreOrderFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15000,6 +18720,673 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         transformationRules_ = null;
       }
       return transformationRulesBuilder_;
+    }
+
+    private java.util.List<
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+        volumeDataRestorePolicyBindings_ = java.util.Collections.emptyList();
+
+    private void ensureVolumeDataRestorePolicyBindingsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        volumeDataRestorePolicyBindings_ =
+            new java.util.ArrayList<
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>(
+                volumeDataRestorePolicyBindings_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding,
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
+        volumeDataRestorePolicyBindingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+        getVolumeDataRestorePolicyBindingsList() {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(volumeDataRestorePolicyBindings_);
+      } else {
+        return volumeDataRestorePolicyBindingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getVolumeDataRestorePolicyBindingsCount() {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        return volumeDataRestorePolicyBindings_.size();
+      } else {
+        return volumeDataRestorePolicyBindingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+        getVolumeDataRestorePolicyBindings(int index) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        return volumeDataRestorePolicyBindings_.get(index);
+      } else {
+        return volumeDataRestorePolicyBindingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVolumeDataRestorePolicyBindings(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding value) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.set(index, value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVolumeDataRestorePolicyBindings(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+            builderForValue) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyBindings(
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding value) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.add(value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyBindings(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding value) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.add(index, value);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyBindings(
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+            builderForValue) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVolumeDataRestorePolicyBindings(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+            builderForValue) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllVolumeDataRestorePolicyBindings(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+            values) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, volumeDataRestorePolicyBindings_);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVolumeDataRestorePolicyBindings() {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        volumeDataRestorePolicyBindings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeVolumeDataRestorePolicyBindings(int index) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        ensureVolumeDataRestorePolicyBindingsIsMutable();
+        volumeDataRestorePolicyBindings_.remove(index);
+        onChanged();
+      } else {
+        volumeDataRestorePolicyBindingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+        getVolumeDataRestorePolicyBindingsBuilder(int index) {
+      return getVolumeDataRestorePolicyBindingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder
+        getVolumeDataRestorePolicyBindingsOrBuilder(int index) {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        return volumeDataRestorePolicyBindings_.get(index);
+      } else {
+        return volumeDataRestorePolicyBindingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
+        getVolumeDataRestorePolicyBindingsOrBuilderList() {
+      if (volumeDataRestorePolicyBindingsBuilder_ != null) {
+        return volumeDataRestorePolicyBindingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(volumeDataRestorePolicyBindings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+        addVolumeDataRestorePolicyBindingsBuilder() {
+      return getVolumeDataRestorePolicyBindingsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder
+        addVolumeDataRestorePolicyBindingsBuilder(int index) {
+      return getVolumeDataRestorePolicyBindingsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A table that binds volumes by their scope to a restore policy.
+     * Bindings must have a unique scope. Any volumes not scoped in the bindings
+     * are subject to the policy defined in volume_data_restore_policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder>
+        getVolumeDataRestorePolicyBindingsBuilderList() {
+      return getVolumeDataRestorePolicyBindingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding,
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
+        getVolumeDataRestorePolicyBindingsFieldBuilder() {
+      if (volumeDataRestorePolicyBindingsBuilder_ == null) {
+        volumeDataRestorePolicyBindingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding,
+                com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig
+                    .VolumeDataRestorePolicyBindingOrBuilder>(
+                volumeDataRestorePolicyBindings_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        volumeDataRestorePolicyBindings_ = null;
+      }
+      return volumeDataRestorePolicyBindingsBuilder_;
+    }
+
+    private com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restoreOrder_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder>
+        restoreOrderBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the restoreOrder field is set.
+     */
+    public boolean hasRestoreOrder() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The restoreOrder.
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getRestoreOrder() {
+      if (restoreOrderBuilder_ == null) {
+        return restoreOrder_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()
+            : restoreOrder_;
+      } else {
+        return restoreOrderBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRestoreOrder(com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder value) {
+      if (restoreOrderBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        restoreOrder_ = value;
+      } else {
+        restoreOrderBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRestoreOrder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder builderForValue) {
+      if (restoreOrderBuilder_ == null) {
+        restoreOrder_ = builderForValue.build();
+      } else {
+        restoreOrderBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRestoreOrder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder value) {
+      if (restoreOrderBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && restoreOrder_ != null
+            && restoreOrder_
+                != com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()) {
+          getRestoreOrderBuilder().mergeFrom(value);
+        } else {
+          restoreOrder_ = value;
+        }
+      } else {
+        restoreOrderBuilder_.mergeFrom(value);
+      }
+      if (restoreOrder_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRestoreOrder() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      restoreOrder_ = null;
+      if (restoreOrderBuilder_ != null) {
+        restoreOrderBuilder_.dispose();
+        restoreOrderBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder
+        getRestoreOrderBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getRestoreOrderFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder
+        getRestoreOrderOrBuilder() {
+      if (restoreOrderBuilder_ != null) {
+        return restoreOrderBuilder_.getMessageOrBuilder();
+      } else {
+        return restoreOrder_ == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.getDefaultInstance()
+            : restoreOrder_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RestoreOrder contains custom ordering to use on a Restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder>
+        getRestoreOrderFieldBuilder() {
+      if (restoreOrderBuilder_ == null) {
+        restoreOrderBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder>(
+                getRestoreOrder(), getParentForChildren(), isClean());
+        restoreOrder_ = null;
+      }
+      return restoreOrderBuilder_;
     }
 
     @java.lang.Override

@@ -24,7 +24,7 @@ package com.google.shopping.merchant.conversions.v1beta;
  *
  * <pre>
  * "Merchant Center Destination" sources can be used to send conversion events
- * from a website using a Google tag directly to a Merchant Center account
+ * from an online store using a Google tag directly to a Merchant Center account
  * where the source is created.
  * </pre>
  *
@@ -490,7 +490,7 @@ public final class MerchantCenterDestination extends com.google.protobuf.Generat
    *
    * <pre>
    * "Merchant Center Destination" sources can be used to send conversion events
-   * from a website using a Google tag directly to a Merchant Center account
+   * from an online store using a Google tag directly to a Merchant Center account
    * where the source is created.
    * </pre>
    *

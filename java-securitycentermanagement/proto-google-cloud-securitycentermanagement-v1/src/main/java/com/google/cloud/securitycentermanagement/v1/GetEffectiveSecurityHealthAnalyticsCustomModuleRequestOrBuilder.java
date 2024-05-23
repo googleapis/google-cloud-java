@@ -28,13 +28,12 @@ public interface GetEffectiveSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the SHA custom module.
+   * Required. The full resource name of the custom module, specified in one of
+   * the following formats:
    *
-   * Its format is:
-   *
-   *   * "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *   * "folders/{folder}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *   * "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
    * </pre>
    *
    * <code>
@@ -48,13 +47,12 @@ public interface GetEffectiveSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the SHA custom module.
+   * Required. The full resource name of the custom module, specified in one of
+   * the following formats:
    *
-   * Its format is:
-   *
-   *   * "organizations/{organization}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *   * "folders/{folder}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
-   *   * "projects/{project}/locations/{location}/effectiveSecurityHealthAnalyticsCustomModules/{module_id}".
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
    * </pre>
    *
    * <code>

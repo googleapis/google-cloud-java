@@ -3544,6 +3544,30 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return configBackupSizeBytes_;
   }
 
+  public static final int PERMISSIVE_MODE_FIELD_NUMBER = 28;
+  private boolean permissiveMode_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If false, Backup will fail when Backup for GKE detects
+   * Kubernetes configuration that is non-standard or
+   * requires additional setup to restore.
+   *
+   * Inherited from the parent BackupPlan's
+   * [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
+   * value.
+   * </pre>
+   *
+   * <code>bool permissive_mode = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The permissiveMode.
+   */
+  @java.lang.Override
+  public boolean getPermissiveMode() {
+    return permissiveMode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3637,6 +3661,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (configBackupSizeBytes_ != 0L) {
       output.writeInt64(27, configBackupSizeBytes_);
+    }
+    if (permissiveMode_ != false) {
+      output.writeBool(28, permissiveMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3742,6 +3769,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (configBackupSizeBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(27, configBackupSizeBytes_);
     }
+    if (permissiveMode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, permissiveMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3802,6 +3832,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (getPodCount() != other.getPodCount()) return false;
     if (getConfigBackupSizeBytes() != other.getConfigBackupSizeBytes()) return false;
+    if (getPermissiveMode() != other.getPermissiveMode()) return false;
     if (!getBackupScopeCase().equals(other.getBackupScopeCase())) return false;
     switch (backupScopeCase_) {
       case 12:
@@ -3891,6 +3922,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPodCount();
     hash = (37 * hash) + CONFIG_BACKUP_SIZE_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getConfigBackupSizeBytes());
+    hash = (37 * hash) + PERMISSIVE_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPermissiveMode());
     switch (backupScopeCase_) {
       case 12:
         hash = (37 * hash) + ALL_NAMESPACES_FIELD_NUMBER;
@@ -4143,6 +4176,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       description_ = "";
       podCount_ = 0;
       configBackupSizeBytes_ = 0L;
+      permissiveMode_ = false;
       backupScopeCase_ = 0;
       backupScope_ = null;
       return this;
@@ -4268,6 +4302,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
         result.configBackupSizeBytes_ = configBackupSizeBytes_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.permissiveMode_ = permissiveMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4408,6 +4445,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getConfigBackupSizeBytes() != 0L) {
         setConfigBackupSizeBytes(other.getConfigBackupSizeBytes());
+      }
+      if (other.getPermissiveMode() != false) {
+        setPermissiveMode(other.getPermissiveMode());
       }
       switch (other.getBackupScopeCase()) {
         case ALL_NAMESPACES:
@@ -4628,6 +4668,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x04000000;
                 break;
               } // case 216
+            case 224:
+              {
+                permissiveMode_ = input.readBool();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 224
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8168,6 +8214,77 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConfigBackupSizeBytes() {
       bitField0_ = (bitField0_ & ~0x04000000);
       configBackupSizeBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean permissiveMode_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If false, Backup will fail when Backup for GKE detects
+     * Kubernetes configuration that is non-standard or
+     * requires additional setup to restore.
+     *
+     * Inherited from the parent BackupPlan's
+     * [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
+     * value.
+     * </pre>
+     *
+     * <code>bool permissive_mode = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The permissiveMode.
+     */
+    @java.lang.Override
+    public boolean getPermissiveMode() {
+      return permissiveMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If false, Backup will fail when Backup for GKE detects
+     * Kubernetes configuration that is non-standard or
+     * requires additional setup to restore.
+     *
+     * Inherited from the parent BackupPlan's
+     * [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
+     * value.
+     * </pre>
+     *
+     * <code>bool permissive_mode = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The permissiveMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPermissiveMode(boolean value) {
+
+      permissiveMode_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If false, Backup will fail when Backup for GKE detects
+     * Kubernetes configuration that is non-standard or
+     * requires additional setup to restore.
+     *
+     * Inherited from the parent BackupPlan's
+     * [permissive_mode][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.permissive_mode]
+     * value.
+     * </pre>
+     *
+     * <code>bool permissive_mode = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPermissiveMode() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      permissiveMode_ = false;
       onChanged();
       return this;
     }

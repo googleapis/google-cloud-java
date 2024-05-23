@@ -106,7 +106,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    *
    * Here's an example of how the aggregated status is computed:
    *
-   * Free listings | Shopping Ads | Status
+   * Free listings | Shopping ads | Status
    * --------------|--------------|------------------------------
    * Approved      | Approved     | ELIGIBLE
    * Approved      | Pending      | ELIGIBLE
@@ -7578,7 +7578,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>
@@ -7595,7 +7595,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>
@@ -7620,7 +7620,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>
@@ -12044,7 +12044,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>
@@ -12060,7 +12060,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>
@@ -12084,7 +12084,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>
@@ -12108,7 +12108,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>
@@ -12131,7 +12131,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>
@@ -12150,7 +12150,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Normalized [shipping
      * label](https://support.google.com/merchants/answer/6324504) specified in
-     * the feed.
+     * the data source.
      * </pre>
      *
      * <code>optional string shipping_label = 20;</code>

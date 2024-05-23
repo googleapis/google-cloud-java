@@ -23,8 +23,8 @@ package com.google.shopping.merchant.lfp.v1beta;
  *
  *
  * <pre>
- * A store for the merchant. This will be used to match to a Google Business
- * Profile listing for the target merchant. If a matching listing can't be
+ * A store for the merchant. This will be used to match to a store under the
+ * Google Business Profile of the target merchant. If a matching store can't be
  * found, the inventories or sales submitted with the store code will not be
  * used.
  * </pre>
@@ -79,7 +79,7 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The state of matching `LfpStore` to a Google Business Profile listing.
+   * The state of matching `LfpStore` to a Google Business Profile.
    * </pre>
    *
    * Protobuf enum {@code google.shopping.merchant.lfp.v1beta.LfpStore.StoreMatchingState}
@@ -773,8 +773,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Output only. The state of matching to a Google Business Profile
-   * listing. See
+   * Optional. Output only. The state of matching to a Google Business Profile.
+   * See
    * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
    * for further details if no match is found.
    * </pre>
@@ -793,8 +793,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Output only. The state of matching to a Google Business Profile
-   * listing. See
+   * Optional. Output only. The state of matching to a Google Business Profile.
+   * See
    * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
    * for further details if no match is found.
    * </pre>
@@ -1229,8 +1229,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A store for the merchant. This will be used to match to a Google Business
-   * Profile listing for the target merchant. If a matching listing can't be
+   * A store for the merchant. This will be used to match to a store under the
+   * Google Business Profile of the target merchant. If a matching store can't be
    * found, the inventories or sales submitted with the store code will not be
    * used.
    * </pre>
@@ -2669,8 +2669,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Output only. The state of matching to a Google Business Profile
-     * listing. See
+     * Optional. Output only. The state of matching to a Google Business Profile.
+     * See
      * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
      * for further details if no match is found.
      * </pre>
@@ -2689,8 +2689,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Output only. The state of matching to a Google Business Profile
-     * listing. See
+     * Optional. Output only. The state of matching to a Google Business Profile.
+     * See
      * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
      * for further details if no match is found.
      * </pre>
@@ -2712,8 +2712,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Output only. The state of matching to a Google Business Profile
-     * listing. See
+     * Optional. Output only. The state of matching to a Google Business Profile.
+     * See
      * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
      * for further details if no match is found.
      * </pre>
@@ -2737,8 +2737,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Output only. The state of matching to a Google Business Profile
-     * listing. See
+     * Optional. Output only. The state of matching to a Google Business Profile.
+     * See
      * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
      * for further details if no match is found.
      * </pre>
@@ -2764,8 +2764,8 @@ public final class LfpStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Output only. The state of matching to a Google Business Profile
-     * listing. See
+     * Optional. Output only. The state of matching to a Google Business Profile.
+     * See
      * [matchingStateHint][google.shopping.merchant.lfp.v1beta.LfpStore.matching_state_hint]
      * for further details if no match is found.
      * </pre>

@@ -1208,6 +1208,173 @@ public final class SecurityCenterManagementGrpc {
     return getValidateEventThreatDetectionCustomModuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getGetSecurityCenterServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSecurityCenterService",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest.class,
+      responseType = com.google.cloud.securitycentermanagement.v1.SecurityCenterService.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getGetSecurityCenterServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getGetSecurityCenterServiceMethod;
+    if ((getGetSecurityCenterServiceMethod =
+            SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getGetSecurityCenterServiceMethod =
+                SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getGetSecurityCenterServiceMethod =
+              getGetSecurityCenterServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .GetSecurityCenterServiceRequest,
+                          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSecurityCenterService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .GetSecurityCenterServiceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "GetSecurityCenterService"))
+                      .build();
+        }
+      }
+    }
+    return getGetSecurityCenterServiceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+      getListSecurityCenterServicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSecurityCenterServices",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest.class,
+      responseType =
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+          com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+      getListSecurityCenterServicesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+        getListSecurityCenterServicesMethod;
+    if ((getListSecurityCenterServicesMethod =
+            SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getListSecurityCenterServicesMethod =
+                SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getListSecurityCenterServicesMethod =
+              getListSecurityCenterServicesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .ListSecurityCenterServicesRequest,
+                          com.google.cloud.securitycentermanagement.v1
+                              .ListSecurityCenterServicesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSecurityCenterServices"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .ListSecurityCenterServicesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .ListSecurityCenterServicesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "ListSecurityCenterServices"))
+                      .build();
+        }
+      }
+    }
+    return getListSecurityCenterServicesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getUpdateSecurityCenterServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSecurityCenterService",
+      requestType =
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest.class,
+      responseType = com.google.cloud.securitycentermanagement.v1.SecurityCenterService.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+      getUpdateSecurityCenterServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getUpdateSecurityCenterServiceMethod;
+    if ((getUpdateSecurityCenterServiceMethod =
+            SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod)
+        == null) {
+      synchronized (SecurityCenterManagementGrpc.class) {
+        if ((getUpdateSecurityCenterServiceMethod =
+                SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod)
+            == null) {
+          SecurityCenterManagementGrpc.getUpdateSecurityCenterServiceMethod =
+              getUpdateSecurityCenterServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycentermanagement.v1
+                              .UpdateSecurityCenterServiceRequest,
+                          com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSecurityCenterService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1
+                                  .UpdateSecurityCenterServiceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterManagementMethodDescriptorSupplier(
+                              "UpdateSecurityCenterService"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSecurityCenterServiceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecurityCenterManagementStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecurityCenterManagementStub> factory =
@@ -1614,6 +1781,55 @@ public final class SecurityCenterManagementGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getValidateEventThreatDetectionCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    default void getSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSecurityCenterServiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    default void listSecurityCenterServices(
+        com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSecurityCenterServicesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    default void updateSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecurityCenterServiceMethod(), responseObserver);
     }
   }
 
@@ -2061,6 +2277,61 @@ public final class SecurityCenterManagementGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public void getSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSecurityCenterServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public void listSecurityCenterServices(
+        com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSecurityCenterServicesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public void updateSecurityCenterService(
+        com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSecurityCenterServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2460,6 +2731,51 @@ public final class SecurityCenterManagementGrpc {
           getValidateEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
           request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        getSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecurityCenterServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse
+        listSecurityCenterServices(
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecurityCenterServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public com.google.cloud.securitycentermanagement.v1.SecurityCenterService
+        updateSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecurityCenterServiceMethod(), getCallOptions(), request);
     }
   }
 
@@ -2865,6 +3181,54 @@ public final class SecurityCenterManagementGrpc {
               .newCall(getValidateEventThreatDetectionCustomModuleMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets service settings for the specified Security Command Center service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        getSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSecurityCenterServiceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all Security Command Center services for the given
+     * parent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse>
+        listSecurityCenterServices(
+            com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSecurityCenterServicesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Security Command Center service using the given update mask.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
+        updateSecurityCenterService(
+            com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSecurityCenterServiceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES = 0;
@@ -2885,6 +3249,9 @@ public final class SecurityCenterManagementGrpc {
   private static final int METHODID_UPDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 15;
   private static final int METHODID_DELETE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 16;
   private static final int METHODID_VALIDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE = 17;
+  private static final int METHODID_GET_SECURITY_CENTER_SERVICE = 18;
+  private static final int METHODID_LIST_SECURITY_CENTER_SERVICES = 19;
+  private static final int METHODID_UPDATE_SECURITY_CENTER_SERVICE = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3077,6 +3444,31 @@ public final class SecurityCenterManagementGrpc {
                           .ValidateEventThreatDetectionCustomModuleResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_SECURITY_CENTER_SERVICE:
+          serviceImpl.getSecurityCenterService(
+              (com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1.SecurityCenterService>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SECURITY_CENTER_SERVICES:
+          serviceImpl.listSecurityCenterServices(
+              (com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1
+                          .ListSecurityCenterServicesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SECURITY_CENTER_SERVICE:
+          serviceImpl.updateSecurityCenterService(
+              (com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycentermanagement.v1.SecurityCenterService>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3252,6 +3644,28 @@ public final class SecurityCenterManagementGrpc {
                     com.google.cloud.securitycentermanagement.v1
                         .ValidateEventThreatDetectionCustomModuleResponse>(
                     service, METHODID_VALIDATE_EVENT_THREAT_DETECTION_CUSTOM_MODULE)))
+        .addMethod(
+            getGetSecurityCenterServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest,
+                    com.google.cloud.securitycentermanagement.v1.SecurityCenterService>(
+                    service, METHODID_GET_SECURITY_CENTER_SERVICE)))
+        .addMethod(
+            getListSecurityCenterServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest,
+                    com.google.cloud.securitycentermanagement.v1
+                        .ListSecurityCenterServicesResponse>(
+                    service, METHODID_LIST_SECURITY_CENTER_SERVICES)))
+        .addMethod(
+            getUpdateSecurityCenterServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycentermanagement.v1.UpdateSecurityCenterServiceRequest,
+                    com.google.cloud.securitycentermanagement.v1.SecurityCenterService>(
+                    service, METHODID_UPDATE_SECURITY_CENTER_SERVICE)))
         .build();
   }
 
@@ -3322,6 +3736,9 @@ public final class SecurityCenterManagementGrpc {
                       .addMethod(getUpdateEventThreatDetectionCustomModuleMethod())
                       .addMethod(getDeleteEventThreatDetectionCustomModuleMethod())
                       .addMethod(getValidateEventThreatDetectionCustomModuleMethod())
+                      .addMethod(getGetSecurityCenterServiceMethod())
+                      .addMethod(getListSecurityCenterServicesMethod())
+                      .addMethod(getUpdateSecurityCenterServiceMethod())
                       .build();
         }
       }

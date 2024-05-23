@@ -617,6 +617,7 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -692,6 +693,7 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -855,6 +857,7 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -916,6 +919,7 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -977,6 +981,7 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1774,6 +1779,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1843,6 +1851,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2000,6 +2011,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2055,6 +2069,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2110,6 +2127,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

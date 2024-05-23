@@ -1269,6 +1269,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductView",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1297,6 +1315,15 @@
   },
   {
     "name": "com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView$Effectiveness",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

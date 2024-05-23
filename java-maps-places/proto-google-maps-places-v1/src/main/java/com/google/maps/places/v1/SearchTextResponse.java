@@ -40,6 +40,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
 
   private SearchTextResponse() {
     places_ = java.util.Collections.emptyList();
+    contextualContents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -134,6 +135,128 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     return places_.get(index);
   }
 
+  public static final int CONTEXTUAL_CONTENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.places.v1.ContextualContent> contextualContents_;
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * A list of contextual contents where each entry associates to the
+   * corresponding place in the same index in the places field. The contents
+   * that are relevant to the `text_query` in the request are preferred. If the
+   * contextual content is not available for one of the places, it will return
+   * non-contextual content. It will be empty only when the content is
+   * unavailable for this place. This list should have as many entries as the
+   * list of places if requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.places.v1.ContextualContent> getContextualContentsList() {
+    return contextualContents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * A list of contextual contents where each entry associates to the
+   * corresponding place in the same index in the places field. The contents
+   * that are relevant to the `text_query` in the request are preferred. If the
+   * contextual content is not available for one of the places, it will return
+   * non-contextual content. It will be empty only when the content is
+   * unavailable for this place. This list should have as many entries as the
+   * list of places if requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.places.v1.ContextualContentOrBuilder>
+      getContextualContentsOrBuilderList() {
+    return contextualContents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * A list of contextual contents where each entry associates to the
+   * corresponding place in the same index in the places field. The contents
+   * that are relevant to the `text_query` in the request are preferred. If the
+   * contextual content is not available for one of the places, it will return
+   * non-contextual content. It will be empty only when the content is
+   * unavailable for this place. This list should have as many entries as the
+   * list of places if requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+   */
+  @java.lang.Override
+  public int getContextualContentsCount() {
+    return contextualContents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * A list of contextual contents where each entry associates to the
+   * corresponding place in the same index in the places field. The contents
+   * that are relevant to the `text_query` in the request are preferred. If the
+   * contextual content is not available for one of the places, it will return
+   * non-contextual content. It will be empty only when the content is
+   * unavailable for this place. This list should have as many entries as the
+   * list of places if requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.ContextualContent getContextualContents(int index) {
+    return contextualContents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental: See
+   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+   * for more details.
+   *
+   * A list of contextual contents where each entry associates to the
+   * corresponding place in the same index in the places field. The contents
+   * that are relevant to the `text_query` in the request are preferred. If the
+   * contextual content is not available for one of the places, it will return
+   * non-contextual content. It will be empty only when the content is
+   * unavailable for this place. This list should have as many entries as the
+   * list of places if requested.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.ContextualContentOrBuilder getContextualContentsOrBuilder(
+      int index) {
+    return contextualContents_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -151,6 +274,9 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < places_.size(); i++) {
       output.writeMessage(1, places_.get(i));
     }
+    for (int i = 0; i < contextualContents_.size(); i++) {
+      output.writeMessage(3, contextualContents_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -162,6 +288,10 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     size = 0;
     for (int i = 0; i < places_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, places_.get(i));
+    }
+    for (int i = 0; i < contextualContents_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, contextualContents_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -180,6 +310,7 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         (com.google.maps.places.v1.SearchTextResponse) obj;
 
     if (!getPlacesList().equals(other.getPlacesList())) return false;
+    if (!getContextualContentsList().equals(other.getContextualContentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -194,6 +325,10 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
     if (getPlacesCount() > 0) {
       hash = (37 * hash) + PLACES_FIELD_NUMBER;
       hash = (53 * hash) + getPlacesList().hashCode();
+    }
+    if (getContextualContentsCount() > 0) {
+      hash = (37 * hash) + CONTEXTUAL_CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContextualContentsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -341,6 +476,13 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         placesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (contextualContentsBuilder_ == null) {
+        contextualContents_ = java.util.Collections.emptyList();
+      } else {
+        contextualContents_ = null;
+        contextualContentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -385,6 +527,15 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         result.places_ = places_;
       } else {
         result.places_ = placesBuilder_.build();
+      }
+      if (contextualContentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          contextualContents_ = java.util.Collections.unmodifiableList(contextualContents_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.contextualContents_ = contextualContents_;
+      } else {
+        result.contextualContents_ = contextualContentsBuilder_.build();
       }
     }
 
@@ -464,6 +615,33 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (contextualContentsBuilder_ == null) {
+        if (!other.contextualContents_.isEmpty()) {
+          if (contextualContents_.isEmpty()) {
+            contextualContents_ = other.contextualContents_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureContextualContentsIsMutable();
+            contextualContents_.addAll(other.contextualContents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.contextualContents_.isEmpty()) {
+          if (contextualContentsBuilder_.isEmpty()) {
+            contextualContentsBuilder_.dispose();
+            contextualContentsBuilder_ = null;
+            contextualContents_ = other.contextualContents_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            contextualContentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getContextualContentsFieldBuilder()
+                    : null;
+          } else {
+            contextualContentsBuilder_.addAllMessages(other.contextualContents_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -502,6 +680,19 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 10
+            case 26:
+              {
+                com.google.maps.places.v1.ContextualContent m =
+                    input.readMessage(
+                        com.google.maps.places.v1.ContextualContent.parser(), extensionRegistry);
+                if (contextualContentsBuilder_ == null) {
+                  ensureContextualContentsIsMutable();
+                  contextualContents_.add(m);
+                } else {
+                  contextualContentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -865,6 +1056,546 @@ public final class SearchTextResponse extends com.google.protobuf.GeneratedMessa
         places_ = null;
       }
       return placesBuilder_;
+    }
+
+    private java.util.List<com.google.maps.places.v1.ContextualContent> contextualContents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureContextualContentsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        contextualContents_ =
+            new java.util.ArrayList<com.google.maps.places.v1.ContextualContent>(
+                contextualContents_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.ContextualContent,
+            com.google.maps.places.v1.ContextualContent.Builder,
+            com.google.maps.places.v1.ContextualContentOrBuilder>
+        contextualContentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.ContextualContent> getContextualContentsList() {
+      if (contextualContentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(contextualContents_);
+      } else {
+        return contextualContentsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public int getContextualContentsCount() {
+      if (contextualContentsBuilder_ == null) {
+        return contextualContents_.size();
+      } else {
+        return contextualContentsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public com.google.maps.places.v1.ContextualContent getContextualContents(int index) {
+      if (contextualContentsBuilder_ == null) {
+        return contextualContents_.get(index);
+      } else {
+        return contextualContentsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder setContextualContents(
+        int index, com.google.maps.places.v1.ContextualContent value) {
+      if (contextualContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextualContentsIsMutable();
+        contextualContents_.set(index, value);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder setContextualContents(
+        int index, com.google.maps.places.v1.ContextualContent.Builder builderForValue) {
+      if (contextualContentsBuilder_ == null) {
+        ensureContextualContentsIsMutable();
+        contextualContents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextualContentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder addContextualContents(com.google.maps.places.v1.ContextualContent value) {
+      if (contextualContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextualContentsIsMutable();
+        contextualContents_.add(value);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder addContextualContents(
+        int index, com.google.maps.places.v1.ContextualContent value) {
+      if (contextualContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextualContentsIsMutable();
+        contextualContents_.add(index, value);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder addContextualContents(
+        com.google.maps.places.v1.ContextualContent.Builder builderForValue) {
+      if (contextualContentsBuilder_ == null) {
+        ensureContextualContentsIsMutable();
+        contextualContents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        contextualContentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder addContextualContents(
+        int index, com.google.maps.places.v1.ContextualContent.Builder builderForValue) {
+      if (contextualContentsBuilder_ == null) {
+        ensureContextualContentsIsMutable();
+        contextualContents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextualContentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder addAllContextualContents(
+        java.lang.Iterable<? extends com.google.maps.places.v1.ContextualContent> values) {
+      if (contextualContentsBuilder_ == null) {
+        ensureContextualContentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contextualContents_);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder clearContextualContents() {
+      if (contextualContentsBuilder_ == null) {
+        contextualContents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public Builder removeContextualContents(int index) {
+      if (contextualContentsBuilder_ == null) {
+        ensureContextualContentsIsMutable();
+        contextualContents_.remove(index);
+        onChanged();
+      } else {
+        contextualContentsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public com.google.maps.places.v1.ContextualContent.Builder getContextualContentsBuilder(
+        int index) {
+      return getContextualContentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public com.google.maps.places.v1.ContextualContentOrBuilder getContextualContentsOrBuilder(
+        int index) {
+      if (contextualContentsBuilder_ == null) {
+        return contextualContents_.get(index);
+      } else {
+        return contextualContentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public java.util.List<? extends com.google.maps.places.v1.ContextualContentOrBuilder>
+        getContextualContentsOrBuilderList() {
+      if (contextualContentsBuilder_ != null) {
+        return contextualContentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(contextualContents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public com.google.maps.places.v1.ContextualContent.Builder addContextualContentsBuilder() {
+      return getContextualContentsFieldBuilder()
+          .addBuilder(com.google.maps.places.v1.ContextualContent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public com.google.maps.places.v1.ContextualContent.Builder addContextualContentsBuilder(
+        int index) {
+      return getContextualContentsFieldBuilder()
+          .addBuilder(index, com.google.maps.places.v1.ContextualContent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental: See
+     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
+     * for more details.
+     *
+     * A list of contextual contents where each entry associates to the
+     * corresponding place in the same index in the places field. The contents
+     * that are relevant to the `text_query` in the request are preferred. If the
+     * contextual content is not available for one of the places, it will return
+     * non-contextual content. It will be empty only when the content is
+     * unavailable for this place. This list should have as many entries as the
+     * list of places if requested.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.ContextualContent contextual_contents = 3;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.ContextualContent.Builder>
+        getContextualContentsBuilderList() {
+      return getContextualContentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.ContextualContent,
+            com.google.maps.places.v1.ContextualContent.Builder,
+            com.google.maps.places.v1.ContextualContentOrBuilder>
+        getContextualContentsFieldBuilder() {
+      if (contextualContentsBuilder_ == null) {
+        contextualContentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.places.v1.ContextualContent,
+                com.google.maps.places.v1.ContextualContent.Builder,
+                com.google.maps.places.v1.ContextualContentOrBuilder>(
+                contextualContents_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        contextualContents_ = null;
+      }
+      return contextualContentsBuilder_;
     }
 
     @java.lang.Override

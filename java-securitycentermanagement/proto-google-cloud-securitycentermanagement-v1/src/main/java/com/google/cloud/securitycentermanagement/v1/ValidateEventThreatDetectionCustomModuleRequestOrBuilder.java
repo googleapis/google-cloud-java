@@ -32,7 +32,7 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    * Its format is:
    *
-   *   * "organizations/{organization}/locations/{location}".
+   *   * `organizations/{organization}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -50,7 +50,7 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    * Its format is:
    *
-   *   * "organizations/{organization}/locations/{location}".
+   *   * `organizations/{organization}/locations/{location}`.
    * </pre>
    *
    * <code>

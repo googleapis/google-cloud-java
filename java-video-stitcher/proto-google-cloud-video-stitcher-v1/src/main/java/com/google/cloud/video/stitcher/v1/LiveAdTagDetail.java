@@ -23,7 +23,9 @@ package com.google.cloud.video.stitcher.v1;
  *
  *
  * <pre>
- * Container for a live session's ad tag detail.
+ * Information related to the details for one ad tag. This resource is only
+ * available for live sessions that do not implement Google Ad Manager ad
+ * insertion.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.stitcher.v1.LiveAdTagDetail}
@@ -362,7 +364,9 @@ public final class LiveAdTagDetail extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Container for a live session's ad tag detail.
+   * Information related to the details for one ad tag. This resource is only
+   * available for live sessions that do not implement Google Ad Manager ad
+   * insertion.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.stitcher.v1.LiveAdTagDetail}

@@ -540,6 +540,123 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> UpdateLiveConfig</td>
+ *      <td><p> Updates the specified LiveConfig. Only update fields specified in the call method body.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateLiveConfigAsync(UpdateLiveConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateLiveConfigAsync(LiveConfig liveConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateLiveConfigOperationCallable()
+ *           <li><p> updateLiveConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateVodConfig</td>
+ *      <td><p> Registers the VOD config with the provided unique ID in the specified region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createVodConfigAsync(CreateVodConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createVodConfigAsync(LocationName parent, VodConfig vodConfig, String vodConfigId)
+ *           <li><p> createVodConfigAsync(String parent, VodConfig vodConfig, String vodConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createVodConfigOperationCallable()
+ *           <li><p> createVodConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListVodConfigs</td>
+ *      <td><p> Lists all VOD configs managed by the Video Stitcher API that belong to the specified project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listVodConfigs(ListVodConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listVodConfigs(LocationName parent)
+ *           <li><p> listVodConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listVodConfigsPagedCallable()
+ *           <li><p> listVodConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVodConfig</td>
+ *      <td><p> Returns the specified VOD config managed by the Video Stitcher API service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVodConfig(GetVodConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVodConfig(VodConfigName name)
+ *           <li><p> getVodConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVodConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteVodConfig</td>
+ *      <td><p> Deletes the specified VOD config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteVodConfigAsync(DeleteVodConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteVodConfigAsync(VodConfigName name)
+ *           <li><p> deleteVodConfigAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteVodConfigOperationCallable()
+ *           <li><p> deleteVodConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateVodConfig</td>
+ *      <td><p> Updates the specified VOD config. Only update fields specified in the call method body.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateVodConfigAsync(UpdateVodConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateVodConfigAsync(VodConfig vodConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateVodConfigOperationCallable()
+ *           <li><p> updateVodConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -4143,6 +4260,883 @@ public class VideoStitcherServiceClient implements BackgroundResource {
     return stub.deleteLiveConfigCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified LiveConfig. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   LiveConfig liveConfig = LiveConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LiveConfig response =
+   *       videoStitcherServiceClient.updateLiveConfigAsync(liveConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param liveConfig Required. The LiveConfig resource which replaces the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LiveConfig, OperationMetadata> updateLiveConfigAsync(
+      LiveConfig liveConfig, FieldMask updateMask) {
+    UpdateLiveConfigRequest request =
+        UpdateLiveConfigRequest.newBuilder()
+            .setLiveConfig(liveConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateLiveConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified LiveConfig. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateLiveConfigRequest request =
+   *       UpdateLiveConfigRequest.newBuilder()
+   *           .setLiveConfig(LiveConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   LiveConfig response = videoStitcherServiceClient.updateLiveConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LiveConfig, OperationMetadata> updateLiveConfigAsync(
+      UpdateLiveConfigRequest request) {
+    return updateLiveConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified LiveConfig. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateLiveConfigRequest request =
+   *       UpdateLiveConfigRequest.newBuilder()
+   *           .setLiveConfig(LiveConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LiveConfig, OperationMetadata> future =
+   *       videoStitcherServiceClient.updateLiveConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LiveConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationCallable() {
+    return stub.updateLiveConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified LiveConfig. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateLiveConfigRequest request =
+   *       UpdateLiveConfigRequest.newBuilder()
+   *           .setLiveConfig(LiveConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       videoStitcherServiceClient.updateLiveConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLiveConfigRequest, Operation> updateLiveConfigCallable() {
+    return stub.updateLiveConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers the VOD config with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   VodConfig vodConfig = VodConfig.newBuilder().build();
+   *   String vodConfigId = "vodConfigId1497626088";
+   *   VodConfig response =
+   *       videoStitcherServiceClient.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project in which the VOD config should be created, in the form of
+   *     `projects/{project_number}/locations/{location}`.
+   * @param vodConfig Required. The VOD config resource to create.
+   * @param vodConfigId Required. The unique identifier ID to use for the VOD config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VodConfig, OperationMetadata> createVodConfigAsync(
+      LocationName parent, VodConfig vodConfig, String vodConfigId) {
+    CreateVodConfigRequest request =
+        CreateVodConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setVodConfig(vodConfig)
+            .setVodConfigId(vodConfigId)
+            .build();
+    return createVodConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers the VOD config with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   VodConfig vodConfig = VodConfig.newBuilder().build();
+   *   String vodConfigId = "vodConfigId1497626088";
+   *   VodConfig response =
+   *       videoStitcherServiceClient.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project in which the VOD config should be created, in the form of
+   *     `projects/{project_number}/locations/{location}`.
+   * @param vodConfig Required. The VOD config resource to create.
+   * @param vodConfigId Required. The unique identifier ID to use for the VOD config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VodConfig, OperationMetadata> createVodConfigAsync(
+      String parent, VodConfig vodConfig, String vodConfigId) {
+    CreateVodConfigRequest request =
+        CreateVodConfigRequest.newBuilder()
+            .setParent(parent)
+            .setVodConfig(vodConfig)
+            .setVodConfigId(vodConfigId)
+            .build();
+    return createVodConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers the VOD config with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   CreateVodConfigRequest request =
+   *       CreateVodConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setVodConfigId("vodConfigId1497626088")
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   VodConfig response = videoStitcherServiceClient.createVodConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VodConfig, OperationMetadata> createVodConfigAsync(
+      CreateVodConfigRequest request) {
+    return createVodConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers the VOD config with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   CreateVodConfigRequest request =
+   *       CreateVodConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setVodConfigId("vodConfigId1497626088")
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<VodConfig, OperationMetadata> future =
+   *       videoStitcherServiceClient.createVodConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   VodConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationCallable() {
+    return stub.createVodConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers the VOD config with the provided unique ID in the specified region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   CreateVodConfigRequest request =
+   *       CreateVodConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setVodConfigId("vodConfigId1497626088")
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       videoStitcherServiceClient.createVodConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateVodConfigRequest, Operation> createVodConfigCallable() {
+    return stub.createVodConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all VOD configs managed by the Video Stitcher API that belong to the specified project
+   * and region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (VodConfig element : videoStitcherServiceClient.listVodConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that contains the list of VOD configs, in the form of
+   *     `projects/{project_number}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVodConfigsPagedResponse listVodConfigs(LocationName parent) {
+    ListVodConfigsRequest request =
+        ListVodConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listVodConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all VOD configs managed by the Video Stitcher API that belong to the specified project
+   * and region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (VodConfig element : videoStitcherServiceClient.listVodConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that contains the list of VOD configs, in the form of
+   *     `projects/{project_number}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVodConfigsPagedResponse listVodConfigs(String parent) {
+    ListVodConfigsRequest request = ListVodConfigsRequest.newBuilder().setParent(parent).build();
+    return listVodConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all VOD configs managed by the Video Stitcher API that belong to the specified project
+   * and region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   ListVodConfigsRequest request =
+   *       ListVodConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (VodConfig element : videoStitcherServiceClient.listVodConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVodConfigsPagedResponse listVodConfigs(ListVodConfigsRequest request) {
+    return listVodConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all VOD configs managed by the Video Stitcher API that belong to the specified project
+   * and region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   ListVodConfigsRequest request =
+   *       ListVodConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<VodConfig> future =
+   *       videoStitcherServiceClient.listVodConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (VodConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListVodConfigsRequest, ListVodConfigsPagedResponse>
+      listVodConfigsPagedCallable() {
+    return stub.listVodConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all VOD configs managed by the Video Stitcher API that belong to the specified project
+   * and region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   ListVodConfigsRequest request =
+   *       ListVodConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListVodConfigsResponse response =
+   *         videoStitcherServiceClient.listVodConfigsCallable().call(request);
+   *     for (VodConfig element : response.getVodConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListVodConfigsRequest, ListVodConfigsResponse>
+      listVodConfigsCallable() {
+    return stub.listVodConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified VOD config managed by the Video Stitcher API service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+   *   VodConfig response = videoStitcherServiceClient.getVodConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VOD config to be retrieved, in the form of
+   *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VodConfig getVodConfig(VodConfigName name) {
+    GetVodConfigRequest request =
+        GetVodConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getVodConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified VOD config managed by the Video Stitcher API service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   String name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString();
+   *   VodConfig response = videoStitcherServiceClient.getVodConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VOD config to be retrieved, in the form of
+   *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VodConfig getVodConfig(String name) {
+    GetVodConfigRequest request = GetVodConfigRequest.newBuilder().setName(name).build();
+    return getVodConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified VOD config managed by the Video Stitcher API service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   GetVodConfigRequest request =
+   *       GetVodConfigRequest.newBuilder()
+   *           .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+   *           .build();
+   *   VodConfig response = videoStitcherServiceClient.getVodConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VodConfig getVodConfig(GetVodConfigRequest request) {
+    return getVodConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified VOD config managed by the Video Stitcher API service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   GetVodConfigRequest request =
+   *       GetVodConfigRequest.newBuilder()
+   *           .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<VodConfig> future =
+   *       videoStitcherServiceClient.getVodConfigCallable().futureCall(request);
+   *   // Do something.
+   *   VodConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetVodConfigRequest, VodConfig> getVodConfigCallable() {
+    return stub.getVodConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified VOD config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+   *   videoStitcherServiceClient.deleteVodConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VOD config to be deleted, in the form of
+   *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteVodConfigAsync(VodConfigName name) {
+    DeleteVodConfigRequest request =
+        DeleteVodConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteVodConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified VOD config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   String name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString();
+   *   videoStitcherServiceClient.deleteVodConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VOD config to be deleted, in the form of
+   *     `projects/{project_number}/locations/{location}/vodConfigs/{id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteVodConfigAsync(String name) {
+    DeleteVodConfigRequest request = DeleteVodConfigRequest.newBuilder().setName(name).build();
+    return deleteVodConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified VOD config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   DeleteVodConfigRequest request =
+   *       DeleteVodConfigRequest.newBuilder()
+   *           .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+   *           .build();
+   *   videoStitcherServiceClient.deleteVodConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteVodConfigAsync(
+      DeleteVodConfigRequest request) {
+    return deleteVodConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified VOD config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   DeleteVodConfigRequest request =
+   *       DeleteVodConfigRequest.newBuilder()
+   *           .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       videoStitcherServiceClient.deleteVodConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationCallable() {
+    return stub.deleteVodConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified VOD config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   DeleteVodConfigRequest request =
+   *       DeleteVodConfigRequest.newBuilder()
+   *           .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       videoStitcherServiceClient.deleteVodConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteVodConfigRequest, Operation> deleteVodConfigCallable() {
+    return stub.deleteVodConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified VOD config. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   VodConfig vodConfig = VodConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   VodConfig response =
+   *       videoStitcherServiceClient.updateVodConfigAsync(vodConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param vodConfig Required. The VOD config resource which replaces the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VodConfig, OperationMetadata> updateVodConfigAsync(
+      VodConfig vodConfig, FieldMask updateMask) {
+    UpdateVodConfigRequest request =
+        UpdateVodConfigRequest.newBuilder()
+            .setVodConfig(vodConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateVodConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified VOD config. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateVodConfigRequest request =
+   *       UpdateVodConfigRequest.newBuilder()
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   VodConfig response = videoStitcherServiceClient.updateVodConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VodConfig, OperationMetadata> updateVodConfigAsync(
+      UpdateVodConfigRequest request) {
+    return updateVodConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified VOD config. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateVodConfigRequest request =
+   *       UpdateVodConfigRequest.newBuilder()
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<VodConfig, OperationMetadata> future =
+   *       videoStitcherServiceClient.updateVodConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   VodConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationCallable() {
+    return stub.updateVodConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified VOD config. Only update fields specified in the call method body.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VideoStitcherServiceClient videoStitcherServiceClient =
+   *     VideoStitcherServiceClient.create()) {
+   *   UpdateVodConfigRequest request =
+   *       UpdateVodConfigRequest.newBuilder()
+   *           .setVodConfig(VodConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       videoStitcherServiceClient.updateVodConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateVodConfigRequest, Operation> updateVodConfigCallable() {
+    return stub.updateVodConfigCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -4645,6 +5639,82 @@ public class VideoStitcherServiceClient implements BackgroundResource {
     protected ListLiveConfigsFixedSizeCollection createCollection(
         List<ListLiveConfigsPage> pages, int collectionSize) {
       return new ListLiveConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListVodConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListVodConfigsRequest,
+          ListVodConfigsResponse,
+          VodConfig,
+          ListVodConfigsPage,
+          ListVodConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListVodConfigsPagedResponse> createAsync(
+        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        ApiFuture<ListVodConfigsResponse> futureResponse) {
+      ApiFuture<ListVodConfigsPage> futurePage =
+          ListVodConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListVodConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListVodConfigsPagedResponse(ListVodConfigsPage page) {
+      super(page, ListVodConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListVodConfigsPage
+      extends AbstractPage<
+          ListVodConfigsRequest, ListVodConfigsResponse, VodConfig, ListVodConfigsPage> {
+
+    private ListVodConfigsPage(
+        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        ListVodConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListVodConfigsPage createEmptyPage() {
+      return new ListVodConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListVodConfigsPage createPage(
+        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        ListVodConfigsResponse response) {
+      return new ListVodConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListVodConfigsPage> createPageAsync(
+        PageContext<ListVodConfigsRequest, ListVodConfigsResponse, VodConfig> context,
+        ApiFuture<ListVodConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListVodConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListVodConfigsRequest,
+          ListVodConfigsResponse,
+          VodConfig,
+          ListVodConfigsPage,
+          ListVodConfigsFixedSizeCollection> {
+
+    private ListVodConfigsFixedSizeCollection(List<ListVodConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListVodConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListVodConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListVodConfigsFixedSizeCollection createCollection(
+        List<ListVodConfigsPage> pages, int collectionSize) {
+      return new ListVodConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -21,6 +21,7 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -511,6 +512,7 @@ public class VideoStitcherServiceClientTest {
             .setAssetId("assetId-704776149")
             .setAdTracking(AdTracking.forNumber(0))
             .setGamSettings(VodSession.GamSettings.newBuilder().build())
+            .setVodConfig(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -561,6 +563,7 @@ public class VideoStitcherServiceClientTest {
             .setAssetId("assetId-704776149")
             .setAdTracking(AdTracking.forNumber(0))
             .setGamSettings(VodSession.GamSettings.newBuilder().build())
+            .setVodConfig(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -611,6 +614,7 @@ public class VideoStitcherServiceClientTest {
             .setAssetId("assetId-704776149")
             .setAdTracking(AdTracking.forNumber(0))
             .setGamSettings(VodSession.GamSettings.newBuilder().build())
+            .setVodConfig(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -658,6 +662,7 @@ public class VideoStitcherServiceClientTest {
             .setAssetId("assetId-704776149")
             .setAdTracking(AdTracking.forNumber(0))
             .setGamSettings(VodSession.GamSettings.newBuilder().build())
+            .setVodConfig(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1639,6 +1644,7 @@ public class VideoStitcherServiceClientTest {
             .setManifestOptions(ManifestOptions.newBuilder().build())
             .setGamSettings(LiveSession.GamSettings.newBuilder().build())
             .setLiveConfig(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
+            .setAdTracking(AdTracking.forNumber(0))
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1685,6 +1691,7 @@ public class VideoStitcherServiceClientTest {
             .setManifestOptions(ManifestOptions.newBuilder().build())
             .setGamSettings(LiveSession.GamSettings.newBuilder().build())
             .setLiveConfig(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
+            .setAdTracking(AdTracking.forNumber(0))
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1731,6 +1738,7 @@ public class VideoStitcherServiceClientTest {
             .setManifestOptions(ManifestOptions.newBuilder().build())
             .setGamSettings(LiveSession.GamSettings.newBuilder().build())
             .setLiveConfig(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
+            .setAdTracking(AdTracking.forNumber(0))
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1774,6 +1782,7 @@ public class VideoStitcherServiceClientTest {
             .setManifestOptions(ManifestOptions.newBuilder().build())
             .setGamSettings(LiveSession.GamSettings.newBuilder().build())
             .setLiveConfig(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
+            .setAdTracking(AdTracking.forNumber(0))
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1818,6 +1827,7 @@ public class VideoStitcherServiceClientTest {
             .setAdTracking(AdTracking.forNumber(0))
             .setDefaultSlate(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
             .setPrefetchConfig(PrefetchConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1877,6 +1887,7 @@ public class VideoStitcherServiceClientTest {
             .setAdTracking(AdTracking.forNumber(0))
             .setDefaultSlate(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
             .setPrefetchConfig(PrefetchConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2024,6 +2035,7 @@ public class VideoStitcherServiceClientTest {
             .setAdTracking(AdTracking.forNumber(0))
             .setDefaultSlate(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
             .setPrefetchConfig(PrefetchConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -2068,6 +2080,7 @@ public class VideoStitcherServiceClientTest {
             .setAdTracking(AdTracking.forNumber(0))
             .setDefaultSlate(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
             .setPrefetchConfig(PrefetchConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -2177,6 +2190,483 @@ public class VideoStitcherServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteLiveConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateLiveConfigTest() throws Exception {
+    LiveConfig expectedResponse =
+        LiveConfig.newBuilder()
+            .setName(LiveConfigName.of("[PROJECT]", "[LOCATION]", "[LIVE_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamLiveConfig(GamLiveConfig.newBuilder().build())
+            .setAdTracking(AdTracking.forNumber(0))
+            .setDefaultSlate(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
+            .setPrefetchConfig(PrefetchConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateLiveConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    LiveConfig liveConfig = LiveConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    LiveConfig actualResponse = client.updateLiveConfigAsync(liveConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateLiveConfigRequest actualRequest = ((UpdateLiveConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(liveConfig, actualRequest.getLiveConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateLiveConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      LiveConfig liveConfig = LiveConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateLiveConfigAsync(liveConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createVodConfigTest() throws Exception {
+    VodConfig expectedResponse =
+        VodConfig.newBuilder()
+            .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamVodConfig(GamVodConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createVodConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    VodConfig vodConfig = VodConfig.newBuilder().build();
+    String vodConfigId = "vodConfigId1497626088";
+
+    VodConfig actualResponse = client.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateVodConfigRequest actualRequest = ((CreateVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(vodConfig, actualRequest.getVodConfig());
+    Assert.assertEquals(vodConfigId, actualRequest.getVodConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createVodConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      VodConfig vodConfig = VodConfig.newBuilder().build();
+      String vodConfigId = "vodConfigId1497626088";
+      client.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createVodConfigTest2() throws Exception {
+    VodConfig expectedResponse =
+        VodConfig.newBuilder()
+            .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamVodConfig(GamVodConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createVodConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    VodConfig vodConfig = VodConfig.newBuilder().build();
+    String vodConfigId = "vodConfigId1497626088";
+
+    VodConfig actualResponse = client.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateVodConfigRequest actualRequest = ((CreateVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(vodConfig, actualRequest.getVodConfig());
+    Assert.assertEquals(vodConfigId, actualRequest.getVodConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createVodConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      VodConfig vodConfig = VodConfig.newBuilder().build();
+      String vodConfigId = "vodConfigId1497626088";
+      client.createVodConfigAsync(parent, vodConfig, vodConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listVodConfigsTest() throws Exception {
+    VodConfig responsesElement = VodConfig.newBuilder().build();
+    ListVodConfigsResponse expectedResponse =
+        ListVodConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVodConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockVideoStitcherService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListVodConfigsPagedResponse pagedListResponse = client.listVodConfigs(parent);
+
+    List<VodConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVodConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListVodConfigsRequest actualRequest = ((ListVodConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listVodConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listVodConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listVodConfigsTest2() throws Exception {
+    VodConfig responsesElement = VodConfig.newBuilder().build();
+    ListVodConfigsResponse expectedResponse =
+        ListVodConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVodConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockVideoStitcherService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListVodConfigsPagedResponse pagedListResponse = client.listVodConfigs(parent);
+
+    List<VodConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVodConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListVodConfigsRequest actualRequest = ((ListVodConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listVodConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listVodConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getVodConfigTest() throws Exception {
+    VodConfig expectedResponse =
+        VodConfig.newBuilder()
+            .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamVodConfig(GamVodConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    mockVideoStitcherService.addResponse(expectedResponse);
+
+    VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+
+    VodConfig actualResponse = client.getVodConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetVodConfigRequest actualRequest = ((GetVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getVodConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+      client.getVodConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getVodConfigTest2() throws Exception {
+    VodConfig expectedResponse =
+        VodConfig.newBuilder()
+            .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamVodConfig(GamVodConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    mockVideoStitcherService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    VodConfig actualResponse = client.getVodConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetVodConfigRequest actualRequest = ((GetVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getVodConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getVodConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteVodConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteVodConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+
+    client.deleteVodConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteVodConfigRequest actualRequest = ((DeleteVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteVodConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      VodConfigName name = VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]");
+      client.deleteVodConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteVodConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteVodConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteVodConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteVodConfigRequest actualRequest = ((DeleteVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteVodConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteVodConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateVodConfigTest() throws Exception {
+    VodConfig expectedResponse =
+        VodConfig.newBuilder()
+            .setName(VodConfigName.of("[PROJECT]", "[LOCATION]", "[VOD_CONFIG]").toString())
+            .setSourceUri("sourceUri-1698419887")
+            .setAdTagUri("adTagUri-1692450443")
+            .setGamVodConfig(GamVodConfig.newBuilder().build())
+            .setSourceFetchOptions(FetchOptions.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateVodConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVideoStitcherService.addResponse(resultOperation);
+
+    VodConfig vodConfig = VodConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    VodConfig actualResponse = client.updateVodConfigAsync(vodConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVideoStitcherService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateVodConfigRequest actualRequest = ((UpdateVodConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(vodConfig, actualRequest.getVodConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateVodConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVideoStitcherService.addException(exception);
+
+    try {
+      VodConfig vodConfig = VodConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateVodConfigAsync(vodConfig, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

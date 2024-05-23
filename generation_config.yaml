@@ -1,6 +1,6 @@
 gapic_generator_version: 2.40.1
 protoc_version: '25.3'
-googleapis_commitish: a07bf82eb48d79bc113620b3fb517a3ebe92989c
+googleapis_commitish: 30717c0b0c9966906880703208a4c820411565c4
 libraries_bom_version: 26.39.0
 template_excludes:
 - .github/*
@@ -988,6 +988,7 @@ libraries:
   - proto_path: google/cloud/gkehub/v1alpha
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
+  - proto_path: google/cloud/gkehub/servicemesh/v1beta
 
 - api_shortname: containeranalysis
   name_pretty: Grafeas

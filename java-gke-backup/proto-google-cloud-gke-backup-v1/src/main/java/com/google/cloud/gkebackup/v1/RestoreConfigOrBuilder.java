@@ -518,6 +518,124 @@ public interface RestoreConfigOrBuilder
   com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
       getTransformationRulesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding>
+      getVolumeDataRestorePolicyBindingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding
+      getVolumeDataRestorePolicyBindings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getVolumeDataRestorePolicyBindingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder>
+      getVolumeDataRestorePolicyBindingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A table that binds volumes by their scope to a restore policy.
+   * Bindings must have a unique scope. Any volumes not scoped in the bindings
+   * are subject to the policy defined in volume_data_restore_policy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBinding volume_data_restore_policy_bindings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicyBindingOrBuilder
+      getVolumeDataRestorePolicyBindingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the restoreOrder field is set.
+   */
+  boolean hasRestoreOrder();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restoreOrder.
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder getRestoreOrder();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. RestoreOrder contains custom ordering to use on a Restore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestoreConfig.RestoreOrder restore_order = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkebackup.v1.RestoreConfig.RestoreOrderOrBuilder getRestoreOrderOrBuilder();
+
   com.google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreScopeCase
       getNamespacedResourceRestoreScopeCase();
 }

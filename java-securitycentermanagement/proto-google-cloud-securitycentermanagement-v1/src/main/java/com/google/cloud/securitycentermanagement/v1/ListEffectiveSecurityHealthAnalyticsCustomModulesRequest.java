@@ -78,11 +78,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * Required. Name of parent to list effective custom modules. specified in one
+   * of the following formats:
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -107,11 +108,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
+   * Required. Name of parent to list effective custom modules. specified in one
+   * of the following formats:
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
    * or
-   * "projects/{project}/locations/{location}"
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -656,11 +658,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * Required. Name of parent to list effective custom modules. specified in one
+     * of the following formats:
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -684,11 +687,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * Required. Name of parent to list effective custom modules. specified in one
+     * of the following formats:
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -712,11 +716,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * Required. Name of parent to list effective custom modules. specified in one
+     * of the following formats:
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -739,11 +744,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * Required. Name of parent to list effective custom modules. specified in one
+     * of the following formats:
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -762,11 +768,12 @@ public final class ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
+     * Required. Name of parent to list effective custom modules. specified in one
+     * of the following formats:
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
      * or
-     * "projects/{project}/locations/{location}"
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

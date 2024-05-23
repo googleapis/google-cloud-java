@@ -61,4 +61,48 @@ public interface MediaCdnKeyOrBuilder
    * @return The bytes for keyName.
    */
   com.google.protobuf.ByteString getKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tokenConfig field is set.
+   */
+  boolean hasTokenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenConfig.
+   */
+  com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig getTokenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the URL will be signed using the Media CDN token.
+   * Otherwise, the URL would be signed using the standard Media CDN signature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig token_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder getTokenConfigOrBuilder();
 }

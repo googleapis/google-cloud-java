@@ -21,6 +21,7 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -36,16 +37,19 @@ import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
+import com.google.cloud.video.stitcher.v1.CreateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
+import com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest;
+import com.google.cloud.video.stitcher.v1.GetVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest;
 import com.google.cloud.video.stitcher.v1.ListCdnKeysRequest;
@@ -58,6 +62,8 @@ import com.google.cloud.video.stitcher.v1.ListSlatesRequest;
 import com.google.cloud.video.stitcher.v1.ListSlatesResponse;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsRequest;
+import com.google.cloud.video.stitcher.v1.ListVodConfigsResponse;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse;
 import com.google.cloud.video.stitcher.v1.LiveAdTagDetail;
@@ -66,8 +72,11 @@ import com.google.cloud.video.stitcher.v1.LiveSession;
 import com.google.cloud.video.stitcher.v1.OperationMetadata;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.UpdateSlateRequest;
+import com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest;
 import com.google.cloud.video.stitcher.v1.VodAdTagDetail;
+import com.google.cloud.video.stitcher.v1.VodConfig;
 import com.google.cloud.video.stitcher.v1.VodSession;
 import com.google.cloud.video.stitcher.v1.VodStitchDetail;
 import com.google.longrunning.Operation;
@@ -331,6 +340,71 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateLiveConfigRequest, Operation>
+      updateLiveConfigMethodDescriptor =
+          MethodDescriptor.<UpdateLiveConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/UpdateLiveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLiveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateVodConfigRequest, Operation>
+      createVodConfigMethodDescriptor =
+          MethodDescriptor.<CreateVodConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/CreateVodConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateVodConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListVodConfigsRequest, ListVodConfigsResponse>
+      listVodConfigsMethodDescriptor =
+          MethodDescriptor.<ListVodConfigsRequest, ListVodConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/ListVodConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListVodConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListVodConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetVodConfigRequest, VodConfig>
+      getVodConfigMethodDescriptor =
+          MethodDescriptor.<GetVodConfigRequest, VodConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/GetVodConfig")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetVodConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VodConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteVodConfigRequest, Operation>
+      deleteVodConfigMethodDescriptor =
+          MethodDescriptor.<DeleteVodConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/DeleteVodConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteVodConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateVodConfigRequest, Operation>
+      updateVodConfigMethodDescriptor =
+          MethodDescriptor.<UpdateVodConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/UpdateVodConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateVodConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable;
   private final OperationCallable<CreateCdnKeyRequest, CdnKey, OperationMetadata>
       createCdnKeyOperationCallable;
@@ -388,6 +462,22 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   private final UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable;
   private final OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
       deleteLiveConfigOperationCallable;
+  private final UnaryCallable<UpdateLiveConfigRequest, Operation> updateLiveConfigCallable;
+  private final OperationCallable<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationCallable;
+  private final UnaryCallable<CreateVodConfigRequest, Operation> createVodConfigCallable;
+  private final OperationCallable<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationCallable;
+  private final UnaryCallable<ListVodConfigsRequest, ListVodConfigsResponse> listVodConfigsCallable;
+  private final UnaryCallable<ListVodConfigsRequest, ListVodConfigsPagedResponse>
+      listVodConfigsPagedCallable;
+  private final UnaryCallable<GetVodConfigRequest, VodConfig> getVodConfigCallable;
+  private final UnaryCallable<DeleteVodConfigRequest, Operation> deleteVodConfigCallable;
+  private final OperationCallable<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationCallable;
+  private final UnaryCallable<UpdateVodConfigRequest, Operation> updateVodConfigCallable;
+  private final OperationCallable<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -679,6 +769,68 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateLiveConfigRequest, Operation> updateLiveConfigTransportSettings =
+        GrpcCallSettings.<UpdateLiveConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateLiveConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "live_config.name", String.valueOf(request.getLiveConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateVodConfigRequest, Operation> createVodConfigTransportSettings =
+        GrpcCallSettings.<CreateVodConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(createVodConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListVodConfigsRequest, ListVodConfigsResponse>
+        listVodConfigsTransportSettings =
+            GrpcCallSettings.<ListVodConfigsRequest, ListVodConfigsResponse>newBuilder()
+                .setMethodDescriptor(listVodConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetVodConfigRequest, VodConfig> getVodConfigTransportSettings =
+        GrpcCallSettings.<GetVodConfigRequest, VodConfig>newBuilder()
+            .setMethodDescriptor(getVodConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteVodConfigRequest, Operation> deleteVodConfigTransportSettings =
+        GrpcCallSettings.<DeleteVodConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteVodConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateVodConfigRequest, Operation> updateVodConfigTransportSettings =
+        GrpcCallSettings.<UpdateVodConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateVodConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("vod_config.name", String.valueOf(request.getVodConfig().getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createCdnKeyCallable =
         callableFactory.createUnaryCallable(
@@ -836,6 +988,51 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
         callableFactory.createOperationCallable(
             deleteLiveConfigTransportSettings,
             settings.deleteLiveConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateLiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateLiveConfigTransportSettings, settings.updateLiveConfigSettings(), clientContext);
+    this.updateLiveConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLiveConfigTransportSettings,
+            settings.updateLiveConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createVodConfigCallable =
+        callableFactory.createUnaryCallable(
+            createVodConfigTransportSettings, settings.createVodConfigSettings(), clientContext);
+    this.createVodConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createVodConfigTransportSettings,
+            settings.createVodConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listVodConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listVodConfigsTransportSettings, settings.listVodConfigsSettings(), clientContext);
+    this.listVodConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listVodConfigsTransportSettings, settings.listVodConfigsSettings(), clientContext);
+    this.getVodConfigCallable =
+        callableFactory.createUnaryCallable(
+            getVodConfigTransportSettings, settings.getVodConfigSettings(), clientContext);
+    this.deleteVodConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteVodConfigTransportSettings, settings.deleteVodConfigSettings(), clientContext);
+    this.deleteVodConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteVodConfigTransportSettings,
+            settings.deleteVodConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateVodConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateVodConfigTransportSettings, settings.updateVodConfigSettings(), clientContext);
+    this.updateVodConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateVodConfigTransportSettings,
+            settings.updateVodConfigOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -1050,6 +1247,66 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   public OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
       deleteLiveConfigOperationCallable() {
     return deleteLiveConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLiveConfigRequest, Operation> updateLiveConfigCallable() {
+    return updateLiveConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLiveConfigRequest, LiveConfig, OperationMetadata>
+      updateLiveConfigOperationCallable() {
+    return updateLiveConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateVodConfigRequest, Operation> createVodConfigCallable() {
+    return createVodConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateVodConfigRequest, VodConfig, OperationMetadata>
+      createVodConfigOperationCallable() {
+    return createVodConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListVodConfigsRequest, ListVodConfigsResponse> listVodConfigsCallable() {
+    return listVodConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListVodConfigsRequest, ListVodConfigsPagedResponse>
+      listVodConfigsPagedCallable() {
+    return listVodConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVodConfigRequest, VodConfig> getVodConfigCallable() {
+    return getVodConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteVodConfigRequest, Operation> deleteVodConfigCallable() {
+    return deleteVodConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteVodConfigRequest, Empty, OperationMetadata>
+      deleteVodConfigOperationCallable() {
+    return deleteVodConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateVodConfigRequest, Operation> updateVodConfigCallable() {
+    return updateVodConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateVodConfigRequest, VodConfig, OperationMetadata>
+      updateVodConfigOperationCallable() {
+    return updateVodConfigOperationCallable;
   }
 
   @Override

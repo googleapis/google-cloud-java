@@ -44,6 +44,10 @@ public final class CommonProto {
       internal_static_google_cloud_gkebackup_v1_EncryptionKey_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_EncryptionKey_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_VolumeTypeEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_VolumeTypeEnum_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -63,12 +67,14 @@ public final class CommonProto {
           + "e.cloud.gkebackup.v1.NamespacedNameB\003\340A\001"
           + "\"Z\n\rEncryptionKey\022I\n\026gcp_kms_encryption_"
           + "key\030\001 \001(\tB)\340A\001\372A#\n!cloudkms.googleapis.c"
-          + "om/CryptoKeyB\302\001\n\035com.google.cloud.gkebac"
-          + "kup.v1B\013CommonProtoP\001Z;cloud.google.com/"
-          + "go/gkebackup/apiv1/gkebackuppb;gkebackup"
-          + "pb\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Google\\"
-          + "Cloud\\GkeBackup\\V1\352\002\034Google::Cloud::GkeB"
-          + "ackup::V1b\006proto3"
+          + "om/CryptoKey\"T\n\016VolumeTypeEnum\"B\n\nVolume"
+          + "Type\022\033\n\027VOLUME_TYPE_UNSPECIFIED\020\000\022\027\n\023GCE"
+          + "_PERSISTENT_DISK\020\001B\302\001\n\035com.google.cloud."
+          + "gkebackup.v1B\013CommonProtoP\001Z;cloud.googl"
+          + "e.com/go/gkebackup/apiv1/gkebackuppb;gke"
+          + "backuppb\252\002\031Google.Cloud.GkeBackup.V1\312\002\031G"
+          + "oogle\\Cloud\\GkeBackup\\V1\352\002\034Google::Cloud"
+          + "::GkeBackup::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -109,6 +115,12 @@ public final class CommonProto {
             new java.lang.String[] {
               "GcpKmsEncryptionKey",
             });
+    internal_static_google_cloud_gkebackup_v1_VolumeTypeEnum_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_gkebackup_v1_VolumeTypeEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_VolumeTypeEnum_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -77,11 +77,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Name of the parent for the module. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
-   * or
-   * "projects/{project}/locations/{location}"
+   * Required. Name of the parent organization, folder, or project of the
+   * module, specified in one of the following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -106,11 +107,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Name of the parent for the module. Its format is
-   * "organizations/{organization}/locations/{location}",
-   * "folders/{folder}/locations/{location}",
-   * or
-   * "projects/{project}/locations/{location}"
+   * Required. Name of the parent organization, folder, or project of the
+   * module, specified in one of the following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -693,11 +695,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the parent for the module. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of the parent organization, folder, or project of the
+     * module, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -721,11 +724,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the parent for the module. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of the parent organization, folder, or project of the
+     * module, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -749,11 +753,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the parent for the module. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of the parent organization, folder, or project of the
+     * module, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -776,11 +781,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the parent for the module. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of the parent organization, folder, or project of the
+     * module, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -799,11 +805,12 @@ public final class CreateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the parent for the module. Its format is
-     * "organizations/{organization}/locations/{location}",
-     * "folders/{folder}/locations/{location}",
-     * or
-     * "projects/{project}/locations/{location}"
+     * Required. Name of the parent organization, folder, or project of the
+     * module, specified in one of the following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

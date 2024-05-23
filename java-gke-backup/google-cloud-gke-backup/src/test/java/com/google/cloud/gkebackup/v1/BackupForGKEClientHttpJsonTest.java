@@ -678,6 +678,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -754,6 +755,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +932,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -997,6 +1000,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1066,6 +1070,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1101,6 +1106,7 @@ public class BackupForGKEClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1156,6 +1162,7 @@ public class BackupForGKEClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setPodCount(977657493)
               .setConfigBackupSizeBytes(-606785139)
+              .setPermissiveMode(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -2014,6 +2021,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2084,6 +2094,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2254,6 +2267,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2315,6 +2331,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2378,6 +2397,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2407,6 +2429,9 @@ public class BackupForGKEClientHttpJsonTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2457,6 +2482,9 @@ public class BackupForGKEClientHttpJsonTest {
               .setResourcesFailedCount(217904743)
               .setVolumesRestoredCount(1005533068)
               .setEtag("etag3123477")
+              .setFilter(Restore.Filter.newBuilder().build())
+              .addAllVolumeDataRestorePolicyOverrides(
+                  new ArrayList<VolumeDataRestorePolicyOverride>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRestoreAsync(restore, updateMask).get();

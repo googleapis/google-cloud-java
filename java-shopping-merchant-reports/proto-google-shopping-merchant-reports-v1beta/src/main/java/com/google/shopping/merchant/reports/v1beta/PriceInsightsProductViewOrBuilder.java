@@ -740,4 +740,34 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The predictedConversionsChangeFraction.
    */
   double getPredictedConversionsChangeFraction();
+
+  /**
+   *
+   *
+   * <pre>
+   * The predicted effectiveness of applying the price suggestion, bucketed.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveness.
+   */
+  int getEffectivenessValue();
+  /**
+   *
+   *
+   * <pre>
+   * The predicted effectiveness of applying the price suggestion, bucketed.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness effectiveness = 22;
+   * </code>
+   *
+   * @return The effectiveness.
+   */
+  com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Effectiveness
+      getEffectiveness();
 }

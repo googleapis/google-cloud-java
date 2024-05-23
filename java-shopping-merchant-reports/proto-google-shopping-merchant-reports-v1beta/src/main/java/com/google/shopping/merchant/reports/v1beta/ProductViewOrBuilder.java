@@ -819,7 +819,7 @@ public interface ProductViewOrBuilder
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>
@@ -833,7 +833,7 @@ public interface ProductViewOrBuilder
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>
@@ -847,7 +847,7 @@ public interface ProductViewOrBuilder
    * <pre>
    * Normalized [shipping
    * label](https://support.google.com/merchants/answer/6324504) specified in
-   * the feed.
+   * the data source.
    * </pre>
    *
    * <code>optional string shipping_label = 20;</code>

@@ -22,6 +22,7 @@ import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagem
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListLocationsPagedResponse;
+import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityCenterServicesPagedResponse;
 import static com.google.cloud.securitycentermanagement.v1.SecurityCenterManagementClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -2577,6 +2578,333 @@ public class SecurityCenterManagementClientTest {
               .setType("type3575610")
               .build();
       client.validateEventThreatDetectionCustomModule(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecurityCenterServiceTest() throws Exception {
+    SecurityCenterService expectedResponse =
+        SecurityCenterService.newBuilder()
+            .setName(
+                SecurityCenterServiceName.ofProjectLocationServiceName(
+                        "[PROJECT]", "[LOCATION]", "[SERVICE]")
+                    .toString())
+            .putAllModules(new HashMap<String, SecurityCenterService.ModuleSettings>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setServiceConfig(Struct.newBuilder().build())
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    SecurityCenterServiceName name =
+        SecurityCenterServiceName.ofProjectLocationServiceName(
+            "[PROJECT]", "[LOCATION]", "[SERVICE]");
+
+    SecurityCenterService actualResponse = client.getSecurityCenterService(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecurityCenterServiceRequest actualRequest =
+        ((GetSecurityCenterServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecurityCenterServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      SecurityCenterServiceName name =
+          SecurityCenterServiceName.ofProjectLocationServiceName(
+              "[PROJECT]", "[LOCATION]", "[SERVICE]");
+      client.getSecurityCenterService(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecurityCenterServiceTest2() throws Exception {
+    SecurityCenterService expectedResponse =
+        SecurityCenterService.newBuilder()
+            .setName(
+                SecurityCenterServiceName.ofProjectLocationServiceName(
+                        "[PROJECT]", "[LOCATION]", "[SERVICE]")
+                    .toString())
+            .putAllModules(new HashMap<String, SecurityCenterService.ModuleSettings>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setServiceConfig(Struct.newBuilder().build())
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SecurityCenterService actualResponse = client.getSecurityCenterService(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecurityCenterServiceRequest actualRequest =
+        ((GetSecurityCenterServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecurityCenterServiceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSecurityCenterService(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityCenterServicesTest() throws Exception {
+    SecurityCenterService responsesElement = SecurityCenterService.newBuilder().build();
+    ListSecurityCenterServicesResponse expectedResponse =
+        ListSecurityCenterServicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityCenterServices(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+
+    ListSecurityCenterServicesPagedResponse pagedListResponse =
+        client.listSecurityCenterServices(parent);
+
+    List<SecurityCenterService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecurityCenterServicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecurityCenterServicesRequest actualRequest =
+        ((ListSecurityCenterServicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecurityCenterServicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+      client.listSecurityCenterServices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityCenterServicesTest2() throws Exception {
+    SecurityCenterService responsesElement = SecurityCenterService.newBuilder().build();
+    ListSecurityCenterServicesResponse expectedResponse =
+        ListSecurityCenterServicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityCenterServices(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListSecurityCenterServicesPagedResponse pagedListResponse =
+        client.listSecurityCenterServices(parent);
+
+    List<SecurityCenterService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecurityCenterServicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecurityCenterServicesRequest actualRequest =
+        ((ListSecurityCenterServicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecurityCenterServicesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listSecurityCenterServices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityCenterServicesTest3() throws Exception {
+    SecurityCenterService responsesElement = SecurityCenterService.newBuilder().build();
+    ListSecurityCenterServicesResponse expectedResponse =
+        ListSecurityCenterServicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityCenterServices(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListSecurityCenterServicesPagedResponse pagedListResponse =
+        client.listSecurityCenterServices(parent);
+
+    List<SecurityCenterService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecurityCenterServicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecurityCenterServicesRequest actualRequest =
+        ((ListSecurityCenterServicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecurityCenterServicesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listSecurityCenterServices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityCenterServicesTest4() throws Exception {
+    SecurityCenterService responsesElement = SecurityCenterService.newBuilder().build();
+    ListSecurityCenterServicesResponse expectedResponse =
+        ListSecurityCenterServicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityCenterServices(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSecurityCenterServicesPagedResponse pagedListResponse =
+        client.listSecurityCenterServices(parent);
+
+    List<SecurityCenterService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecurityCenterServicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecurityCenterServicesRequest actualRequest =
+        ((ListSecurityCenterServicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecurityCenterServicesExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSecurityCenterServices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSecurityCenterServiceTest() throws Exception {
+    SecurityCenterService expectedResponse =
+        SecurityCenterService.newBuilder()
+            .setName(
+                SecurityCenterServiceName.ofProjectLocationServiceName(
+                        "[PROJECT]", "[LOCATION]", "[SERVICE]")
+                    .toString())
+            .putAllModules(new HashMap<String, SecurityCenterService.ModuleSettings>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setServiceConfig(Struct.newBuilder().build())
+            .build();
+    mockSecurityCenterManagement.addResponse(expectedResponse);
+
+    SecurityCenterService securityCenterService = SecurityCenterService.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SecurityCenterService actualResponse =
+        client.updateSecurityCenterService(securityCenterService, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenterManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSecurityCenterServiceRequest actualRequest =
+        ((UpdateSecurityCenterServiceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(securityCenterService, actualRequest.getSecurityCenterService());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSecurityCenterServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenterManagement.addException(exception);
+
+    try {
+      SecurityCenterService securityCenterService = SecurityCenterService.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSecurityCenterService(securityCenterService, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

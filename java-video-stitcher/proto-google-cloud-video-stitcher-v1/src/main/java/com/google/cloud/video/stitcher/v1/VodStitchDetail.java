@@ -23,9 +23,9 @@ package com.google.cloud.video.stitcher.v1;
  *
  *
  * <pre>
- * Detailed information related to the interstitial of a VOD session. This
- * resource is only available for VOD sessions that do not implement Google Ad
- * Manager ad insertion.
+ * Information related to the interstitial of a VOD session. This resource is
+ * only available for VOD sessions that do not implement Google Ad Manager ad
+ * insertion.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.stitcher.v1.VodStitchDetail}
@@ -366,9 +366,9 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Detailed information related to the interstitial of a VOD session. This
-   * resource is only available for VOD sessions that do not implement Google Ad
-   * Manager ad insertion.
+   * Information related to the interstitial of a VOD session. This resource is
+   * only available for VOD sessions that do not implement Google Ad Manager ad
+   * insertion.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.stitcher.v1.VodStitchDetail}
