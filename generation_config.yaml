@@ -988,7 +988,6 @@ libraries:
   - proto_path: google/cloud/gkehub/v1alpha
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
-  - proto_path: google/cloud/gkehub/servicemesh/v1beta
 
 - api_shortname: gsuiteaddons
   name_pretty: Google Workspace Add-ons API
