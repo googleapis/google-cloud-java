@@ -79,6 +79,7 @@
     <module>java-datastream</module>
     <module>java-debugger-client</module>
     <module>java-deploy</module>
+    <module>java-developerconnect</module>
     <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
     <module>java-discoveryengine</module>

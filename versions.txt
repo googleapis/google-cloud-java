@@ -775,3 +775,6 @@ grpc-google-cloud-publicca-v1:0.40.0:0.41.0-SNAPSHOT
 google-cloud-visionai:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-visionai-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-visionai-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-developerconnect:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-developerconnect-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-developerconnect-v1:0.0.0:0.0.1-SNAPSHOT
