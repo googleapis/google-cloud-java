@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0 (2024-05-23)
+
+### Features
+
+* add `generative_summary` and `area_summary` for place summaries ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
+
+
 ## 0.14.0 (2024-05-08)
 
 ### Features

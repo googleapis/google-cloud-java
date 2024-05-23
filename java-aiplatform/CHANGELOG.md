@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.45.0 (2024-05-23)
+
+### Features
+
+* Added the v1beta1 version of the GenAI Tuning Service ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+
+
+
 ## 3.44.0 (2024-05-08)
 
 ### Features

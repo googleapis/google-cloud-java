@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.43.0 (2024-05-23)
+
+### Features
+
+* option to ignore_errors while deleting Azure clusters / nodepools ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+
+
+
 ## 0.42.0 (2024-05-08)
 
 * No change

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.43.0 (2024-05-23)
+
+### Features
+
+* add fine-grained restore ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* add gitops ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* add restore order ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* add strict-permissive mode ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* add volume restore flexibility ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* update duration comment to include new validation from smart scheduling ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
+
+
 ## 0.42.0 (2024-05-08)
 
 * No change

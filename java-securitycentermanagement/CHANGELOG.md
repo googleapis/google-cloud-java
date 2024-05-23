@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.12.0 (2024-05-23)
+
+### Features
+
+* Adding support for new Security Center Management Apis ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+* update comment formatting throughout API ([cce14bb](https://github.com/googleapis/google-cloud-java/commit/cce14bb4d5ed0268cea6d3fdf91a5b76ee17531c))
+
+
+
 ## 0.11.0 (2024-05-08)
 
 * No change

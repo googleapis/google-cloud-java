@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 (2024-05-23)
+
+### Features
+
+* update Chat API comments ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+
+
+
 ## 0.7.0 (2024-05-08)
 
 * No change

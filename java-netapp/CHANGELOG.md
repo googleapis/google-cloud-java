@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.23.0 (2024-05-23)
+
+### Features
+
+* Add a new Service Level FLEX ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* Add backup chain bytes to BackupConfig in Volume ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* Add Location metadata support ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+* Add Tiering Policy to Volume ([3f11775](https://github.com/googleapis/google-cloud-java/commit/3f11775d8f1ff0d2bfe92517199c56f56bec4cec))
+
+
+
 ## 0.22.0 (2024-05-08)
 
 * No change
