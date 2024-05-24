@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.5.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.5.1...v3.5.2) (2024-05-24)
+
+
+### Bug Fixes
+
+* Reset send timestamp each time a request is sent ([#2499](https://github.com/googleapis/java-bigquerystorage/issues/2499)) ([b1b62b1](https://github.com/googleapis/java-bigquerystorage/commit/b1b62b1a8b89e8b5b950e0f5e35f385c35bae2da))
+
+
+### Dependencies
+
+* Update actions/checkout digest to 0ad4b8f ([#2496](https://github.com/googleapis/java-bigquerystorage/issues/2496)) ([22e8f62](https://github.com/googleapis/java-bigquerystorage/commit/22e8f62940cedfa051b77383773324bbcc79bb95))
+* Update actions/checkout digest to 44c2b7a ([#2494](https://github.com/googleapis/java-bigquerystorage/issues/2494)) ([87b435a](https://github.com/googleapis/java-bigquerystorage/commit/87b435a5add55ba7f0cad52c59df5c67bc0dfb70))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.0 ([#2488](https://github.com/googleapis/java-bigquerystorage/issues/2488)) ([85f7f05](https://github.com/googleapis/java-bigquerystorage/commit/85f7f05a249b9be3ab29bff0e4bba26032543423))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.1 ([#2492](https://github.com/googleapis/java-bigquerystorage/issues/2492)) ([f6c6f02](https://github.com/googleapis/java-bigquerystorage/commit/f6c6f027d63d0d3d74d7791affd98e7ee359aabc))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.1 ([#2502](https://github.com/googleapis/java-bigquerystorage/issues/2502)) ([ed4d1a3](https://github.com/googleapis/java-bigquerystorage/commit/ed4d1a38adee35450b73aefa21e25d13e8bf8469))
+* Update dependency com.google.http-client:google-http-client to v1.44.2 ([#2503](https://github.com/googleapis/java-bigquerystorage/issues/2503)) ([66840e6](https://github.com/googleapis/java-bigquerystorage/commit/66840e6acd832702157d434762eef66e00c4c5df))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.2 ([#2504](https://github.com/googleapis/java-bigquerystorage/issues/2504)) ([bebbd21](https://github.com/googleapis/java-bigquerystorage/commit/bebbd218623554bae32eeeda81e3c9f166d31b93))
+
 ## [3.5.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.5.0...v3.5.1) (2024-05-06)
 
 
