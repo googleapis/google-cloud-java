@@ -207,7 +207,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -246,7 +246,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -300,7 +300,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -337,7 +337,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -388,7 +388,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -451,7 +451,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -1079,7 +1079,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
@@ -1208,7 +1208,7 @@ public class ITBigQueryStorageTest {
     assertEquals(
         String.format(
             "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
-            TextFormat.shortDebugString(tableReference), session.toString()),
+            TextFormat.printer().shortDebugString(tableReference), session.toString()),
         1,
         session.getStreamsCount());
 
