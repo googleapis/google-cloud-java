@@ -79,7 +79,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An engine that is not currently supported by SDP.
+     * An engine that is not currently supported by Sensitive Data Protection.
      * </pre>
      *
      * <code>DATABASE_ENGINE_UNKNOWN = 0;</code>
@@ -99,7 +99,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Cloud SQL for Postgres instance.
+     * Cloud SQL for PostgreSQL instance.
      * </pre>
      *
      * <code>DATABASE_ENGINE_POSTGRES = 2;</code>
@@ -112,7 +112,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An engine that is not currently supported by SDP.
+     * An engine that is not currently supported by Sensitive Data Protection.
      * </pre>
      *
      * <code>DATABASE_ENGINE_UNKNOWN = 0;</code>
@@ -132,7 +132,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Cloud SQL for Postgres instance.
+     * Cloud SQL for PostgreSQL instance.
      * </pre>
      *
      * <code>DATABASE_ENGINE_POSTGRES = 2;</code>

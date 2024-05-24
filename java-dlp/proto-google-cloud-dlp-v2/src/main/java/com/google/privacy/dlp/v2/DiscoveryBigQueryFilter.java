@@ -523,6 +523,7 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TABLES(1),
     OTHER_TABLES(2),
+    TABLE_REFERENCE(3),
     FILTER_NOT_SET(0);
     private final int value;
 
@@ -545,6 +546,8 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
           return TABLES;
         case 2:
           return OTHER_TABLES;
+        case 3:
+          return TABLE_REFERENCE;
         case 0:
           return FILTER_NOT_SET;
         default:
@@ -687,6 +690,63 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
         .getDefaultInstance();
   }
 
+  public static final int TABLE_REFERENCE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   *
+   * @return Whether the tableReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasTableReference() {
+    return filterCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   *
+   * @return The tableReference.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.TableReference getTableReference() {
+    if (filterCase_ == 3) {
+      return (com.google.privacy.dlp.v2.TableReference) filter_;
+    }
+    return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.TableReferenceOrBuilder getTableReferenceOrBuilder() {
+    if (filterCase_ == 3) {
+      return (com.google.privacy.dlp.v2.TableReference) filter_;
+    }
+    return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -708,6 +768,9 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       output.writeMessage(
           2, (com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables) filter_);
     }
+    if (filterCase_ == 3) {
+      output.writeMessage(3, (com.google.privacy.dlp.v2.TableReference) filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -727,6 +790,11 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2,
               (com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTables) filter_);
+    }
+    if (filterCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.TableReference) filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -752,6 +820,9 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       case 2:
         if (!getOtherTables().equals(other.getOtherTables())) return false;
         break;
+      case 3:
+        if (!getTableReference().equals(other.getTableReference())) return false;
+        break;
       case 0:
       default:
     }
@@ -774,6 +845,10 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       case 2:
         hash = (37 * hash) + OTHER_TABLES_FIELD_NUMBER;
         hash = (53 * hash) + getOtherTables().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + TABLE_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getTableReference().hashCode();
         break;
       case 0:
       default:
@@ -925,6 +1000,9 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       if (otherTablesBuilder_ != null) {
         otherTablesBuilder_.clear();
       }
+      if (tableReferenceBuilder_ != null) {
+        tableReferenceBuilder_.clear();
+      }
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -974,6 +1052,9 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       }
       if (filterCase_ == 2 && otherTablesBuilder_ != null) {
         result.filter_ = otherTablesBuilder_.build();
+      }
+      if (filterCase_ == 3 && tableReferenceBuilder_ != null) {
+        result.filter_ = tableReferenceBuilder_.build();
       }
     }
 
@@ -1034,6 +1115,11 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
             mergeOtherTables(other.getOtherTables());
             break;
           }
+        case TABLE_REFERENCE:
+          {
+            mergeTableReference(other.getTableReference());
+            break;
+          }
         case FILTER_NOT_SET:
           {
             break;
@@ -1077,6 +1163,12 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
                 filterCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getTableReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1603,6 +1695,233 @@ public final class DiscoveryBigQueryFilter extends com.google.protobuf.Generated
       filterCase_ = 2;
       onChanged();
       return otherTablesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TableReference,
+            com.google.privacy.dlp.v2.TableReference.Builder,
+            com.google.privacy.dlp.v2.TableReferenceOrBuilder>
+        tableReferenceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     *
+     * @return Whether the tableReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasTableReference() {
+      return filterCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     *
+     * @return The tableReference.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TableReference getTableReference() {
+      if (tableReferenceBuilder_ == null) {
+        if (filterCase_ == 3) {
+          return (com.google.privacy.dlp.v2.TableReference) filter_;
+        }
+        return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+      } else {
+        if (filterCase_ == 3) {
+          return tableReferenceBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    public Builder setTableReference(com.google.privacy.dlp.v2.TableReference value) {
+      if (tableReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+        onChanged();
+      } else {
+        tableReferenceBuilder_.setMessage(value);
+      }
+      filterCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    public Builder setTableReference(
+        com.google.privacy.dlp.v2.TableReference.Builder builderForValue) {
+      if (tableReferenceBuilder_ == null) {
+        filter_ = builderForValue.build();
+        onChanged();
+      } else {
+        tableReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      filterCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    public Builder mergeTableReference(com.google.privacy.dlp.v2.TableReference value) {
+      if (tableReferenceBuilder_ == null) {
+        if (filterCase_ == 3
+            && filter_ != com.google.privacy.dlp.v2.TableReference.getDefaultInstance()) {
+          filter_ =
+              com.google.privacy.dlp.v2.TableReference.newBuilder(
+                      (com.google.privacy.dlp.v2.TableReference) filter_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          filter_ = value;
+        }
+        onChanged();
+      } else {
+        if (filterCase_ == 3) {
+          tableReferenceBuilder_.mergeFrom(value);
+        } else {
+          tableReferenceBuilder_.setMessage(value);
+        }
+      }
+      filterCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    public Builder clearTableReference() {
+      if (tableReferenceBuilder_ == null) {
+        if (filterCase_ == 3) {
+          filterCase_ = 0;
+          filter_ = null;
+          onChanged();
+        }
+      } else {
+        if (filterCase_ == 3) {
+          filterCase_ = 0;
+          filter_ = null;
+        }
+        tableReferenceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.TableReference.Builder getTableReferenceBuilder() {
+      return getTableReferenceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TableReferenceOrBuilder getTableReferenceOrBuilder() {
+      if ((filterCase_ == 3) && (tableReferenceBuilder_ != null)) {
+        return tableReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (filterCase_ == 3) {
+          return (com.google.privacy.dlp.v2.TableReference) filter_;
+        }
+        return com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The table to scan. Discovery configurations including this can only
+     * include one DiscoveryTarget (the DiscoveryTarget with this
+     * TableReference).
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TableReference,
+            com.google.privacy.dlp.v2.TableReference.Builder,
+            com.google.privacy.dlp.v2.TableReferenceOrBuilder>
+        getTableReferenceFieldBuilder() {
+      if (tableReferenceBuilder_ == null) {
+        if (!(filterCase_ == 3)) {
+          filter_ = com.google.privacy.dlp.v2.TableReference.getDefaultInstance();
+        }
+        tableReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.TableReference,
+                com.google.privacy.dlp.v2.TableReference.Builder,
+                com.google.privacy.dlp.v2.TableReferenceOrBuilder>(
+                (com.google.privacy.dlp.v2.TableReference) filter_,
+                getParentForChildren(),
+                isClean());
+        filter_ = null;
+      }
+      filterCase_ = 3;
+      onChanged();
+      return tableReferenceBuilder_;
     }
 
     @java.lang.Override

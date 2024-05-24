@@ -68,10 +68,10 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    * A configured connection that encountered errors during its last use. It
    * will not be used again until it is set to AVAILABLE.
    *
-   * If the resolution requires external action, then a request to set the
-   * status to AVAILABLE will mark this connection for use. Otherwise, any
-   * changes to the connection properties will automatically mark it as
-   * AVAILABLE.
+   * If the resolution requires external action, then the client must send a
+   * request to set the status to AVAILABLE when the connection is ready for
+   * use. If the resolution doesn't require external action, then any changes to
+   * the connection properties will automatically mark it as AVAILABLE.
    * </pre>
    *
    * <code>ERROR = 3;</code>
@@ -118,10 +118,10 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    * A configured connection that encountered errors during its last use. It
    * will not be used again until it is set to AVAILABLE.
    *
-   * If the resolution requires external action, then a request to set the
-   * status to AVAILABLE will mark this connection for use. Otherwise, any
-   * changes to the connection properties will automatically mark it as
-   * AVAILABLE.
+   * If the resolution requires external action, then the client must send a
+   * request to set the status to AVAILABLE when the connection is ready for
+   * use. If the resolution doesn't require external action, then any changes to
+   * the connection properties will automatically mark it as AVAILABLE.
    * </pre>
    *
    * <code>ERROR = 3;</code>

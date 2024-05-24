@@ -99,7 +99,7 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * MySql database.
+     * MySQL database.
      * </pre>
      *
      * <code>MYSQL = 2;</code>
@@ -109,7 +109,7 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * PostGres database.
+     * PostgreSQL database.
      * </pre>
      *
      * <code>POSTGRES = 3;</code>
@@ -142,7 +142,7 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * MySql database.
+     * MySQL database.
      * </pre>
      *
      * <code>MYSQL = 2;</code>
@@ -152,7 +152,7 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * PostGres database.
+     * PostgreSQL database.
      * </pre>
      *
      * <code>POSTGRES = 3;</code>

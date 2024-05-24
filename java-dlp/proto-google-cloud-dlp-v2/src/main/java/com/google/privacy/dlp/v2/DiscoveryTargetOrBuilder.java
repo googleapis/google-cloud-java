@@ -100,5 +100,46 @@ public interface DiscoveryTargetOrBuilder
    */
   com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder getCloudSqlTargetOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   *
+   * @return Whether the secretsTarget field is set.
+   */
+  boolean hasSecretsTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   *
+   * @return The secretsTarget.
+   */
+  com.google.privacy.dlp.v2.SecretsDiscoveryTarget getSecretsTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   */
+  com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder getSecretsTargetOrBuilder();
+
   com.google.privacy.dlp.v2.DiscoveryTarget.TargetCase getTargetCase();
 }

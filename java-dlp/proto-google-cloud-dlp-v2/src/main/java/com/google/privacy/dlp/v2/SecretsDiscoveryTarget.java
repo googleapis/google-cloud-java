@@ -23,45 +23,53 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Use IAM authentication to connect. This requires the Cloud SQL IAM feature
- * to be enabled on the instance, which is not the default for Cloud SQL.
- * See https://cloud.google.com/sql/docs/postgres/authentication and
- * https://cloud.google.com/sql/docs/mysql/authentication.
+ * Discovery target for credentials and secrets in cloud resource metadata.
+ *
+ * This target does not include any filtering or frequency controls. Cloud
+ * DLP will scan cloud resource metadata for secrets daily.
+ *
+ * No inspect template should be included in the discovery config for a
+ * security benchmarks scan. Instead, the built-in list of secrets and
+ * credentials infoTypes will be used (see
+ * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
+ *
+ * Credentials and secrets discovered will be reported as vulnerabilities to
+ * Security Command Center.
  * </pre>
  *
- * Protobuf type {@code google.privacy.dlp.v2.CloudSqlIamCredential}
+ * Protobuf type {@code google.privacy.dlp.v2.SecretsDiscoveryTarget}
  */
-public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMessageV3
+public final class SecretsDiscoveryTarget extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudSqlIamCredential)
-    CloudSqlIamCredentialOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.SecretsDiscoveryTarget)
+    SecretsDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use CloudSqlIamCredential.newBuilder() to construct.
-  private CloudSqlIamCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SecretsDiscoveryTarget.newBuilder() to construct.
+  private SecretsDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private CloudSqlIamCredential() {}
+  private SecretsDiscoveryTarget() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new CloudSqlIamCredential();
+    return new SecretsDiscoveryTarget();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
-        .internal_static_google_privacy_dlp_v2_CloudSqlIamCredential_descriptor;
+        .internal_static_google_privacy_dlp_v2_SecretsDiscoveryTarget_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpProto
-        .internal_static_google_privacy_dlp_v2_CloudSqlIamCredential_fieldAccessorTable
+        .internal_static_google_privacy_dlp_v2_SecretsDiscoveryTarget_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CloudSqlIamCredential.class,
-            com.google.privacy.dlp.v2.CloudSqlIamCredential.Builder.class);
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget.class,
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -97,11 +105,11 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.privacy.dlp.v2.CloudSqlIamCredential)) {
+    if (!(obj instanceof com.google.privacy.dlp.v2.SecretsDiscoveryTarget)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.CloudSqlIamCredential other =
-        (com.google.privacy.dlp.v2.CloudSqlIamCredential) obj;
+    com.google.privacy.dlp.v2.SecretsDiscoveryTarget other =
+        (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -119,71 +127,71 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(byte[] data)
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseDelimitedFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseDelimitedFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential parseFrom(
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -200,7 +208,7 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.privacy.dlp.v2.CloudSqlIamCredential prototype) {
+  public static Builder newBuilder(com.google.privacy.dlp.v2.SecretsDiscoveryTarget prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -218,34 +226,42 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Use IAM authentication to connect. This requires the Cloud SQL IAM feature
-   * to be enabled on the instance, which is not the default for Cloud SQL.
-   * See https://cloud.google.com/sql/docs/postgres/authentication and
-   * https://cloud.google.com/sql/docs/mysql/authentication.
+   * Discovery target for credentials and secrets in cloud resource metadata.
+   *
+   * This target does not include any filtering or frequency controls. Cloud
+   * DLP will scan cloud resource metadata for secrets daily.
+   *
+   * No inspect template should be included in the discovery config for a
+   * security benchmarks scan. Instead, the built-in list of secrets and
+   * credentials infoTypes will be used (see
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
+   *
+   * Credentials and secrets discovered will be reported as vulnerabilities to
+   * Security Command Center.
    * </pre>
    *
-   * Protobuf type {@code google.privacy.dlp.v2.CloudSqlIamCredential}
+   * Protobuf type {@code google.privacy.dlp.v2.SecretsDiscoveryTarget}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CloudSqlIamCredential)
-      com.google.privacy.dlp.v2.CloudSqlIamCredentialOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.SecretsDiscoveryTarget)
+      com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_CloudSqlIamCredential_descriptor;
+          .internal_static_google_privacy_dlp_v2_SecretsDiscoveryTarget_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_CloudSqlIamCredential_fieldAccessorTable
+          .internal_static_google_privacy_dlp_v2_SecretsDiscoveryTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CloudSqlIamCredential.class,
-              com.google.privacy.dlp.v2.CloudSqlIamCredential.Builder.class);
+              com.google.privacy.dlp.v2.SecretsDiscoveryTarget.class,
+              com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder.class);
     }
 
-    // Construct using com.google.privacy.dlp.v2.CloudSqlIamCredential.newBuilder()
+    // Construct using com.google.privacy.dlp.v2.SecretsDiscoveryTarget.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -261,17 +277,17 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_CloudSqlIamCredential_descriptor;
+          .internal_static_google_privacy_dlp_v2_SecretsDiscoveryTarget_descriptor;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.CloudSqlIamCredential getDefaultInstanceForType() {
-      return com.google.privacy.dlp.v2.CloudSqlIamCredential.getDefaultInstance();
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTarget getDefaultInstanceForType() {
+      return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.CloudSqlIamCredential build() {
-      com.google.privacy.dlp.v2.CloudSqlIamCredential result = buildPartial();
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTarget build() {
+      com.google.privacy.dlp.v2.SecretsDiscoveryTarget result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -279,9 +295,9 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.CloudSqlIamCredential buildPartial() {
-      com.google.privacy.dlp.v2.CloudSqlIamCredential result =
-          new com.google.privacy.dlp.v2.CloudSqlIamCredential(this);
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTarget buildPartial() {
+      com.google.privacy.dlp.v2.SecretsDiscoveryTarget result =
+          new com.google.privacy.dlp.v2.SecretsDiscoveryTarget(this);
       onBuilt();
       return result;
     }
@@ -321,16 +337,16 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.privacy.dlp.v2.CloudSqlIamCredential) {
-        return mergeFrom((com.google.privacy.dlp.v2.CloudSqlIamCredential) other);
+      if (other instanceof com.google.privacy.dlp.v2.SecretsDiscoveryTarget) {
+        return mergeFrom((com.google.privacy.dlp.v2.SecretsDiscoveryTarget) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.privacy.dlp.v2.CloudSqlIamCredential other) {
-      if (other == com.google.privacy.dlp.v2.CloudSqlIamCredential.getDefaultInstance())
+    public Builder mergeFrom(com.google.privacy.dlp.v2.SecretsDiscoveryTarget other) {
+      if (other == com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance())
         return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -386,24 +402,24 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CloudSqlIamCredential)
+    // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.SecretsDiscoveryTarget)
   }
 
-  // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CloudSqlIamCredential)
-  private static final com.google.privacy.dlp.v2.CloudSqlIamCredential DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.SecretsDiscoveryTarget)
+  private static final com.google.privacy.dlp.v2.SecretsDiscoveryTarget DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CloudSqlIamCredential();
+    DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.SecretsDiscoveryTarget();
   }
 
-  public static com.google.privacy.dlp.v2.CloudSqlIamCredential getDefaultInstance() {
+  public static com.google.privacy.dlp.v2.SecretsDiscoveryTarget getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloudSqlIamCredential> PARSER =
-      new com.google.protobuf.AbstractParser<CloudSqlIamCredential>() {
+  private static final com.google.protobuf.Parser<SecretsDiscoveryTarget> PARSER =
+      new com.google.protobuf.AbstractParser<SecretsDiscoveryTarget>() {
         @java.lang.Override
-        public CloudSqlIamCredential parsePartialFrom(
+        public SecretsDiscoveryTarget parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -422,17 +438,17 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
         }
       };
 
-  public static com.google.protobuf.Parser<CloudSqlIamCredential> parser() {
+  public static com.google.protobuf.Parser<SecretsDiscoveryTarget> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CloudSqlIamCredential> getParserForType() {
+  public com.google.protobuf.Parser<SecretsDiscoveryTarget> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.privacy.dlp.v2.CloudSqlIamCredential getDefaultInstanceForType() {
+  public com.google.privacy.dlp.v2.SecretsDiscoveryTarget getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
