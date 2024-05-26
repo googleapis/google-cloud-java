@@ -95,6 +95,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -157,6 +158,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -219,6 +221,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -274,6 +277,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -519,6 +523,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -534,6 +539,7 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -575,6 +581,7 @@ public class DataStoreServiceClientHttpJsonTest {
               .addAllSolutionTypes(new ArrayList<SolutionType>())
               .setDefaultSchemaId("defaultSchemaId1300415485")
               .setCreateTime(Timestamp.newBuilder().build())
+              .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
               .setStartingSchema(Schema.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

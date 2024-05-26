@@ -43,6 +43,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     providedUriPattern_ = "";
     type_ = 0;
     generatedUriPattern_ = "";
+    rootDomainUri_ = "";
     indexingStatus_ = 0;
   }
 
@@ -2143,6 +2144,57 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ROOT_DOMAIN_URI_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootDomainUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Root domain of the provided_uri_pattern.
+   * </pre>
+   *
+   * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rootDomainUri.
+   */
+  @java.lang.Override
+  public java.lang.String getRootDomainUri() {
+    java.lang.Object ref = rootDomainUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rootDomainUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Root domain of the provided_uri_pattern.
+   * </pre>
+   *
+   * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rootDomainUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRootDomainUriBytes() {
+    java.lang.Object ref = rootDomainUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rootDomainUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SITE_VERIFICATION_INFO_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1.SiteVerificationInfo siteVerificationInfo_;
   /**
@@ -2390,6 +2442,9 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getFailureReason());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootDomainUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, rootDomainUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2429,6 +2484,9 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getFailureReason());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootDomainUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, rootDomainUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2450,6 +2508,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     if (type_ != other.type_) return false;
     if (getExactMatch() != other.getExactMatch()) return false;
     if (!getGeneratedUriPattern().equals(other.getGeneratedUriPattern())) return false;
+    if (!getRootDomainUri().equals(other.getRootDomainUri())) return false;
     if (hasSiteVerificationInfo() != other.hasSiteVerificationInfo()) return false;
     if (hasSiteVerificationInfo()) {
       if (!getSiteVerificationInfo().equals(other.getSiteVerificationInfo())) return false;
@@ -2484,6 +2543,8 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExactMatch());
     hash = (37 * hash) + GENERATED_URI_PATTERN_FIELD_NUMBER;
     hash = (53 * hash) + getGeneratedUriPattern().hashCode();
+    hash = (37 * hash) + ROOT_DOMAIN_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getRootDomainUri().hashCode();
     if (hasSiteVerificationInfo()) {
       hash = (37 * hash) + SITE_VERIFICATION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getSiteVerificationInfo().hashCode();
@@ -2653,6 +2714,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
       exactMatch_ = false;
       generatedUriPattern_ = "";
+      rootDomainUri_ = "";
       siteVerificationInfo_ = null;
       if (siteVerificationInfoBuilder_ != null) {
         siteVerificationInfoBuilder_.dispose();
@@ -2720,22 +2782,25 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.generatedUriPattern_ = generatedUriPattern_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.rootDomainUri_ = rootDomainUri_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.siteVerificationInfo_ =
             siteVerificationInfoBuilder_ == null
                 ? siteVerificationInfo_
                 : siteVerificationInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.indexingStatus_ = indexingStatus_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.failureReason_ =
             failureReasonBuilder_ == null ? failureReason_ : failureReasonBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -2809,6 +2874,11 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getRootDomainUri().isEmpty()) {
+        rootDomainUri_ = other.rootDomainUri_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (other.hasSiteVerificationInfo()) {
         mergeSiteVerificationInfo(other.getSiteVerificationInfo());
       }
@@ -2874,7 +2944,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 42
             case 48:
@@ -2887,21 +2957,27 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSiteVerificationInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 indexingStatus_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getFailureReasonFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 82:
+              {
+                rootDomainUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3429,6 +3505,112 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object rootDomainUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Root domain of the provided_uri_pattern.
+     * </pre>
+     *
+     * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rootDomainUri.
+     */
+    public java.lang.String getRootDomainUri() {
+      java.lang.Object ref = rootDomainUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rootDomainUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Root domain of the provided_uri_pattern.
+     * </pre>
+     *
+     * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for rootDomainUri.
+     */
+    public com.google.protobuf.ByteString getRootDomainUriBytes() {
+      java.lang.Object ref = rootDomainUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rootDomainUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Root domain of the provided_uri_pattern.
+     * </pre>
+     *
+     * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The rootDomainUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRootDomainUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rootDomainUri_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Root domain of the provided_uri_pattern.
+     * </pre>
+     *
+     * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRootDomainUri() {
+      rootDomainUri_ = getDefaultInstance().getRootDomainUri();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Root domain of the provided_uri_pattern.
+     * </pre>
+     *
+     * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for rootDomainUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRootDomainUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rootDomainUri_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1.SiteVerificationInfo siteVerificationInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.SiteVerificationInfo,
@@ -3449,7 +3631,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the siteVerificationInfo field is set.
      */
     public boolean hasSiteVerificationInfo() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3494,7 +3676,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         siteVerificationInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3516,7 +3698,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         siteVerificationInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3534,7 +3716,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSiteVerificationInfo(
         com.google.cloud.discoveryengine.v1.SiteVerificationInfo value) {
       if (siteVerificationInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && siteVerificationInfo_ != null
             && siteVerificationInfo_
                 != com.google.cloud.discoveryengine.v1.SiteVerificationInfo.getDefaultInstance()) {
@@ -3546,7 +3728,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         siteVerificationInfoBuilder_.mergeFrom(value);
       }
       if (siteVerificationInfo_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -3563,7 +3745,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSiteVerificationInfo() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       siteVerificationInfo_ = null;
       if (siteVerificationInfoBuilder_ != null) {
         siteVerificationInfoBuilder_.dispose();
@@ -3585,7 +3767,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.SiteVerificationInfo.Builder
         getSiteVerificationInfoBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSiteVerificationInfoFieldBuilder().getBuilder();
     }
@@ -3672,7 +3854,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setIndexingStatusValue(int value) {
       indexingStatus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3716,7 +3898,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       indexingStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -3735,7 +3917,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndexingStatus() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       indexingStatus_ = 0;
       onChanged();
       return this;
@@ -3761,7 +3943,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3805,7 +3987,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3826,7 +4008,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3843,7 +4025,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -3854,7 +4036,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3871,7 +4053,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -3892,7 +4074,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3964,7 +4146,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the failureReason field is set.
      */
     public boolean hasFailureReason() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4009,7 +4191,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         failureReasonBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4031,7 +4213,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       } else {
         failureReasonBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4049,7 +4231,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFailureReason(
         com.google.cloud.discoveryengine.v1.TargetSite.FailureReason value) {
       if (failureReasonBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && failureReason_ != null
             && failureReason_
                 != com.google.cloud.discoveryengine.v1.TargetSite.FailureReason
@@ -4062,7 +4244,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         failureReasonBuilder_.mergeFrom(value);
       }
       if (failureReason_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4079,7 +4261,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFailureReason() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       failureReason_ = null;
       if (failureReasonBuilder_ != null) {
         failureReasonBuilder_.dispose();
@@ -4101,7 +4283,7 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.Builder
         getFailureReasonBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getFailureReasonFieldBuilder().getBuilder();
     }

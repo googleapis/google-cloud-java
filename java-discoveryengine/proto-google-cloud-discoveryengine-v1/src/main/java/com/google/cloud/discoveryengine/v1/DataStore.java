@@ -689,6 +689,64 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig documentProcessingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return Whether the documentProcessingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentProcessingConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return The documentProcessingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+      getDocumentProcessingConfig() {
+    return documentProcessingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.getDefaultInstance()
+        : documentProcessingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder
+      getDocumentProcessingConfigOrBuilder() {
+    return documentProcessingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.getDefaultInstance()
+        : documentProcessingConfig_;
+  }
+
   public static final int STARTING_SCHEMA_FIELD_NUMBER = 28;
   private com.google.cloud.discoveryengine.v1.Schema startingSchema_;
   /**
@@ -717,7 +775,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -823,6 +881,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
@@ -870,6 +931,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -897,6 +963,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasDocumentProcessingConfig() != other.hasDocumentProcessingConfig()) return false;
+    if (hasDocumentProcessingConfig()) {
+      if (!getDocumentProcessingConfig().equals(other.getDocumentProcessingConfig())) return false;
     }
     if (hasStartingSchema() != other.hasStartingSchema()) return false;
     if (hasStartingSchema()) {
@@ -930,6 +1000,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasDocumentProcessingConfig()) {
+      hash = (37 * hash) + DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentProcessingConfig().hashCode();
     }
     if (hasStartingSchema()) {
       hash = (37 * hash) + STARTING_SCHEMA_FIELD_NUMBER;
@@ -1076,6 +1150,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getDocumentProcessingConfigFieldBuilder();
         getStartingSchemaFieldBuilder();
       }
     }
@@ -1095,6 +1170,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      documentProcessingConfig_ = null;
+      if (documentProcessingConfigBuilder_ != null) {
+        documentProcessingConfigBuilder_.dispose();
+        documentProcessingConfigBuilder_ = null;
       }
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
@@ -1167,9 +1247,16 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.documentProcessingConfig_ =
+            documentProcessingConfigBuilder_ == null
+                ? documentProcessingConfig_
+                : documentProcessingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1252,6 +1339,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasDocumentProcessingConfig()) {
+        mergeDocumentProcessingConfig(other.getDocumentProcessingConfig());
       }
       if (other.hasStartingSchema()) {
         mergeStartingSchema(other.getStartingSchema());
@@ -1337,10 +1427,17 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 218:
+              {
+                input.readMessage(
+                    getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 226
             default:
@@ -2439,6 +2536,217 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig documentProcessingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder>
+        documentProcessingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     *
+     * @return Whether the documentProcessingConfig field is set.
+     */
+    public boolean hasDocumentProcessingConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     *
+     * @return The documentProcessingConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+        getDocumentProcessingConfig() {
+      if (documentProcessingConfigBuilder_ == null) {
+        return documentProcessingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.getDefaultInstance()
+            : documentProcessingConfig_;
+      } else {
+        return documentProcessingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder setDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
+      if (documentProcessingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentProcessingConfig_ = value;
+      } else {
+        documentProcessingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder setDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder builderForValue) {
+      if (documentProcessingConfigBuilder_ == null) {
+        documentProcessingConfig_ = builderForValue.build();
+      } else {
+        documentProcessingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder mergeDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
+      if (documentProcessingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && documentProcessingConfig_ != null
+            && documentProcessingConfig_
+                != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
+                    .getDefaultInstance()) {
+          getDocumentProcessingConfigBuilder().mergeFrom(value);
+        } else {
+          documentProcessingConfig_ = value;
+        }
+      } else {
+        documentProcessingConfigBuilder_.mergeFrom(value);
+      }
+      if (documentProcessingConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder clearDocumentProcessingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      documentProcessingConfig_ = null;
+      if (documentProcessingConfigBuilder_ != null) {
+        documentProcessingConfigBuilder_.dispose();
+        documentProcessingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder
+        getDocumentProcessingConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getDocumentProcessingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder
+        getDocumentProcessingConfigOrBuilder() {
+      if (documentProcessingConfigBuilder_ != null) {
+        return documentProcessingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return documentProcessingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.getDefaultInstance()
+            : documentProcessingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder,
+            com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder>
+        getDocumentProcessingConfigFieldBuilder() {
+      if (documentProcessingConfigBuilder_ == null) {
+        documentProcessingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder,
+                com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder>(
+                getDocumentProcessingConfig(), getParentForChildren(), isClean());
+        documentProcessingConfig_ = null;
+      }
+      return documentProcessingConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.Schema startingSchema_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.Schema,
@@ -2470,7 +2778,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2536,7 +2844,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2569,7 +2877,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2597,7 +2905,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && startingSchema_ != null
             && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
           getStartingSchemaBuilder().mergeFrom(value);
@@ -2608,7 +2916,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2636,7 +2944,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -2668,7 +2976,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }

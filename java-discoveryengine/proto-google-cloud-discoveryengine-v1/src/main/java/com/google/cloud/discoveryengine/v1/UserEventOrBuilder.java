@@ -146,6 +146,86 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
+   * The [Engine][google.cloud.discoveryengine.v1.Engine] resource name, in the
+   * form of
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
+   *
+   * Optional. Only required for
+   * [Engine][google.cloud.discoveryengine.v1.Engine] produced user events. For
+   * example, user events from blended search.
+   * </pre>
+   *
+   * <code>string engine = 19 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The engine.
+   */
+  java.lang.String getEngine();
+  /**
+   *
+   *
+   * <pre>
+   * The [Engine][google.cloud.discoveryengine.v1.Engine] resource name, in the
+   * form of
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
+   *
+   * Optional. Only required for
+   * [Engine][google.cloud.discoveryengine.v1.Engine] produced user events. For
+   * example, user events from blended search.
+   * </pre>
+   *
+   * <code>string engine = 19 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for engine.
+   */
+  com.google.protobuf.ByteString getEngineBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [DataStore][google.cloud.discoveryengine.v1.DataStore] resource full
+   * name, of the form
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+   *
+   * Optional. Only required for user events whose data store can't by
+   * determined by
+   * [UserEvent.engine][google.cloud.discoveryengine.v1.UserEvent.engine] or
+   * [UserEvent.documents][google.cloud.discoveryengine.v1.UserEvent.documents].
+   * If data store is set in the parent of write/import/collect user event
+   * requests, this field can be omitted.
+   * </pre>
+   *
+   * <code>string data_store = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The dataStore.
+   */
+  java.lang.String getDataStore();
+  /**
+   *
+   *
+   * <pre>
+   * The [DataStore][google.cloud.discoveryengine.v1.DataStore] resource full
+   * name, of the form
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+   *
+   * Optional. Only required for user events whose data store can't by
+   * determined by
+   * [UserEvent.engine][google.cloud.discoveryengine.v1.UserEvent.engine] or
+   * [UserEvent.documents][google.cloud.discoveryengine.v1.UserEvent.documents].
+   * If data store is set in the parent of write/import/collect user event
+   * requests, this field can be omitted.
+   * </pre>
+   *
+   * <code>string data_store = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for dataStore.
+   */
+  com.google.protobuf.ByteString getDataStoreBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Only required for
    * [UserEventService.ImportUserEvents][google.cloud.discoveryengine.v1.UserEventService.ImportUserEvents]
    * method. Timestamp of when the user event happened.
@@ -752,7 +832,7 @@ public interface UserEventOrBuilder
    * <pre>
    * A list of identifiers for the independent experiment groups this user event
    * belongs to. This is used to distinguish between user events associated with
-   * different experiment setups on the customer end.
+   * different experiment setups.
    * </pre>
    *
    * <code>repeated string tag_ids = 15;</code>
@@ -766,7 +846,7 @@ public interface UserEventOrBuilder
    * <pre>
    * A list of identifiers for the independent experiment groups this user event
    * belongs to. This is used to distinguish between user events associated with
-   * different experiment setups on the customer end.
+   * different experiment setups.
    * </pre>
    *
    * <code>repeated string tag_ids = 15;</code>
@@ -780,7 +860,7 @@ public interface UserEventOrBuilder
    * <pre>
    * A list of identifiers for the independent experiment groups this user event
    * belongs to. This is used to distinguish between user events associated with
-   * different experiment setups on the customer end.
+   * different experiment setups.
    * </pre>
    *
    * <code>repeated string tag_ids = 15;</code>
@@ -795,7 +875,7 @@ public interface UserEventOrBuilder
    * <pre>
    * A list of identifiers for the independent experiment groups this user event
    * belongs to. This is used to distinguish between user events associated with
-   * different experiment setups on the customer end.
+   * different experiment setups.
    * </pre>
    *
    * <code>repeated string tag_ids = 15;</code>

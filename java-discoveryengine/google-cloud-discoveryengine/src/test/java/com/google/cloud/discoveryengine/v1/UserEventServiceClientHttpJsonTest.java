@@ -86,6 +86,12 @@ public class UserEventServiceClientHttpJsonTest {
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
             .setUserPseudoId("userPseudoId-1155274652")
+            .setEngine(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDataStore(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setEventTime(Timestamp.newBuilder().build())
             .setUserInfo(UserInfo.newBuilder().build())
             .setDirectUserRequest(true)
@@ -112,6 +118,7 @@ public class UserEventServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -147,6 +154,7 @@ public class UserEventServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");

@@ -28,8 +28,16 @@ public interface WriteUserEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the write user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+   * is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the write user event action is applied in [Location][] level, for
+   * example, the event with
+   * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -43,8 +51,16 @@ public interface WriteUserEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the write user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+   * is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the write user event action is applied in [Location][] level, for
+   * example, the event with
+   * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -95,4 +111,18 @@ public interface WriteUserEventRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.UserEventOrBuilder getUserEventOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the user event is written asynchronously after
+   * validation, and the API responds without waiting for the write.
+   * </pre>
+   *
+   * <code>bool write_async = 3;</code>
+   *
+   * @return The writeAsync.
+   */
+  boolean getWriteAsync();
 }

@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1.stub;
 
 import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -43,15 +44,26 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Answer;
+import com.google.cloud.discoveryengine.v1.AnswerQueryRequest;
+import com.google.cloud.discoveryengine.v1.AnswerQueryResponse;
 import com.google.cloud.discoveryengine.v1.Conversation;
 import com.google.cloud.discoveryengine.v1.ConverseConversationRequest;
 import com.google.cloud.discoveryengine.v1.ConverseConversationResponse;
 import com.google.cloud.discoveryengine.v1.CreateConversationRequest;
+import com.google.cloud.discoveryengine.v1.CreateSessionRequest;
 import com.google.cloud.discoveryengine.v1.DeleteConversationRequest;
+import com.google.cloud.discoveryengine.v1.DeleteSessionRequest;
+import com.google.cloud.discoveryengine.v1.GetAnswerRequest;
 import com.google.cloud.discoveryengine.v1.GetConversationRequest;
+import com.google.cloud.discoveryengine.v1.GetSessionRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsResponse;
+import com.google.cloud.discoveryengine.v1.ListSessionsRequest;
+import com.google.cloud.discoveryengine.v1.ListSessionsResponse;
+import com.google.cloud.discoveryengine.v1.Session;
 import com.google.cloud.discoveryengine.v1.UpdateConversationRequest;
+import com.google.cloud.discoveryengine.v1.UpdateSessionRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -119,6 +131,15 @@ public class ConversationalSearchServiceStubSettings
   private final PagedCallSettings<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       listConversationsSettings;
+  private final UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings;
+  private final UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings;
+  private final UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings;
+  private final UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings;
+  private final UnaryCallSettings<UpdateSessionRequest, Session> updateSessionSettings;
+  private final UnaryCallSettings<GetSessionRequest, Session> getSessionSettings;
+  private final PagedCallSettings<
+          ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      listSessionsSettings;
 
   private static final PagedListDescriptor<
           ListConversationsRequest, ListConversationsResponse, Conversation>
@@ -160,6 +181,42 @@ public class ConversationalSearchServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListSessionsRequest, ListSessionsResponse, Session>
+      LIST_SESSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSessionsRequest, ListSessionsResponse, Session>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSessionsRequest injectToken(ListSessionsRequest payload, String token) {
+              return ListSessionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSessionsRequest injectPageSize(ListSessionsRequest payload, int pageSize) {
+              return ListSessionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSessionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSessionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Session> extractResources(ListSessionsResponse payload) {
+              return payload.getSessionsList() == null
+                  ? ImmutableList.<Session>of()
+                  : payload.getSessionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       LIST_CONVERSATIONS_PAGE_STR_FACT =
@@ -178,6 +235,23 @@ public class ConversationalSearchServiceStubSettings
                       PageContext.create(
                           callable, LIST_CONVERSATIONS_PAGE_STR_DESC, request, context);
               return ListConversationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      LIST_SESSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSessionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSessionsRequest, ListSessionsResponse> callable,
+                ListSessionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSessionsResponse> futureResponse) {
+              PageContext<ListSessionsRequest, ListSessionsResponse, Session> pageContext =
+                  PageContext.create(callable, LIST_SESSIONS_PAGE_STR_DESC, request, context);
+              return ListSessionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -212,6 +286,42 @@ public class ConversationalSearchServiceStubSettings
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       listConversationsSettings() {
     return listConversationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return answerQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAnswer. */
+  public UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings() {
+    return getAnswerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSession. */
+  public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
+    return createSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSession. */
+  public UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings() {
+    return deleteSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSession. */
+  public UnaryCallSettings<UpdateSessionRequest, Session> updateSessionSettings() {
+    return updateSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSession. */
+  public UnaryCallSettings<GetSessionRequest, Session> getSessionSettings() {
+    return getSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSessions. */
+  public PagedCallSettings<ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      listSessionsSettings() {
+    return listSessionsSettings;
   }
 
   public ConversationalSearchServiceStub createStub() throws IOException {
@@ -330,6 +440,13 @@ public class ConversationalSearchServiceStubSettings
     updateConversationSettings = settingsBuilder.updateConversationSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
+    answerQuerySettings = settingsBuilder.answerQuerySettings().build();
+    getAnswerSettings = settingsBuilder.getAnswerSettings().build();
+    createSessionSettings = settingsBuilder.createSessionSettings().build();
+    deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
+    updateSessionSettings = settingsBuilder.updateSessionSettings().build();
+    getSessionSettings = settingsBuilder.getSessionSettings().build();
+    listSessionsSettings = settingsBuilder.listSessionsSettings().build();
   }
 
   /** Builder for ConversationalSearchServiceStubSettings. */
@@ -350,6 +467,16 @@ public class ConversationalSearchServiceStubSettings
     private final PagedCallSettings.Builder<
             ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
         listConversationsSettings;
+    private final UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings;
+    private final UnaryCallSettings.Builder<GetAnswerRequest, Answer> getAnswerSettings;
+    private final UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings;
+    private final UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings;
+    private final UnaryCallSettings.Builder<UpdateSessionRequest, Session> updateSessionSettings;
+    private final UnaryCallSettings.Builder<GetSessionRequest, Session> getSessionSettings;
+    private final PagedCallSettings.Builder<
+            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+        listSessionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -394,6 +521,13 @@ public class ConversationalSearchServiceStubSettings
       updateConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
+      answerQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAnswerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSessionsSettings = PagedCallSettings.newBuilder(LIST_SESSIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -402,7 +536,14 @@ public class ConversationalSearchServiceStubSettings
               deleteConversationSettings,
               updateConversationSettings,
               getConversationSettings,
-              listConversationsSettings);
+              listConversationsSettings,
+              answerQuerySettings,
+              getAnswerSettings,
+              createSessionSettings,
+              deleteSessionSettings,
+              updateSessionSettings,
+              getSessionSettings,
+              listSessionsSettings);
       initDefaults(this);
     }
 
@@ -415,6 +556,13 @@ public class ConversationalSearchServiceStubSettings
       updateConversationSettings = settings.updateConversationSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
+      answerQuerySettings = settings.answerQuerySettings.toBuilder();
+      getAnswerSettings = settings.getAnswerSettings.toBuilder();
+      createSessionSettings = settings.createSessionSettings.toBuilder();
+      deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
+      updateSessionSettings = settings.updateSessionSettings.toBuilder();
+      getSessionSettings = settings.getSessionSettings.toBuilder();
+      listSessionsSettings = settings.listSessionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -423,7 +571,14 @@ public class ConversationalSearchServiceStubSettings
               deleteConversationSettings,
               updateConversationSettings,
               getConversationSettings,
-              listConversationsSettings);
+              listConversationsSettings,
+              answerQuerySettings,
+              getAnswerSettings,
+              createSessionSettings,
+              deleteSessionSettings,
+              updateSessionSettings,
+              getSessionSettings,
+              listSessionsSettings);
     }
 
     private static Builder createDefault() {
@@ -481,6 +636,41 @@ public class ConversationalSearchServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .answerQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getAnswerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listSessionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       return builder;
     }
 
@@ -534,6 +724,44 @@ public class ConversationalSearchServiceStubSettings
             ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
         listConversationsSettings() {
       return listConversationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return answerQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAnswer. */
+    public UnaryCallSettings.Builder<GetAnswerRequest, Answer> getAnswerSettings() {
+      return getAnswerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSession. */
+    public UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings() {
+      return createSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSession. */
+    public UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings() {
+      return deleteSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSession. */
+    public UnaryCallSettings.Builder<UpdateSessionRequest, Session> updateSessionSettings() {
+      return updateSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSession. */
+    public UnaryCallSettings.Builder<GetSessionRequest, Session> getSessionSettings() {
+      return getSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSessions. */
+    public PagedCallSettings.Builder<
+            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+        listSessionsSettings() {
+      return listSessionsSettings;
     }
 
     @Override
