@@ -91,9 +91,11 @@ public class IncompleteKey extends BaseKey {
     PathElement parent = ancestors.get(ancestors.size() - 1);
     Key.Builder keyBuilder;
     if (parent.hasName()) {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getName());
+      keyBuilder =
+          Key.newBuilder(getProjectId(), parent.getKind(), parent.getName(), getDatabaseId());
     } else {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getId());
+      keyBuilder =
+          Key.newBuilder(getProjectId(), parent.getKind(), parent.getId(), getDatabaseId());
     }
     String namespace = getNamespace();
     if (namespace != null) {

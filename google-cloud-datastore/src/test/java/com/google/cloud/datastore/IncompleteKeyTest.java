@@ -25,15 +25,17 @@ import org.junit.Test;
 
 public class IncompleteKeyTest {
 
-  private static IncompleteKey pk1, pk2, pk4;
-  private static Key parent1;
+  private static IncompleteKey pk1, pk2, pk4, pk5;
+  private static Key parent1, parent2;
 
   @Before
   public void setUp() {
     pk1 = IncompleteKey.newBuilder("ds", "kind1").build();
     parent1 = Key.newBuilder("ds", "kind2", 10).setNamespace("ns").build();
+    parent2 = Key.newBuilder("ds", "kind2", 10, "test-db").setNamespace("ns").build();
     pk2 = IncompleteKey.newBuilder(parent1, "kind3").build();
     pk4 = IncompleteKey.newBuilderWithDatabaseId("ds", "kind3", "test-db").build();
+    pk5 = IncompleteKey.newBuilder(parent2, "kind4").build();
   }
 
   @Test
@@ -59,12 +61,18 @@ public class IncompleteKeyTest {
     assertEquals("test-db", pk4.getDatabaseId());
     assertEquals("kind3", pk4.getKind());
     assertTrue(pk4.getAncestors().isEmpty());
+
+    assertEquals("ds", pk5.getProjectId());
+    assertEquals("test-db", pk5.getDatabaseId());
+    assertEquals("kind4", pk5.getKind());
+    assertEquals(parent2.getPath(), pk5.getAncestors());
   }
 
   @Test
   public void testParent() {
     assertNull(pk1.getParent());
     assertEquals(parent1, pk2.getParent());
+    assertEquals(parent2, pk5.getParent());
     Key parent2 = Key.newBuilder("ds", "kind3", "name").setNamespace("ns").build();
     IncompleteKey pk3 = IncompleteKey.newBuilder(parent2, "kind3").build();
     assertEquals(parent2, pk3.getParent());
