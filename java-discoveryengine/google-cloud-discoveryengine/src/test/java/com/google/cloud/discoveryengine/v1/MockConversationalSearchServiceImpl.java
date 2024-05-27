@@ -186,4 +186,148 @@ public class MockConversationalSearchServiceImpl extends ConversationalSearchSer
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void answerQuery(
+      AnswerQueryRequest request, StreamObserver<AnswerQueryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnswerQueryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnswerQueryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnswerQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnswerQueryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAnswer(GetAnswerRequest request, StreamObserver<Answer> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Answer) {
+      requests.add(request);
+      responseObserver.onNext(((Answer) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAnswer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Answer.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSession(
+      CreateSessionRequest request, StreamObserver<Session> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Session) {
+      requests.add(request);
+      responseObserver.onNext(((Session) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Session.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSession(DeleteSessionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSession(
+      UpdateSessionRequest request, StreamObserver<Session> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Session) {
+      requests.add(request);
+      responseObserver.onNext(((Session) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Session.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSession(GetSessionRequest request, StreamObserver<Session> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Session) {
+      requests.add(request);
+      responseObserver.onNext(((Session) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Session.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSessions(
+      ListSessionsRequest request, StreamObserver<ListSessionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSessionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSessionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSessions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSessionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

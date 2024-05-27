@@ -137,7 +137,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    * and new credentials are needed, as indicated by `CheckValidCreds`. In order
    * to obtain authorization_code, make a request to the following URL:
    * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
    * &lt;/pre&gt;
    * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
    * returned by ListDataSources method.
@@ -173,7 +173,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    * and new credentials are needed, as indicated by `CheckValidCreds`. In order
    * to obtain authorization_code, make a request to the following URL:
    * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
    * &lt;/pre&gt;
    * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
    * returned by ListDataSources method.
@@ -263,7 +263,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    * are needed, as indicated by `CheckValidCreds`. In order to obtain version
    * info, make a request to the following URL:
    * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
    * &lt;/pre&gt;
    * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
    * returned by ListDataSources method.
@@ -299,7 +299,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    * are needed, as indicated by `CheckValidCreds`. In order to obtain version
    * info, make a request to the following URL:
    * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
    * &lt;/pre&gt;
    * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
    * returned by ListDataSources method.
@@ -1090,7 +1090,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * and new credentials are needed, as indicated by `CheckValidCreds`. In order
      * to obtain authorization_code, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1125,7 +1125,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * and new credentials are needed, as indicated by `CheckValidCreds`. In order
      * to obtain authorization_code, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1160,7 +1160,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * and new credentials are needed, as indicated by `CheckValidCreds`. In order
      * to obtain authorization_code, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1194,7 +1194,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * and new credentials are needed, as indicated by `CheckValidCreds`. In order
      * to obtain authorization_code, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1224,7 +1224,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * and new credentials are needed, as indicated by `CheckValidCreds`. In order
      * to obtain authorization_code, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1455,7 +1455,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * are needed, as indicated by `CheckValidCreds`. In order to obtain version
      * info, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1490,7 +1490,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * are needed, as indicated by `CheckValidCreds`. In order to obtain version
      * info, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1525,7 +1525,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * are needed, as indicated by `CheckValidCreds`. In order to obtain version
      * info, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1559,7 +1559,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * are needed, as indicated by `CheckValidCreds`. In order to obtain version
      * info, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.
@@ -1589,7 +1589,7 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      * are needed, as indicated by `CheckValidCreds`. In order to obtain version
      * info, make a request to the following URL:
      * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
+     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
      * &lt;/pre&gt;
      * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the a data source as
      * returned by ListDataSources method.

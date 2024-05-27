@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1.stub;
 
 import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -25,15 +26,26 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Answer;
+import com.google.cloud.discoveryengine.v1.AnswerQueryRequest;
+import com.google.cloud.discoveryengine.v1.AnswerQueryResponse;
 import com.google.cloud.discoveryengine.v1.Conversation;
 import com.google.cloud.discoveryengine.v1.ConverseConversationRequest;
 import com.google.cloud.discoveryengine.v1.ConverseConversationResponse;
 import com.google.cloud.discoveryengine.v1.CreateConversationRequest;
+import com.google.cloud.discoveryengine.v1.CreateSessionRequest;
 import com.google.cloud.discoveryengine.v1.DeleteConversationRequest;
+import com.google.cloud.discoveryengine.v1.DeleteSessionRequest;
+import com.google.cloud.discoveryengine.v1.GetAnswerRequest;
 import com.google.cloud.discoveryengine.v1.GetConversationRequest;
+import com.google.cloud.discoveryengine.v1.GetSessionRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsResponse;
+import com.google.cloud.discoveryengine.v1.ListSessionsRequest;
+import com.google.cloud.discoveryengine.v1.ListSessionsResponse;
+import com.google.cloud.discoveryengine.v1.Session;
 import com.google.cloud.discoveryengine.v1.UpdateConversationRequest;
+import com.google.cloud.discoveryengine.v1.UpdateSessionRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -118,6 +130,77 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ListConversationsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      answerQueryMethodDescriptor =
+          MethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/AnswerQuery")
+              .setRequestMarshaller(ProtoUtils.marshaller(AnswerQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnswerQueryResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
+      MethodDescriptor.<GetAnswerRequest, Answer>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.discoveryengine.v1.ConversationalSearchService/GetAnswer")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetAnswerRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Answer.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateSessionRequest, Session>
+      createSessionMethodDescriptor =
+          MethodDescriptor.<CreateSessionRequest, Session>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/CreateSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSessionRequest, Empty> deleteSessionMethodDescriptor =
+      MethodDescriptor.<DeleteSessionRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.discoveryengine.v1.ConversationalSearchService/DeleteSession")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateSessionRequest, Session>
+      updateSessionMethodDescriptor =
+          MethodDescriptor.<UpdateSessionRequest, Session>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/UpdateSession")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
+      MethodDescriptor.<GetSessionRequest, Session>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.discoveryengine.v1.ConversationalSearchService/GetSession")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
+      listSessionsMethodDescriptor =
+          MethodDescriptor.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/ListSessions")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ConverseConversationRequest, ConverseConversationResponse>
       converseConversationCallable;
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
@@ -128,6 +211,15 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
       listConversationsCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable;
+  private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
+  private final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable;
+  private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
+  private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
+  private final UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable;
+  private final UnaryCallable<GetSessionRequest, Session> getSessionCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
+      listSessionsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -239,6 +331,76 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
+        GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+            .setMethodDescriptor(answerQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
+        GrpcCallSettings.<GetAnswerRequest, Answer>newBuilder()
+            .setMethodDescriptor(getAnswerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
+        GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(createSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
+        GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
+        GrpcCallSettings.<UpdateSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(updateSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("session.name", String.valueOf(request.getSession().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
+        GrpcCallSettings.<GetSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(getSessionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
+        GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+            .setMethodDescriptor(listSessionsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
 
     this.converseConversationCallable =
         callableFactory.createUnaryCallable(
@@ -273,6 +435,30 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
             listConversationsTransportSettings,
             settings.listConversationsSettings(),
             clientContext);
+    this.answerQueryCallable =
+        callableFactory.createUnaryCallable(
+            answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
+    this.getAnswerCallable =
+        callableFactory.createUnaryCallable(
+            getAnswerTransportSettings, settings.getAnswerSettings(), clientContext);
+    this.createSessionCallable =
+        callableFactory.createUnaryCallable(
+            createSessionTransportSettings, settings.createSessionSettings(), clientContext);
+    this.deleteSessionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSessionTransportSettings, settings.deleteSessionSettings(), clientContext);
+    this.updateSessionCallable =
+        callableFactory.createUnaryCallable(
+            updateSessionTransportSettings, settings.updateSessionSettings(), clientContext);
+    this.getSessionCallable =
+        callableFactory.createUnaryCallable(
+            getSessionTransportSettings, settings.getSessionSettings(), clientContext);
+    this.listSessionsCallable =
+        callableFactory.createUnaryCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
+    this.listSessionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -318,6 +504,46 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
   public UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable() {
     return listConversationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return answerQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {
+    return getAnswerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
+    return createSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable() {
+    return deleteSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable() {
+    return updateSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {
+    return getSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    return listSessionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
+    return listSessionsPagedCallable;
   }
 
   @Override

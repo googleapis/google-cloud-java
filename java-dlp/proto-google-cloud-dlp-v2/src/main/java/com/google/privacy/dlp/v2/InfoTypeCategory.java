@@ -118,6 +118,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Azerbaijan.
+     * </pre>
+     *
+     * <code>AZERBAIJAN = 48;</code>
+     */
+    AZERBAIJAN(48),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Belgium.
      * </pre>
      *
@@ -602,6 +612,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Azerbaijan.
+     * </pre>
+     *
+     * <code>AZERBAIJAN = 48;</code>
+     */
+    public static final int AZERBAIJAN_VALUE = 48;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Belgium.
      * </pre>
      *
@@ -1071,6 +1091,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return ARGENTINA;
         case 3:
           return AUSTRALIA;
+        case 48:
+          return AZERBAIJAN;
         case 4:
           return BELGIUM;
         case 5:

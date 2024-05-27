@@ -233,8 +233,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Filter by solution type. For example: filter =
-   * 'solution_type:SOLUTION_TYPE_SEARCH'
+   * Filter by solution type .
+   * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -257,8 +257,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Filter by solution type. For example: filter =
-   * 'solution_type:SOLUTION_TYPE_SEARCH'
+   * Filter by solution type .
+   * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -1060,8 +1060,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type. For example: filter =
-     * 'solution_type:SOLUTION_TYPE_SEARCH'
+     * Filter by solution type .
+     * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1083,8 +1083,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type. For example: filter =
-     * 'solution_type:SOLUTION_TYPE_SEARCH'
+     * Filter by solution type .
+     * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1106,8 +1106,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type. For example: filter =
-     * 'solution_type:SOLUTION_TYPE_SEARCH'
+     * Filter by solution type .
+     * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1128,8 +1128,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type. For example: filter =
-     * 'solution_type:SOLUTION_TYPE_SEARCH'
+     * Filter by solution type .
+     * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1146,8 +1146,8 @@ public final class ListDataStoresRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Filter by solution type. For example: filter =
-     * 'solution_type:SOLUTION_TYPE_SEARCH'
+     * Filter by solution type .
+     * For example: `filter = 'solution_type:SOLUTION_TYPE_SEARCH'`
      * </pre>
      *
      * <code>string filter = 4;</code>

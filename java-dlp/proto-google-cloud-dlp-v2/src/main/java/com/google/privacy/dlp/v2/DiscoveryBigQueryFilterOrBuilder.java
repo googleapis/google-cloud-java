@@ -116,5 +116,46 @@ public interface DiscoveryBigQueryFilterOrBuilder
   com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.AllOtherBigQueryTablesOrBuilder
       getOtherTablesOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   *
+   * @return Whether the tableReference field is set.
+   */
+  boolean hasTableReference();
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   *
+   * @return The tableReference.
+   */
+  com.google.privacy.dlp.v2.TableReference getTableReference();
+  /**
+   *
+   *
+   * <pre>
+   * The table to scan. Discovery configurations including this can only
+   * include one DiscoveryTarget (the DiscoveryTarget with this
+   * TableReference).
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.TableReference table_reference = 3;</code>
+   */
+  com.google.privacy.dlp.v2.TableReferenceOrBuilder getTableReferenceOrBuilder();
+
   com.google.privacy.dlp.v2.DiscoveryBigQueryFilter.FilterCase getFilterCase();
 }

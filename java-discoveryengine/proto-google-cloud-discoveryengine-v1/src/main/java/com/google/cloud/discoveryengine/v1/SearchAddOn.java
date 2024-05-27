@@ -130,7 +130,7 @@ public enum SearchAddOn implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final SearchAddOn[] VALUES = values();

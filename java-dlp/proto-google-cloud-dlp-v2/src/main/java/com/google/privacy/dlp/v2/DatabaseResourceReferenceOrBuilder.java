@@ -29,7 +29,7 @@ public interface DatabaseResourceReferenceOrBuilder
    *
    * <pre>
    * Required. If within a project-level config, then this must match the
-   * config's project id.
+   * config's project ID.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,7 +42,7 @@ public interface DatabaseResourceReferenceOrBuilder
    *
    * <pre>
    * Required. If within a project-level config, then this must match the
-   * config's project id.
+   * config's project ID.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,7 +56,7 @@ public interface DatabaseResourceReferenceOrBuilder
    *
    * <pre>
    * Required. The instance where this resource is located. For example: Cloud
-   * SQL's instance id.
+   * SQL instance ID.
    * </pre>
    *
    * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,7 +69,7 @@ public interface DatabaseResourceReferenceOrBuilder
    *
    * <pre>
    * Required. The instance where this resource is located. For example: Cloud
-   * SQL's instance id.
+   * SQL instance ID.
    * </pre>
    *
    * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -77,4 +77,56 @@ public interface DatabaseResourceReferenceOrBuilder
    * @return The bytes for instance.
    */
   com.google.protobuf.ByteString getInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database within the instance.
+   * </pre>
+   *
+   * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The database.
+   */
+  java.lang.String getDatabase();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database within the instance.
+   * </pre>
+   *
+   * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for database.
+   */
+  com.google.protobuf.ByteString getDatabaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database resource, for example, a table within the
+   * database.
+   * </pre>
+   *
+   * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The databaseResource.
+   */
+  java.lang.String getDatabaseResource();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database resource, for example, a table within the
+   * database.
+   * </pre>
+   *
+   * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for databaseResource.
+   */
+  com.google.protobuf.ByteString getDatabaseResourceBytes();
 }

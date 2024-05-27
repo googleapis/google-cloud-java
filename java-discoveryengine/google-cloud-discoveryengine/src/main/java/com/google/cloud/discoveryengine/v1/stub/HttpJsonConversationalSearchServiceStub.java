@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1.stub;
 
 import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -30,15 +31,26 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Answer;
+import com.google.cloud.discoveryengine.v1.AnswerQueryRequest;
+import com.google.cloud.discoveryengine.v1.AnswerQueryResponse;
 import com.google.cloud.discoveryengine.v1.Conversation;
 import com.google.cloud.discoveryengine.v1.ConverseConversationRequest;
 import com.google.cloud.discoveryengine.v1.ConverseConversationResponse;
 import com.google.cloud.discoveryengine.v1.CreateConversationRequest;
+import com.google.cloud.discoveryengine.v1.CreateSessionRequest;
 import com.google.cloud.discoveryengine.v1.DeleteConversationRequest;
+import com.google.cloud.discoveryengine.v1.DeleteSessionRequest;
+import com.google.cloud.discoveryengine.v1.GetAnswerRequest;
 import com.google.cloud.discoveryengine.v1.GetConversationRequest;
+import com.google.cloud.discoveryengine.v1.GetSessionRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsResponse;
+import com.google.cloud.discoveryengine.v1.ListSessionsRequest;
+import com.google.cloud.discoveryengine.v1.ListSessionsResponse;
+import com.google.cloud.discoveryengine.v1.Session;
 import com.google.cloud.discoveryengine.v1.UpdateConversationRequest;
+import com.google.cloud.discoveryengine.v1.UpdateSessionRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -304,6 +316,287 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      answerQueryMethodDescriptor =
+          ApiMethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/AnswerQuery")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnswerQueryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{servingConfig=projects/*/locations/*/dataStores/*/servingConfigs/*}:answer",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "servingConfig", request.getServingConfig());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:answer",
+                          "/v1/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:answer")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerQueryResponse>newBuilder()
+                      .setDefaultInstance(AnswerQueryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
+      ApiMethodDescriptor.<GetAnswerRequest, Answer>newBuilder()
+          .setFullMethodName(
+              "google.cloud.discoveryengine.v1.ConversationalSearchService/GetAnswer")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetAnswerRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/dataStores/*/sessions/*/answers/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAnswerRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setAdditionalPaths(
+                      "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/sessions/*/answers/*}",
+                      "/v1/{name=projects/*/locations/*/collections/*/engines/*/sessions/*/answers/*}")
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAnswerRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Answer>newBuilder()
+                  .setDefaultInstance(Answer.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateSessionRequest, Session>
+      createSessionMethodDescriptor =
+          ApiMethodDescriptor.<CreateSessionRequest, Session>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/CreateSession")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/sessions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/sessions",
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/sessions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("session", request.getSession(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Session>newBuilder()
+                      .setDefaultInstance(Session.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSessionRequest, Empty>
+      deleteSessionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSessionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/DeleteSession")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataStores/*/sessions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/sessions/*}",
+                          "/v1/{name=projects/*/locations/*/collections/*/engines/*/sessions/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSessionRequest, Session>
+      updateSessionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSessionRequest, Session>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/UpdateSession")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{session.name=projects/*/locations/*/dataStores/*/sessions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "session.name", request.getSession().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{session.name=projects/*/locations/*/collections/*/dataStores/*/sessions/*}",
+                          "/v1/{session.name=projects/*/locations/*/collections/*/engines/*/sessions/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("session", request.getSession(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Session>newBuilder()
+                      .setDefaultInstance(Session.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
+      ApiMethodDescriptor.<GetSessionRequest, Session>newBuilder()
+          .setFullMethodName(
+              "google.cloud.discoveryengine.v1.ConversationalSearchService/GetSession")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetSessionRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/dataStores/*/sessions/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetSessionRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setAdditionalPaths(
+                      "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/sessions/*}",
+                      "/v1/{name=projects/*/locations/*/collections/*/engines/*/sessions/*}")
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetSessionRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Session>newBuilder()
+                  .setDefaultInstance(Session.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListSessionsRequest, ListSessionsResponse>
+      listSessionsMethodDescriptor =
+          ApiMethodDescriptor.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ConversationalSearchService/ListSessions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSessionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/sessions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSessionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/sessions",
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/sessions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSessionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSessionsResponse>newBuilder()
+                      .setDefaultInstance(ListSessionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ConverseConversationRequest, ConverseConversationResponse>
       converseConversationCallable;
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
@@ -314,6 +607,15 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
       listConversationsCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable;
+  private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
+  private final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable;
+  private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
+  private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
+  private final UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable;
+  private final UnaryCallable<GetSessionRequest, Session> getSessionCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
+  private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
+      listSessionsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -432,6 +734,83 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
+        HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+            .setMethodDescriptor(answerQueryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
+        HttpJsonCallSettings.<GetAnswerRequest, Answer>newBuilder()
+            .setMethodDescriptor(getAnswerMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
+        HttpJsonCallSettings.<CreateSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(createSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
+        HttpJsonCallSettings.<DeleteSessionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateSessionRequest, Session> updateSessionTransportSettings =
+        HttpJsonCallSettings.<UpdateSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(updateSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("session.name", String.valueOf(request.getSession().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
+        HttpJsonCallSettings.<GetSessionRequest, Session>newBuilder()
+            .setMethodDescriptor(getSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
+        HttpJsonCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
+            .setMethodDescriptor(listSessionsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
 
     this.converseConversationCallable =
         callableFactory.createUnaryCallable(
@@ -466,6 +845,30 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
             listConversationsTransportSettings,
             settings.listConversationsSettings(),
             clientContext);
+    this.answerQueryCallable =
+        callableFactory.createUnaryCallable(
+            answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
+    this.getAnswerCallable =
+        callableFactory.createUnaryCallable(
+            getAnswerTransportSettings, settings.getAnswerSettings(), clientContext);
+    this.createSessionCallable =
+        callableFactory.createUnaryCallable(
+            createSessionTransportSettings, settings.createSessionSettings(), clientContext);
+    this.deleteSessionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSessionTransportSettings, settings.deleteSessionSettings(), clientContext);
+    this.updateSessionCallable =
+        callableFactory.createUnaryCallable(
+            updateSessionTransportSettings, settings.updateSessionSettings(), clientContext);
+    this.getSessionCallable =
+        callableFactory.createUnaryCallable(
+            getSessionTransportSettings, settings.getSessionSettings(), clientContext);
+    this.listSessionsCallable =
+        callableFactory.createUnaryCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
+    this.listSessionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -480,6 +883,13 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
     methodDescriptors.add(updateConversationMethodDescriptor);
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
+    methodDescriptors.add(answerQueryMethodDescriptor);
+    methodDescriptors.add(getAnswerMethodDescriptor);
+    methodDescriptors.add(createSessionMethodDescriptor);
+    methodDescriptors.add(deleteSessionMethodDescriptor);
+    methodDescriptors.add(updateSessionMethodDescriptor);
+    methodDescriptors.add(getSessionMethodDescriptor);
+    methodDescriptors.add(listSessionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -519,6 +929,46 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
   public UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable() {
     return listConversationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return answerQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {
+    return getAnswerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
+    return createSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable() {
+    return deleteSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable() {
+    return updateSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {
+    return getSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    return listSessionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
+    return listSessionsPagedCallable;
   }
 
   @Override

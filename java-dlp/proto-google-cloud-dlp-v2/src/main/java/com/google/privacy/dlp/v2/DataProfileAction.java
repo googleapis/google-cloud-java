@@ -95,13 +95,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changed one of the following profile metrics:
-     * * Data risk score
-     * * Sensitivity score
-     * * Resource visibility
-     * * Encryption type
-     * * Predicted infoTypes
-     * * Other infoTypes
+     * One of the following profile metrics changed: Data risk score,
+     * Sensitivity score, Resource visibility, Encryption type, Predicted
+     * infoTypes, Other infoTypes
      * </pre>
      *
      * <code>CHANGED_PROFILE = 2;</code>
@@ -154,13 +150,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Changed one of the following profile metrics:
-     * * Data risk score
-     * * Sensitivity score
-     * * Resource visibility
-     * * Encryption type
-     * * Predicted infoTypes
-     * * Other infoTypes
+     * One of the following profile metrics changed: Data risk score,
+     * Sensitivity score, Resource visibility, Encryption type, Predicted
+     * infoTypes, Other infoTypes
      * </pre>
      *
      * <code>CHANGED_PROFILE = 2;</code>

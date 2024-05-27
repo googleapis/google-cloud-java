@@ -78,7 +78,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * For organizations, if unset, will match all projects. Has no effect
-   * for Data Profile configurations created within a project.
+   * for configurations created within a project.
    * </pre>
    *
    * <code>string project_id_regex = 1;</code>
@@ -102,7 +102,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * For organizations, if unset, will match all projects. Has no effect
-   * for Data Profile configurations created within a project.
+   * for configurations created within a project.
    * </pre>
    *
    * <code>string project_id_regex = 1;</code>
@@ -705,7 +705,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * For organizations, if unset, will match all projects. Has no effect
-     * for Data Profile configurations created within a project.
+     * for configurations created within a project.
      * </pre>
      *
      * <code>string project_id_regex = 1;</code>
@@ -728,7 +728,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * For organizations, if unset, will match all projects. Has no effect
-     * for Data Profile configurations created within a project.
+     * for configurations created within a project.
      * </pre>
      *
      * <code>string project_id_regex = 1;</code>
@@ -751,7 +751,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * For organizations, if unset, will match all projects. Has no effect
-     * for Data Profile configurations created within a project.
+     * for configurations created within a project.
      * </pre>
      *
      * <code>string project_id_regex = 1;</code>
@@ -773,7 +773,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * For organizations, if unset, will match all projects. Has no effect
-     * for Data Profile configurations created within a project.
+     * for configurations created within a project.
      * </pre>
      *
      * <code>string project_id_regex = 1;</code>
@@ -791,7 +791,7 @@ public final class DatabaseResourceRegex extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * For organizations, if unset, will match all projects. Has no effect
-     * for Data Profile configurations created within a project.
+     * for configurations created within a project.
      * </pre>
      *
      * <code>string project_id_regex = 1;</code>

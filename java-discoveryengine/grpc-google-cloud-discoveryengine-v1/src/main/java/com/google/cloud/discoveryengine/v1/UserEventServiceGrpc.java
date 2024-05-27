@@ -257,7 +257,7 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -347,7 +347,7 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -417,7 +417,7 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -485,7 +485,7 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
