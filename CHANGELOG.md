@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.40.2](https://github.com/googleapis/java-bigquery/compare/v2.40.1...v2.40.2) (2024-05-26)
+
+
+### Bug Fixes
+
+* Fixing NPE bug by adding to if clause ([#3290](https://github.com/googleapis/java-bigquery/issues/3290)) ([127cff9](https://github.com/googleapis/java-bigquery/commit/127cff9f964c5d2d912d26276474822fd137a64b))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.45.0 ([#3295](https://github.com/googleapis/java-bigquery/issues/3295)) ([c659523](https://github.com/googleapis/java-bigquery/commit/c659523a7ca25bc12282f0e28fff18ec9221f48e))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.49.0 ([#3296](https://github.com/googleapis/java-bigquery/issues/3296)) ([7d148d5](https://github.com/googleapis/java-bigquery/commit/7d148d5bb1d6e1e6b0a421749fcbb73a6fbe61e0))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.30.1 ([#3310](https://github.com/googleapis/java-bigquery/issues/3310)) ([641f1a8](https://github.com/googleapis/java-bigquery/commit/641f1a8325f0f43aeffd135654480a721f26e4e7))
+* Update github/codeql-action action to v2.25.4 ([#3291](https://github.com/googleapis/java-bigquery/issues/3291)) ([13bb5aa](https://github.com/googleapis/java-bigquery/commit/13bb5aaa6e4bac7144a369c9fbb5ae8922eb36ee))
+* Update ossf/scorecard-action action to v2.3.3 ([#3304](https://github.com/googleapis/java-bigquery/issues/3304)) ([d096082](https://github.com/googleapis/java-bigquery/commit/d09608211aed5dc49e2b5e51affe7942403ed267))
+
 ## [2.40.1](https://github.com/googleapis/java-bigquery/compare/v2.40.0...v2.40.1) (2024-05-06)
 
 
