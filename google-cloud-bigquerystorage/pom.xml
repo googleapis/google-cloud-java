@@ -156,6 +156,10 @@
     <artifactId>google-auth-library-credentials</artifactId>
     <version>1.23.0</version>
   </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+    </dependency>
 
     <!-- Test dependencies -->
     <dependency>

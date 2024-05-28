@@ -36,13 +36,21 @@ import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.metrics.LongCounter;
+import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -253,6 +261,24 @@ class ConnectionWorker implements AutoCloseable {
   static final Pattern DEFAULT_STREAM_PATTERN =
       Pattern.compile("projects/([^/]+)/datasets/([^/]+)/tables/([^/]+)/(streams/)?_default$");
 
+  private static String tableMatching = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/";
+  private static Pattern streamPatternTable = Pattern.compile(tableMatching);
+  private Meter writeMeter;
+  static AttributeKey<String> telemetryKeyTableId = AttributeKey.stringKey("table_id");
+  private static String dataflowPrefix = "dataflow:";
+  static List<AttributeKey<String>> telemetryKeysTraceId =
+      new ArrayList<AttributeKey<String>>() {
+        {
+          add(AttributeKey.stringKey("trace_field_1"));
+          add(AttributeKey.stringKey("trace_field_2"));
+          add(AttributeKey.stringKey("trace_field_3"));
+        }
+      };
+  private Attributes telemetryAttributes;
+  private LongCounter instrumentIncomingRequestCount;
+  private LongCounter instrumentIncomingRequestSize;
+  private LongCounter instrumentIncomingRequestRows;
+
   public static Boolean isDefaultStreamName(String streamName) {
     Matcher matcher = DEFAULT_STREAM_PATTERN.matcher(streamName);
     return matcher.matches();
@@ -276,6 +302,85 @@ class ConnectionWorker implements AutoCloseable {
   static String getRoutingHeader(String streamName, String location) {
     String project = extractProjectName(streamName);
     return project + "locations/" + location;
+  }
+
+  private String getTableName() {
+    Matcher tableMatcher = streamPatternTable.matcher(this.streamName);
+    return tableMatcher.find() ? tableMatcher.group(1) : "";
+  }
+
+  private void setTraceIdAttributesPart(
+      AttributesBuilder builder,
+      String[] traceIdParts,
+      int indexPartsToCheck,
+      int indexTelemetryKeysToUse) {
+    if ((indexPartsToCheck < traceIdParts.length) && !traceIdParts[indexPartsToCheck].isEmpty()) {
+      builder.put(
+          telemetryKeysTraceId.get(indexTelemetryKeysToUse), traceIdParts[indexPartsToCheck]);
+    }
+  }
+
+  private void setTraceIdAttributes(AttributesBuilder builder) {
+    if ((this.traceId != null) && !this.traceId.isEmpty()) {
+      int indexDataflow = this.traceId.toLowerCase().indexOf(dataflowPrefix);
+      if (indexDataflow >= 0) {
+        String[] traceIdParts =
+            this.traceId.substring(indexDataflow + dataflowPrefix.length()).split(":", 8);
+        setTraceIdAttributesPart(builder, traceIdParts, 0, 0);
+        setTraceIdAttributesPart(builder, traceIdParts, 1, 1);
+        setTraceIdAttributesPart(builder, traceIdParts, 2, 2);
+      }
+    }
+  }
+
+  private Attributes buildOpenTelemetryAttributes() {
+    AttributesBuilder builder = Attributes.builder();
+    String tableName = getTableName();
+    if (!tableName.isEmpty()) {
+      builder.put(telemetryKeyTableId, tableName);
+    }
+    setTraceIdAttributes(builder);
+    return builder.build();
+  }
+
+  private void refreshOpenTelemetryTableNameAttributes() {
+    String tableName = getTableName();
+    if (!tableName.isEmpty()
+        && !tableName.equals(getTelemetryAttributes().get(telemetryKeyTableId))) {
+      AttributesBuilder builder = getTelemetryAttributes().toBuilder();
+      builder.put(telemetryKeyTableId, tableName);
+      this.telemetryAttributes = builder.build();
+    }
+  }
+
+  @VisibleForTesting
+  Attributes getTelemetryAttributes() {
+    return telemetryAttributes;
+  }
+
+  private void registerOpenTelemetryMetrics() {
+    MeterProvider meterProvider = Singletons.getOpenTelemetry().getMeterProvider();
+    writeMeter =
+        meterProvider
+            .meterBuilder("com.google.cloud.bigquery.storage.v1.write")
+            .setInstrumentationVersion(
+                ConnectionWorker.class.getPackage().getImplementationVersion())
+            .build();
+    instrumentIncomingRequestCount =
+        writeMeter
+            .counterBuilder("append_requests")
+            .setDescription("Counts number of incoming requests")
+            .build();
+    instrumentIncomingRequestSize =
+        writeMeter
+            .counterBuilder("append_request_bytes")
+            .setDescription("Counts byte size of incoming requests")
+            .build();
+    instrumentIncomingRequestRows =
+        writeMeter
+            .counterBuilder("append_rows")
+            .setDescription("Counts number of incoming request rows")
+            .build();
   }
 
   public ConnectionWorker(
@@ -312,6 +417,9 @@ class ConnectionWorker implements AutoCloseable {
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.compressorName = compressorName;
     this.retrySettings = retrySettings;
+    this.telemetryAttributes = buildOpenTelemetryAttributes();
+    registerOpenTelemetryMetrics();
+
     // Always recreate a client for connection worker.
     HashMap<String, String> newHeaders = new HashMap<>();
     newHeaders.putAll(clientSettings.toBuilder().getHeaderProvider().getHeaders());
@@ -507,6 +615,9 @@ class ConnectionWorker implements AutoCloseable {
                           + requestWrapper.messageSize)));
       return requestWrapper.appendResult;
     }
+    instrumentIncomingRequestCount.add(1, getTelemetryAttributes());
+    instrumentIncomingRequestSize.add(requestWrapper.messageSize, getTelemetryAttributes());
+    instrumentIncomingRequestRows.add(message.getProtoRows().getRows().getSerializedRowsCount());
     this.lock.lock();
     try {
       if (userClosed) {
@@ -783,6 +894,7 @@ class ConnectionWorker implements AutoCloseable {
             || (originalRequest.getProtoRows().hasWriterSchema()
                 && !originalRequest.getProtoRows().getWriterSchema().equals(writerSchema))) {
           streamName = originalRequest.getWriteStream();
+          refreshOpenTelemetryTableNameAttributes();
           writerSchema = originalRequest.getProtoRows().getWriterSchema();
           isMultiplexing = true;
           firstRequestForTableOrSchemaSwitch = true;

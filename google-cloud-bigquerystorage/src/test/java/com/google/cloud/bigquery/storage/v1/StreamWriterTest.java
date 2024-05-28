@@ -56,6 +56,7 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -819,6 +820,42 @@ public class StreamWriterTest {
     assertTrue(writer2.getInflightWaitSeconds() >= 1);
     assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
     assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testOpenTelemetryAttributes_MultiplexingCase() throws Exception {
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2, client)
+            .setWriterSchema(createProtoSchema())
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .build();
+
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer1, new String[] {"A"});
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    Attributes attributes = writer1.getTelemetryAttributes();
+    String attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    assertEquals("projects/p/datasets/d1/tables/t1", attributesTableId);
+
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer2, new String[] {"A"});
+    assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    attributes = writer2.getTelemetryAttributes();
+    attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    assertEquals("projects/p/datasets/d2/tables/t2", attributesTableId);
+
     writer1.close();
     writer2.close();
   }

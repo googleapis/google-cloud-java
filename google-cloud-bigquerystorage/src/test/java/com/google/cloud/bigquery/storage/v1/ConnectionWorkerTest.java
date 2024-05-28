@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -752,6 +753,97 @@ public class ConnectionWorkerTest {
     for (int i = 0; i < appendCount * 2; i++) {
       assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
+  }
+
+  private void exerciseOpenTelemetryAttributesWithStreamNames(String streamName, String expected)
+      throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            streamName,
+            null,
+            schema1,
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            null,
+            null,
+            client.getSettings(),
+            retrySettings);
+
+    Attributes attributes = connectionWorker.getTelemetryAttributes();
+    String attributesTableId = attributes.get(ConnectionWorker.telemetryKeyTableId);
+    assertEquals(expected, attributesTableId);
+  }
+
+  @Test
+  public void testOpenTelemetryAttributesWithStreamNames() throws Exception {
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/my_table/streams/my_stream",
+        "projects/my_project/datasets/my_dataset/tables/my_table");
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/my_table/",
+        "projects/my_project/datasets/my_dataset/tables/my_table");
+    exerciseOpenTelemetryAttributesWithStreamNames(
+        "projects/my_project/datasets/my_dataset/tables/", null);
+  }
+
+  void checkOpenTelemetryTraceIdAttribute(Attributes attributes, int index, String expected) {
+    String attributesTraceId = attributes.get(ConnectionWorker.telemetryKeysTraceId.get(index));
+    assertEquals(expected, attributesTraceId);
+  }
+
+  void exerciseOpenTelemetryAttributesWithTraceId(
+      String traceId, String expectedField1, String expectedField2, String expectedField3)
+      throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            schema1,
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            traceId,
+            null,
+            client.getSettings(),
+            retrySettings);
+
+    Attributes attributes = connectionWorker.getTelemetryAttributes();
+    checkOpenTelemetryTraceIdAttribute(attributes, 0, expectedField1);
+    checkOpenTelemetryTraceIdAttribute(attributes, 1, expectedField2);
+    checkOpenTelemetryTraceIdAttribute(attributes, 2, expectedField3);
+  }
+
+  @Test
+  public void testOpenTelemetryAttributesWithTraceId() throws Exception {
+    exerciseOpenTelemetryAttributesWithTraceId(null, null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId("a:b:c", null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "java-streamwriter:HEAD+20240508-1544 Dataflow:monorail-c-multi:2024-05-08_11_44_34-6968230696879535523:1972585693681960752",
+        "monorail-c-multi",
+        "2024-05-08_11_44_34-6968230696879535523",
+        "1972585693681960752");
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "Dataflow:2024-04-26_23_19_08-12221961051154168466",
+        "2024-04-26_23_19_08-12221961051154168466",
+        null,
+        null);
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "Dataflow:writeapi3:2024-04-03_03_49_33-845412829237675723:63737042897365355",
+        "writeapi3",
+        "2024-04-03_03_49_33-845412829237675723",
+        "63737042897365355");
+    exerciseOpenTelemetryAttributesWithTraceId(
+        "java-streamwriter Dataflow:pubsub-to-bq-staging-tongruil-1024-static:2024-05-14_15_13_14-5530509399715326669:4531186922674871499",
+        "pubsub-to-bq-staging-tongruil-1024-static",
+        "2024-05-14_15_13_14-5530509399715326669",
+        "4531186922674871499");
+    exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow :c", null, null, null);
+    exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow:c:d", "c", "d", null);
   }
 
   @Test

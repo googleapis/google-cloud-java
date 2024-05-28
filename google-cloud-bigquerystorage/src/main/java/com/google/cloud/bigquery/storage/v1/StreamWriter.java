@@ -34,6 +34,7 @@ import com.google.common.base.Preconditions;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
@@ -169,6 +170,15 @@ public class StreamWriter implements AutoCloseable {
         return connectionWorker().append(streamWriter, protoRows, offset);
       } else {
         return connectionWorkerPool().append(streamWriter, protoRows, offset);
+      }
+    }
+
+    @VisibleForTesting
+    Attributes getTelemetryAttributes(StreamWriter streamWriter) {
+      if (getKind() == Kind.CONNECTION_WORKER) {
+        return connectionWorker().getTelemetryAttributes();
+      } else {
+        return connectionWorkerPool().getTelemetryAttributes(streamWriter);
       }
     }
 
@@ -457,6 +467,11 @@ public class StreamWriter implements AutoCloseable {
       return requestWrapper.appendResult;
     }
     return this.singleConnectionOrConnectionPool.append(this, rows, offset);
+  }
+
+  @VisibleForTesting
+  Attributes getTelemetryAttributes() {
+    return this.singleConnectionOrConnectionPool.getTelemetryAttributes(this);
   }
 
   /**

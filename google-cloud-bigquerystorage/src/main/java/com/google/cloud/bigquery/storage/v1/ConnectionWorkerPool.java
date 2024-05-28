@@ -27,6 +27,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
@@ -238,9 +239,7 @@ public class ConnectionWorkerPool {
     return append(streamWriter, rows, -1);
   }
 
-  /** Distributes the writing of a message to an underlying connection. */
-  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
-    // We are in multiplexing mode after entering the following logic.
+  ConnectionWorker getConnectionWorker(StreamWriter streamWriter) {
     ConnectionWorker connectionWorker;
     lock.lock();
     try {
@@ -277,6 +276,13 @@ public class ConnectionWorkerPool {
     } finally {
       lock.unlock();
     }
+    return connectionWorker;
+  }
+
+  /** Distributes the writing of a message to an underlying connection. */
+  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
+    // We are in multiplexing mode after entering the following logic.
+    ConnectionWorker connectionWorker = getConnectionWorker(streamWriter);
     Stopwatch stopwatch = Stopwatch.createStarted();
     ApiFuture<AppendRowsResponse> responseFuture =
         connectionWorker.append(streamWriter, rows, offset);
@@ -292,6 +298,12 @@ public class ConnectionWorkerPool {
           return response;
         },
         MoreExecutors.directExecutor());
+  }
+
+  @VisibleForTesting
+  Attributes getTelemetryAttributes(StreamWriter streamWriter) {
+    ConnectionWorker connectionWorker = getConnectionWorker(streamWriter);
+    return connectionWorker.getTelemetryAttributes();
   }
 
   /**
