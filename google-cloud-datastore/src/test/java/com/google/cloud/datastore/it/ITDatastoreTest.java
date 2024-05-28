@@ -144,6 +144,7 @@ public class ITDatastoreTest {
   private static Key KEY3;
   private static Key KEY4;
   private static Key KEY5;
+  private static Key KEY6;
   private static final String MARKS_KIND = "Marks";
   private static FullEntity<IncompleteKey> PARTIAL_ENTITY1;
   private static FullEntity<IncompleteKey> PARTIAL_ENTITY2;
@@ -193,6 +194,10 @@ public class ITDatastoreTest {
     KEY3 = Key.newBuilder(KEY2).setName("bla").setNamespace(NAMESPACE).build();
     KEY4 = Key.newBuilder(KEY2).setName("newName1").setNamespace(NAMESPACE).build();
     KEY5 = Key.newBuilder(KEY2).setName("newName2").setNamespace(NAMESPACE).build();
+    KEY6 =
+        Key.newBuilder(options.getProjectId(), KIND2, 100, options.getDatabaseId())
+            .setNamespace(NAMESPACE)
+            .build();
 
     LIST_VALUE2 = ListValue.of(Collections.singletonList(KeyValue.of(KEY1)));
 
@@ -1785,6 +1790,21 @@ public class ITDatastoreTest {
     assertEquals(EMPTY_LIST_VALUE, value7);
     assertEquals(7, entity.getNames().size());
     assertFalse(entity.contains("bla"));
+  }
+
+  @Test
+  public void testIncompleteKey() {
+    Key parentKey = null;
+    try {
+      IncompleteKey incompleteKey = IncompleteKey.newBuilder(KEY6, KIND1).build();
+      parentKey = incompleteKey.getParent();
+      Entity entity = Entity.newBuilder(parentKey).set("name", "val").build();
+      datastore.put(entity);
+      Entity retrievedEntity = datastore.get(parentKey);
+      assertThat(retrievedEntity).isEqualTo(entity);
+    } finally {
+      datastore.delete(parentKey);
+    }
   }
 
   @Test
