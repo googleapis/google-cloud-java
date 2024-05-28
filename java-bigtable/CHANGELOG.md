@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.39.4](https://github.com/googleapis/java-bigtable/compare/v2.39.3...v2.39.4) (2024-05-28)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.10.2 ([#2236](https://github.com/googleapis/java-bigtable/issues/2236)) ([2609103](https://github.com/googleapis/java-bigtable/commit/26091035ed42cfd2945092d0c909dbf9bb6fae28))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.2 ([#2237](https://github.com/googleapis/java-bigtable/issues/2237)) ([6728931](https://github.com/googleapis/java-bigtable/commit/6728931ca904e2a2fb53f7b9e9115a9c3edd38df))
+* Update shared dependencies ([#2235](https://github.com/googleapis/java-bigtable/issues/2235)) ([8d38150](https://github.com/googleapis/java-bigtable/commit/8d3815023f7fa1c8103cb8ab02d8f71cd8a7a85e))
+
 ## [2.39.3](https://github.com/googleapis/java-bigtable/compare/v2.39.2...v2.39.3) (2024-05-21)
 
 
