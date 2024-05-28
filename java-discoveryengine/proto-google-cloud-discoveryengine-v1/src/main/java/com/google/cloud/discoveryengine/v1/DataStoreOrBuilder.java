@@ -314,6 +314,48 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return Whether the documentProcessingConfig field is set.
+   */
+  boolean hasDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return The documentProcessingConfig.
+   */
+  com.google.cloud.discoveryengine.v1.DocumentProcessingConfig getDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder
+      getDocumentProcessingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The start schema to use for this
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.

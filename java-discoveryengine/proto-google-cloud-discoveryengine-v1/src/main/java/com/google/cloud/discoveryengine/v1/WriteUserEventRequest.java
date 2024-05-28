@@ -72,8 +72,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the write user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+   * is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the write user event action is applied in [Location][] level, for
+   * example, the event with
+   * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -98,8 +106,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the write user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+   * is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the write user event action is applied in [Location][] level, for
+   * example, the event with
+   * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -177,6 +193,25 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         : userEvent_;
   }
 
+  public static final int WRITE_ASYNC_FIELD_NUMBER = 3;
+  private boolean writeAsync_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the user event is written asynchronously after
+   * validation, and the API responds without waiting for the write.
+   * </pre>
+   *
+   * <code>bool write_async = 3;</code>
+   *
+   * @return The writeAsync.
+   */
+  @java.lang.Override
+  public boolean getWriteAsync() {
+    return writeAsync_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -197,6 +232,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getUserEvent());
     }
+    if (writeAsync_ != false) {
+      output.writeBool(3, writeAsync_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -211,6 +249,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUserEvent());
+    }
+    if (writeAsync_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, writeAsync_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -233,6 +274,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
     if (hasUserEvent()) {
       if (!getUserEvent().equals(other.getUserEvent())) return false;
     }
+    if (getWriteAsync() != other.getWriteAsync()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -250,6 +292,8 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + USER_EVENT_FIELD_NUMBER;
       hash = (53 * hash) + getUserEvent().hashCode();
     }
+    hash = (37 * hash) + WRITE_ASYNC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWriteAsync());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +449,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         userEventBuilder_.dispose();
         userEventBuilder_ = null;
       }
+      writeAsync_ = false;
       return this;
     }
 
@@ -448,6 +493,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.userEvent_ = userEventBuilder_ == null ? userEvent_ : userEventBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.writeAsync_ = writeAsync_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -506,6 +554,9 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
       if (other.hasUserEvent()) {
         mergeUserEvent(other.getUserEvent());
       }
+      if (other.getWriteAsync() != false) {
+        setWriteAsync(other.getWriteAsync());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -544,6 +595,12 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                writeAsync_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -568,8 +625,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the write user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+     * is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the write user event action is applied in [Location][] level, for
+     * example, the event with
+     * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -593,8 +658,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the write user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+     * is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the write user event action is applied in [Location][] level, for
+     * example, the event with
+     * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -618,8 +691,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the write user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+     * is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the write user event action is applied in [Location][] level, for
+     * example, the event with
+     * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -642,8 +723,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the write user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+     * is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the write user event action is applied in [Location][] level, for
+     * example, the event with
+     * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -662,8 +751,16 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the write user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] level, the format
+     * is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the write user event action is applied in [Location][] level, for
+     * example, the event with
+     * [Document][google.cloud.discoveryengine.v1.Document] across multiple
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], the format is:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -886,6 +983,62 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
         userEvent_ = null;
       }
       return userEventBuilder_;
+    }
+
+    private boolean writeAsync_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the user event is written asynchronously after
+     * validation, and the API responds without waiting for the write.
+     * </pre>
+     *
+     * <code>bool write_async = 3;</code>
+     *
+     * @return The writeAsync.
+     */
+    @java.lang.Override
+    public boolean getWriteAsync() {
+      return writeAsync_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the user event is written asynchronously after
+     * validation, and the API responds without waiting for the write.
+     * </pre>
+     *
+     * <code>bool write_async = 3;</code>
+     *
+     * @param value The writeAsync to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteAsync(boolean value) {
+
+      writeAsync_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the user event is written asynchronously after
+     * validation, and the API responds without waiting for the write.
+     * </pre>
+     *
+     * <code>bool write_async = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWriteAsync() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      writeAsync_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -169,7 +169,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ImportDocuments</td>
- *      <td><p> Bulk import of multiple [Document][google.cloud.discoveryengine.v1.Document]s. Request processing may be synchronous. Non-existing items will be created.
+ *      <td><p> Bulk import of multiple [Document][google.cloud.discoveryengine.v1.Document]s. Request processing may be synchronous. Non-existing items are created.
  * <p>  Note: It is possible for a subset of the [Document][google.cloud.discoveryengine.v1.Document]s to be successfully updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -679,8 +679,8 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * @param document Required. The [Document][google.cloud.discoveryengine.v1.Document] to create.
    * @param documentId Required. The ID to use for the
-   *     [Document][google.cloud.discoveryengine.v1.Document], which will become the final component
-   *     of the [Document.name][google.cloud.discoveryengine.v1.Document.name].
+   *     [Document][google.cloud.discoveryengine.v1.Document], which becomes the final component of
+   *     the [Document.name][google.cloud.discoveryengine.v1.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1.Document], regardless of whether or not it
    *     exists, a `PERMISSION_DENIED` error is returned.
@@ -729,8 +729,8 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * @param document Required. The [Document][google.cloud.discoveryengine.v1.Document] to create.
    * @param documentId Required. The ID to use for the
-   *     [Document][google.cloud.discoveryengine.v1.Document], which will become the final component
-   *     of the [Document.name][google.cloud.discoveryengine.v1.Document.name].
+   *     [Document][google.cloud.discoveryengine.v1.Document], which becomes the final component of
+   *     the [Document.name][google.cloud.discoveryengine.v1.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1.Document], regardless of whether or not it
    *     exists, a `PERMISSION_DENIED` error is returned.
@@ -845,7 +845,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     [allow_missing][google.cloud.discoveryengine.v1.UpdateDocumentRequest.allow_missing] is not
    *     set, a `NOT_FOUND` error is returned.
    * @param updateMask Indicates which fields in the provided imported 'document' to update. If not
-   *     set, will by default update all fields.
+   *     set, by default updates all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document updateDocument(Document document, FieldMask updateMask) {
@@ -1050,7 +1050,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1.Document]s to be successfully updated.
@@ -1090,7 +1090,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1.Document]s to be successfully updated.
@@ -1131,7 +1131,7 @@ public class DocumentServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Bulk import of multiple [Document][google.cloud.discoveryengine.v1.Document]s. Request
-   * processing may be synchronous. Non-existing items will be created.
+   * processing may be synchronous. Non-existing items are created.
    *
    * <p>Note: It is possible for a subset of the
    * [Document][google.cloud.discoveryengine.v1.Document]s to be successfully updated.

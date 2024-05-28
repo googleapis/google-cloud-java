@@ -72,6 +72,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIG_QUERY_TARGET(1),
     CLOUD_SQL_TARGET(2),
+    SECRETS_TARGET(3),
     TARGET_NOT_SET(0);
     private final int value;
 
@@ -94,6 +95,8 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           return BIG_QUERY_TARGET;
         case 2:
           return CLOUD_SQL_TARGET;
+        case 3:
+          return SECRETS_TARGET;
         case 0:
           return TARGET_NOT_SET;
         default:
@@ -218,6 +221,63 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
   }
 
+  public static final int SECRETS_TARGET_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   *
+   * @return Whether the secretsTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecretsTarget() {
+    return targetCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   *
+   * @return The secretsTarget.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SecretsDiscoveryTarget getSecretsTarget() {
+    if (targetCase_ == 3) {
+      return (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Discovery target that looks for credentials and secrets stored in cloud
+   * resource metadata and reports them as vulnerabilities to Security Command
+   * Center. Only one target of this type is allowed.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder getSecretsTargetOrBuilder() {
+    if (targetCase_ == 3) {
+      return (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -238,6 +298,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     if (targetCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_);
     }
+    if (targetCase_ == 3) {
+      output.writeMessage(3, (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -256,6 +319,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -281,6 +349,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 2:
         if (!getCloudSqlTarget().equals(other.getCloudSqlTarget())) return false;
         break;
+      case 3:
+        if (!getSecretsTarget().equals(other.getSecretsTarget())) return false;
+        break;
       case 0:
       default:
     }
@@ -303,6 +374,10 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 2:
         hash = (37 * hash) + CLOUD_SQL_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlTarget().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + SECRETS_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretsTarget().hashCode();
         break;
       case 0:
       default:
@@ -452,6 +527,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       if (cloudSqlTargetBuilder_ != null) {
         cloudSqlTargetBuilder_.clear();
       }
+      if (secretsTargetBuilder_ != null) {
+        secretsTargetBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -501,6 +579,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       if (targetCase_ == 2 && cloudSqlTargetBuilder_ != null) {
         result.target_ = cloudSqlTargetBuilder_.build();
+      }
+      if (targetCase_ == 3 && secretsTargetBuilder_ != null) {
+        result.target_ = secretsTargetBuilder_.build();
       }
     }
 
@@ -560,6 +641,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             mergeCloudSqlTarget(other.getCloudSqlTarget());
             break;
           }
+        case SECRETS_TARGET:
+          {
+            mergeSecretsTarget(other.getSecretsTarget());
+            break;
+          }
         case TARGET_NOT_SET:
           {
             break;
@@ -603,6 +689,12 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
                 targetCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getSecretsTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1070,6 +1162,233 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 2;
       onChanged();
       return cloudSqlTargetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget,
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder>
+        secretsTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     *
+     * @return Whether the secretsTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecretsTarget() {
+      return targetCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     *
+     * @return The secretsTarget.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTarget getSecretsTarget() {
+      if (secretsTargetBuilder_ == null) {
+        if (targetCase_ == 3) {
+          return (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+      } else {
+        if (targetCase_ == 3) {
+          return secretsTargetBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    public Builder setSecretsTarget(com.google.privacy.dlp.v2.SecretsDiscoveryTarget value) {
+      if (secretsTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        secretsTargetBuilder_.setMessage(value);
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    public Builder setSecretsTarget(
+        com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder builderForValue) {
+      if (secretsTargetBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        secretsTargetBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    public Builder mergeSecretsTarget(com.google.privacy.dlp.v2.SecretsDiscoveryTarget value) {
+      if (secretsTargetBuilder_ == null) {
+        if (targetCase_ == 3
+            && target_ != com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance()) {
+          target_ =
+              com.google.privacy.dlp.v2.SecretsDiscoveryTarget.newBuilder(
+                      (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 3) {
+          secretsTargetBuilder_.mergeFrom(value);
+        } else {
+          secretsTargetBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    public Builder clearSecretsTarget() {
+      if (secretsTargetBuilder_ == null) {
+        if (targetCase_ == 3) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 3) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        secretsTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder getSecretsTargetBuilder() {
+      return getSecretsTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder getSecretsTargetOrBuilder() {
+      if ((targetCase_ == 3) && (secretsTargetBuilder_ != null)) {
+        return secretsTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 3) {
+          return (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Discovery target that looks for credentials and secrets stored in cloud
+     * resource metadata and reports them as vulnerabilities to Security Command
+     * Center. Only one target of this type is allowed.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SecretsDiscoveryTarget secrets_target = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget,
+            com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder>
+        getSecretsTargetFieldBuilder() {
+      if (secretsTargetBuilder_ == null) {
+        if (!(targetCase_ == 3)) {
+          target_ = com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
+        }
+        secretsTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.SecretsDiscoveryTarget,
+                com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder,
+                com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder>(
+                (com.google.privacy.dlp.v2.SecretsDiscoveryTarget) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 3;
+      onChanged();
+      return secretsTargetBuilder_;
     }
 
     @java.lang.Override

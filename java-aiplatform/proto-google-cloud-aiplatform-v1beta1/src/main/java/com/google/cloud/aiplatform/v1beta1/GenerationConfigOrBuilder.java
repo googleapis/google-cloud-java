@@ -286,4 +286,63 @@ public interface GenerationConfigOrBuilder
    * @return The bytes for responseMimeType.
    */
   com.google.protobuf.ByteString getResponseMimeTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseSchema field is set.
+   */
+  boolean hasResponseSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseSchema.
+   */
+  com.google.cloud.aiplatform.v1beta1.Schema getResponseSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getResponseSchemaOrBuilder();
 }

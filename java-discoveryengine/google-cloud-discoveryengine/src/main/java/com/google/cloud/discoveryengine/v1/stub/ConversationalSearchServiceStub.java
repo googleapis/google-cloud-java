@@ -17,18 +17,30 @@
 package com.google.cloud.discoveryengine.v1.stub;
 
 import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Answer;
+import com.google.cloud.discoveryengine.v1.AnswerQueryRequest;
+import com.google.cloud.discoveryengine.v1.AnswerQueryResponse;
 import com.google.cloud.discoveryengine.v1.Conversation;
 import com.google.cloud.discoveryengine.v1.ConverseConversationRequest;
 import com.google.cloud.discoveryengine.v1.ConverseConversationResponse;
 import com.google.cloud.discoveryengine.v1.CreateConversationRequest;
+import com.google.cloud.discoveryengine.v1.CreateSessionRequest;
 import com.google.cloud.discoveryengine.v1.DeleteConversationRequest;
+import com.google.cloud.discoveryengine.v1.DeleteSessionRequest;
+import com.google.cloud.discoveryengine.v1.GetAnswerRequest;
 import com.google.cloud.discoveryengine.v1.GetConversationRequest;
+import com.google.cloud.discoveryengine.v1.GetSessionRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsRequest;
 import com.google.cloud.discoveryengine.v1.ListConversationsResponse;
+import com.google.cloud.discoveryengine.v1.ListSessionsRequest;
+import com.google.cloud.discoveryengine.v1.ListSessionsResponse;
+import com.google.cloud.discoveryengine.v1.Session;
 import com.google.cloud.discoveryengine.v1.UpdateConversationRequest;
+import com.google.cloud.discoveryengine.v1.UpdateSessionRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -70,6 +82,38 @@ public abstract class ConversationalSearchServiceStub implements BackgroundResou
   public UnaryCallable<ListConversationsRequest, ListConversationsResponse>
       listConversationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listConversationsCallable()");
+  }
+
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: answerQueryCallable()");
+  }
+
+  public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAnswerCallable()");
+  }
+
+  public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSessionCallable()");
+  }
+
+  public UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSessionCallable()");
+  }
+
+  public UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSessionCallable()");
+  }
+
+  public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSessionCallable()");
+  }
+
+  public UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse> listSessionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSessionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSessionsCallable()");
   }
 
   @Override

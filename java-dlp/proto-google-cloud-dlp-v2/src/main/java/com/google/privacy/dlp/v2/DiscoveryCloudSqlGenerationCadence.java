@@ -185,7 +185,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
    *
    *
    * <pre>
-   * How frequency to modify the profile when the table's schema is modified.
+   * How frequently to modify the profile when the table's schema is modified.
    * </pre>
    *
    * Protobuf type {@code
@@ -254,7 +254,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
        *
        *
        * <pre>
-       * New columns has appeared.
+       * New columns have appeared.
        * </pre>
        *
        * <code>NEW_COLUMNS = 1;</code>
@@ -287,7 +287,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
        *
        *
        * <pre>
-       * New columns has appeared.
+       * New columns have appeared.
        * </pre>
        *
        * <code>NEW_COLUMNS = 1;</code>
@@ -766,7 +766,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      *
      *
      * <pre>
-     * How frequency to modify the profile when the table's schema is modified.
+     * How frequently to modify the profile when the table's schema is modified.
      * </pre>
      *
      * Protobuf type {@code
@@ -1520,7 +1520,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
    * <pre>
    * Data changes (non-schema changes) in Cloud SQL tables can't trigger
    * reprofiling. If you set this field, profiles are refreshed at this
-   * frequency regardless of whether the underlying tables have changes.
+   * frequency regardless of whether the underlying tables have changed.
    * Defaults to never.
    * </pre>
    *
@@ -1538,7 +1538,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
    * <pre>
    * Data changes (non-schema changes) in Cloud SQL tables can't trigger
    * reprofiling. If you set this field, profiles are refreshed at this
-   * frequency regardless of whether the underlying tables have changes.
+   * frequency regardless of whether the underlying tables have changed.
    * Defaults to never.
    * </pre>
    *
@@ -2183,7 +2183,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * <pre>
      * Data changes (non-schema changes) in Cloud SQL tables can't trigger
      * reprofiling. If you set this field, profiles are refreshed at this
-     * frequency regardless of whether the underlying tables have changes.
+     * frequency regardless of whether the underlying tables have changed.
      * Defaults to never.
      * </pre>
      *
@@ -2201,7 +2201,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * <pre>
      * Data changes (non-schema changes) in Cloud SQL tables can't trigger
      * reprofiling. If you set this field, profiles are refreshed at this
-     * frequency regardless of whether the underlying tables have changes.
+     * frequency regardless of whether the underlying tables have changed.
      * Defaults to never.
      * </pre>
      *
@@ -2222,7 +2222,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * <pre>
      * Data changes (non-schema changes) in Cloud SQL tables can't trigger
      * reprofiling. If you set this field, profiles are refreshed at this
-     * frequency regardless of whether the underlying tables have changes.
+     * frequency regardless of whether the underlying tables have changed.
      * Defaults to never.
      * </pre>
      *
@@ -2244,7 +2244,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * <pre>
      * Data changes (non-schema changes) in Cloud SQL tables can't trigger
      * reprofiling. If you set this field, profiles are refreshed at this
-     * frequency regardless of whether the underlying tables have changes.
+     * frequency regardless of whether the underlying tables have changed.
      * Defaults to never.
      * </pre>
      *
@@ -2268,7 +2268,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * <pre>
      * Data changes (non-schema changes) in Cloud SQL tables can't trigger
      * reprofiling. If you set this field, profiles are refreshed at this
-     * frequency regardless of whether the underlying tables have changes.
+     * frequency regardless of whether the underlying tables have changed.
      * Defaults to never.
      * </pre>
      *

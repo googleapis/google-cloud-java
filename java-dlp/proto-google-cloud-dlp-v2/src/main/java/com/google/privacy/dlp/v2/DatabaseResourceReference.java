@@ -41,6 +41,8 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
   private DatabaseResourceReference() {
     projectId_ = "";
     instance_ = "";
+    database_ = "";
+    databaseResource_ = "";
   }
 
   @java.lang.Override
@@ -73,7 +75,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. If within a project-level config, then this must match the
-   * config's project id.
+   * config's project ID.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -97,7 +99,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. If within a project-level config, then this must match the
-   * config's project id.
+   * config's project ID.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -126,7 +128,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The instance where this resource is located. For example: Cloud
-   * SQL's instance id.
+   * SQL instance ID.
    * </pre>
    *
    * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -150,7 +152,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The instance where this resource is located. For example: Cloud
-   * SQL's instance id.
+   * SQL instance ID.
    * </pre>
    *
    * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -164,6 +166,110 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       instance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATABASE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object database_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database within the instance.
+   * </pre>
+   *
+   * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The database.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabase() {
+    java.lang.Object ref = database_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      database_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database within the instance.
+   * </pre>
+   *
+   * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for database.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseBytes() {
+    java.lang.Object ref = database_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      database_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATABASE_RESOURCE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseResource_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database resource, for example, a table within the
+   * database.
+   * </pre>
+   *
+   * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The databaseResource.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseResource() {
+    java.lang.Object ref = databaseResource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseResource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of a database resource, for example, a table within the
+   * database.
+   * </pre>
+   *
+   * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for databaseResource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseResourceBytes() {
+    java.lang.Object ref = databaseResource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseResource_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -190,6 +296,12 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instance_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, database_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseResource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, databaseResource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -204,6 +316,12 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instance_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, database_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseResource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, databaseResource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -223,6 +341,8 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
 
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getInstance().equals(other.getInstance())) return false;
+    if (!getDatabase().equals(other.getDatabase())) return false;
+    if (!getDatabaseResource().equals(other.getDatabaseResource())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,6 +358,10 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
+    hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabase().hashCode();
+    hash = (37 * hash) + DATABASE_RESOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseResource().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,6 +503,8 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
       bitField0_ = 0;
       projectId_ = "";
       instance_ = "";
+      database_ = "";
+      databaseResource_ = "";
       return this;
     }
 
@@ -420,6 +546,12 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.database_ = database_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.databaseResource_ = databaseResource_;
       }
     }
 
@@ -479,6 +611,16 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getDatabase().isEmpty()) {
+        database_ = other.database_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getDatabaseResource().isEmpty()) {
+        databaseResource_ = other.databaseResource_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -517,6 +659,18 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                database_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                databaseResource_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -542,7 +696,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. If within a project-level config, then this must match the
-     * config's project id.
+     * config's project ID.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -565,7 +719,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. If within a project-level config, then this must match the
-     * config's project id.
+     * config's project ID.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -588,7 +742,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. If within a project-level config, then this must match the
-     * config's project id.
+     * config's project ID.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -610,7 +764,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. If within a project-level config, then this must match the
-     * config's project id.
+     * config's project ID.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -628,7 +782,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. If within a project-level config, then this must match the
-     * config's project id.
+     * config's project ID.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -653,7 +807,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The instance where this resource is located. For example: Cloud
-     * SQL's instance id.
+     * SQL instance ID.
      * </pre>
      *
      * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -676,7 +830,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The instance where this resource is located. For example: Cloud
-     * SQL's instance id.
+     * SQL instance ID.
      * </pre>
      *
      * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -699,7 +853,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The instance where this resource is located. For example: Cloud
-     * SQL's instance id.
+     * SQL instance ID.
      * </pre>
      *
      * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -721,7 +875,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The instance where this resource is located. For example: Cloud
-     * SQL's instance id.
+     * SQL instance ID.
      * </pre>
      *
      * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -739,7 +893,7 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The instance where this resource is located. For example: Cloud
-     * SQL's instance id.
+     * SQL instance ID.
      * </pre>
      *
      * <code>string instance = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,6 +908,223 @@ public final class DatabaseResourceReference extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       instance_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object database_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database within the instance.
+     * </pre>
+     *
+     * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The database.
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database within the instance.
+     * </pre>
+     *
+     * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for database.
+     */
+    public com.google.protobuf.ByteString getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database within the instance.
+     * </pre>
+     *
+     * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The database to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabase(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      database_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database within the instance.
+     * </pre>
+     *
+     * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabase() {
+      database_ = getDefaultInstance().getDatabase();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database within the instance.
+     * </pre>
+     *
+     * <code>string database = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for database to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      database_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseResource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database resource, for example, a table within the
+     * database.
+     * </pre>
+     *
+     * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The databaseResource.
+     */
+    public java.lang.String getDatabaseResource() {
+      java.lang.Object ref = databaseResource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseResource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database resource, for example, a table within the
+     * database.
+     * </pre>
+     *
+     * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for databaseResource.
+     */
+    public com.google.protobuf.ByteString getDatabaseResourceBytes() {
+      java.lang.Object ref = databaseResource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseResource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database resource, for example, a table within the
+     * database.
+     * </pre>
+     *
+     * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The databaseResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseResource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      databaseResource_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database resource, for example, a table within the
+     * database.
+     * </pre>
+     *
+     * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseResource() {
+      databaseResource_ = getDefaultInstance().getDatabaseResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of a database resource, for example, a table within the
+     * database.
+     * </pre>
+     *
+     * <code>string database_resource = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for databaseResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseResourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      databaseResource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

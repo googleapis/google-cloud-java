@@ -201,8 +201,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. * Supported fields/values
-   *     - `state` - MISSING|AVAILABLE|ERROR
+   * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -225,8 +224,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. * Supported fields/values
-   *     - `state` - MISSING|AVAILABLE|ERROR
+   * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -948,8 +946,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. * Supported fields/values
-     *     - `state` - MISSING|AVAILABLE|ERROR
+     * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -971,8 +968,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. * Supported fields/values
-     *     - `state` - MISSING|AVAILABLE|ERROR
+     * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -994,8 +990,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. * Supported fields/values
-     *     - `state` - MISSING|AVAILABLE|ERROR
+     * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1016,8 +1011,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. * Supported fields/values
-     *     - `state` - MISSING|AVAILABLE|ERROR
+     * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1034,8 +1028,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. * Supported fields/values
-     *     - `state` - MISSING|AVAILABLE|ERROR
+     * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

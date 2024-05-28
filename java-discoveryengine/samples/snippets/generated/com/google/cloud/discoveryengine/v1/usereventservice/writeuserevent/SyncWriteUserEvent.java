@@ -42,6 +42,7 @@ public class SyncWriteUserEvent {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       UserEvent response = userEventServiceClient.writeUserEvent(request);
     }

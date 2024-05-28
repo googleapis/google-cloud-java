@@ -1241,7 +1241,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Number of rows scanned post sampling and time filtering (Applicable for
+     * Number of rows scanned after sampling and time filtering (applicable for
      * row based stores such as BigQuery).
      * </pre>
      *
@@ -1449,7 +1449,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Number of rows scanned post sampling and time filtering (Applicable for
+     * Number of rows scanned after sampling and time filtering (applicable for
      * row based stores such as BigQuery).
      * </pre>
      *
@@ -2501,7 +2501,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Number of rows scanned post sampling and time filtering (Applicable for
+       * Number of rows scanned after sampling and time filtering (applicable for
        * row based stores such as BigQuery).
        * </pre>
        *
@@ -2517,7 +2517,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Number of rows scanned post sampling and time filtering (Applicable for
+       * Number of rows scanned after sampling and time filtering (applicable for
        * row based stores such as BigQuery).
        * </pre>
        *
@@ -2537,7 +2537,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Number of rows scanned post sampling and time filtering (Applicable for
+       * Number of rows scanned after sampling and time filtering (applicable for
        * row based stores such as BigQuery).
        * </pre>
        *

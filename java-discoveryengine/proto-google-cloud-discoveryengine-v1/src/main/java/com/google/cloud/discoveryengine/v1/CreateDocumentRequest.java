@@ -192,7 +192,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The ID to use for the
-   * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+   * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
    * final component of the
    * [Document.name][google.cloud.discoveryengine.v1.Document.name].
    *
@@ -231,7 +231,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The ID to use for the
-   * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+   * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
    * final component of the
    * [Document.name][google.cloud.discoveryengine.v1.Document.name].
    *
@@ -1018,7 +1018,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The ID to use for the
-     * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+     * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
      * final component of the
      * [Document.name][google.cloud.discoveryengine.v1.Document.name].
      *
@@ -1056,7 +1056,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The ID to use for the
-     * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+     * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
      * final component of the
      * [Document.name][google.cloud.discoveryengine.v1.Document.name].
      *
@@ -1094,7 +1094,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The ID to use for the
-     * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+     * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
      * final component of the
      * [Document.name][google.cloud.discoveryengine.v1.Document.name].
      *
@@ -1131,7 +1131,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The ID to use for the
-     * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+     * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
      * final component of the
      * [Document.name][google.cloud.discoveryengine.v1.Document.name].
      *
@@ -1164,7 +1164,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The ID to use for the
-     * [Document][google.cloud.discoveryengine.v1.Document], which will become the
+     * [Document][google.cloud.discoveryengine.v1.Document], which becomes the
      * final component of the
      * [Document.name][google.cloud.discoveryengine.v1.Document.name].
      *

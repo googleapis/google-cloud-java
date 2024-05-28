@@ -73,7 +73,7 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    * <pre>
    * Data changes (non-schema changes) in Cloud SQL tables can't trigger
    * reprofiling. If you set this field, profiles are refreshed at this
-   * frequency regardless of whether the underlying tables have changes.
+   * frequency regardless of whether the underlying tables have changed.
    * Defaults to never.
    * </pre>
    *
@@ -88,7 +88,7 @@ public interface DiscoveryCloudSqlGenerationCadenceOrBuilder
    * <pre>
    * Data changes (non-schema changes) in Cloud SQL tables can't trigger
    * reprofiling. If you set this field, profiles are refreshed at this
-   * frequency regardless of whether the underlying tables have changes.
+   * frequency regardless of whether the underlying tables have changed.
    * Defaults to never.
    * </pre>
    *

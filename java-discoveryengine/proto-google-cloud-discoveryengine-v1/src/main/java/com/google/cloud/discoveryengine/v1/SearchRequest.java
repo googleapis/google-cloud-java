@@ -936,7 +936,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A struct to define data stores to filter on in a search call.
+   * A struct to define data stores to filter on in a search call and
+   * configurations for those data stores. A maximum of 1 DataStoreSpec per
+   * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec}
@@ -1201,7 +1203,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A struct to define data stores to filter on in a search call.
+     * A struct to define data stores to filter on in a search call and
+     * configurations for those data stores. A maximum of 1 DataStoreSpec per
+     * data_store is allowed. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1.SearchRequest.DataStoreSpec}
@@ -1632,7 +1636,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum of facet values that should be returned for this facet. If
+     * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
      *
@@ -2126,7 +2130,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2142,7 +2146,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2158,7 +2162,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2175,7 +2179,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2619,7 +2623,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2637,7 +2641,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2655,7 +2659,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -2674,7 +2678,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only get facet values that contains the given strings. For example,
+       * Only get facet values that contain the given strings. For example,
        * suppose "category" has three values "Action &gt; 2022",
        * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
        * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4335,7 +4339,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4354,7 +4358,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4372,7 +4376,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4391,7 +4395,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4410,7 +4414,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4437,7 +4441,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4463,7 +4467,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4486,7 +4490,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4508,7 +4512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Only get facet values that contains the given strings. For example,
+         * Only get facet values that contain the given strings. For example,
          * suppose "category" has three values "Action &gt; 2022",
          * "Action &gt; 2021" and "Sci-Fi &gt; 2022". If set "contains" to "2022", the
          * "category" facet only contains "Action &gt; 2022" and "Sci-Fi &gt; 2022".
@@ -4908,7 +4912,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum of facet values that should be returned for this facet. If
+     * Maximum facet values that are returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 are coerced to 300.
      *
@@ -5811,7 +5815,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Maximum of facet values that should be returned for this facet. If
+       * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
        *
@@ -5830,7 +5834,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Maximum of facet values that should be returned for this facet. If
+       * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
        *
@@ -5853,7 +5857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Maximum of facet values that should be returned for this facet. If
+       * Maximum facet values that are returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 are coerced to 300.
        *
@@ -9590,8 +9594,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode under which spell correction should take effect to
-     * replace the original search query. Default to
+     * The mode under which spell correction
+     * replaces the original search query. Defaults to
      * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
      * </pre>
      *
@@ -9605,8 +9609,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode under which spell correction should take effect to
-     * replace the original search query. Default to
+     * The mode under which spell correction
+     * replaces the original search query. Defaults to
      * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
      * </pre>
      *
@@ -9687,10 +9691,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Search API will try to find a spell suggestion if there
-       * is any and put in the
+       * Search API tries to find a spelling suggestion. If a suggestion is
+       * found, it is put in the
        * [SearchResponse.corrected_query][google.cloud.discoveryengine.v1.SearchResponse.corrected_query].
-       * The spell suggestion will not be used as the search query.
+       * The spelling suggestion won't be used as the search query.
        * </pre>
        *
        * <code>SUGGESTION_ONLY = 1;</code>
@@ -9726,10 +9730,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Search API will try to find a spell suggestion if there
-       * is any and put in the
+       * Search API tries to find a spelling suggestion. If a suggestion is
+       * found, it is put in the
        * [SearchResponse.corrected_query][google.cloud.discoveryengine.v1.SearchResponse.corrected_query].
-       * The spell suggestion will not be used as the search query.
+       * The spelling suggestion won't be used as the search query.
        * </pre>
        *
        * <code>SUGGESTION_ONLY = 1;</code>
@@ -9838,8 +9842,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode under which spell correction should take effect to
-     * replace the original search query. Default to
+     * The mode under which spell correction
+     * replaces the original search query. Defaults to
      * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
      * </pre>
      *
@@ -9856,8 +9860,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode under which spell correction should take effect to
-     * replace the original search query. Default to
+     * The mode under which spell correction
+     * replaces the original search query. Defaults to
      * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
      * </pre>
      *
@@ -10243,8 +10247,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode under which spell correction should take effect to
-       * replace the original search query. Default to
+       * The mode under which spell correction
+       * replaces the original search query. Defaults to
        * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -10261,8 +10265,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode under which spell correction should take effect to
-       * replace the original search query. Default to
+       * The mode under which spell correction
+       * replaces the original search query. Defaults to
        * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -10282,8 +10286,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode under which spell correction should take effect to
-       * replace the original search query. Default to
+       * The mode under which spell correction
+       * replaces the original search query. Defaults to
        * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -10306,8 +10310,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode under which spell correction should take effect to
-       * replace the original search query. Default to
+       * The mode under which spell correction
+       * replaces the original search query. Defaults to
        * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -10331,8 +10335,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode under which spell correction should take effect to
-       * replace the original search query. Default to
+       * The mode under which spell correction
+       * replaces the original search query. Defaults to
        * [Mode.AUTO][google.cloud.discoveryengine.v1.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -10620,7 +10624,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=322
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -10638,7 +10642,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=326
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -10719,7 +10723,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=322
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -10742,7 +10746,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=326
+       *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -11203,7 +11207,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=322
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -11224,7 +11228,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=322
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -11249,7 +11253,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=322
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=324
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -11273,7 +11277,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=326
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -11293,7 +11297,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=326
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -11317,7 +11321,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=326
+         *     is deprecated. See google/cloud/discoveryengine/v1/search_service.proto;l=328
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -18230,7 +18234,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -18246,7 +18253,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -18263,7 +18273,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -18278,7 +18291,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -18294,7 +18310,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -18470,7 +18489,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
    * Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive. For more information on ordering, see
+   * case-sensitive.
+   *
+   * For more information on ordering for retail search, see
    * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -18499,7 +18520,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
    * Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive. For more information on ordering, see
+   * case-sensitive.
+   *
+   * For more information on ordering for retail search, see
    * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -18678,7 +18701,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -18695,7 +18718,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -18714,7 +18737,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -18766,8 +18789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -18775,8 +18797,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -18804,8 +18825,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -18813,8 +18833,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -18833,8 +18852,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -18842,8 +18860,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -18869,8 +18886,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -18878,8 +18894,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21257,7 +21272,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21276,7 +21294,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21294,7 +21315,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21313,7 +21337,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21338,7 +21365,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21361,7 +21391,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21386,7 +21419,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21411,7 +21447,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21433,7 +21472,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21456,7 +21498,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21480,7 +21525,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21501,7 +21549,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21522,7 +21573,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21537,7 +21591,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21556,7 +21613,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21576,7 +21636,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21593,7 +21656,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21611,7 +21677,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of data store specs to apply on a search call.
+     * Specs defining dataStores to filter on in a search call and configurations
+     * for those dataStores. This is only considered for engines with multiple
+     * dataStores use case. For single dataStore within an engine, they should
+     * use the specs at the top level.
      * </pre>
      *
      * <code>
@@ -21988,7 +22057,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
      * Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive. For more information on ordering, see
+     * case-sensitive.
+     *
+     * For more information on ordering for retail search, see
      * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -22016,7 +22087,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
      * Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive. For more information on ordering, see
+     * case-sensitive.
+     *
+     * For more information on ordering for retail search, see
      * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -22044,7 +22117,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
      * Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive. For more information on ordering, see
+     * case-sensitive.
+     *
+     * For more information on ordering for retail search, see
      * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -22071,7 +22146,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
      * Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive. For more information on ordering, see
+     * case-sensitive.
+     *
+     * For more information on ordering for retail search, see
      * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -22094,7 +22171,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
      * Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive. For more information on ordering, see
+     * case-sensitive.
+     *
+     * For more information on ordering for retail search, see
      * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -22780,7 +22859,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22796,7 +22875,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22818,7 +22897,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22842,7 +22921,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22864,7 +22943,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22896,7 +22975,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22917,7 +22996,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22934,7 +23013,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -22955,7 +23034,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain documents.
      * For more information on boosting, see
-     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+     * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -23043,8 +23122,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23052,8 +23130,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23081,8 +23158,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23090,8 +23166,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23110,8 +23185,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23119,8 +23193,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23147,8 +23220,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23156,8 +23228,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23190,8 +23261,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23199,8 +23269,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23228,8 +23297,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23237,8 +23305,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23264,8 +23331,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23273,8 +23339,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -23299,8 +23364,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
-     *    Example:
-     *    user_country_code: "au"
+     *    For example, `user_country_code: "au"`
      *
      *    For available codes see [Country
      *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -23308,8 +23372,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *    depending on the value. The only valid non-default value is 1,
      *    which enables image searching.
-     *    Example:
-     *    search_type: 1
+     *    For example, `search_type: 1`
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
