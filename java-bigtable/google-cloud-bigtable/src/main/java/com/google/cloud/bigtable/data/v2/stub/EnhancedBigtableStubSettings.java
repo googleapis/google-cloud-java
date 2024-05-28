@@ -86,7 +86,7 @@ import org.threeten.bp.Duration;
  *   .setInstanceId("my-instance-id")
  *   .setAppProfileId("default");
  *
- * settingsBuilder.readRowsSettings()
+ * settingsBuilder.stubSettings().readRowsSettings()
  *  .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
  *
  * BigtableDataSettings settings = builder.build();
