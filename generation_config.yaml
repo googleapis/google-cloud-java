@@ -988,6 +988,7 @@ libraries:
     way, whether the clusters are on Google Cloud, other public clouds, or on premises,
     and makes it easier to automate DevOps processes across all your clusters.
   library_name: gke-connect-gateway
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/gkeconnect/gateway/v1beta1
 
