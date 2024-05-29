@@ -1188,7 +1188,6 @@ libraries:
   cloud_api: false
   GAPICs:
   - proto_path: google/maps/mapsplatformdatasets/v1
-  - proto_path: google/maps/mapsplatformdatasets/v1alpha
 
 - api_shortname: maps-places
   name_pretty: Places API (New)
