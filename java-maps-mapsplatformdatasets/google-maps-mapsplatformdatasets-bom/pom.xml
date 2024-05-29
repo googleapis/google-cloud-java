@@ -31,18 +31,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
-        <artifactId>grpc-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-        <version>0.34.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1alpha:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-mapsplatformdatasets-v1</artifactId>
         <version>0.34.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.maps.api.grpc</groupId>
-        <artifactId>proto-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-        <version>0.34.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-mapsplatformdatasets-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
