@@ -85,12 +85,14 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write",
+                          "/v1beta/{parent=projects/*/locations/*}/userEvents:write")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "writeAsync", request.getWriteAsync());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -248,6 +250,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()

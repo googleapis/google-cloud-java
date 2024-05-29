@@ -343,7 +343,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
    *
-   * For example, this field will be 2 if two quantities of the same Document
+   * For example, this field is 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
    *
    * Required for events of the following event types:
@@ -366,7 +366,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
    *
-   * For example, this field will be 2 if two quantities of the same Document
+   * For example, this field is 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
    *
    * Required for events of the following event types:
@@ -1383,7 +1383,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
      *
-     * For example, this field will be 2 if two quantities of the same Document
+     * For example, this field is 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
      *
      * Required for events of the following event types:
@@ -1406,7 +1406,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
      *
-     * For example, this field will be 2 if two quantities of the same Document
+     * For example, this field is 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
      *
      * Required for events of the following event types:
@@ -1429,7 +1429,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
      *
-     * For example, this field will be 2 if two quantities of the same Document
+     * For example, this field is 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
      *
      * Required for events of the following event types:
@@ -1456,7 +1456,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
      *
-     * For example, this field will be 2 if two quantities of the same Document
+     * For example, this field is 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
      *
      * Required for events of the following event types:

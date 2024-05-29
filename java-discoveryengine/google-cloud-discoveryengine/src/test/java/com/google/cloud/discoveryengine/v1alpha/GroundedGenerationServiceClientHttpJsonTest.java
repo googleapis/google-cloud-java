@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1alpha.stub.HttpJsonGroundedGenerationServiceStub;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -89,6 +90,7 @@ public class GroundedGenerationServiceClientHttpJsonTest {
             .setAnswerCandidate("answerCandidate-292402331")
             .addAllFacts(new ArrayList<GroundingFact>())
             .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     CheckGroundingResponse actualResponse = client.checkGrounding(request);
@@ -125,6 +127,7 @@ public class GroundedGenerationServiceClientHttpJsonTest {
               .setAnswerCandidate("answerCandidate-292402331")
               .addAllFacts(new ArrayList<GroundingFact>())
               .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.checkGrounding(request);
       Assert.fail("No exception raised");

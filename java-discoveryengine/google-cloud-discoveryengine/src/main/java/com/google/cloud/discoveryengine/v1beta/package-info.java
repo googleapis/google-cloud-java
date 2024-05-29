@@ -47,6 +47,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= ControlServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on Controls. Controls allow for
+ * custom logic to be implemented in the serving path. Controls need to be attached to a Serving
+ * Config to be considered during a request.
+ *
+ * <p>Sample for ControlServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   Control control = Control.newBuilder().build();
+ *   String controlId = "controlId-395080872";
+ *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
  * <p>======================= ConversationalSearchServiceClient =======================
  *
  * <p>Service Description: Service for conversational search.
@@ -153,8 +176,28 @@
  *           .setAnswerCandidate("answerCandidate-292402331")
  *           .addAllFacts(new ArrayList<GroundingFact>())
  *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ProjectServiceClient =======================
+ *
+ * <p>Service Description: Service for operations on the
+ * [Project][google.cloud.discoveryengine.v1beta.Project].
+ *
+ * <p>Sample for ProjectServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectServiceClient projectServiceClient = ProjectServiceClient.create()) {
+ *   ProjectName name = ProjectName.of("[PROJECT]");
+ *   Project response = projectServiceClient.provisionProjectAsync(name).get();
  * }
  * }</pre>
  *
@@ -180,6 +223,7 @@
  *           .setQuery("query107944136")
  *           .addAllRecords(new ArrayList<RankingRecord>())
  *           .setIgnoreRecordDetailsInResponse(true)
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RankResponse response = rankServiceClient.rank(request);
  * }
@@ -301,17 +345,14 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
- *   TrainCustomModelRequest request =
- *       TrainCustomModelRequest.newBuilder()
+ *   ListCustomModelsRequest request =
+ *       ListCustomModelsRequest.newBuilder()
  *           .setDataStore(
  *               DataStoreName.ofProjectLocationCollectionDataStoreName(
  *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
  *                   .toString())
- *           .setModelType("modelType-2010627581")
- *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
  *           .build();
- *   TrainCustomModelResponse response =
- *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
  * }
  * }</pre>
  *
@@ -379,6 +420,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
  *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }

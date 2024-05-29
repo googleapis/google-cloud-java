@@ -25,6 +25,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsRequest;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsResponse;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelMetadata;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelResponse;
@@ -56,10 +58,24 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsMethodDescriptor =
+          MethodDescriptor.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.SearchTuningService/ListCustomModels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomModelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomModelsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable;
   private final OperationCallable<
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable;
+  private final UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -115,6 +131,17 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsTransportSettings =
+            GrpcCallSettings.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+                .setMethodDescriptor(listCustomModelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("data_store", String.valueOf(request.getDataStore()));
+                      return builder.build();
+                    })
+                .build();
 
     this.trainCustomModelCallable =
         callableFactory.createUnaryCallable(
@@ -125,6 +152,9 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
             settings.trainCustomModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.listCustomModelsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomModelsTransportSettings, settings.listCustomModelsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -144,6 +174,12 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable() {
     return trainCustomModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable() {
+    return listCustomModelsCallable;
   }
 
   @Override

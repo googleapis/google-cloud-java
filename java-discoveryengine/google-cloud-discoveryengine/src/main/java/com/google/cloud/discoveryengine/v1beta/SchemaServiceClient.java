@@ -615,8 +615,8 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
    * @param schema Required. The [Schema][google.cloud.discoveryengine.v1beta.Schema] to create.
    * @param schemaId Required. The ID to use for the
-   *     [Schema][google.cloud.discoveryengine.v1beta.Schema], which will become the final component
-   *     of the [Schema.name][google.cloud.discoveryengine.v1beta.Schema.name].
+   *     [Schema][google.cloud.discoveryengine.v1beta.Schema], which becomes the final component of
+   *     the [Schema.name][google.cloud.discoveryengine.v1beta.Schema.name].
    *     <p>This field should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard
    *     with a length limit of 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -658,8 +658,8 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
    * @param schema Required. The [Schema][google.cloud.discoveryengine.v1beta.Schema] to create.
    * @param schemaId Required. The ID to use for the
-   *     [Schema][google.cloud.discoveryengine.v1beta.Schema], which will become the final component
-   *     of the [Schema.name][google.cloud.discoveryengine.v1beta.Schema.name].
+   *     [Schema][google.cloud.discoveryengine.v1beta.Schema], which becomes the final component of
+   *     the [Schema.name][google.cloud.discoveryengine.v1beta.Schema.name].
    *     <p>This field should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard
    *     with a length limit of 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

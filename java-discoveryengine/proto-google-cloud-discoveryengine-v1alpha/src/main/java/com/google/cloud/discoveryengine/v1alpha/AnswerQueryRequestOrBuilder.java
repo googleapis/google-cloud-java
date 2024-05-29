@@ -112,8 +112,8 @@ public interface AnswerQueryRequestOrBuilder
    *
    * When session field is not set, the API is in sessionless mode.
    *
-   * We support auto session mode: users can use the wildcard symbol “-” as
-   * session id.  A new id will be automatically generated and assigned.
+   * We support auto session mode: users can use the wildcard symbol `-` as
+   * session ID.  A new ID will be automatically generated and assigned.
    * </pre>
    *
    * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -129,8 +129,8 @@ public interface AnswerQueryRequestOrBuilder
    *
    * When session field is not set, the API is in sessionless mode.
    *
-   * We support auto session mode: users can use the wildcard symbol “-” as
-   * session id.  A new id will be automatically generated and assigned.
+   * We support auto session mode: users can use the wildcard symbol `-` as
+   * session ID.  A new ID will be automatically generated and assigned.
    * </pre>
    *
    * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>

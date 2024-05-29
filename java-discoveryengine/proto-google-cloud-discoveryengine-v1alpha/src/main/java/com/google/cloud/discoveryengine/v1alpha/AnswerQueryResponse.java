@@ -40,7 +40,9 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private AnswerQueryResponse() {}
+  private AnswerQueryResponse() {
+    answerQueryToken_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -188,6 +190,57 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         : session_;
   }
 
+  public static final int ANSWER_QUERY_TOKEN_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object answerQueryToken_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A global unique ID used for logging.
+   * </pre>
+   *
+   * <code>string answer_query_token = 3;</code>
+   *
+   * @return The answerQueryToken.
+   */
+  @java.lang.Override
+  public java.lang.String getAnswerQueryToken() {
+    java.lang.Object ref = answerQueryToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      answerQueryToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A global unique ID used for logging.
+   * </pre>
+   *
+   * <code>string answer_query_token = 3;</code>
+   *
+   * @return The bytes for answerQueryToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAnswerQueryTokenBytes() {
+    java.lang.Object ref = answerQueryToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      answerQueryToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -208,6 +261,9 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getSession());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerQueryToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, answerQueryToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -222,6 +278,9 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSession());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answerQueryToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, answerQueryToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -247,6 +306,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
     if (hasSession()) {
       if (!getSession().equals(other.getSession())) return false;
     }
+    if (!getAnswerQueryToken().equals(other.getAnswerQueryToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -266,6 +326,8 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + SESSION_FIELD_NUMBER;
       hash = (53 * hash) + getSession().hashCode();
     }
+    hash = (37 * hash) + ANSWER_QUERY_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getAnswerQueryToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -428,6 +490,7 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         sessionBuilder_.dispose();
         sessionBuilder_ = null;
       }
+      answerQueryToken_ = "";
       return this;
     }
 
@@ -474,6 +537,9 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.session_ = sessionBuilder_ == null ? session_ : sessionBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.answerQueryToken_ = answerQueryToken_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -531,6 +597,11 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
       if (other.hasSession()) {
         mergeSession(other.getSession());
       }
+      if (!other.getAnswerQueryToken().isEmpty()) {
+        answerQueryToken_ = other.answerQueryToken_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -569,6 +640,12 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                answerQueryToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1030,6 +1107,112 @@ public final class AnswerQueryResponse extends com.google.protobuf.GeneratedMess
         session_ = null;
       }
       return sessionBuilder_;
+    }
+
+    private java.lang.Object answerQueryToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A global unique ID used for logging.
+     * </pre>
+     *
+     * <code>string answer_query_token = 3;</code>
+     *
+     * @return The answerQueryToken.
+     */
+    public java.lang.String getAnswerQueryToken() {
+      java.lang.Object ref = answerQueryToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answerQueryToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A global unique ID used for logging.
+     * </pre>
+     *
+     * <code>string answer_query_token = 3;</code>
+     *
+     * @return The bytes for answerQueryToken.
+     */
+    public com.google.protobuf.ByteString getAnswerQueryTokenBytes() {
+      java.lang.Object ref = answerQueryToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        answerQueryToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A global unique ID used for logging.
+     * </pre>
+     *
+     * <code>string answer_query_token = 3;</code>
+     *
+     * @param value The answerQueryToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAnswerQueryToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      answerQueryToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A global unique ID used for logging.
+     * </pre>
+     *
+     * <code>string answer_query_token = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAnswerQueryToken() {
+      answerQueryToken_ = getDefaultInstance().getAnswerQueryToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A global unique ID used for logging.
+     * </pre>
+     *
+     * <code>string answer_query_token = 3;</code>
+     *
+     * @param value The bytes for answerQueryToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAnswerQueryTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      answerQueryToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -52,4 +52,29 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return The threadsPerCore.
    */
   long getThreadsPerCore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not to enable nested virtualization (defaults to false).
+   * </pre>
+   *
+   * <code>optional bool enable_nested_virtualization = 2;</code>
+   *
+   * @return Whether the enableNestedVirtualization field is set.
+   */
+  boolean hasEnableNestedVirtualization();
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not to enable nested virtualization (defaults to false).
+   * </pre>
+   *
+   * <code>optional bool enable_nested_virtualization = 2;</code>
+   *
+   * @return The enableNestedVirtualization.
+   */
+  boolean getEnableNestedVirtualization();
 }

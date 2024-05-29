@@ -102,12 +102,22 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only available if ChunkingConfig is enabeld on the data store.
+     * Only available if ChunkingConfig is enabled on the data store.
      * </pre>
      *
      * <code>CHUNKED_DOCUMENT = 2;</code>
      */
     CHUNKED_DOCUMENT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Returns the converted PNG Image bytes if available.
+     * </pre>
+     *
+     * <code>PNG_CONVERTED_DOCUMENT = 3;</code>
+     */
+    PNG_CONVERTED_DOCUMENT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -135,12 +145,22 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only available if ChunkingConfig is enabeld on the data store.
+     * Only available if ChunkingConfig is enabled on the data store.
      * </pre>
      *
      * <code>CHUNKED_DOCUMENT = 2;</code>
      */
     public static final int CHUNKED_DOCUMENT_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Returns the converted PNG Image bytes if available.
+     * </pre>
+     *
+     * <code>PNG_CONVERTED_DOCUMENT = 3;</code>
+     */
+    public static final int PNG_CONVERTED_DOCUMENT_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -172,6 +192,8 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
           return PARSED_DOCUMENT;
         case 2:
           return CHUNKED_DOCUMENT;
+        case 3:
+          return PNG_CONVERTED_DOCUMENT;
         default:
           return null;
       }
@@ -256,7 +278,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * output format will be a JSON string representation of processed document.
+     * Output format is a JSON string representation of processed document.
      * </pre>
      *
      * <code>JSON = 1;</code>
@@ -279,7 +301,7 @@ public final class GetProcessedDocumentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * output format will be a JSON string representation of processed document.
+     * Output format is a JSON string representation of processed document.
      * </pre>
      *
      * <code>JSON = 1;</code>

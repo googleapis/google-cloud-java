@@ -105,6 +105,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>BASIC = 2;</code>
      */
     BASIC(2),
+    /**
+     *
+     *
+     * <pre>
+     * Applies the Security Posture off cluster Enterprise level features.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 3;</code>
+     */
+    ENTERPRISE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -138,6 +148,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>BASIC = 2;</code>
      */
     public static final int BASIC_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Applies the Security Posture off cluster Enterprise level features.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 3;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -169,6 +189,8 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
           return DISABLED;
         case 2:
           return BASIC;
+        case 3:
+          return ENTERPRISE;
         default:
           return null;
       }

@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1beta.RankServiceClient;
 import com.google.cloud.discoveryengine.v1beta.RankingConfigName;
 import com.google.cloud.discoveryengine.v1beta.RankingRecord;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncRank {
 
@@ -46,6 +47,7 @@ public class SyncRank {
               .setQuery("query107944136")
               .addAllRecords(new ArrayList<RankingRecord>())
               .setIgnoreRecordDetailsInResponse(true)
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       RankResponse response = rankServiceClient.rank(request);
     }

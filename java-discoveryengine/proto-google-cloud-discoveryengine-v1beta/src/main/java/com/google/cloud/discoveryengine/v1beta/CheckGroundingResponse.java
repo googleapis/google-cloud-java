@@ -201,6 +201,45 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * @return The citationIndices at the given index.
      */
     int getCitationIndices(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the system
+     * decided this claim doesn't require attribution/grounding check, this
+     * field will be set to false. In that case, no grounding check was done for
+     * the claim and therefore
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+     * and
+     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+     * should not be returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 6;</code>
+     *
+     * @return Whether the groundingCheckRequired field is set.
+     */
+    boolean hasGroundingCheckRequired();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the system
+     * decided this claim doesn't require attribution/grounding check, this
+     * field will be set to false. In that case, no grounding check was done for
+     * the claim and therefore
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+     * and
+     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+     * should not be returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 6;</code>
+     *
+     * @return The groundingCheckRequired.
+     */
+    boolean getGroundingCheckRequired();
   }
   /**
    *
@@ -434,6 +473,53 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
 
     private int citationIndicesMemoizedSerializedSize = -1;
 
+    public static final int GROUNDING_CHECK_REQUIRED_FIELD_NUMBER = 6;
+    private boolean groundingCheckRequired_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the system
+     * decided this claim doesn't require attribution/grounding check, this
+     * field will be set to false. In that case, no grounding check was done for
+     * the claim and therefore
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+     * and
+     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+     * should not be returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 6;</code>
+     *
+     * @return Whether the groundingCheckRequired field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroundingCheckRequired() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the system
+     * decided this claim doesn't require attribution/grounding check, this
+     * field will be set to false. In that case, no grounding check was done for
+     * the claim and therefore
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+     * and
+     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+     * should not be returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 6;</code>
+     *
+     * @return The groundingCheckRequired.
+     */
+    @java.lang.Override
+    public boolean getGroundingCheckRequired() {
+      return groundingCheckRequired_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -464,6 +550,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       }
       for (int i = 0; i < citationIndices_.size(); i++) {
         output.writeInt32NoTag(citationIndices_.getInt(i));
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(6, groundingCheckRequired_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -497,6 +586,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         }
         citationIndicesMemoizedSerializedSize = dataSize;
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, groundingCheckRequired_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -523,6 +615,10 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       }
       if (!getClaimText().equals(other.getClaimText())) return false;
       if (!getCitationIndicesList().equals(other.getCitationIndicesList())) return false;
+      if (hasGroundingCheckRequired() != other.hasGroundingCheckRequired()) return false;
+      if (hasGroundingCheckRequired()) {
+        if (getGroundingCheckRequired() != other.getGroundingCheckRequired()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -547,6 +643,10 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       if (getCitationIndicesCount() > 0) {
         hash = (37 * hash) + CITATION_INDICES_FIELD_NUMBER;
         hash = (53 * hash) + getCitationIndicesList().hashCode();
+      }
+      if (hasGroundingCheckRequired()) {
+        hash = (37 * hash) + GROUNDING_CHECK_REQUIRED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroundingCheckRequired());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -696,6 +796,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         endPos_ = 0;
         claimText_ = "";
         citationIndices_ = emptyIntList();
+        groundingCheckRequired_ = false;
         return this;
       }
 
@@ -751,6 +852,10 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         if (((from_bitField0_ & 0x00000008) != 0)) {
           citationIndices_.makeImmutable();
           result.citationIndices_ = citationIndices_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.groundingCheckRequired_ = groundingCheckRequired_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -828,6 +933,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
           }
           onChanged();
         }
+        if (other.hasGroundingCheckRequired()) {
+          setGroundingCheckRequired(other.getGroundingCheckRequired());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -890,6 +998,12 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
                   input.popLimit(limit);
                   break;
                 } // case 34
+              case 48:
+                {
+                  groundingCheckRequired_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1318,6 +1432,102 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       public Builder clearCitationIndices() {
         citationIndices_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      private boolean groundingCheckRequired_;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the system
+       * decided this claim doesn't require attribution/grounding check, this
+       * field will be set to false. In that case, no grounding check was done for
+       * the claim and therefore
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+       * and
+       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+       * should not be returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 6;</code>
+       *
+       * @return Whether the groundingCheckRequired field is set.
+       */
+      @java.lang.Override
+      public boolean hasGroundingCheckRequired() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the system
+       * decided this claim doesn't require attribution/grounding check, this
+       * field will be set to false. In that case, no grounding check was done for
+       * the claim and therefore
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+       * and
+       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+       * should not be returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 6;</code>
+       *
+       * @return The groundingCheckRequired.
+       */
+      @java.lang.Override
+      public boolean getGroundingCheckRequired() {
+        return groundingCheckRequired_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the system
+       * decided this claim doesn't require attribution/grounding check, this
+       * field will be set to false. In that case, no grounding check was done for
+       * the claim and therefore
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+       * and
+       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+       * should not be returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 6;</code>
+       *
+       * @param value The groundingCheckRequired to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroundingCheckRequired(boolean value) {
+
+        groundingCheckRequired_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the system
+       * decided this claim doesn't require attribution/grounding check, this
+       * field will be set to false. In that case, no grounding check was done for
+       * the claim and therefore
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
+       * and
+       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices]
+       * should not be returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGroundingCheckRequired() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        groundingCheckRequired_ = false;
         onChanged();
         return this;
       }

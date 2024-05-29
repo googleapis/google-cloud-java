@@ -24,8 +24,6 @@ package com.google.maps.mapsplatformdatasets.v1;
  *
  * <pre>
  * Request to delete a dataset.
- *
- * The dataset to be deleted.
  * </pre>
  *
  * Protobuf type {@code google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest}
@@ -73,7 +71,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Format: projects/${project}/datasets/{dataset_id}
+   * Required. The name of the dataset to delete.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>
@@ -98,7 +97,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Format: projects/${project}/datasets/{dataset_id}
+   * Required. The name of the dataset to delete.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>
@@ -285,8 +285,6 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request to delete a dataset.
-   *
-   * The dataset to be deleted.
    * </pre>
    *
    * Protobuf type {@code google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest}
@@ -473,7 +471,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Format: projects/${project}/datasets/{dataset_id}
+     * Required. The name of the dataset to delete.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>
@@ -497,7 +496,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Format: projects/${project}/datasets/{dataset_id}
+     * Required. The name of the dataset to delete.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>
@@ -521,7 +521,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Format: projects/${project}/datasets/{dataset_id}
+     * Required. The name of the dataset to delete.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>
@@ -544,7 +545,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Format: projects/${project}/datasets/{dataset_id}
+     * Required. The name of the dataset to delete.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>
@@ -563,7 +565,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Format: projects/${project}/datasets/{dataset_id}
+     * Required. The name of the dataset to delete.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>

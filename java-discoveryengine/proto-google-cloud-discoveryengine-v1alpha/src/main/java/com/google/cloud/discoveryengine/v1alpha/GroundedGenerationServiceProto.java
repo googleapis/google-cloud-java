@@ -37,6 +37,10 @@ public final class GroundedGenerationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingResponse_fieldAccessorTable;
@@ -61,7 +65,7 @@ public final class GroundedGenerationServiceProto {
           + "google/api/resource.proto\0324google/cloud/"
           + "discoveryengine/v1alpha/grounding.proto\""
           + "L\n\022CheckGroundingSpec\022\037\n\022citation_thresh"
-          + "old\030\001 \001(\001H\000\210\001\001B\025\n\023_citation_threshold\"\231\002"
+          + "old\030\001 \001(\001H\000\210\001\001B\025\n\023_citation_threshold\"\256\003"
           + "\n\025CheckGroundingRequest\022P\n\020grounding_con"
           + "fig\030\001 \001(\tB6\340A\002\372A0\n.discoveryengine.googl"
           + "eapis.com/GroundingConfig\022\030\n\020answer_cand"
@@ -69,32 +73,37 @@ public final class GroundedGenerationServiceProto {
           + "d.discoveryengine.v1alpha.GroundingFact\022"
           + "P\n\016grounding_spec\030\004 \001(\01328.google.cloud.d"
           + "iscoveryengine.v1alpha.CheckGroundingSpe"
-          + "c\"\340\002\n\026CheckGroundingResponse\022\032\n\rsupport_"
-          + "score\030\001 \001(\002H\000\210\001\001\022E\n\014cited_chunks\030\003 \003(\0132/"
-          + ".google.cloud.discoveryengine.v1alpha.Fa"
-          + "ctChunk\022R\n\006claims\030\004 \003(\0132B.google.cloud.d"
-          + "iscoveryengine.v1alpha.CheckGroundingRes"
-          + "ponse.Claim\032}\n\005Claim\022\026\n\tstart_pos\030\001 \001(\005H"
-          + "\000\210\001\001\022\024\n\007end_pos\030\002 \001(\005H\001\210\001\001\022\022\n\nclaim_text"
-          + "\030\003 \001(\t\022\030\n\020citation_indices\030\004 \003(\005B\014\n\n_sta"
-          + "rt_posB\n\n\010_end_posB\020\n\016_support_score2\325\002\n"
-          + "\031GroundedGenerationService\022\343\001\n\016CheckGrou"
-          + "nding\022;.google.cloud.discoveryengine.v1a"
-          + "lpha.CheckGroundingRequest\032<.google.clou"
-          + "d.discoveryengine.v1alpha.CheckGrounding"
-          + "Response\"V\202\323\344\223\002P\"K/v1alpha/{grounding_co"
-          + "nfig=projects/*/locations/*/groundingCon"
-          + "figs/*}:check:\001*\032R\312A\036discoveryengine.goo"
-          + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\252\002\n(com.google.clou"
-          + "d.discoveryengine.v1alphaB\036GroundedGener"
-          + "ationServiceProtoP\001ZRcloud.google.com/go"
-          + "/discoveryengine/apiv1alpha/discoveryeng"
-          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
-          + "E\252\002$Google.Cloud.DiscoveryEngine.V1Alpha"
-          + "\312\002$Google\\Cloud\\DiscoveryEngine\\V1alpha\352"
-          + "\002\'Google::Cloud::DiscoveryEngine::V1alph"
-          + "ab\006proto3"
+          + "c\022`\n\013user_labels\030\005 \003(\0132K.google.cloud.di"
+          + "scoveryengine.v1alpha.CheckGroundingRequ"
+          + "est.UserLabelsEntry\0321\n\017UserLabelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\245\003\n\026Check"
+          + "GroundingResponse\022\032\n\rsupport_score\030\001 \001(\002"
+          + "H\000\210\001\001\022E\n\014cited_chunks\030\003 \003(\0132/.google.clo"
+          + "ud.discoveryengine.v1alpha.FactChunk\022R\n\006"
+          + "claims\030\004 \003(\0132B.google.cloud.discoveryeng"
+          + "ine.v1alpha.CheckGroundingResponse.Claim"
+          + "\032\301\001\n\005Claim\022\026\n\tstart_pos\030\001 \001(\005H\000\210\001\001\022\024\n\007en"
+          + "d_pos\030\002 \001(\005H\001\210\001\001\022\022\n\nclaim_text\030\003 \001(\t\022\030\n\020"
+          + "citation_indices\030\004 \003(\005\022%\n\030grounding_chec"
+          + "k_required\030\006 \001(\010H\002\210\001\001B\014\n\n_start_posB\n\n\010_"
+          + "end_posB\033\n\031_grounding_check_requiredB\020\n\016"
+          + "_support_score2\325\002\n\031GroundedGenerationSer"
+          + "vice\022\343\001\n\016CheckGrounding\022;.google.cloud.d"
+          + "iscoveryengine.v1alpha.CheckGroundingReq"
+          + "uest\032<.google.cloud.discoveryengine.v1al"
+          + "pha.CheckGroundingResponse\"V\202\323\344\223\002P\"K/v1a"
+          + "lpha/{grounding_config=projects/*/locati"
+          + "ons/*/groundingConfigs/*}:check:\001*\032R\312A\036d"
+          + "iscoveryengine.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\252"
+          + "\002\n(com.google.cloud.discoveryengine.v1al"
+          + "phaB\036GroundedGenerationServiceProtoP\001ZRc"
+          + "loud.google.com/go/discoveryengine/apiv1"
+          + "alpha/discoveryenginepb;discoveryenginep"
+          + "b\242\002\017DISCOVERYENGINE\252\002$Google.Cloud.Disco"
+          + "veryEngine.V1Alpha\312\002$Google\\Cloud\\Discov"
+          + "eryEngine\\V1alpha\352\002\'Google::Cloud::Disco"
+          + "veryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,7 +129,17 @@ public final class GroundedGenerationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_descriptor,
             new java.lang.String[] {
-              "GroundingConfig", "AnswerCandidate", "Facts", "GroundingSpec",
+              "GroundingConfig", "AnswerCandidate", "Facts", "GroundingSpec", "UserLabels",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingRequest_UserLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -138,7 +157,7 @@ public final class GroundedGenerationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_CheckGroundingResponse_Claim_descriptor,
             new java.lang.String[] {
-              "StartPos", "EndPos", "ClaimText", "CitationIndices",
+              "StartPos", "EndPos", "ClaimText", "CitationIndices", "GroundingCheckRequired",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

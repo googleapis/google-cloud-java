@@ -23,7 +23,7 @@ package com.google.maps.mapsplatformdatasets.v1;
  *
  *
  * <pre>
- * Response to list datasets for the project.
+ * Response object of ListDatasets.
  * </pre>
  *
  * Protobuf type {@code google.maps.mapsplatformdatasets.v1.ListDatasetsResponse}
@@ -144,6 +144,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token that can be sent as `page_token` to retrieve the next page.
+   *
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
@@ -168,6 +169,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token that can be sent as `page_token` to retrieve the next page.
+   *
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
@@ -363,7 +365,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response to list datasets for the project.
+   * Response object of ListDatasets.
    * </pre>
    *
    * Protobuf type {@code google.maps.mapsplatformdatasets.v1.ListDatasetsResponse}
@@ -965,6 +967,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token that can be sent as `page_token` to retrieve the next page.
+     *
      * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
@@ -988,6 +991,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token that can be sent as `page_token` to retrieve the next page.
+     *
      * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
@@ -1011,6 +1015,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token that can be sent as `page_token` to retrieve the next page.
+     *
      * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
@@ -1033,6 +1038,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token that can be sent as `page_token` to retrieve the next page.
+     *
      * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
@@ -1051,6 +1057,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token that can be sent as `page_token` to retrieve the next page.
+     *
      * If this field is omitted, there are no subsequent pages.
      * </pre>
      *

@@ -194,6 +194,26 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>STATEFULSET = 12;</code>
      */
     STATEFULSET(12),
+    /**
+     *
+     *
+     * <pre>
+     * CADVISOR
+     * </pre>
+     *
+     * <code>CADVISOR = 13;</code>
+     */
+    CADVISOR(13),
+    /**
+     *
+     *
+     * <pre>
+     * KUBELET
+     * </pre>
+     *
+     * <code>KUBELET = 14;</code>
+     */
+    KUBELET(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -317,6 +337,26 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>STATEFULSET = 12;</code>
      */
     public static final int STATEFULSET_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * CADVISOR
+     * </pre>
+     *
+     * <code>CADVISOR = 13;</code>
+     */
+    public static final int CADVISOR_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * KUBELET
+     * </pre>
+     *
+     * <code>KUBELET = 14;</code>
+     */
+    public static final int KUBELET_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -366,6 +406,10 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
           return DEPLOYMENT;
         case 12:
           return STATEFULSET;
+        case 13:
+          return CADVISOR;
+        case 14:
+          return KUBELET;
         default:
           return null;
       }

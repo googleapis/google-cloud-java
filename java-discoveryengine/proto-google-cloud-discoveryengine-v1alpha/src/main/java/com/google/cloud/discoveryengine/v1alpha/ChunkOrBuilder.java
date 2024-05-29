@@ -113,6 +113,37 @@ public interface ChunkOrBuilder
    *
    *
    * <pre>
+   * The relevance score based on similarity.
+   * Higher score indicates higher chunk relevance.
+   * The score is in range [-1.0, 1.0].
+   * Only populated on [SearchService.SearchResponse][].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the relevanceScore field is set.
+   */
+  boolean hasRelevanceScore();
+  /**
+   *
+   *
+   * <pre>
+   * The relevance score based on similarity.
+   * Higher score indicates higher chunk relevance.
+   * The score is in range [-1.0, 1.0].
+   * Only populated on [SearchService.SearchResponse][].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The relevanceScore.
+   */
+  double getRelevanceScore();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata of the document from the current chunk.
    * </pre>
    *

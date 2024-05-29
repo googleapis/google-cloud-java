@@ -246,6 +246,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the answer to the user query.
+     *
+     * Only set if the answer generation (/answer API call) happened in this
+     * turn.
      * </pre>
      *
      * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -258,6 +261,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the answer to the user query.
+     *
+     * Only set if the answer generation (/answer API call) happened in this
+     * turn.
      * </pre>
      *
      * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -371,6 +377,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the answer to the user query.
+     *
+     * Only set if the answer generation (/answer API call) happened in this
+     * turn.
      * </pre>
      *
      * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -394,6 +403,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the answer to the user query.
+     *
+     * Only set if the answer generation (/answer API call) happened in this
+     * turn.
      * </pre>
      *
      * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -996,6 +1008,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The resource name of the answer to the user query.
+       *
+       * Only set if the answer generation (/answer API call) happened in this
+       * turn.
        * </pre>
        *
        * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1018,6 +1033,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The resource name of the answer to the user query.
+       *
+       * Only set if the answer generation (/answer API call) happened in this
+       * turn.
        * </pre>
        *
        * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1040,6 +1058,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The resource name of the answer to the user query.
+       *
+       * Only set if the answer generation (/answer API call) happened in this
+       * turn.
        * </pre>
        *
        * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1061,6 +1082,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The resource name of the answer to the user query.
+       *
+       * Only set if the answer generation (/answer API call) happened in this
+       * turn.
        * </pre>
        *
        * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1078,6 +1102,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The resource name of the answer to the user query.
+       *
+       * Only set if the answer generation (/answer API call) happened in this
+       * turn.
        * </pre>
        *
        * <code>string answer = 2 [(.google.api.resource_reference) = { ... }</code>

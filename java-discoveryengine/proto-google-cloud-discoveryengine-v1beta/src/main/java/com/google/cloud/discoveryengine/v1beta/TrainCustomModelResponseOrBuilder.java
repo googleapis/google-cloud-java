@@ -204,4 +204,29 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>map&lt;string, double&gt; metrics = 4;</code>
    */
   double getMetricsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified name of the CustomTuningModel.
+   * </pre>
+   *
+   * <code>string model_name = 5;</code>
+   *
+   * @return The modelName.
+   */
+  java.lang.String getModelName();
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified name of the CustomTuningModel.
+   * </pre>
+   *
+   * <code>string model_name = 5;</code>
+   *
+   * @return The bytes for modelName.
+   */
+  com.google.protobuf.ByteString getModelNameBytes();
 }

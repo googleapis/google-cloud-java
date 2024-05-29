@@ -80,6 +80,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> createControl(DataStoreName parent, Control control, String controlId)
+ *           <li><p> createControl(EngineName parent, Control control, String controlId)
  *           <li><p> createControl(String parent, Control control, String controlId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -157,6 +158,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listControls(DataStoreName parent)
+ *           <li><p> listControls(EngineName parent)
  *           <li><p> listControls(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -298,6 +300,8 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * @param parent Required. Full resource name of parent data store. Format:
    *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
    * @param control Required. The Control to create.
    * @param controlId Required. The ID to use for the Control, which will become the final component
    *     of the Control's resource name.
@@ -305,6 +309,50 @@ public class ControlServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Control createControl(DataStoreName parent, Control control, String controlId) {
+    CreateControlRequest request =
+        CreateControlRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setControl(control)
+            .setControlId(controlId)
+            .build();
+    return createControl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Control.
+   *
+   * <p>By default 1000 controls are allowed for a data store. A request can be submitted to adjust
+   * this limit. If the [Control][google.cloud.discoveryengine.v1.Control] to create already exists,
+   * an ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+   *   EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Control control = Control.newBuilder().build();
+   *   String controlId = "controlId-395080872";
+   *   Control response = controlServiceClient.createControl(parent, control, controlId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent data store. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * @param control Required. The Control to create.
+   * @param controlId Required. The ID to use for the Control, which will become the final component
+   *     of the Control's resource name.
+   *     <p>This value must be within 1-63 characters. Valid characters are /[a-z][0-9]-_/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Control createControl(EngineName parent, Control control, String controlId) {
     CreateControlRequest request =
         CreateControlRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -342,6 +390,8 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * @param parent Required. Full resource name of parent data store. Format:
    *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
    * @param control Required. The Control to create.
    * @param controlId Required. The ID to use for the Control, which will become the final component
    *     of the Control's resource name.
@@ -813,9 +863,45 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * @param parent Required. The data store resource name. Format:
    *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListControlsPagedResponse listControls(DataStoreName parent) {
+    ListControlsRequest request =
+        ListControlsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listControls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Controls by their parent [DataStore][google.cloud.discoveryengine.v1.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+   *   EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   for (Control element : controlServiceClient.listControls(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The data store resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListControlsPagedResponse listControls(EngineName parent) {
     ListControlsRequest request =
         ListControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -847,6 +933,8 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * @param parent Required. The data store resource name. Format:
    *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   *     or
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListControlsPagedResponse listControls(String parent) {

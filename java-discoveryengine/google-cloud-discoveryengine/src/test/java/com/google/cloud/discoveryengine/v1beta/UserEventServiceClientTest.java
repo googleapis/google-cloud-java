@@ -94,6 +94,12 @@ public class UserEventServiceClientTest {
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
             .setUserPseudoId("userPseudoId-1155274652")
+            .setEngine(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDataStore(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setEventTime(Timestamp.newBuilder().build())
             .setUserInfo(UserInfo.newBuilder().build())
             .setDirectUserRequest(true)
@@ -120,6 +126,7 @@ public class UserEventServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -131,6 +138,7 @@ public class UserEventServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getUserEvent(), actualRequest.getUserEvent());
+    Assert.assertEquals(request.getWriteAsync(), actualRequest.getWriteAsync());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -150,6 +158,7 @@ public class UserEventServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");
