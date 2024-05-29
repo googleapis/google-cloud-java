@@ -58,6 +58,7 @@ libraries:
   name_pretty: Advisory Notifications API
   product_documentation: https://cloud.google.com/advisory-notifications/
   api_description: An API for accessing Advisory Notifications in Google Cloud.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/advisorynotifications/v1
 
@@ -80,6 +81,7 @@ libraries:
   api_description: AlloyDB is a fully managed, PostgreSQL-compatible database service
     with industry-leading performance, availability, and scale.
   rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/alloydb/v1
   - proto_path: google/cloud/alloydb/v1alpha
@@ -94,6 +96,7 @@ libraries:
   api_id: connectors.googleapis.com
   library_name: alloydb-connectors
   rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/alloydb/connectors/v1
   - proto_path: google/cloud/alloydb/connectors/v1alpha
@@ -129,6 +132,7 @@ libraries:
   name_pretty: Analytics Hub API
   product_documentation: https://cloud.google.com/bigquery/TBD
   api_description: TBD
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/bigquery/analyticshub/v1
 
@@ -171,6 +175,7 @@ libraries:
   name_pretty: API Keys API
   product_documentation: https://cloud.google.com/api-keys/
   api_description: API Keys lets you create and manage your API keys for your projects.
+  release_level: stable
   GAPICs:
   - proto_path: google/api/apikeys/v2
 
@@ -274,7 +279,7 @@ libraries:
     backup and disaster recovery solution for cloud-based and hybrid workloads. '
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.cloud:google-cloud-backupdr
   api_id: backupdr.googleapis.com
   library_type: GAPIC_AUTO
@@ -517,6 +522,7 @@ libraries:
   product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
   api_description: Provides insights about your customers and their Assured Workloads
     based on your Sovereign Controls by Partners offering.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/cloudcontrolspartner/v1
   - proto_path: google/cloud/cloudcontrolspartner/v1beta
@@ -527,6 +533,7 @@ libraries:
   api_description: "Cloud Quotas API provides GCP service consumers with management
     and\n    observability for resource usage, quotas, and restrictions of the services\n\
     \    they consume."
+  release_level: stable
   GAPICs:
   - proto_path: google/api/cloudquotas/v1
 
@@ -670,6 +677,7 @@ libraries:
   name_pretty: Data Lineage
   product_documentation: https://cloud.google.com/data-catalog/docs/data-lineage/
   api_description: Lineage is used to track data flows between assets over time.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/datacatalog/lineage/v1
 
@@ -798,6 +806,7 @@ libraries:
   product_documentation: https://cloud.google.com/discovery-engine/media/docs
   api_description: A Cloud API that offers search and recommendation discoverability
     for documents from different industry verticals (e.g. media, retail, etc.).
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/discoveryengine/v1
   - proto_path: google/cloud/discoveryengine/v1alpha
@@ -811,6 +820,7 @@ libraries:
     the Google Cloud data center.
   api_id: edgecontainer.googleapis.com
   library_name: distributedcloudedge
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/edgecontainer/v1
 
@@ -868,6 +878,7 @@ libraries:
   name_pretty: Distributed Cloud Edge Network API
   product_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/overview
   api_description: Network management API for Distributed Cloud Edge.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/edgenetwork/v1
 
@@ -1355,6 +1366,7 @@ libraries:
   product_documentation: https://cloud.google.com/traffic-director/docs/reference/network-security/rest
   api_description: n/a
   library_name: network-security
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/networksecurity/v1
   - proto_path: google/cloud/networksecurity/v1beta1
@@ -1534,6 +1546,7 @@ libraries:
     manage ACME external account binding keys associated with Google Trust Services'
     publicly trusted certificate authority.
   rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/security/publicca/v1beta1
   - proto_path: google/cloud/security/publicca/v1
@@ -1673,6 +1686,7 @@ libraries:
   product_documentation: https://cloud.google.com/secure-source-manager/docs/overview
   api_description: "Regionally deployed, single-tenant managed source code repository
     hosted on\n    Google Cloud."
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/securesourcemanager/v1
 
@@ -1728,6 +1742,7 @@ libraries:
   name_pretty: Security Center Management API
   product_documentation: https://cloud.google.com/securitycentermanagement/docs/overview
   api_description: Security Center Management API
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/securitycentermanagement/v1
 
@@ -1965,6 +1980,7 @@ libraries:
   product_documentation: https://cloud.google.com/telecom-network-automation
   api_description: APIs to automate 5G deployment and management of cloud infrastructure
     and network functions.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/telcoautomation/v1
   - proto_path: google/cloud/telcoautomation/v1alpha1
@@ -2217,6 +2233,7 @@ libraries:
     while accelerating developer onboarding and productivity.
   rest_documentation: https://cloud.google.com/workstations/docs/reference/rest
   rpc_documentation: https://cloud.google.com/workstations/docs/reference/rpc
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
