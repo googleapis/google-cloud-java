@@ -1093,6 +1093,8 @@ libraries:
   name_pretty: Infrastructure Manager API
   product_documentation: https://cloud.google.com/infrastructure-manager/docs/overview
   api_description: Creates and manages Google Cloud Platform resources and infrastructure.
+  api_id: config.googleapis.com
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/config/v1
 
@@ -1535,7 +1537,7 @@ libraries:
     the performance characteristics of the code.
   library_name: profiler
   release_level: stable
-  api_id: profiler.googleapis.com
+  api_id: cloudprofiler.googleapis.com
   GAPICs:
   - proto_path: google/devtools/cloudprofiler/v2
 
@@ -1753,6 +1755,7 @@ libraries:
     empowers organizations to define, assess early, deploy, and monitor their security
     measures in a unified way and helps simplify governance and reduces administrative
     toil.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/securityposture/v1
 
@@ -2075,6 +2078,7 @@ libraries:
   api_description: allows you to manipulate video content to dynamically insert ads
     prior to delivery to client devices.
   library_name: video-stitcher
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/video/stitcher/v1
 
