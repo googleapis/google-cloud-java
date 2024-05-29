@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.8.0](https://github.com/googleapis/java-shared-config/compare/v1.7.7...v1.8.0) (2024-05-29)
+
+
+### Features
+
+* [java] allow passing libraries_bom_version from env ([#1967](https://github.com/googleapis/java-shared-config/issues/1967)) ([#825](https://github.com/googleapis/java-shared-config/issues/825)) ([07c7cec](https://github.com/googleapis/java-shared-config/commit/07c7cece6ddc793e01b108e96416750fd00c09da))
+* Add `libraries_bom_version` in metadata ([#1956](https://github.com/googleapis/java-shared-config/issues/1956)) ([#805](https://github.com/googleapis/java-shared-config/issues/805)) ([a30f02d](https://github.com/googleapis/java-shared-config/commit/a30f02d78d39ee8a2a2be0fd8401a647871d10ca))
+* Use maven properties to manage dependency versions for native profile ([#824](https://github.com/googleapis/java-shared-config/issues/824)) ([465bb39](https://github.com/googleapis/java-shared-config/commit/465bb399aef9aa8383f11c23f10a97df49c1d057))
+
+
+### Dependencies
+
+* Update actions/setup-node action to v4 ([#811](https://github.com/googleapis/java-shared-config/issues/811)) ([fdb1044](https://github.com/googleapis/java-shared-config/commit/fdb1044693c2175782f02a670b550e96f1c15d0b))
+* Update actions/setup-node action to v4 ([#818](https://github.com/googleapis/java-shared-config/issues/818)) ([6222364](https://github.com/googleapis/java-shared-config/commit/6222364b4795661f282593b135d415827700d635))
+* Update actions/setup-node action to v4 ([#819](https://github.com/googleapis/java-shared-config/issues/819)) ([ffb2a7a](https://github.com/googleapis/java-shared-config/commit/ffb2a7a3ff131a8d5af869098fdd69d0cdd87c4d))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.16.0 ([#816](https://github.com/googleapis/java-shared-config/issues/816)) ([efc5585](https://github.com/googleapis/java-shared-config/commit/efc5585ec817e327e0381412c2b2436e3ef0510d))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.17.0 ([#831](https://github.com/googleapis/java-shared-config/issues/831)) ([b0c9e75](https://github.com/googleapis/java-shared-config/commit/b0c9e75e778950401df28adb10998a676d6a24ff))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.2 ([#826](https://github.com/googleapis/java-shared-config/issues/826)) ([881e72f](https://github.com/googleapis/java-shared-config/commit/881e72f7e5dc1304929b89e9ec9d1ba9d4d0bead))
+
 ## [1.7.7](https://github.com/googleapis/java-shared-config/compare/v1.7.6...v1.7.7) (2024-04-17)
 
 
