@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/telecom-network-automation",
   "api_description": "APIs to automate 5G deployment and management of cloud infrastructure and network functions.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-telcoautomation/latest/overview",
-  "release_level": "preview",
+  "release_level": "stable",
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
