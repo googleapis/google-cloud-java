@@ -5,3 +5,5 @@ trustedContributors:
 annotations:
 - type: comment
   text: "/gcbrun"
+- type: label
+  text: "kokoro:force-run"
