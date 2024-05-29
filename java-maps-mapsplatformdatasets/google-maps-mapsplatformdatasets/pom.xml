@@ -47,10 +47,6 @@
       <artifactId>proto-google-maps-mapsplatformdatasets-v1</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.maps.api.grpc</groupId>
-      <artifactId>proto-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
@@ -95,11 +91,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.maps.api.grpc</groupId>
-      <artifactId>grpc-google-maps-mapsplatformdatasets-v1alpha</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
