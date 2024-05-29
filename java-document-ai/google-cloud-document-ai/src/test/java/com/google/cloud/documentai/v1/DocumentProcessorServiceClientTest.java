@@ -618,6 +618,8 @@ public class DocumentProcessorServiceClientTest {
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -666,6 +668,8 @@ public class DocumentProcessorServiceClientTest {
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -817,6 +821,8 @@ public class DocumentProcessorServiceClientTest {
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
             .setGoogleManaged(true)
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -868,6 +874,8 @@ public class DocumentProcessorServiceClientTest {
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
             .setGoogleManaged(true)
             .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -1280,6 +1288,8 @@ public class DocumentProcessorServiceClientTest {
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -1331,6 +1341,8 @@ public class DocumentProcessorServiceClientTest {
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 

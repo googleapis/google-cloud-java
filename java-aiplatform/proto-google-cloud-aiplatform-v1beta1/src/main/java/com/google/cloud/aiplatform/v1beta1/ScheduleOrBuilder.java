@@ -177,7 +177,8 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1beta1.NotebookService.CreateNotebookExecutionJob].
    * </pre>
    *
    * <code>
@@ -191,7 +192,8 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1beta1.NotebookService.CreateNotebookExecutionJob].
    * </pre>
    *
    * <code>
@@ -206,7 +208,8 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Request for [NotebookService.CreateNotebookExecutionJob][].
+   * Request for
+   * [NotebookService.CreateNotebookExecutionJob][google.cloud.aiplatform.v1beta1.NotebookService.CreateNotebookExecutionJob].
    * </pre>
    *
    * <code>

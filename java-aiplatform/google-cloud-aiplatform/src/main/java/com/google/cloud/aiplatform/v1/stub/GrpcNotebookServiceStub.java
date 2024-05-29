@@ -46,6 +46,7 @@ import com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeResponse;
@@ -122,6 +123,20 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotebookRuntimeTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateMethodDescriptor =
+          MethodDescriptor
+              .<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.NotebookService/UpdateNotebookRuntimeTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateNotebookRuntimeTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NotebookRuntimeTemplate.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<AssignNotebookRuntimeRequest, Operation>
@@ -252,6 +267,8 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   private final OperationCallable<
           DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
       deleteNotebookRuntimeTemplateOperationCallable;
+  private final UnaryCallable<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateCallable;
   private final UnaryCallable<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeCallable;
   private final OperationCallable<
@@ -377,6 +394,20 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateTransportSettings =
+            GrpcCallSettings
+                .<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>newBuilder()
+                .setMethodDescriptor(updateNotebookRuntimeTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "notebook_runtime_template.name",
+                          String.valueOf(request.getNotebookRuntimeTemplate().getName()));
                       return builder.build();
                     })
                 .build();
@@ -534,6 +565,11 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.deleteNotebookRuntimeTemplateOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateNotebookRuntimeTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateNotebookRuntimeTemplateTransportSettings,
+            settings.updateNotebookRuntimeTemplateSettings(),
+            clientContext);
     this.assignNotebookRuntimeCallable =
         callableFactory.createUnaryCallable(
             assignNotebookRuntimeTransportSettings,
@@ -666,6 +702,12 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   public OperationCallable<DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
       deleteNotebookRuntimeTemplateOperationCallable() {
     return deleteNotebookRuntimeTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateCallable() {
+    return updateNotebookRuntimeTemplateCallable;
   }
 
   @Override

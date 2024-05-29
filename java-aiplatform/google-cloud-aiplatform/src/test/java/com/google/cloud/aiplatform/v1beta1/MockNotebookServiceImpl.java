@@ -146,6 +146,28 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   }
 
   @Override
+  public void updateNotebookRuntimeTemplate(
+      UpdateNotebookRuntimeTemplateRequest request,
+      StreamObserver<NotebookRuntimeTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NotebookRuntimeTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((NotebookRuntimeTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateNotebookRuntimeTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NotebookRuntimeTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void assignNotebookRuntime(
       AssignNotebookRuntimeRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -266,6 +288,27 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartNotebookRuntime, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createNotebookExecutionJob(
+      CreateNotebookExecutionJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNotebookExecutionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

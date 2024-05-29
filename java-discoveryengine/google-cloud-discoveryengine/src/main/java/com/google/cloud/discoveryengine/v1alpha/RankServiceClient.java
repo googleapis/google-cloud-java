@@ -48,6 +48,7 @@ import javax.annotation.Generated;
  *           .setQuery("query107944136")
  *           .addAllRecords(new ArrayList<RankingRecord>())
  *           .setIgnoreRecordDetailsInResponse(true)
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RankResponse response = rankServiceClient.rank(request);
  * }
@@ -203,6 +204,7 @@ public class RankServiceClient implements BackgroundResource {
    *           .setQuery("query107944136")
    *           .addAllRecords(new ArrayList<RankingRecord>())
    *           .setIgnoreRecordDetailsInResponse(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   RankResponse response = rankServiceClient.rank(request);
    * }
@@ -237,6 +239,7 @@ public class RankServiceClient implements BackgroundResource {
    *           .setQuery("query107944136")
    *           .addAllRecords(new ArrayList<RankingRecord>())
    *           .setIgnoreRecordDetailsInResponse(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<RankResponse> future = rankServiceClient.rankCallable().futureCall(request);
    *   // Do something.

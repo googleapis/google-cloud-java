@@ -326,6 +326,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The unique identifier of the terms of service to update.
    * Available term ids:
+   *
    * * `GA_DATA_USE_TERMS`: [Terms for data
    * use](https://cloud.google.com/retail/data-use-terms). When using this
    * service term id, the acceptable
@@ -355,6 +356,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The unique identifier of the terms of service to update.
    * Available term ids:
+   *
    * * `GA_DATA_USE_TERMS`: [Terms for data
    * use](https://cloud.google.com/retail/data-use-terms). When using this
    * service term id, the acceptable
@@ -1108,6 +1110,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The unique identifier of the terms of service to update.
      * Available term ids:
+     *
      * * `GA_DATA_USE_TERMS`: [Terms for data
      * use](https://cloud.google.com/retail/data-use-terms). When using this
      * service term id, the acceptable
@@ -1136,6 +1139,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The unique identifier of the terms of service to update.
      * Available term ids:
+     *
      * * `GA_DATA_USE_TERMS`: [Terms for data
      * use](https://cloud.google.com/retail/data-use-terms). When using this
      * service term id, the acceptable
@@ -1164,6 +1168,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The unique identifier of the terms of service to update.
      * Available term ids:
+     *
      * * `GA_DATA_USE_TERMS`: [Terms for data
      * use](https://cloud.google.com/retail/data-use-terms). When using this
      * service term id, the acceptable
@@ -1191,6 +1196,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The unique identifier of the terms of service to update.
      * Available term ids:
+     *
      * * `GA_DATA_USE_TERMS`: [Terms for data
      * use](https://cloud.google.com/retail/data-use-terms). When using this
      * service term id, the acceptable
@@ -1214,6 +1220,7 @@ public final class ReportConsentChangeRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The unique identifier of the terms of service to update.
      * Available term ids:
+     *
      * * `GA_DATA_USE_TERMS`: [Terms for data
      * use](https://cloud.google.com/retail/data-use-terms). When using this
      * service term id, the acceptable

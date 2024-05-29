@@ -305,6 +305,41 @@ public interface FeatureValueOrBuilder
    *
    *
    * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StructValue struct_value = 15;</code>
+   *
+   * @return Whether the structValue field is set.
+   */
+  boolean hasStructValue();
+  /**
+   *
+   *
+   * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StructValue struct_value = 15;</code>
+   *
+   * @return The structValue.
+   */
+  com.google.cloud.aiplatform.v1.StructValue getStructValue();
+  /**
+   *
+   *
+   * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.StructValue struct_value = 15;</code>
+   */
+  com.google.cloud.aiplatform.v1.StructValueOrBuilder getStructValueOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata of feature value.
    * </pre>
    *

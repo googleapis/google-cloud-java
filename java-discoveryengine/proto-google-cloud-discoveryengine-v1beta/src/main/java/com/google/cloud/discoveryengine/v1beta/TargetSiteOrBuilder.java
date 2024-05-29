@@ -158,6 +158,31 @@ public interface TargetSiteOrBuilder
    *
    *
    * <pre>
+   * Output only. Root domain of the provided_uri_pattern.
+   * </pre>
+   *
+   * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rootDomainUri.
+   */
+  java.lang.String getRootDomainUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Root domain of the provided_uri_pattern.
+   * </pre>
+   *
+   * <code>string root_domain_uri = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rootDomainUri.
+   */
+  com.google.protobuf.ByteString getRootDomainUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Site ownership and validity verification status.
    * </pre>
    *

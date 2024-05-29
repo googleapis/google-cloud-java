@@ -33,6 +33,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.ListCustomModelsRequest;
+import com.google.cloud.discoveryengine.v1beta.ListCustomModelsResponse;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelMetadata;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelRequest;
 import com.google.cloud.discoveryengine.v1beta.TrainCustomModelResponse;
@@ -103,10 +105,47 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsMethodDescriptor =
+          ApiMethodDescriptor.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.SearchTuningService/ListCustomModels")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomModelsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{dataStore=projects/*/locations/*/collections/*/dataStores/*}/customModels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomModelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "dataStore", request.getDataStore());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomModelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomModelsResponse>newBuilder()
+                      .setDefaultInstance(ListCustomModelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable;
   private final OperationCallable<
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable;
+  private final UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -158,6 +197,17 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
@@ -309,6 +359,18 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsTransportSettings =
+            HttpJsonCallSettings.<ListCustomModelsRequest, ListCustomModelsResponse>newBuilder()
+                .setMethodDescriptor(listCustomModelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("data_store", String.valueOf(request.getDataStore()));
+                      return builder.build();
+                    })
+                .build();
 
     this.trainCustomModelCallable =
         callableFactory.createUnaryCallable(
@@ -319,6 +381,9 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
             settings.trainCustomModelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listCustomModelsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomModelsTransportSettings, settings.listCustomModelsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -328,6 +393,7 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(trainCustomModelMethodDescriptor);
+    methodDescriptors.add(listCustomModelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -345,6 +411,12 @@ public class HttpJsonSearchTuningServiceStub extends SearchTuningServiceStub {
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationCallable() {
     return trainCustomModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable() {
+    return listCustomModelsCallable;
   }
 
   @Override

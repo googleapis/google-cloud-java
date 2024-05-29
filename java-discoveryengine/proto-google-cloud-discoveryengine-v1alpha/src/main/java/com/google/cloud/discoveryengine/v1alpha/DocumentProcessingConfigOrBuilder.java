@@ -154,6 +154,7 @@ public interface DocumentProcessingConfigOrBuilder
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -173,6 +174,7 @@ public interface DocumentProcessingConfigOrBuilder
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -198,6 +200,7 @@ public interface DocumentProcessingConfigOrBuilder
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -220,6 +223,7 @@ public interface DocumentProcessingConfigOrBuilder
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -245,6 +249,7 @@ public interface DocumentProcessingConfigOrBuilder
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and

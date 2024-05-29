@@ -28,7 +28,7 @@ public interface IndexStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. The number of vectors in the Index.
+   * Output only. The number of dense vectors in the Index.
    * </pre>
    *
    * <code>int64 vectors_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -36,6 +36,19 @@ public interface IndexStatsOrBuilder
    * @return The vectorsCount.
    */
   long getVectorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of sparse vectors in the Index.
+   * </pre>
+   *
+   * <code>int64 sparse_vectors_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sparseVectorsCount.
+   */
+  long getSparseVectorsCount();
 
   /**
    *

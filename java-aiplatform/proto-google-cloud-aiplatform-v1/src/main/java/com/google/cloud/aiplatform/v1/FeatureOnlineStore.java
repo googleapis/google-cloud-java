@@ -3565,6 +3565,65 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         : dedicatedServingEndpoint_;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3607,6 +3666,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     if (storageTypeCase_ == 12) {
       output.writeMessage(
           12, (com.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized) storageType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(13, getEncryptionSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3658,6 +3720,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized) storageType_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3689,6 +3754,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     if (hasDedicatedServingEndpoint() != other.hasDedicatedServingEndpoint()) return false;
     if (hasDedicatedServingEndpoint()) {
       if (!getDedicatedServingEndpoint().equals(other.getDedicatedServingEndpoint())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!getStorageTypeCase().equals(other.getStorageTypeCase())) return false;
     switch (storageTypeCase_) {
@@ -3733,6 +3802,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     if (hasDedicatedServingEndpoint()) {
       hash = (37 * hash) + DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getDedicatedServingEndpoint().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     switch (storageTypeCase_) {
       case 8:
@@ -3913,6 +3986,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getDedicatedServingEndpointFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -3944,6 +4018,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (dedicatedServingEndpointBuilder_ != null) {
         dedicatedServingEndpointBuilder_.dispose();
         dedicatedServingEndpointBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       storageTypeCase_ = 0;
       storageType_ = null;
@@ -4012,6 +4091,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                 ? dedicatedServingEndpoint_
                 : dedicatedServingEndpointBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4096,6 +4180,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasDedicatedServingEndpoint()) {
         mergeDedicatedServingEndpoint(other.getDedicatedServingEndpoint());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       switch (other.getStorageTypeCase()) {
         case BIGTABLE:
@@ -4200,6 +4287,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                 storageTypeCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5901,6 +5994,220 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         dedicatedServingEndpoint_ = null;
       }
       return dedicatedServingEndpointBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * online store will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

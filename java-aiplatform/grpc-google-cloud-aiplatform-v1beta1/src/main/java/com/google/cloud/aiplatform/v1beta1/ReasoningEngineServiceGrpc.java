@@ -189,6 +189,57 @@ public final class ReasoningEngineServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest,
+          com.google.longrunning.Operation>
+      getUpdateReasoningEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReasoningEngine",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest,
+          com.google.longrunning.Operation>
+      getUpdateReasoningEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest,
+            com.google.longrunning.Operation>
+        getUpdateReasoningEngineMethod;
+    if ((getUpdateReasoningEngineMethod = ReasoningEngineServiceGrpc.getUpdateReasoningEngineMethod)
+        == null) {
+      synchronized (ReasoningEngineServiceGrpc.class) {
+        if ((getUpdateReasoningEngineMethod =
+                ReasoningEngineServiceGrpc.getUpdateReasoningEngineMethod)
+            == null) {
+          ReasoningEngineServiceGrpc.getUpdateReasoningEngineMethod =
+              getUpdateReasoningEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReasoningEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReasoningEngineServiceMethodDescriptorSupplier(
+                              "UpdateReasoningEngine"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReasoningEngineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.DeleteReasoningEngineRequest,
           com.google.longrunning.Operation>
       getDeleteReasoningEngineMethod;
@@ -338,6 +389,20 @@ public final class ReasoningEngineServiceGrpc {
      *
      *
      * <pre>
+     * Updates a reasoning engine.
+     * </pre>
+     */
+    default void updateReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReasoningEngineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a reasoning engine.
      * </pre>
      */
@@ -439,6 +504,22 @@ public final class ReasoningEngineServiceGrpc {
      *
      *
      * <pre>
+     * Updates a reasoning engine.
+     * </pre>
+     */
+    public void updateReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReasoningEngineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a reasoning engine.
      * </pre>
      */
@@ -509,6 +590,19 @@ public final class ReasoningEngineServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReasoningEnginesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReasoningEngineMethod(), getCallOptions(), request);
     }
 
     /**
@@ -593,6 +687,20 @@ public final class ReasoningEngineServiceGrpc {
      *
      *
      * <pre>
+     * Updates a reasoning engine.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateReasoningEngine(
+            com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReasoningEngineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a reasoning engine.
      * </pre>
      */
@@ -607,7 +715,8 @@ public final class ReasoningEngineServiceGrpc {
   private static final int METHODID_CREATE_REASONING_ENGINE = 0;
   private static final int METHODID_GET_REASONING_ENGINE = 1;
   private static final int METHODID_LIST_REASONING_ENGINES = 2;
-  private static final int METHODID_DELETE_REASONING_ENGINE = 3;
+  private static final int METHODID_UPDATE_REASONING_ENGINE = 3;
+  private static final int METHODID_DELETE_REASONING_ENGINE = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -643,6 +752,11 @@ public final class ReasoningEngineServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_REASONING_ENGINE:
+          serviceImpl.updateReasoningEngine(
+              (com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_REASONING_ENGINE:
           serviceImpl.deleteReasoningEngine(
@@ -687,6 +801,12 @@ public final class ReasoningEngineServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest,
                     com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse>(
                     service, METHODID_LIST_REASONING_ENGINES)))
+        .addMethod(
+            getUpdateReasoningEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_REASONING_ENGINE)))
         .addMethod(
             getDeleteReasoningEngineMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -747,6 +867,7 @@ public final class ReasoningEngineServiceGrpc {
                       .addMethod(getCreateReasoningEngineMethod())
                       .addMethod(getGetReasoningEngineMethod())
                       .addMethod(getListReasoningEnginesMethod())
+                      .addMethod(getUpdateReasoningEngineMethod())
                       .addMethod(getDeleteReasoningEngineMethod())
                       .build();
         }

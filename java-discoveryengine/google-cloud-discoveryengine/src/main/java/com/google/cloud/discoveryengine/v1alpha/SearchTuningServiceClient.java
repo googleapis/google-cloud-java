@@ -43,17 +43,14 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
- *   TrainCustomModelRequest request =
- *       TrainCustomModelRequest.newBuilder()
+ *   ListCustomModelsRequest request =
+ *       ListCustomModelsRequest.newBuilder()
  *           .setDataStore(
  *               DataStoreName.ofProjectLocationCollectionDataStoreName(
  *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
  *                   .toString())
- *           .setModelType("modelType-2010627581")
- *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
  *           .build();
- *   TrainCustomModelResponse response =
- *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
  * }
  * }</pre>
  *
@@ -80,6 +77,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> trainCustomModelOperationCallable()
  *           <li><p> trainCustomModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCustomModels</td>
+ *      <td><p> Gets a list of all the custom models.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCustomModels(ListCustomModelsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCustomModelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -238,6 +249,7 @@ public class SearchTuningServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setModelType("modelType-2010627581")
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setModelId("modelId1226956324")
    *           .build();
    *   TrainCustomModelResponse response =
    *       searchTuningServiceClient.trainCustomModelAsync(request).get();
@@ -273,6 +285,7 @@ public class SearchTuningServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setModelType("modelType-2010627581")
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setModelId("modelId1226956324")
    *           .build();
    *   OperationFuture<TrainCustomModelResponse, TrainCustomModelMetadata> future =
    *       searchTuningServiceClient.trainCustomModelOperationCallable().futureCall(request);
@@ -308,6 +321,7 @@ public class SearchTuningServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setModelType("modelType-2010627581")
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+   *           .setModelId("modelId1226956324")
    *           .build();
    *   ApiFuture<Operation> future =
    *       searchTuningServiceClient.trainCustomModelCallable().futureCall(request);
@@ -318,6 +332,69 @@ public class SearchTuningServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable() {
     return stub.trainCustomModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of all the custom models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+   *   ListCustomModelsRequest request =
+   *       ListCustomModelsRequest.newBuilder()
+   *           .setDataStore(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomModelsResponse listCustomModels(ListCustomModelsRequest request) {
+    return listCustomModelsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a list of all the custom models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+   *   ListCustomModelsRequest request =
+   *       ListCustomModelsRequest.newBuilder()
+   *           .setDataStore(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ListCustomModelsResponse> future =
+   *       searchTuningServiceClient.listCustomModelsCallable().futureCall(request);
+   *   // Do something.
+   *   ListCustomModelsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable() {
+    return stub.listCustomModelsCallable();
   }
 
   @Override

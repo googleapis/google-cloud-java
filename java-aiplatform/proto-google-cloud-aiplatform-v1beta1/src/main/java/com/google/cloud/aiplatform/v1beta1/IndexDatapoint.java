@@ -66,6 +66,1031 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Builder.class);
   }
 
+  public interface SparseEmbeddingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.Float> getValuesList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    float getValues(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the dimensions.
+     */
+    java.util.List<java.lang.Long> getDimensionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of dimensions.
+     */
+    int getDimensionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The dimensions at the given index.
+     */
+    long getDimensions(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Feature embedding vector for sparse index. An array of numbers whose values
+   * are located in the specified dimensions.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding}
+   */
+  public static final class SparseEmbedding extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)
+      SparseEmbeddingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SparseEmbedding.newBuilder() to construct.
+    private SparseEmbedding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SparseEmbedding() {
+      values_ = emptyFloatList();
+      dimensions_ = emptyLongList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SparseEmbedding();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.IndexProto
+          .internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.IndexProto
+          .internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.class,
+              com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the values.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Float> getValuesList() {
+      return values_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of embedding values of the sparse vector.
+     * </pre>
+     *
+     * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public float getValues(int index) {
+      return values_.getFloat(index);
+    }
+
+    private int valuesMemoizedSerializedSize = -1;
+
+    public static final int DIMENSIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.LongList dimensions_ = emptyLongList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the dimensions.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Long> getDimensionsList() {
+      return dimensions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of dimensions.
+     */
+    public int getDimensionsCount() {
+      return dimensions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of indexes for the embedding values of the sparse
+     * vector.
+     * </pre>
+     *
+     * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The dimensions at the given index.
+     */
+    public long getDimensions(int index) {
+      return dimensions_.getLong(index);
+    }
+
+    private int dimensionsMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (getValuesList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeFloatNoTag(values_.getFloat(i));
+      }
+      if (getDimensionsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(dimensionsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dimensions_.size(); i++) {
+        output.writeInt64NoTag(dimensions_.getLong(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 4 * getValuesList().size();
+        size += dataSize;
+        if (!getValuesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        valuesMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dimensions_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(dimensions_.getLong(i));
+        }
+        size += dataSize;
+        if (!getDimensionsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        dimensionsMemoizedSerializedSize = dataSize;
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding other =
+          (com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding) obj;
+
+      if (!getValuesList().equals(other.getValuesList())) return false;
+      if (!getDimensionsList().equals(other.getDimensionsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      if (getDimensionsCount() > 0) {
+        hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDimensionsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature embedding vector for sparse index. An array of numbers whose values
+     * are located in the specified dimensions.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.class,
+                com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        values_ = emptyFloatList();
+        dimensions_ = emptyLongList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding build() {
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding result =
+            new com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          result.values_ = values_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          dimensions_.makeImmutable();
+          result.dimensions_ = dimensions_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+                .getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            values_.makeImmutable();
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        if (!other.dimensions_.isEmpty()) {
+          if (dimensions_.isEmpty()) {
+            dimensions_ = other.dimensions_;
+            dimensions_.makeImmutable();
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureDimensionsIsMutable();
+            dimensions_.addAll(other.dimensions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  float v = input.readFloat();
+                  ensureValuesIsMutable();
+                  values_.addFloat(v);
+                  break;
+                } // case 13
+              case 10:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  int alloc = length > 4096 ? 4096 : length;
+                  ensureValuesIsMutable(alloc / 4);
+                  while (input.getBytesUntilLimit() > 0) {
+                    values_.addFloat(input.readFloat());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  long v = input.readInt64();
+                  ensureDimensionsIsMutable();
+                  dimensions_.addLong(v);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureDimensionsIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    dimensions_.addLong(input.readInt64());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
+
+      private void ensureValuesIsMutable() {
+        if (!values_.isModifiable()) {
+          values_ = makeMutableCopy(values_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      private void ensureValuesIsMutable(int capacity) {
+        if (!values_.isModifiable()) {
+          values_ = makeMutableCopy(values_, capacity);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the values.
+       */
+      public java.util.List<java.lang.Float> getValuesList() {
+        values_.makeImmutable();
+        return values_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public float getValues(int index) {
+        return values_.getFloat(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(int index, float value) {
+
+        ensureValuesIsMutable();
+        values_.setFloat(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(float value) {
+
+        ensureValuesIsMutable();
+        values_.addFloat(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of embedding values of the sparse vector.
+       * </pre>
+       *
+       * <code>repeated float values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ = emptyFloatList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.LongList dimensions_ = emptyLongList();
+
+      private void ensureDimensionsIsMutable() {
+        if (!dimensions_.isModifiable()) {
+          dimensions_ = makeMutableCopy(dimensions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the dimensions.
+       */
+      public java.util.List<java.lang.Long> getDimensionsList() {
+        dimensions_.makeImmutable();
+        return dimensions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of dimensions.
+       */
+      public int getDimensionsCount() {
+        return dimensions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The dimensions at the given index.
+       */
+      public long getDimensions(int index) {
+        return dimensions_.getLong(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The dimensions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDimensions(int index, long value) {
+
+        ensureDimensionsIsMutable();
+        dimensions_.setLong(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The dimensions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDimensions(long value) {
+
+        ensureDimensionsIsMutable();
+        dimensions_.addLong(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The dimensions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDimensions(java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureDimensionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of indexes for the embedding values of the sparse
+       * vector.
+       * </pre>
+       *
+       * <code>repeated int64 dimensions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDimensions() {
+        dimensions_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding)
+    private static final com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SparseEmbedding> PARSER =
+        new com.google.protobuf.AbstractParser<SparseEmbedding>() {
+          @java.lang.Override
+          public SparseEmbedding parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SparseEmbedding> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SparseEmbedding> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface RestrictionOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction)
@@ -3805,8 +4830,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3821,8 +4846,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3836,8 +4861,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3850,6 +4875,63 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int featureVectorMemoizedSerializedSize = -1;
+
+  public static final int SPARSE_EMBEDDING_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparseEmbedding_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sparseEmbedding field is set.
+   */
+  @java.lang.Override
+  public boolean hasSparseEmbedding() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sparseEmbedding.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding getSparseEmbedding() {
+    return sparseEmbedding_ == null
+        ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.getDefaultInstance()
+        : sparseEmbedding_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder
+      getSparseEmbeddingOrBuilder() {
+    return sparseEmbedding_ == null
+        ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.getDefaultInstance()
+        : sparseEmbedding_;
+  }
 
   public static final int RESTRICTS_FIELD_NUMBER = 4;
 
@@ -4064,7 +5146,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCrowdingTag() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -4134,11 +5216,14 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < restricts_.size(); i++) {
       output.writeMessage(4, restricts_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getCrowdingTag());
     }
     for (int i = 0; i < numericRestricts_.size(); i++) {
       output.writeMessage(6, numericRestricts_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getSparseEmbedding());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4165,11 +5250,14 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < restricts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, restricts_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCrowdingTag());
     }
     for (int i = 0; i < numericRestricts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, numericRestricts_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSparseEmbedding());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4189,6 +5277,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDatapointId().equals(other.getDatapointId())) return false;
     if (!getFeatureVectorList().equals(other.getFeatureVectorList())) return false;
+    if (hasSparseEmbedding() != other.hasSparseEmbedding()) return false;
+    if (hasSparseEmbedding()) {
+      if (!getSparseEmbedding().equals(other.getSparseEmbedding())) return false;
+    }
     if (!getRestrictsList().equals(other.getRestrictsList())) return false;
     if (!getNumericRestrictsList().equals(other.getNumericRestrictsList())) return false;
     if (hasCrowdingTag() != other.hasCrowdingTag()) return false;
@@ -4211,6 +5303,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (getFeatureVectorCount() > 0) {
       hash = (37 * hash) + FEATURE_VECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getFeatureVectorList().hashCode();
+    }
+    if (hasSparseEmbedding()) {
+      hash = (37 * hash) + SPARSE_EMBEDDING_FIELD_NUMBER;
+      hash = (53 * hash) + getSparseEmbedding().hashCode();
     }
     if (getRestrictsCount() > 0) {
       hash = (37 * hash) + RESTRICTS_FIELD_NUMBER;
@@ -4364,6 +5460,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSparseEmbeddingFieldBuilder();
         getRestrictsFieldBuilder();
         getNumericRestrictsFieldBuilder();
         getCrowdingTagFieldBuilder();
@@ -4376,20 +5473,25 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       datapointId_ = "";
       featureVector_ = emptyFloatList();
+      sparseEmbedding_ = null;
+      if (sparseEmbeddingBuilder_ != null) {
+        sparseEmbeddingBuilder_.dispose();
+        sparseEmbeddingBuilder_ = null;
+      }
       if (restrictsBuilder_ == null) {
         restricts_ = java.util.Collections.emptyList();
       } else {
         restricts_ = null;
         restrictsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (numericRestrictsBuilder_ == null) {
         numericRestricts_ = java.util.Collections.emptyList();
       } else {
         numericRestricts_ = null;
         numericRestrictsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       crowdingTag_ = null;
       if (crowdingTagBuilder_ != null) {
         crowdingTagBuilder_.dispose();
@@ -4433,18 +5535,18 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.IndexDatapoint result) {
       if (restrictsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           restricts_ = java.util.Collections.unmodifiableList(restricts_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.restricts_ = restricts_;
       } else {
         result.restricts_ = restrictsBuilder_.build();
       }
       if (numericRestrictsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           numericRestricts_ = java.util.Collections.unmodifiableList(numericRestricts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.numericRestricts_ = numericRestricts_;
       } else {
@@ -4462,10 +5564,15 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         result.featureVector_ = featureVector_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sparseEmbedding_ =
+            sparseEmbeddingBuilder_ == null ? sparseEmbedding_ : sparseEmbeddingBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.crowdingTag_ =
             crowdingTagBuilder_ == null ? crowdingTag_ : crowdingTagBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4532,11 +5639,14 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasSparseEmbedding()) {
+        mergeSparseEmbedding(other.getSparseEmbedding());
+      }
       if (restrictsBuilder_ == null) {
         if (!other.restricts_.isEmpty()) {
           if (restricts_.isEmpty()) {
             restricts_ = other.restricts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRestrictsIsMutable();
             restricts_.addAll(other.restricts_);
@@ -4549,7 +5659,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             restrictsBuilder_.dispose();
             restrictsBuilder_ = null;
             restricts_ = other.restricts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             restrictsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRestrictsFieldBuilder()
@@ -4563,7 +5673,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.numericRestricts_.isEmpty()) {
           if (numericRestricts_.isEmpty()) {
             numericRestricts_ = other.numericRestricts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureNumericRestrictsIsMutable();
             numericRestricts_.addAll(other.numericRestricts_);
@@ -4576,7 +5686,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             numericRestrictsBuilder_.dispose();
             numericRestrictsBuilder_ = null;
             numericRestricts_ = other.numericRestricts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             numericRestrictsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNumericRestrictsFieldBuilder()
@@ -4657,7 +5767,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getCrowdingTagFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -4675,6 +5785,12 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getSparseEmbeddingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4819,8 +5935,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4835,8 +5951,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4850,8 +5966,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4866,8 +5982,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4888,8 +6004,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4909,8 +6025,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4929,8 +6045,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Feature embedding vector. An array of numbers with the length of
-     * [NearestNeighborSearchConfig.dimensions].
+     * Required. Feature embedding vector for dense index. An array of numbers
+     * with the length of [NearestNeighborSearchConfig.dimensions].
      * </pre>
      *
      * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4944,15 +6060,228 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparseEmbedding_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding,
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder,
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder>
+        sparseEmbeddingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sparseEmbedding field is set.
+     */
+    public boolean hasSparseEmbedding() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sparseEmbedding.
+     */
+    public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding getSparseEmbedding() {
+      if (sparseEmbeddingBuilder_ == null) {
+        return sparseEmbedding_ == null
+            ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+                .getDefaultInstance()
+            : sparseEmbedding_;
+      } else {
+        return sparseEmbeddingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSparseEmbedding(
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding value) {
+      if (sparseEmbeddingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sparseEmbedding_ = value;
+      } else {
+        sparseEmbeddingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSparseEmbedding(
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder
+            builderForValue) {
+      if (sparseEmbeddingBuilder_ == null) {
+        sparseEmbedding_ = builderForValue.build();
+      } else {
+        sparseEmbeddingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSparseEmbedding(
+        com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding value) {
+      if (sparseEmbeddingBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && sparseEmbedding_ != null
+            && sparseEmbedding_
+                != com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+                    .getDefaultInstance()) {
+          getSparseEmbeddingBuilder().mergeFrom(value);
+        } else {
+          sparseEmbedding_ = value;
+        }
+      } else {
+        sparseEmbeddingBuilder_.mergeFrom(value);
+      }
+      if (sparseEmbedding_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSparseEmbedding() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sparseEmbedding_ = null;
+      if (sparseEmbeddingBuilder_ != null) {
+        sparseEmbeddingBuilder_.dispose();
+        sparseEmbeddingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder
+        getSparseEmbeddingBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSparseEmbeddingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder
+        getSparseEmbeddingOrBuilder() {
+      if (sparseEmbeddingBuilder_ != null) {
+        return sparseEmbeddingBuilder_.getMessageOrBuilder();
+      } else {
+        return sparseEmbedding_ == null
+            ? com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding
+                .getDefaultInstance()
+            : sparseEmbedding_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature embedding vector for sparse index.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding,
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder,
+            com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder>
+        getSparseEmbeddingFieldBuilder() {
+      if (sparseEmbeddingBuilder_ == null) {
+        sparseEmbeddingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding,
+                com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding.Builder,
+                com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder>(
+                getSparseEmbedding(), getParentForChildren(), isClean());
+        sparseEmbedding_ = null;
+      }
+      return sparseEmbeddingBuilder_;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction>
         restricts_ = java.util.Collections.emptyList();
 
     private void ensureRestrictsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         restricts_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction>(
                 restricts_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -5230,7 +6559,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRestricts() {
       if (restrictsBuilder_ == null) {
         restricts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         restrictsBuilder_.clear();
@@ -5395,7 +6724,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction,
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Restriction.Builder,
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.RestrictionOrBuilder>(
-                restricts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                restricts_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         restricts_ = null;
       }
       return restrictsBuilder_;
@@ -5405,12 +6734,12 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         numericRestricts_ = java.util.Collections.emptyList();
 
     private void ensureNumericRestrictsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         numericRestricts_ =
             new java.util.ArrayList<
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestriction>(
                 numericRestricts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -5682,7 +7011,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNumericRestricts() {
       if (numericRestrictsBuilder_ == null) {
         numericRestricts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         numericRestrictsBuilder_.clear();
@@ -5845,7 +7174,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestriction.Builder,
                 com.google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestrictionOrBuilder>(
                 numericRestricts_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         numericRestricts_ = null;
@@ -5874,7 +7203,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the crowdingTag field is set.
      */
     public boolean hasCrowdingTag() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -5921,7 +7250,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         crowdingTagBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5944,7 +7273,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         crowdingTagBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5963,7 +7292,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCrowdingTag(
         com.google.cloud.aiplatform.v1beta1.IndexDatapoint.CrowdingTag value) {
       if (crowdingTagBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && crowdingTag_ != null
             && crowdingTag_
                 != com.google.cloud.aiplatform.v1beta1.IndexDatapoint.CrowdingTag
@@ -5976,7 +7305,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         crowdingTagBuilder_.mergeFrom(value);
       }
       if (crowdingTag_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -5994,7 +7323,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCrowdingTag() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       crowdingTag_ = null;
       if (crowdingTagBuilder_ != null) {
         crowdingTagBuilder_.dispose();
@@ -6017,7 +7346,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.CrowdingTag.Builder
         getCrowdingTagBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCrowdingTagFieldBuilder().getBuilder();
     }

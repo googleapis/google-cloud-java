@@ -67,7 +67,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The number of vectors in the Index.
+   * Output only. The number of dense vectors in the Index.
    * </pre>
    *
    * <code>int64 vectors_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -77,6 +77,24 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getVectorsCount() {
     return vectorsCount_;
+  }
+
+  public static final int SPARSE_VECTORS_COUNT_FIELD_NUMBER = 3;
+  private long sparseVectorsCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of sparse vectors in the Index.
+   * </pre>
+   *
+   * <code>int64 sparse_vectors_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sparseVectorsCount.
+   */
+  @java.lang.Override
+  public long getSparseVectorsCount() {
+    return sparseVectorsCount_;
   }
 
   public static final int SHARDS_COUNT_FIELD_NUMBER = 2;
@@ -117,6 +135,9 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     if (shardsCount_ != 0) {
       output.writeInt32(2, shardsCount_);
     }
+    if (sparseVectorsCount_ != 0L) {
+      output.writeInt64(3, sparseVectorsCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -131,6 +152,9 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     }
     if (shardsCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, shardsCount_);
+    }
+    if (sparseVectorsCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, sparseVectorsCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -149,6 +173,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1.IndexStats) obj;
 
     if (getVectorsCount() != other.getVectorsCount()) return false;
+    if (getSparseVectorsCount() != other.getSparseVectorsCount()) return false;
     if (getShardsCount() != other.getShardsCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -163,6 +188,8 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VECTORS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVectorsCount());
+    hash = (37 * hash) + SPARSE_VECTORS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSparseVectorsCount());
     hash = (37 * hash) + SHARDS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getShardsCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -305,6 +332,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       vectorsCount_ = 0L;
+      sparseVectorsCount_ = 0L;
       shardsCount_ = 0;
       return this;
     }
@@ -346,6 +374,9 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
         result.vectorsCount_ = vectorsCount_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sparseVectorsCount_ = sparseVectorsCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.shardsCount_ = shardsCount_;
       }
     }
@@ -398,6 +429,9 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
       if (other.getVectorsCount() != 0L) {
         setVectorsCount(other.getVectorsCount());
       }
+      if (other.getSparseVectorsCount() != 0L) {
+        setSparseVectorsCount(other.getSparseVectorsCount());
+      }
       if (other.getShardsCount() != 0) {
         setShardsCount(other.getShardsCount());
       }
@@ -436,9 +470,15 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 shardsCount_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
+            case 24:
+              {
+                sparseVectorsCount_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -463,7 +503,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of vectors in the Index.
+     * Output only. The number of dense vectors in the Index.
      * </pre>
      *
      * <code>int64 vectors_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -478,7 +518,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of vectors in the Index.
+     * Output only. The number of dense vectors in the Index.
      * </pre>
      *
      * <code>int64 vectors_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -497,7 +537,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of vectors in the Index.
+     * Output only. The number of dense vectors in the Index.
      * </pre>
      *
      * <code>int64 vectors_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -507,6 +547,59 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVectorsCount() {
       bitField0_ = (bitField0_ & ~0x00000001);
       vectorsCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long sparseVectorsCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of sparse vectors in the Index.
+     * </pre>
+     *
+     * <code>int64 sparse_vectors_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sparseVectorsCount.
+     */
+    @java.lang.Override
+    public long getSparseVectorsCount() {
+      return sparseVectorsCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of sparse vectors in the Index.
+     * </pre>
+     *
+     * <code>int64 sparse_vectors_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The sparseVectorsCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSparseVectorsCount(long value) {
+
+      sparseVectorsCount_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of sparse vectors in the Index.
+     * </pre>
+     *
+     * <code>int64 sparse_vectors_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSparseVectorsCount() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sparseVectorsCount_ = 0L;
       onChanged();
       return this;
     }
@@ -542,7 +635,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setShardsCount(int value) {
 
       shardsCount_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -558,7 +651,7 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShardsCount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       shardsCount_ = 0;
       onChanged();
       return this;

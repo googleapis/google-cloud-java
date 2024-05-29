@@ -162,6 +162,56 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         : loggingConfig_;
   }
 
+  public static final int CONTAINERD_CONFIG_FIELD_NUMBER = 4;
+  private com.google.container.v1beta1.ContainerdConfig containerdConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainerdConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return The containerdConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ContainerdConfig getContainerdConfig() {
+    return containerdConfig_ == null
+        ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+    return containerdConfig_ == null
+        ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+
   public static final int HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 5;
   private com.google.container.v1beta1.HostMaintenancePolicy hostMaintenancePolicy_;
   /**
@@ -178,7 +228,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasHostMaintenancePolicy() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -216,6 +266,62 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         : hostMaintenancePolicy_;
   }
 
+  public static final int NODE_KUBELET_CONFIG_FIELD_NUMBER = 6;
+  private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return Whether the nodeKubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeKubeletConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return The nodeKubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig() {
+    return nodeKubeletConfig_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+        : nodeKubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder() {
+    return nodeKubeletConfig_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+        : nodeKubeletConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -237,7 +343,13 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       output.writeMessage(3, getLoggingConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getHostMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(6, getNodeKubeletConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -255,8 +367,14 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLoggingConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getHostMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNodeKubeletConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -282,9 +400,17 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
+    if (hasContainerdConfig() != other.hasContainerdConfig()) return false;
+    if (hasContainerdConfig()) {
+      if (!getContainerdConfig().equals(other.getContainerdConfig())) return false;
+    }
     if (hasHostMaintenancePolicy() != other.hasHostMaintenancePolicy()) return false;
     if (hasHostMaintenancePolicy()) {
       if (!getHostMaintenancePolicy().equals(other.getHostMaintenancePolicy())) return false;
+    }
+    if (hasNodeKubeletConfig() != other.hasNodeKubeletConfig()) return false;
+    if (hasNodeKubeletConfig()) {
+      if (!getNodeKubeletConfig().equals(other.getNodeKubeletConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -305,9 +431,17 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
     }
+    if (hasContainerdConfig()) {
+      hash = (37 * hash) + CONTAINERD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getContainerdConfig().hashCode();
+    }
     if (hasHostMaintenancePolicy()) {
       hash = (37 * hash) + HOST_MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getHostMaintenancePolicy().hashCode();
+    }
+    if (hasNodeKubeletConfig()) {
+      hash = (37 * hash) + NODE_KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeKubeletConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -451,7 +585,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGcfsConfigFieldBuilder();
         getLoggingConfigFieldBuilder();
+        getContainerdConfigFieldBuilder();
         getHostMaintenancePolicyFieldBuilder();
+        getNodeKubeletConfigFieldBuilder();
       }
     }
 
@@ -469,10 +605,20 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
+      }
       hostMaintenancePolicy_ = null;
       if (hostMaintenancePolicyBuilder_ != null) {
         hostMaintenancePolicyBuilder_.dispose();
         hostMaintenancePolicyBuilder_ = null;
+      }
+      nodeKubeletConfig_ = null;
+      if (nodeKubeletConfigBuilder_ != null) {
+        nodeKubeletConfigBuilder_.dispose();
+        nodeKubeletConfigBuilder_ = null;
       }
       return this;
     }
@@ -521,11 +667,23 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.containerdConfig_ =
+            containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.hostMaintenancePolicy_ =
             hostMaintenancePolicyBuilder_ == null
                 ? hostMaintenancePolicy_
                 : hostMaintenancePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nodeKubeletConfig_ =
+            nodeKubeletConfigBuilder_ == null
+                ? nodeKubeletConfig_
+                : nodeKubeletConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -582,8 +740,14 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
+      if (other.hasContainerdConfig()) {
+        mergeContainerdConfig(other.getContainerdConfig());
+      }
       if (other.hasHostMaintenancePolicy()) {
         mergeHostMaintenancePolicy(other.getHostMaintenancePolicy());
+      }
+      if (other.hasNodeKubeletConfig()) {
+        mergeNodeKubeletConfig(other.getNodeKubeletConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -623,13 +787,27 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             case 42:
               {
                 input.readMessage(
                     getHostMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getNodeKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1021,6 +1199,193 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       return loggingConfigBuilder_;
     }
 
+    private com.google.container.v1beta1.ContainerdConfig containerdConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ContainerdConfig,
+            com.google.container.v1beta1.ContainerdConfig.Builder,
+            com.google.container.v1beta1.ContainerdConfigOrBuilder>
+        containerdConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     *
+     * @return Whether the containerdConfig field is set.
+     */
+    public boolean hasContainerdConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     *
+     * @return The containerdConfig.
+     */
+    public com.google.container.v1beta1.ContainerdConfig getContainerdConfig() {
+      if (containerdConfigBuilder_ == null) {
+        return containerdConfig_ == null
+            ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      } else {
+        return containerdConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public Builder setContainerdConfig(com.google.container.v1beta1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        containerdConfig_ = value;
+      } else {
+        containerdConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public Builder setContainerdConfig(
+        com.google.container.v1beta1.ContainerdConfig.Builder builderForValue) {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfig_ = builderForValue.build();
+      } else {
+        containerdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public Builder mergeContainerdConfig(com.google.container.v1beta1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && containerdConfig_ != null
+            && containerdConfig_
+                != com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()) {
+          getContainerdConfigBuilder().mergeFrom(value);
+        } else {
+          containerdConfig_ = value;
+        }
+      } else {
+        containerdConfigBuilder_.mergeFrom(value);
+      }
+      if (containerdConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public Builder clearContainerdConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public com.google.container.v1beta1.ContainerdConfig.Builder getContainerdConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getContainerdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    public com.google.container.v1beta1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+      if (containerdConfigBuilder_ != null) {
+        return containerdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return containerdConfig_ == null
+            ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ContainerdConfig,
+            com.google.container.v1beta1.ContainerdConfig.Builder,
+            com.google.container.v1beta1.ContainerdConfigOrBuilder>
+        getContainerdConfigFieldBuilder() {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ContainerdConfig,
+                com.google.container.v1beta1.ContainerdConfig.Builder,
+                com.google.container.v1beta1.ContainerdConfigOrBuilder>(
+                getContainerdConfig(), getParentForChildren(), isClean());
+        containerdConfig_ = null;
+      }
+      return containerdConfigBuilder_;
+    }
+
     private com.google.container.v1beta1.HostMaintenancePolicy hostMaintenancePolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.HostMaintenancePolicy,
@@ -1040,7 +1405,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * @return Whether the hostMaintenancePolicy field is set.
      */
     public boolean hasHostMaintenancePolicy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1083,7 +1448,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       } else {
         hostMaintenancePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1104,7 +1469,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       } else {
         hostMaintenancePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1121,7 +1486,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     public Builder mergeHostMaintenancePolicy(
         com.google.container.v1beta1.HostMaintenancePolicy value) {
       if (hostMaintenancePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && hostMaintenancePolicy_ != null
             && hostMaintenancePolicy_
                 != com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()) {
@@ -1133,7 +1498,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         hostMaintenancePolicyBuilder_.mergeFrom(value);
       }
       if (hostMaintenancePolicy_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1149,7 +1514,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
      */
     public Builder clearHostMaintenancePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       hostMaintenancePolicy_ = null;
       if (hostMaintenancePolicyBuilder_ != null) {
         hostMaintenancePolicyBuilder_.dispose();
@@ -1170,7 +1535,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      */
     public com.google.container.v1beta1.HostMaintenancePolicy.Builder
         getHostMaintenancePolicyBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getHostMaintenancePolicyFieldBuilder().getBuilder();
     }
@@ -1219,6 +1584,211 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         hostMaintenancePolicy_ = null;
       }
       return hostMaintenancePolicyBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeKubeletConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
+        nodeKubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     *
+     * @return Whether the nodeKubeletConfig field is set.
+     */
+    public boolean hasNodeKubeletConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     *
+     * @return The nodeKubeletConfig.
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig() {
+      if (nodeKubeletConfigBuilder_ == null) {
+        return nodeKubeletConfig_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+            : nodeKubeletConfig_;
+      } else {
+        return nodeKubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public Builder setNodeKubeletConfig(com.google.container.v1beta1.NodeKubeletConfig value) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeKubeletConfig_ = value;
+      } else {
+        nodeKubeletConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public Builder setNodeKubeletConfig(
+        com.google.container.v1beta1.NodeKubeletConfig.Builder builderForValue) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        nodeKubeletConfig_ = builderForValue.build();
+      } else {
+        nodeKubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public Builder mergeNodeKubeletConfig(com.google.container.v1beta1.NodeKubeletConfig value) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && nodeKubeletConfig_ != null
+            && nodeKubeletConfig_
+                != com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()) {
+          getNodeKubeletConfigBuilder().mergeFrom(value);
+        } else {
+          nodeKubeletConfig_ = value;
+        }
+      } else {
+        nodeKubeletConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeKubeletConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public Builder clearNodeKubeletConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      nodeKubeletConfig_ = null;
+      if (nodeKubeletConfigBuilder_ != null) {
+        nodeKubeletConfigBuilder_.dispose();
+        nodeKubeletConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig.Builder getNodeKubeletConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getNodeKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder() {
+      if (nodeKubeletConfigBuilder_ != null) {
+        return nodeKubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeKubeletConfig_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+            : nodeKubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for new node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeKubeletConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
+        getNodeKubeletConfigFieldBuilder() {
+      if (nodeKubeletConfigBuilder_ == null) {
+        nodeKubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodeKubeletConfig,
+                com.google.container.v1beta1.NodeKubeletConfig.Builder,
+                com.google.container.v1beta1.NodeKubeletConfigOrBuilder>(
+                getNodeKubeletConfig(), getParentForChildren(), isClean());
+        nodeKubeletConfig_ = null;
+      }
+      return nodeKubeletConfigBuilder_;
     }
 
     @java.lang.Override

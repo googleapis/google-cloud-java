@@ -75,6 +75,47 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rrf field is set.
+     */
+    boolean hasRrf();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rrf.
+     */
+    com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF getRrf();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder getRrfOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Required. The datapoint/vector whose nearest neighbors should be searched
      * for.
      * </pre>
@@ -179,6 +220,8 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
      * @return The fractionLeafNodesToSearchOverride.
      */
     double getFractionLeafNodesToSearchOverride();
+
+    com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RankingCase getRankingCase();
   }
   /**
    *
@@ -223,7 +266,677 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.Builder.class);
     }
 
+    public interface RRFOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Users can provide an alpha value to give more weight to dense
+       * vs sparse results. For example, if the alpha is 0, we only return
+       * sparse and if the alpha is 1, we only return dense.
+       * </pre>
+       *
+       * <code>float alpha = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The alpha.
+       */
+      float getAlpha();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for RRF algorithm that combines search results.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF}
+     */
+    public static final class RRF extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+        RRFOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RRF.newBuilder() to construct.
+      private RRF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RRF() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RRF();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MatchServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FindNeighborsRequest_Query_RRF_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MatchServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FindNeighborsRequest_Query_RRF_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.class,
+                com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder.class);
+      }
+
+      public static final int ALPHA_FIELD_NUMBER = 1;
+      private float alpha_ = 0F;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Users can provide an alpha value to give more weight to dense
+       * vs sparse results. For example, if the alpha is 0, we only return
+       * sparse and if the alpha is 1, we only return dense.
+       * </pre>
+       *
+       * <code>float alpha = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The alpha.
+       */
+      @java.lang.Override
+      public float getAlpha() {
+        return alpha_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (java.lang.Float.floatToRawIntBits(alpha_) != 0) {
+          output.writeFloat(1, alpha_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (java.lang.Float.floatToRawIntBits(alpha_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, alpha_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF other =
+            (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) obj;
+
+        if (java.lang.Float.floatToIntBits(getAlpha())
+            != java.lang.Float.floatToIntBits(other.getAlpha())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ALPHA_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getAlpha());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Parameters for RRF algorithm that combines search results.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.MatchServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FindNeighborsRequest_Query_RRF_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.MatchServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FindNeighborsRequest_Query_RRF_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.class,
+                  com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          alpha_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.MatchServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_FindNeighborsRequest_Query_RRF_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF build() {
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF result =
+              new com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.alpha_ = alpha_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+                  .getDefaultInstance()) return this;
+          if (other.getAlpha() != 0F) {
+            setAlpha(other.getAlpha());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13:
+                  {
+                    alpha_ = input.readFloat();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 13
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private float alpha_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Users can provide an alpha value to give more weight to dense
+         * vs sparse results. For example, if the alpha is 0, we only return
+         * sparse and if the alpha is 1, we only return dense.
+         * </pre>
+         *
+         * <code>float alpha = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The alpha.
+         */
+        @java.lang.Override
+        public float getAlpha() {
+          return alpha_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Users can provide an alpha value to give more weight to dense
+         * vs sparse results. For example, if the alpha is 0, we only return
+         * sparse and if the alpha is 1, we only return dense.
+         * </pre>
+         *
+         * <code>float alpha = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The alpha to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAlpha(float value) {
+
+          alpha_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Users can provide an alpha value to give more weight to dense
+         * vs sparse results. For example, if the alpha is 0, we only return
+         * sparse and if the alpha is 1, we only return dense.
+         * </pre>
+         *
+         * <code>float alpha = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAlpha() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          alpha_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+      private static final com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RRF> PARSER =
+          new com.google.protobuf.AbstractParser<RRF>() {
+            @java.lang.Override
+            public RRF parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RRF> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RRF> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
+    private int rankingCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object ranking_;
+
+    public enum RankingCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      RRF(6),
+      RANKING_NOT_SET(0);
+      private final int value;
+
+      private RankingCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RankingCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RankingCase forNumber(int value) {
+        switch (value) {
+          case 6:
+            return RRF;
+          case 0:
+            return RANKING_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RankingCase getRankingCase() {
+      return RankingCase.forNumber(rankingCase_);
+    }
+
+    public static final int RRF_FIELD_NUMBER = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rrf field is set.
+     */
+    @java.lang.Override
+    public boolean hasRrf() {
+      return rankingCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rrf.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF getRrf() {
+      if (rankingCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents RRF algorithm that combines search results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder
+        getRrfOrBuilder() {
+      if (rankingCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+          .getDefaultInstance();
+    }
+
     public static final int DATAPOINT_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.IndexDatapoint datapoint_;
     /**
@@ -397,6 +1110,10 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       if (java.lang.Double.doubleToRawLongBits(fractionLeafNodesToSearchOverride_) != 0) {
         output.writeDouble(5, fractionLeafNodesToSearchOverride_);
       }
+      if (rankingCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -426,6 +1143,11 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedOutputStream.computeDoubleSize(
                 5, fractionLeafNodesToSearchOverride_);
       }
+      if (rankingCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -453,6 +1175,14 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       if (java.lang.Double.doubleToLongBits(getFractionLeafNodesToSearchOverride())
           != java.lang.Double.doubleToLongBits(other.getFractionLeafNodesToSearchOverride()))
         return false;
+      if (!getRankingCase().equals(other.getRankingCase())) return false;
+      switch (rankingCase_) {
+        case 6:
+          if (!getRrf().equals(other.getRrf())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -479,6 +1209,14 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getFractionLeafNodesToSearchOverride()));
+      switch (rankingCase_) {
+        case 6:
+          hash = (37 * hash) + RRF_FIELD_NUMBER;
+          hash = (53 * hash) + getRrf().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -631,6 +1369,9 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (rrfBuilder_ != null) {
+          rrfBuilder_.clear();
+        }
         datapoint_ = null;
         if (datapointBuilder_ != null) {
           datapointBuilder_.dispose();
@@ -640,6 +1381,8 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         perCrowdingAttributeNeighborCount_ = 0;
         approximateNeighborCount_ = 0;
         fractionLeafNodesToSearchOverride_ = 0D;
+        rankingCase_ = 0;
+        ranking_ = null;
         return this;
       }
 
@@ -671,6 +1414,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
@@ -679,23 +1423,32 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.datapoint_ = datapointBuilder_ == null ? datapoint_ : datapointBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.neighborCount_ = neighborCount_;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.perCrowdingAttributeNeighborCount_ = perCrowdingAttributeNeighborCount_;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.approximateNeighborCount_ = approximateNeighborCount_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.fractionLeafNodesToSearchOverride_ = fractionLeafNodesToSearchOverride_;
         }
         result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query result) {
+        result.rankingCase_ = rankingCase_;
+        result.ranking_ = this.ranking_;
+        if (rankingCase_ == 6 && rrfBuilder_ != null) {
+          result.ranking_ = rrfBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -763,6 +1516,17 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         if (other.getFractionLeafNodesToSearchOverride() != 0D) {
           setFractionLeafNodesToSearchOverride(other.getFractionLeafNodesToSearchOverride());
         }
+        switch (other.getRankingCase()) {
+          case RRF:
+            {
+              mergeRrf(other.getRrf());
+              break;
+            }
+          case RANKING_NOT_SET:
+            {
+              break;
+            }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -792,33 +1556,39 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   input.readMessage(getDatapointFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 16:
                 {
                   neighborCount_ = input.readInt32();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 16
               case 24:
                 {
                   perCrowdingAttributeNeighborCount_ = input.readInt32();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 32:
                 {
                   approximateNeighborCount_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 32
               case 41:
                 {
                   fractionLeafNodesToSearchOverride_ = input.readDouble();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 41
+              case 50:
+                {
+                  input.readMessage(getRrfFieldBuilder().getBuilder(), extensionRegistry);
+                  rankingCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -836,7 +1606,262 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      private int rankingCase_ = 0;
+      private java.lang.Object ranking_;
+
+      public RankingCase getRankingCase() {
+        return RankingCase.forNumber(rankingCase_);
+      }
+
+      public Builder clearRanking() {
+        rankingCase_ = 0;
+        ranking_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF,
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder,
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder>
+          rrfBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rrf field is set.
+       */
+      @java.lang.Override
+      public boolean hasRrf() {
+        return rankingCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rrf.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF getRrf() {
+        if (rrfBuilder_ == null) {
+          if (rankingCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+              .getDefaultInstance();
+        } else {
+          if (rankingCase_ == 6) {
+            return rrfBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRrf(
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF value) {
+        if (rrfBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ranking_ = value;
+          onChanged();
+        } else {
+          rrfBuilder_.setMessage(value);
+        }
+        rankingCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRrf(
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder
+              builderForValue) {
+        if (rrfBuilder_ == null) {
+          ranking_ = builderForValue.build();
+          onChanged();
+        } else {
+          rrfBuilder_.setMessage(builderForValue.build());
+        }
+        rankingCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRrf(
+          com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF value) {
+        if (rrfBuilder_ == null) {
+          if (rankingCase_ == 6
+              && ranking_
+                  != com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+                      .getDefaultInstance()) {
+            ranking_ =
+                com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF)
+                            ranking_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            ranking_ = value;
+          }
+          onChanged();
+        } else {
+          if (rankingCase_ == 6) {
+            rrfBuilder_.mergeFrom(value);
+          } else {
+            rrfBuilder_.setMessage(value);
+          }
+        }
+        rankingCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRrf() {
+        if (rrfBuilder_ == null) {
+          if (rankingCase_ == 6) {
+            rankingCase_ = 0;
+            ranking_ = null;
+            onChanged();
+          }
+        } else {
+          if (rankingCase_ == 6) {
+            rankingCase_ = 0;
+            ranking_ = null;
+          }
+          rrfBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder
+          getRrfBuilder() {
+        return getRrfFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder
+          getRrfOrBuilder() {
+        if ((rankingCase_ == 6) && (rrfBuilder_ != null)) {
+          return rrfBuilder_.getMessageOrBuilder();
+        } else {
+          if (rankingCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Represents RRF algorithm that combines search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF rrf = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF,
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder,
+              com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder>
+          getRrfFieldBuilder() {
+        if (rrfBuilder_ == null) {
+          if (!(rankingCase_ == 6)) {
+            ranking_ =
+                com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF
+                    .getDefaultInstance();
+          }
+          rrfBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF,
+                  com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF.Builder,
+                  com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRFOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest.Query.RRF) ranking_,
+                  getParentForChildren(),
+                  isClean());
+          ranking_ = null;
+        }
+        rankingCase_ = 6;
+        onChanged();
+        return rrfBuilder_;
+      }
 
       private com.google.cloud.aiplatform.v1beta1.IndexDatapoint datapoint_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -859,7 +1884,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * @return Whether the datapoint field is set.
        */
       public boolean hasDatapoint() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -905,7 +1930,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         } else {
           datapointBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -928,7 +1953,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
         } else {
           datapointBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -946,7 +1971,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeDatapoint(com.google.cloud.aiplatform.v1beta1.IndexDatapoint value) {
         if (datapointBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)
+          if (((bitField0_ & 0x00000002) != 0)
               && datapoint_ != null
               && datapoint_
                   != com.google.cloud.aiplatform.v1beta1.IndexDatapoint.getDefaultInstance()) {
@@ -958,7 +1983,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
           datapointBuilder_.mergeFrom(value);
         }
         if (datapoint_ != null) {
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         return this;
@@ -976,7 +2001,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearDatapoint() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         datapoint_ = null;
         if (datapointBuilder_ != null) {
           datapointBuilder_.dispose();
@@ -998,7 +2023,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public com.google.cloud.aiplatform.v1beta1.IndexDatapoint.Builder getDatapointBuilder() {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return getDatapointFieldBuilder().getBuilder();
       }
@@ -1087,7 +2112,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public Builder setNeighborCount(int value) {
 
         neighborCount_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1105,7 +2130,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearNeighborCount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         neighborCount_ = 0;
         onChanged();
         return this;
@@ -1150,7 +2175,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public Builder setPerCrowdingAttributeNeighborCount(int value) {
 
         perCrowdingAttributeNeighborCount_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1170,7 +2195,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearPerCrowdingAttributeNeighborCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         perCrowdingAttributeNeighborCount_ = 0;
         onChanged();
         return this;
@@ -1211,7 +2236,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public Builder setApproximateNeighborCount(int value) {
 
         approximateNeighborCount_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1229,7 +2254,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearApproximateNeighborCount() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         approximateNeighborCount_ = 0;
         onChanged();
         return this;
@@ -1276,7 +2301,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
       public Builder setFractionLeafNodesToSearchOverride(double value) {
 
         fractionLeafNodesToSearchOverride_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1297,7 +2322,7 @@ public final class FindNeighborsRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearFractionLeafNodesToSearchOverride() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         fractionLeafNodesToSearchOverride_ = 0D;
         onChanged();
         return this;

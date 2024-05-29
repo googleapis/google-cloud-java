@@ -79,4 +79,25 @@ public class MockSearchTuningServiceImpl extends SearchTuningServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listCustomModels(
+      ListCustomModelsRequest request, StreamObserver<ListCustomModelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomModelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomModelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomModels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomModelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

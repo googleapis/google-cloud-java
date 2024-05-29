@@ -41,6 +41,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
 
   private DeploymentResourcePool() {
     name_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -180,6 +181,149 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
         : dedicatedResources_;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeploymentResourcePool's container(s) run as.
+   * Specify the email address of the service account. If this service account
+   * is not specified, the container(s) run as a service account that doesn't
+   * have access to the resource project.
+   *
+   * Users deploying the Models to this DeploymentResourcePool must have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 6;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeploymentResourcePool's container(s) run as.
+   * Specify the email address of the service account. If this service account
+   * is not specified, the container(s) run as a service account that doesn't
+   * have access to the resource project.
+   *
+   * Users deploying the Models to this DeploymentResourcePool must have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 6;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISABLE_CONTAINER_LOGGING_FIELD_NUMBER = 7;
+  private boolean disableContainerLogging_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If the DeploymentResourcePool is deployed with custom-trained Models or
+   * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
+   * send `stderr` and `stdout` streams to Cloud Logging by default.
+   * Please note that the logs incur cost, which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/logging/pricing).
+   *
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 7;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  @java.lang.Override
+  public boolean getDisableContainerLogging() {
+    return disableContainerLogging_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -196,7 +340,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -249,8 +393,17 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getDedicatedResources());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getEncryptionSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAccount_);
+    }
+    if (disableContainerLogging_ != false) {
+      output.writeBool(7, disableContainerLogging_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -267,8 +420,17 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDedicatedResources());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEncryptionSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAccount_);
+    }
+    if (disableContainerLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, disableContainerLogging_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -291,6 +453,12 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
     if (hasDedicatedResources()) {
       if (!getDedicatedResources().equals(other.getDedicatedResources())) return false;
     }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (getDisableContainerLogging() != other.getDisableContainerLogging()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -312,6 +480,14 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getDedicatedResources().hashCode();
     }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + DISABLE_CONTAINER_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableContainerLogging());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -459,6 +635,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDedicatedResourcesFieldBuilder();
+        getEncryptionSpecFieldBuilder();
         getCreateTimeFieldBuilder();
       }
     }
@@ -473,6 +650,13 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
         dedicatedResourcesBuilder_.dispose();
         dedicatedResourcesBuilder_ = null;
       }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      serviceAccount_ = "";
+      disableContainerLogging_ = false;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -526,8 +710,19 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disableContainerLogging_ = disableContainerLogging_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -586,6 +781,17 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
       if (other.hasDedicatedResources()) {
         mergeDedicatedResources(other.getDedicatedResources());
       }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.getDisableContainerLogging() != false) {
+        setDisableContainerLogging(other.getDisableContainerLogging());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -631,9 +837,27 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+            case 50:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 56:
+              {
+                disableContainerLogging_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -986,6 +1210,418 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
       return dedicatedResourcesBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+     * this DeploymentResourcePool will be secured by this key. Endpoints and the
+     * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeploymentResourcePool's container(s) run as.
+     * Specify the email address of the service account. If this service account
+     * is not specified, the container(s) run as a service account that doesn't
+     * have access to the resource project.
+     *
+     * Users deploying the Models to this DeploymentResourcePool must have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 6;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeploymentResourcePool's container(s) run as.
+     * Specify the email address of the service account. If this service account
+     * is not specified, the container(s) run as a service account that doesn't
+     * have access to the resource project.
+     *
+     * Users deploying the Models to this DeploymentResourcePool must have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 6;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeploymentResourcePool's container(s) run as.
+     * Specify the email address of the service account. If this service account
+     * is not specified, the container(s) run as a service account that doesn't
+     * have access to the resource project.
+     *
+     * Users deploying the Models to this DeploymentResourcePool must have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 6;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeploymentResourcePool's container(s) run as.
+     * Specify the email address of the service account. If this service account
+     * is not specified, the container(s) run as a service account that doesn't
+     * have access to the resource project.
+     *
+     * Users deploying the Models to this DeploymentResourcePool must have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeploymentResourcePool's container(s) run as.
+     * Specify the email address of the service account. If this service account
+     * is not specified, the container(s) run as a service account that doesn't
+     * have access to the resource project.
+     *
+     * Users deploying the Models to this DeploymentResourcePool must have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 6;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableContainerLogging_;
+    /**
+     *
+     *
+     * <pre>
+     * If the DeploymentResourcePool is deployed with custom-trained Models or
+     * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
+     * send `stderr` and `stdout` streams to Cloud Logging by default.
+     * Please note that the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 7;</code>
+     *
+     * @return The disableContainerLogging.
+     */
+    @java.lang.Override
+    public boolean getDisableContainerLogging() {
+      return disableContainerLogging_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the DeploymentResourcePool is deployed with custom-trained Models or
+     * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
+     * send `stderr` and `stdout` streams to Cloud Logging by default.
+     * Please note that the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 7;</code>
+     *
+     * @param value The disableContainerLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableContainerLogging(boolean value) {
+
+      disableContainerLogging_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the DeploymentResourcePool is deployed with custom-trained Models or
+     * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
+     * send `stderr` and `stdout` streams to Cloud Logging by default.
+     * Please note that the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableContainerLogging() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      disableContainerLogging_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1006,7 +1642,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1050,7 +1686,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1071,7 +1707,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1088,7 +1724,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1099,7 +1735,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1116,7 +1752,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1137,7 +1773,7 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

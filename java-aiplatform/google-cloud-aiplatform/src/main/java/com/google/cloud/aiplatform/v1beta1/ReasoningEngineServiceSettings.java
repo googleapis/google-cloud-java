@@ -118,6 +118,20 @@ public class ReasoningEngineServiceSettings extends ClientSettings<ReasoningEngi
     return ((ReasoningEngineServiceStubSettings) getStubSettings()).listReasoningEnginesSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateReasoningEngine. */
+  public UnaryCallSettings<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineSettings() {
+    return ((ReasoningEngineServiceStubSettings) getStubSettings()).updateReasoningEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateReasoningEngine. */
+  public OperationCallSettings<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationSettings() {
+    return ((ReasoningEngineServiceStubSettings) getStubSettings())
+        .updateReasoningEngineOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteReasoningEngine. */
   public UnaryCallSettings<DeleteReasoningEngineRequest, Operation>
       deleteReasoningEngineSettings() {
@@ -281,6 +295,19 @@ public class ReasoningEngineServiceSettings extends ClientSettings<ReasoningEngi
             ListReasoningEnginesPagedResponse>
         listReasoningEnginesSettings() {
       return getStubSettingsBuilder().listReasoningEnginesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReasoningEngine. */
+    public UnaryCallSettings.Builder<UpdateReasoningEngineRequest, Operation>
+        updateReasoningEngineSettings() {
+      return getStubSettingsBuilder().updateReasoningEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReasoningEngine. */
+    public OperationCallSettings.Builder<
+            UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+        updateReasoningEngineOperationSettings() {
+      return getStubSettingsBuilder().updateReasoningEngineOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteReasoningEngine. */

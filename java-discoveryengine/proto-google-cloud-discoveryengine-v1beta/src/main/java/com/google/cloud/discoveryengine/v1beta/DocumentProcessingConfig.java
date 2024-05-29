@@ -3198,6 +3198,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -3232,6 +3233,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -3257,6 +3259,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -3292,6 +3295,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * <pre>
    * Map from file type to override the default parsing configuration based on
    * the file type. Supported keys:
+   *
    * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
    * parsing or layout parsing is supported.
    * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4230,6 +4234,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4264,6 +4269,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4289,6 +4295,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4327,6 +4334,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4367,6 +4375,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4401,6 +4410,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4432,6 +4442,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and
@@ -4467,6 +4478,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * <pre>
      * Map from file type to override the default parsing configuration based on
      * the file type. Supported keys:
+     *
      * * `pdf`: Override parsing config for PDF files, either digital parsing, ocr
      * parsing or layout parsing is supported.
      * * `html`: Override parsing config for HTML files, only digital parsing and

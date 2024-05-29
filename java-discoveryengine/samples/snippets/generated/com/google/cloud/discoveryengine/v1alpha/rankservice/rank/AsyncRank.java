@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1alpha.RankServiceClient;
 import com.google.cloud.discoveryengine.v1alpha.RankingConfigName;
 import com.google.cloud.discoveryengine.v1alpha.RankingRecord;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncRank {
 
@@ -47,6 +48,7 @@ public class AsyncRank {
               .setQuery("query107944136")
               .addAllRecords(new ArrayList<RankingRecord>())
               .setIgnoreRecordDetailsInResponse(true)
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       ApiFuture<RankResponse> future = rankServiceClient.rankCallable().futureCall(request);
       // Do something.

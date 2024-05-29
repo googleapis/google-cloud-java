@@ -63,6 +63,7 @@ import com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeResponse;
@@ -148,6 +149,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
   private final OperationCallSettings<
           DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
       deleteNotebookRuntimeTemplateOperationSettings;
+  private final UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings;
   private final UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings;
   private final OperationCallSettings<
@@ -428,6 +431,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return deleteNotebookRuntimeTemplateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateNotebookRuntimeTemplate. */
+  public UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings() {
+    return updateNotebookRuntimeTemplateSettings;
+  }
+
   /** Returns the object with the settings used for calls to assignNotebookRuntime. */
   public UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings() {
@@ -616,6 +625,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
         settingsBuilder.deleteNotebookRuntimeTemplateSettings().build();
     deleteNotebookRuntimeTemplateOperationSettings =
         settingsBuilder.deleteNotebookRuntimeTemplateOperationSettings().build();
+    updateNotebookRuntimeTemplateSettings =
+        settingsBuilder.updateNotebookRuntimeTemplateSettings().build();
     assignNotebookRuntimeSettings = settingsBuilder.assignNotebookRuntimeSettings().build();
     assignNotebookRuntimeOperationSettings =
         settingsBuilder.assignNotebookRuntimeOperationSettings().build();
@@ -660,6 +671,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     private final OperationCallSettings.Builder<
             DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
         deleteNotebookRuntimeTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings;
     private final UnaryCallSettings.Builder<AssignNotebookRuntimeRequest, Operation>
         assignNotebookRuntimeSettings;
     private final OperationCallSettings.Builder<
@@ -733,6 +747,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           PagedCallSettings.newBuilder(LIST_NOTEBOOK_RUNTIME_TEMPLATES_PAGE_STR_FACT);
       deleteNotebookRuntimeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNotebookRuntimeTemplateOperationSettings = OperationCallSettings.newBuilder();
+      updateNotebookRuntimeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       assignNotebookRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       assignNotebookRuntimeOperationSettings = OperationCallSettings.newBuilder();
       getNotebookRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -756,6 +771,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getNotebookRuntimeTemplateSettings,
               listNotebookRuntimeTemplatesSettings,
               deleteNotebookRuntimeTemplateSettings,
+              updateNotebookRuntimeTemplateSettings,
               assignNotebookRuntimeSettings,
               getNotebookRuntimeSettings,
               listNotebookRuntimesSettings,
@@ -784,6 +800,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           settings.deleteNotebookRuntimeTemplateSettings.toBuilder();
       deleteNotebookRuntimeTemplateOperationSettings =
           settings.deleteNotebookRuntimeTemplateOperationSettings.toBuilder();
+      updateNotebookRuntimeTemplateSettings =
+          settings.updateNotebookRuntimeTemplateSettings.toBuilder();
       assignNotebookRuntimeSettings = settings.assignNotebookRuntimeSettings.toBuilder();
       assignNotebookRuntimeOperationSettings =
           settings.assignNotebookRuntimeOperationSettings.toBuilder();
@@ -810,6 +828,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getNotebookRuntimeTemplateSettings,
               listNotebookRuntimeTemplatesSettings,
               deleteNotebookRuntimeTemplateSettings,
+              updateNotebookRuntimeTemplateSettings,
               assignNotebookRuntimeSettings,
               getNotebookRuntimeSettings,
               listNotebookRuntimesSettings,
@@ -853,6 +872,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
 
       builder
           .deleteNotebookRuntimeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateNotebookRuntimeTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1122,6 +1146,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
             DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
         deleteNotebookRuntimeTemplateOperationSettings() {
       return deleteNotebookRuntimeTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNotebookRuntimeTemplate. */
+    public UnaryCallSettings.Builder<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings() {
+      return updateNotebookRuntimeTemplateSettings;
     }
 
     /** Returns the builder for the settings used for calls to assignNotebookRuntime. */

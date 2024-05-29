@@ -231,4 +231,46 @@ public interface MetadataStoreOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreStateOrBuilder getStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  boolean hasDataplexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig getDataplexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder
+      getDataplexConfigOrBuilder();
 }

@@ -51,6 +51,7 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
  *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }
@@ -113,7 +114,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ImportUserEvents</td>
- *      <td><p> Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events.
+ *      <td><p> Bulk import of user events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events.
  * <p>  Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -281,6 +282,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   UserEvent response = userEventServiceClient.writeUserEvent(request);
    * }
@@ -313,6 +315,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   ApiFuture<UserEvent> future =
    *       userEventServiceClient.writeUserEventCallable().futureCall(request);
@@ -511,7 +514,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * Bulk import of user events. Request processing might be synchronous. Events that already exist
    * are skipped. Use this method for backfilling historical user events.
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
@@ -549,7 +552,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * Bulk import of user events. Request processing might be synchronous. Events that already exist
    * are skipped. Use this method for backfilling historical user events.
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
@@ -587,7 +590,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * Bulk import of user events. Request processing might be synchronous. Events that already exist
    * are skipped. Use this method for backfilling historical user events.
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the

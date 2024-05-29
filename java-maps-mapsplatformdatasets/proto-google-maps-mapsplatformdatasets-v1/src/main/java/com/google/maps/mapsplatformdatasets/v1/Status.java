@@ -181,8 +181,8 @@ public final class Status extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The publishing failed states. This state represents that the
-     * publishing failed. Publishing may be retried.
+     * The publishing failed states. This state represents that the publishing
+     * failed. Publishing may be retried.
      * </pre>
      *
      * <code>STATE_PUBLISHING_FAILED = 10;</code>
@@ -192,8 +192,8 @@ public final class Status extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The completed state. This state represents the dataset being
-     * available for its specific usage.
+     * The completed state. This state represents the dataset being available
+     * for its specific usage.
      * </pre>
      *
      * <code>STATE_COMPLETED = 11;</code>
@@ -309,8 +309,8 @@ public final class Status extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The publishing failed states. This state represents that the
-     * publishing failed. Publishing may be retried.
+     * The publishing failed states. This state represents that the publishing
+     * failed. Publishing may be retried.
      * </pre>
      *
      * <code>STATE_PUBLISHING_FAILED = 10;</code>
@@ -320,8 +320,8 @@ public final class Status extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The completed state. This state represents the dataset being
-     * available for its specific usage.
+     * The completed state. This state represents the dataset being available
+     * for its specific usage.
      * </pre>
      *
      * <code>STATE_COMPLETED = 11;</code>

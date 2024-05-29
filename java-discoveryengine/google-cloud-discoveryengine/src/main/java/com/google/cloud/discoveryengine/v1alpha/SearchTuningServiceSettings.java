@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of trainCustomModel to 30 seconds:
+ * <p>For example, to set the total timeout of listCustomModels to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -61,10 +61,10 @@ import javax.annotation.Generated;
  * SearchTuningServiceSettings.Builder searchTuningServiceSettingsBuilder =
  *     SearchTuningServiceSettings.newBuilder();
  * searchTuningServiceSettingsBuilder
- *     .trainCustomModelSettings()
+ *     .listCustomModelsSettings()
  *     .setRetrySettings(
  *         searchTuningServiceSettingsBuilder
- *             .trainCustomModelSettings()
+ *             .listCustomModelsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -88,6 +88,12 @@ public class SearchTuningServiceSettings extends ClientSettings<SearchTuningServ
       trainCustomModelOperationSettings() {
     return ((SearchTuningServiceStubSettings) getStubSettings())
         .trainCustomModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomModels. */
+  public UnaryCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsSettings() {
+    return ((SearchTuningServiceStubSettings) getStubSettings()).listCustomModelsSettings();
   }
 
   public static final SearchTuningServiceSettings create(SearchTuningServiceStubSettings stub)
@@ -213,6 +219,12 @@ public class SearchTuningServiceSettings extends ClientSettings<SearchTuningServ
             TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
         trainCustomModelOperationSettings() {
       return getStubSettingsBuilder().trainCustomModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomModels. */
+    public UnaryCallSettings.Builder<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsSettings() {
+      return getStubSettingsBuilder().listCustomModelsSettings();
     }
 
     @Override
