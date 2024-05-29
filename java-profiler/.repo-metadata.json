@@ -10,7 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-profiler",
   "distribution_name": "com.google.cloud:google-cloud-profiler",
-  "api_id": "profiler.googleapis.com",
+  "api_id": "cloudprofiler.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
