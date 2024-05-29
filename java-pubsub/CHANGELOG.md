@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.129.7](https://github.com/googleapis/java-pubsub/compare/v1.129.6...v1.129.7) (2024-05-29)
+
+
+### Dependencies
+
+* Change scope of grpc-inprocess dependency from runtime to test ([#2038](https://github.com/googleapis/java-pubsub/issues/2038)) ([1ab45c9](https://github.com/googleapis/java-pubsub/commit/1ab45c9eaee35d4bfeb332244c74f1253b77c166))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.2 ([#2046](https://github.com/googleapis/java-pubsub/issues/2046)) ([f81c5e1](https://github.com/googleapis/java-pubsub/commit/f81c5e1b977e6da19aac6a40c1389ddcc4643e3c))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.27.0 ([#2044](https://github.com/googleapis/java-pubsub/issues/2044)) ([37e94ce](https://github.com/googleapis/java-pubsub/commit/37e94ce13a2998b5e3f69e9ad3d4ab68af108d64))
+
 ## [1.129.6](https://github.com/googleapis/java-pubsub/compare/v1.129.5...v1.129.6) (2024-05-23)
 
 
