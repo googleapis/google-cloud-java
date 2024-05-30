@@ -17,6 +17,8 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -59,51 +61,90 @@ public class RateLimitingCallableTest {
   }
 
   @Test
-  public void testWithRateLimitInfo() throws Exception {
+  public void testDefaultSettingOnInitiate() throws Exception {
     callableToTest.call(request, responseObserver, context);
+    assertFalse(callableToTest.getLimiterEnabled());
+    assertThat(callableToTest.getCurrentRate()).isEqualTo(10);
+  }
+
+  @Test
+  public void testUpdateRate() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
 
     Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
 
-    // make sure QPS will be updated
-    callableToTest.getLastQpsChangeTime().set(earlier);
+    // Make sure rate will be updated.
+    callableToTest.getNextRateUpdateTime().set(earlier);
     double oldQps = callableToTest.getCurrentRate();
 
     double factor = 0.8;
+    int periodSeconds = 10;
 
     RateLimitInfo info =
         RateLimitInfo.newBuilder()
             .setFactor(factor)
-            .setPeriod(Duration.newBuilder().setSeconds(10).build())
+            .setPeriod(Duration.newBuilder().setSeconds(periodSeconds).build())
             .build();
 
     MutateRowsResponse response = MutateRowsResponse.newBuilder().setRateLimitInfo(info).build();
 
     innerCallable.getObserver().onResponse(response);
 
-    // Give the thread sometime to update the QPS
+    // Give the thread some time to update the rate.
     Thread.sleep(100);
     double newQps = callableToTest.getCurrentRate();
 
-    assertThat(newQps).isWithin(0.1).of(oldQps * factor);
+    assertThat(newQps).isWithin(0.01).of(oldQps * factor);
 
     innerCallable.getObserver().onComplete();
   }
 
   @Test
-  public void testNoUpdateWithinPeriod() throws Exception {
+  public void testNoRateLimitInfoDoesNotUpdateRate() throws Exception {
     callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
 
-    Instant now = Instant.now();
-    // make sure QPS will not be updated
-    callableToTest.getLastQpsChangeTime().set(now);
+    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+
+    // Make sure rate will be updated.
+    callableToTest.getNextRateUpdateTime().set(earlier);
     double oldQps = callableToTest.getCurrentRate();
 
-    double factor = 0.3;
+    // A response without RateLimitInfo.
+    MutateRowsResponse response = MutateRowsResponse.newBuilder().build();
+
+    innerCallable.getObserver().onResponse(response);
+
+    // Give the thread some time to update the rate.
+    Thread.sleep(100);
+    double newQps = callableToTest.getCurrentRate();
+
+    assertThat(newQps).isEqualTo(oldQps); // No change
+    assertFalse(callableToTest.getLimiterEnabled()); // Rate limiter is also disabled.
+
+    innerCallable.getObserver().onComplete();
+  }
+
+  @Test
+  public void testInvalidRateLimitInfoDoesNotUpdateRate() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
+
+    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+
+    // make sure QPS will be updated
+    callableToTest.getNextRateUpdateTime().set(earlier);
+    double oldQps = callableToTest.getCurrentRate();
+
+    // A response with invalid RateLimitInfo.
+    double factor = 0; // Invalid factor
+    int periodSeconds = 10;
 
     RateLimitInfo info =
         RateLimitInfo.newBuilder()
             .setFactor(factor)
-            .setPeriod(Duration.newBuilder().setSeconds(600).build())
+            .setPeriod(Duration.newBuilder().setSeconds(periodSeconds).build())
             .build();
 
     MutateRowsResponse response = MutateRowsResponse.newBuilder().setRateLimitInfo(info).build();
@@ -114,7 +155,132 @@ public class RateLimitingCallableTest {
     Thread.sleep(100);
     double newQps = callableToTest.getCurrentRate();
 
-    assertThat(newQps).isEqualTo(oldQps);
+    assertThat(newQps).isEqualTo(oldQps); // No change
+    assertFalse(callableToTest.getLimiterEnabled()); // Rate limiter is also disabled.
+
+    innerCallable.getObserver().onComplete();
+  }
+
+  @Test
+  public void testMissingRateLimitInfoFactorDoesNotUpdateRate() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
+
+    Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
+
+    // Make sure rate can be updated.
+    callableToTest.getNextRateUpdateTime().set(earlier);
+    double oldQps = callableToTest.getCurrentRate();
+
+    // A response with invalid RateLimitInfo.
+    // Missing factor is equivalent to 0.
+    int periodSeconds = 10;
+    RateLimitInfo info =
+        RateLimitInfo.newBuilder()
+            .setPeriod(Duration.newBuilder().setSeconds(periodSeconds).build())
+            .build();
+
+    MutateRowsResponse response = MutateRowsResponse.newBuilder().setRateLimitInfo(info).build();
+
+    innerCallable.getObserver().onResponse(response);
+
+    // Give the thread some time to update the rate.
+    Thread.sleep(100);
+    double newQps = callableToTest.getCurrentRate();
+
+    assertThat(newQps).isEqualTo(oldQps); // No change
+    assertFalse(callableToTest.getLimiterEnabled()); // Rate limiter is also disabled.
+
+    innerCallable.getObserver().onComplete();
+  }
+
+  @Test
+  public void testNoUpdateBeforeAllowedTime() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
+
+    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    // Make sure rate will not be updated.
+    callableToTest.getNextRateUpdateTime().set(later);
+    double oldQps = callableToTest.getCurrentRate();
+
+    double factor = 0.3;
+    int periodSeconds = 10;
+
+    RateLimitInfo info =
+        RateLimitInfo.newBuilder()
+            .setFactor(factor)
+            .setPeriod(Duration.newBuilder().setSeconds(periodSeconds).build())
+            .build();
+
+    MutateRowsResponse response = MutateRowsResponse.newBuilder().setRateLimitInfo(info).build();
+
+    innerCallable.getObserver().onResponse(response);
+
+    // Give the thread some time to update the rate.
+    Thread.sleep(100);
+    double newQps = callableToTest.getCurrentRate();
+
+    assertThat(newQps).isEqualTo(oldQps); // No change.
+    assertTrue(callableToTest.getLimiterEnabled()); // Still enabled.
+
+    innerCallable.getObserver().onComplete();
+  }
+
+  @Test
+  public void testDoesNotDisableBeforeAllowedTime() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setLimiterEnabled(true);
+
+    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    // Make sure limiter will not be disabled.
+    callableToTest.getNextRateUpdateTime().set(later);
+    double oldQps = callableToTest.getCurrentRate();
+
+    // Missing RateLimitInfo disables rate limiting.
+    MutateRowsResponse response = MutateRowsResponse.newBuilder().build();
+
+    innerCallable.getObserver().onResponse(response);
+
+    // Give the thread sometime to disable the rate limiter.
+    Thread.sleep(100);
+    double newQps = callableToTest.getCurrentRate();
+
+    assertThat(newQps).isEqualTo(oldQps); // No change on QPS.
+    assertTrue(callableToTest.getLimiterEnabled()); // Still enabled.
+
+    innerCallable.getObserver().onComplete();
+  }
+
+  @Test
+  public void testEnableWithinPeriodDoesNotUpdateRate() throws Exception {
+    callableToTest.call(request, responseObserver, context);
+    callableToTest.setRate(1.5);
+
+    Instant later = Instant.now().plus(org.threeten.bp.Duration.ofHours(1));
+    // Even though the rate update time is far in the future, enable is always allowed.
+    callableToTest.getNextRateUpdateTime().set(later);
+    double oldQps = callableToTest.getCurrentRate();
+
+    double factor = 0.3;
+    int periodSeconds = 600;
+
+    RateLimitInfo info =
+        RateLimitInfo.newBuilder()
+            .setFactor(factor)
+            .setPeriod(Duration.newBuilder().setSeconds(periodSeconds).build())
+            .build();
+
+    MutateRowsResponse response = MutateRowsResponse.newBuilder().setRateLimitInfo(info).build();
+
+    innerCallable.getObserver().onResponse(response);
+
+    // Give the thread some time to enable the rate limiter.
+    Thread.sleep(100);
+    double newQps = callableToTest.getCurrentRate();
+
+    assertThat(newQps).isEqualTo(oldQps); // No change on QPS due to QPS update time.
+    assertTrue(callableToTest.getLimiterEnabled()); // Rate limiting is enabled.
 
     innerCallable.getObserver().onComplete();
   }
@@ -126,7 +292,7 @@ public class RateLimitingCallableTest {
     Instant earlier = Instant.now().minus(org.threeten.bp.Duration.ofHours(1));
 
     // make sure QPS will be updated
-    callableToTest.getLastQpsChangeTime().set(earlier);
+    callableToTest.getNextRateUpdateTime().set(earlier);
     double oldQps = callableToTest.getCurrentRate();
 
     innerCallable
