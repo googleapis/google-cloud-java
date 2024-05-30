@@ -114,8 +114,9 @@ public class PartMaker {
           if (value instanceof String) {
             String stringValue = (String) value;
             structBuilder.putFields(key, Value.newBuilder().setStringValue(stringValue).build());
-          } else if (value instanceof Double) {
-            Double doubleValue = (Double) value;
+          } else if (value instanceof Number) {
+            // Convert a number to a double value since the proto only supports double.
+            double doubleValue = ((Number) value).doubleValue();
             structBuilder.putFields(key, Value.newBuilder().setNumberValue(doubleValue).build());
           } else if (value instanceof Boolean) {
             Boolean boolValue = (Boolean) value;
@@ -126,7 +127,7 @@ public class PartMaker {
           } else {
             throw new IllegalArgumentException(
                 "The value in the map can only be one of the following format: "
-                    + "String, Double, Boolean, null.");
+                    + "String, Number, Boolean, null.");
           }
         });
 
