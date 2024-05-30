@@ -54,14 +54,14 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
   private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
+      // TODO(b/317255628): switch back to the google.cloud.aiplatform.v1.LlmUtilityServiceClient
       countTokensMethodDescriptor =
-          MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1.LlmUtilityService/CountTokens")
-              .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
-              .build();
+      MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
+          .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<ComputeTokensRequest, ComputeTokensResponse>
       computeTokensMethodDescriptor =

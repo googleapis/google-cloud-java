@@ -61,6 +61,26 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
             com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder.class);
   }
 
+  public static final int DISABLE_ATTRIBUTION_FIELD_NUMBER = 1;
+  private boolean disableAttribution_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disable using the result from this tool in detecting grounding
+   * attribution. This does not affect how the result is given to the model for
+   * generation.
+   * </pre>
+   *
+   * <code>bool disable_attribution = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableAttribution.
+   */
+  @java.lang.Override
+  public boolean getDisableAttribution() {
+    return disableAttribution_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -75,6 +95,9 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (disableAttribution_ != false) {
+      output.writeBool(1, disableAttribution_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -84,6 +107,9 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (disableAttribution_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disableAttribution_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -100,6 +126,7 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     com.google.cloud.vertexai.api.GoogleSearchRetrieval other =
         (com.google.cloud.vertexai.api.GoogleSearchRetrieval) obj;
 
+    if (getDisableAttribution() != other.getDisableAttribution()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,6 +138,8 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + DISABLE_ATTRIBUTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableAttribution());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -249,6 +278,8 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      disableAttribution_ = false;
       return this;
     }
 
@@ -276,8 +307,18 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vertexai.api.GoogleSearchRetrieval buildPartial() {
       com.google.cloud.vertexai.api.GoogleSearchRetrieval result =
           new com.google.cloud.vertexai.api.GoogleSearchRetrieval(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vertexai.api.GoogleSearchRetrieval result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disableAttribution_ = disableAttribution_;
+      }
     }
 
     @java.lang.Override
@@ -326,6 +367,9 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.vertexai.api.GoogleSearchRetrieval other) {
       if (other == com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance())
         return this;
+      if (other.getDisableAttribution() != false) {
+        setDisableAttribution(other.getDisableAttribution());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -352,6 +396,12 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                disableAttribution_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -366,6 +416,67 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private boolean disableAttribution_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable using the result from this tool in detecting grounding
+     * attribution. This does not affect how the result is given to the model for
+     * generation.
+     * </pre>
+     *
+     * <code>bool disable_attribution = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableAttribution.
+     */
+    @java.lang.Override
+    public boolean getDisableAttribution() {
+      return disableAttribution_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable using the result from this tool in detecting grounding
+     * attribution. This does not affect how the result is given to the model for
+     * generation.
+     * </pre>
+     *
+     * <code>bool disable_attribution = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disableAttribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableAttribution(boolean value) {
+
+      disableAttribution_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable using the result from this tool in detecting grounding
+     * attribution. This does not affect how the result is given to the model for
+     * generation.
+     * </pre>
+     *
+     * <code>bool disable_attribution = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableAttribution() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      disableAttribution_ = false;
+      onChanged();
       return this;
     }
 

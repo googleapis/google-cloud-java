@@ -211,8 +211,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "endpoint", request.getEndpoint());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:directPredict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -249,8 +247,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "endpoint", request.getEndpoint());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:directRawPredict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

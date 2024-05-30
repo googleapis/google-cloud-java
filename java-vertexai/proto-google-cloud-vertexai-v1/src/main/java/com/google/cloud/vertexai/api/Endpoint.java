@@ -913,83 +913,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vertexai.v1.Endpoint.enable_private_service_connect is deprecated. See
-   *     google/cloud/vertexai/v1/endpoint.proto;l=127
+   *     google/cloud/vertexai/v1/endpoint.proto;l=126
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean getEnablePrivateServiceConnect() {
     return enablePrivateServiceConnect_;
-  }
-
-  public static final int PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER = 21;
-  private com.google.cloud.vertexai.api.PrivateServiceConnectConfig privateServiceConnectConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for private service connect.
-   *
-   * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-   * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-   * are mutually exclusive.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the privateServiceConnectConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasPrivateServiceConnectConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for private service connect.
-   *
-   * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-   * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-   * are mutually exclusive.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The privateServiceConnectConfig.
-   */
-  @java.lang.Override
-  public com.google.cloud.vertexai.api.PrivateServiceConnectConfig
-      getPrivateServiceConnectConfig() {
-    return privateServiceConnectConfig_ == null
-        ? com.google.cloud.vertexai.api.PrivateServiceConnectConfig.getDefaultInstance()
-        : privateServiceConnectConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Configuration for private service connect.
-   *
-   * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-   * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-   * are mutually exclusive.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.vertexai.api.PrivateServiceConnectConfigOrBuilder
-      getPrivateServiceConnectConfigOrBuilder() {
-    return privateServiceConnectConfig_ == null
-        ? com.google.cloud.vertexai.api.PrivateServiceConnectConfig.getDefaultInstance()
-        : privateServiceConnectConfig_;
   }
 
   public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 14;
@@ -1073,7 +1003,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPredictRequestResponseLoggingConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -1165,11 +1095,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (enablePrivateServiceConnect_ != false) {
       output.writeBool(17, enablePrivateServiceConnect_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(18, getPredictRequestResponseLoggingConfig());
-    }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(21, getPrivateServiceConnectConfig());
+      output.writeMessage(18, getPredictRequestResponseLoggingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1236,15 +1163,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(17, enablePrivateServiceConnect_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              18, getPredictRequestResponseLoggingConfig());
-    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              21, getPrivateServiceConnectConfig());
+              18, getPredictRequestResponseLoggingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1282,11 +1204,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (getEnablePrivateServiceConnect() != other.getEnablePrivateServiceConnect()) return false;
-    if (hasPrivateServiceConnectConfig() != other.hasPrivateServiceConnectConfig()) return false;
-    if (hasPrivateServiceConnectConfig()) {
-      if (!getPrivateServiceConnectConfig().equals(other.getPrivateServiceConnectConfig()))
-        return false;
-    }
     if (!getModelDeploymentMonitoringJob().equals(other.getModelDeploymentMonitoringJob()))
       return false;
     if (hasPredictRequestResponseLoggingConfig() != other.hasPredictRequestResponseLoggingConfig())
@@ -1342,10 +1259,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateServiceConnect());
-    if (hasPrivateServiceConnectConfig()) {
-      hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getPrivateServiceConnectConfig().hashCode();
-    }
     hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getModelDeploymentMonitoringJob().hashCode();
     if (hasPredictRequestResponseLoggingConfig()) {
@@ -1523,7 +1436,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getEncryptionSpecFieldBuilder();
-        getPrivateServiceConnectConfigFieldBuilder();
         getPredictRequestResponseLoggingConfigFieldBuilder();
       }
     }
@@ -1562,11 +1474,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       network_ = "";
       enablePrivateServiceConnect_ = false;
-      privateServiceConnectConfig_ = null;
-      if (privateServiceConnectConfigBuilder_ != null) {
-        privateServiceConnectConfigBuilder_.dispose();
-        privateServiceConnectConfigBuilder_ = null;
-      }
       modelDeploymentMonitoringJob_ = "";
       predictRequestResponseLoggingConfig_ = null;
       if (predictRequestResponseLoggingConfigBuilder_ != null) {
@@ -1663,21 +1570,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         result.enablePrivateServiceConnect_ = enablePrivateServiceConnect_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.privateServiceConnectConfig_ =
-            privateServiceConnectConfigBuilder_ == null
-                ? privateServiceConnectConfig_
-                : privateServiceConnectConfigBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.predictRequestResponseLoggingConfig_ =
             predictRequestResponseLoggingConfigBuilder_ == null
                 ? predictRequestResponseLoggingConfig_
                 : predictRequestResponseLoggingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1795,12 +1695,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnablePrivateServiceConnect() != false) {
         setEnablePrivateServiceConnect(other.getEnablePrivateServiceConnect());
       }
-      if (other.hasPrivateServiceConnectConfig()) {
-        mergePrivateServiceConnectConfig(other.getPrivateServiceConnectConfig());
-      }
       if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
         modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasPredictRequestResponseLoggingConfig()) {
@@ -1920,7 +1817,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 modelDeploymentMonitoringJob_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 136:
@@ -1934,16 +1831,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getPredictRequestResponseLoggingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 146
-            case 170:
-              {
-                input.readMessage(
-                    getPrivateServiceConnectConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4116,7 +4006,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vertexai.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/vertexai/v1/endpoint.proto;l=127
+     *     See google/cloud/vertexai/v1/endpoint.proto;l=126
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -4139,7 +4029,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vertexai.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/vertexai/v1/endpoint.proto;l=127
+     *     See google/cloud/vertexai/v1/endpoint.proto;l=126
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -4166,7 +4056,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vertexai.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/vertexai/v1/endpoint.proto;l=127
+     *     See google/cloud/vertexai/v1/endpoint.proto;l=126
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4175,252 +4065,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       enablePrivateServiceConnect_ = false;
       onChanged();
       return this;
-    }
-
-    private com.google.cloud.vertexai.api.PrivateServiceConnectConfig privateServiceConnectConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfig,
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfig.Builder,
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfigOrBuilder>
-        privateServiceConnectConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the privateServiceConnectConfig field is set.
-     */
-    public boolean hasPrivateServiceConnectConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The privateServiceConnectConfig.
-     */
-    public com.google.cloud.vertexai.api.PrivateServiceConnectConfig
-        getPrivateServiceConnectConfig() {
-      if (privateServiceConnectConfigBuilder_ == null) {
-        return privateServiceConnectConfig_ == null
-            ? com.google.cloud.vertexai.api.PrivateServiceConnectConfig.getDefaultInstance()
-            : privateServiceConnectConfig_;
-      } else {
-        return privateServiceConnectConfigBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setPrivateServiceConnectConfig(
-        com.google.cloud.vertexai.api.PrivateServiceConnectConfig value) {
-      if (privateServiceConnectConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        privateServiceConnectConfig_ = value;
-      } else {
-        privateServiceConnectConfigBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setPrivateServiceConnectConfig(
-        com.google.cloud.vertexai.api.PrivateServiceConnectConfig.Builder builderForValue) {
-      if (privateServiceConnectConfigBuilder_ == null) {
-        privateServiceConnectConfig_ = builderForValue.build();
-      } else {
-        privateServiceConnectConfigBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder mergePrivateServiceConnectConfig(
-        com.google.cloud.vertexai.api.PrivateServiceConnectConfig value) {
-      if (privateServiceConnectConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
-            && privateServiceConnectConfig_ != null
-            && privateServiceConnectConfig_
-                != com.google.cloud.vertexai.api.PrivateServiceConnectConfig.getDefaultInstance()) {
-          getPrivateServiceConnectConfigBuilder().mergeFrom(value);
-        } else {
-          privateServiceConnectConfig_ = value;
-        }
-      } else {
-        privateServiceConnectConfigBuilder_.mergeFrom(value);
-      }
-      if (privateServiceConnectConfig_ != null) {
-        bitField0_ |= 0x00001000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearPrivateServiceConnectConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      privateServiceConnectConfig_ = null;
-      if (privateServiceConnectConfigBuilder_ != null) {
-        privateServiceConnectConfigBuilder_.dispose();
-        privateServiceConnectConfigBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.vertexai.api.PrivateServiceConnectConfig.Builder
-        getPrivateServiceConnectConfigBuilder() {
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return getPrivateServiceConnectConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.vertexai.api.PrivateServiceConnectConfigOrBuilder
-        getPrivateServiceConnectConfigOrBuilder() {
-      if (privateServiceConnectConfigBuilder_ != null) {
-        return privateServiceConnectConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return privateServiceConnectConfig_ == null
-            ? com.google.cloud.vertexai.api.PrivateServiceConnectConfig.getDefaultInstance()
-            : privateServiceConnectConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Configuration for private service connect.
-     *
-     * [network][google.cloud.aiplatform.v1.Endpoint.network] and
-     * [private_service_connect_config][google.cloud.aiplatform.v1.Endpoint.private_service_connect_config]
-     * are mutually exclusive.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.vertexai.v1.PrivateServiceConnectConfig private_service_connect_config = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfig,
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfig.Builder,
-            com.google.cloud.vertexai.api.PrivateServiceConnectConfigOrBuilder>
-        getPrivateServiceConnectConfigFieldBuilder() {
-      if (privateServiceConnectConfigBuilder_ == null) {
-        privateServiceConnectConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.vertexai.api.PrivateServiceConnectConfig,
-                com.google.cloud.vertexai.api.PrivateServiceConnectConfig.Builder,
-                com.google.cloud.vertexai.api.PrivateServiceConnectConfigOrBuilder>(
-                getPrivateServiceConnectConfig(), getParentForChildren(), isClean());
-        privateServiceConnectConfig_ = null;
-      }
-      return privateServiceConnectConfigBuilder_;
     }
 
     private java.lang.Object modelDeploymentMonitoringJob_ = "";
@@ -4503,7 +4147,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       modelDeploymentMonitoringJob_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4526,7 +4170,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearModelDeploymentMonitoringJob() {
       modelDeploymentMonitoringJob_ = getDefaultInstance().getModelDeploymentMonitoringJob();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4554,7 +4198,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       modelDeploymentMonitoringJob_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4580,7 +4224,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the predictRequestResponseLoggingConfig field is set.
      */
     public boolean hasPredictRequestResponseLoggingConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4626,7 +4270,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         predictRequestResponseLoggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4648,7 +4292,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         predictRequestResponseLoggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4666,7 +4310,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePredictRequestResponseLoggingConfig(
         com.google.cloud.vertexai.api.PredictRequestResponseLoggingConfig value) {
       if (predictRequestResponseLoggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && predictRequestResponseLoggingConfig_ != null
             && predictRequestResponseLoggingConfig_
                 != com.google.cloud.vertexai.api.PredictRequestResponseLoggingConfig
@@ -4679,7 +4323,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         predictRequestResponseLoggingConfigBuilder_.mergeFrom(value);
       }
       if (predictRequestResponseLoggingConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -4696,7 +4340,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPredictRequestResponseLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       predictRequestResponseLoggingConfig_ = null;
       if (predictRequestResponseLoggingConfigBuilder_ != null) {
         predictRequestResponseLoggingConfigBuilder_.dispose();
@@ -4718,7 +4362,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vertexai.api.PredictRequestResponseLoggingConfig.Builder
         getPredictRequestResponseLoggingConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getPredictRequestResponseLoggingConfigFieldBuilder().getBuilder();
     }
