@@ -1,19 +1,6 @@
 gapic_generator_version: 2.40.1
-protoc_version: '25.3'
 googleapis_commitish: f49123a39efc18f0a20a2183629c62830725343c
 libraries_bom_version: 26.39.0
-template_excludes:
-- .github/*
-- .kokoro/*
-- samples/*
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- LICENSE
-- SECURITY.md
-- java.header
-- license-checks.xml
-- renovate.json
-- .gitignore
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
