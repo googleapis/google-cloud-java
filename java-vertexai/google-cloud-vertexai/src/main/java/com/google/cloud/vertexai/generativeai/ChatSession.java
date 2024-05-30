@@ -129,10 +129,18 @@ public final class ChatSession {
    *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
-      throws IOException, IllegalArgumentException {
+      throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    ResponseStream<GenerateContentResponse> respStream = model.generateContentStream(history);
+
+    ResponseStream<GenerateContentResponse> respStream;
+    try {
+      respStream = model.generateContentStream(history);
+    } catch (IOException e) {
+      // If the API call fails, remove the last content from the history before throwing.
+      removeLastContent();
+      throw e;
+    }
     setCurrentResponseStream(Optional.of(respStream));
 
     return respStream;
@@ -157,8 +165,17 @@ public final class ChatSession {
   public GenerateContentResponse sendMessage(Content content) throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    GenerateContentResponse response = model.generateContent(history);
+
+    GenerateContentResponse response;
+    try {
+      response = model.generateContent(history);
+    } catch (IOException e) {
+      // If the API call fails, remove the last content from the history before throwing.
+      removeLastContent();
+      throw e;
+    }
     setCurrentResponse(Optional.of(response));
+
     return response;
   }
 
