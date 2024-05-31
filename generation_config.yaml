@@ -1086,7 +1086,7 @@ libraries:
   product_documentation: https://cloud.google.com/iap
   api_description: Controls access to cloud applications running on Google Cloud Platform.
   client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.cloud:google-cloud-iap
   api_id: iap.googleapis.com
   library_type: GAPIC_AUTO
@@ -1094,6 +1094,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/iap/v1
+  - proto_path: google/cloud/iap/v1beta1
   requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
