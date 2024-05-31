@@ -1081,6 +1081,20 @@ libraries:
   GAPICs:
   - proto_path: google/iam/credentials/v1
 
+- api_shortname: iap
+  name_pretty: Cloud Identity-Aware Proxy API
+  product_documentation: https://cloud.google.com/iap
+  api_description: Controls access to cloud applications running on Google Cloud Platform.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-iap
+  api_id: iap.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/iap/v1
+  requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
   product_documentation: https://cloud.google.com/intrusion-detection-system/docs
