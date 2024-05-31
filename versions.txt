@@ -776,3 +776,6 @@ grpc-google-cloud-visionai-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-developerconnect:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-developerconnect-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-developerconnect-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-iap:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
