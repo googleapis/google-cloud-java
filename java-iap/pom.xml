@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-iap-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iap-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-iap-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iap-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-iap-v1</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iap-v1:current} -->
       </dependency>
@@ -48,8 +58,10 @@
   <modules>
     <module>google-cloud-iap</module>
     <module>grpc-google-cloud-iap-v1</module>
+    <module>grpc-google-cloud-iap-v1beta1</module>
     <module>proto-google-cloud-iap-v1</module>
+    <module>proto-google-cloud-iap-v1beta1</module>
     <module>google-cloud-iap-bom</module>
   </modules>
 
-</project>
+  </project>
