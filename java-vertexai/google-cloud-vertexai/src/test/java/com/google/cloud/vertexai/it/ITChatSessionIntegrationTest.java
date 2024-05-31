@@ -33,8 +33,8 @@ import com.google.cloud.vertexai.generativeai.PartMaker;
 import com.google.cloud.vertexai.generativeai.ResponseHandler;
 import com.google.cloud.vertexai.generativeai.ResponseStream;
 import com.google.common.collect.ImmutableList;
-import com.google.gson.JsonObject;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -168,43 +168,19 @@ public class ITChatSessionIntegrationTest {
   }
 
   @Test
-  public void sendMessageWithFunctionCalling_functionCallInResponse() throws IOException {
+  public void sendMessageWithFunctionCalling_functionCallInResponse()
+      throws IOException, NoSuchMethodException {
     // Arrange
     String firstMessage = "hello!";
     String secondMessage = "What is the weather in Boston?";
-    // Making an Json object representing a function declaration
-    // The following code makes a function declaration
-    // {
-    //   "name": "getCurrentWeather",
-    //   "description": "Get the current weather in a given location",
-    //   "parameters": {
-    //     "type": "OBJECT",
-    //     "properties": {
-    //       "location": {
-    //         "type": "STRING",
-    //         "description": "location"
-    //       }
-    //     }
-    //   }
-    // }
-    JsonObject locationJsonObject = new JsonObject();
-    locationJsonObject.addProperty("type", "STRING");
-    locationJsonObject.addProperty("description", "location");
 
-    JsonObject propertiesJsonObject = new JsonObject();
-    propertiesJsonObject.add("location", locationJsonObject);
-
-    JsonObject parametersJsonObject = new JsonObject();
-    parametersJsonObject.addProperty("type", "OBJECT");
-    parametersJsonObject.add("properties", propertiesJsonObject);
-
-    JsonObject jsonObject = new JsonObject();
-    jsonObject.addProperty("name", "getCurrentWeather");
-    jsonObject.addProperty("description", "Get the current weather in a given location");
-    jsonObject.add("parameters", parametersJsonObject);
+    Method function =
+        ITChatSessionIntegrationTest.class.getMethod("getCurrentWeather", String.class);
     Tool tool =
         Tool.newBuilder()
-            .addFunctionDeclarations(FunctionDeclarationMaker.fromJsonObject(jsonObject))
+            .addFunctionDeclarations(
+                FunctionDeclarationMaker.fromFunc(
+                    "Get the current weather in a given location", function, "location"))
             .build();
     ImmutableList<Tool> tools = ImmutableList.of(tool);
 
@@ -240,33 +216,18 @@ public class ITChatSessionIntegrationTest {
       throws IOException, NoSuchMethodException {
     // Arrange
     String message = "What is the weather in Boston?";
-
-    JsonObject locationJsonObject = new JsonObject();
-    locationJsonObject.addProperty("type", "STRING");
-    locationJsonObject.addProperty("description", "location");
-
-    JsonObject propertiesJsonObject = new JsonObject();
-    propertiesJsonObject.add("location", locationJsonObject);
-
-    JsonObject parametersJsonObject = new JsonObject();
-    parametersJsonObject.addProperty("type", "OBJECT");
-    parametersJsonObject.add("properties", propertiesJsonObject);
-
-    JsonObject jsonObject = new JsonObject();
-    jsonObject.addProperty("name", "getCurrentWeather");
-    jsonObject.addProperty("description", "Get the current weather in a given location");
-    jsonObject.add("parameters", parametersJsonObject);
+    Method function =
+        ITChatSessionIntegrationTest.class.getMethod("getCurrentWeather", String.class);
     Tool tool =
         Tool.newBuilder()
-            .addFunctionDeclarations(FunctionDeclarationMaker.fromJsonObject(jsonObject))
+            .addFunctionDeclarations(
+                FunctionDeclarationMaker.fromFunc(
+                    "Get the current weather in a given location", function, "location"))
             .build();
     ImmutableList<Tool> tools = ImmutableList.of(tool);
 
     AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
-    responder.addCallableFunction(
-        "getCurrentWeather",
-        ITChatSessionIntegrationTest.class.getMethod("getCurrentWeather", String.class),
-        "location");
+    responder.addCallableFunction("getCurrentWeather", function, "location");
 
     // Act
     chat = model.startChat();
