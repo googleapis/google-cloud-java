@@ -17,7 +17,6 @@
 package com.google.cloud.vertexai.generativeai;
 
 import com.google.cloud.vertexai.api.Candidate;
-import com.google.cloud.vertexai.api.Candidate.Builder;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Citation;
 import com.google.cloud.vertexai.api.CitationMetadata;
@@ -59,14 +58,10 @@ public class ResponseHandler {
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return a list of {@link com.google.cloud.vertexai.api.FunctionCall} in the response
-   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates, or if the
-   *     response is blocked by safety reason or unauthorized citations
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
    */
   public static ImmutableList<FunctionCall> getFunctionCalls(GenerateContentResponse response) {
-    checkFinishReason(getFinishReason(response));
-    if (response.getCandidatesCount() == 0) {
-      return ImmutableList.of();
-    }
+    getFinishReason(response);
     return response.getCandidates(0).getContent().getPartsList().stream()
         .filter((part) -> part.hasFunctionCall())
         .map((part) -> part.getFunctionCall())
@@ -162,7 +157,7 @@ public class ResponseHandler {
     List<Candidate> aggregatedCandidates = new ArrayList<>();
     candidates.forEach(
         (index, candidate) -> {
-          Builder candidateBuilder = candidate.toBuilder();
+          Candidate.Builder candidateBuilder = candidate.toBuilder();
           if (aggregatedContentParts.containsKey(index)) {
             candidateBuilder.setContent(
                 Content.newBuilder()
