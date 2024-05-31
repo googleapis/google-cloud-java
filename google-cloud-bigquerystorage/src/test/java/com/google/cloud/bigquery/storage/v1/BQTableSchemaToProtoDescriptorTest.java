@@ -106,6 +106,76 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
+  public void testRange() throws Exception {
+    final TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_date")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATE)
+                            .build())
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_datetime")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATETIME)
+                            .build())
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_timestamp")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.TIMESTAMP)
+                            .build())
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_date_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATE)
+                            .build())
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_datetime_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATETIME)
+                            .build())
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_timestamp_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.TIMESTAMP)
+                            .build())
+                    .build())
+            .build();
+    final Descriptor descriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
+    isDescriptorEqual(descriptor, TestRange.getDescriptor());
+  }
+
+  @Test
   public void testStructSimple() throws Exception {
     final TableFieldSchema stringType =
         TableFieldSchema.newBuilder()

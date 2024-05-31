@@ -30,7 +30,7 @@ import org.apache.avro.io.DecoderFactory;
  * SimpleRowReader handles deserialization of the Avro-encoded row blocks transmitted
  * from the storage API using a generic datum decoder.
  */
-public class SimpleRowReader {
+public class SimpleRowReaderAvro {
 
   public interface AvroRowConsumer {
 
@@ -51,7 +51,7 @@ public class SimpleRowReader {
   // Record object will be reused.
   private GenericData.Record row = null;
 
-  public SimpleRowReader(Schema schema) {
+  public SimpleRowReaderAvro(Schema schema) {
     Preconditions.checkNotNull(schema);
     datumReader = new GenericDatumReader<>(schema);
   }

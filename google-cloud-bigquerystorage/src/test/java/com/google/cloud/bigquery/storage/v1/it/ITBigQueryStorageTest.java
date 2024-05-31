@@ -25,8 +25,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.UnauthenticatedException;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -37,28 +41,40 @@ import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
+import com.google.cloud.bigquery.FieldElementType;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.Range;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TimePartitioning;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
+import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers;
 import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.cloud.bigquery.storage.v1.ReadStream;
-import com.google.cloud.bigquery.storage.v1.it.SimpleRowReader.AvroRowConsumer;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableName;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.cloud.bigquery.storage.v1.it.SimpleRowReaderArrow.ArrowRangeBatchConsumer;
+import com.google.cloud.bigquery.storage.v1.it.SimpleRowReaderAvro.AvroRowConsumer;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Timestamp;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -77,6 +93,8 @@ import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecordBuilder;
 import org.apache.avro.util.Utf8;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -95,6 +113,7 @@ public class ITBigQueryStorageTest {
   private static final String DESCRIPTION = "BigQuery Storage Java client test dataset";
 
   private static BigQueryReadClient client;
+  private static String projectName;
   private static String parentProjectId;
   private static BigQuery bigquery;
 
@@ -158,10 +177,269 @@ public class ITBigQueryStorageTest {
           + "  \"universe_domain\": \"fake.domain\"\n"
           + "}";
 
+  private static final com.google.cloud.bigquery.Schema RANGE_SCHEMA =
+      com.google.cloud.bigquery.Schema.of(
+          Field.newBuilder("name", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("Name of the row")
+              .build(),
+          Field.newBuilder("date", StandardSQLTypeName.RANGE)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("Range field with DATE")
+              .setRangeElementType(FieldElementType.newBuilder().setType("DATE").build())
+              .build(),
+          Field.newBuilder("datetime", StandardSQLTypeName.RANGE)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("Range field with DATETIME")
+              .setRangeElementType(FieldElementType.newBuilder().setType("DATETIME").build())
+              .build(),
+          Field.newBuilder("timestamp", StandardSQLTypeName.RANGE)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("Range field with TIMESTAMP")
+              .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+              .build());
+
+  // storage.v1.TableSchema of RANGE_SCHEMA
+  private static final TableSchema RANGE_TABLE_SCHEMA =
+      TableSchema.newBuilder()
+          .addFields(
+              TableFieldSchema.newBuilder()
+                  .setName("name")
+                  .setType(TableFieldSchema.Type.STRING)
+                  .setMode(TableFieldSchema.Mode.NULLABLE)
+                  .build())
+          .addFields(
+              TableFieldSchema.newBuilder()
+                  .setName("date")
+                  .setType(TableFieldSchema.Type.RANGE)
+                  .setRangeElementType(
+                      TableFieldSchema.FieldElementType.newBuilder()
+                          .setType(TableFieldSchema.Type.DATE)
+                          .build())
+                  .setMode(TableFieldSchema.Mode.NULLABLE)
+                  .build())
+          .addFields(
+              TableFieldSchema.newBuilder()
+                  .setName("datetime")
+                  .setType(TableFieldSchema.Type.RANGE)
+                  .setRangeElementType(
+                      TableFieldSchema.FieldElementType.newBuilder()
+                          .setType(TableFieldSchema.Type.DATETIME)
+                          .build())
+                  .setMode(TableFieldSchema.Mode.NULLABLE)
+                  .build())
+          .addFields(
+              TableFieldSchema.newBuilder()
+                  .setName("timestamp")
+                  .setType(TableFieldSchema.Type.RANGE)
+                  .setRangeElementType(
+                      TableFieldSchema.FieldElementType.newBuilder()
+                          .setType(TableFieldSchema.Type.TIMESTAMP)
+                          .build())
+                  .setMode(TableFieldSchema.Mode.NULLABLE)
+                  .build())
+          .build();
+
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_DATES =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("2020-01-01")
+                  .setEnd("2020-12-31")
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("2020-12-31")
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("2020-01-01")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .build();
+
+  // dates are returned as days since epoch
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_EXPECTED_DATES =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("18262")
+                  .setEnd("18627")
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("18627")
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("18262")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATE").build())
+                  .build())
+          .build();
+
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_DATETIME =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("2014-08-19T05:41:35.220000")
+                  .setEnd("2015-09-20T06:41:35.220000")
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("2015-09-20T06:41:35.220000")
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("2014-08-19T05:41:35.220000")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .build();
+
+  // datetime are returned as up to millisecond precision instead of microsecond input value
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_EXPECTED_DATETIME =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("2014-08-19T05:41:35.220")
+                  .setEnd("2015-09-20T06:41:35.220")
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("2015-09-20T06:41:35.220")
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("2014-08-19T05:41:35.220")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("DATETIME").build())
+                  .build())
+          .build();
+
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_TIMESTAMP =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("2014-08-19 12:41:35.220000+00:00")
+                  .setEnd("2015-09-20 13:41:35.220000+01:00")
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("2015-09-20 13:41:35.220000+01:00")
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("2014-08-19 12:41:35.220000+00:00")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .build();
+
+  // timestamps are returned as seconds since epoch
+  private static final ImmutableMap<String, Range> RANGE_TEST_VALUES_EXPECTED_TIMESTAMP =
+      new ImmutableMap.Builder<String, Range>()
+          .put(
+              "bounded",
+              Range.newBuilder()
+                  .setStart("1408452095220000")
+                  .setEnd("1442752895220000")
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unboundedStart",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd("1442752895220000")
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unboundedEnd",
+              Range.newBuilder()
+                  .setStart("1408452095220000")
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .put(
+              "unbounded",
+              Range.newBuilder()
+                  .setStart(null)
+                  .setEnd(null)
+                  .setType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+                  .build())
+          .build();
+
   @BeforeClass
   public static void beforeClass() throws IOException {
     client = BigQueryReadClient.create();
-    parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
+    projectName = ServiceOptions.getDefaultProjectId();
+    parentProjectId = String.format("projects/%s", projectName);
 
     LOG.info(
         String.format(
@@ -271,9 +549,9 @@ public class ITBigQueryStorageTest {
   }
 
   @Test
-  public void testRangeType() throws InterruptedException {
+  public void testRangeTypeSimple() throws InterruptedException {
     // Create table with Range values.
-    String tableName = "test_range_type";
+    String tableName = "test_range_type_read";
     TableId tableId = TableId.of(DATASET, tableName);
     QueryJobConfiguration createTable =
         QueryJobConfiguration.newBuilder(
@@ -327,6 +605,130 @@ public class ITBigQueryStorageTest {
       rowCount += response.getRowCount();
     }
     assertEquals(1, rowCount);
+  }
+
+  @Test
+  public void testRangeTypeWrite()
+      throws InterruptedException, IOException, DescriptorValidationException {
+    // Create table with Range fields.
+    String tableName = "test_range_type_write";
+    TableId tableId = TableId.of(DATASET, tableName);
+    bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(RANGE_SCHEMA)));
+
+    TableName parentTable = TableName.of(projectName, DATASET, tableName);
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(500))
+            .setRetryDelayMultiplier(1.1)
+            .setMaxAttempts(5)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .build();
+    try (JsonStreamWriter writer =
+        JsonStreamWriter.newBuilder(parentTable.toString(), RANGE_TABLE_SCHEMA)
+            .setRetrySettings(retrySettings)
+            .build()) {
+
+      // Write 4 rows of data to the table with and without unbounded values.
+      JSONArray data = new JSONArray();
+      for (String name : RANGE_TEST_VALUES_DATES.keySet()) {
+        JSONObject row = new JSONObject();
+        row.put("name", name);
+
+        JSONObject dateColumn = new JSONObject();
+        Range date = RANGE_TEST_VALUES_DATES.get(name);
+        if ((!date.getStart().isNull()) && (date.getStart().getStringValue() != null)) {
+          dateColumn.put("start", date.getStart().getStringValue());
+        }
+        if ((!date.getEnd().isNull()) && (date.getEnd().getStringValue() != null)) {
+          dateColumn.put("end", date.getEnd().getStringValue());
+        }
+        row.put("daTE", dateColumn);
+
+        JSONObject datetimeColumn = new JSONObject();
+        Range datetime = RANGE_TEST_VALUES_DATETIME.get(name);
+        if ((!datetime.getStart().isNull()) && (datetime.getStart().getStringValue() != null)) {
+          datetimeColumn.put("start", datetime.getStart().getStringValue());
+        }
+        if ((!datetime.getEnd().isNull()) && (datetime.getEnd().getStringValue() != null)) {
+          datetimeColumn.put("end", datetime.getEnd().getStringValue());
+        }
+        row.put("daTEtiME", datetimeColumn);
+
+        JSONObject timestampColumn = new JSONObject();
+        Range timestamp = RANGE_TEST_VALUES_TIMESTAMP.get(name);
+        if ((!timestamp.getStart().isNull()) && (timestamp.getStart().getStringValue() != null)) {
+          timestampColumn.put("start", timestamp.getStart().getStringValue());
+        }
+        if ((!timestamp.getEnd().isNull()) && (timestamp.getEnd().getStringValue() != null)) {
+          timestampColumn.put("end", timestamp.getEnd().getStringValue());
+        }
+        row.put("tiMEstAMp", timestampColumn);
+
+        data.put(row);
+      }
+
+      ApiFuture<AppendRowsResponse> future = writer.append(data);
+      // The append method is asynchronous. Rather than waiting for the method to complete,
+      // which can hurt performance, register a completion callback and continue streaming.
+      ApiFutures.addCallback(future, new AppendCompleteCallback(), MoreExecutors.directExecutor());
+    }
+
+    String table =
+        BigQueryResource.FormatTableResource(
+            /* projectId = */ projectName,
+            /* datasetId = */ DATASET,
+            /* tableId = */ tableId.getTable());
+    ReadSession session =
+        client.createReadSession(
+            /* parent = */ parentProjectId,
+            /* readSession = */ ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.ARROW)
+                .build(),
+            /* maxStreamCount = */ 1);
+    assertEquals(
+        String.format(
+            "Did not receive expected number of streams for table '%s' CreateReadSession response:%n%s",
+            table, session.toString()),
+        1,
+        session.getStreamsCount());
+
+    // Assert that there are streams available in the session.  An empty table may not have
+    // data available.  If no sessions are available for an anonymous (cached) table, consider
+    // writing results of a query to a named table rather than consuming cached results
+    // directly.
+    Preconditions.checkState(session.getStreamsCount() > 0);
+
+    // Set up a simple reader and start a read session.
+    try (SimpleRowReaderArrow reader = new SimpleRowReaderArrow(session.getArrowSchema())) {
+
+      // Assert that there are streams available in the session.  An empty table may not have
+      // data available.  If no sessions are available for an anonymous (cached) table, consider
+      // writing results of a query to a named table rather than consuming cached results
+      // directly.
+      Preconditions.checkState(session.getStreamsCount() > 0);
+
+      // Use the first stream to perform reading.
+      String streamName = session.getStreams(0).getName();
+
+      ReadRowsRequest readRowsRequest =
+          ReadRowsRequest.newBuilder().setReadStream(streamName).build();
+
+      long rowCount = 0;
+      // Process each block of rows as they arrive and decode using our simple row reader.
+      ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+      for (ReadRowsResponse response : stream) {
+        Preconditions.checkState(response.hasArrowRecordBatch());
+        reader.processRows(
+            response.getArrowRecordBatch(),
+            new ArrowRangeBatchConsumer(
+                RANGE_TEST_VALUES_EXPECTED_DATES,
+                RANGE_TEST_VALUES_EXPECTED_DATETIME,
+                RANGE_TEST_VALUES_EXPECTED_TIMESTAMP));
+        rowCount += response.getRowCount();
+      }
+      assertEquals(RANGE_TEST_VALUES_DATES.size(), rowCount);
+    }
   }
 
   @Test
@@ -407,8 +809,8 @@ public class ITBigQueryStorageTest {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
 
-    SimpleRowReader reader =
-        new SimpleRowReader(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
+    SimpleRowReaderAvro reader =
+        new SimpleRowReaderAvro(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
 
     long rowCount = 0;
 
@@ -485,7 +887,7 @@ public class ITBigQueryStorageTest {
         Schema.Type.LONG,
         avroSchema.getField("word_count").schema().getType());
 
-    SimpleRowReader reader = new SimpleRowReader(avroSchema);
+    SimpleRowReaderAvro reader = new SimpleRowReaderAvro(avroSchema);
 
     long rowCount = 0;
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
@@ -536,7 +938,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
+            /* projectId = */ projectName,
             /* datasetId = */ DATASET,
             /* tableId = */ testTableId.getTable());
 
@@ -590,7 +992,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
+            /* projectId = */ projectName,
             /* datasetId = */ DATASET,
             /* tableId = */ partitionedTableName);
 
@@ -639,7 +1041,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
+            /* projectId = */ projectName,
             /* datasetId = */ testTableId.getDataset(),
             /* tableId = */ testTableId.getTable());
 
@@ -682,9 +1084,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
-            /* datasetId = */ DATASET,
-            /* tableId = */ tableName);
+            /* projectId = */ projectName, /* datasetId = */ DATASET, /* tableId = */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table = */ table, /* filter = */ null);
     assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
@@ -781,9 +1181,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
-            /* datasetId = */ DATASET,
-            /* tableId = */ tableName);
+            /* projectId = */ projectName, /* datasetId = */ DATASET, /* tableId = */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table = */ table, /* filter = */ null);
     assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
@@ -881,9 +1279,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
-            /* datasetId = */ DATASET,
-            /* tableId = */ tableName);
+            /* projectId = */ projectName, /* datasetId = */ DATASET, /* tableId = */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table = */ table, /* filter = */ null);
     assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
@@ -932,9 +1328,7 @@ public class ITBigQueryStorageTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ ServiceOptions.getDefaultProjectId(),
-            /* datasetId = */ DATASET,
-            /* tableId = */ tableName);
+            /* projectId = */ projectName, /* datasetId = */ DATASET, /* tableId = */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table = */ table, /* filter = */ null);
     assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
@@ -1254,8 +1648,8 @@ public class ITBigQueryStorageTest {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
 
-    SimpleRowReader reader =
-        new SimpleRowReader(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
+    SimpleRowReaderAvro reader =
+        new SimpleRowReaderAvro(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
 
     ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
@@ -1338,5 +1732,25 @@ public class ITBigQueryStorageTest {
       fail("Couldn't create fake JSON credentials.");
     }
     return null;
+  }
+
+  static class AppendCompleteCallback implements ApiFutureCallback<AppendRowsResponse> {
+    private static final Object lock = new Object();
+    private static int batchCount = 0;
+
+    public void onSuccess(AppendRowsResponse response) {
+      synchronized (lock) {
+        if (response.hasError()) {
+          System.out.format("Error: %s\n", response.getError());
+        } else {
+          ++batchCount;
+          System.out.format("Wrote batch %d\n", batchCount);
+        }
+      }
+    }
+
+    public void onFailure(Throwable throwable) {
+      System.out.format("Error: %s\n", throwable.toString());
+    }
   }
 }

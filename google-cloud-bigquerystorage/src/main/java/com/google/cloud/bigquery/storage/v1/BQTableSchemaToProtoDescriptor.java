@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -61,6 +62,7 @@ public class BQTableSchemaToProtoDescriptor {
               .put(TableFieldSchema.Type.TIMESTAMP, FieldDescriptorProto.Type.TYPE_INT64)
               .put(TableFieldSchema.Type.JSON, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.INTERVAL, FieldDescriptorProto.Type.TYPE_STRING)
+              .put(TableFieldSchema.Type.RANGE, FieldDescriptorProto.Type.TYPE_MESSAGE)
               .build();
 
   /**
@@ -89,7 +91,7 @@ public class BQTableSchemaToProtoDescriptor {
       TableSchema BQTableSchema,
       String scope,
       HashMap<ImmutableList<TableFieldSchema>, Descriptor> dependencyMap)
-      throws Descriptors.DescriptorValidationException {
+      throws Descriptors.DescriptorValidationException, IllegalArgumentException {
     List<FileDescriptor> dependenciesList = new ArrayList<FileDescriptor>();
     List<FieldDescriptorProto> fields = new ArrayList<FieldDescriptorProto>();
     int index = 1;
@@ -99,25 +101,72 @@ public class BQTableSchemaToProtoDescriptor {
               ? BQTableField.getName()
               : BigQuerySchemaUtil.generatePlaceholderFieldName(BQTableField.getName());
       String currentScope = scope + "__" + scopeName;
-      if (BQTableField.getType() == TableFieldSchema.Type.STRUCT) {
-        ImmutableList<TableFieldSchema> fieldList =
-            ImmutableList.copyOf(BQTableField.getFieldsList());
-        if (dependencyMap.containsKey(fieldList)) {
-          Descriptor descriptor = dependencyMap.get(fieldList);
-          dependenciesList.add(descriptor.getFile());
-          fields.add(convertBQTableFieldToProtoField(BQTableField, index++, descriptor.getName()));
-        } else {
-          Descriptor descriptor =
-              convertBQTableSchemaToProtoDescriptorImpl(
-                  TableSchema.newBuilder().addAllFields(fieldList).build(),
-                  currentScope,
-                  dependencyMap);
-          dependenciesList.add(descriptor.getFile());
-          dependencyMap.put(fieldList, descriptor);
+      switch (BQTableField.getType()) {
+        case STRUCT:
+          ImmutableList<TableFieldSchema> fieldList =
+              ImmutableList.copyOf(BQTableField.getFieldsList());
+          if (dependencyMap.containsKey(fieldList)) {
+            Descriptor descriptor = dependencyMap.get(fieldList);
+            dependenciesList.add(descriptor.getFile());
+            fields.add(
+                convertBQTableFieldToProtoField(BQTableField, index++, descriptor.getName()));
+          } else {
+            Descriptor descriptor =
+                convertBQTableSchemaToProtoDescriptorImpl(
+                    TableSchema.newBuilder().addAllFields(fieldList).build(),
+                    currentScope,
+                    dependencyMap);
+            dependenciesList.add(descriptor.getFile());
+            dependencyMap.put(fieldList, descriptor);
+            fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
+          }
+          break;
+        case RANGE:
+          switch (BQTableField.getRangeElementType().getType()) {
+            case DATE:
+            case DATETIME:
+            case TIMESTAMP:
+              break;
+            default:
+              throw new IllegalArgumentException(
+                  String.format(
+                      "Error: %s of type RANGE requires range element type (DATE, DATETIME, TIMESTAMP)",
+                      currentScope));
+          }
+          // For RANGE type, expliclitly add the fields start and end of the same FieldElementType
+          // as it is not expliclity defined in the TableSchema.
+          ImmutableList<TableFieldSchema> rangeFields =
+              ImmutableList.of(
+                  TableFieldSchema.newBuilder()
+                      .setType(BQTableField.getRangeElementType().getType())
+                      .setName("start")
+                      .setMode(Mode.NULLABLE)
+                      .build(),
+                  TableFieldSchema.newBuilder()
+                      .setType(BQTableField.getRangeElementType().getType())
+                      .setName("end")
+                      .setMode(Mode.NULLABLE)
+                      .build());
+
+          if (dependencyMap.containsKey(rangeFields)) {
+            Descriptor descriptor = dependencyMap.get(rangeFields);
+            dependenciesList.add(descriptor.getFile());
+            fields.add(
+                convertBQTableFieldToProtoField(BQTableField, index++, descriptor.getName()));
+          } else {
+            Descriptor descriptor =
+                convertBQTableSchemaToProtoDescriptorImpl(
+                    TableSchema.newBuilder().addAllFields(rangeFields).build(),
+                    currentScope,
+                    dependencyMap);
+            dependenciesList.add(descriptor.getFile());
+            dependencyMap.put(rangeFields, descriptor);
+            fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
+          }
+          break;
+        default:
           fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
-        }
-      } else {
-        fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
+          break;
       }
     }
     FileDescriptor[] dependenciesArray = new FileDescriptor[dependenciesList.size()];
@@ -150,11 +199,19 @@ public class BQTableSchemaToProtoDescriptor {
             .setNumber(index)
             .setLabel((FieldDescriptorProto.Label) BQTableSchemaModeMap.get(mode));
 
-    if (BQTableField.getType() == TableFieldSchema.Type.STRUCT) {
-      fieldDescriptor.setTypeName(scope);
-    } else {
-      fieldDescriptor.setType(
-          (FieldDescriptorProto.Type) BQTableSchemaTypeMap.get(BQTableField.getType()));
+    switch (BQTableField.getType()) {
+      case STRUCT:
+        fieldDescriptor.setTypeName(scope);
+        break;
+      case RANGE:
+        fieldDescriptor.setType(
+            (FieldDescriptorProto.Type) BQTableSchemaTypeMap.get(BQTableField.getType()));
+        fieldDescriptor.setTypeName(scope);
+        break;
+      default:
+        fieldDescriptor.setType(
+            (FieldDescriptorProto.Type) BQTableSchemaTypeMap.get(BQTableField.getType()));
+        break;
     }
 
     // Sets columnName annotation when field name is not proto comptaible.

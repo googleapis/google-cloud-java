@@ -433,6 +433,40 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
     if (tableFieldSchemaList != null) {
       // protoSchema is generated from tableSchema so their field ordering should match.
       fieldSchema = tableFieldSchemaList.get(field.getIndex());
+      // For RANGE type, expliclitly add the fields start and end of the same FieldElementType as it
+      // is not expliclity defined in the TableFieldSchema.
+      if (fieldSchema.getType() == TableFieldSchema.Type.RANGE) {
+        switch (fieldSchema.getRangeElementType().getType()) {
+          case DATE:
+          case DATETIME:
+          case TIMESTAMP:
+            fieldSchema =
+                fieldSchema
+                    .toBuilder()
+                    .addFields(
+                        TableFieldSchema.newBuilder()
+                            .setName("start")
+                            .setType(fieldSchema.getRangeElementType().getType())
+                            .build())
+                    .addFields(
+                        TableFieldSchema.newBuilder()
+                            .setName("end")
+                            .setType(fieldSchema.getRangeElementType().getType())
+                            .build())
+                    .build();
+            break;
+          default:
+            throw new ValidationException(
+                "Field at index "
+                    + field.getIndex()
+                    + " with name ("
+                    + fieldSchema.getName()
+                    + ") with type (RANGE) has an unsupported range element type ("
+                    + fieldSchema.getRangeElementType()
+                    + ")");
+        }
+      }
+
       if (!fieldSchema.getName().toLowerCase().equals(BigQuerySchemaUtil.getFieldName(field))) {
         throw new ValidationException(
             "Field at index "

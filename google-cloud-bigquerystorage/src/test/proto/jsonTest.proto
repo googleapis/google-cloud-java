@@ -211,3 +211,27 @@ message TestBignumeric {
 message TestMixedCaseFieldNames {
   required string foobar = 1;
 }
+
+message TestRange {
+  optional TestRangeDate range_date = 1;
+  optional TestRangeDatetime range_datetime = 2;
+  optional TestRangeTimestamp range_timestamp = 3;
+  optional TestRangeDate range_date_mixed_case = 4;
+  optional TestRangeDatetime range_datetime_mixed_case = 5;
+  optional TestRangeTimestamp range_timestamp_mixed_case = 6;
+}
+
+message TestRangeDate {
+  optional int32 start = 1;
+  optional int32 end = 2;
+}
+
+message TestRangeDatetime {
+  optional int64 start = 1;
+  optional int64 end = 2;
+}
+
+message TestRangeTimestamp {
+  optional int64 start = 1;
+  optional int64 end = 2;
+}

@@ -1020,6 +1020,128 @@ public class JsonToProtoMessageTest {
   }
 
   @Test
+  public void testRange() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_date")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATE)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_datetime")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATETIME)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("range_timestamp")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.TIMESTAMP)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("raNGe_daTE_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATE)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("ranGE_daTEtiME_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.DATETIME)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("raNGe_tiMEstAMp_miXEd_caSE")
+                    .setType(TableFieldSchema.Type.RANGE)
+                    .setRangeElementType(
+                        TableFieldSchema.FieldElementType.newBuilder()
+                            .setType(TableFieldSchema.Type.TIMESTAMP)
+                            .build())
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .build();
+
+    TestRange expectedProto =
+        TestRange.newBuilder()
+            .setRangeDate(TestRangeDate.newBuilder().setStart(18262).setEnd(18627))
+            .setRangeDatetime(
+                TestRangeDatetime.newBuilder().setStart(1715360343).setEnd(1715446743))
+            .setRangeTimestamp(
+                TestRangeTimestamp.newBuilder().setStart(1715360343).setEnd(1715446743))
+            .setRangeDateMixedCase(TestRangeDate.newBuilder().setStart(1).setEnd(2))
+            .setRangeDatetimeMixedCase(
+                TestRangeDatetime.newBuilder()
+                    .setStart(142258614586538368L)
+                    .setEnd(142258525253402624L))
+            .setRangeTimestampMixedCase(
+                TestRangeTimestamp.newBuilder().setStart(10L).setEnd(1649174771000000L))
+            .build();
+
+    JSONArray data = new JSONArray();
+    JSONObject row = new JSONObject();
+
+    JSONObject rangeDate = new JSONObject();
+    rangeDate.put("start", 18262);
+    rangeDate.put("end", 18627);
+    row.put("range_date", rangeDate);
+
+    JSONObject rangeDatetime = new JSONObject();
+    rangeDatetime.put("start", 1715360343);
+    rangeDatetime.put("end", 1715446743);
+    row.put("range_datetime", rangeDatetime);
+
+    JSONObject rangeTimestamp = new JSONObject();
+    rangeTimestamp.put("start", 1715360343);
+    rangeTimestamp.put("end", 1715446743);
+    row.put("range_timestamp", rangeTimestamp);
+
+    JSONObject rangeDateMixedCase = new JSONObject();
+    rangeDateMixedCase.put("START", "1970-01-02");
+    rangeDateMixedCase.put("eND", "1970-01-03");
+    row.put("range_date_mixed_case", rangeDateMixedCase);
+
+    JSONObject rangeDatetimeMixedCase = new JSONObject();
+    rangeDatetimeMixedCase.put("STaRT", "2021-09-27T20:51:10.752");
+    rangeDatetimeMixedCase.put("END", "2021-09-27T00:00:00");
+    row.put("range_datetime_mixed_case", rangeDatetimeMixedCase);
+
+    JSONObject rangeTimestampMixedCase = new JSONObject();
+    rangeTimestampMixedCase.put("START", "1970-01-01 00:00:00.000010");
+    rangeTimestampMixedCase.put("eND", "2022-04-05 09:06:11 PST");
+    row.put("range_timestamp_mixed_case", rangeTimestampMixedCase);
+
+    data.put(row);
+    List<DynamicMessage> protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestRange.getDescriptor(), tableSchema, data, false);
+    assertEquals(expectedProto, protoMsg.get(0));
+  }
+
+  @Test
   public void testStructSimple() throws Exception {
     structSimple("test", "test");
     structSimple(true, "true");
