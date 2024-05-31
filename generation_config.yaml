@@ -1094,7 +1094,6 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/iap/v1
-  - proto_path: google/cloud/iap/v1beta1
   requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
