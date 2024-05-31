@@ -106,7 +106,6 @@
     <module>java-iam</module>
     <module>java-iam-admin</module>
     <module>java-iamcredentials</module>
-    <module>java-iap</module>
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
