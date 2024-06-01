@@ -130,7 +130,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           /src/cli/entry_point.py validate-generation-config
       env:
-        library_generation_image_tag: 2.40.1
+        library_generation_image_tag: 2.41.0
         workspace_name: /workspace
 
 # TODO: Uncomment the needed Github Actions
