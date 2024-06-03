@@ -779,3 +779,6 @@ grpc-google-cloud-developerconnect-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-iap:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT

@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.managedkafka.v1",
+  "libraryPackage": "com.google.cloud.managedkafka.v1",
+  "services": {
+    "ManagedKafka": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ManagedKafkaClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateTopic": {
+              "methods": ["createTopic", "createTopic", "createTopic", "createTopicCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DeleteConsumerGroup": {
+              "methods": ["deleteConsumerGroup", "deleteConsumerGroup", "deleteConsumerGroup", "deleteConsumerGroupCallable"]
+            },
+            "DeleteTopic": {
+              "methods": ["deleteTopic", "deleteTopic", "deleteTopic", "deleteTopicCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetConsumerGroup": {
+              "methods": ["getConsumerGroup", "getConsumerGroup", "getConsumerGroup", "getConsumerGroupCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTopic": {
+              "methods": ["getTopic", "getTopic", "getTopic", "getTopicCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListConsumerGroups": {
+              "methods": ["listConsumerGroups", "listConsumerGroups", "listConsumerGroups", "listConsumerGroupsPagedCallable", "listConsumerGroupsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTopics": {
+              "methods": ["listTopics", "listTopics", "listTopics", "listTopicsPagedCallable", "listTopicsCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateConsumerGroup": {
+              "methods": ["updateConsumerGroup", "updateConsumerGroup", "updateConsumerGroupCallable"]
+            },
+            "UpdateTopic": {
+              "methods": ["updateTopic", "updateTopic", "updateTopicCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
