@@ -27,8 +27,8 @@ jobs:
       matrix:
         java: [11, 17, 21]
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
@@ -41,8 +41,8 @@ jobs:
     name: "units (8)"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: 8
           distribution: temurin
@@ -51,7 +51,7 @@ jobs:
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
         run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
         shell: bash
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: temurin
@@ -63,8 +63,8 @@ jobs:
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 8
@@ -78,8 +78,8 @@ jobs:
       matrix:
         java: [17]
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
@@ -88,8 +88,8 @@ jobs:
   javadoc:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 17
@@ -100,8 +100,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 11
@@ -112,8 +112,8 @@ jobs:
   clirr:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 8
