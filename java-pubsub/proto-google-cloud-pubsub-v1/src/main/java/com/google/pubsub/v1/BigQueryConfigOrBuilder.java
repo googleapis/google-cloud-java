@@ -145,4 +145,39 @@ public interface BigQueryConfigOrBuilder
    * @return The useTableSchema.
    */
   boolean getUseTableSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to BigQuery. The subscription
+   * creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub [service
+   * agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  java.lang.String getServiceAccountEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to BigQuery. The subscription
+   * creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub [service
+   * agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  com.google.protobuf.ByteString getServiceAccountEmailBytes();
 }

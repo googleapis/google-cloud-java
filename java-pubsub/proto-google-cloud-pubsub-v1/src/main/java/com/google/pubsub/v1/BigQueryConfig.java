@@ -41,6 +41,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   private BigQueryConfig() {
     table_ = "";
     state_ = 0;
+    serviceAccountEmail_ = "";
   }
 
   @java.lang.Override
@@ -477,6 +478,67 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     return useTableSchema_;
   }
 
+  public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to BigQuery. The subscription
+   * creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub [service
+   * agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccountEmail() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountEmail_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to BigQuery. The subscription
+   * creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub [service
+   * agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+    java.lang.Object ref = serviceAccountEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -509,6 +571,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (useTableSchema_ != false) {
       output.writeBool(6, useTableSchema_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, serviceAccountEmail_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -536,6 +601,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (useTableSchema_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useTableSchema_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, serviceAccountEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -557,6 +625,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (getDropUnknownFields() != other.getDropUnknownFields()) return false;
     if (state_ != other.state_) return false;
     if (getUseTableSchema() != other.getUseTableSchema()) return false;
+    if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -580,6 +649,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + USE_TABLE_SCHEMA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTableSchema());
+    hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountEmail().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -724,6 +795,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       dropUnknownFields_ = false;
       state_ = 0;
       useTableSchema_ = false;
+      serviceAccountEmail_ = "";
       return this;
     }
 
@@ -776,6 +848,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.useTableSchema_ = useTableSchema_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
       }
     }
 
@@ -844,6 +919,11 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getUseTableSchema() != false) {
         setUseTableSchema(other.getUseTableSchema());
       }
+      if (!other.getServiceAccountEmail().isEmpty()) {
+        serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -906,6 +986,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                serviceAccountEmail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1385,6 +1471,137 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUseTableSchema() {
       bitField0_ = (bitField0_ & ~0x00000020);
       useTableSchema_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccountEmail_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account to use to write to BigQuery. The subscription
+     * creator or updater that specifies this field must have
+     * `iam.serviceAccounts.actAs` permission on the service account. If not
+     * specified, the Pub/Sub [service
+     * agent](https://cloud.google.com/iam/docs/service-agents),
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+     * </pre>
+     *
+     * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccountEmail.
+     */
+    public java.lang.String getServiceAccountEmail() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account to use to write to BigQuery. The subscription
+     * creator or updater that specifies this field must have
+     * `iam.serviceAccounts.actAs` permission on the service account. If not
+     * specified, the Pub/Sub [service
+     * agent](https://cloud.google.com/iam/docs/service-agents),
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+     * </pre>
+     *
+     * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccountEmail.
+     */
+    public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account to use to write to BigQuery. The subscription
+     * creator or updater that specifies this field must have
+     * `iam.serviceAccounts.actAs` permission on the service account. If not
+     * specified, the Pub/Sub [service
+     * agent](https://cloud.google.com/iam/docs/service-agents),
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+     * </pre>
+     *
+     * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmail(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account to use to write to BigQuery. The subscription
+     * creator or updater that specifies this field must have
+     * `iam.serviceAccounts.actAs` permission on the service account. If not
+     * specified, the Pub/Sub [service
+     * agent](https://cloud.google.com/iam/docs/service-agents),
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+     * </pre>
+     *
+     * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountEmail() {
+      serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account to use to write to BigQuery. The subscription
+     * creator or updater that specifies this field must have
+     * `iam.serviceAccounts.actAs` permission on the service account. If not
+     * specified, the Pub/Sub [service
+     * agent](https://cloud.google.com/iam/docs/service-agents),
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+     * </pre>
+     *
+     * <code>string service_account_email = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for serviceAccountEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
