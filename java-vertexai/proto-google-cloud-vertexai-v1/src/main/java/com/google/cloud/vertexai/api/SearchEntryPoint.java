@@ -23,98 +23,117 @@ package com.google.cloud.vertexai.api;
  *
  *
  * <pre>
- * Segment of the content.
+ * Google search entry point.
  * </pre>
  *
- * Protobuf type {@code google.cloud.vertexai.v1.Segment}
+ * Protobuf type {@code google.cloud.vertexai.v1.SearchEntryPoint}
  */
-public final class Segment extends com.google.protobuf.GeneratedMessageV3
+public final class SearchEntryPoint extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Segment)
-    SegmentOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.SearchEntryPoint)
+    SearchEntryPointOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Segment.newBuilder() to construct.
-  private Segment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SearchEntryPoint.newBuilder() to construct.
+  private SearchEntryPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Segment() {}
+  private SearchEntryPoint() {
+    renderedContent_ = "";
+    sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Segment();
+    return new SearchEntryPoint();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vertexai.api.ContentProto
-        .internal_static_google_cloud_vertexai_v1_Segment_descriptor;
+        .internal_static_google_cloud_vertexai_v1_SearchEntryPoint_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vertexai.api.ContentProto
-        .internal_static_google_cloud_vertexai_v1_Segment_fieldAccessorTable
+        .internal_static_google_cloud_vertexai_v1_SearchEntryPoint_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vertexai.api.Segment.class,
-            com.google.cloud.vertexai.api.Segment.Builder.class);
+            com.google.cloud.vertexai.api.SearchEntryPoint.class,
+            com.google.cloud.vertexai.api.SearchEntryPoint.Builder.class);
   }
 
-  public static final int PART_INDEX_FIELD_NUMBER = 1;
-  private int partIndex_ = 0;
+  public static final int RENDERED_CONTENT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object renderedContent_ = "";
   /**
    *
    *
    * <pre>
-   * Output only. The index of a Part object within its parent Content object.
+   * Optional. Web content snippet that can be embedded in a web page or an app
+   * webview.
    * </pre>
    *
-   * <code>int32 part_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The partIndex.
+   * @return The renderedContent.
    */
   @java.lang.Override
-  public int getPartIndex() {
-    return partIndex_;
+  public java.lang.String getRenderedContent() {
+    java.lang.Object ref = renderedContent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      renderedContent_ = s;
+      return s;
+    }
   }
-
-  public static final int START_INDEX_FIELD_NUMBER = 2;
-  private int startIndex_ = 0;
   /**
    *
    *
    * <pre>
-   * Output only. Start index in the given Part, measured in bytes. Offset from
-   * the start of the Part, inclusive, starting at zero.
+   * Optional. Web content snippet that can be embedded in a web page or an app
+   * webview.
    * </pre>
    *
-   * <code>int32 start_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The startIndex.
+   * @return The bytes for renderedContent.
    */
   @java.lang.Override
-  public int getStartIndex() {
-    return startIndex_;
+  public com.google.protobuf.ByteString getRenderedContentBytes() {
+    java.lang.Object ref = renderedContent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      renderedContent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static final int END_INDEX_FIELD_NUMBER = 3;
-  private int endIndex_ = 0;
+  public static final int SDK_BLOB_FIELD_NUMBER = 2;
+  private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
    * <pre>
-   * Output only. End index in the given Part, measured in bytes. Offset from
-   * the start of the Part, exclusive, starting at zero.
+   * Optional. Base64 encoded JSON representing array of &lt;search term, search
+   * url&gt; tuple.
    * </pre>
    *
-   * <code>int32 end_index = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bytes sdk_blob = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The endIndex.
+   * @return The sdkBlob.
    */
   @java.lang.Override
-  public int getEndIndex() {
-    return endIndex_;
+  public com.google.protobuf.ByteString getSdkBlob() {
+    return sdkBlob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -131,14 +150,11 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (partIndex_ != 0) {
-      output.writeInt32(1, partIndex_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(renderedContent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, renderedContent_);
     }
-    if (startIndex_ != 0) {
-      output.writeInt32(2, startIndex_);
-    }
-    if (endIndex_ != 0) {
-      output.writeInt32(3, endIndex_);
+    if (!sdkBlob_.isEmpty()) {
+      output.writeBytes(2, sdkBlob_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -149,14 +165,11 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (partIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, partIndex_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(renderedContent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, renderedContent_);
     }
-    if (startIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, startIndex_);
-    }
-    if (endIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, endIndex_);
+    if (!sdkBlob_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, sdkBlob_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,14 +181,14 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.vertexai.api.Segment)) {
+    if (!(obj instanceof com.google.cloud.vertexai.api.SearchEntryPoint)) {
       return super.equals(obj);
     }
-    com.google.cloud.vertexai.api.Segment other = (com.google.cloud.vertexai.api.Segment) obj;
+    com.google.cloud.vertexai.api.SearchEntryPoint other =
+        (com.google.cloud.vertexai.api.SearchEntryPoint) obj;
 
-    if (getPartIndex() != other.getPartIndex()) return false;
-    if (getStartIndex() != other.getStartIndex()) return false;
-    if (getEndIndex() != other.getEndIndex()) return false;
+    if (!getRenderedContent().equals(other.getRenderedContent())) return false;
+    if (!getSdkBlob().equals(other.getSdkBlob())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,81 +200,80 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PART_INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getPartIndex();
-    hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getStartIndex();
-    hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getEndIndex();
+    hash = (37 * hash) + RENDERED_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getRenderedContent().hashCode();
+    hash = (37 * hash) + SDK_BLOB_FIELD_NUMBER;
+    hash = (53 * hash) + getSdkBlob().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(byte[] data)
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(java.io.InputStream input)
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseDelimitedFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vertexai.api.Segment parseFrom(
+  public static com.google.cloud.vertexai.api.SearchEntryPoint parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -278,7 +290,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.vertexai.api.Segment prototype) {
+  public static Builder newBuilder(com.google.cloud.vertexai.api.SearchEntryPoint prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -296,31 +308,31 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Segment of the content.
+   * Google search entry point.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.vertexai.v1.Segment}
+   * Protobuf type {@code google.cloud.vertexai.v1.SearchEntryPoint}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.vertexai.v1.Segment)
-      com.google.cloud.vertexai.api.SegmentOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.vertexai.v1.SearchEntryPoint)
+      com.google.cloud.vertexai.api.SearchEntryPointOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vertexai.api.ContentProto
-          .internal_static_google_cloud_vertexai_v1_Segment_descriptor;
+          .internal_static_google_cloud_vertexai_v1_SearchEntryPoint_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vertexai.api.ContentProto
-          .internal_static_google_cloud_vertexai_v1_Segment_fieldAccessorTable
+          .internal_static_google_cloud_vertexai_v1_SearchEntryPoint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vertexai.api.Segment.class,
-              com.google.cloud.vertexai.api.Segment.Builder.class);
+              com.google.cloud.vertexai.api.SearchEntryPoint.class,
+              com.google.cloud.vertexai.api.SearchEntryPoint.Builder.class);
     }
 
-    // Construct using com.google.cloud.vertexai.api.Segment.newBuilder()
+    // Construct using com.google.cloud.vertexai.api.SearchEntryPoint.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -331,26 +343,25 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      partIndex_ = 0;
-      startIndex_ = 0;
-      endIndex_ = 0;
+      renderedContent_ = "";
+      sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.vertexai.api.ContentProto
-          .internal_static_google_cloud_vertexai_v1_Segment_descriptor;
+          .internal_static_google_cloud_vertexai_v1_SearchEntryPoint_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.vertexai.api.Segment getDefaultInstanceForType() {
-      return com.google.cloud.vertexai.api.Segment.getDefaultInstance();
+    public com.google.cloud.vertexai.api.SearchEntryPoint getDefaultInstanceForType() {
+      return com.google.cloud.vertexai.api.SearchEntryPoint.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.vertexai.api.Segment build() {
-      com.google.cloud.vertexai.api.Segment result = buildPartial();
+    public com.google.cloud.vertexai.api.SearchEntryPoint build() {
+      com.google.cloud.vertexai.api.SearchEntryPoint result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -358,9 +369,9 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.vertexai.api.Segment buildPartial() {
-      com.google.cloud.vertexai.api.Segment result =
-          new com.google.cloud.vertexai.api.Segment(this);
+    public com.google.cloud.vertexai.api.SearchEntryPoint buildPartial() {
+      com.google.cloud.vertexai.api.SearchEntryPoint result =
+          new com.google.cloud.vertexai.api.SearchEntryPoint(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -368,16 +379,13 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.vertexai.api.Segment result) {
+    private void buildPartial0(com.google.cloud.vertexai.api.SearchEntryPoint result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.partIndex_ = partIndex_;
+        result.renderedContent_ = renderedContent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.startIndex_ = startIndex_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.endIndex_ = endIndex_;
+        result.sdkBlob_ = sdkBlob_;
       }
     }
 
@@ -416,24 +424,23 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.vertexai.api.Segment) {
-        return mergeFrom((com.google.cloud.vertexai.api.Segment) other);
+      if (other instanceof com.google.cloud.vertexai.api.SearchEntryPoint) {
+        return mergeFrom((com.google.cloud.vertexai.api.SearchEntryPoint) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.vertexai.api.Segment other) {
-      if (other == com.google.cloud.vertexai.api.Segment.getDefaultInstance()) return this;
-      if (other.getPartIndex() != 0) {
-        setPartIndex(other.getPartIndex());
+    public Builder mergeFrom(com.google.cloud.vertexai.api.SearchEntryPoint other) {
+      if (other == com.google.cloud.vertexai.api.SearchEntryPoint.getDefaultInstance()) return this;
+      if (!other.getRenderedContent().isEmpty()) {
+        renderedContent_ = other.renderedContent_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
-      if (other.getStartIndex() != 0) {
-        setStartIndex(other.getStartIndex());
-      }
-      if (other.getEndIndex() != 0) {
-        setEndIndex(other.getEndIndex());
+      if (other.getSdkBlob() != com.google.protobuf.ByteString.EMPTY) {
+        setSdkBlob(other.getSdkBlob());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -461,24 +468,18 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 8:
+            case 10:
               {
-                partIndex_ = input.readInt32();
+                renderedContent_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
-            case 16:
+              } // case 10
+            case 18:
               {
-                startIndex_ = input.readInt32();
+                sdkBlob_ = input.readBytes();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
-            case 24:
-              {
-                endIndex_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -498,37 +499,71 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private int partIndex_;
+    private java.lang.Object renderedContent_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The index of a Part object within its parent Content object.
+     * Optional. Web content snippet that can be embedded in a web page or an app
+     * webview.
      * </pre>
      *
-     * <code>int32 part_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The partIndex.
+     * @return The renderedContent.
      */
-    @java.lang.Override
-    public int getPartIndex() {
-      return partIndex_;
+    public java.lang.String getRenderedContent() {
+      java.lang.Object ref = renderedContent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        renderedContent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The index of a Part object within its parent Content object.
+     * Optional. Web content snippet that can be embedded in a web page or an app
+     * webview.
      * </pre>
      *
-     * <code>int32 part_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @param value The partIndex to set.
+     * @return The bytes for renderedContent.
+     */
+    public com.google.protobuf.ByteString getRenderedContentBytes() {
+      java.lang.Object ref = renderedContent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        renderedContent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Web content snippet that can be embedded in a web page or an app
+     * webview.
+     * </pre>
+     *
+     * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The renderedContent to set.
      * @return This builder for chaining.
      */
-    public Builder setPartIndex(int value) {
-
-      partIndex_ = value;
+    public Builder setRenderedContent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      renderedContent_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -537,53 +572,79 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The index of a Part object within its parent Content object.
+     * Optional. Web content snippet that can be embedded in a web page or an app
+     * webview.
      * </pre>
      *
-     * <code>int32 part_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPartIndex() {
+    public Builder clearRenderedContent() {
+      renderedContent_ = getDefaultInstance().getRenderedContent();
       bitField0_ = (bitField0_ & ~0x00000001);
-      partIndex_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Web content snippet that can be embedded in a web page or an app
+     * webview.
+     * </pre>
+     *
+     * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for renderedContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRenderedContentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      renderedContent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private int startIndex_;
+    private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
      * <pre>
-     * Output only. Start index in the given Part, measured in bytes. Offset from
-     * the start of the Part, inclusive, starting at zero.
+     * Optional. Base64 encoded JSON representing array of &lt;search term, search
+     * url&gt; tuple.
      * </pre>
      *
-     * <code>int32 start_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bytes sdk_blob = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The startIndex.
+     * @return The sdkBlob.
      */
     @java.lang.Override
-    public int getStartIndex() {
-      return startIndex_;
+    public com.google.protobuf.ByteString getSdkBlob() {
+      return sdkBlob_;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Start index in the given Part, measured in bytes. Offset from
-     * the start of the Part, inclusive, starting at zero.
+     * Optional. Base64 encoded JSON representing array of &lt;search term, search
+     * url&gt; tuple.
      * </pre>
      *
-     * <code>int32 start_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bytes sdk_blob = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @param value The startIndex to set.
+     * @param value The sdkBlob to set.
      * @return This builder for chaining.
      */
-    public Builder setStartIndex(int value) {
-
-      startIndex_ = value;
+    public Builder setSdkBlob(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sdkBlob_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -592,73 +653,17 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Start index in the given Part, measured in bytes. Offset from
-     * the start of the Part, inclusive, starting at zero.
+     * Optional. Base64 encoded JSON representing array of &lt;search term, search
+     * url&gt; tuple.
      * </pre>
      *
-     * <code>int32 start_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bytes sdk_blob = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearStartIndex() {
+    public Builder clearSdkBlob() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      startIndex_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int endIndex_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. End index in the given Part, measured in bytes. Offset from
-     * the start of the Part, exclusive, starting at zero.
-     * </pre>
-     *
-     * <code>int32 end_index = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The endIndex.
-     */
-    @java.lang.Override
-    public int getEndIndex() {
-      return endIndex_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. End index in the given Part, measured in bytes. Offset from
-     * the start of the Part, exclusive, starting at zero.
-     * </pre>
-     *
-     * <code>int32 end_index = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The endIndex to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEndIndex(int value) {
-
-      endIndex_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. End index in the given Part, measured in bytes. Offset from
-     * the start of the Part, exclusive, starting at zero.
-     * </pre>
-     *
-     * <code>int32 end_index = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEndIndex() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      endIndex_ = 0;
+      sdkBlob_ = getDefaultInstance().getSdkBlob();
       onChanged();
       return this;
     }
@@ -674,24 +679,24 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.vertexai.v1.Segment)
+    // @@protoc_insertion_point(builder_scope:google.cloud.vertexai.v1.SearchEntryPoint)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.vertexai.v1.Segment)
-  private static final com.google.cloud.vertexai.api.Segment DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.vertexai.v1.SearchEntryPoint)
+  private static final com.google.cloud.vertexai.api.SearchEntryPoint DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.vertexai.api.Segment();
+    DEFAULT_INSTANCE = new com.google.cloud.vertexai.api.SearchEntryPoint();
   }
 
-  public static com.google.cloud.vertexai.api.Segment getDefaultInstance() {
+  public static com.google.cloud.vertexai.api.SearchEntryPoint getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Segment> PARSER =
-      new com.google.protobuf.AbstractParser<Segment>() {
+  private static final com.google.protobuf.Parser<SearchEntryPoint> PARSER =
+      new com.google.protobuf.AbstractParser<SearchEntryPoint>() {
         @java.lang.Override
-        public Segment parsePartialFrom(
+        public SearchEntryPoint parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -710,17 +715,17 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<Segment> parser() {
+  public static com.google.protobuf.Parser<SearchEntryPoint> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Segment> getParserForType() {
+  public com.google.protobuf.Parser<SearchEntryPoint> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.vertexai.api.Segment getDefaultInstanceForType() {
+  public com.google.cloud.vertexai.api.SearchEntryPoint getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

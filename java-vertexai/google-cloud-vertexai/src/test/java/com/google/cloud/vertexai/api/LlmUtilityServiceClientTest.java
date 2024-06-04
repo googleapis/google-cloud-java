@@ -56,7 +56,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -102,7 +101,6 @@ public class LlmUtilityServiceClientTest {
     client.close();
   }
 
-  @Ignore
   @Test
   public void countTokensTest() throws Exception {
     CountTokensResponse expectedResponse =
@@ -131,7 +129,6 @@ public class LlmUtilityServiceClientTest {
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
-  @Ignore
   @Test
   public void countTokensExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
@@ -148,7 +145,6 @@ public class LlmUtilityServiceClientTest {
     }
   }
 
-  @Ignore
   @Test
   public void countTokensTest2() throws Exception {
     CountTokensResponse expectedResponse =
@@ -176,7 +172,6 @@ public class LlmUtilityServiceClientTest {
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
-  @Ignore
   @Test
   public void countTokensExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
