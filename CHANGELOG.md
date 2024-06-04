@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.20.1](https://github.com/googleapis/java-datastore/compare/v2.20.0...v2.20.1) (2024-06-04)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ([#1471](https://github.com/googleapis/java-datastore/issues/1471)) ([42c643d](https://github.com/googleapis/java-datastore/commit/42c643d78562c5cbd6c17c29a0a124be8d05198a))
+* Update dependency com.google.errorprone:error_prone_core to v2.28.0 ([#1469](https://github.com/googleapis/java-datastore/issues/1469)) ([e3fac2b](https://github.com/googleapis/java-datastore/commit/e3fac2bf9992fcb2e91319df0520094865de2d49))
+* Update dependency com.google.guava:guava-testlib to v33.2.1-jre ([#1470](https://github.com/googleapis/java-datastore/issues/1470)) ([614e930](https://github.com/googleapis/java-datastore/commit/614e930f2bdccc517d4733e5fb7f3cefad696a20))
+
 ## [2.20.0](https://github.com/googleapis/java-datastore/compare/v2.19.3...v2.20.0) (2024-05-27)
 
 
