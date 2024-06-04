@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.130.0](https://github.com/googleapis/java-pubsub/compare/v1.129.7...v1.130.0) (2024-06-03)
+
+
+### Features
+
+* [java] allow passing libraries_bom_version from env ([#1967](https://github.com/googleapis/java-pubsub/issues/1967)) ([#2033](https://github.com/googleapis/java-pubsub/issues/2033)) ([825c5f8](https://github.com/googleapis/java-pubsub/commit/825c5f83e0fd2fd6b1f4856b9c555d71110a03e1))
+* Add service_account_email for export subscriptions ([#2054](https://github.com/googleapis/java-pubsub/issues/2054)) ([670db3e](https://github.com/googleapis/java-pubsub/commit/670db3e1b665e6f5aec3cd7bf3639e9242f20151))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.39.0 ([#2057](https://github.com/googleapis/java-pubsub/issues/2057)) ([43446d2](https://github.com/googleapis/java-pubsub/commit/43446d22ad2140f1b18fd1dde5dab03a901580bc))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ([#2058](https://github.com/googleapis/java-pubsub/issues/2058)) ([a998ef5](https://github.com/googleapis/java-pubsub/commit/a998ef5359942486ea47bfd50f154314ae37be33))
+
 ## [1.129.7](https://github.com/googleapis/java-pubsub/compare/v1.129.6...v1.129.7) (2024-05-29)
 
 
