@@ -363,7 +363,7 @@ public interface FeatureOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Deprecated
@@ -393,7 +393,7 @@ public interface FeatureOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
    * @return The monitoringConfig.
    */
   @java.lang.Deprecated

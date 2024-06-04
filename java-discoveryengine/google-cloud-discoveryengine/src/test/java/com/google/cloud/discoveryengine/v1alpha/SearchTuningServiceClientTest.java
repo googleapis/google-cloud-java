@@ -93,6 +93,7 @@ public class SearchTuningServiceClientTest {
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .setModelStatus("modelStatus488502395")
             .putAllMetrics(new HashMap<String, Double>())
+            .setModelName("modelName-2010829484")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -110,6 +111,7 @@ public class SearchTuningServiceClientTest {
                     .toString())
             .setModelType("modelType-2010627581")
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setModelId("modelId1226956324")
             .build();
 
     TrainCustomModelResponse actualResponse = client.trainCustomModelAsync(request).get();
@@ -123,6 +125,7 @@ public class SearchTuningServiceClientTest {
     Assert.assertEquals(request.getDataStore(), actualRequest.getDataStore());
     Assert.assertEquals(request.getModelType(), actualRequest.getModelType());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
+    Assert.assertEquals(request.getModelId(), actualRequest.getModelId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -143,6 +146,7 @@ public class SearchTuningServiceClientTest {
                       .toString())
               .setModelType("modelType-2010627581")
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setModelId("modelId1226956324")
               .build();
       client.trainCustomModelAsync(request).get();
       Assert.fail("No exception raised");
@@ -150,6 +154,56 @@ public class SearchTuningServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listCustomModelsTest() throws Exception {
+    ListCustomModelsResponse expectedResponse =
+        ListCustomModelsResponse.newBuilder()
+            .addAllModels(new ArrayList<CustomTuningModel>())
+            .build();
+    mockSearchTuningService.addResponse(expectedResponse);
+
+    ListCustomModelsRequest request =
+        ListCustomModelsRequest.newBuilder()
+            .setDataStore(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    ListCustomModelsResponse actualResponse = client.listCustomModels(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSearchTuningService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomModelsRequest actualRequest = ((ListCustomModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getDataStore(), actualRequest.getDataStore());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomModelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSearchTuningService.addException(exception);
+
+    try {
+      ListCustomModelsRequest request =
+          ListCustomModelsRequest.newBuilder()
+              .setDataStore(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.listCustomModels(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

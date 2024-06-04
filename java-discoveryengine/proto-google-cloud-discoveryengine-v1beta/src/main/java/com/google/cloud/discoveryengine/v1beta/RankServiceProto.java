@@ -37,6 +37,10 @@ public final class RankServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_RankRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_RankRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_RankRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_RankResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_RankResponse_fieldAccessorTable;
@@ -56,30 +60,33 @@ public final class RankServiceProto {
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\"J\n\rRankingRecord\022\n\n\002id\030\001 \001(\t\022\r\n"
           + "\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\r\n\005score\030\004"
-          + " \001(\002\"\375\001\n\013RankRequest\022L\n\016ranking_config\030\001"
+          + " \001(\002\"\207\003\n\013RankRequest\022L\n\016ranking_config\030\001"
           + " \001(\tB4\340A\002\372A.\n,discoveryengine.googleapis"
           + ".com/RankingConfig\022\r\n\005model\030\002 \001(\t\022\r\n\005top"
           + "_n\030\003 \001(\005\022\r\n\005query\030\004 \001(\t\022H\n\007records\030\005 \003(\013"
           + "22.google.cloud.discoveryengine.v1beta.R"
           + "ankingRecordB\003\340A\002\022)\n!ignore_record_detai"
-          + "ls_in_response\030\006 \001(\010\"S\n\014RankResponse\022C\n\007"
-          + "records\030\005 \003(\01322.google.cloud.discoveryen"
-          + "gine.v1beta.RankingRecord2\241\002\n\013RankServic"
-          + "e\022\275\001\n\004Rank\0220.google.cloud.discoveryengin"
-          + "e.v1beta.RankRequest\0321.google.cloud.disc"
-          + "overyengine.v1beta.RankResponse\"P\202\323\344\223\002J\""
-          + "E/v1beta/{ranking_config=projects/*/loca"
-          + "tions/*/rankingConfigs/*}:rank:\001*\032R\312A\036di"
-          + "scoveryengine.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\227\002"
-          + "\n\'com.google.cloud.discoveryengine.v1bet"
-          + "aB\020RankServiceProtoP\001ZQcloud.google.com/"
-          + "go/discoveryengine/apiv1beta/discoveryen"
-          + "ginepb;discoveryenginepb\242\002\017DISCOVERYENGI"
-          + "NE\252\002#Google.Cloud.DiscoveryEngine.V1Beta"
-          + "\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002"
-          + "&Google::Cloud::DiscoveryEngine::V1betab"
-          + "\006proto3"
+          + "ls_in_response\030\006 \001(\010\022U\n\013user_labels\030\007 \003("
+          + "\0132@.google.cloud.discoveryengine.v1beta."
+          + "RankRequest.UserLabelsEntry\0321\n\017UserLabel"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"S"
+          + "\n\014RankResponse\022C\n\007records\030\005 \003(\01322.google"
+          + ".cloud.discoveryengine.v1beta.RankingRec"
+          + "ord2\241\002\n\013RankService\022\275\001\n\004Rank\0220.google.cl"
+          + "oud.discoveryengine.v1beta.RankRequest\0321"
+          + ".google.cloud.discoveryengine.v1beta.Ran"
+          + "kResponse\"P\202\323\344\223\002J\"E/v1beta/{ranking_conf"
+          + "ig=projects/*/locations/*/rankingConfigs"
+          + "/*}:rank:\001*\032R\312A\036discoveryengine.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformB\227\002\n\'com.google.cloud.dis"
+          + "coveryengine.v1betaB\020RankServiceProtoP\001Z"
+          + "Qcloud.google.com/go/discoveryengine/api"
+          + "v1beta/discoveryenginepb;discoveryengine"
+          + "pb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Disc"
+          + "overyEngine.V1Beta\312\002#Google\\Cloud\\Discov"
+          + "eryEngine\\V1beta\352\002&Google::Cloud::Discov"
+          + "eryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -104,7 +111,23 @@ public final class RankServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_RankRequest_descriptor,
             new java.lang.String[] {
-              "RankingConfig", "Model", "TopN", "Query", "Records", "IgnoreRecordDetailsInResponse",
+              "RankingConfig",
+              "Model",
+              "TopN",
+              "Query",
+              "Records",
+              "IgnoreRecordDetailsInResponse",
+              "UserLabels",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_RankRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_RankRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_RankRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_RankRequest_UserLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1beta_RankResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);

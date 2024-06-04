@@ -438,7 +438,7 @@ public interface FeatureOnlineStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=175
    * @return Whether the embeddingManagement field is set.
    */
   @java.lang.Deprecated
@@ -456,7 +456,7 @@ public interface FeatureOnlineStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=175
    * @return The embeddingManagement.
    */
   @java.lang.Deprecated
@@ -477,6 +477,50 @@ public interface FeatureOnlineStoreOrBuilder
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagementOrBuilder
       getEmbeddingManagementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.StorageTypeCase getStorageTypeCase();
 }

@@ -1282,9 +1282,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates that features for this group come from BigQuery Table/View.
-   * By default treats the source as a sparse time series source, which is
-   * required to have an entity_id and a feature_timestamp column in the
-   * source.
+   * By default treats the source as a sparse time series source. The BigQuery
+   * source table or view must have at least one entity ID column and a column
+   * named `feature_timestamp`.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -1300,9 +1300,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates that features for this group come from BigQuery Table/View.
-   * By default treats the source as a sparse time series source, which is
-   * required to have an entity_id and a feature_timestamp column in the
-   * source.
+   * By default treats the source as a sparse time series source. The BigQuery
+   * source table or view must have at least one entity ID column and a column
+   * named `feature_timestamp`.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -1321,9 +1321,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates that features for this group come from BigQuery Table/View.
-   * By default treats the source as a sparse time series source, which is
-   * required to have an entity_id and a feature_timestamp column in the
-   * source.
+   * By default treats the source as a sparse time series source. The BigQuery
+   * source table or view must have at least one entity ID column and a column
+   * named `feature_timestamp`.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2335,9 +2335,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2353,9 +2353,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2381,9 +2381,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2406,9 +2406,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2429,9 +2429,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2465,9 +2465,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2493,9 +2493,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2508,9 +2508,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>
@@ -2531,9 +2531,9 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates that features for this group come from BigQuery Table/View.
-     * By default treats the source as a sparse time series source, which is
-     * required to have an entity_id and a feature_timestamp column in the
-     * source.
+     * By default treats the source as a sparse time series source. The BigQuery
+     * source table or view must have at least one entity ID column and a column
+     * named `feature_timestamp`.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.FeatureGroup.BigQuery big_query = 7;</code>

@@ -46,22 +46,23 @@ public final class DatasetVersionProto {
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\034google/protobuf/stru"
           + "ct.proto\032\037google/protobuf/timestamp.prot"
-          + "o\"\231\003\n\016DatasetVersion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
+          + "o\"\267\003\n\016DatasetVersion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
           + "4\n\013create_time\030\002 \001(\0132\032.google.protobuf.T"
           + "imestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.goo"
           + "gle.protobuf.TimestampB\003\340A\003\022\014\n\004etag\030\003 \001("
           + "\t\022#\n\026big_query_dataset_name\030\004 \001(\tB\003\340A\003\022\024"
           + "\n\014display_name\030\007 \001(\t\0220\n\010metadata\030\010 \001(\0132\026"
-          + ".google.protobuf.ValueB\006\340A\003\340A\002:\214\001\352A\210\001\n(a"
-          + "iplatform.googleapis.com/DatasetVersion\022"
-          + "\\projects/{project}/locations/{location}"
-          + "/datasets/{dataset}/datasetVersions/{dat"
-          + "aset_version}B\321\001\n\036com.google.cloud.aipla"
-          + "tform.v1B\023DatasetVersionProtoP\001Z>cloud.g"
-          + "oogle.com/go/aiplatform/apiv1/aiplatform"
-          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + ".google.protobuf.ValueB\006\340A\003\340A\002\022\034\n\017model_"
+          + "reference\030\t \001(\tB\003\340A\003:\214\001\352A\210\001\n(aiplatform."
+          + "googleapis.com/DatasetVersion\022\\projects/"
+          + "{project}/locations/{location}/datasets/"
+          + "{dataset}/datasetVersions/{dataset_versi"
+          + "on}B\321\001\n\036com.google.cloud.aiplatform.v1B\023"
+          + "DatasetVersionProtoP\001Z>cloud.google.com/"
+          + "go/aiplatform/apiv1/aiplatformpb;aiplatf"
+          + "ormpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud:"
+          + ":AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -85,6 +86,7 @@ public final class DatasetVersionProto {
               "BigQueryDatasetName",
               "DisplayName",
               "Metadata",
+              "ModelReference",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

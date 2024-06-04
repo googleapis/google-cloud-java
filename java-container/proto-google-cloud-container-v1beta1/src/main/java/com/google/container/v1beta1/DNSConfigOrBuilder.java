@@ -98,4 +98,31 @@ public interface DNSConfigOrBuilder
    * @return The bytes for clusterDnsDomain.
    */
   com.google.protobuf.ByteString getClusterDnsDomainBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The domain used in Additive VPC scope.
+   * </pre>
+   *
+   * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The additiveVpcScopeDnsDomain.
+   */
+  java.lang.String getAdditiveVpcScopeDnsDomain();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The domain used in Additive VPC scope.
+   * </pre>
+   *
+   * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for additiveVpcScopeDnsDomain.
+   */
+  com.google.protobuf.ByteString getAdditiveVpcScopeDnsDomainBytes();
 }

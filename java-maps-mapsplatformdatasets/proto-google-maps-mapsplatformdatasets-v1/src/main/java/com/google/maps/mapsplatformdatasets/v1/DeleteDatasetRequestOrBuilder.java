@@ -28,7 +28,8 @@ public interface DeleteDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: projects/${project}/datasets/{dataset_id}
+   * Required. The name of the dataset to delete.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface DeleteDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: projects/${project}/datasets/{dataset_id}
+   * Required. The name of the dataset to delete.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>

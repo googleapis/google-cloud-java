@@ -186,6 +186,43 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The name of the cached content used as context to serve the
+   * prediction. Note: only used in explicit caching, where users can have
+   * control over caching (e.g. what content to cache) and enjoy guaranteed cost
+   * savings. Format:
+   * `projects/{project}/locations/{location}/cachedContents/{cachedContent}`
+   * </pre>
+   *
+   * <code>
+   * string cached_content = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cachedContent.
+   */
+  java.lang.String getCachedContent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the cached content used as context to serve the
+   * prediction. Note: only used in explicit caching, where users can have
+   * control over caching (e.g. what content to cache) and enjoy guaranteed cost
+   * savings. Format:
+   * `projects/{project}/locations/{location}/cachedContents/{cachedContent}`
+   * </pre>
+   *
+   * <code>
+   * string cached_content = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cachedContent.
+   */
+  com.google.protobuf.ByteString getCachedContentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of `Tools` the model may use to generate the next
    * response.
    *

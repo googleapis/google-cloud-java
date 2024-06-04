@@ -145,5 +145,23 @@ public interface ImportRagFilesConfigOrBuilder
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
       getRagFileChunkingConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max number of queries per minute that this job is allowed to
+   * make to the embedding model specified on the corpus. This value is specific
+   * to this job and not shared across other import jobs. Consult the Quotas
+   * page on the project to set an appropriate value here.
+   * If unspecified, a default value of 1,000 QPM would be used.
+   * </pre>
+   *
+   * <code>int32 max_embedding_requests_per_min = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxEmbeddingRequestsPerMin.
+   */
+  int getMaxEmbeddingRequestsPerMin();
+
   com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.ImportSourceCase getImportSourceCase();
 }

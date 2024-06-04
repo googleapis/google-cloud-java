@@ -29,7 +29,7 @@ public interface SessionOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -42,7 +42,7 @@ public interface SessionOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

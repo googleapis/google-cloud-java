@@ -2006,6 +2006,42 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 16;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 17;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2056,6 +2092,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(15, modelType_);
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(16, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(17, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2101,6 +2143,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, modelType_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2140,6 +2188,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (!getDeprecationInfo().equals(other.getDeprecationInfo())) return false;
     }
     if (modelType_ != other.modelType_) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2181,6 +2231,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + modelType_;
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2362,6 +2416,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         deprecationInfoBuilder_ = null;
       }
       modelType_ = 0;
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -2438,6 +2494,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2528,6 +2590,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (other.modelType_ != 0) {
         setModelTypeValue(other.getModelTypeValue());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2622,6 +2690,18 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 120
+            case 128:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 128
+            case 136:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4089,6 +4169,112 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder clearModelType() {
       bitField0_ = (bitField0_ & ~0x00000400);
       modelType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }

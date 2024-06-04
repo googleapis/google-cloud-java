@@ -322,7 +322,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     default void createDataset(
@@ -337,7 +337,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     default void updateDatasetMetadata(
@@ -352,7 +352,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     default void getDataset(
@@ -366,7 +366,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     default void listDatasets(
@@ -381,7 +381,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     default void deleteDataset(
@@ -431,7 +431,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public void createDataset(
@@ -448,7 +448,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public void updateDatasetMetadata(
@@ -465,7 +465,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public void getDataset(
@@ -480,7 +480,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public void listDatasets(
@@ -497,7 +497,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public void deleteDataset(
@@ -534,7 +534,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset createDataset(
@@ -547,7 +547,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset updateDatasetMetadata(
@@ -560,7 +560,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset getDataset(
@@ -573,7 +573,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse listDatasets(
@@ -586,7 +586,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataset(
@@ -620,7 +620,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -634,7 +634,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -649,7 +649,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -663,7 +663,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -677,7 +677,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

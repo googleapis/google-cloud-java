@@ -134,6 +134,7 @@ public class NotebookServiceClientTest {
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -214,6 +215,7 @@ public class NotebookServiceClientTest {
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -294,6 +296,7 @@ public class NotebookServiceClientTest {
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -354,6 +357,7 @@ public class NotebookServiceClientTest {
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -571,6 +575,70 @@ public class NotebookServiceClientTest {
   }
 
   @Test
+  public void updateNotebookRuntimeTemplateTest() throws Exception {
+    NotebookRuntimeTemplate expectedResponse =
+        NotebookRuntimeTemplate.newBuilder()
+            .setName(
+                NotebookRuntimeTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setIsDefault(true)
+            .setMachineSpec(MachineSpec.newBuilder().build())
+            .setDataPersistentDiskSpec(PersistentDiskSpec.newBuilder().build())
+            .setNetworkSpec(NetworkSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
+            .setEucConfig(NotebookEucConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
+            .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    mockNotebookService.addResponse(expectedResponse);
+
+    NotebookRuntimeTemplate notebookRuntimeTemplate = NotebookRuntimeTemplate.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    NotebookRuntimeTemplate actualResponse =
+        client.updateNotebookRuntimeTemplate(notebookRuntimeTemplate, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateNotebookRuntimeTemplateRequest actualRequest =
+        ((UpdateNotebookRuntimeTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(notebookRuntimeTemplate, actualRequest.getNotebookRuntimeTemplate());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateNotebookRuntimeTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      NotebookRuntimeTemplate notebookRuntimeTemplate =
+          NotebookRuntimeTemplate.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNotebookRuntimeTemplate(notebookRuntimeTemplate, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void assignNotebookRuntimeTest() throws Exception {
     NotebookRuntime expectedResponse =
         NotebookRuntime.newBuilder()
@@ -589,7 +657,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -670,7 +742,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -748,7 +824,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -829,7 +909,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -907,7 +991,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -962,7 +1050,11 @@ public class NotebookServiceClientTest {
             .setExpirationTime(Timestamp.newBuilder().build())
             .setVersion("version351608024")
             .setNotebookRuntimeType(NotebookRuntimeType.forNumber(0))
+            .setIdleShutdownConfig(NotebookIdleShutdownConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -1359,6 +1451,144 @@ public class NotebookServiceClientTest {
   }
 
   @Test
+  public void createNotebookExecutionJobTest() throws Exception {
+    NotebookExecutionJob expectedResponse =
+        NotebookExecutionJob.newBuilder()
+            .setName(
+                NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setExecutionTimeout(Duration.newBuilder().build())
+            .setScheduleResourceName(
+                ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setJobState(JobState.forNumber(0))
+            .setStatus(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createNotebookExecutionJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNotebookService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+    String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+
+    NotebookExecutionJob actualResponse =
+        client
+            .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateNotebookExecutionJobRequest actualRequest =
+        ((CreateNotebookExecutionJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(notebookExecutionJob, actualRequest.getNotebookExecutionJob());
+    Assert.assertEquals(notebookExecutionJobId, actualRequest.getNotebookExecutionJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createNotebookExecutionJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+      String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+      client
+          .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createNotebookExecutionJobTest2() throws Exception {
+    NotebookExecutionJob expectedResponse =
+        NotebookExecutionJob.newBuilder()
+            .setName(
+                NotebookExecutionJobName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_EXECUTION_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setExecutionTimeout(Duration.newBuilder().build())
+            .setScheduleResourceName(
+                ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setJobState(JobState.forNumber(0))
+            .setStatus(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createNotebookExecutionJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNotebookService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+    String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+
+    NotebookExecutionJob actualResponse =
+        client
+            .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateNotebookExecutionJobRequest actualRequest =
+        ((CreateNotebookExecutionJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(notebookExecutionJob, actualRequest.getNotebookExecutionJob());
+    Assert.assertEquals(notebookExecutionJobId, actualRequest.getNotebookExecutionJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createNotebookExecutionJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      NotebookExecutionJob notebookExecutionJob = NotebookExecutionJob.newBuilder().build();
+      String notebookExecutionJobId = "notebookExecutionJobId1598189627";
+      client
+          .createNotebookExecutionJobAsync(parent, notebookExecutionJob, notebookExecutionJobId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getNotebookExecutionJobTest() throws Exception {
     NotebookExecutionJob expectedResponse =
         NotebookExecutionJob.newBuilder()
@@ -1373,6 +1603,7 @@ public class NotebookServiceClientTest {
             .setStatus(Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -1424,6 +1655,7 @@ public class NotebookServiceClientTest {
             .setStatus(Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 

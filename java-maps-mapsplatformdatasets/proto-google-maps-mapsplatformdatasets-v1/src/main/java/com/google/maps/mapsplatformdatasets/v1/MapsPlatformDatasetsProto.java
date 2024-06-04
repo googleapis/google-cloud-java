@@ -65,35 +65,34 @@ public final class MapsPlatformDatasetsProto {
           + "ps_platform_datasets.proto\022#google.maps."
           + "mapsplatformdatasets.v1\032\037google/api/fiel"
           + "d_behavior.proto\032\031google/api/resource.pr"
-          + "oto\0325google/maps/mapsplatformdatasets/v1"
-          + "/data_source.proto\0321google/maps/mapsplat"
-          + "formdatasets/v1/dataset.proto\032 google/pr"
-          + "otobuf/field_mask.proto\"\237\001\n\024CreateDatase"
-          + "tRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudr"
-          + "esourcemanager.googleapis.com/Project\022B\n"
-          + "\007dataset\030\002 \001(\0132,.google.maps.mapsplatfor"
-          + "mdatasets.v1.DatasetB\003\340A\002\"\223\001\n\034UpdateData"
-          + "setMetadataRequest\022B\n\007dataset\030\001 \001(\0132,.go"
+          + "oto\0321google/maps/mapsplatformdatasets/v1"
+          + "/dataset.proto\032 google/protobuf/field_ma"
+          + "sk.proto\"\237\001\n\024CreateDatasetRequest\022C\n\006par"
+          + "ent\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager."
+          + "googleapis.com/Project\022B\n\007dataset\030\002 \001(\0132"
+          + ",.google.maps.mapsplatformdatasets.v1.Da"
+          + "tasetB\003\340A\002\"\223\001\n\034UpdateDatasetMetadataRequ"
+          + "est\022B\n\007dataset\030\001 \001(\0132,.google.maps.mapsp"
+          + "latformdatasets.v1.DatasetB\003\340A\002\022/\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "\"V\n\021GetDatasetRequest\022A\n\004name\030\001 \001(\tB3\340A\002"
+          + "\372A-\n+mapsplatformdatasets.googleapis.com"
+          + "/Dataset\"\216\001\n\023ListDatasetsRequest\022C\n\006pare"
+          + "nt\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager.g"
+          + "oogleapis.com/Project\022\021\n\tpage_size\030\002 \001(\005"
+          + "\022\022\n\npage_token\030\003 \001(\t\022\013\n\003tag\030\004 \001(\t\"o\n\024Lis"
+          + "tDatasetsResponse\022>\n\010datasets\030\001 \003(\0132,.go"
           + "ogle.maps.mapsplatformdatasets.v1.Datase"
-          + "tB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
-          + "tobuf.FieldMask\"V\n\021GetDatasetRequest\022A\n\004"
-          + "name\030\001 \001(\tB3\340A\002\372A-\n+mapsplatformdatasets"
-          + ".googleapis.com/Dataset\"\201\001\n\023ListDatasets"
-          + "Request\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudre"
-          + "sourcemanager.googleapis.com/Project\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n\024L"
-          + "istDatasetsResponse\022>\n\010datasets\030\001 \003(\0132,."
-          + "google.maps.mapsplatformdatasets.v1.Data"
-          + "set\022\027\n\017next_page_token\030\002 \001(\t\"Y\n\024DeleteDa"
-          + "tasetRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+maps"
-          + "platformdatasets.googleapis.com/DatasetB"
-          + "\374\001\n\'com.google.maps.mapsplatformdatasets"
-          + ".v1B\031MapsPlatformDatasetsProtoP\001Zacloud."
-          + "google.com/go/maps/mapsplatformdatasets/"
-          + "apiv1/mapsplatformdatasetspb;mapsplatfor"
-          + "mdatasetspb\242\002\004MDV1\252\002#Google.Maps.MapsPla"
-          + "tformDatasets.V1\312\002#Google\\Maps\\MapsPlatf"
-          + "ormDatasets\\V1b\006proto3"
+          + "t\022\027\n\017next_page_token\030\002 \001(\t\"Y\n\024DeleteData"
+          + "setRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+mapspl"
+          + "atformdatasets.googleapis.com/DatasetB\374\001"
+          + "\n\'com.google.maps.mapsplatformdatasets.v"
+          + "1B\031MapsPlatformDatasetsProtoP\001Zacloud.go"
+          + "ogle.com/go/maps/mapsplatformdatasets/ap"
+          + "iv1/mapsplatformdatasetspb;mapsplatformd"
+          + "atasetspb\242\002\004MDV1\252\002#Google.Maps.MapsPlatf"
+          + "ormDatasets.V1\312\002#Google\\Maps\\MapsPlatfor"
+          + "mDatasets\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -101,7 +100,6 @@ public final class MapsPlatformDatasetsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.maps.mapsplatformdatasets.v1.DataSourceProto.getDescriptor(),
               com.google.maps.mapsplatformdatasets.v1.DatasetProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
@@ -135,7 +133,7 @@ public final class MapsPlatformDatasetsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_mapsplatformdatasets_v1_ListDatasetsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Tag",
             });
     internal_static_google_maps_mapsplatformdatasets_v1_ListDatasetsResponse_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -161,7 +159,6 @@ public final class MapsPlatformDatasetsProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.maps.mapsplatformdatasets.v1.DataSourceProto.getDescriptor();
     com.google.maps.mapsplatformdatasets.v1.DatasetProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

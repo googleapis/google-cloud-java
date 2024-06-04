@@ -41,7 +41,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1285
+   *     google/container/v1beta1/cluster_service.proto;l=1351
    * @return The username.
    */
   @java.lang.Deprecated
@@ -63,7 +63,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.username is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1285
+   *     google/container/v1beta1/cluster_service.proto;l=1351
    * @return The bytes for username.
    */
   @java.lang.Deprecated
@@ -87,7 +87,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1296
+   *     google/container/v1beta1/cluster_service.proto;l=1362
    * @return The password.
    */
   @java.lang.Deprecated
@@ -110,7 +110,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.MasterAuth.password is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1296
+   *     google/container/v1beta1/cluster_service.proto;l=1362
    * @return The bytes for password.
    */
   @java.lang.Deprecated

@@ -130,7 +130,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
    *
    *    * `display_name`
    *    * `description`
+   *    * `runtime_config`
    *    * `tool_use_examples`
+   *    * `manifest.description`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -151,7 +153,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
    *
    *    * `display_name`
    *    * `description`
+   *    * `runtime_config`
    *    * `tool_use_examples`
+   *    * `manifest.description`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -172,7 +176,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
    *
    *    * `display_name`
    *    * `description`
+   *    * `runtime_config`
    *    * `tool_use_examples`
+   *    * `manifest.description`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -798,7 +804,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -818,7 +826,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -844,7 +854,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -872,7 +884,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -897,7 +911,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -930,7 +946,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -955,7 +973,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -975,7 +995,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -999,7 +1021,9 @@ public final class UpdateExtensionRequest extends com.google.protobuf.GeneratedM
      *
      *    * `display_name`
      *    * `description`
+     *    * `runtime_config`
      *    * `tool_use_examples`
+     *    * `manifest.description`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

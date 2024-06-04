@@ -190,6 +190,26 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         : importRagFilesConfig_;
   }
 
+  public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 4;
+  private int progressPercentage_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The progress percentage of the operation. Value is in the range [0, 100].
+   * This percentage is calculated as follows:
+   *    progress_percentage = 100 * (successes + failures + skips) / total
+   * </pre>
+   *
+   * <code>int32 progress_percentage = 4;</code>
+   *
+   * @return The progressPercentage.
+   */
+  @java.lang.Override
+  public int getProgressPercentage() {
+    return progressPercentage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -213,6 +233,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getImportRagFilesConfig());
     }
+    if (progressPercentage_ != 0) {
+      output.writeInt32(4, progressPercentage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -231,6 +254,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getImportRagFilesConfig());
+    }
+    if (progressPercentage_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, progressPercentage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -257,6 +283,7 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
     if (hasImportRagFilesConfig()) {
       if (!getImportRagFilesConfig().equals(other.getImportRagFilesConfig())) return false;
     }
+    if (getProgressPercentage() != other.getProgressPercentage()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -278,6 +305,8 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       hash = (37 * hash) + IMPORT_RAG_FILES_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getImportRagFilesConfig().hashCode();
     }
+    hash = (37 * hash) + PROGRESS_PERCENTAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getProgressPercentage();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -442,6 +471,7 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         importRagFilesConfigBuilder_.dispose();
         importRagFilesConfigBuilder_ = null;
       }
+      progressPercentage_ = 0;
       return this;
     }
 
@@ -496,6 +526,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
                 ? importRagFilesConfig_
                 : importRagFilesConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.progressPercentage_ = progressPercentage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -558,6 +591,9 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
       if (other.hasImportRagFilesConfig()) {
         mergeImportRagFilesConfig(other.getImportRagFilesConfig());
       }
+      if (other.getProgressPercentage() != 0) {
+        setProgressPercentage(other.getProgressPercentage());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -603,6 +639,12 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                progressPercentage_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1074,6 +1116,65 @@ public final class ImportRagFilesOperationMetadata extends com.google.protobuf.G
         importRagFilesConfig_ = null;
       }
       return importRagFilesConfigBuilder_;
+    }
+
+    private int progressPercentage_;
+    /**
+     *
+     *
+     * <pre>
+     * The progress percentage of the operation. Value is in the range [0, 100].
+     * This percentage is calculated as follows:
+     *    progress_percentage = 100 * (successes + failures + skips) / total
+     * </pre>
+     *
+     * <code>int32 progress_percentage = 4;</code>
+     *
+     * @return The progressPercentage.
+     */
+    @java.lang.Override
+    public int getProgressPercentage() {
+      return progressPercentage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The progress percentage of the operation. Value is in the range [0, 100].
+     * This percentage is calculated as follows:
+     *    progress_percentage = 100 * (successes + failures + skips) / total
+     * </pre>
+     *
+     * <code>int32 progress_percentage = 4;</code>
+     *
+     * @param value The progressPercentage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProgressPercentage(int value) {
+
+      progressPercentage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The progress percentage of the operation. Value is in the range [0, 100].
+     * This percentage is calculated as follows:
+     *    progress_percentage = 100 * (successes + failures + skips) / total
+     * </pre>
+     *
+     * <code>int32 progress_percentage = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProgressPercentage() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      progressPercentage_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

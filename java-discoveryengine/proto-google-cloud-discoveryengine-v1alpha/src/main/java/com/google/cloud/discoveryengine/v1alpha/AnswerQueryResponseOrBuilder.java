@@ -117,4 +117,29 @@ public interface AnswerQueryResponseOrBuilder
    * <code>.google.cloud.discoveryengine.v1alpha.Session session = 2;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.SessionOrBuilder getSessionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A global unique ID used for logging.
+   * </pre>
+   *
+   * <code>string answer_query_token = 3;</code>
+   *
+   * @return The answerQueryToken.
+   */
+  java.lang.String getAnswerQueryToken();
+  /**
+   *
+   *
+   * <pre>
+   * A global unique ID used for logging.
+   * </pre>
+   *
+   * <code>string answer_query_token = 3;</code>
+   *
+   * @return The bytes for answerQueryToken.
+   */
+  com.google.protobuf.ByteString getAnswerQueryTokenBytes();
 }

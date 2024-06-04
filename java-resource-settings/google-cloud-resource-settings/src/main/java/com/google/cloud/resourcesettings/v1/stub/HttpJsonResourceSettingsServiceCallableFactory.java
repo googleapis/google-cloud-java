@@ -38,7 +38,10 @@ import javax.annotation.Generated;
  * REST callable factory implementation for the ResourceSettingsService service API.
  *
  * <p>This class is for advanced usage.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonResourceSettingsServiceCallableFactory
     implements HttpJsonStubCallableFactory<Operation, OperationsStub> {

@@ -45,6 +45,7 @@ public class AsyncTrainCustomModel {
                       .toString())
               .setModelType("modelType-2010627581")
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setModelId("modelId1226956324")
               .build();
       ApiFuture<Operation> future =
           searchTuningServiceClient.trainCustomModelCallable().futureCall(request);

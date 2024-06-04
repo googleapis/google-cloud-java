@@ -114,4 +114,19 @@ public interface ImportRagFilesOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigOrBuilder
       getImportRagFilesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The progress percentage of the operation. Value is in the range [0, 100].
+   * This percentage is calculated as follows:
+   *    progress_percentage = 100 * (successes + failures + skips) / total
+   * </pre>
+   *
+   * <code>int32 progress_percentage = 4;</code>
+   *
+   * @return The progressPercentage.
+   */
+  int getProgressPercentage();
 }

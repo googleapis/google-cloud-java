@@ -577,5 +577,75 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.documentai.v1.Document.RevisionOrBuilder getRevisionsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.DocumentLayout document_layout = 17;</code>
+   *
+   * @return Whether the documentLayout field is set.
+   */
+  boolean hasDocumentLayout();
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.DocumentLayout document_layout = 17;</code>
+   *
+   * @return The documentLayout.
+   */
+  com.google.cloud.documentai.v1.Document.DocumentLayout getDocumentLayout();
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.DocumentLayout document_layout = 17;</code>
+   */
+  com.google.cloud.documentai.v1.Document.DocumentLayoutOrBuilder getDocumentLayoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.ChunkedDocument chunked_document = 18;</code>
+   *
+   * @return Whether the chunkedDocument field is set.
+   */
+  boolean hasChunkedDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.ChunkedDocument chunked_document = 18;</code>
+   *
+   * @return The chunkedDocument.
+   */
+  com.google.cloud.documentai.v1.Document.ChunkedDocument getChunkedDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.Document.ChunkedDocument chunked_document = 18;</code>
+   */
+  com.google.cloud.documentai.v1.Document.ChunkedDocumentOrBuilder getChunkedDocumentOrBuilder();
+
   com.google.cloud.documentai.v1.Document.SourceCase getSourceCase();
 }

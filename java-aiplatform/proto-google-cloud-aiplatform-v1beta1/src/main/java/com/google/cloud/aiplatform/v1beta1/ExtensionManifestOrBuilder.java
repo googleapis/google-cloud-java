@@ -55,9 +55,10 @@ public interface ExtensionManifestOrBuilder
    *
    *
    * <pre>
-   * Required. The natural language description shown to the LLM. It should
-   * describe the usage of the extension, and is essential for the LLM to
-   * perform reasoning.
+   * Required. The natural language description shown to the LLM.
+   * It should describe the usage of the extension, and is essential for the LLM
+   * to perform reasoning. e.g., if the extension is a data store, you can let
+   * the LLM know what data it contains.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,9 +70,10 @@ public interface ExtensionManifestOrBuilder
    *
    *
    * <pre>
-   * Required. The natural language description shown to the LLM. It should
-   * describe the usage of the extension, and is essential for the LLM to
-   * perform reasoning.
+   * Required. The natural language description shown to the LLM.
+   * It should describe the usage of the extension, and is essential for the LLM
+   * to perform reasoning. e.g., if the extension is a data store, you can let
+   * the LLM know what data it contains.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = REQUIRED];</code>

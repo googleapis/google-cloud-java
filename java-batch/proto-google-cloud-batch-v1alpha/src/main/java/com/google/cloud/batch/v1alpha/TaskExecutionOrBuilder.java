@@ -34,12 +34,11 @@ public interface TaskExecutionOrBuilder
    * due to the following reasons, the exit code will be 50000.
    *
    * Otherwise, it can be from different sources:
-   * - Batch known failures as
+   * * Batch known failures:
    * https://cloud.google.com/batch/docs/troubleshooting#reserved-exit-codes.
-   * - Batch runnable execution failures: You can rely on Batch logs for further
-   * diagnose: https://cloud.google.com/batch/docs/analyze-job-using-logs.
-   * If there are multiple runnables failures, Batch only exposes the first
-   * error caught for now.
+   * * Batch runnable execution failures; you can rely on Batch logs to further
+   * diagnose: https://cloud.google.com/batch/docs/analyze-job-using-logs. If
+   * there are multiple runnables failures, Batch only exposes the first error.
    * </pre>
    *
    * <code>int32 exit_code = 1;</code>

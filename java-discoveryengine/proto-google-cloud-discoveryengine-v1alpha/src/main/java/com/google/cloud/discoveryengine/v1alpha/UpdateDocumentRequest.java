@@ -153,9 +153,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If set to true, and the
+   * If set to `true` and the
    * [Document][google.cloud.discoveryengine.v1alpha.Document] is not found, a
-   * new [Document][google.cloud.discoveryengine.v1alpha.Document] will be
+   * new [Document][google.cloud.discoveryengine.v1alpha.Document] is be
    * created.
    * </pre>
    *
@@ -175,7 +175,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -191,7 +191,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -207,7 +207,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -930,9 +930,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the
+     * If set to `true` and the
      * [Document][google.cloud.discoveryengine.v1alpha.Document] is not found, a
-     * new [Document][google.cloud.discoveryengine.v1alpha.Document] will be
+     * new [Document][google.cloud.discoveryengine.v1alpha.Document] is be
      * created.
      * </pre>
      *
@@ -948,9 +948,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the
+     * If set to `true` and the
      * [Document][google.cloud.discoveryengine.v1alpha.Document] is not found, a
-     * new [Document][google.cloud.discoveryengine.v1alpha.Document] will be
+     * new [Document][google.cloud.discoveryengine.v1alpha.Document] is be
      * created.
      * </pre>
      *
@@ -970,9 +970,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set to true, and the
+     * If set to `true` and the
      * [Document][google.cloud.discoveryengine.v1alpha.Document] is not found, a
-     * new [Document][google.cloud.discoveryengine.v1alpha.Document] will be
+     * new [Document][google.cloud.discoveryengine.v1alpha.Document] is be
      * created.
      * </pre>
      *
@@ -998,7 +998,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1013,7 +1013,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1034,7 +1034,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1057,7 +1057,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1077,7 +1077,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1105,7 +1105,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1125,7 +1125,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1140,7 +1140,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1159,7 +1159,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported 'document' to update. If
-     * not set, will by default update all fields.
+     * not set, by default updates all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>

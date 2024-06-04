@@ -686,4 +686,39 @@ public interface NotebookRuntimeTemplateOrBuilder
    * @return The bytes of the networkTags at the given index.
    */
   com.google.protobuf.ByteString getNetworkTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

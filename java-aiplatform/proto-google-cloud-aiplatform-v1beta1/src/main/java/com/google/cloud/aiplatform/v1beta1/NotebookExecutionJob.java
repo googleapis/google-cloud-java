@@ -56,6 +56,18 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 19:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -1871,6 +1883,578 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface DirectNotebookSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The base64-encoded contents of the input notebook file.
+     * </pre>
+     *
+     * <code>bytes content = 1;</code>
+     *
+     * @return The content.
+     */
+    com.google.protobuf.ByteString getContent();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The content of the input notebook in ipynb format.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource}
+   */
+  public static final class DirectNotebookSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+      DirectNotebookSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DirectNotebookSource.newBuilder() to construct.
+    private DirectNotebookSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DirectNotebookSource() {
+      content_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DirectNotebookSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+          .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DirectNotebookSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+          .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DirectNotebookSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.class,
+              com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.Builder
+                  .class);
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The base64-encoded contents of the input notebook file.
+     * </pre>
+     *
+     * <code>bytes content = 1;</code>
+     *
+     * @return The content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!content_.isEmpty()) {
+        output.writeBytes(1, content_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!content_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, content_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource other =
+          (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource) obj;
+
+      if (!getContent().equals(other.getContent())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content of the input notebook in ipynb format.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DirectNotebookSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DirectNotebookSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.class,
+                com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        content_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_DirectNotebookSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource build() {
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource result =
+            new com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.content_ = content_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                .getDefaultInstance()) return this;
+        if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
+          setContent(other.getContent());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  content_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       *
+       *
+       * <pre>
+       * The base64-encoded contents of the input notebook file.
+       * </pre>
+       *
+       * <code>bytes content = 1;</code>
+       *
+       * @return The content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The base64-encoded contents of the input notebook file.
+       * </pre>
+       *
+       * <code>bytes content = 1;</code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The base64-encoded contents of the input notebook file.
+       * </pre>
+       *
+       * <code>bytes content = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+    private static final com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob
+            .DirectNotebookSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DirectNotebookSource> PARSER =
+        new com.google.protobuf.AbstractParser<DirectNotebookSource>() {
+          @java.lang.Override
+          public DirectNotebookSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DirectNotebookSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DirectNotebookSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int notebookSourceCase_ = 0;
 
@@ -1883,6 +2467,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATAFORM_REPOSITORY_SOURCE(3),
     GCS_NOTEBOOK_SOURCE(4),
+    DIRECT_NOTEBOOK_SOURCE(17),
     NOTEBOOKSOURCE_NOT_SET(0);
     private final int value;
 
@@ -1905,6 +2490,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return DATAFORM_REPOSITORY_SOURCE;
         case 4:
           return GCS_NOTEBOOK_SOURCE;
+        case 17:
+          return DIRECT_NOTEBOOK_SOURCE;
         case 0:
           return NOTEBOOKSOURCE_NOT_SET;
         default:
@@ -2188,6 +2775,69 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           notebookSource_;
     }
     return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.GcsNotebookSource
+        .getDefaultInstance();
+  }
+
+  public static final int DIRECT_NOTEBOOK_SOURCE_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   *
+   * @return Whether the directNotebookSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectNotebookSource() {
+    return notebookSourceCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   *
+   * @return The directNotebookSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+      getDirectNotebookSource() {
+    if (notebookSourceCase_ == 17) {
+      return (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+          notebookSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder
+      getDirectNotebookSourceOrBuilder() {
+    if (notebookSourceCase_ == 17) {
+      return (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+          notebookSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
         .getDefaultInstance();
   }
 
@@ -2887,6 +3537,140 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 19;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJobProto
+                .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2947,9 +3731,17 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     if (environmentSpecCase_ == 14) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, environmentSpec_);
     }
+    if (notebookSourceCase_ == 17) {
+      output.writeMessage(
+          17,
+          (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+              notebookSource_);
+    }
     if (executionIdentityCase_ == 18) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, executionIdentity_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 19);
     getUnknownFields().writeTo(output);
   }
 
@@ -3007,8 +3799,25 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     if (environmentSpecCase_ == 14) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, environmentSpec_);
     }
+    if (notebookSourceCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17,
+              (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+                  notebookSource_);
+    }
     if (executionIdentityCase_ == 18) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, executionIdentity_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, labels__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3046,6 +3855,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getNotebookSourceCase().equals(other.getNotebookSourceCase())) return false;
     switch (notebookSourceCase_) {
       case 3:
@@ -3054,6 +3864,9 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         break;
       case 4:
         if (!getGcsNotebookSource().equals(other.getGcsNotebookSource())) return false;
+        break;
+      case 17:
+        if (!getDirectNotebookSource().equals(other.getDirectNotebookSource())) return false;
         break;
       case 0:
       default:
@@ -3121,6 +3934,10 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     switch (notebookSourceCase_) {
       case 3:
         hash = (37 * hash) + DATAFORM_REPOSITORY_SOURCE_FIELD_NUMBER;
@@ -3129,6 +3946,10 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       case 4:
         hash = (37 * hash) + GCS_NOTEBOOK_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getGcsNotebookSource().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + DIRECT_NOTEBOOK_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectNotebookSource().hashCode();
         break;
       case 0:
       default:
@@ -3280,6 +4101,28 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           .internal_static_google_cloud_aiplatform_v1beta1_NotebookExecutionJob_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 19:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 19:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3319,6 +4162,9 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (gcsNotebookSourceBuilder_ != null) {
         gcsNotebookSourceBuilder_.clear();
       }
+      if (directNotebookSourceBuilder_ != null) {
+        directNotebookSourceBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       executionTimeout_ = null;
@@ -3343,6 +4189,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       notebookSourceCase_ = 0;
       notebookSource_ = null;
       environmentSpecCase_ = 0;
@@ -3388,35 +4235,39 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.executionTimeout_ =
             executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.scheduleResourceName_ = scheduleResourceName_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.jobState_ = jobState_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3430,6 +4281,9 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       if (notebookSourceCase_ == 4 && gcsNotebookSourceBuilder_ != null) {
         result.notebookSource_ = gcsNotebookSourceBuilder_.build();
+      }
+      if (notebookSourceCase_ == 17 && directNotebookSourceBuilder_ != null) {
+        result.notebookSource_ = directNotebookSourceBuilder_.build();
       }
       result.environmentSpecCase_ = environmentSpecCase_;
       result.environmentSpec_ = this.environmentSpec_;
@@ -3487,12 +4341,12 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasExecutionTimeout()) {
@@ -3500,7 +4354,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       if (!other.getScheduleResourceName().isEmpty()) {
         scheduleResourceName_ = other.scheduleResourceName_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.jobState_ != 0) {
@@ -3515,6 +4369,8 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00008000;
       switch (other.getNotebookSourceCase()) {
         case DATAFORM_REPOSITORY_SOURCE:
           {
@@ -3524,6 +4380,11 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         case GCS_NOTEBOOK_SOURCE:
           {
             mergeGcsNotebookSource(other.getGcsNotebookSource());
+            break;
+          }
+        case DIRECT_NOTEBOOK_SOURCE:
+          {
+            mergeDirectNotebookSource(other.getDirectNotebookSource());
             break;
           }
         case NOTEBOOKSOURCE_NOT_SET:
@@ -3606,13 +4467,13 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 18
             case 26:
@@ -3633,13 +4494,13 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getExecutionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
               {
                 scheduleResourceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 50
             case 66:
@@ -3659,25 +4520,25 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             case 80:
               {
                 jobState_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 114:
@@ -3687,6 +4548,13 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
                 environmentSpec_ = s;
                 break;
               } // case 114
+            case 138:
+              {
+                input.readMessage(
+                    getDirectNotebookSourceFieldBuilder().getBuilder(), extensionRegistry);
+                notebookSourceCase_ = 17;
+                break;
+              } // case 138
             case 146:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -3694,6 +4562,18 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
                 executionIdentity_ = s;
                 break;
               } // case 146
+            case 154:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4274,6 +5154,254 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 4;
       onChanged();
       return gcsNotebookSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource,
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder>
+        directNotebookSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     *
+     * @return Whether the directNotebookSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectNotebookSource() {
+      return notebookSourceCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     *
+     * @return The directNotebookSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+        getDirectNotebookSource() {
+      if (directNotebookSourceBuilder_ == null) {
+        if (notebookSourceCase_ == 17) {
+          return (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+              notebookSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+            .getDefaultInstance();
+      } else {
+        if (notebookSourceCase_ == 17) {
+          return directNotebookSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    public Builder setDirectNotebookSource(
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource value) {
+      if (directNotebookSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        notebookSource_ = value;
+        onChanged();
+      } else {
+        directNotebookSourceBuilder_.setMessage(value);
+      }
+      notebookSourceCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    public Builder setDirectNotebookSource(
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.Builder
+            builderForValue) {
+      if (directNotebookSourceBuilder_ == null) {
+        notebookSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        directNotebookSourceBuilder_.setMessage(builderForValue.build());
+      }
+      notebookSourceCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    public Builder mergeDirectNotebookSource(
+        com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource value) {
+      if (directNotebookSourceBuilder_ == null) {
+        if (notebookSourceCase_ == 17
+            && notebookSource_
+                != com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                    .getDefaultInstance()) {
+          notebookSource_ =
+              com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                  .newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob
+                              .DirectNotebookSource)
+                          notebookSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          notebookSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (notebookSourceCase_ == 17) {
+          directNotebookSourceBuilder_.mergeFrom(value);
+        } else {
+          directNotebookSourceBuilder_.setMessage(value);
+        }
+      }
+      notebookSourceCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    public Builder clearDirectNotebookSource() {
+      if (directNotebookSourceBuilder_ == null) {
+        if (notebookSourceCase_ == 17) {
+          notebookSourceCase_ = 0;
+          notebookSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (notebookSourceCase_ == 17) {
+          notebookSourceCase_ = 0;
+          notebookSource_ = null;
+        }
+        directNotebookSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.Builder
+        getDirectNotebookSourceBuilder() {
+      return getDirectNotebookSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder
+        getDirectNotebookSourceOrBuilder() {
+      if ((notebookSourceCase_ == 17) && (directNotebookSourceBuilder_ != null)) {
+        return directNotebookSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (notebookSourceCase_ == 17) {
+          return (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+              notebookSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of an input notebook file.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource,
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder>
+        getDirectNotebookSourceFieldBuilder() {
+      if (directNotebookSourceBuilder_ == null) {
+        if (!(notebookSourceCase_ == 17)) {
+          notebookSource_ =
+              com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                  .getDefaultInstance();
+        }
+        directNotebookSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource,
+                com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob
+                    .DirectNotebookSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource)
+                    notebookSource_,
+                getParentForChildren(),
+                isClean());
+        notebookSource_ = null;
+      }
+      notebookSourceCase_ = 17;
+      onChanged();
+      return directNotebookSourceBuilder_;
     }
 
     /**
@@ -4896,7 +6024,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4914,7 +6042,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4937,7 +6065,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5007,7 +6135,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5025,7 +6153,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -5048,7 +6176,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5071,7 +6199,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -5111,7 +6239,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         executionTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5130,7 +6258,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         executionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5145,7 +6273,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && executionTimeout_ != null
             && executionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getExecutionTimeoutBuilder().mergeFrom(value);
@@ -5156,7 +6284,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         executionTimeoutBuilder_.mergeFrom(value);
       }
       if (executionTimeout_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -5171,7 +6299,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration execution_timeout = 5;</code>
      */
     public Builder clearExecutionTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       executionTimeout_ = null;
       if (executionTimeoutBuilder_ != null) {
         executionTimeoutBuilder_.dispose();
@@ -5190,7 +6318,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration execution_timeout = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }
@@ -5312,7 +6440,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       scheduleResourceName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5333,7 +6461,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder clearScheduleResourceName() {
       scheduleResourceName_ = getDefaultInstance().getScheduleResourceName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5359,7 +6487,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       scheduleResourceName_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5398,7 +6526,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder setJobStateValue(int value) {
       jobState_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5439,7 +6567,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       jobState_ = value.getNumber();
       onChanged();
       return this;
@@ -5458,7 +6586,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearJobState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       jobState_ = 0;
       onChanged();
       return this;
@@ -5482,7 +6610,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5524,7 +6652,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5545,7 +6673,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5562,7 +6690,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && status_ != null
             && status_ != com.google.rpc.Status.getDefaultInstance()) {
           getStatusBuilder().mergeFrom(value);
@@ -5573,7 +6701,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5590,7 +6718,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -5611,7 +6739,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -5678,7 +6806,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5722,7 +6850,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5743,7 +6871,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5760,7 +6888,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5771,7 +6899,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5788,7 +6916,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5809,7 +6937,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -5882,7 +7010,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5928,7 +7056,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5950,7 +7078,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5968,7 +7096,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5979,7 +7107,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5997,7 +7125,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -6019,7 +7147,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -6071,6 +7199,225 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00008000;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels with user-defined metadata to organize NotebookExecutionJobs.
+     *
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     *
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 19;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
     }
 
     @java.lang.Override

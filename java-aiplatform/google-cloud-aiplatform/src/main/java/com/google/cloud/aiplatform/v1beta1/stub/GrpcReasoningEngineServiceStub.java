@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.GetReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngine;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -95,6 +97,17 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                   ProtoUtils.marshaller(ListReasoningEnginesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReasoningEnginesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineMethodDescriptor =
+          MethodDescriptor.<UpdateReasoningEngineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineService/UpdateReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteReasoningEngineRequest, Operation>
@@ -165,6 +178,11 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
       listReasoningEnginesCallable;
   private final UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesPagedResponse>
       listReasoningEnginesPagedCallable;
+  private final UnaryCallable<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineCallable;
+  private final OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable;
   private final UnaryCallable<DeleteReasoningEngineRequest, Operation>
       deleteReasoningEngineCallable;
   private final OperationCallable<DeleteReasoningEngineRequest, Empty, DeleteOperationMetadata>
@@ -252,6 +270,19 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateReasoningEngineRequest, Operation>
+        updateReasoningEngineTransportSettings =
+            GrpcCallSettings.<UpdateReasoningEngineRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reasoning_engine.name",
+                          String.valueOf(request.getReasoningEngine().getName()));
                       return builder.build();
                     })
                 .build();
@@ -344,6 +375,17 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
             listReasoningEnginesTransportSettings,
             settings.listReasoningEnginesSettings(),
             clientContext);
+    this.updateReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            updateReasoningEngineTransportSettings,
+            settings.updateReasoningEngineSettings(),
+            clientContext);
+    this.updateReasoningEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            updateReasoningEngineTransportSettings,
+            settings.updateReasoningEngineOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteReasoningEngineCallable =
         callableFactory.createUnaryCallable(
             deleteReasoningEngineTransportSettings,
@@ -411,6 +453,18 @@ public class GrpcReasoningEngineServiceStub extends ReasoningEngineServiceStub {
   public UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesPagedResponse>
       listReasoningEnginesPagedCallable() {
     return listReasoningEnginesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReasoningEngineRequest, Operation> updateReasoningEngineCallable() {
+    return updateReasoningEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable() {
+    return updateReasoningEngineOperationCallable;
   }
 
   @Override

@@ -1616,6 +1616,41 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  boolean hasContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return The containerdConfig.
+   */
+  com.google.container.v1beta1.ContainerdConfig getContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 43;</code>
+   */
+  com.google.container.v1beta1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * HostMaintenancePolicy contains the desired maintenance policy for the
    * Google Compute Engine hosts.
    * </pre>

@@ -152,7 +152,7 @@ public class ControlServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
     Control control = Control.newBuilder().build();
     String controlId = "controlId-395080872";
 
@@ -176,6 +176,62 @@ public class ControlServiceClientHttpJsonTest {
 
   @Test
   public void createControlExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      Control control = Control.newBuilder().build();
+      String controlId = "controlId-395080872";
+      client.createControl(parent, control, controlId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createControlTest3() throws Exception {
+    Control expectedResponse =
+        Control.newBuilder()
+            .setName(
+                ControlName.ofProjectLocationDataStoreControlName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[CONTROL]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllAssociatedServingConfigIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .addAllUseCases(new ArrayList<SearchUseCase>())
+            .addAllConditions(new ArrayList<Condition>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+    Control control = Control.newBuilder().build();
+    String controlId = "controlId-395080872";
+
+    Control actualResponse = client.createControl(parent, control, controlId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createControlExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -526,7 +582,7 @@ public class ControlServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
 
     ListControlsPagedResponse pagedListResponse = client.listControls(parent);
 
@@ -552,6 +608,56 @@ public class ControlServiceClientHttpJsonTest {
 
   @Test
   public void listControlsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.listControls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listControlsTest3() throws Exception {
+    Control responsesElement = Control.newBuilder().build();
+    ListControlsResponse expectedResponse =
+        ListControlsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllControls(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+
+    ListControlsPagedResponse pagedListResponse = client.listControls(parent);
+
+    List<Control> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getControlsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listControlsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);

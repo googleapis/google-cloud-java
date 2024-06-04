@@ -96,10 +96,9 @@ public interface UpdateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and the
+   * If set to `true` and the
    * [Document][google.cloud.discoveryengine.v1beta.Document] is not found, a
-   * new [Document][google.cloud.discoveryengine.v1beta.Document] will be
-   * created.
+   * new [Document][google.cloud.discoveryengine.v1beta.Document] is be created.
    * </pre>
    *
    * <code>bool allow_missing = 2;</code>
@@ -113,7 +112,7 @@ public interface UpdateDocumentRequestOrBuilder
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -126,7 +125,7 @@ public interface UpdateDocumentRequestOrBuilder
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -139,7 +138,7 @@ public interface UpdateDocumentRequestOrBuilder
    *
    * <pre>
    * Indicates which fields in the provided imported 'document' to update. If
-   * not set, will by default update all fields.
+   * not set, by default updates all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
