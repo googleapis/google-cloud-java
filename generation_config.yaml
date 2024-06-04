@@ -1,6 +1,6 @@
 gapic_generator_version: 2.40.1
 protoc_version: '25.3'
-googleapis_commitish: f65ad5f87d253c02e1d854aa48c096acc404215f
+googleapis_commitish: b7bcc9b8b34d3ba85790ebd7a6b460e92d013b31
 libraries_bom_version: 26.39.0
 template_excludes:
 - .github/*
