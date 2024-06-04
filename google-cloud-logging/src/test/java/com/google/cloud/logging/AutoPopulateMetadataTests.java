@@ -22,8 +22,7 @@ import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.newCapture;
 import static org.easymock.EasyMock.replay;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import com.google.api.core.ApiFutures;
 import com.google.cloud.MonitoredResource;
@@ -74,6 +73,7 @@ public class AutoPopulateMetadataTests {
   private static final String FORMATTED_TRACE_ID =
       String.format(LoggingImpl.RESOURCE_NAME_FORMAT, RESOURCE_PROJECT_ID, TRACE_ID);
   private static final String SPAN_ID = "1";
+  private static final boolean TRACE_SAMPLED = true;
 
   private LoggingRpcFactory mockedRpcFactory;
   private LoggingRpc mockedRpc;
@@ -111,15 +111,21 @@ public class AutoPopulateMetadataTests {
     new ContextHandler().removeCurrentContext();
   }
 
-  private void mockCurrentContext(HttpRequest request, String traceId, String spanId) {
+  private void mockCurrentContext(
+      HttpRequest request, String traceId, String spanId, boolean traceSampled) {
     Context mockedContext =
-        Context.newBuilder().setRequest(request).setTraceId(traceId).setSpanId(spanId).build();
+        Context.newBuilder()
+            .setRequest(request)
+            .setTraceId(traceId)
+            .setSpanId(spanId)
+            .setTraceSampled(traceSampled)
+            .build();
     new ContextHandler().setCurrentContext(mockedContext);
   }
 
   @Test
   public void testAutoPopulationEnabledInLoggingOptions() {
-    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID);
+    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID, TRACE_SAMPLED);
 
     logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY));
 
@@ -127,6 +133,7 @@ public class AutoPopulateMetadataTests {
     assertEquals(HTTP_REQUEST, actual.getHttpRequest());
     assertEquals(FORMATTED_TRACE_ID, actual.getTrace());
     assertEquals(SPAN_ID, actual.getSpanId());
+    assertEquals(TRACE_SAMPLED, actual.getTraceSampled());
     assertEquals(RESOURCE, actual.getResource());
   }
 
@@ -136,7 +143,7 @@ public class AutoPopulateMetadataTests {
     LoggingOptions options =
         logging.getOptions().toBuilder().setAutoPopulateMetadata(false).build();
     logging = options.getService();
-    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID);
+    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID, TRACE_SAMPLED);
 
     logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY), WriteOption.autoPopulateMetadata(true));
 
@@ -144,12 +151,13 @@ public class AutoPopulateMetadataTests {
     assertEquals(HTTP_REQUEST, actual.getHttpRequest());
     assertEquals(FORMATTED_TRACE_ID, actual.getTrace());
     assertEquals(SPAN_ID, actual.getSpanId());
+    assertEquals(TRACE_SAMPLED, actual.getTraceSampled());
     assertEquals(RESOURCE, actual.getResource());
   }
 
   @Test
   public void testAutoPopulationDisabledInWriteOptions() {
-    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID);
+    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID, TRACE_SAMPLED);
 
     logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY), WriteOption.autoPopulateMetadata(false));
 
@@ -157,6 +165,7 @@ public class AutoPopulateMetadataTests {
     assertNull(actual.getHttpRequest());
     assertNull(actual.getTrace());
     assertNull(actual.getSpanId());
+    assertFalse(actual.getTraceSampled());
     assertNull(actual.getResource());
   }
 
@@ -174,7 +183,7 @@ public class AutoPopulateMetadataTests {
 
   @Test
   public void testNotFormattedTraceId() {
-    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID);
+    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID, TRACE_SAMPLED);
 
     final MonitoredResource expectedResource = MonitoredResource.newBuilder("custom").build();
 
@@ -186,7 +195,7 @@ public class AutoPopulateMetadataTests {
 
   @Test
   public void testMonitoredResourcePopulationInWriteOptions() {
-    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID);
+    mockCurrentContext(HTTP_REQUEST, TRACE_ID, SPAN_ID, TRACE_SAMPLED);
 
     final MonitoredResource expectedResource = MonitoredResource.newBuilder("custom").build();
 

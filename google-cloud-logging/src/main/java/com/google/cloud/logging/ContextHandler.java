@@ -18,7 +18,17 @@ package com.google.cloud.logging;
 
 /** Class provides a per-thread storage of the {@see Context} instances. */
 public class ContextHandler {
+
+  public enum ContextPriority {
+    NO_INPUT,
+    XCLOUD_HEADER,
+    W3C_HEADER,
+    OTEL_EXTRACTED
+  }
+
   private static final ThreadLocal<Context> contextHolder = initContextHolder();
+  private static final ThreadLocal<ContextPriority> currentPriority =
+      ThreadLocal.withInitial(() -> ContextPriority.NO_INPUT);
 
   /**
    * Initializes the context holder to {@link InheritableThreadLocal} if {@link LogManager}
@@ -41,10 +51,45 @@ public class ContextHandler {
   }
 
   public void setCurrentContext(Context context) {
-    contextHolder.set(context);
+    setCurrentContext(context, ContextPriority.NO_INPUT);
+  }
+
+  public ContextPriority getCurrentContextPriority() {
+    return currentPriority.get();
+  }
+
+  /**
+   * Sets the context based on the priority. Overrides traceId, spanId and TraceSampled if the
+   * passed priority is higher. HttpRequest values will be retrieved and combined from existing
+   * context if HttpRequest in the new context is empty .
+   */
+  public void setCurrentContext(Context context, ContextPriority priority) {
+    if (priority != null && priority.compareTo(currentPriority.get()) >= 0 && context != null) {
+      Context.Builder combinedContextBuilder =
+          Context.newBuilder()
+              .setTraceId(context.getTraceId())
+              .setSpanId(context.getSpanId())
+              .setTraceSampled(context.getTraceSampled());
+      Context currentContext = getCurrentContext();
+
+      if (context.getHttpRequest() != null) {
+        combinedContextBuilder.setRequest(context.getHttpRequest());
+      }
+      // Combines HttpRequest from the existing context if HttpRequest in new context is empty.
+      else if (currentContext != null && currentContext.getHttpRequest() != null) {
+        combinedContextBuilder.setRequest(currentContext.getHttpRequest());
+      }
+
+      contextHolder.set(combinedContextBuilder.build());
+      currentPriority.set(priority);
+    }
   }
 
   public void removeCurrentContext() {
     contextHolder.remove();
+  }
+
+  public void removeCurrentContextPriority() {
+    currentPriority.remove();
   }
 }

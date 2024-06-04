@@ -165,6 +165,8 @@ public class LoggingHandlerTest {
           .addLabel("levelName", "FINEST")
           .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
           .setTrace("projects/projectId/traces/traceId")
+          .setSpanId("test_span_id")
+          .setTraceSampled(true)
           .setTimestamp(123456789L)
           .build();
   private static final LogEntry DIAGNOSTIC_ENTRY =
@@ -454,6 +456,8 @@ public class LoggingHandlerTest {
     replay(options, logging);
     LoggingEnhancer enhancer = new TraceLoggingEnhancer();
     TraceLoggingEnhancer.setCurrentTraceId("projects/projectId/traces/traceId");
+    TraceLoggingEnhancer.setCurrentSpanId("test_span_id");
+    TraceLoggingEnhancer.setCurrentTraceSampled(true);
     Handler handler =
         new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
     handler.setLevel(Level.ALL);

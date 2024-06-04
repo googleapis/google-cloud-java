@@ -24,6 +24,8 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   public TraceLoggingEnhancer(String prefix) {}
 
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
+  private static final ThreadLocal<String> spanId = new ThreadLocal<>();
+  private static final ThreadLocal<Boolean> traceSampled = new ThreadLocal<Boolean>();
 
   /**
    * Set the Trace ID associated with any logging done by the current thread.
@@ -39,12 +41,56 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   }
 
   /**
+   * Set the Span ID associated with any logging done by the current thread.
+   *
+   * @param id The spanID
+   */
+  public static void setCurrentSpanId(String id) {
+    if (id == null) {
+      spanId.remove();
+    } else {
+      spanId.set(id);
+    }
+  }
+
+  /**
+   * Set the trace sampled flag associated with any logging done by the current thread.
+   *
+   * @param isTraceSampled The traceSampled flag
+   */
+  public static void setCurrentTraceSampled(Boolean isTraceSampled) {
+    if (isTraceSampled == null) {
+      traceSampled.remove();
+    } else {
+      traceSampled.set(isTraceSampled);
+    }
+  }
+
+  /**
    * Get the Trace ID associated with any logging done by the current thread.
    *
-   * @return id The traceID
+   * @return id The trace ID
    */
   public static String getCurrentTraceId() {
     return traceId.get();
+  }
+
+  /**
+   * Get the Span ID associated with any logging done by the current thread.
+   *
+   * @return id The span ID
+   */
+  public static String getCurrentSpanId() {
+    return spanId.get();
+  }
+
+  /**
+   * Get the trace sampled flag associated with any logging done by the current thread.
+   *
+   * @return traceSampled The traceSampled flag
+   */
+  public static Boolean getCurrentTraceSampled() {
+    return traceSampled.get();
   }
 
   @Override
@@ -52,6 +98,14 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
     String traceId = getCurrentTraceId();
     if (traceId != null) {
       builder.setTrace(traceId);
+    }
+    String spanId = getCurrentSpanId();
+    if (spanId != null) {
+      builder.setSpanId(spanId);
+    }
+    Boolean isTraceSampled = getCurrentTraceSampled();
+    if (isTraceSampled != null) {
+      builder.setTraceSampled(isTraceSampled);
     }
   }
 }

@@ -22,6 +22,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -34,15 +36,19 @@ public class Context {
   private static final Pattern W3C_TRACE_CONTEXT_FORMAT =
       Pattern.compile(
           "^00-(?!00000000000000000000000000000000)[0-9a-f]{32}-(?!0000000000000000)[0-9a-f]{16}-[0-9a-f]{2}$");
+  // Trace sampled flag for bit masking
+  // see https://www.w3.org/TR/trace-context/#trace-flags for details
+  private static final byte FLAG_SAMPLED = 1; // 00000001
   private final HttpRequest request;
   private final String traceId;
   private final String spanId;
-
+  private final boolean traceSampled;
   /** A builder for {@see Context} objects. */
   public static final class Builder {
     private HttpRequest.Builder requestBuilder = HttpRequest.newBuilder();
     private String traceId;
     private String spanId;
+    private boolean traceSampled;
 
     Builder() {}
 
@@ -50,6 +56,7 @@ public class Context {
       this.requestBuilder = context.request.toBuilder();
       this.traceId = context.traceId;
       this.spanId = context.spanId;
+      this.traceSampled = context.traceSampled;
     }
 
     /** Sets the HTTP request. */
@@ -118,10 +125,18 @@ public class Context {
       return this;
     }
 
+    /** Sets the boolean as trace sampled flag. */
+    @CanIgnoreReturnValue
+    public Builder setTraceSampled(boolean traceSampled) {
+      this.traceSampled = traceSampled;
+      return this;
+    }
+
     /**
-     * Sets the trace id and span id values by parsing the string which represents xCloud Trace
-     * Context. The Cloud Trace Context is passed as {@code x-cloud-trace-context} header (can be in
-     * Pascal case format). The string format is <code>TRACE_ID/SPAN_ID;o=TRACE_TRUE</code>.
+     * Sets the trace id, span id and trace sampled flag values by parsing the string which
+     * represents xCloud Trace Context. The Cloud Trace Context is passed as {@code
+     * x-cloud-trace-context} header (can be in Pascal case format). The string format is <code>
+     * TRACE_ID/SPAN_ID;o=TRACE_TRUE</code>.
      *
      * @see <a href="https://cloud.google.com/trace/docs/setup#force-trace">Cloud Trace header
      *     format.</a>
@@ -129,6 +144,9 @@ public class Context {
     @CanIgnoreReturnValue
     public Builder loadCloudTraceContext(String cloudTrace) {
       if (cloudTrace != null) {
+        if (cloudTrace.indexOf("o=") >= 0) {
+          setTraceSampled(Iterables.get(Splitter.on("o=").split(cloudTrace), 1).equals("1"));
+        }
         cloudTrace = Iterables.get(Splitter.on(';').split(cloudTrace), 0);
         int split = cloudTrace.indexOf('/');
         if (split >= 0) {
@@ -149,10 +167,11 @@ public class Context {
     }
 
     /**
-     * Sets the trace id and span id values by parsing the string which represents the standard W3C
-     * trace context propagation header. The context propagation header is passed as {@code
-     * traceparent} header. The method currently supports ONLY version {@code "00"}. The string
-     * format is <code>00-TRACE_ID-SPAN_ID-FLAGS</code>. field of the {@code version-format} value.
+     * Sets the trace id, span id and trace sampled flag values by parsing the string which
+     * represents the standard W3C trace context propagation header. The context propagation header
+     * is passed as {@code traceparent} header. The method currently supports ONLY version {@code
+     * "00"}. The string format is <code>00-TRACE_ID-SPAN_ID-FLAGS</code>. field of the {@code
+     * version-format} value.
      *
      * @see <a href=
      *     "https://www.w3.org/TR/trace-context/#traceparent-header-field-values">traceparent header
@@ -171,7 +190,27 @@ public class Context {
         List<String> fields = Splitter.on('-').splitToList(traceParent);
         setTraceId(fields.get(1));
         setSpanId(fields.get(2));
-        // fields[3] contains flag(s)
+        boolean sampled = (Integer.parseInt(fields.get(3), 16) & FLAG_SAMPLED) == FLAG_SAMPLED;
+        setTraceSampled(sampled);
+      }
+      return this;
+    }
+
+    /**
+     * Sets the trace id, span id and trace sampled flag values by parsing detected OpenTelemetry
+     * span context.
+     *
+     * @see <a href="https://opentelemetry.io/docs/specs/otel/trace/api/#spancontext">OpenTelemetry
+     *     SpanContext.</a>
+     */
+    @CanIgnoreReturnValue
+    public Builder loadOpenTelemetryContext() {
+      io.opentelemetry.context.Context currentContext = io.opentelemetry.context.Context.current();
+      SpanContext spanContext = Span.fromContext(currentContext).getSpanContext();
+      if (spanContext != null && spanContext.isValid()) {
+        setTraceId(spanContext.getTraceId());
+        setSpanId(spanContext.getSpanId());
+        setTraceSampled(spanContext.isSampled());
       }
       return this;
     }
@@ -191,6 +230,7 @@ public class Context {
     }
     this.traceId = builder.traceId;
     this.spanId = builder.spanId;
+    this.traceSampled = builder.traceSampled;
   }
 
   public HttpRequest getHttpRequest() {
@@ -205,6 +245,10 @@ public class Context {
     return this.spanId;
   }
 
+  public boolean getTraceSampled() {
+    return this.traceSampled;
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(request, traceId, spanId);
@@ -216,6 +260,7 @@ public class Context {
         .add("request", request)
         .add("traceId", traceId)
         .add("spanId", spanId)
+        .add("traceSampled", traceSampled)
         .toString();
   }
 
@@ -230,7 +275,8 @@ public class Context {
     Context other = (Context) obj;
     return Objects.equals(request, other.request)
         && Objects.equals(traceId, other.traceId)
-        && Objects.equals(spanId, other.spanId);
+        && Objects.equals(spanId, other.spanId)
+        && Objects.equals(traceSampled, other.traceSampled);
   }
 
   /** Returns a builder for this object. */

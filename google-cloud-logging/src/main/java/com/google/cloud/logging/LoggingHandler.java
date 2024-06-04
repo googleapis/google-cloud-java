@@ -171,7 +171,7 @@ public class LoggingHandler extends Handler {
 
   private final WriteOption[] defaultWriteOptions;
 
-  /** Creates an handler that publishes messages to Cloud Logging. */
+  /** Creates a handler that publishes messages to Cloud Logging. */
   public LoggingHandler() {
     this(null, null, null);
   }

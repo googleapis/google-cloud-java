@@ -21,6 +21,14 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
+import io.opentelemetry.api.trace.*;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.SpanProcessor;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -37,6 +45,7 @@ public class ContextTest {
   // DO NOT use dash in trace and span id because W3C traceparent format uses dash as a delimieter
   private static final String TEST_TRACE_ID = "test_trace_id";
   private static final String TEST_SPAN_ID = "test_span_id";
+  private static final boolean TEST_TRACE_SAMPLED = true;
 
   private static final HttpRequest REQUEST =
       HttpRequest.newBuilder()
@@ -68,6 +77,7 @@ public class ContextTest {
           .setRequest(PARTIAL_REQUEST)
           .setTraceId(TEST_TRACE_ID)
           .setSpanId(TEST_SPAN_ID)
+          .setTraceSampled(TEST_TRACE_SAMPLED)
           .build();
 
   @Test
@@ -87,6 +97,7 @@ public class ContextTest {
             .setServerIp(SERVER_IP)
             .setTraceId(TEST_TRACE_ID)
             .setSpanId(TEST_SPAN_ID)
+            .setTraceSampled(TEST_TRACE_SAMPLED)
             .build();
 
     assertNotEquals(TEST_CONTEXT, context1);
@@ -103,9 +114,11 @@ public class ContextTest {
     assertEquals(PARTIAL_REQUEST, TEST_CONTEXT.getHttpRequest());
     assertEquals(TEST_TRACE_ID, TEST_CONTEXT.getTraceId());
     assertEquals(TEST_SPAN_ID, TEST_CONTEXT.getSpanId());
+    assertEquals(TEST_TRACE_SAMPLED, TEST_CONTEXT.getTraceSampled());
     assertNull(emptyContext.getHttpRequest());
     assertNull(emptyContext.getTraceId());
     assertNull(emptyContext.getSpanId());
+    assertFalse(emptyContext.getTraceSampled());
     assertEquals(TEST_CONTEXT, anotherContext);
   }
 
@@ -114,40 +127,78 @@ public class ContextTest {
     final String X_CLOUD_TRACE_NO_TRACE = "/SPAN_ID;o=TRACE_TRUE";
     final String X_CLOUD_TRACE_ONLY = TEST_TRACE_ID;
     final String X_CLOUD_TRACE_WITH_SPAN = TEST_TRACE_ID + "/" + TEST_SPAN_ID;
-    final String X_CLOUD_TRACE_FULL = TEST_TRACE_ID + "/" + TEST_SPAN_ID + ";o=TRACE_TRUE";
+    final String X_CLOUD_TRACE_FULL = TEST_TRACE_ID + "/" + TEST_SPAN_ID + ";o=1";
 
     Context.Builder builder = Context.newBuilder();
 
     builder.loadCloudTraceContext(null);
-    assertTraceAndSpan(builder.build(), null, null);
+    assertTraceSpanAndSampled(builder.build(), null, null, false);
     builder.loadCloudTraceContext("");
-    assertTraceAndSpan(builder.build(), null, null);
+    assertTraceSpanAndSampled(builder.build(), null, null, false);
     builder.loadCloudTraceContext(X_CLOUD_TRACE_NO_TRACE);
-    assertTraceAndSpan(builder.build(), null, null);
+    assertTraceSpanAndSampled(builder.build(), null, null, false);
     builder.loadCloudTraceContext(X_CLOUD_TRACE_ONLY);
-    assertTraceAndSpan(builder.build(), TEST_TRACE_ID, null);
+    assertTraceSpanAndSampled(builder.build(), TEST_TRACE_ID, null, false);
     builder.loadCloudTraceContext(X_CLOUD_TRACE_WITH_SPAN);
-    assertTraceAndSpan(builder.build(), TEST_TRACE_ID, TEST_SPAN_ID);
+    assertTraceSpanAndSampled(builder.build(), TEST_TRACE_ID, TEST_SPAN_ID, false);
     builder.loadCloudTraceContext(X_CLOUD_TRACE_FULL);
-    assertTraceAndSpan(builder.build(), TEST_TRACE_ID, TEST_SPAN_ID);
+    assertTraceSpanAndSampled(builder.build(), TEST_TRACE_ID, TEST_SPAN_ID, TEST_TRACE_SAMPLED);
   }
 
   @Test
   public void testParsingW3CTraceParent() {
     final String W3C_TEST_TRACE_ID = "12345678901234567890123456789012";
     final String W3C_TEST_SPAN_ID = "1234567890123456";
-    final String W3C_TRACE_CONTEXT = "00-" + W3C_TEST_TRACE_ID + "-" + W3C_TEST_SPAN_ID + "-00";
+    final String W3C_TEST_TRACE_SAMPLED = "0f";
+    final String W3C_TRACE_CONTEXT =
+        "00-" + W3C_TEST_TRACE_ID + "-" + W3C_TEST_SPAN_ID + "-" + W3C_TEST_TRACE_SAMPLED;
 
     Context.Builder builder = Context.newBuilder();
 
     builder.loadW3CTraceParentContext(null);
-    assertTraceAndSpan(builder.build(), null, null);
+    assertTraceSpanAndSampled(builder.build(), null, null, false);
     builder.loadW3CTraceParentContext(W3C_TRACE_CONTEXT);
-    assertTraceAndSpan(builder.build(), W3C_TEST_TRACE_ID, W3C_TEST_SPAN_ID);
+    assertTraceSpanAndSampled(builder.build(), W3C_TEST_TRACE_ID, W3C_TEST_SPAN_ID, true);
   }
 
-  private void assertTraceAndSpan(Context context, String expectedTraceId, String expectedSpanId) {
+  @Test
+  public void testParsingOpenTelemetryContext() {
+    InMemorySpanExporter testExporter = InMemorySpanExporter.create();
+    SpanProcessor inMemorySpanProcessor = SimpleSpanProcessor.create(testExporter);
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder().addSpanProcessor(inMemorySpanProcessor).build())
+            .buildAndRegisterGlobal();
+
+    Tracer tracer = openTelemetrySdk.getTracer("ContextTest");
+    Span otelSpan = tracer.spanBuilder("Example Span Attributes").startSpan();
+    SpanContext currentOtelContext;
+    Context.Builder builder = Context.newBuilder();
+    try (Scope scope = otelSpan.makeCurrent()) {
+      otelSpan.setAttribute("Attribute 1", "first attribute value");
+      currentOtelContext = otelSpan.getSpanContext();
+      builder.loadOpenTelemetryContext();
+      assertTraceSpanAndSampled(
+          builder.build(),
+          currentOtelContext.getTraceId(),
+          currentOtelContext.getSpanId(),
+          currentOtelContext.isSampled());
+    } catch (Throwable t) {
+      otelSpan.recordException(t);
+      throw t;
+    } finally {
+      otelSpan.end();
+    }
+  }
+
+  private void assertTraceSpanAndSampled(
+      Context context,
+      String expectedTraceId,
+      String expectedSpanId,
+      boolean expectedTraceSampled) {
     assertEquals(expectedTraceId, context.getTraceId());
     assertEquals(expectedSpanId, context.getSpanId());
+    assertEquals(expectedTraceSampled, context.getTraceSampled());
   }
 }
