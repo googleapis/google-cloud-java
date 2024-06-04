@@ -1,0 +1,16 @@
+{
+  "api_shortname": "managedkafka",
+  "name_pretty": "Apache Kafka for BigQuery API",
+  "product_documentation": "https://cloud.google.com/managed-kafka",
+  "api_description": "Manage Apache Kafka clusters and resources.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-managedkafka",
+  "distribution_name": "com.google.cloud:google-cloud-managedkafka",
+  "api_id": "managedkafka.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

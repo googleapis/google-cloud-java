@@ -630,6 +630,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-iap-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-ids-bom</artifactId>
         <version>1.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
         <type>pom</type>
@@ -688,6 +695,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-managed-identities-bom</artifactId>
         <version>1.43.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-managedkafka-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-managedkafka:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

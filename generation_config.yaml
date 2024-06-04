@@ -1,7 +1,7 @@
 gapic_generator_version: 2.40.1
 protoc_version: '25.3'
-googleapis_commitish: b7bcc9b8b34d3ba85790ebd7a6b460e92d013b31
-libraries_bom_version: 26.39.0
+googleapis_commitish: f49123a39efc18f0a20a2183629c62830725343c
+libraries_bom_version: 26.40.0
 template_excludes:
 - .github/*
 - .kokoro/*
@@ -988,6 +988,7 @@ libraries:
     way, whether the clusters are on Google Cloud, other public clouds, or on premises,
     and makes it easier to automate DevOps processes across all your clusters.
   library_name: gke-connect-gateway
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/gkeconnect/gateway/v1beta1
 
@@ -1080,6 +1081,20 @@ libraries:
   GAPICs:
   - proto_path: google/iam/credentials/v1
 
+- api_shortname: iap
+  name_pretty: Cloud Identity-Aware Proxy API
+  product_documentation: https://cloud.google.com/iap
+  api_description: Controls access to cloud applications running on Google Cloud Platform.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-iap
+  api_id: iap.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/iap/v1
+  requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
   product_documentation: https://cloud.google.com/intrusion-detection-system/docs
@@ -1093,6 +1108,8 @@ libraries:
   name_pretty: Infrastructure Manager API
   product_documentation: https://cloud.google.com/infrastructure-manager/docs/overview
   api_description: Creates and manages Google Cloud Platform resources and infrastructure.
+  api_id: config.googleapis.com
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/config/v1
 
@@ -1175,6 +1192,21 @@ libraries:
   - proto_path: google/cloud/managedidentities/v1
   - proto_path: google/cloud/managedidentities/v1beta1
 
+- api_shortname: managedkafka
+  name_pretty: Apache Kafka for BigQuery API
+  product_documentation: https://cloud.google.com/managed-kafka
+  api_description: Manage Apache Kafka clusters and resources.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-managedkafka
+  api_id: managedkafka.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/managedkafka/v1
+  requires_billing: true
 - api_shortname: maps-addressvalidation
   name_pretty: Address Validation API
   product_documentation: https://developers.google.com/maps/documentation/address-validation/
@@ -1534,7 +1566,7 @@ libraries:
     the performance characteristics of the code.
   library_name: profiler
   release_level: stable
-  api_id: profiler.googleapis.com
+  api_id: cloudprofiler.googleapis.com
   GAPICs:
   - proto_path: google/devtools/cloudprofiler/v2
 
@@ -1752,6 +1784,7 @@ libraries:
     empowers organizations to define, assess early, deploy, and monitor their security
     measures in a unified way and helps simplify governance and reduces administrative
     toil.
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/securityposture/v1
 
@@ -2074,6 +2107,7 @@ libraries:
   api_description: allows you to manipulate video content to dynamically insert ads
     prior to delivery to client devices.
   library_name: video-stitcher
+  release_level: stable
   GAPICs:
   - proto_path: google/cloud/video/stitcher/v1
 
