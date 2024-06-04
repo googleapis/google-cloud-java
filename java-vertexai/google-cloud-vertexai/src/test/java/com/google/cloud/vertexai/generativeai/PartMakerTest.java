@@ -79,7 +79,7 @@ public final class PartMakerTest {
   }
 
   @Test
-  public void testFromFunctionResponseWithStruct() {
+  public void testFromFunctionResponseWithStruct_containsRightNameAndValues() {
     String functionName = "getCurrentWeather";
     Struct functionResponse =
         Struct.newBuilder()
@@ -95,7 +95,7 @@ public final class PartMakerTest {
   }
 
   @Test
-  public void testFromFunctionResponseWithMap() {
+  public void testFromFunctionResponseWithMap_containsRightNameAndValues() {
     String functionName = "getCurrentWeather";
     Map<String, Object> functionResponse = new HashMap<>();
     functionResponse.put("currentWeather", "Super nice!");
@@ -115,7 +115,28 @@ public final class PartMakerTest {
   }
 
   @Test
-  public void testFromFunctionResponseWithInvalidMap() {
+  public void testFromFunctionResponseWithNumberValues_containsRightNameAndValues() {
+    String functionName = "getCurrentWeather";
+    Map<String, Object> functionResponse = new HashMap<>();
+    functionResponse.put("integerNumber", 85);
+    functionResponse.put("doubleNumber", 85.0);
+    functionResponse.put("floatNumber", 85.0f);
+    functionResponse.put("longNumber", 85L);
+    functionResponse.put("shortNumber", (short) 85);
+
+    Part part = PartMaker.fromFunctionResponse(functionName, functionResponse);
+    Map<String, Value> fieldsMap = part.getFunctionResponse().getResponse().getFieldsMap();
+
+    assertThat(part.getFunctionResponse().getName()).isEqualTo("getCurrentWeather");
+    assertThat(fieldsMap.get("integerNumber").getNumberValue()).isEqualTo(85.0);
+    assertThat(fieldsMap.get("doubleNumber").getNumberValue()).isEqualTo(85.0);
+    assertThat(fieldsMap.get("floatNumber").getNumberValue()).isEqualTo(85.0);
+    assertThat(fieldsMap.get("longNumber").getNumberValue()).isEqualTo(85.0);
+    assertThat(fieldsMap.get("shortNumber").getNumberValue()).isEqualTo(85.0);
+  }
+
+  @Test
+  public void testFromFunctionResponseWithInvalidMap_throwsIllegalArgumentException() {
     String functionName = "getCurrentWeather";
     Map<String, Object> invalidResponse = new HashMap<>();
     invalidResponse.put("currentWeather", new byte[] {1, 2, 3});
@@ -127,6 +148,6 @@ public final class PartMakerTest {
         .hasMessageThat()
         .isEqualTo(
             "The value in the map can only be one of the following format: "
-                + "String, Double, Boolean, null.");
+                + "String, Number, Boolean, null.");
   }
 }

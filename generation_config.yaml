@@ -1,6 +1,6 @@
 gapic_generator_version: 2.40.1
 googleapis_commitish: f49123a39efc18f0a20a2183629c62830725343c
-libraries_bom_version: 26.39.0
+libraries_bom_version: 26.40.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -1068,6 +1068,20 @@ libraries:
   GAPICs:
   - proto_path: google/iam/credentials/v1
 
+- api_shortname: iap
+  name_pretty: Cloud Identity-Aware Proxy API
+  product_documentation: https://cloud.google.com/iap
+  api_description: Controls access to cloud applications running on Google Cloud Platform.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-iap
+  api_id: iap.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/iap/v1
+  requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
   product_documentation: https://cloud.google.com/intrusion-detection-system/docs
@@ -1165,6 +1179,21 @@ libraries:
   - proto_path: google/cloud/managedidentities/v1
   - proto_path: google/cloud/managedidentities/v1beta1
 
+- api_shortname: managedkafka
+  name_pretty: Apache Kafka for BigQuery API
+  product_documentation: https://cloud.google.com/managed-kafka
+  api_description: Manage Apache Kafka clusters and resources.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-managedkafka
+  api_id: managedkafka.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/managedkafka/v1
+  requires_billing: true
 - api_shortname: maps-addressvalidation
   name_pretty: Address Validation API
   product_documentation: https://developers.google.com/maps/documentation/address-validation/
