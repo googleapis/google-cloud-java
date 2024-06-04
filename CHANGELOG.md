@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.18.0](https://github.com/googleapis/java-logging/compare/v3.17.2...v3.18.0) (2024-06-04)
+
+
+### Features
+
+* [java] allow passing libraries_bom_version from env ([#1967](https://github.com/googleapis/java-logging/issues/1967)) ([#1615](https://github.com/googleapis/java-logging/issues/1615)) ([dc00cd0](https://github.com/googleapis/java-logging/commit/dc00cd0da891b59f3c22cd7ce281868f5ce8b433))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ([#1625](https://github.com/googleapis/java-logging/issues/1625)) ([9db8f3b](https://github.com/googleapis/java-logging/commit/9db8f3b948e20fa406f315b670341da2b00f0856))
+
 ## [3.17.2](https://github.com/googleapis/java-logging/compare/v3.17.1...v3.17.2) (2024-05-16)
 
 
