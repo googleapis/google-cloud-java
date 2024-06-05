@@ -8,7 +8,7 @@
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
-  "repo_short": "java-java-shopping-merchant-accounts",
+  "repo_short": "java-shopping-merchant-accounts",
   "distribution_name": "com.google.shopping:google-shopping-merchant-accounts",
   "api_id": "merchantapi.googleapis.com",
   "library_type": "GAPIC_AUTO",

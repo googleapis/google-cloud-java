@@ -14,22 +14,22 @@
 
 
 deep-remove-regex:
-- "/java-java-shopping-merchant-promotions/grpc-google-.*/src"
-- "/java-java-shopping-merchant-promotions/proto-google-.*/src"
-- "/java-java-shopping-merchant-promotions/google-.*/src"
-- "/java-java-shopping-merchant-promotions/samples/snippets/generated"
+- "/java-shopping-merchant-promotions/grpc-google-.*/src"
+- "/java-shopping-merchant-promotions/proto-google-.*/src"
+- "/java-shopping-merchant-promotions/google-.*/src"
+- "/java-shopping-merchant-promotions/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-java-shopping-merchant-promotions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-shopping-merchant-promotions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/shopping/merchant/promotions/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-promotions/$1/proto-google-shopping-merchant-promotions-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-promotions/$1/proto-google-shopping-merchant-promotions-$1/src"
 - source: "/google/shopping/merchant/promotions/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-promotions/$1/grpc-google-shopping-merchant-promotions-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-promotions/$1/grpc-google-shopping-merchant-promotions-$1/src"
 - source: "/google/shopping/merchant/promotions/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-promotions/$1/google-shopping-merchant-promotions/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-promotions/$1/google-shopping-merchant-promotions/src"
 - source: "/google/shopping/merchant/promotions/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-promotions/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-shopping-merchant-promotions/$1/samples/snippets/generated"
 
 api-name: merchantapi

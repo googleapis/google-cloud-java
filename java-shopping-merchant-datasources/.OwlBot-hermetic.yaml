@@ -14,22 +14,22 @@
 
 
 deep-remove-regex:
-- "/java-java-shopping-merchant-datasources/grpc-google-.*/src"
-- "/java-java-shopping-merchant-datasources/proto-google-.*/src"
-- "/java-java-shopping-merchant-datasources/google-.*/src"
-- "/java-java-shopping-merchant-datasources/samples/snippets/generated"
+- "/java-shopping-merchant-datasources/grpc-google-.*/src"
+- "/java-shopping-merchant-datasources/proto-google-.*/src"
+- "/java-shopping-merchant-datasources/google-.*/src"
+- "/java-shopping-merchant-datasources/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-java-shopping-merchant-datasources/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-shopping-merchant-datasources/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/shopping/merchant/datasources/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-datasources/$1/proto-google-shopping-merchant-datasources-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-datasources/$1/proto-google-shopping-merchant-datasources-$1/src"
 - source: "/google/shopping/merchant/datasources/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-datasources/$1/grpc-google-shopping-merchant-datasources-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-datasources/$1/grpc-google-shopping-merchant-datasources-$1/src"
 - source: "/google/shopping/merchant/datasources/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-datasources/$1/google-shopping-merchant-datasources/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-datasources/$1/google-shopping-merchant-datasources/src"
 - source: "/google/shopping/merchant/datasources/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-datasources/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-shopping-merchant-datasources/$1/samples/snippets/generated"
 
 api-name: merchantapi
