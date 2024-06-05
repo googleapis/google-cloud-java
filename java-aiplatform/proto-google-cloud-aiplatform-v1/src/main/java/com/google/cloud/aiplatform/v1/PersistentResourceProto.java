@@ -53,13 +53,25 @@ public final class PersistentResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_RaySpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RaySpec_ResourcePoolImagesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RaySpec_ResourcePoolImagesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ResourceRuntime_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ServiceAccountSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ServiceAccountSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RayMetricSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RayMetricSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -120,16 +132,28 @@ public final class PersistentResourceProto {
           + "eSpec\022Q\n\024service_account_spec\030\002 \001(\0132..go"
           + "ogle.cloud.aiplatform.v1.ServiceAccountS"
           + "pecB\003\340A\001\022:\n\010ray_spec\030\001 \001(\0132#.google.clou"
-          + "d.aiplatform.v1.RaySpecB\003\340A\001\"\t\n\007RaySpec\""
-          + "\021\n\017ResourceRuntime\"^\n\022ServiceAccountSpec"
-          + "\022*\n\035enable_custom_service_account\030\001 \001(\010B"
-          + "\003\340A\002\022\034\n\017service_account\030\002 \001(\tB\003\340A\001B\325\001\n\036c"
-          + "om.google.cloud.aiplatform.v1B\027Persisten"
-          + "tResourceProtoP\001Z>cloud.google.com/go/ai"
-          + "platform/apiv1/aiplatformpb;aiplatformpb"
-          + "\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\C"
-          + "loud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPl"
-          + "atform::V1b\006proto3"
+          + "d.aiplatform.v1.RaySpecB\003\340A\001\"\256\002\n\007RaySpec"
+          + "\022\026\n\timage_uri\030\001 \001(\tB\003\340A\001\022^\n\024resource_poo"
+          + "l_images\030\006 \003(\0132;.google.cloud.aiplatform"
+          + ".v1.RaySpec.ResourcePoolImagesEntryB\003\340A\001"
+          + "\022\'\n\032head_node_resource_pool_id\030\007 \001(\tB\003\340A"
+          + "\001\022G\n\017ray_metric_spec\030\010 \001(\0132).google.clou"
+          + "d.aiplatform.v1.RayMetricSpecB\003\340A\001\0329\n\027Re"
+          + "sourcePoolImagesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001\"\233\001\n\017ResourceRuntime\022U\n\013acc"
+          + "ess_uris\030\001 \003(\0132;.google.cloud.aiplatform"
+          + ".v1.ResourceRuntime.AccessUrisEntryB\003\340A\003"
+          + "\0321\n\017AccessUrisEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001\"^\n\022ServiceAccountSpec\022*\n\035ena"
+          + "ble_custom_service_account\030\001 \001(\010B\003\340A\002\022\034\n"
+          + "\017service_account\030\002 \001(\tB\003\340A\001\"&\n\rRayMetric"
+          + "Spec\022\025\n\010disabled\030\001 \001(\010B\003\340A\001B\325\001\n\036com.goog"
+          + "le.cloud.aiplatform.v1B\027PersistentResour"
+          + "ceProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -207,13 +231,35 @@ public final class PersistentResourceProto {
     internal_static_google_cloud_aiplatform_v1_RaySpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RaySpec_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ImageUri", "ResourcePoolImages", "HeadNodeResourcePoolId", "RayMetricSpec",
+            });
+    internal_static_google_cloud_aiplatform_v1_RaySpec_ResourcePoolImagesEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_RaySpec_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_RaySpec_ResourcePoolImagesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RaySpec_ResourcePoolImagesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1_ResourceRuntime_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "AccessUris",
+            });
+    internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_aiplatform_v1_ServiceAccountSpec_descriptor =
         getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1_ServiceAccountSpec_fieldAccessorTable =
@@ -221,6 +267,14 @@ public final class PersistentResourceProto {
             internal_static_google_cloud_aiplatform_v1_ServiceAccountSpec_descriptor,
             new java.lang.String[] {
               "EnableCustomServiceAccount", "ServiceAccount",
+            });
+    internal_static_google_cloud_aiplatform_v1_RayMetricSpec_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_RayMetricSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RayMetricSpec_descriptor,
+            new java.lang.String[] {
+              "Disabled",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

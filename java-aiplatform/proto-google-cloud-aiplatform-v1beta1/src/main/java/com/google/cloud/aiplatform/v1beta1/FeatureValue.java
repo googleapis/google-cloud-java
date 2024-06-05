@@ -904,6 +904,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     INT64_ARRAY_VALUE(11),
     STRING_ARRAY_VALUE(12),
     BYTES_VALUE(13),
+    STRUCT_VALUE(15),
     VALUE_NOT_SET(0);
     private final int value;
 
@@ -940,6 +941,8 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
           return STRING_ARRAY_VALUE;
         case 13:
           return BYTES_VALUE;
+        case 15:
+          return STRUCT_VALUE;
         case 0:
           return VALUE_NOT_SET;
         default:
@@ -1370,6 +1373,57 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int STRUCT_VALUE_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+   *
+   * @return Whether the structValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructValue() {
+    return valueCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+   *
+   * @return The structValue.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StructValue getStructValue() {
+    if (valueCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.StructValue) value_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A struct type feature value.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StructValueOrBuilder getStructValueOrBuilder() {
+    if (valueCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.StructValue) value_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+  }
+
   public static final int METADATA_FIELD_NUMBER = 14;
   private com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata_;
   /**
@@ -1464,6 +1518,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(14, getMetadata());
     }
+    if (valueCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.aiplatform.v1beta1.StructValue) value_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1519,6 +1576,11 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getMetadata());
     }
+    if (valueCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.aiplatform.v1beta1.StructValue) value_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1568,6 +1630,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
         break;
       case 13:
         if (!getBytesValue().equals(other.getBytesValue())) return false;
+        break;
+      case 15:
+        if (!getStructValue().equals(other.getStructValue())) return false;
         break;
       case 0:
       default:
@@ -1626,6 +1691,10 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       case 13:
         hash = (37 * hash) + BYTES_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getBytesValue().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + STRUCT_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getStructValue().hashCode();
         break;
       case 0:
       default:
@@ -1790,6 +1859,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       if (stringArrayValueBuilder_ != null) {
         stringArrayValueBuilder_.clear();
       }
+      if (structValueBuilder_ != null) {
+        structValueBuilder_.clear();
+      }
       metadata_ = null;
       if (metadataBuilder_ != null) {
         metadataBuilder_.dispose();
@@ -1835,7 +1907,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FeatureValue result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -1856,6 +1928,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       }
       if (valueCase_ == 12 && stringArrayValueBuilder_ != null) {
         result.value_ = stringArrayValueBuilder_.build();
+      }
+      if (valueCase_ == 15 && structValueBuilder_ != null) {
+        result.value_ = structValueBuilder_.build();
       }
     }
 
@@ -1956,6 +2031,11 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
             setBytesValue(other.getBytesValue());
             break;
           }
+        case STRUCT_VALUE:
+          {
+            mergeStructValue(other.getStructValue());
+            break;
+          }
         case VALUE_NOT_SET:
           {
             break;
@@ -2047,9 +2127,15 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(getStructValueFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3335,6 +3421,215 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StructValue,
+            com.google.cloud.aiplatform.v1beta1.StructValue.Builder,
+            com.google.cloud.aiplatform.v1beta1.StructValueOrBuilder>
+        structValueBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     *
+     * @return Whether the structValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructValue() {
+      return valueCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     *
+     * @return The structValue.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StructValue getStructValue() {
+      if (structValueBuilder_ == null) {
+        if (valueCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.StructValue) value_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+      } else {
+        if (valueCase_ == 15) {
+          return structValueBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    public Builder setStructValue(com.google.cloud.aiplatform.v1beta1.StructValue value) {
+      if (structValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        structValueBuilder_.setMessage(value);
+      }
+      valueCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    public Builder setStructValue(
+        com.google.cloud.aiplatform.v1beta1.StructValue.Builder builderForValue) {
+      if (structValueBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        structValueBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    public Builder mergeStructValue(com.google.cloud.aiplatform.v1beta1.StructValue value) {
+      if (structValueBuilder_ == null) {
+        if (valueCase_ == 15
+            && value_ != com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance()) {
+          value_ =
+              com.google.cloud.aiplatform.v1beta1.StructValue.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.StructValue) value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 15) {
+          structValueBuilder_.mergeFrom(value);
+        } else {
+          structValueBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    public Builder clearStructValue() {
+      if (structValueBuilder_ == null) {
+        if (valueCase_ == 15) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 15) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        structValueBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StructValue.Builder getStructValueBuilder() {
+      return getStructValueFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StructValueOrBuilder getStructValueOrBuilder() {
+      if ((valueCase_ == 15) && (structValueBuilder_ != null)) {
+        return structValueBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.StructValue) value_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A struct type feature value.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StructValue struct_value = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StructValue,
+            com.google.cloud.aiplatform.v1beta1.StructValue.Builder,
+            com.google.cloud.aiplatform.v1beta1.StructValueOrBuilder>
+        getStructValueFieldBuilder() {
+      if (structValueBuilder_ == null) {
+        if (!(valueCase_ == 15)) {
+          value_ = com.google.cloud.aiplatform.v1beta1.StructValue.getDefaultInstance();
+        }
+        structValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StructValue,
+                com.google.cloud.aiplatform.v1beta1.StructValue.Builder,
+                com.google.cloud.aiplatform.v1beta1.StructValueOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.StructValue) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 15;
+      onChanged();
+      return structValueBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata,
@@ -3353,7 +3648,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3393,7 +3688,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         metadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3413,7 +3708,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3428,7 +3723,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && metadata_ != null
             && metadata_
                 != com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata.getDefaultInstance()) {
@@ -3440,7 +3735,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_.mergeFrom(value);
       }
       if (metadata_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3455,7 +3750,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       metadata_ = null;
       if (metadataBuilder_ != null) {
         metadataBuilder_.dispose();
@@ -3474,7 +3769,7 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata.Builder getMetadataBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

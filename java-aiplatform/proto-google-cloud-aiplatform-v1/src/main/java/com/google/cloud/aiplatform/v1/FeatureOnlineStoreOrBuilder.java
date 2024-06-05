@@ -425,5 +425,49 @@ public interface FeatureOnlineStoreOrBuilder
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
       getDedicatedServingEndpointOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * online store will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.StorageTypeCase getStorageTypeCase();
 }

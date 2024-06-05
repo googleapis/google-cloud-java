@@ -284,8 +284,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -298,8 +298,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -312,8 +312,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -376,8 +376,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -393,8 +393,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -418,8 +418,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The relative resource name of the binauthz platform policy to audit. GKE
-     * platform policies have the following format:
+     * The relative resource name of the binauthz platform policy to evaluate.
+     * GKE platform policies have the following format:
      * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
      * </pre>
      *
@@ -804,8 +804,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -820,8 +820,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -844,8 +844,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -868,8 +868,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -891,8 +891,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -910,8 +910,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * The relative resource name of the binauthz platform policy to audit. GKE
-       * platform policies have the following format:
+       * The relative resource name of the binauthz platform policy to evaluate.
+       * GKE platform policies have the following format:
        * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
        * </pre>
        *
@@ -1012,7 +1012,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1838
+   *     google/container/v1beta1/cluster_service.proto;l=1904
    * @return The enabled.
    */
   @java.lang.Override
@@ -1600,7 +1600,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1838
+     *     google/container/v1beta1/cluster_service.proto;l=1904
      * @return The enabled.
      */
     @java.lang.Override
@@ -1620,7 +1620,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1838
+     *     google/container/v1beta1/cluster_service.proto;l=1904
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1644,7 +1644,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1838
+     *     google/container/v1beta1/cluster_service.proto;l=1904
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

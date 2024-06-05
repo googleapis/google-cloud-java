@@ -50,6 +50,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     recsFilterableOption_ = 0;
     keyPropertyType_ = "";
     advancedSiteSearchDataSources_ = java.util.Collections.emptyList();
+    schemaOrgPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -147,7 +148,18 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field value type is Geolocation.
+     * Field value type is Geolocation. Geolocation is expressed as an object
+     * with the following keys:
+     *
+     * * `id`: a string representing the location id
+     * * `longitude`: a number representing the longitude coordinate of the
+     * location
+     * * `latitude`: a number repesenting the latitude coordinate of the
+     * location
+     * * `address`: a string representing the full address of the location
+     *
+     * `latitude` and `longitude` must always be provided together. At least one
+     * of a) `address` or b) `latitude`-`longitude` pair must be provided.
      * </pre>
      *
      * <code>GEOLOCATION = 6;</code>
@@ -157,7 +169,14 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field value type is Datetime.
+     * Field value type is Datetime. Datetime can be expressed as either:
+     *
+     * * a number representing milliseconds-since-the-epoch
+     * * a string representing milliseconds-since-the-epoch. e.g.
+     * `"1420070400001"`
+     * * a string representing the [ISO
+     * 8601](https://en.wikipedia.org/wiki/ISO_8601) date or date and time. e.g.
+     * `"2015-01-01"` or `"2015-01-01T12:10:30Z"`
      * </pre>
      *
      * <code>DATETIME = 7;</code>
@@ -230,7 +249,18 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field value type is Geolocation.
+     * Field value type is Geolocation. Geolocation is expressed as an object
+     * with the following keys:
+     *
+     * * `id`: a string representing the location id
+     * * `longitude`: a number representing the longitude coordinate of the
+     * location
+     * * `latitude`: a number repesenting the latitude coordinate of the
+     * location
+     * * `address`: a string representing the full address of the location
+     *
+     * `latitude` and `longitude` must always be provided together. At least one
+     * of a) `address` or b) `latitude`-`longitude` pair must be provided.
      * </pre>
      *
      * <code>GEOLOCATION = 6;</code>
@@ -240,7 +270,14 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field value type is Datetime.
+     * Field value type is Datetime. Datetime can be expressed as either:
+     *
+     * * a number representing milliseconds-since-the-epoch
+     * * a string representing milliseconds-since-the-epoch. e.g.
+     * `"1420070400001"`
+     * * a string representing the [ISO
+     * 8601](https://en.wikipedia.org/wiki/ISO_8601) date or date and time. e.g.
+     * `"2015-01-01"` or `"2015-01-01T12:10:30Z"`
      * </pre>
      *
      * <code>DATETIME = 7;</code>
@@ -1352,6 +1389,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PAGEMAP = 2;</code>
      */
     PAGEMAP(2),
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from schema.org data.
+     * </pre>
+     *
+     * <code>SCHEMA_ORG = 4;</code>
+     */
+    SCHEMA_ORG(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -1385,6 +1432,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PAGEMAP = 2;</code>
      */
     public static final int PAGEMAP_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve value from schema.org data.
+     * </pre>
+     *
+     * <code>SCHEMA_ORG = 4;</code>
+     */
+    public static final int SCHEMA_ORG_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1416,6 +1473,8 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
           return METATAGS;
         case 2:
           return PAGEMAP;
+        case 4:
+          return SCHEMA_ORG;
         default:
           return null;
       }
@@ -2268,6 +2327,114 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int advancedSiteSearchDataSourcesMemoizedSerializedSize;
 
+  public static final int SCHEMA_ORG_PATHS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList schemaOrgPaths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @return A list containing the schemaOrgPaths.
+   */
+  public com.google.protobuf.ProtocolStringList getSchemaOrgPathsList() {
+    return schemaOrgPaths_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @return The count of schemaOrgPaths.
+   */
+  public int getSchemaOrgPathsCount() {
+    return schemaOrgPaths_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The schemaOrgPaths at the given index.
+   */
+  public java.lang.String getSchemaOrgPaths(int index) {
+    return schemaOrgPaths_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the schemaOrgPaths at the given index.
+   */
+  public com.google.protobuf.ByteString getSchemaOrgPathsBytes(int index) {
+    return schemaOrgPaths_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2336,6 +2503,9 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < advancedSiteSearchDataSources_.size(); i++) {
       output.writeEnumNoTag(advancedSiteSearchDataSources_.get(i));
+    }
+    for (int i = 0; i < schemaOrgPaths_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, schemaOrgPaths_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2407,6 +2577,14 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       }
       advancedSiteSearchDataSourcesMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < schemaOrgPaths_.size(); i++) {
+        dataSize += computeStringSizeNoTag(schemaOrgPaths_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSchemaOrgPathsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2433,6 +2611,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     if (recsFilterableOption_ != other.recsFilterableOption_) return false;
     if (!getKeyPropertyType().equals(other.getKeyPropertyType())) return false;
     if (!advancedSiteSearchDataSources_.equals(other.advancedSiteSearchDataSources_)) return false;
+    if (!getSchemaOrgPathsList().equals(other.getSchemaOrgPathsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2465,6 +2644,10 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
     if (getAdvancedSiteSearchDataSourcesCount() > 0) {
       hash = (37 * hash) + ADVANCED_SITE_SEARCH_DATA_SOURCES_FIELD_NUMBER;
       hash = (53 * hash) + advancedSiteSearchDataSources_.hashCode();
+    }
+    if (getSchemaOrgPathsCount() > 0) {
+      hash = (37 * hash) + SCHEMA_ORG_PATHS_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaOrgPathsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2617,6 +2800,7 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       keyPropertyType_ = "";
       advancedSiteSearchDataSources_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      schemaOrgPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2690,6 +2874,10 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.keyPropertyType_ = keyPropertyType_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        schemaOrgPaths_.makeImmutable();
+        result.schemaOrgPaths_ = schemaOrgPaths_;
       }
     }
 
@@ -2777,6 +2965,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
         } else {
           ensureAdvancedSiteSearchDataSourcesIsMutable();
           advancedSiteSearchDataSources_.addAll(other.advancedSiteSearchDataSources_);
+        }
+        onChanged();
+      }
+      if (!other.schemaOrgPaths_.isEmpty()) {
+        if (schemaOrgPaths_.isEmpty()) {
+          schemaOrgPaths_ = other.schemaOrgPaths_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureSchemaOrgPathsIsMutable();
+          schemaOrgPaths_.addAll(other.schemaOrgPaths_);
         }
         onChanged();
       }
@@ -2879,6 +3077,13 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSchemaOrgPathsIsMutable();
+                schemaOrgPaths_.add(s);
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4784,6 +4989,279 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
       for (int value : values) {
         advancedSiteSearchDataSources_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList schemaOrgPaths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSchemaOrgPathsIsMutable() {
+      if (!schemaOrgPaths_.isModifiable()) {
+        schemaOrgPaths_ = new com.google.protobuf.LazyStringArrayList(schemaOrgPaths_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @return A list containing the schemaOrgPaths.
+     */
+    public com.google.protobuf.ProtocolStringList getSchemaOrgPathsList() {
+      schemaOrgPaths_.makeImmutable();
+      return schemaOrgPaths_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @return The count of schemaOrgPaths.
+     */
+    public int getSchemaOrgPathsCount() {
+      return schemaOrgPaths_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The schemaOrgPaths at the given index.
+     */
+    public java.lang.String getSchemaOrgPaths(int index) {
+      return schemaOrgPaths_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the schemaOrgPaths at the given index.
+     */
+    public com.google.protobuf.ByteString getSchemaOrgPathsBytes(int index) {
+      return schemaOrgPaths_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The schemaOrgPaths to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchemaOrgPaths(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSchemaOrgPathsIsMutable();
+      schemaOrgPaths_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param value The schemaOrgPaths to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSchemaOrgPaths(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSchemaOrgPathsIsMutable();
+      schemaOrgPaths_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param values The schemaOrgPaths to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSchemaOrgPaths(java.lang.Iterable<java.lang.String> values) {
+      ensureSchemaOrgPathsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemaOrgPaths_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSchemaOrgPaths() {
+      schemaOrgPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field paths for indexing custom attribute from schema.org data. More
+     * details of schema.org and its defined types can be found at
+     * [schema.org](https://schema.org).
+     *
+     * It is only used on advanced site search schema.
+     *
+     * Currently only support full path from root. The full path to a field is
+     * constructed by concatenating field names, starting from `_root`, with
+     * a period `.` as the delimiter. Examples:
+     *
+     * * Publish date of the root: _root.datePublished
+     * * Publish date of the reviews: _root.review.datePublished
+     * </pre>
+     *
+     * <code>repeated string schema_org_paths = 11;</code>
+     *
+     * @param value The bytes of the schemaOrgPaths to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSchemaOrgPathsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSchemaOrgPathsIsMutable();
+      schemaOrgPaths_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

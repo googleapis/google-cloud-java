@@ -41,6 +41,10 @@ public final class IndexProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_IndexDatapoint_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_IndexDatapoint_SparseEmbedding_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_IndexDatapoint_SparseEmbedding_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_IndexDatapoint_Restriction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_IndexDatapoint_Restriction_fieldAccessorTable;
@@ -94,33 +98,38 @@ public final class IndexProto {
           + "\000\022\020\n\014BATCH_UPDATE\020\001\022\021\n\rSTREAM_UPDATE\020\002:]"
           + "\352AZ\n\037aiplatform.googleapis.com/Index\0227pr"
           + "ojects/{project}/locations/{location}/in"
-          + "dexes/{index}\"\203\006\n\016IndexDatapoint\022\031\n\014data"
+          + "dexes/{index}\"\237\007\n\016IndexDatapoint\022\031\n\014data"
           + "point_id\030\001 \001(\tB\003\340A\002\022\033\n\016feature_vector\030\002 "
-          + "\003(\002B\003\340A\002\022N\n\trestricts\030\004 \003(\01326.google.clo"
-          + "ud.aiplatform.v1.IndexDatapoint.Restrict"
-          + "ionB\003\340A\001\022]\n\021numeric_restricts\030\006 \003(\0132=.go"
-          + "ogle.cloud.aiplatform.v1.IndexDatapoint."
-          + "NumericRestrictionB\003\340A\001\022Q\n\014crowding_tag\030"
-          + "\005 \001(\01326.google.cloud.aiplatform.v1.Index"
-          + "Datapoint.CrowdingTagB\003\340A\001\032G\n\013Restrictio"
-          + "n\022\021\n\tnamespace\030\001 \001(\t\022\022\n\nallow_list\030\002 \003(\t"
-          + "\022\021\n\tdeny_list\030\003 \003(\t\032\302\002\n\022NumericRestricti"
-          + "on\022\023\n\tvalue_int\030\002 \001(\003H\000\022\025\n\013value_float\030\003"
-          + " \001(\002H\000\022\026\n\014value_double\030\004 \001(\001H\000\022\021\n\tnamesp"
-          + "ace\030\001 \001(\t\022R\n\002op\030\005 \001(\0162F.google.cloud.aip"
-          + "latform.v1.IndexDatapoint.NumericRestric"
-          + "tion.Operator\"x\n\010Operator\022\030\n\024OPERATOR_UN"
-          + "SPECIFIED\020\000\022\010\n\004LESS\020\001\022\016\n\nLESS_EQUAL\020\002\022\t\n"
-          + "\005EQUAL\020\003\022\021\n\rGREATER_EQUAL\020\004\022\013\n\007GREATER\020\005"
-          + "\022\r\n\tNOT_EQUAL\020\006B\007\n\005Value\032)\n\013CrowdingTag\022"
-          + "\032\n\022crowding_attribute\030\001 \001(\t\"C\n\nIndexStat"
-          + "s\022\032\n\rvectors_count\030\001 \001(\003B\003\340A\003\022\031\n\014shards_"
-          + "count\030\002 \001(\005B\003\340A\003B\310\001\n\036com.google.cloud.ai"
-          + "platform.v1B\nIndexProtoP\001Z>cloud.google."
-          + "com/go/aiplatform/apiv1/aiplatformpb;aip"
-          + "latformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002"
-          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
-          + "oud::AIPlatform::V1b\006proto3"
+          + "\003(\002B\003\340A\002\022Y\n\020sparse_embedding\030\007 \001(\0132:.goo"
+          + "gle.cloud.aiplatform.v1.IndexDatapoint.S"
+          + "parseEmbeddingB\003\340A\001\022N\n\trestricts\030\004 \003(\01326"
+          + ".google.cloud.aiplatform.v1.IndexDatapoi"
+          + "nt.RestrictionB\003\340A\001\022]\n\021numeric_restricts"
+          + "\030\006 \003(\0132=.google.cloud.aiplatform.v1.Inde"
+          + "xDatapoint.NumericRestrictionB\003\340A\001\022Q\n\014cr"
+          + "owding_tag\030\005 \001(\01326.google.cloud.aiplatfo"
+          + "rm.v1.IndexDatapoint.CrowdingTagB\003\340A\001\032?\n"
+          + "\017SparseEmbedding\022\023\n\006values\030\001 \003(\002B\003\340A\002\022\027\n"
+          + "\ndimensions\030\002 \003(\003B\003\340A\002\032G\n\013Restriction\022\021\n"
+          + "\tnamespace\030\001 \001(\t\022\022\n\nallow_list\030\002 \003(\t\022\021\n\t"
+          + "deny_list\030\003 \003(\t\032\302\002\n\022NumericRestriction\022\023"
+          + "\n\tvalue_int\030\002 \001(\003H\000\022\025\n\013value_float\030\003 \001(\002"
+          + "H\000\022\026\n\014value_double\030\004 \001(\001H\000\022\021\n\tnamespace\030"
+          + "\001 \001(\t\022R\n\002op\030\005 \001(\0162F.google.cloud.aiplatf"
+          + "orm.v1.IndexDatapoint.NumericRestriction"
+          + ".Operator\"x\n\010Operator\022\030\n\024OPERATOR_UNSPEC"
+          + "IFIED\020\000\022\010\n\004LESS\020\001\022\016\n\nLESS_EQUAL\020\002\022\t\n\005EQU"
+          + "AL\020\003\022\021\n\rGREATER_EQUAL\020\004\022\013\n\007GREATER\020\005\022\r\n\t"
+          + "NOT_EQUAL\020\006B\007\n\005Value\032)\n\013CrowdingTag\022\032\n\022c"
+          + "rowding_attribute\030\001 \001(\t\"f\n\nIndexStats\022\032\n"
+          + "\rvectors_count\030\001 \001(\003B\003\340A\003\022!\n\024sparse_vect"
+          + "ors_count\030\003 \001(\003B\003\340A\003\022\031\n\014shards_count\030\002 \001"
+          + "(\005B\003\340A\003B\310\001\n\036com.google.cloud.aiplatform."
+          + "v1B\nIndexProtoP\001Z>cloud.google.com/go/ai"
+          + "platform/apiv1/aiplatformpb;aiplatformpb"
+          + "\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\C"
+          + "loud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPl"
+          + "atform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -167,12 +176,27 @@ public final class IndexProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor,
             new java.lang.String[] {
-              "DatapointId", "FeatureVector", "Restricts", "NumericRestricts", "CrowdingTag",
+              "DatapointId",
+              "FeatureVector",
+              "SparseEmbedding",
+              "Restricts",
+              "NumericRestricts",
+              "CrowdingTag",
+            });
+    internal_static_google_cloud_aiplatform_v1_IndexDatapoint_SparseEmbedding_descriptor =
+        internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_IndexDatapoint_SparseEmbedding_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_IndexDatapoint_SparseEmbedding_descriptor,
+            new java.lang.String[] {
+              "Values", "Dimensions",
             });
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_Restriction_descriptor =
         internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_Restriction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexDatapoint_Restriction_descriptor,
@@ -182,7 +206,7 @@ public final class IndexProto {
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_descriptor =
         internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(2);
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_descriptor,
@@ -192,7 +216,7 @@ public final class IndexProto {
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_CrowdingTag_descriptor =
         internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(3);
     internal_static_google_cloud_aiplatform_v1_IndexDatapoint_CrowdingTag_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexDatapoint_CrowdingTag_descriptor,
@@ -205,7 +229,7 @@ public final class IndexProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_IndexStats_descriptor,
             new java.lang.String[] {
-              "VectorsCount", "ShardsCount",
+              "VectorsCount", "SparseVectorsCount", "ShardsCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -184,6 +184,24 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int INDEX_FIELD_NUMBER = 4;
+  private int index_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The index of this chunk. Currently, only used for the streaming mode.
+   * </pre>
+   *
+   * <code>int32 index = 4;</code>
+   *
+   * @return The index.
+   */
+  @java.lang.Override
+  public int getIndex() {
+    return index_;
+  }
+
   public static final int SOURCE_METADATA_FIELD_NUMBER = 3;
 
   private static final class SourceMetadataDefaultEntryHolder {
@@ -310,6 +328,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSourceMetadata(), SourceMetadataDefaultEntryHolder.defaultEntry, 3);
+    if (index_ != 0) {
+      output.writeInt32(4, index_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -335,6 +356,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, sourceMetadata__);
     }
+    if (index_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, index_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -353,6 +377,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
 
     if (!getChunkText().equals(other.getChunkText())) return false;
     if (!getSource().equals(other.getSource())) return false;
+    if (getIndex() != other.getIndex()) return false;
     if (!internalGetSourceMetadata().equals(other.internalGetSourceMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -369,6 +394,8 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getChunkText().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
+    hash = (37 * hash) + INDEX_FIELD_NUMBER;
+    hash = (53 * hash) + getIndex();
     if (!internalGetSourceMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSourceMetadata().hashCode();
@@ -536,6 +563,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       chunkText_ = "";
       source_ = "";
+      index_ = 0;
       internalGetMutableSourceMetadata().clear();
       return this;
     }
@@ -580,6 +608,9 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         result.source_ = source_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.sourceMetadata_ = internalGetSourceMetadata();
         result.sourceMetadata_.makeImmutable();
       }
@@ -641,8 +672,11 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getIndex() != 0) {
+        setIndex(other.getIndex());
+      }
       internalGetMutableSourceMetadata().mergeFrom(other.internalGetSourceMetadata());
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -690,9 +724,15 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSourceMetadata()
                     .getMutableMap()
                     .put(sourceMetadata__.getKey(), sourceMetadata__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 32:
+              {
+                index_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -939,6 +979,59 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int index_;
+    /**
+     *
+     *
+     * <pre>
+     * The index of this chunk. Currently, only used for the streaming mode.
+     * </pre>
+     *
+     * <code>int32 index = 4;</code>
+     *
+     * @return The index.
+     */
+    @java.lang.Override
+    public int getIndex() {
+      return index_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The index of this chunk. Currently, only used for the streaming mode.
+     * </pre>
+     *
+     * <code>int32 index = 4;</code>
+     *
+     * @param value The index to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIndex(int value) {
+
+      index_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The index of this chunk. Currently, only used for the streaming mode.
+     * </pre>
+     *
+     * <code>int32 index = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIndex() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      index_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> sourceMetadata_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -959,7 +1052,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       if (!sourceMetadata_.isMutable()) {
         sourceMetadata_ = sourceMetadata_.copy();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return sourceMetadata_;
     }
@@ -1044,7 +1137,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSourceMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableSourceMetadata().getMutableMap().clear();
       return this;
     }
@@ -1067,7 +1160,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSourceMetadata() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return internalGetMutableSourceMetadata().getMutableMap();
     }
     /**
@@ -1087,7 +1180,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableSourceMetadata().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1101,7 +1194,7 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSourceMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSourceMetadata().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
 

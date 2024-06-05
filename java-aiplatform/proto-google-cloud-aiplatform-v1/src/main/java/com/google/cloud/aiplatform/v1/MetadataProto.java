@@ -36,6 +36,10 @@ public final class MetadataProto {
       internal_static_google_cloud_aiplatform_v1_MetadataStore_MetadataStoreState_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_MetadataStore_MetadataStoreState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_MetadataStore_DataplexConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_MetadataStore_DataplexConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,7 +54,7 @@ public final class MetadataProto {
           + "oogle/api/field_behavior.proto\032\031google/a"
           + "pi/resource.proto\0320google/cloud/aiplatfo"
           + "rm/v1/encryption_spec.proto\032\037google/prot"
-          + "obuf/timestamp.proto\"\347\003\n\rMetadataStore\022\021"
+          + "obuf/timestamp.proto\"\371\004\n\rMetadataStore\022\021"
           + "\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032"
           + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
           + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
@@ -58,17 +62,20 @@ public final class MetadataProto {
           + "cloud.aiplatform.v1.EncryptionSpec\022\023\n\013de"
           + "scription\030\006 \001(\t\022P\n\005state\030\007 \001(\0132<.google."
           + "cloud.aiplatform.v1.MetadataStore.Metada"
-          + "taStoreStateB\003\340A\003\0324\n\022MetadataStoreState\022"
-          + "\036\n\026disk_utilization_bytes\030\001 \001(\003:u\352Ar\n\'ai"
-          + "platform.googleapis.com/MetadataStore\022Gp"
-          + "rojects/{project}/locations/{location}/m"
-          + "etadataStores/{metadata_store}B\313\001\n\036com.g"
-          + "oogle.cloud.aiplatform.v1B\rMetadataProto"
-          + "P\001Z>cloud.google.com/go/aiplatform/apiv1"
-          + "/aiplatformpb;aiplatformpb\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "taStoreStateB\003\340A\003\022V\n\017dataplex_config\030\010 \001"
+          + "(\01328.google.cloud.aiplatform.v1.Metadata"
+          + "Store.DataplexConfigB\003\340A\001\0324\n\022MetadataSto"
+          + "reState\022\036\n\026disk_utilization_bytes\030\001 \001(\003\032"
+          + "8\n\016DataplexConfig\022&\n\031enabled_pipelines_l"
+          + "ineage\030\001 \001(\010B\003\340A\001:u\352Ar\n\'aiplatform.googl"
+          + "eapis.com/MetadataStore\022Gprojects/{proje"
+          + "ct}/locations/{location}/metadataStores/"
+          + "{metadata_store}B\313\001\n\036com.google.cloud.ai"
+          + "platform.v1B\rMetadataProtoP\001Z>cloud.goog"
+          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
+          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -85,7 +92,13 @@ public final class MetadataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_MetadataStore_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "EncryptionSpec", "Description", "State",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "EncryptionSpec",
+              "Description",
+              "State",
+              "DataplexConfig",
             });
     internal_static_google_cloud_aiplatform_v1_MetadataStore_MetadataStoreState_descriptor =
         internal_static_google_cloud_aiplatform_v1_MetadataStore_descriptor.getNestedTypes().get(0);
@@ -94,6 +107,14 @@ public final class MetadataProto {
             internal_static_google_cloud_aiplatform_v1_MetadataStore_MetadataStoreState_descriptor,
             new java.lang.String[] {
               "DiskUtilizationBytes",
+            });
+    internal_static_google_cloud_aiplatform_v1_MetadataStore_DataplexConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1_MetadataStore_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1_MetadataStore_DataplexConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_MetadataStore_DataplexConfig_descriptor,
+            new java.lang.String[] {
+              "EnabledPipelinesLineage",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

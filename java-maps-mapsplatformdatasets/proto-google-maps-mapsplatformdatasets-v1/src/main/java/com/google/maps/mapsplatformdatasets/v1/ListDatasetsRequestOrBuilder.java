@@ -29,6 +29,7 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project to list all the datasets for.
+   * Format: projects/{project}
    * </pre>
    *
    * <code>
@@ -43,6 +44,7 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project to list all the datasets for.
+   * Format: projects/{project}
    * </pre>
    *
    * <code>
@@ -57,7 +59,8 @@ public interface ListDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of versions to return per page.
+   * The maximum number of datasets to return per page.
+   *
    * If unspecified (or zero), all datasets will be returned.
    * </pre>
    *
@@ -93,4 +96,45 @@ public interface ListDatasetsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tag that specifies the desired version for each dataset.
+   *
+   * Note that when pagination is also specified, some filtering can happen
+   * after pagination, which may cause the response to contain fewer datasets
+   * than the page size, even if it's not the last page.
+   *
+   * Tag "active": Each dataset in the response will include the info of its
+   * latest completed version, and the dataset will be skipped if it does not
+   * have one.
+   * </pre>
+   *
+   * <code>string tag = 4;</code>
+   *
+   * @return The tag.
+   */
+  java.lang.String getTag();
+  /**
+   *
+   *
+   * <pre>
+   * The tag that specifies the desired version for each dataset.
+   *
+   * Note that when pagination is also specified, some filtering can happen
+   * after pagination, which may cause the response to contain fewer datasets
+   * than the page size, even if it's not the last page.
+   *
+   * Tag "active": Each dataset in the response will include the info of its
+   * latest completed version, and the dataset will be skipped if it does not
+   * have one.
+   * </pre>
+   *
+   * <code>string tag = 4;</code>
+   *
+   * @return The bytes for tag.
+   */
+  com.google.protobuf.ByteString getTagBytes();
 }

@@ -38,6 +38,7 @@ public final class ChatSession {
   private final GenerativeModel model;
   private final Optional<ChatSession> rootChatSession;
   private List<Content> history = new ArrayList<>();
+  private int previousHistorySize = 0;
   private Optional<ResponseStream<GenerateContentResponse>> currentResponseStream;
   private Optional<GenerateContentResponse> currentResponse;
 
@@ -78,6 +79,7 @@ public final class ChatSession {
     ChatSession newChatSession =
         new ChatSession(model.withGenerationConfig(generationConfig), Optional.of(rootChat));
     newChatSession.history = history;
+    newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
   }
 
@@ -93,6 +95,7 @@ public final class ChatSession {
     ChatSession newChatSession =
         new ChatSession(model.withSafetySettings(safetySettings), Optional.of(rootChat));
     newChatSession.history = history;
+    newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
   }
 
@@ -107,6 +110,7 @@ public final class ChatSession {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession = new ChatSession(model.withTools(tools), Optional.of(rootChat));
     newChatSession.history = history;
+    newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
   }
 
@@ -138,7 +142,7 @@ public final class ChatSession {
       respStream = model.generateContentStream(history);
     } catch (IOException e) {
       // If the API call fails, remove the last content from the history before throwing.
-      removeLastContent();
+      revertHistory();
       throw e;
     }
     setCurrentResponseStream(Optional.of(respStream));
@@ -171,7 +175,7 @@ public final class ChatSession {
       response = model.generateContent(history);
     } catch (IOException e) {
       // If the API call fails, remove the last content from the history before throwing.
-      removeLastContent();
+      revertHistory();
       throw e;
     }
     setCurrentResponse(Optional.of(response));
@@ -179,9 +183,9 @@ public final class ChatSession {
     return response;
   }
 
-  private void removeLastContent() {
-    int lastIndex = history.size() - 1;
-    history.remove(lastIndex);
+  /** Reverts the history to the previous state. */
+  private void revertHistory() {
+    history.subList(getPreviousHistorySize(), history.size()).clear();
   }
 
   /**
@@ -194,8 +198,9 @@ public final class ChatSession {
         .ifPresent(
             currentResponse -> {
               setCurrentResponse(Optional.empty());
-              checkFinishReasonAndRemoveLastContent(currentResponse);
+              checkFinishReasonAndEditHistory(currentResponse);
               history.add(getContent(currentResponse));
+              setPreviousHistorySize(history.size());
             });
     getCurrentResponseStream()
         .ifPresent(
@@ -205,17 +210,18 @@ public final class ChatSession {
               } else {
                 setCurrentResponseStream(Optional.empty());
                 GenerateContentResponse response = aggregateStreamIntoResponse(responseStream);
-                checkFinishReasonAndRemoveLastContent(response);
+                checkFinishReasonAndEditHistory(response);
                 history.add(getContent(response));
+                setPreviousHistorySize(history.size());
               }
             });
   }
 
-  /** Removes the last content in the history if the response finished with problems. */
-  private void checkFinishReasonAndRemoveLastContent(GenerateContentResponse response) {
+  /** Reverts the history if the response finished with problems. */
+  private void checkFinishReasonAndEditHistory(GenerateContentResponse response) {
     FinishReason finishReason = getFinishReason(response);
     if (finishReason != FinishReason.STOP && finishReason != FinishReason.MAX_TOKENS) {
-      removeLastContent();
+      revertHistory();
       throw new IllegalStateException(
           String.format(
               "The last round of conversation will not be added to history because response"
@@ -243,6 +249,17 @@ public final class ChatSession {
       throw e;
     }
     return ImmutableList.copyOf(history);
+  }
+
+  /**
+   * Returns the previous history size of the root chat session (if exists) or the current chat
+   * session.
+   */
+  private int getPreviousHistorySize() {
+    if (rootChatSession.isPresent()) {
+      return rootChatSession.get().previousHistorySize;
+    }
+    return previousHistorySize;
   }
 
   /**
@@ -276,6 +293,17 @@ public final class ChatSession {
    */
   public void setHistory(List<Content> history) {
     this.history = new ArrayList<>(history);
+  }
+
+  /**
+   * Sets the previous history size of the root chat session (if exists) or the current chat
+   * session.
+   */
+  private void setPreviousHistorySize(int historySize) {
+    previousHistorySize = historySize;
+    if (rootChatSession.isPresent()) {
+      rootChatSession.get().previousHistorySize = historySize;
+    }
   }
 
   /** Sets the current response of the root chat session (if exists) or the current chat session. */

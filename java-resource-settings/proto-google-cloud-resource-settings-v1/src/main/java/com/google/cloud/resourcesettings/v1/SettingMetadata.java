@@ -69,8 +69,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The data type for setting values of this setting. See [Value][google.cloud.resourcesettings.v1.Value] for more
-   * details on the available data types.
+   * The data type for setting values of this setting. See
+   * [Value][google.cloud.resourcesettings.v1.Value] for more details on the
+   * available data types.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.resourcesettings.v1.SettingMetadata.DataType}
@@ -434,8 +435,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-   * explicitly set.
+   * The value provided by
+   * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+   * if no setting value is explicitly set.
    *
    * Note: not all settings have a default value.
    * </pre>
@@ -452,8 +454,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-   * explicitly set.
+   * The value provided by
+   * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+   * if no setting value is explicitly set.
    *
    * Note: not all settings have a default value.
    * </pre>
@@ -472,8 +475,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-   * explicitly set.
+   * The value provided by
+   * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+   * if no setting value is explicitly set.
    *
    * Note: not all settings have a default value.
    * </pre>
@@ -1316,8 +1320,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1333,8 +1338,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1356,8 +1362,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1381,8 +1388,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1404,8 +1412,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1434,8 +1443,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1456,8 +1466,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1473,8 +1484,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>
@@ -1494,8 +1506,9 @@ public final class SettingMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
-     * explicitly set.
+     * The value provided by
+     * [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value]
+     * if no setting value is explicitly set.
      *
      * Note: not all settings have a default value.
      * </pre>

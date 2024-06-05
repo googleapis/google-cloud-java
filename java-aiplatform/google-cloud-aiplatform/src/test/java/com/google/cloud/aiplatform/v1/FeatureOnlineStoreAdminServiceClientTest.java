@@ -124,6 +124,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +189,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -252,6 +254,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -301,6 +304,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -438,6 +442,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -68,7 +68,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateDataset</td>
- *      <td><p> Create a new dataset for the specified project.</td>
+ *      <td><p> Creates a new dataset for the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateDatasetMetadata</td>
- *      <td><p> Update the metadata for the dataset.</td>
+ *      <td><p> Updates the metadata for the dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDataset</td>
- *      <td><p> Get the dataset.</td>
+ *      <td><p> Gets the dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDatasets</td>
- *      <td><p> List all the datasets for the specified project.</td>
+ *      <td><p> Lists all the datasets for the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -144,7 +144,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteDataset</td>
- *      <td><p> Delete the specified dataset .</td>
+ *      <td><p> Deletes the specified dataset.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -271,7 +271,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -289,7 +289,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent project that will own the dataset. Format: projects/{$project}
+   * @param parent Required. Parent project that will own the dataset. Format: projects/{project}
    * @param dataset Required. The dataset version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -304,7 +304,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -322,7 +322,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent project that will own the dataset. Format: projects/{$project}
+   * @param parent Required. Parent project that will own the dataset. Format: projects/{project}
    * @param dataset Required. The dataset version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,7 +334,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -364,7 +364,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -394,7 +394,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -412,10 +412,10 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param dataset Required. The dataset to update. The dataset's name is used to identify the
-   *     dataset to be updated. The name has the format: projects/{project}/datasets/{dataset_id}
-   * @param updateMask The list of fields to be updated. Support the value "&#42;" for full
-   *     replacement.
+   * @param dataset Required. Resource name of the dataset to update. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @param updateMask The list of fields to be updated.
+   *     <p>The value "&#42;" is used for full replacement (default).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset updateDatasetMetadata(Dataset dataset, FieldMask updateMask) {
@@ -429,7 +429,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -459,7 +459,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -490,7 +490,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -507,7 +507,11 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * @param name Required. Resource name. Format: projects/{project}/datasets/{dataset_id}
+   *     <p>Can also fetch some special versions by appending "{@literal @}" and a tag. Format:
+   *     projects/{project}/datasets/{dataset_id}{@literal @}{tag}
+   *     <p>Tag "active": The info of the latest completed version will be included, and NOT_FOUND
+   *     if the dataset does not have one.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(DatasetName name) {
@@ -518,7 +522,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -535,7 +539,11 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * @param name Required. Resource name. Format: projects/{project}/datasets/{dataset_id}
+   *     <p>Can also fetch some special versions by appending "{@literal @}" and a tag. Format:
+   *     projects/{project}/datasets/{dataset_id}{@literal @}{tag}
+   *     <p>Tag "active": The info of the latest completed version will be included, and NOT_FOUND
+   *     if the dataset does not have one.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(String name) {
@@ -545,7 +553,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -574,7 +582,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -603,7 +611,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -622,7 +630,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to list all the datasets for.
+   * @param parent Required. The name of the project to list all the datasets for. Format:
+   *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(ProjectName parent) {
@@ -635,7 +644,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -654,7 +663,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to list all the datasets for.
+   * @param parent Required. The name of the project to list all the datasets for. Format:
+   *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(String parent) {
@@ -664,7 +674,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -681,6 +691,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   for (Dataset element : mapsPlatformDatasetsClient.listDatasets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -697,7 +708,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -714,6 +725,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   ApiFuture<Dataset> future =
    *       mapsPlatformDatasetsClient.listDatasetsPagedCallable().futureCall(request);
@@ -731,7 +743,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -748,6 +760,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   while (true) {
    *     ListDatasetsResponse response =
@@ -771,7 +784,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -788,7 +801,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: projects/${project}/datasets/{dataset_id}
+   * @param name Required. The name of the dataset to delete. Format:
+   *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataset(DatasetName name) {
@@ -799,7 +813,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -816,7 +830,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: projects/${project}/datasets/{dataset_id}
+   * @param name Required. The name of the dataset to delete. Format:
+   *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataset(String name) {
@@ -826,7 +841,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -855,7 +870,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *

@@ -81,6 +81,14 @@ public final class FeaturestoreOnlineServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureValue_Metadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StructValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StructValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StructFieldValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StructFieldValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_fieldAccessorTable;
@@ -141,7 +149,7 @@ public final class FeaturestoreOnlineServiceProto {
           + "gleapis.com/EntityType\022\027\n\nentity_ids\030\002 \003"
           + "(\tB\003\340A\002\022O\n\020feature_selector\030\003 \001(\01320.goog"
           + "le.cloud.aiplatform.v1beta1.FeatureSelec"
-          + "torB\003\340A\002\"\276\004\n\014FeatureValue\022\024\n\nbool_value\030"
+          + "torB\003\340A\002\"\204\005\n\014FeatureValue\022\024\n\nbool_value\030"
           + "\001 \001(\010H\000\022\026\n\014double_value\030\002 \001(\001H\000\022\025\n\013int64"
           + "_value\030\005 \001(\003H\000\022\026\n\014string_value\030\006 \001(\tH\000\022F"
           + "\n\020bool_array_value\030\007 \001(\0132*.google.cloud."
@@ -152,42 +160,48 @@ public final class FeaturestoreOnlineServiceProto {
           + "v1beta1.Int64ArrayH\000\022J\n\022string_array_val"
           + "ue\030\014 \001(\0132,.google.cloud.aiplatform.v1bet"
           + "a1.StringArrayH\000\022\025\n\013bytes_value\030\r \001(\014H\000\022"
-          + "H\n\010metadata\030\016 \001(\01326.google.cloud.aiplatf"
-          + "orm.v1beta1.FeatureValue.Metadata\032=\n\010Met"
-          + "adata\0221\n\rgenerate_time\030\001 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\007\n\005value\"Q\n\020FeatureValu"
-          + "eList\022=\n\006values\030\001 \003(\0132-.google.cloud.aip"
-          + "latform.v1beta1.FeatureValue2\253\007\n Feature"
-          + "storeOnlineServingService\022\202\002\n\021ReadFeatur"
-          + "eValues\0229.google.cloud.aiplatform.v1beta"
-          + "1.ReadFeatureValuesRequest\032:.google.clou"
-          + "d.aiplatform.v1beta1.ReadFeatureValuesRe"
-          + "sponse\"v\332A\013entity_type\202\323\344\223\002b\"]/v1beta1/{"
-          + "entity_type=projects/*/locations/*/featu"
-          + "restores/*/entityTypes/*}:readFeatureVal"
-          + "ues:\001*\022\237\002\n\032StreamingReadFeatureValues\022B."
-          + "google.cloud.aiplatform.v1beta1.Streamin"
-          + "gReadFeatureValuesRequest\032:.google.cloud"
-          + ".aiplatform.v1beta1.ReadFeatureValuesRes"
-          + "ponse\"\177\332A\013entity_type\202\323\344\223\002k\"f/v1beta1/{e"
-          + "ntity_type=projects/*/locations/*/featur"
-          + "estores/*/entityTypes/*}:streamingReadFe"
-          + "atureValues:\001*0\001\022\220\002\n\022WriteFeatureValues\022"
-          + ":.google.cloud.aiplatform.v1beta1.WriteF"
-          + "eatureValuesRequest\032;.google.cloud.aipla"
-          + "tform.v1beta1.WriteFeatureValuesResponse"
-          + "\"\200\001\332A\024entity_type,payloads\202\323\344\223\002c\"^/v1bet"
-          + "a1/{entity_type=projects/*/locations/*/f"
-          + "eaturestores/*/entityTypes/*}:writeFeatu"
-          + "reValues:\001*\032M\312A\031aiplatform.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\365\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\036FeaturestoreOnlineServicePro"
-          + "toP\001ZCcloud.google.com/go/aiplatform/api"
-          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
-          + "IPlatform::V1beta1b\006proto3"
+          + "D\n\014struct_value\030\017 \001(\0132,.google.cloud.aip"
+          + "latform.v1beta1.StructValueH\000\022H\n\010metadat"
+          + "a\030\016 \001(\01326.google.cloud.aiplatform.v1beta"
+          + "1.FeatureValue.Metadata\032=\n\010Metadata\0221\n\rg"
+          + "enerate_time\030\001 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\007\n\005value\"P\n\013StructValue\022A\n\006values"
+          + "\030\001 \003(\01321.google.cloud.aiplatform.v1beta1"
+          + ".StructFieldValue\"^\n\020StructFieldValue\022\014\n"
+          + "\004name\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.clou"
+          + "d.aiplatform.v1beta1.FeatureValue\"Q\n\020Fea"
+          + "tureValueList\022=\n\006values\030\001 \003(\0132-.google.c"
+          + "loud.aiplatform.v1beta1.FeatureValue2\253\007\n"
+          + " FeaturestoreOnlineServingService\022\202\002\n\021Re"
+          + "adFeatureValues\0229.google.cloud.aiplatfor"
+          + "m.v1beta1.ReadFeatureValuesRequest\032:.goo"
+          + "gle.cloud.aiplatform.v1beta1.ReadFeature"
+          + "ValuesResponse\"v\332A\013entity_type\202\323\344\223\002b\"]/v"
+          + "1beta1/{entity_type=projects/*/locations"
+          + "/*/featurestores/*/entityTypes/*}:readFe"
+          + "atureValues:\001*\022\237\002\n\032StreamingReadFeatureV"
+          + "alues\022B.google.cloud.aiplatform.v1beta1."
+          + "StreamingReadFeatureValuesRequest\032:.goog"
+          + "le.cloud.aiplatform.v1beta1.ReadFeatureV"
+          + "aluesResponse\"\177\332A\013entity_type\202\323\344\223\002k\"f/v1"
+          + "beta1/{entity_type=projects/*/locations/"
+          + "*/featurestores/*/entityTypes/*}:streami"
+          + "ngReadFeatureValues:\001*0\001\022\220\002\n\022WriteFeatur"
+          + "eValues\022:.google.cloud.aiplatform.v1beta"
+          + "1.WriteFeatureValuesRequest\032;.google.clo"
+          + "ud.aiplatform.v1beta1.WriteFeatureValues"
+          + "Response\"\200\001\332A\024entity_type,payloads\202\323\344\223\002c"
+          + "\"^/v1beta1/{entity_type=projects/*/locat"
+          + "ions/*/featurestores/*/entityTypes/*}:wr"
+          + "iteFeatureValues:\001*\032M\312A\031aiplatform.googl"
+          + "eapis.com\322A.https://www.googleapis.com/a"
+          + "uth/cloud-platformB\365\001\n#com.google.cloud."
+          + "aiplatform.v1beta1B\036FeaturestoreOnlineSe"
+          + "rviceProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -312,6 +326,7 @@ public final class FeaturestoreOnlineServiceProto {
               "Int64ArrayValue",
               "StringArrayValue",
               "BytesValue",
+              "StructValue",
               "Metadata",
               "Value",
             });
@@ -325,8 +340,24 @@ public final class FeaturestoreOnlineServiceProto {
             new java.lang.String[] {
               "GenerateTime",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_StructValue_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_StructValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StructValue_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StructFieldValue_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1beta1_StructFieldValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StructFieldValue_descriptor,
+            new java.lang.String[] {
+              "Name", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeatureValueList_descriptor,

@@ -194,6 +194,16 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <code>BYTES = 13;</code>
      */
     BYTES(13),
+    /**
+     *
+     *
+     * <pre>
+     * Used for Feature that is struct.
+     * </pre>
+     *
+     * <code>STRUCT = 14;</code>
+     */
+    STRUCT(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -297,6 +307,16 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <code>BYTES = 13;</code>
      */
     public static final int BYTES_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Used for Feature that is struct.
+     * </pre>
+     *
+     * <code>STRUCT = 14;</code>
+     */
+    public static final int STRUCT_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -342,6 +362,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           return STRING_ARRAY;
         case 13:
           return BYTES;
+        case 14:
+          return STRUCT;
         default:
           return null;
       }
@@ -2069,7 +2091,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Override
@@ -2102,7 +2124,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
    * @return The monitoringConfig.
    */
   @java.lang.Override
@@ -4437,7 +4459,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
      * @return Whether the monitoringConfig field is set.
      */
     @java.lang.Deprecated
@@ -4469,7 +4491,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
      * @return The monitoringConfig.
      */
     @java.lang.Deprecated

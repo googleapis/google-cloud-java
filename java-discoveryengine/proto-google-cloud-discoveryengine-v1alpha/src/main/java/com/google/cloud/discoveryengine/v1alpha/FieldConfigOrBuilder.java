@@ -625,4 +625,99 @@ public interface FieldConfigOrBuilder
    * @return The enum numeric value on the wire of advancedSiteSearchDataSources at the given index.
    */
   int getAdvancedSiteSearchDataSourcesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @return A list containing the schemaOrgPaths.
+   */
+  java.util.List<java.lang.String> getSchemaOrgPathsList();
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @return The count of schemaOrgPaths.
+   */
+  int getSchemaOrgPathsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The schemaOrgPaths at the given index.
+   */
+  java.lang.String getSchemaOrgPaths(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Field paths for indexing custom attribute from schema.org data. More
+   * details of schema.org and its defined types can be found at
+   * [schema.org](https://schema.org).
+   *
+   * It is only used on advanced site search schema.
+   *
+   * Currently only support full path from root. The full path to a field is
+   * constructed by concatenating field names, starting from `_root`, with
+   * a period `.` as the delimiter. Examples:
+   *
+   * * Publish date of the root: _root.datePublished
+   * * Publish date of the reviews: _root.review.datePublished
+   * </pre>
+   *
+   * <code>repeated string schema_org_paths = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the schemaOrgPaths at the given index.
+   */
+  com.google.protobuf.ByteString getSchemaOrgPathsBytes(int index);
 }

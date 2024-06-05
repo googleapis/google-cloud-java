@@ -217,12 +217,15 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
    * @return The notebookRuntimeTemplate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getNotebookRuntimeTemplate() {
     java.lang.Object ref = notebookRuntimeTemplate_;
     if (ref instanceof java.lang.String) {
@@ -246,12 +249,15 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
    * @return The bytes for notebookRuntimeTemplate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes() {
     java.lang.Object ref = notebookRuntimeTemplate_;
     if (ref instanceof java.lang.String) {
@@ -885,11 +891,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
      * @return The notebookRuntimeTemplate.
      */
+    @java.lang.Deprecated
     public java.lang.String getNotebookRuntimeTemplate() {
       java.lang.Object ref = notebookRuntimeTemplate_;
       if (!(ref instanceof java.lang.String)) {
@@ -913,11 +922,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
      * @return The bytes for notebookRuntimeTemplate.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes() {
       java.lang.Object ref = notebookRuntimeTemplate_;
       if (ref instanceof String) {
@@ -941,12 +953,15 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
      * @param value The notebookRuntimeTemplate to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNotebookRuntimeTemplate(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -968,11 +983,14 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearNotebookRuntimeTemplate() {
       notebookRuntimeTemplate_ = getDefaultInstance().getNotebookRuntimeTemplate();
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -991,12 +1009,15 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
      * @param value The bytes for notebookRuntimeTemplate to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNotebookRuntimeTemplateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

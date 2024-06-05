@@ -7200,11 +7200,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the company, business or entity that is associated
-     * with the engine. Setting this may help improve LLM related features.
+     * The name of the company, business or entity that is associated with the
+     * engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string company_name = 1;</code>
      *
      * @return The companyName.
      */
@@ -7213,11 +7213,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the company, business or entity that is associated
-     * with the engine. Setting this may help improve LLM related features.
+     * The name of the company, business or entity that is associated with the
+     * engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string company_name = 1;</code>
      *
      * @return The bytes for companyName.
      */
@@ -7275,11 +7275,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the company, business or entity that is associated
-     * with the engine. Setting this may help improve LLM related features.
+     * The name of the company, business or entity that is associated with the
+     * engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string company_name = 1;</code>
      *
      * @return The companyName.
      */
@@ -7299,11 +7299,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the company, business or entity that is associated
-     * with the engine. Setting this may help improve LLM related features.
+     * The name of the company, business or entity that is associated with the
+     * engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string company_name = 1;</code>
      *
      * @return The bytes for companyName.
      */
@@ -7675,11 +7675,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The name of the company, business or entity that is associated
-       * with the engine. Setting this may help improve LLM related features.
+       * The name of the company, business or entity that is associated with the
+       * engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string company_name = 1;</code>
        *
        * @return The companyName.
        */
@@ -7698,11 +7698,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The name of the company, business or entity that is associated
-       * with the engine. Setting this may help improve LLM related features.
+       * The name of the company, business or entity that is associated with the
+       * engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string company_name = 1;</code>
        *
        * @return The bytes for companyName.
        */
@@ -7721,11 +7721,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The name of the company, business or entity that is associated
-       * with the engine. Setting this may help improve LLM related features.
+       * The name of the company, business or entity that is associated with the
+       * engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string company_name = 1;</code>
        *
        * @param value The companyName to set.
        * @return This builder for chaining.
@@ -7743,11 +7743,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The name of the company, business or entity that is associated
-       * with the engine. Setting this may help improve LLM related features.
+       * The name of the company, business or entity that is associated with the
+       * engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string company_name = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -7761,11 +7761,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The name of the company, business or entity that is associated
-       * with the engine. Setting this may help improve LLM related features.
+       * The name of the company, business or entity that is associated with the
+       * engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>string company_name = 1;</code>
        *
        * @param value The bytes for companyName to set.
        * @return This builder for chaining.
@@ -11377,7 +11377,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * The restriction of the Engine industry vertical is based on
    * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
    * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-   * of the DataStore liniked to the engine.
+   * of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -11396,7 +11396,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * The restriction of the Engine industry vertical is based on
    * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
    * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-   * of the DataStore liniked to the engine.
+   * of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -15073,7 +15073,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * The restriction of the Engine industry vertical is based on
      * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
      * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-     * of the DataStore liniked to the engine.
+     * of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -15092,7 +15092,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * The restriction of the Engine industry vertical is based on
      * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
      * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-     * of the DataStore liniked to the engine.
+     * of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -15114,7 +15114,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * The restriction of the Engine industry vertical is based on
      * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
      * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-     * of the DataStore liniked to the engine.
+     * of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -15137,7 +15137,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * The restriction of the Engine industry vertical is based on
      * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
      * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-     * of the DataStore liniked to the engine.
+     * of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -15163,7 +15163,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * The restriction of the Engine industry vertical is based on
      * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
      * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-     * of the DataStore liniked to the engine.
+     * of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>

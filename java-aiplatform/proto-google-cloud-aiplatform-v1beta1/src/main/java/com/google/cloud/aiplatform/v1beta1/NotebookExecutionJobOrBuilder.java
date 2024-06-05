@@ -116,6 +116,49 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   *
+   * @return Whether the directNotebookSource field is set.
+   */
+  boolean hasDirectNotebookSource();
+  /**
+   *
+   *
+   * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   *
+   * @return The directNotebookSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource
+      getDirectNotebookSource();
+  /**
+   *
+   *
+   * <pre>
+   * The contents of an input notebook file.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSource direct_notebook_source = 17;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.DirectNotebookSourceOrBuilder
+      getDirectNotebookSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The NotebookRuntimeTemplate to source compute configuration from.
    * </pre>
    *
@@ -539,6 +582,104 @@ public interface NotebookExecutionJobOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The labels with user-defined metadata to organize NotebookExecutionJobs.
+   *
+   * Label keys and values can be no longer than 64 characters
+   * (Unicode codepoints), can only contain lowercase letters, numeric
+   * characters, underscores and dashes. International characters are allowed.
+   *
+   * See https://goo.gl/xmQnxf for more information and examples of labels.
+   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+   * and are immutable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 19;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.NotebookSourceCase
       getNotebookSourceCase();

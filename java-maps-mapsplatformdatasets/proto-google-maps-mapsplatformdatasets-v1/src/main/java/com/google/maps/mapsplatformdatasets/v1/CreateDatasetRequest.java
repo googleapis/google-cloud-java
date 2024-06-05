@@ -73,7 +73,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Parent project that will own the dataset.
-   * Format: projects/{$project}
+   * Format: projects/{project}
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Parent project that will own the dataset.
-   * Format: projects/{$project}
+   * Format: projects/{project}
    * </pre>
    *
    * <code>
@@ -572,7 +572,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent project that will own the dataset.
-     * Format: projects/{$project}
+     * Format: projects/{project}
      * </pre>
      *
      * <code>
@@ -597,7 +597,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent project that will own the dataset.
-     * Format: projects/{$project}
+     * Format: projects/{project}
      * </pre>
      *
      * <code>
@@ -622,7 +622,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent project that will own the dataset.
-     * Format: projects/{$project}
+     * Format: projects/{project}
      * </pre>
      *
      * <code>
@@ -646,7 +646,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent project that will own the dataset.
-     * Format: projects/{$project}
+     * Format: projects/{project}
      * </pre>
      *
      * <code>
@@ -666,7 +666,7 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Parent project that will own the dataset.
-     * Format: projects/{$project}
+     * Format: projects/{project}
      * </pre>
      *
      * <code>

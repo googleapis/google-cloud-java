@@ -105,4 +105,45 @@ public interface NodePoolAutoConfigOrBuilder
    * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
    */
   com.google.container.v1beta1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   *
+   * @return Whether the nodeKubeletConfig field is set.
+   */
+  boolean hasNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   *
+   * @return The nodeKubeletConfig.
+   */
+  com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   */
+  com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder();
 }

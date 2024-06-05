@@ -1,6 +1,6 @@
 gapic_generator_version: 2.40.1
 protoc_version: '25.3'
-googleapis_commitish: f49123a39efc18f0a20a2183629c62830725343c
+googleapis_commitish: ede5e02ad747c9199a7953b222b85715e097189c
 libraries_bom_version: 26.40.0
 template_excludes:
 - .github/*
@@ -1081,6 +1081,20 @@ libraries:
   GAPICs:
   - proto_path: google/iam/credentials/v1
 
+- api_shortname: iap
+  name_pretty: Cloud Identity-Aware Proxy API
+  product_documentation: https://cloud.google.com/iap
+  api_description: Controls access to cloud applications running on Google Cloud Platform.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-iap
+  api_id: iap.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/iap/v1
+  requires_billing: true
 - api_shortname: ids
   name_pretty: Intrusion Detection System
   product_documentation: https://cloud.google.com/intrusion-detection-system/docs
@@ -1112,6 +1126,22 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/iot/v1
 
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-promotions
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/promotions/v1beta
+  library_name: java-shopping-merchant-promotions
+  requires_billing: true
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
@@ -1178,6 +1208,21 @@ libraries:
   - proto_path: google/cloud/managedidentities/v1
   - proto_path: google/cloud/managedidentities/v1beta1
 
+- api_shortname: managedkafka
+  name_pretty: Apache Kafka for BigQuery API
+  product_documentation: https://cloud.google.com/managed-kafka
+  api_description: Manage Apache Kafka clusters and resources.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-managedkafka
+  api_id: managedkafka.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/managedkafka/v1
+  requires_billing: true
 - api_shortname: maps-addressvalidation
   name_pretty: Address Validation API
   product_documentation: https://developers.google.com/maps/documentation/address-validation/
@@ -1384,6 +1429,24 @@ libraries:
   - proto_path: google/cloud/networkconnectivity/v1
   - proto_path: google/cloud/networkconnectivity/v1alpha1
 
+- api_shortname: networkservices
+  name_pretty: Network Services API
+  product_documentation: https://cloud.google.com/products/networking
+  api_description: Google Cloud offers a broad portfolio of networking services built
+    on top of planet-scale infrastructure that leverages automation, advanced AI,
+    and programmability, enabling enterprises to connect, scale, secure, modernize
+    and optimize their infrastructure.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-networkservices
+  api_id: networkservices.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/networkservices/v1
+  requires_billing: true
 - api_shortname: notebooks
   name_pretty: AI Platform Notebooks
   product_documentation: https://cloud.google.com/ai-platform-notebooks
@@ -1527,6 +1590,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/privatecatalog/v1beta1
 
+- api_shortname: privilegedaccessmanager
+  name_pretty: Privileged Access Manager API
+  product_documentation: https://cloud.google.com/iam/docs/pam-overview
+  api_description: You can use Privileged Access Manager (PAM) to control just-in-time
+    temporary privilege elevation for select principals, and to view audit logs afterwards
+    to find out who had access to what and when.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-privilegedaccessmanager
+  api_id: privilegedaccessmanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/privilegedaccessmanager/v1
+  requires_billing: true
 - api_shortname: cloudprofiler
   name_pretty: Cloud Profiler
   product_documentation: https://cloud.google.com/profiler/docs

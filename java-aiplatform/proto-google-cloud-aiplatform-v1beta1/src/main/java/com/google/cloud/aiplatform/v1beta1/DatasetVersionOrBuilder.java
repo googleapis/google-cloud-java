@@ -246,4 +246,31 @@ public interface DatasetVersionOrBuilder
    * </code>
    */
   com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to the public base model last used by the dataset
+   * version. Only set for prompt dataset versions.
+   * </pre>
+   *
+   * <code>string model_reference = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelReference.
+   */
+  java.lang.String getModelReference();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to the public base model last used by the dataset
+   * version. Only set for prompt dataset versions.
+   * </pre>
+   *
+   * <code>string model_reference = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelReference.
+   */
+  com.google.protobuf.ByteString getModelReferenceBytes();
 }

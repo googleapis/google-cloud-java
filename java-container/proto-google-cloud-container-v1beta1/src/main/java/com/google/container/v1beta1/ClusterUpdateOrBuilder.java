@@ -617,7 +617,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1beta1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1beta1.PrivateClusterConfig desired_private_cluster_config = 25;
@@ -630,7 +635,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1beta1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1beta1.PrivateClusterConfig desired_private_cluster_config = 25;
@@ -643,7 +653,12 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1beta1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1beta1.PrivateClusterConfig desired_private_cluster_config = 25;
@@ -798,6 +813,60 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.ReleaseChannel desired_release_channel = 31;</code>
    */
   com.google.container.v1beta1.ReleaseChannelOrBuilder getDesiredReleaseChannelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration. Has no effect. Use
+   * [desired_private_cluster_config][google.container.v1beta1.ClusterUpdate.desired_private_cluster_config]
+   * instead.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.PrivateClusterConfig private_cluster_config = 37 [deprecated = true];
+   * </code>
+   *
+   * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2655
+   * @return Whether the privateClusterConfig field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration. Has no effect. Use
+   * [desired_private_cluster_config][google.container.v1beta1.ClusterUpdate.desired_private_cluster_config]
+   * instead.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.PrivateClusterConfig private_cluster_config = 37 [deprecated = true];
+   * </code>
+   *
+   * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2655
+   * @return The privateClusterConfig.
+   */
+  @java.lang.Deprecated
+  com.google.container.v1beta1.PrivateClusterConfig getPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration. Has no effect. Use
+   * [desired_private_cluster_config][google.container.v1beta1.ClusterUpdate.desired_private_cluster_config]
+   * instead.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.PrivateClusterConfig private_cluster_config = 37 [deprecated = true];
+   * </code>
+   */
+  @java.lang.Deprecated
+  com.google.container.v1beta1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder();
 
   /**
    *
@@ -1651,7 +1720,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2614
+   *     google/container/v1beta1/cluster_service.proto;l=2743
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1669,7 +1738,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2614
+   *     google/container/v1beta1/cluster_service.proto;l=2743
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2211,6 +2280,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return Whether the desiredContainerdConfig field is set.
+   */
+  boolean hasDesiredContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return The desiredContainerdConfig.
+   */
+  com.google.container.v1beta1.ContainerdConfig getDesiredContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig desired_containerd_config = 134;</code>
+   */
+  com.google.container.v1beta1.ContainerdConfigOrBuilder getDesiredContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable/Disable Multi-Networking for the cluster
    * </pre>
    *
@@ -2283,6 +2387,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -2297,6 +2402,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -2311,6 +2417,7 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * Specify the details of in-transit encryption.
+   * Now named inter-node transparent encryption.
    * </pre>
    *
    * <code>
@@ -2387,4 +2494,84 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.SecretManagerConfigOrBuilder
       getDesiredSecretManagerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return Whether the desiredNodeKubeletConfig field is set.
+   */
+  boolean hasDesiredNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return The desiredNodeKubeletConfig.
+   */
+  com.google.container.v1beta1.NodeKubeletConfig getDesiredNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   */
+  com.google.container.v1beta1.NodeKubeletConfigOrBuilder getDesiredNodeKubeletConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigKubeletConfig field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigKubeletConfig.
+   */
+  com.google.container.v1beta1.NodeKubeletConfig getDesiredNodePoolAutoConfigKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   */
+  com.google.container.v1beta1.NodeKubeletConfigOrBuilder
+      getDesiredNodePoolAutoConfigKubeletConfigOrBuilder();
 }

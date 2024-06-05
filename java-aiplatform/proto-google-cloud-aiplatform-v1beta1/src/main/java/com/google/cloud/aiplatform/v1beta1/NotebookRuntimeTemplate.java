@@ -1057,6 +1057,56 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     return networkTags_.getByteString(index);
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1122,6 +1172,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     }
     for (int i = 0; i < networkTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, networkTags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(23, getEncryptionSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1198,6 +1251,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       size += dataSize;
       size += 2 * getNetworkTagsList().size();
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1255,6 +1311,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       if (!getShieldedVmConfig().equals(other.getShieldedVmConfig())) return false;
     }
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1319,6 +1379,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     if (getNetworkTagsCount() > 0) {
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTagsList().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1493,6 +1557,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getShieldedVmConfigFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -1549,6 +1614,11 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         shieldedVmConfigBuilder_ = null;
       }
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1655,6 +1725,11 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00010000) != 0)) {
         networkTags_.makeImmutable();
         result.networkTags_ = networkTags_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1771,6 +1846,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
           networkTags_.addAll(other.networkTags_);
         }
         onChanged();
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1910,6 +1988,12 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
                 networkTags_.add(s);
                 break;
               } // case 170
+            case 186:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4719,6 +4803,194 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       bitField0_ |= 0x00010000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

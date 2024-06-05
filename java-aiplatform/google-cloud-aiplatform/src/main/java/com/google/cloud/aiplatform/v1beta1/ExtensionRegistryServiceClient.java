@@ -833,7 +833,8 @@ public class ExtensionRegistryServiceClient implements BackgroundResource {
    *
    * @param extension Required. The Extension which replaces the resource on the server.
    * @param updateMask Required. Mask specifying which fields to update. Supported fields:
-   *     <p>&#42; `display_name` &#42; `description` &#42; `tool_use_examples`
+   *     <p>&#42; `display_name` &#42; `description` &#42; `runtime_config` &#42;
+   *     `tool_use_examples` &#42; `manifest.description`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Extension updateExtension(Extension extension, FieldMask updateMask) {

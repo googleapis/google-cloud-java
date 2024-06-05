@@ -98,6 +98,41 @@ public interface NodeConfigDefaultsOrBuilder
    *
    *
    * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  boolean hasContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return The containerdConfig.
+   */
+  com.google.container.v1beta1.ContainerdConfig getContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 4;</code>
+   */
+  com.google.container.v1beta1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * HostMaintenancePolicy contains the desired maintenance policy for the
    * Google Compute Engine hosts.
    * </pre>
@@ -131,4 +166,45 @@ public interface NodeConfigDefaultsOrBuilder
    * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
    */
   com.google.container.v1beta1.HostMaintenancePolicyOrBuilder getHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return Whether the nodeKubeletConfig field is set.
+   */
+  boolean hasNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return The nodeKubeletConfig.
+   */
+  com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   */
+  com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder();
 }

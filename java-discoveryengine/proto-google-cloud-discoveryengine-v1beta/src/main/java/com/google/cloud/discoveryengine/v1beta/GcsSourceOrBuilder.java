@@ -28,7 +28,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. Each URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`.
@@ -47,7 +47,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. Each URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`.
@@ -66,7 +66,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. Each URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`.
@@ -86,7 +86,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. Each URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`.
@@ -127,7 +127,7 @@ public interface GcsSourceOrBuilder
    *   data store. Each entry after the header is imported as a Document.
    *   This can only be used by the GENERIC Data Store vertical.
    *
-   * Supported values for user even imports:
+   * Supported values for user event imports:
    *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
@@ -162,7 +162,7 @@ public interface GcsSourceOrBuilder
    *   data store. Each entry after the header is imported as a Document.
    *   This can only be used by the GENERIC Data Store vertical.
    *
-   * Supported values for user even imports:
+   * Supported values for user event imports:
    *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.

@@ -29,7 +29,7 @@ public interface CreateDatasetRequestOrBuilder
    *
    * <pre>
    * Required. Parent project that will own the dataset.
-   * Format: projects/{$project}
+   * Format: projects/{project}
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface CreateDatasetRequestOrBuilder
    *
    * <pre>
    * Required. Parent project that will own the dataset.
-   * Format: projects/{$project}
+   * Format: projects/{project}
    * </pre>
    *
    * <code>

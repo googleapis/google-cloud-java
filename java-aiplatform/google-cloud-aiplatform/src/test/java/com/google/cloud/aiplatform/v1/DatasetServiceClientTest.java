@@ -129,6 +129,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -190,6 +191,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -251,6 +253,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -301,6 +304,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -351,6 +355,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -764,6 +769,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -822,6 +828,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -864,6 +871,57 @@ public class DatasetServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDatasetVersionTest() throws Exception {
+    DatasetVersion expectedResponse =
+        DatasetVersion.newBuilder()
+            .setName(
+                DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatasetVersion actualResponse = client.updateDatasetVersion(datasetVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDatasetVersionRequest actualRequest =
+        ((UpdateDatasetVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(datasetVersion, actualRequest.getDatasetVersion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDatasetVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatasetVersion(datasetVersion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -968,6 +1026,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1016,6 +1075,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1150,6 +1210,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1207,6 +1268,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

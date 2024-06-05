@@ -1376,6 +1376,39 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return The ignoreNonAnswerSeekingQuery.
      */
     boolean getIgnoreNonAnswerSeekingQuery();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to filter out queries that have low relevance.
+     *
+     * If this field is set to `false`, all search results are used regardless
+     * of relevance to generate answers. If set to `true` or unset, the behavior
+     * will be determined automatically by the service.
+     * </pre>
+     *
+     * <code>optional bool ignore_low_relevant_content = 7;</code>
+     *
+     * @return Whether the ignoreLowRelevantContent field is set.
+     */
+    boolean hasIgnoreLowRelevantContent();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to filter out queries that have low relevance.
+     *
+     * If this field is set to `false`, all search results are used regardless
+     * of relevance to generate answers. If set to `true` or unset, the behavior
+     * will be determined automatically by the service.
+     * </pre>
+     *
+     * <code>optional bool ignore_low_relevant_content = 7;</code>
+     *
+     * @return The ignoreLowRelevantContent.
+     */
+    boolean getIgnoreLowRelevantContent();
   }
   /**
    *
@@ -3102,6 +3135,47 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return ignoreNonAnswerSeekingQuery_;
     }
 
+    public static final int IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER = 7;
+    private boolean ignoreLowRelevantContent_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to filter out queries that have low relevance.
+     *
+     * If this field is set to `false`, all search results are used regardless
+     * of relevance to generate answers. If set to `true` or unset, the behavior
+     * will be determined automatically by the service.
+     * </pre>
+     *
+     * <code>optional bool ignore_low_relevant_content = 7;</code>
+     *
+     * @return Whether the ignoreLowRelevantContent field is set.
+     */
+    @java.lang.Override
+    public boolean hasIgnoreLowRelevantContent() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to filter out queries that have low relevance.
+     *
+     * If this field is set to `false`, all search results are used regardless
+     * of relevance to generate answers. If set to `true` or unset, the behavior
+     * will be determined automatically by the service.
+     * </pre>
+     *
+     * <code>optional bool ignore_low_relevant_content = 7;</code>
+     *
+     * @return The ignoreLowRelevantContent.
+     */
+    @java.lang.Override
+    public boolean getIgnoreLowRelevantContent() {
+      return ignoreLowRelevantContent_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3134,6 +3208,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (ignoreNonAnswerSeekingQuery_ != false) {
         output.writeBool(6, ignoreNonAnswerSeekingQuery_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(7, ignoreLowRelevantContent_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3161,6 +3238,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (ignoreNonAnswerSeekingQuery_ != false) {
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(6, ignoreNonAnswerSeekingQuery_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, ignoreLowRelevantContent_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3192,6 +3272,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (!getAnswerLanguageCode().equals(other.getAnswerLanguageCode())) return false;
       if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
       if (getIgnoreNonAnswerSeekingQuery() != other.getIgnoreNonAnswerSeekingQuery()) return false;
+      if (hasIgnoreLowRelevantContent() != other.hasIgnoreLowRelevantContent()) return false;
+      if (hasIgnoreLowRelevantContent()) {
+        if (getIgnoreLowRelevantContent() != other.getIgnoreLowRelevantContent()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3220,6 +3304,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + IGNORE_NON_ANSWER_SEEKING_QUERY_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreNonAnswerSeekingQuery());
+      if (hasIgnoreLowRelevantContent()) {
+        hash = (37 * hash) + IGNORE_LOW_RELEVANT_CONTENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreLowRelevantContent());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3396,6 +3485,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         answerLanguageCode_ = "";
         ignoreAdversarialQuery_ = false;
         ignoreNonAnswerSeekingQuery_ = false;
+        ignoreLowRelevantContent_ = false;
         return this;
       }
 
@@ -3460,6 +3550,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.ignoreNonAnswerSeekingQuery_ = ignoreNonAnswerSeekingQuery_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.ignoreLowRelevantContent_ = ignoreLowRelevantContent_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3538,6 +3632,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (other.getIgnoreNonAnswerSeekingQuery() != false) {
           setIgnoreNonAnswerSeekingQuery(other.getIgnoreNonAnswerSeekingQuery());
         }
+        if (other.hasIgnoreLowRelevantContent()) {
+          setIgnoreLowRelevantContent(other.getIgnoreLowRelevantContent());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3600,6 +3697,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 48
+              case 56:
+                {
+                  ignoreLowRelevantContent_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4405,6 +4508,90 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private boolean ignoreLowRelevantContent_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true` or unset, the behavior
+       * will be determined automatically by the service.
+       * </pre>
+       *
+       * <code>optional bool ignore_low_relevant_content = 7;</code>
+       *
+       * @return Whether the ignoreLowRelevantContent field is set.
+       */
+      @java.lang.Override
+      public boolean hasIgnoreLowRelevantContent() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true` or unset, the behavior
+       * will be determined automatically by the service.
+       * </pre>
+       *
+       * <code>optional bool ignore_low_relevant_content = 7;</code>
+       *
+       * @return The ignoreLowRelevantContent.
+       */
+      @java.lang.Override
+      public boolean getIgnoreLowRelevantContent() {
+        return ignoreLowRelevantContent_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true` or unset, the behavior
+       * will be determined automatically by the service.
+       * </pre>
+       *
+       * <code>optional bool ignore_low_relevant_content = 7;</code>
+       *
+       * @param value The ignoreLowRelevantContent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnoreLowRelevantContent(boolean value) {
+
+        ignoreLowRelevantContent_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to filter out queries that have low relevance.
+       *
+       * If this field is set to `false`, all search results are used regardless
+       * of relevance to generate answers. If set to `true` or unset, the behavior
+       * will be determined automatically by the service.
+       * </pre>
+       *
+       * <code>optional bool ignore_low_relevant_content = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnoreLowRelevantContent() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        ignoreLowRelevantContent_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4765,6 +4952,88 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        * @return The bytes for orderBy.
        */
       com.google.protobuf.ByteString getOrderByBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+          getDataStoreSpecsList();
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec getDataStoreSpecs(
+          int index);
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      int getDataStoreSpecsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+          getDataStoreSpecsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder
+          getDataStoreSpecsOrBuilder(int index);
     }
     /**
      *
@@ -4789,6 +5058,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       private SearchParams() {
         filter_ = "";
         orderBy_ = "";
+        dataStoreSpecs_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -5039,6 +5309,108 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
       }
 
+      public static final int DATA_STORE_SPECS_FIELD_NUMBER = 7;
+
+      @SuppressWarnings("serial")
+      private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+          dataStoreSpecs_;
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+          getDataStoreSpecsList() {
+        return dataStoreSpecs_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+          getDataStoreSpecsOrBuilderList() {
+        return dataStoreSpecs_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public int getDataStoreSpecsCount() {
+        return dataStoreSpecs_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec getDataStoreSpecs(
+          int index) {
+        return dataStoreSpecs_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specs defining dataStores to filter on in a search call and
+       * configurations for those dataStores. This is only considered for
+       * engines with multiple dataStores use case. For single dataStore within
+       * an engine, they should use the specs at the top level.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder
+          getDataStoreSpecsOrBuilder(int index) {
+        return dataStoreSpecs_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -5065,6 +5437,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
         }
+        for (int i = 0; i < dataStoreSpecs_.size(); i++) {
+          output.writeMessage(7, dataStoreSpecs_.get(i));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -5085,6 +5460,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
+        }
+        for (int i = 0; i < dataStoreSpecs_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(7, dataStoreSpecs_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -5112,6 +5491,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           if (!getBoostSpec().equals(other.getBoostSpec())) return false;
         }
         if (!getOrderBy().equals(other.getOrderBy())) return false;
+        if (!getDataStoreSpecsList().equals(other.getDataStoreSpecsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -5133,6 +5513,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         }
         hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
         hash = (53 * hash) + getOrderBy().hashCode();
+        if (getDataStoreSpecsCount() > 0) {
+          hash = (37 * hash) + DATA_STORE_SPECS_FIELD_NUMBER;
+          hash = (53 * hash) + getDataStoreSpecsList().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -5303,6 +5687,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             getBoostSpecFieldBuilder();
+            getDataStoreSpecsFieldBuilder();
           }
         }
 
@@ -5318,6 +5703,13 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             boostSpecBuilder_ = null;
           }
           orderBy_ = "";
+          if (dataStoreSpecsBuilder_ == null) {
+            dataStoreSpecs_ = java.util.Collections.emptyList();
+          } else {
+            dataStoreSpecs_ = null;
+            dataStoreSpecsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -5352,11 +5744,26 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               result =
                   new com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchParams(this);
+          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParams
+                result) {
+          if (dataStoreSpecsBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)) {
+              dataStoreSpecs_ = java.util.Collections.unmodifiableList(dataStoreSpecs_);
+              bitField0_ = (bitField0_ & ~0x00000010);
+            }
+            result.dataStoreSpecs_ = dataStoreSpecs_;
+          } else {
+            result.dataStoreSpecs_ = dataStoreSpecsBuilder_.build();
+          }
         }
 
         private void buildPartial0(
@@ -5451,6 +5858,33 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             bitField0_ |= 0x00000008;
             onChanged();
           }
+          if (dataStoreSpecsBuilder_ == null) {
+            if (!other.dataStoreSpecs_.isEmpty()) {
+              if (dataStoreSpecs_.isEmpty()) {
+                dataStoreSpecs_ = other.dataStoreSpecs_;
+                bitField0_ = (bitField0_ & ~0x00000010);
+              } else {
+                ensureDataStoreSpecsIsMutable();
+                dataStoreSpecs_.addAll(other.dataStoreSpecs_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.dataStoreSpecs_.isEmpty()) {
+              if (dataStoreSpecsBuilder_.isEmpty()) {
+                dataStoreSpecsBuilder_.dispose();
+                dataStoreSpecsBuilder_ = null;
+                dataStoreSpecs_ = other.dataStoreSpecs_;
+                bitField0_ = (bitField0_ & ~0x00000010);
+                dataStoreSpecsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getDataStoreSpecsFieldBuilder()
+                        : null;
+              } else {
+                dataStoreSpecsBuilder_.addAllMessages(other.dataStoreSpecs_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -5501,6 +5935,21 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
+                case 58:
+                  {
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec m =
+                        input.readMessage(
+                            com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
+                                .parser(),
+                            extensionRegistry);
+                    if (dataStoreSpecsBuilder_ == null) {
+                      ensureDataStoreSpecsIsMutable();
+                      dataStoreSpecs_.add(m);
+                    } else {
+                      dataStoreSpecsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 58
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6114,6 +6563,476 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000008;
           onChanged();
           return this;
+        }
+
+        private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+            dataStoreSpecs_ = java.util.Collections.emptyList();
+
+        private void ensureDataStoreSpecsIsMutable() {
+          if (!((bitField0_ & 0x00000010) != 0)) {
+            dataStoreSpecs_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>(
+                    dataStoreSpecs_);
+            bitField0_ |= 0x00000010;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+            dataStoreSpecsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+            getDataStoreSpecsList() {
+          if (dataStoreSpecsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(dataStoreSpecs_);
+          } else {
+            return dataStoreSpecsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public int getDataStoreSpecsCount() {
+          if (dataStoreSpecsBuilder_ == null) {
+            return dataStoreSpecs_.size();
+          } else {
+            return dataStoreSpecsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
+            getDataStoreSpecs(int index) {
+          if (dataStoreSpecsBuilder_ == null) {
+            return dataStoreSpecs_.get(index);
+          } else {
+            return dataStoreSpecsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder setDataStoreSpecs(
+            int index, com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec value) {
+          if (dataStoreSpecsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.set(index, value);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder setDataStoreSpecs(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+                builderForValue) {
+          if (dataStoreSpecsBuilder_ == null) {
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder addDataStoreSpecs(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec value) {
+          if (dataStoreSpecsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.add(value);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder addDataStoreSpecs(
+            int index, com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec value) {
+          if (dataStoreSpecsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.add(index, value);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder addDataStoreSpecs(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+                builderForValue) {
+          if (dataStoreSpecsBuilder_ == null) {
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.add(builderForValue.build());
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder addDataStoreSpecs(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+                builderForValue) {
+          if (dataStoreSpecsBuilder_ == null) {
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder addAllDataStoreSpecs(
+            java.lang.Iterable<
+                    ? extends com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+                values) {
+          if (dataStoreSpecsBuilder_ == null) {
+            ensureDataStoreSpecsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataStoreSpecs_);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder clearDataStoreSpecs() {
+          if (dataStoreSpecsBuilder_ == null) {
+            dataStoreSpecs_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000010);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public Builder removeDataStoreSpecs(int index) {
+          if (dataStoreSpecsBuilder_ == null) {
+            ensureDataStoreSpecsIsMutable();
+            dataStoreSpecs_.remove(index);
+            onChanged();
+          } else {
+            dataStoreSpecsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+            getDataStoreSpecsBuilder(int index) {
+          return getDataStoreSpecsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder
+            getDataStoreSpecsOrBuilder(int index) {
+          if (dataStoreSpecsBuilder_ == null) {
+            return dataStoreSpecs_.get(index);
+          } else {
+            return dataStoreSpecsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+            getDataStoreSpecsOrBuilderList() {
+          if (dataStoreSpecsBuilder_ != null) {
+            return dataStoreSpecsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(dataStoreSpecs_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+            addDataStoreSpecsBuilder() {
+          return getDataStoreSpecsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder
+            addDataStoreSpecsBuilder(int index) {
+          return getDataStoreSpecsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec
+                      .getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specs defining dataStores to filter on in a search call and
+         * configurations for those dataStores. This is only considered for
+         * engines with multiple dataStores use case. For single dataStore within
+         * an engine, they should use the specs at the top level.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 7;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder>
+            getDataStoreSpecsBuilderList() {
+          return getDataStoreSpecsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+            getDataStoreSpecsFieldBuilder() {
+          if (dataStoreSpecsBuilder_ == null) {
+            dataStoreSpecsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec,
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec.Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>(
+                    dataStoreSpecs_,
+                    ((bitField0_ & 0x00000010) != 0),
+                    getParentForChildren(),
+                    isClean());
+            dataStoreSpecs_ = null;
+          }
+          return dataStoreSpecsBuilder_;
         }
 
         @java.lang.Override
@@ -18402,7 +19321,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Max rephrase steps.
-       * The max number is 10 steps.
+       * The max number is 5 steps.
        * If not set or set to &lt; 1, it will be set to 1 by default.
        * </pre>
        *
@@ -18482,7 +19401,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Max rephrase steps.
-       * The max number is 10 steps.
+       * The max number is 5 steps.
        * If not set or set to &lt; 1, it will be set to 1 by default.
        * </pre>
        *
@@ -18980,7 +19899,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * Max rephrase steps.
-         * The max number is 10 steps.
+         * The max number is 5 steps.
          * If not set or set to &lt; 1, it will be set to 1 by default.
          * </pre>
          *
@@ -18997,7 +19916,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * Max rephrase steps.
-         * The max number is 10 steps.
+         * The max number is 5 steps.
          * If not set or set to &lt; 1, it will be set to 1 by default.
          * </pre>
          *
@@ -19018,7 +19937,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * Max rephrase steps.
-         * The max number is 10 steps.
+         * The max number is 5 steps.
          * If not set or set to &lt; 1, it will be set to 1 by default.
          * </pre>
          *
@@ -20340,8 +21259,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    *
    * When session field is not set, the API is in sessionless mode.
    *
-   * We support auto session mode: users can use the wildcard symbol “-” as
-   * session id.  A new id will be automatically generated and assigned.
+   * We support auto session mode: users can use the wildcard symbol `-` as
+   * session ID.  A new ID will be automatically generated and assigned.
    * </pre>
    *
    * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -20368,8 +21287,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    *
    * When session field is not set, the API is in sessionless mode.
    *
-   * We support auto session mode: users can use the wildcard symbol “-” as
-   * session id.  A new id will be automatically generated and assigned.
+   * We support auto session mode: users can use the wildcard symbol `-` as
+   * session ID.  A new ID will be automatically generated and assigned.
    * </pre>
    *
    * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -21764,8 +22683,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      * When session field is not set, the API is in sessionless mode.
      *
-     * We support auto session mode: users can use the wildcard symbol “-” as
-     * session id.  A new id will be automatically generated and assigned.
+     * We support auto session mode: users can use the wildcard symbol `-` as
+     * session ID.  A new ID will be automatically generated and assigned.
      * </pre>
      *
      * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -21791,8 +22710,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      * When session field is not set, the API is in sessionless mode.
      *
-     * We support auto session mode: users can use the wildcard symbol “-” as
-     * session id.  A new id will be automatically generated and assigned.
+     * We support auto session mode: users can use the wildcard symbol `-` as
+     * session ID.  A new ID will be automatically generated and assigned.
      * </pre>
      *
      * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -21818,8 +22737,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      * When session field is not set, the API is in sessionless mode.
      *
-     * We support auto session mode: users can use the wildcard symbol “-” as
-     * session id.  A new id will be automatically generated and assigned.
+     * We support auto session mode: users can use the wildcard symbol `-` as
+     * session ID.  A new ID will be automatically generated and assigned.
      * </pre>
      *
      * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -21844,8 +22763,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      * When session field is not set, the API is in sessionless mode.
      *
-     * We support auto session mode: users can use the wildcard symbol “-” as
-     * session id.  A new id will be automatically generated and assigned.
+     * We support auto session mode: users can use the wildcard symbol `-` as
+     * session ID.  A new ID will be automatically generated and assigned.
      * </pre>
      *
      * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -21866,8 +22785,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      * When session field is not set, the API is in sessionless mode.
      *
-     * We support auto session mode: users can use the wildcard symbol “-” as
-     * session id.  A new id will be automatically generated and assigned.
+     * We support auto session mode: users can use the wildcard symbol `-` as
+     * session ID.  A new ID will be automatically generated and assigned.
      * </pre>
      *
      * <code>string session = 3 [(.google.api.resource_reference) = { ... }</code>

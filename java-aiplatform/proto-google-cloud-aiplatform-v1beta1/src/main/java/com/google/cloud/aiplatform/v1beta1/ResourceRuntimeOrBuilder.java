@@ -124,11 +124,14 @@ public interface ResourceRuntimeOrBuilder
    * </pre>
    *
    * <code>
-   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
    * @return The notebookRuntimeTemplate.
    */
+  @java.lang.Deprecated
   java.lang.String getNotebookRuntimeTemplate();
   /**
    *
@@ -142,10 +145,13 @@ public interface ResourceRuntimeOrBuilder
    * </pre>
    *
    * <code>
-   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string notebook_runtime_template = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=267
    * @return The bytes for notebookRuntimeTemplate.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes();
 }

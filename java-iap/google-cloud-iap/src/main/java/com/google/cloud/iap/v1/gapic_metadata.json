@@ -1,0 +1,81 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.iap.v1",
+  "libraryPackage": "com.google.cloud.iap.v1",
+  "services": {
+    "IdentityAwareProxyAdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyAdminServiceClient",
+          "rpcs": {
+            "CreateTunnelDestGroup": {
+              "methods": ["createTunnelDestGroup", "createTunnelDestGroup", "createTunnelDestGroup", "createTunnelDestGroupCallable"]
+            },
+            "DeleteTunnelDestGroup": {
+              "methods": ["deleteTunnelDestGroup", "deleteTunnelDestGroup", "deleteTunnelDestGroup", "deleteTunnelDestGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetIapSettings": {
+              "methods": ["getIapSettings", "getIapSettingsCallable"]
+            },
+            "GetTunnelDestGroup": {
+              "methods": ["getTunnelDestGroup", "getTunnelDestGroup", "getTunnelDestGroup", "getTunnelDestGroupCallable"]
+            },
+            "ListTunnelDestGroups": {
+              "methods": ["listTunnelDestGroups", "listTunnelDestGroups", "listTunnelDestGroups", "listTunnelDestGroupsPagedCallable", "listTunnelDestGroupsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateIapSettings": {
+              "methods": ["updateIapSettings", "updateIapSettingsCallable"]
+            },
+            "UpdateTunnelDestGroup": {
+              "methods": ["updateTunnelDestGroup", "updateTunnelDestGroup", "updateTunnelDestGroupCallable"]
+            }
+          }
+        }
+      }
+    },
+    "IdentityAwareProxyOAuthService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyOAuthServiceClient",
+          "rpcs": {
+            "CreateBrand": {
+              "methods": ["createBrand", "createBrandCallable"]
+            },
+            "CreateIdentityAwareProxyClient": {
+              "methods": ["createIdentityAwareProxyClient", "createIdentityAwareProxyClientCallable"]
+            },
+            "DeleteIdentityAwareProxyClient": {
+              "methods": ["deleteIdentityAwareProxyClient", "deleteIdentityAwareProxyClientCallable"]
+            },
+            "GetBrand": {
+              "methods": ["getBrand", "getBrandCallable"]
+            },
+            "GetIdentityAwareProxyClient": {
+              "methods": ["getIdentityAwareProxyClient", "getIdentityAwareProxyClientCallable"]
+            },
+            "ListBrands": {
+              "methods": ["listBrands", "listBrandsCallable"]
+            },
+            "ListIdentityAwareProxyClients": {
+              "methods": ["listIdentityAwareProxyClients", "listIdentityAwareProxyClientsPagedCallable", "listIdentityAwareProxyClientsCallable"]
+            },
+            "ResetIdentityAwareProxyClientSecret": {
+              "methods": ["resetIdentityAwareProxyClientSecret", "resetIdentityAwareProxyClientSecretCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

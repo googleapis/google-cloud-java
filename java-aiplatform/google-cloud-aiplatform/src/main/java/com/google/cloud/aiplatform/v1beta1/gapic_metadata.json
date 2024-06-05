@@ -539,6 +539,45 @@
         }
       }
     },
+    "GenAiCacheService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiCacheServiceClient",
+          "rpcs": {
+            "CreateCachedContent": {
+              "methods": ["createCachedContent", "createCachedContent", "createCachedContent", "createCachedContentCallable"]
+            },
+            "DeleteCachedContent": {
+              "methods": ["deleteCachedContent", "deleteCachedContent", "deleteCachedContent", "deleteCachedContentCallable"]
+            },
+            "GetCachedContent": {
+              "methods": ["getCachedContent", "getCachedContent", "getCachedContent", "getCachedContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCachedContents": {
+              "methods": ["listCachedContents", "listCachedContents", "listCachedContents", "listCachedContentsPagedCallable", "listCachedContentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCachedContent": {
+              "methods": ["updateCachedContent", "updateCachedContent", "updateCachedContentCallable"]
+            }
+          }
+        }
+      }
+    },
     "GenAiTuningService": {
       "clients": {
         "grpc": {
@@ -1177,6 +1216,9 @@
             "AssignNotebookRuntime": {
               "methods": ["assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeOperationCallable", "assignNotebookRuntimeCallable"]
             },
+            "CreateNotebookExecutionJob": {
+              "methods": ["createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobOperationCallable", "createNotebookExecutionJobCallable"]
+            },
             "CreateNotebookRuntimeTemplate": {
               "methods": ["createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateOperationCallable", "createNotebookRuntimeTemplateCallable"]
             },
@@ -1224,6 +1266,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateNotebookRuntimeTemplate": {
+              "methods": ["updateNotebookRuntimeTemplate", "updateNotebookRuntimeTemplate", "updateNotebookRuntimeTemplateCallable"]
             },
             "UpgradeNotebookRuntime": {
               "methods": ["upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeOperationCallable", "upgradeNotebookRuntimeCallable"]
@@ -1339,6 +1384,9 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "ChatCompletions": {
+              "methods": ["chatCompletionsCallable"]
+            },
             "CountTokens": {
               "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
             },
@@ -1455,6 +1503,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateReasoningEngine": {
+              "methods": ["updateReasoningEngineAsync", "updateReasoningEngineAsync", "updateReasoningEngineOperationCallable", "updateReasoningEngineCallable"]
             }
           }
         }

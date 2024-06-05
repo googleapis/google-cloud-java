@@ -67,6 +67,7 @@ import com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1.UpdateDatasetRequest;
+import com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -165,6 +166,16 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionMethodDescriptor =
+          MethodDescriptor.<UpdateDatasetVersionRequest, DatasetVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.DatasetService/UpdateDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DatasetVersion.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteDatasetVersionRequest, Operation>
@@ -341,6 +352,8 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final OperationCallable<
           CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
       createDatasetVersionOperationCallable;
+  private final UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionCallable;
   private final UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable;
   private final OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
       deleteDatasetVersionOperationCallable;
@@ -506,6 +519,19 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
+        updateDatasetVersionTransportSettings =
+            GrpcCallSettings.<UpdateDatasetVersionRequest, DatasetVersion>newBuilder()
+                .setMethodDescriptor(updateDatasetVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "dataset_version.name",
+                          String.valueOf(request.getDatasetVersion().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionTransportSettings =
         GrpcCallSettings.<DeleteDatasetVersionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDatasetVersionMethodDescriptor)
@@ -722,6 +748,11 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             settings.createDatasetVersionOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateDatasetVersionTransportSettings,
+            settings.updateDatasetVersionSettings(),
+            clientContext);
     this.deleteDatasetVersionCallable =
         callableFactory.createUnaryCallable(
             deleteDatasetVersionTransportSettings,
@@ -900,6 +931,11 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
       createDatasetVersionOperationCallable() {
     return createDatasetVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion> updateDatasetVersionCallable() {
+    return updateDatasetVersionCallable;
   }
 
   @Override

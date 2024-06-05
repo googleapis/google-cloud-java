@@ -42,6 +42,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -135,6 +136,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listReasoningEnginesPagedCallable()
  *           <li><p> listReasoningEnginesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReasoningEngine</td>
+ *      <td><p> Updates a reasoning engine.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReasoningEngineAsync(UpdateReasoningEngineRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateReasoningEngineAsync(ReasoningEngine reasoningEngine, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReasoningEngineOperationCallable()
+ *           <li><p> updateReasoningEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -806,6 +826,138 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
   public final UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesResponse>
       listReasoningEnginesCallable() {
     return stub.listReasoningEnginesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineServiceClient reasoningEngineServiceClient =
+   *     ReasoningEngineServiceClient.create()) {
+   *   ReasoningEngine reasoningEngine = ReasoningEngine.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReasoningEngine response =
+   *       reasoningEngineServiceClient
+   *           .updateReasoningEngineAsync(reasoningEngine, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param reasoningEngine Required. The ReasoningEngine which replaces the resource on the server.
+   * @param updateMask Required. Mask specifying which fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineAsync(ReasoningEngine reasoningEngine, FieldMask updateMask) {
+    UpdateReasoningEngineRequest request =
+        UpdateReasoningEngineRequest.newBuilder()
+            .setReasoningEngine(reasoningEngine)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReasoningEngineAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineServiceClient reasoningEngineServiceClient =
+   *     ReasoningEngineServiceClient.create()) {
+   *   UpdateReasoningEngineRequest request =
+   *       UpdateReasoningEngineRequest.newBuilder()
+   *           .setReasoningEngine(ReasoningEngine.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReasoningEngine response =
+   *       reasoningEngineServiceClient.updateReasoningEngineAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineAsync(UpdateReasoningEngineRequest request) {
+    return updateReasoningEngineOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineServiceClient reasoningEngineServiceClient =
+   *     ReasoningEngineServiceClient.create()) {
+   *   UpdateReasoningEngineRequest request =
+   *       UpdateReasoningEngineRequest.newBuilder()
+   *           .setReasoningEngine(ReasoningEngine.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ReasoningEngine, UpdateReasoningEngineOperationMetadata> future =
+   *       reasoningEngineServiceClient.updateReasoningEngineOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ReasoningEngine response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable() {
+    return stub.updateReasoningEngineOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineServiceClient reasoningEngineServiceClient =
+   *     ReasoningEngineServiceClient.create()) {
+   *   UpdateReasoningEngineRequest request =
+   *       UpdateReasoningEngineRequest.newBuilder()
+   *           .setReasoningEngine(ReasoningEngine.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reasoningEngineServiceClient.updateReasoningEngineCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineCallable() {
+    return stub.updateReasoningEngineCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

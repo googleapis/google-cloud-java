@@ -28,6 +28,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -96,6 +97,7 @@ public class GroundedGenerationServiceClientTest {
             .setAnswerCandidate("answerCandidate-292402331")
             .addAllFacts(new ArrayList<GroundingFact>())
             .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     CheckGroundingResponse actualResponse = client.checkGrounding(request);
@@ -109,6 +111,7 @@ public class GroundedGenerationServiceClientTest {
     Assert.assertEquals(request.getAnswerCandidate(), actualRequest.getAnswerCandidate());
     Assert.assertEquals(request.getFactsList(), actualRequest.getFactsList());
     Assert.assertEquals(request.getGroundingSpec(), actualRequest.getGroundingSpec());
+    Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -129,6 +132,7 @@ public class GroundedGenerationServiceClientTest {
               .setAnswerCandidate("answerCandidate-292402331")
               .addAllFacts(new ArrayList<GroundingFact>())
               .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.checkGrounding(request);
       Assert.fail("No exception raised");

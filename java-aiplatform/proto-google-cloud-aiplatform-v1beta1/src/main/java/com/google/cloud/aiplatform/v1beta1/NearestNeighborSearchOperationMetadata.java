@@ -320,8 +320,8 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * The size of the embedding vectors does not match with the specified
-       * dimension.
+       * The size of the dense embedding vectors does not match with the
+       * specified dimension.
        * </pre>
        *
        * <code>EMBEDDING_SIZE_MISMATCH = 6;</code>
@@ -402,12 +402,42 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
+       * Error parsing sparse dimensions field.
+       * </pre>
+       *
+       * <code>INVALID_SPARSE_DIMENSIONS = 14;</code>
+       */
+      INVALID_SPARSE_DIMENSIONS(14),
+      /**
+       *
+       *
+       * <pre>
        * Token restrict value is invalid.
        * </pre>
        *
        * <code>INVALID_TOKEN_VALUE = 15;</code>
        */
       INVALID_TOKEN_VALUE(15),
+      /**
+       *
+       *
+       * <pre>
+       * Invalid sparse embedding.
+       * </pre>
+       *
+       * <code>INVALID_SPARSE_EMBEDDING = 16;</code>
+       */
+      INVALID_SPARSE_EMBEDDING(16),
+      /**
+       *
+       *
+       * <pre>
+       * Invalid dense embedding.
+       * </pre>
+       *
+       * <code>INVALID_EMBEDDING = 17;</code>
+       */
+      INVALID_EMBEDDING(17),
       UNRECOGNIZED(-1),
       ;
 
@@ -475,8 +505,8 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * The size of the embedding vectors does not match with the specified
-       * dimension.
+       * The size of the dense embedding vectors does not match with the
+       * specified dimension.
        * </pre>
        *
        * <code>EMBEDDING_SIZE_MISMATCH = 6;</code>
@@ -557,12 +587,42 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
+       * Error parsing sparse dimensions field.
+       * </pre>
+       *
+       * <code>INVALID_SPARSE_DIMENSIONS = 14;</code>
+       */
+      public static final int INVALID_SPARSE_DIMENSIONS_VALUE = 14;
+      /**
+       *
+       *
+       * <pre>
        * Token restrict value is invalid.
        * </pre>
        *
        * <code>INVALID_TOKEN_VALUE = 15;</code>
        */
       public static final int INVALID_TOKEN_VALUE_VALUE = 15;
+      /**
+       *
+       *
+       * <pre>
+       * Invalid sparse embedding.
+       * </pre>
+       *
+       * <code>INVALID_SPARSE_EMBEDDING = 16;</code>
+       */
+      public static final int INVALID_SPARSE_EMBEDDING_VALUE = 16;
+      /**
+       *
+       *
+       * <pre>
+       * Invalid dense embedding.
+       * </pre>
+       *
+       * <code>INVALID_EMBEDDING = 17;</code>
+       */
+      public static final int INVALID_EMBEDDING_VALUE = 17;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -616,8 +676,14 @@ public final class NearestNeighborSearchOperationMetadata
             return INVALID_NUMERIC_VALUE;
           case 13:
             return INVALID_ENCODING;
+          case 14:
+            return INVALID_SPARSE_DIMENSIONS;
           case 15:
             return INVALID_TOKEN_VALUE;
+          case 16:
+            return INVALID_SPARSE_EMBEDDING;
+          case 17:
+            return INVALID_EMBEDDING;
           default:
             return null;
         }
@@ -2168,6 +2234,32 @@ public final class NearestNeighborSearchOperationMetadata
      */
     com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordErrorOrBuilder
         getPartialErrorsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of sparse records in this file that were successfully processed.
+     * </pre>
+     *
+     * <code>int64 valid_sparse_record_count = 5;</code>
+     *
+     * @return The validSparseRecordCount.
+     */
+    long getValidSparseRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of sparse records in this file we skipped due to validate errors.
+     * </pre>
+     *
+     * <code>int64 invalid_sparse_record_count = 6;</code>
+     *
+     * @return The invalidSparseRecordCount.
+     */
+    long getInvalidSparseRecordCount();
   }
   /**
    * Protobuf type {@code
@@ -2399,6 +2491,42 @@ public final class NearestNeighborSearchOperationMetadata
       return partialErrors_.get(index);
     }
 
+    public static final int VALID_SPARSE_RECORD_COUNT_FIELD_NUMBER = 5;
+    private long validSparseRecordCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of sparse records in this file that were successfully processed.
+     * </pre>
+     *
+     * <code>int64 valid_sparse_record_count = 5;</code>
+     *
+     * @return The validSparseRecordCount.
+     */
+    @java.lang.Override
+    public long getValidSparseRecordCount() {
+      return validSparseRecordCount_;
+    }
+
+    public static final int INVALID_SPARSE_RECORD_COUNT_FIELD_NUMBER = 6;
+    private long invalidSparseRecordCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of sparse records in this file we skipped due to validate errors.
+     * </pre>
+     *
+     * <code>int64 invalid_sparse_record_count = 6;</code>
+     *
+     * @return The invalidSparseRecordCount.
+     */
+    @java.lang.Override
+    public long getInvalidSparseRecordCount() {
+      return invalidSparseRecordCount_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2425,6 +2553,12 @@ public final class NearestNeighborSearchOperationMetadata
       for (int i = 0; i < partialErrors_.size(); i++) {
         output.writeMessage(4, partialErrors_.get(i));
       }
+      if (validSparseRecordCount_ != 0L) {
+        output.writeInt64(5, validSparseRecordCount_);
+      }
+      if (invalidSparseRecordCount_ != 0L) {
+        output.writeInt64(6, invalidSparseRecordCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2445,6 +2579,13 @@ public final class NearestNeighborSearchOperationMetadata
       }
       for (int i = 0; i < partialErrors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialErrors_.get(i));
+      }
+      if (validSparseRecordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, validSparseRecordCount_);
+      }
+      if (invalidSparseRecordCount_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(6, invalidSparseRecordCount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2473,6 +2614,8 @@ public final class NearestNeighborSearchOperationMetadata
       if (getValidRecordCount() != other.getValidRecordCount()) return false;
       if (getInvalidRecordCount() != other.getInvalidRecordCount()) return false;
       if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
+      if (getValidSparseRecordCount() != other.getValidSparseRecordCount()) return false;
+      if (getInvalidSparseRecordCount() != other.getInvalidSparseRecordCount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2494,6 +2637,10 @@ public final class NearestNeighborSearchOperationMetadata
         hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
         hash = (53 * hash) + getPartialErrorsList().hashCode();
       }
+      hash = (37 * hash) + VALID_SPARSE_RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValidSparseRecordCount());
+      hash = (37 * hash) + INVALID_SPARSE_RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getInvalidSparseRecordCount());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2665,6 +2812,8 @@ public final class NearestNeighborSearchOperationMetadata
           partialErrorsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        validSparseRecordCount_ = 0L;
+        invalidSparseRecordCount_ = 0L;
         return this;
       }
 
@@ -2740,6 +2889,12 @@ public final class NearestNeighborSearchOperationMetadata
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.invalidRecordCount_ = invalidRecordCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.validSparseRecordCount_ = validSparseRecordCount_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.invalidSparseRecordCount_ = invalidSparseRecordCount_;
         }
       }
 
@@ -2839,6 +2994,12 @@ public final class NearestNeighborSearchOperationMetadata
             }
           }
         }
+        if (other.getValidSparseRecordCount() != 0L) {
+          setValidSparseRecordCount(other.getValidSparseRecordCount());
+        }
+        if (other.getInvalidSparseRecordCount() != 0L) {
+          setInvalidSparseRecordCount(other.getInvalidSparseRecordCount());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2900,6 +3061,18 @@ public final class NearestNeighborSearchOperationMetadata
                   }
                   break;
                 } // case 34
+              case 40:
+                {
+                  validSparseRecordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  invalidSparseRecordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3610,6 +3783,112 @@ public final class NearestNeighborSearchOperationMetadata
           partialErrors_ = null;
         }
         return partialErrorsBuilder_;
+      }
+
+      private long validSparseRecordCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file that were successfully processed.
+       * </pre>
+       *
+       * <code>int64 valid_sparse_record_count = 5;</code>
+       *
+       * @return The validSparseRecordCount.
+       */
+      @java.lang.Override
+      public long getValidSparseRecordCount() {
+        return validSparseRecordCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file that were successfully processed.
+       * </pre>
+       *
+       * <code>int64 valid_sparse_record_count = 5;</code>
+       *
+       * @param value The validSparseRecordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidSparseRecordCount(long value) {
+
+        validSparseRecordCount_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file that were successfully processed.
+       * </pre>
+       *
+       * <code>int64 valid_sparse_record_count = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValidSparseRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        validSparseRecordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long invalidSparseRecordCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file we skipped due to validate errors.
+       * </pre>
+       *
+       * <code>int64 invalid_sparse_record_count = 6;</code>
+       *
+       * @return The invalidSparseRecordCount.
+       */
+      @java.lang.Override
+      public long getInvalidSparseRecordCount() {
+        return invalidSparseRecordCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file we skipped due to validate errors.
+       * </pre>
+       *
+       * <code>int64 invalid_sparse_record_count = 6;</code>
+       *
+       * @param value The invalidSparseRecordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvalidSparseRecordCount(long value) {
+
+        invalidSparseRecordCount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of sparse records in this file we skipped due to validate errors.
+       * </pre>
+       *
+       * <code>int64 invalid_sparse_record_count = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInvalidSparseRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        invalidSparseRecordCount_ = 0L;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

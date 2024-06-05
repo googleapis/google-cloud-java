@@ -28,7 +28,15 @@ public interface GetDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * Required. Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
+   *
+   *
+   * Can also fetch some special versions by appending "&#64;" and a tag.
+   * Format: projects/{project}/datasets/{dataset_id}&#64;{tag}
+   *
+   * Tag "active": The info of the latest completed version will be included,
+   * and NOT_FOUND if the dataset does not have one.
    * </pre>
    *
    * <code>
@@ -42,7 +50,15 @@ public interface GetDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * Required. Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
+   *
+   *
+   * Can also fetch some special versions by appending "&#64;" and a tag.
+   * Format: projects/{project}/datasets/{dataset_id}&#64;{tag}
+   *
+   * Tag "active": The info of the latest completed version will be included,
+   * and NOT_FOUND if the dataset does not have one.
    * </pre>
    *
    * <code>

@@ -106,14 +106,17 @@
     <module>java-iam</module>
     <module>java-iam-admin</module>
     <module>java-iamcredentials</module>
+    <module>java-iap</module>
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
+    <module>java-java-shopping-merchant-promotions</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
+    <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
@@ -131,6 +134,7 @@
     <module>java-network-management</module>
     <module>java-network-security</module>
     <module>java-networkconnectivity</module>
+    <module>java-networkservices</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
     <module>java-optimization</module>
@@ -143,6 +147,7 @@
     <module>java-policy-troubleshooter</module>
     <module>java-policysimulator</module>
     <module>java-private-catalog</module>
+    <module>java-privilegedaccessmanager</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
     <module>java-rapidmigrationassessment</module>
