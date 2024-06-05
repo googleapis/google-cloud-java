@@ -782,3 +782,6 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-accounts:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
