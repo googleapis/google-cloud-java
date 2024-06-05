@@ -1130,6 +1130,22 @@ libraries:
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-datasources
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/datasources/v1beta
+  library_name: java-shopping-merchant-datasources
+  requires_billing: true
+- api_shortname: merchantapi
+  name_pretty: Merchant API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
   release_level: preview
   distribution_name: com.google.shopping:google-shopping-merchant-accounts
