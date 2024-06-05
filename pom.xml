@@ -112,6 +112,7 @@
     <module>java-iot</module>
     <module>java-java-shopping-merchant-accounts</module>
     <module>java-java-shopping-merchant-datasources</module>
+    <module>java-java-shopping-merchant-products</module>
     <module>java-java-shopping-merchant-promotions</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
