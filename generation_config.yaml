@@ -1413,6 +1413,24 @@ libraries:
   - proto_path: google/cloud/networkconnectivity/v1
   - proto_path: google/cloud/networkconnectivity/v1alpha1
 
+- api_shortname: networkservices
+  name_pretty: Network Services API
+  product_documentation: https://cloud.google.com/products/networking
+  api_description: Google Cloud offers a broad portfolio of networking services built
+    on top of planet-scale infrastructure that leverages automation, advanced AI,
+    and programmability, enabling enterprises to connect, scale, secure, modernize
+    and optimize their infrastructure.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-networkservices
+  api_id: networkservices.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/networkservices/v1
+  requires_billing: true
 - api_shortname: notebooks
   name_pretty: AI Platform Notebooks
   product_documentation: https://cloud.google.com/ai-platform-notebooks
