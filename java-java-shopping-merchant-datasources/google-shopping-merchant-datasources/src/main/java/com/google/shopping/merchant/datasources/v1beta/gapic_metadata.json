@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.datasources.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.datasources.v1beta",
+  "services": {
+    "DataSourcesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataSourcesServiceClient",
+          "rpcs": {
+            "CreateDataSource": {
+              "methods": ["createDataSource", "createDataSource", "createDataSource", "createDataSourceCallable"]
+            },
+            "DeleteDataSource": {
+              "methods": ["deleteDataSource", "deleteDataSource", "deleteDataSource", "deleteDataSourceCallable"]
+            },
+            "FetchDataSource": {
+              "methods": ["fetchDataSource", "fetchDataSourceCallable"]
+            },
+            "GetDataSource": {
+              "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
+            },
+            "ListDataSources": {
+              "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]
+            },
+            "UpdateDataSource": {
+              "methods": ["updateDataSource", "updateDataSource", "updateDataSourceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
