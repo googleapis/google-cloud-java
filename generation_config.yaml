@@ -1,10 +1,5 @@
 gapic_generator_version: 2.40.1
-<<<<<<< blakeli0-patch-1
-googleapis_commitish: f49123a39efc18f0a20a2183629c62830725343c
-=======
-protoc_version: '25.3'
 googleapis_commitish: ede5e02ad747c9199a7953b222b85715e097189c
->>>>>>> main
 libraries_bom_version: 26.40.0
 
 # the libraries are ordered with respect to library name, which is
