@@ -146,6 +146,7 @@
     <module>java-policy-troubleshooter</module>
     <module>java-policysimulator</module>
     <module>java-private-catalog</module>
+    <module>java-privilegedaccessmanager</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
     <module>java-rapidmigrationassessment</module>
