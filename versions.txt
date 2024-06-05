@@ -797,3 +797,6 @@ grpc-google-cloud-networkservices-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-privilegedaccessmanager:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-products:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-products-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-products-v1beta:0.0.0:0.0.1-SNAPSHOT
