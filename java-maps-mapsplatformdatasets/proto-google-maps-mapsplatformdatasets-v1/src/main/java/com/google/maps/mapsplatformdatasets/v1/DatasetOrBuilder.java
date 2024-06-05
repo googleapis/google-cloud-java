@@ -28,8 +28,8 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Resource name,
-   * projects/{project}/datasets/{dataset_id}
+   * Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,8 +41,8 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Resource name,
-   * projects/{project}/datasets/{dataset_id}
+   * Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -55,7 +55,9 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Human readable name, shown in the console UI .
+   * Human readable name, shown in the console UI.
+   *
+   * Must be unique within a project.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -67,7 +69,9 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Human readable name, shown in the console UI .
+   * Human readable name, shown in the console UI.
+   *
+   * Must be unique within a project.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -80,7 +84,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * A description of this dataset .
+   * A description of this dataset.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -92,7 +96,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * A description of this dataset .
+   * A description of this dataset.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -380,7 +384,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>
@@ -394,7 +398,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>
@@ -408,7 +412,7 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>

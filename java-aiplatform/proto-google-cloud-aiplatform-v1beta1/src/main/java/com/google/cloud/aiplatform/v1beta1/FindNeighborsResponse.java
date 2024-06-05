@@ -125,6 +125,19 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
      * @return The distance.
      */
     double getDistance();
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance between the neighbor and the query sparse_embedding.
+     * </pre>
+     *
+     * <code>double sparse_distance = 3;</code>
+     *
+     * @return The sparseDistance.
+     */
+    double getSparseDistance();
   }
   /**
    *
@@ -246,6 +259,24 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       return distance_;
     }
 
+    public static final int SPARSE_DISTANCE_FIELD_NUMBER = 3;
+    private double sparseDistance_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * The distance between the neighbor and the query sparse_embedding.
+     * </pre>
+     *
+     * <code>double sparse_distance = 3;</code>
+     *
+     * @return The sparseDistance.
+     */
+    @java.lang.Override
+    public double getSparseDistance() {
+      return sparseDistance_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -266,6 +297,9 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
         output.writeDouble(2, distance_);
       }
+      if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
+        output.writeDouble(3, sparseDistance_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -280,6 +314,9 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, distance_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, sparseDistance_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -303,6 +340,8 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       }
       if (java.lang.Double.doubleToLongBits(getDistance())
           != java.lang.Double.doubleToLongBits(other.getDistance())) return false;
+      if (java.lang.Double.doubleToLongBits(getSparseDistance())
+          != java.lang.Double.doubleToLongBits(other.getSparseDistance())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -323,6 +362,11 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getDistance()));
+      hash = (37 * hash) + SPARSE_DISTANCE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getSparseDistance()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -482,6 +526,7 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
           datapointBuilder_ = null;
         }
         distance_ = 0D;
+        sparseDistance_ = 0D;
         return this;
       }
 
@@ -528,6 +573,9 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.distance_ = distance_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sparseDistance_ = sparseDistance_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -589,6 +637,9 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
         if (other.getDistance() != 0D) {
           setDistance(other.getDistance());
         }
+        if (other.getSparseDistance() != 0D) {
+          setSparseDistance(other.getSparseDistance());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -627,6 +678,12 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 17
+              case 25:
+                {
+                  sparseDistance_ = input.readDouble();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 25
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -909,6 +966,59 @@ public final class FindNeighborsResponse extends com.google.protobuf.GeneratedMe
       public Builder clearDistance() {
         bitField0_ = (bitField0_ & ~0x00000002);
         distance_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double sparseDistance_;
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the neighbor and the query sparse_embedding.
+       * </pre>
+       *
+       * <code>double sparse_distance = 3;</code>
+       *
+       * @return The sparseDistance.
+       */
+      @java.lang.Override
+      public double getSparseDistance() {
+        return sparseDistance_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the neighbor and the query sparse_embedding.
+       * </pre>
+       *
+       * <code>double sparse_distance = 3;</code>
+       *
+       * @param value The sparseDistance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSparseDistance(double value) {
+
+        sparseDistance_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The distance between the neighbor and the query sparse_embedding.
+       * </pre>
+       *
+       * <code>double sparse_distance = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSparseDistance() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sparseDistance_ = 0D;
         onChanged();
         return this;
       }

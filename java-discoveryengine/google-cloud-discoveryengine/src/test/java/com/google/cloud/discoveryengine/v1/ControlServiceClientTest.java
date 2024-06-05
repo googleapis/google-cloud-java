@@ -154,6 +154,58 @@ public class ControlServiceClientTest {
             .build();
     mockControlService.addResponse(expectedResponse);
 
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+    Control control = Control.newBuilder().build();
+    String controlId = "controlId-395080872";
+
+    Control actualResponse = client.createControl(parent, control, controlId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockControlService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateControlRequest actualRequest = ((CreateControlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(control, actualRequest.getControl());
+    Assert.assertEquals(controlId, actualRequest.getControlId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createControlExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockControlService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      Control control = Control.newBuilder().build();
+      String controlId = "controlId-395080872";
+      client.createControl(parent, control, controlId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createControlTest3() throws Exception {
+    Control expectedResponse =
+        Control.newBuilder()
+            .setName(
+                ControlName.ofProjectLocationDataStoreControlName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[CONTROL]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllAssociatedServingConfigIds(new ArrayList<String>())
+            .setSolutionType(SolutionType.forNumber(0))
+            .addAllUseCases(new ArrayList<SearchUseCase>())
+            .addAllConditions(new ArrayList<Condition>())
+            .build();
+    mockControlService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
     Control control = Control.newBuilder().build();
     String controlId = "controlId-395080872";
@@ -175,7 +227,7 @@ public class ControlServiceClientTest {
   }
 
   @Test
-  public void createControlExceptionTest2() throws Exception {
+  public void createControlExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockControlService.addException(exception);
 
@@ -463,6 +515,50 @@ public class ControlServiceClientTest {
             .build();
     mockControlService.addResponse(expectedResponse);
 
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    ListControlsPagedResponse pagedListResponse = client.listControls(parent);
+
+    List<Control> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getControlsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockControlService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListControlsRequest actualRequest = ((ListControlsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listControlsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockControlService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.listControls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listControlsTest3() throws Exception {
+    Control responsesElement = Control.newBuilder().build();
+    ListControlsResponse expectedResponse =
+        ListControlsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllControls(Arrays.asList(responsesElement))
+            .build();
+    mockControlService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListControlsPagedResponse pagedListResponse = client.listControls(parent);
@@ -484,7 +580,7 @@ public class ControlServiceClientTest {
   }
 
   @Test
-  public void listControlsExceptionTest2() throws Exception {
+  public void listControlsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockControlService.addException(exception);
 

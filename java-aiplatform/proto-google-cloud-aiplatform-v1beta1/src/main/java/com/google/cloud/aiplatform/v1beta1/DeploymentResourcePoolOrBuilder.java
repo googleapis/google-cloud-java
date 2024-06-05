@@ -101,6 +101,103 @@ public interface DeploymentResourcePoolOrBuilder
    *
    *
    * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
+   * this DeploymentResourcePool will be secured by this key. Endpoints and the
+   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeploymentResourcePool's container(s) run as.
+   * Specify the email address of the service account. If this service account
+   * is not specified, the container(s) run as a service account that doesn't
+   * have access to the resource project.
+   *
+   * Users deploying the Models to this DeploymentResourcePool must have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 6;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeploymentResourcePool's container(s) run as.
+   * Specify the email address of the service account. If this service account
+   * is not specified, the container(s) run as a service account that doesn't
+   * have access to the resource project.
+   *
+   * Users deploying the Models to this DeploymentResourcePool must have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 6;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If the DeploymentResourcePool is deployed with custom-trained Models or
+   * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
+   * send `stderr` and `stdout` streams to Cloud Logging by default.
+   * Please note that the logs incur cost, which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/logging/pricing).
+   *
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 7;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  boolean getDisableContainerLogging();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this DeploymentResourcePool was created.
    * </pre>
    *

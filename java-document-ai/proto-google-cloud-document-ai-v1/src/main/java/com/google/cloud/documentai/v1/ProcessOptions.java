@@ -61,6 +61,1490 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.ProcessOptions.Builder.class);
   }
 
+  public interface LayoutConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the chunkingConfig field is set.
+     */
+    boolean hasChunkingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The chunkingConfig.
+     */
+    com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig getChunkingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder
+        getChunkingConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Serving config for layout parser processor.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1.ProcessOptions.LayoutConfig}
+   */
+  public static final class LayoutConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
+      LayoutConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LayoutConfig.newBuilder() to construct.
+    private LayoutConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LayoutConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LayoutConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.class,
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder.class);
+    }
+
+    public interface ChunkingConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The chunk sizes to use when splitting documents, in order of
+       * level.
+       * </pre>
+       *
+       * <code>int32 chunk_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The chunkSize.
+       */
+      int getChunkSize();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether or not to include ancestor headings when splitting.
+       * </pre>
+       *
+       * <code>bool include_ancestor_headings = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The includeAncestorHeadings.
+       */
+      boolean getIncludeAncestorHeadings();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serving config for chunking.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig}
+     */
+    public static final class ChunkingConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
+        ChunkingConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ChunkingConfig.newBuilder() to construct.
+      private ChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ChunkingConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ChunkingConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_ChunkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_ChunkingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.class,
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder
+                    .class);
+      }
+
+      public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
+      private int chunkSize_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The chunk sizes to use when splitting documents, in order of
+       * level.
+       * </pre>
+       *
+       * <code>int32 chunk_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The chunkSize.
+       */
+      @java.lang.Override
+      public int getChunkSize() {
+        return chunkSize_;
+      }
+
+      public static final int INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER = 2;
+      private boolean includeAncestorHeadings_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether or not to include ancestor headings when splitting.
+       * </pre>
+       *
+       * <code>bool include_ancestor_headings = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The includeAncestorHeadings.
+       */
+      @java.lang.Override
+      public boolean getIncludeAncestorHeadings() {
+        return includeAncestorHeadings_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (chunkSize_ != 0) {
+          output.writeInt32(1, chunkSize_);
+        }
+        if (includeAncestorHeadings_ != false) {
+          output.writeBool(2, includeAncestorHeadings_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (chunkSize_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, chunkSize_);
+        }
+        if (includeAncestorHeadings_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeAncestorHeadings_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig other =
+            (com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig) obj;
+
+        if (getChunkSize() != other.getChunkSize()) return false;
+        if (getIncludeAncestorHeadings() != other.getIncludeAncestorHeadings()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CHUNK_SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkSize();
+        hash = (37 * hash) + INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAncestorHeadings());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Serving config for chunking.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentAiProcessorService
+              .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_ChunkingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentAiProcessorService
+              .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_ChunkingConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.class,
+                  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          chunkSize_ = 0;
+          includeAncestorHeadings_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1.DocumentAiProcessorService
+              .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_ChunkingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig build() {
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+            buildPartial() {
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig result =
+              new com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.chunkSize_ = chunkSize_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.includeAncestorHeadings_ = includeAncestorHeadings_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig other) {
+          if (other
+              == com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+                  .getDefaultInstance()) return this;
+          if (other.getChunkSize() != 0) {
+            setChunkSize(other.getChunkSize());
+          }
+          if (other.getIncludeAncestorHeadings() != false) {
+            setIncludeAncestorHeadings(other.getIncludeAncestorHeadings());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    chunkSize_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    includeAncestorHeadings_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int chunkSize_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The chunk sizes to use when splitting documents, in order of
+         * level.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The chunkSize.
+         */
+        @java.lang.Override
+        public int getChunkSize() {
+          return chunkSize_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The chunk sizes to use when splitting documents, in order of
+         * level.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The chunkSize to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChunkSize(int value) {
+
+          chunkSize_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The chunk sizes to use when splitting documents, in order of
+         * level.
+         * </pre>
+         *
+         * <code>int32 chunk_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearChunkSize() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          chunkSize_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean includeAncestorHeadings_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether or not to include ancestor headings when splitting.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The includeAncestorHeadings.
+         */
+        @java.lang.Override
+        public boolean getIncludeAncestorHeadings() {
+          return includeAncestorHeadings_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether or not to include ancestor headings when splitting.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The includeAncestorHeadings to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeAncestorHeadings(boolean value) {
+
+          includeAncestorHeadings_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether or not to include ancestor headings when splitting.
+         * </pre>
+         *
+         * <code>bool include_ancestor_headings = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeAncestorHeadings() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          includeAncestorHeadings_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
+      private static final com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig();
+      }
+
+      public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ChunkingConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ChunkingConfig>() {
+            @java.lang.Override
+            public ChunkingConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ChunkingConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ChunkingConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int CHUNKING_CONFIG_FIELD_NUMBER = 1;
+    private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+        chunkingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the chunkingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunkingConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The chunkingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+        getChunkingConfig() {
+      return chunkingConfig_ == null
+          ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+              .getDefaultInstance()
+          : chunkingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for chunking in layout parser processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder
+        getChunkingConfigOrBuilder() {
+      return chunkingConfig_ == null
+          ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+              .getDefaultInstance()
+          : chunkingConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getChunkingConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getChunkingConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig other =
+          (com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig) obj;
+
+      if (hasChunkingConfig() != other.hasChunkingConfig()) return false;
+      if (hasChunkingConfig()) {
+        if (!getChunkingConfig().equals(other.getChunkingConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasChunkingConfig()) {
+        hash = (37 * hash) + CHUNKING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkingConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serving config for layout parser processor.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.ProcessOptions.LayoutConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.class,
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getChunkingConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        chunkingConfig_ = null;
+        if (chunkingConfigBuilder_ != null) {
+          chunkingConfigBuilder_.dispose();
+          chunkingConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1_ProcessOptions_LayoutConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig build() {
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig buildPartial() {
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig result =
+            new com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chunkingConfig_ =
+              chunkingConfigBuilder_ == null ? chunkingConfig_ : chunkingConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig) {
+          return mergeFrom((com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig other) {
+        if (other
+            == com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance())
+          return this;
+        if (other.hasChunkingConfig()) {
+          mergeChunkingConfig(other.getChunkingConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          chunkingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig,
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder,
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder>
+          chunkingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the chunkingConfig field is set.
+       */
+      public boolean hasChunkingConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The chunkingConfig.
+       */
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+          getChunkingConfig() {
+        if (chunkingConfigBuilder_ == null) {
+          return chunkingConfig_ == null
+              ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+                  .getDefaultInstance()
+              : chunkingConfig_;
+        } else {
+          return chunkingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setChunkingConfig(
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig value) {
+        if (chunkingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunkingConfig_ = value;
+        } else {
+          chunkingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setChunkingConfig(
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder
+              builderForValue) {
+        if (chunkingConfigBuilder_ == null) {
+          chunkingConfig_ = builderForValue.build();
+        } else {
+          chunkingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeChunkingConfig(
+          com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig value) {
+        if (chunkingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && chunkingConfig_ != null
+              && chunkingConfig_
+                  != com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+                      .getDefaultInstance()) {
+            getChunkingConfigBuilder().mergeFrom(value);
+          } else {
+            chunkingConfig_ = value;
+          }
+        } else {
+          chunkingConfigBuilder_.mergeFrom(value);
+        }
+        if (chunkingConfig_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearChunkingConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chunkingConfig_ = null;
+        if (chunkingConfigBuilder_ != null) {
+          chunkingConfigBuilder_.dispose();
+          chunkingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder
+          getChunkingConfigBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getChunkingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder
+          getChunkingConfigOrBuilder() {
+        if (chunkingConfigBuilder_ != null) {
+          return chunkingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return chunkingConfig_ == null
+              ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
+                  .getDefaultInstance()
+              : chunkingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for chunking in layout parser processor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig chunking_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig,
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder,
+              com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder>
+          getChunkingConfigFieldBuilder() {
+        if (chunkingConfigBuilder_ == null) {
+          chunkingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig,
+                  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder,
+                  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig
+                      .ChunkingConfigOrBuilder>(
+                  getChunkingConfig(), getParentForChildren(), isClean());
+          chunkingConfig_ = null;
+        }
+        return chunkingConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
+    private static final com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig();
+    }
+
+    public static com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LayoutConfig> PARSER =
+        new com.google.protobuf.AbstractParser<LayoutConfig>() {
+          @java.lang.Override
+          public LayoutConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<LayoutConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LayoutConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface IndividualPageSelectorOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector)
@@ -1026,6 +2510,66 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         : ocrConfig_;
   }
 
+  public static final int LAYOUT_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig layoutConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the layoutConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLayoutConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The layoutConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getLayoutConfig() {
+    return layoutConfig_ == null
+        ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance()
+        : layoutConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder
+      getLayoutConfigOrBuilder() {
+    return layoutConfig_ == null
+        ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance()
+        : layoutConfig_;
+  }
+
   public static final int SCHEMA_OVERRIDE_FIELD_NUMBER = 8;
   private com.google.cloud.documentai.v1.DocumentSchema schemaOverride_;
   /**
@@ -1047,7 +2591,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSchemaOverride() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -1121,8 +2665,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     if (pageRangeCase_ == 7) {
       output.writeInt32(7, (int) ((java.lang.Integer) pageRange_));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getSchemaOverride());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getLayoutConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1151,8 +2698,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               7, (int) ((java.lang.Integer) pageRange_));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSchemaOverride());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLayoutConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1173,6 +2723,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     if (hasOcrConfig() != other.hasOcrConfig()) return false;
     if (hasOcrConfig()) {
       if (!getOcrConfig().equals(other.getOcrConfig())) return false;
+    }
+    if (hasLayoutConfig() != other.hasLayoutConfig()) return false;
+    if (hasLayoutConfig()) {
+      if (!getLayoutConfig().equals(other.getLayoutConfig())) return false;
     }
     if (hasSchemaOverride() != other.hasSchemaOverride()) return false;
     if (hasSchemaOverride()) {
@@ -1206,6 +2760,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     if (hasOcrConfig()) {
       hash = (37 * hash) + OCR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOcrConfig().hashCode();
+    }
+    if (hasLayoutConfig()) {
+      hash = (37 * hash) + LAYOUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLayoutConfig().hashCode();
     }
     if (hasSchemaOverride()) {
       hash = (37 * hash) + SCHEMA_OVERRIDE_FIELD_NUMBER;
@@ -1368,6 +2926,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getOcrConfigFieldBuilder();
+        getLayoutConfigFieldBuilder();
         getSchemaOverrideFieldBuilder();
       }
     }
@@ -1383,6 +2942,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (ocrConfigBuilder_ != null) {
         ocrConfigBuilder_.dispose();
         ocrConfigBuilder_ = null;
+      }
+      layoutConfig_ = null;
+      if (layoutConfigBuilder_ != null) {
+        layoutConfigBuilder_.dispose();
+        layoutConfigBuilder_ = null;
       }
       schemaOverride_ = null;
       if (schemaOverrideBuilder_ != null) {
@@ -1434,9 +2998,14 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.layoutConfig_ =
+            layoutConfigBuilder_ == null ? layoutConfig_ : layoutConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.schemaOverride_ =
             schemaOverrideBuilder_ == null ? schemaOverride_ : schemaOverrideBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1496,6 +3065,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()) return this;
       if (other.hasOcrConfig()) {
         mergeOcrConfig(other.getOcrConfig());
+      }
+      if (other.hasLayoutConfig()) {
+        mergeLayoutConfig(other.getLayoutConfig());
       }
       if (other.hasSchemaOverride()) {
         mergeSchemaOverride(other.getSchemaOverride());
@@ -1575,9 +3147,15 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getSchemaOverrideFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getLayoutConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2190,6 +3768,225 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       return ocrConfigBuilder_;
     }
 
+    private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig layoutConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig,
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder,
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder>
+        layoutConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the layoutConfig field is set.
+     */
+    public boolean hasLayoutConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The layoutConfig.
+     */
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getLayoutConfig() {
+      if (layoutConfigBuilder_ == null) {
+        return layoutConfig_ == null
+            ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance()
+            : layoutConfig_;
+      } else {
+        return layoutConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLayoutConfig(
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig value) {
+      if (layoutConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        layoutConfig_ = value;
+      } else {
+        layoutConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLayoutConfig(
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder builderForValue) {
+      if (layoutConfigBuilder_ == null) {
+        layoutConfig_ = builderForValue.build();
+      } else {
+        layoutConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLayoutConfig(
+        com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig value) {
+      if (layoutConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && layoutConfig_ != null
+            && layoutConfig_
+                != com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig
+                    .getDefaultInstance()) {
+          getLayoutConfigBuilder().mergeFrom(value);
+        } else {
+          layoutConfig_ = value;
+        }
+      } else {
+        layoutConfigBuilder_.mergeFrom(value);
+      }
+      if (layoutConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLayoutConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      layoutConfig_ = null;
+      if (layoutConfigBuilder_ != null) {
+        layoutConfigBuilder_.dispose();
+        layoutConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder
+        getLayoutConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getLayoutConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder
+        getLayoutConfigOrBuilder() {
+      if (layoutConfigBuilder_ != null) {
+        return layoutConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return layoutConfig_ == null
+            ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance()
+            : layoutConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+     * Returns error if set on other processor types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig,
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder,
+            com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder>
+        getLayoutConfigFieldBuilder() {
+      if (layoutConfigBuilder_ == null) {
+        layoutConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig,
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder,
+                com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder>(
+                getLayoutConfig(), getParentForChildren(), isClean());
+        layoutConfig_ = null;
+      }
+      return layoutConfigBuilder_;
+    }
+
     private com.google.cloud.documentai.v1.DocumentSchema schemaOverride_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1.DocumentSchema,
@@ -2214,7 +4011,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schemaOverride field is set.
      */
     public boolean hasSchemaOverride() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2266,7 +4063,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaOverrideBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2292,7 +4089,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaOverrideBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2313,7 +4110,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchemaOverride(com.google.cloud.documentai.v1.DocumentSchema value) {
       if (schemaOverrideBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && schemaOverride_ != null
             && schemaOverride_
                 != com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()) {
@@ -2325,7 +4122,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         schemaOverrideBuilder_.mergeFrom(value);
       }
       if (schemaOverride_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2346,7 +4143,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSchemaOverride() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       schemaOverride_ = null;
       if (schemaOverrideBuilder_ != null) {
         schemaOverrideBuilder_.dispose();
@@ -2371,7 +4168,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.documentai.v1.DocumentSchema.Builder getSchemaOverrideBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSchemaOverrideFieldBuilder().getBuilder();
     }

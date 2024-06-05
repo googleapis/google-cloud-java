@@ -107,6 +107,48 @@ public interface RagCorpusOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the ragEmbeddingModelConfig field is set.
+   */
+  boolean hasRagEmbeddingModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ragEmbeddingModelConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
+      getRagEmbeddingModelConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this RagCorpus was created.
    * </pre>
    *

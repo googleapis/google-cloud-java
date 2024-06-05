@@ -104,8 +104,8 @@ public interface CreateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The ID to use for the
-   * [Document][google.cloud.discoveryengine.v1alpha.Document], which will
-   * become the final component of the
+   * [Document][google.cloud.discoveryengine.v1alpha.Document], which becomes
+   * the final component of the
    * [Document.name][google.cloud.discoveryengine.v1alpha.Document.name].
    *
    * If the caller does not have permission to create the
@@ -132,8 +132,8 @@ public interface CreateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The ID to use for the
-   * [Document][google.cloud.discoveryengine.v1alpha.Document], which will
-   * become the final component of the
+   * [Document][google.cloud.discoveryengine.v1alpha.Document], which becomes
+   * the final component of the
    * [Document.name][google.cloud.discoveryengine.v1alpha.Document.name].
    *
    * If the caller does not have permission to create the

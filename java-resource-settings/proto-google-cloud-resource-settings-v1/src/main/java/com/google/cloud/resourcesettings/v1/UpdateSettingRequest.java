@@ -68,7 +68,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+   * Required. The setting to update. See
+   * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
    * </pre>
    *
    * <code>
@@ -85,7 +86,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+   * Required. The setting to update. See
+   * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
    * </pre>
    *
    * <code>
@@ -104,7 +106,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+   * Required. The setting to update. See
+   * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
    * </pre>
    *
    * <code>
@@ -490,7 +493,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -506,7 +510,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -528,7 +533,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -552,7 +558,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -574,7 +581,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -603,7 +611,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -624,7 +633,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -640,7 +650,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>
@@ -660,7 +671,8 @@ public final class UpdateSettingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+     * Required. The setting to update. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
      * </pre>
      *
      * <code>

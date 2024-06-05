@@ -544,7 +544,7 @@ public final class DocumentServiceGrpc {
      * <pre>
      * Bulk import of multiple
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-     * processing may be synchronous. Non-existing items will be created.
+     * processing may be synchronous. Non-existing items are created.
      * Note: It is possible for a subset of the
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be
      * successfully updated.
@@ -730,7 +730,7 @@ public final class DocumentServiceGrpc {
      * <pre>
      * Bulk import of multiple
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-     * processing may be synchronous. Non-existing items will be created.
+     * processing may be synchronous. Non-existing items are created.
      * Note: It is possible for a subset of the
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be
      * successfully updated.
@@ -886,7 +886,7 @@ public final class DocumentServiceGrpc {
      * <pre>
      * Bulk import of multiple
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-     * processing may be synchronous. Non-existing items will be created.
+     * processing may be synchronous. Non-existing items are created.
      * Note: It is possible for a subset of the
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be
      * successfully updated.
@@ -1036,7 +1036,7 @@ public final class DocumentServiceGrpc {
      * <pre>
      * Bulk import of multiple
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s. Request
-     * processing may be synchronous. Non-existing items will be created.
+     * processing may be synchronous. Non-existing items are created.
      * Note: It is possible for a subset of the
      * [Document][google.cloud.discoveryengine.v1alpha.Document]s to be
      * successfully updated.

@@ -617,6 +617,562 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DataplexConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not Data Lineage synchronization is enabled for
+     * Vertex Pipelines.
+     * </pre>
+     *
+     * <code>bool enabled_pipelines_lineage = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabledPipelinesLineage.
+     */
+    boolean getEnabledPipelinesLineage();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents Dataplex integration settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig}
+   */
+  public static final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)
+      DataplexConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DataplexConfig.newBuilder() to construct.
+    private DataplexConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataplexConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataplexConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.MetadataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_MetadataStore_DataplexConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.MetadataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_MetadataStore_DataplexConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.class,
+              com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder.class);
+    }
+
+    public static final int ENABLED_PIPELINES_LINEAGE_FIELD_NUMBER = 1;
+    private boolean enabledPipelinesLineage_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not Data Lineage synchronization is enabled for
+     * Vertex Pipelines.
+     * </pre>
+     *
+     * <code>bool enabled_pipelines_lineage = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabledPipelinesLineage.
+     */
+    @java.lang.Override
+    public boolean getEnabledPipelinesLineage() {
+      return enabledPipelinesLineage_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabledPipelinesLineage_ != false) {
+        output.writeBool(1, enabledPipelinesLineage_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabledPipelinesLineage_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabledPipelinesLineage_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig other =
+          (com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig) obj;
+
+      if (getEnabledPipelinesLineage() != other.getEnabledPipelinesLineage()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_PIPELINES_LINEAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabledPipelinesLineage());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents Dataplex integration settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MetadataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_MetadataStore_DataplexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MetadataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_MetadataStore_DataplexConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.class,
+                com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabledPipelinesLineage_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.MetadataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_MetadataStore_DataplexConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig build() {
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig result =
+            new com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabledPipelinesLineage_ = enabledPipelinesLineage_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+                .getDefaultInstance()) return this;
+        if (other.getEnabledPipelinesLineage() != false) {
+          setEnabledPipelinesLineage(other.getEnabledPipelinesLineage());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabledPipelinesLineage_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabledPipelinesLineage_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether or not Data Lineage synchronization is enabled for
+       * Vertex Pipelines.
+       * </pre>
+       *
+       * <code>bool enabled_pipelines_lineage = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabledPipelinesLineage.
+       */
+      @java.lang.Override
+      public boolean getEnabledPipelinesLineage() {
+        return enabledPipelinesLineage_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether or not Data Lineage synchronization is enabled for
+       * Vertex Pipelines.
+       * </pre>
+       *
+       * <code>bool enabled_pipelines_lineage = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enabledPipelinesLineage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabledPipelinesLineage(boolean value) {
+
+        enabledPipelinesLineage_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether or not Data Lineage synchronization is enabled for
+       * Vertex Pipelines.
+       * </pre>
+       *
+       * <code>bool enabled_pipelines_lineage = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabledPipelinesLineage() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabledPipelinesLineage_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataplexConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DataplexConfig>() {
+          @java.lang.Override
+          public DataplexConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataplexConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataplexConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -931,6 +1487,63 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
         : state_;
   }
 
+  public static final int DATAPLEX_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplexConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplexConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig getDataplexConfig() {
+    return dataplexConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.getDefaultInstance()
+        : dataplexConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataplex integration settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder
+      getDataplexConfigOrBuilder() {
+    return dataplexConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.getDefaultInstance()
+        : dataplexConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -963,6 +1576,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getState());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getDataplexConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -989,6 +1605,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getState());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDataplexConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1024,6 +1643,10 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
+    if (hasDataplexConfig() != other.hasDataplexConfig()) return false;
+    if (hasDataplexConfig()) {
+      if (!getDataplexConfig().equals(other.getDataplexConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1054,6 +1677,10 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
+    }
+    if (hasDataplexConfig()) {
+      hash = (37 * hash) + DATAPLEX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplexConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1200,6 +1827,7 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getEncryptionSpecFieldBuilder();
         getStateFieldBuilder();
+        getDataplexConfigFieldBuilder();
       }
     }
 
@@ -1228,6 +1856,11 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
         stateBuilder_ = null;
+      }
+      dataplexConfig_ = null;
+      if (dataplexConfigBuilder_ != null) {
+        dataplexConfigBuilder_.dispose();
+        dataplexConfigBuilder_ = null;
       }
       return this;
     }
@@ -1288,6 +1921,11 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.dataplexConfig_ =
+            dataplexConfigBuilder_ == null ? dataplexConfig_ : dataplexConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1360,6 +1998,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasState()) {
         mergeState(other.getState());
       }
+      if (other.hasDataplexConfig()) {
+        mergeDataplexConfig(other.getDataplexConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1422,6 +2063,12 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getDataplexConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2476,6 +3123,216 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
         state_ = null;
       }
       return stateBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplexConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig,
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder>
+        dataplexConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataplexConfig field is set.
+     */
+    public boolean hasDataplexConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataplexConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig getDataplexConfig() {
+      if (dataplexConfigBuilder_ == null) {
+        return dataplexConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      } else {
+        return dataplexConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplexConfig(
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataplexConfig_ = value;
+      } else {
+        dataplexConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplexConfig(
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder builderForValue) {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfig_ = builderForValue.build();
+      } else {
+        dataplexConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataplexConfig(
+        com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && dataplexConfig_ != null
+            && dataplexConfig_
+                != com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig
+                    .getDefaultInstance()) {
+          getDataplexConfigBuilder().mergeFrom(value);
+        } else {
+          dataplexConfig_ = value;
+        }
+      } else {
+        dataplexConfigBuilder_.mergeFrom(value);
+      }
+      if (dataplexConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataplexConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      dataplexConfig_ = null;
+      if (dataplexConfigBuilder_ != null) {
+        dataplexConfigBuilder_.dispose();
+        dataplexConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder
+        getDataplexConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getDataplexConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder
+        getDataplexConfigOrBuilder() {
+      if (dataplexConfigBuilder_ != null) {
+        return dataplexConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataplexConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataplex integration settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig dataplex_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig,
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder>
+        getDataplexConfigFieldBuilder() {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig,
+                com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetadataStore.DataplexConfigOrBuilder>(
+                getDataplexConfig(), getParentForChildren(), isClean());
+        dataplexConfig_ = null;
+      }
+      return dataplexConfigBuilder_;
     }
 
     @java.lang.Override

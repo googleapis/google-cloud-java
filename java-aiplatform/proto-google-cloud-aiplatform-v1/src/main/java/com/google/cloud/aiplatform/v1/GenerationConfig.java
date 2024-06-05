@@ -423,6 +423,80 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int RESPONSE_SCHEMA_FIELD_NUMBER = 16;
+  private com.google.cloud.aiplatform.v1.Schema responseSchema_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the responseSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponseSchema() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Schema getResponseSchema() {
+    return responseSchema_ == null
+        ? com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()
+        : responseSchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `Schema` object allows the definition of input and output
+   * data types. These types can be objects, but also primitives and arrays.
+   * Represents a select subset of an [OpenAPI 3.0 schema
+   * object](https://spec.openapis.org/oas/v3.0.3#schema).
+   * If set, a compatible response_mime_type must also be set.
+   * Compatible mimetypes:
+   * `application/json`: Schema for JSON response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SchemaOrBuilder getResponseSchemaOrBuilder() {
+    return responseSchema_ == null
+        ? com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()
+        : responseSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -464,6 +538,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, responseMimeType_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(16, getResponseSchema());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -504,6 +581,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, responseMimeType_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getResponseSchema());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -556,6 +636,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           != java.lang.Float.floatToIntBits(other.getFrequencyPenalty())) return false;
     }
     if (!getResponseMimeType().equals(other.getResponseMimeType())) return false;
+    if (hasResponseSchema() != other.hasResponseSchema()) return false;
+    if (hasResponseSchema()) {
+      if (!getResponseSchema().equals(other.getResponseSchema())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -601,6 +685,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + RESPONSE_MIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getResponseMimeType().hashCode();
+    if (hasResponseSchema()) {
+      hash = (37 * hash) + RESPONSE_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseSchema().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -730,10 +818,19 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.aiplatform.v1.GenerationConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getResponseSchemaFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -749,6 +846,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       presencePenalty_ = 0F;
       frequencyPenalty_ = 0F;
       responseMimeType_ = "";
+      responseSchema_ = null;
+      if (responseSchemaBuilder_ != null) {
+        responseSchemaBuilder_.dispose();
+        responseSchemaBuilder_ = null;
+      }
       return this;
     }
 
@@ -820,6 +922,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.responseMimeType_ = responseMimeType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.responseSchema_ =
+            responseSchemaBuilder_ == null ? responseSchema_ : responseSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -906,6 +1013,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasResponseSchema()) {
+        mergeResponseSchema(other.getResponseSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -987,6 +1097,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 130:
+              {
+                input.readMessage(getResponseSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1790,6 +1906,264 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.Schema responseSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Schema,
+            com.google.cloud.aiplatform.v1.Schema.Builder,
+            com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+        responseSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the responseSchema field is set.
+     */
+    public boolean hasResponseSchema() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseSchema.
+     */
+    public com.google.cloud.aiplatform.v1.Schema getResponseSchema() {
+      if (responseSchemaBuilder_ == null) {
+        return responseSchema_ == null
+            ? com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()
+            : responseSchema_;
+      } else {
+        return responseSchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseSchema(com.google.cloud.aiplatform.v1.Schema value) {
+      if (responseSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseSchema_ = value;
+      } else {
+        responseSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseSchema(
+        com.google.cloud.aiplatform.v1.Schema.Builder builderForValue) {
+      if (responseSchemaBuilder_ == null) {
+        responseSchema_ = builderForValue.build();
+      } else {
+        responseSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResponseSchema(com.google.cloud.aiplatform.v1.Schema value) {
+      if (responseSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && responseSchema_ != null
+            && responseSchema_ != com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()) {
+          getResponseSchemaBuilder().mergeFrom(value);
+        } else {
+          responseSchema_ = value;
+        }
+      } else {
+        responseSchemaBuilder_.mergeFrom(value);
+      }
+      if (responseSchema_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResponseSchema() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      responseSchema_ = null;
+      if (responseSchemaBuilder_ != null) {
+        responseSchemaBuilder_.dispose();
+        responseSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Schema.Builder getResponseSchemaBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getResponseSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SchemaOrBuilder getResponseSchemaOrBuilder() {
+      if (responseSchemaBuilder_ != null) {
+        return responseSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return responseSchema_ == null
+            ? com.google.cloud.aiplatform.v1.Schema.getDefaultInstance()
+            : responseSchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Schema` object allows the definition of input and output
+     * data types. These types can be objects, but also primitives and arrays.
+     * Represents a select subset of an [OpenAPI 3.0 schema
+     * object](https://spec.openapis.org/oas/v3.0.3#schema).
+     * If set, a compatible response_mime_type must also be set.
+     * Compatible mimetypes:
+     * `application/json`: Schema for JSON response.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Schema response_schema = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Schema,
+            com.google.cloud.aiplatform.v1.Schema.Builder,
+            com.google.cloud.aiplatform.v1.SchemaOrBuilder>
+        getResponseSchemaFieldBuilder() {
+      if (responseSchemaBuilder_ == null) {
+        responseSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Schema,
+                com.google.cloud.aiplatform.v1.Schema.Builder,
+                com.google.cloud.aiplatform.v1.SchemaOrBuilder>(
+                getResponseSchema(), getParentForChildren(), isClean());
+        responseSchema_ = null;
+      }
+      return responseSchemaBuilder_;
     }
 
     @java.lang.Override

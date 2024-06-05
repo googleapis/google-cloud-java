@@ -27,6 +27,9 @@ grpc-google-analytics-data-v1alpha:0.55.0:0.56.0-SNAPSHOT
 google-cloud-analyticshub:0.41.0:0.42.0-SNAPSHOT
 proto-google-cloud-analyticshub-v1:0.41.0:0.42.0-SNAPSHOT
 grpc-google-cloud-analyticshub-v1:0.41.0:0.42.0-SNAPSHOT
+google-shopping-merchant-promotions:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-promotions-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-promotions-v1beta:0.0.0:0.0.1-SNAPSHOT
 google-cloud-api-gateway:2.44.0:2.45.0-SNAPSHOT
 grpc-google-cloud-api-gateway-v1:2.44.0:2.45.0-SNAPSHOT
 proto-google-cloud-api-gateway-v1:2.44.0:2.45.0-SNAPSHOT
@@ -642,6 +645,9 @@ proto-google-cloud-rapidmigrationassessment-v1:0.27.0:0.28.0-SNAPSHOT
 grpc-google-cloud-rapidmigrationassessment-v1:0.27.0:0.28.0-SNAPSHOT
 proto-google-maps-mapsplatformdatasets-v1:0.33.0:0.34.0-SNAPSHOT
 grpc-google-maps-mapsplatformdatasets-v1:0.33.0:0.34.0-SNAPSHOT
+google-shopping-merchant-accounts:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-discoveryengine-v1:0.40.0:0.41.0-SNAPSHOT
 grpc-google-cloud-discoveryengine-v1:0.40.0:0.41.0-SNAPSHOT
 google-cloud-migrationcenter:0.26.0:0.27.0-SNAPSHOT
@@ -754,6 +760,9 @@ grpc-google-cloud-backupdr-v1:0.3.0:0.4.0-SNAPSHOT
 google-maps-solar:0.3.0:0.4.0-SNAPSHOT
 proto-google-maps-solar-v1:0.3.0:0.4.0-SNAPSHOT
 grpc-google-maps-solar-v1:0.3.0:0.4.0-SNAPSHOT
+google-shopping-merchant-datasources:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-datasources-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-datasources-v1beta:0.0.0:0.0.1-SNAPSHOT
 google-shopping-merchant-conversions:0.3.0:0.4.0-SNAPSHOT
 proto-google-shopping-merchant-conversions-v1beta:0.3.0:0.4.0-SNAPSHOT
 grpc-google-shopping-merchant-conversions-v1beta:0.3.0:0.4.0-SNAPSHOT
@@ -782,3 +791,12 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-networkservices:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-networkservices-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-networkservices-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-privilegedaccessmanager:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-products:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-products-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-products-v1beta:0.0.0:0.0.1-SNAPSHOT

@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceClient;
 import com.google.cloud.discoveryengine.v1beta.GroundingConfigName;
 import com.google.cloud.discoveryengine.v1beta.GroundingFact;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncCheckGrounding {
 
@@ -47,6 +48,7 @@ public class SyncCheckGrounding {
               .setAnswerCandidate("answerCandidate-292402331")
               .addAllFacts(new ArrayList<GroundingFact>())
               .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
     }

@@ -38,6 +38,8 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsRequest;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsResponse;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelMetadata;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelResponse;
@@ -67,7 +69,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of trainCustomModel to 30 seconds:
+ * <p>For example, to set the total timeout of listCustomModels to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -78,10 +80,10 @@ import org.threeten.bp.Duration;
  * SearchTuningServiceStubSettings.Builder searchTuningServiceSettingsBuilder =
  *     SearchTuningServiceStubSettings.newBuilder();
  * searchTuningServiceSettingsBuilder
- *     .trainCustomModelSettings()
+ *     .listCustomModelsSettings()
  *     .setRetrySettings(
  *         searchTuningServiceSettingsBuilder
- *             .trainCustomModelSettings()
+ *             .listCustomModelsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -101,6 +103,8 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
   private final OperationCallSettings<
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationSettings;
+  private final UnaryCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsSettings;
 
   /** Returns the object with the settings used for calls to trainCustomModel. */
   public UnaryCallSettings<TrainCustomModelRequest, Operation> trainCustomModelSettings() {
@@ -112,6 +116,12 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
           TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
       trainCustomModelOperationSettings() {
     return trainCustomModelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomModels. */
+  public UnaryCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsSettings() {
+    return listCustomModelsSettings;
   }
 
   public SearchTuningServiceStub createStub() throws IOException {
@@ -226,6 +236,7 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
 
     trainCustomModelSettings = settingsBuilder.trainCustomModelSettings().build();
     trainCustomModelOperationSettings = settingsBuilder.trainCustomModelOperationSettings().build();
+    listCustomModelsSettings = settingsBuilder.listCustomModelsSettings().build();
   }
 
   /** Builder for SearchTuningServiceStubSettings. */
@@ -237,6 +248,8 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
     private final OperationCallSettings.Builder<
             TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
         trainCustomModelOperationSettings;
+    private final UnaryCallSettings.Builder<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -266,9 +279,11 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
 
       trainCustomModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       trainCustomModelOperationSettings = OperationCallSettings.newBuilder();
+      listCustomModelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(trainCustomModelSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              trainCustomModelSettings, listCustomModelsSettings);
       initDefaults(this);
     }
 
@@ -277,9 +292,11 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
 
       trainCustomModelSettings = settings.trainCustomModelSettings.toBuilder();
       trainCustomModelOperationSettings = settings.trainCustomModelOperationSettings.toBuilder();
+      listCustomModelsSettings = settings.listCustomModelsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(trainCustomModelSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              trainCustomModelSettings, listCustomModelsSettings);
     }
 
     private static Builder createDefault() {
@@ -309,6 +326,11 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
     private static Builder initDefaults(Builder builder) {
       builder
           .trainCustomModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listCustomModelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -365,6 +387,12 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
             TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
         trainCustomModelOperationSettings() {
       return trainCustomModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomModels. */
+    public UnaryCallSettings.Builder<ListCustomModelsRequest, ListCustomModelsResponse>
+        listCustomModelsSettings() {
+      return listCustomModelsSettings;
     }
 
     @Override

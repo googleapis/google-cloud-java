@@ -2629,6 +2629,44 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.discoveryengine.v1beta.Answer.Reference.UnstructuredDocumentInfo
               .ChunkContentOrBuilder
           getChunkContentsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       *
+       * @return Whether the structData field is set.
+       */
+      boolean hasStructData();
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       *
+       * @return The structData.
+       */
+      com.google.protobuf.Struct getStructData();
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       */
+      com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
     }
     /**
      *
@@ -3603,6 +3641,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      private int bitField0_;
       public static final int DOCUMENT_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -3850,6 +3889,55 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         return chunkContents_.get(index);
       }
 
+      public static final int STRUCT_DATA_FIELD_NUMBER = 5;
+      private com.google.protobuf.Struct structData_;
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       *
+       * @return Whether the structData field is set.
+       */
+      @java.lang.Override
+      public boolean hasStructData() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       *
+       * @return The structData.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Struct getStructData() {
+        return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The structured JSON metadata for the document.
+       * It is populated from the struct data from the Chunk in search result.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct struct_data = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+        return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3876,6 +3964,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < chunkContents_.size(); i++) {
           output.writeMessage(4, chunkContents_.get(i));
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(5, getStructData());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -3897,6 +3988,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < chunkContents_.size(); i++) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(4, chunkContents_.get(i));
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStructData());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -3920,6 +4014,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (!getUri().equals(other.getUri())) return false;
         if (!getTitle().equals(other.getTitle())) return false;
         if (!getChunkContentsList().equals(other.getChunkContentsList())) return false;
+        if (hasStructData() != other.hasStructData()) return false;
+        if (hasStructData()) {
+          if (!getStructData().equals(other.getStructData())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -3940,6 +4038,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (getChunkContentsCount() > 0) {
           hash = (37 * hash) + CHUNK_CONTENTS_FIELD_NUMBER;
           hash = (53 * hash) + getChunkContentsList().hashCode();
+        }
+        if (hasStructData()) {
+          hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getStructData().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -4099,10 +4201,20 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.discoveryengine.v1beta.Answer.Reference.UnstructuredDocumentInfo.newBuilder()
-        private Builder() {}
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getChunkContentsFieldBuilder();
+            getStructDataFieldBuilder();
+          }
         }
 
         @java.lang.Override
@@ -4119,6 +4231,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             chunkContentsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000008);
+          structData_ = null;
+          if (structDataBuilder_ != null) {
+            structDataBuilder_.dispose();
+            structDataBuilder_ = null;
+          }
           return this;
         }
 
@@ -4187,6 +4304,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.title_ = title_;
           }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.structData_ =
+                structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -4286,6 +4410,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
+          if (other.hasStructData()) {
+            mergeStructData(other.getStructData());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -4347,6 +4474,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                     }
                     break;
                   } // case 34
+                case 42:
+                  {
+                    input.readMessage(getStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5133,6 +5266,200 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return chunkContentsBuilder_;
         }
 
+        private com.google.protobuf.Struct structData_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            structDataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return Whether the structData field is set.
+         */
+        public boolean hasStructData() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return The structData.
+         */
+        public com.google.protobuf.Struct getStructData() {
+          if (structDataBuilder_ == null) {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          } else {
+            return structDataBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public Builder setStructData(com.google.protobuf.Struct value) {
+          if (structDataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            structData_ = value;
+          } else {
+            structDataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public Builder setStructData(com.google.protobuf.Struct.Builder builderForValue) {
+          if (structDataBuilder_ == null) {
+            structData_ = builderForValue.build();
+          } else {
+            structDataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public Builder mergeStructData(com.google.protobuf.Struct value) {
+          if (structDataBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)
+                && structData_ != null
+                && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+              getStructDataBuilder().mergeFrom(value);
+            } else {
+              structData_ = value;
+            }
+          } else {
+            structDataBuilder_.mergeFrom(value);
+          }
+          if (structData_ != null) {
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public Builder clearStructData() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          structData_ = null;
+          if (structDataBuilder_ != null) {
+            structDataBuilder_.dispose();
+            structDataBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public com.google.protobuf.Struct.Builder getStructDataBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getStructDataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+          if (structDataBuilder_ != null) {
+            return structDataBuilder_.getMessageOrBuilder();
+          } else {
+            return structData_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : structData_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            getStructDataFieldBuilder() {
+          if (structDataBuilder_ == null) {
+            structDataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Struct,
+                    com.google.protobuf.Struct.Builder,
+                    com.google.protobuf.StructOrBuilder>(
+                    getStructData(), getParentForChildren(), isClean());
+            structData_ = null;
+          }
+          return structDataBuilder_;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5475,6 +5802,44 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes for pageIdentifier.
          */
         com.google.protobuf.ByteString getPageIdentifierBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return Whether the structData field is set.
+         */
+        boolean hasStructData();
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return The structData.
+         */
+        com.google.protobuf.Struct getStructData();
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
       }
       /**
        *
@@ -5526,6 +5891,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                       .DocumentMetadata.Builder.class);
         }
 
+        private int bitField0_;
         public static final int DOCUMENT_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -5730,6 +6096,59 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           }
         }
 
+        public static final int STRUCT_DATA_FIELD_NUMBER = 5;
+        private com.google.protobuf.Struct structData_;
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return Whether the structData field is set.
+         */
+        @java.lang.Override
+        public boolean hasStructData() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         *
+         * @return The structData.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Struct getStructData() {
+          return structData_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : structData_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The structured JSON metadata for the document.
+         * It is populated from the struct data from the Chunk in search result.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct struct_data = 5;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+          return structData_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : structData_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -5757,6 +6176,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageIdentifier_);
           }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(5, getStructData());
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -5777,6 +6199,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           }
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageIdentifier_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStructData());
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -5804,6 +6229,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           if (!getUri().equals(other.getUri())) return false;
           if (!getTitle().equals(other.getTitle())) return false;
           if (!getPageIdentifier().equals(other.getPageIdentifier())) return false;
+          if (hasStructData() != other.hasStructData()) return false;
+          if (hasStructData()) {
+            if (!getStructData().equals(other.getStructData())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -5823,6 +6252,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           hash = (53 * hash) + getTitle().hashCode();
           hash = (37 * hash) + PAGE_IDENTIFIER_FIELD_NUMBER;
           hash = (53 * hash) + getPageIdentifier().hashCode();
+          if (hasStructData()) {
+            hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
+            hash = (53 * hash) + getStructData().hashCode();
+          }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -5983,10 +6416,19 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.discoveryengine.v1beta.Answer.Reference.ChunkInfo.DocumentMetadata.newBuilder()
-          private Builder() {}
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getStructDataFieldBuilder();
+            }
           }
 
           @java.lang.Override
@@ -5997,6 +6439,11 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             uri_ = "";
             title_ = "";
             pageIdentifier_ = "";
+            structData_ = null;
+            if (structDataBuilder_ != null) {
+              structDataBuilder_.dispose();
+              structDataBuilder_ = null;
+            }
             return this;
           }
 
@@ -6054,6 +6501,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             if (((from_bitField0_ & 0x00000008) != 0)) {
               result.pageIdentifier_ = pageIdentifier_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.structData_ =
+                  structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -6133,6 +6587,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000008;
               onChanged();
             }
+            if (other.hasStructData()) {
+              mergeStructData(other.getStructData());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -6183,6 +6640,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                       bitField0_ |= 0x00000008;
                       break;
                     } // case 34
+                  case 42:
+                    {
+                      input.readMessage(
+                          getStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000010;
+                      break;
+                    } // case 42
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6624,6 +7088,200 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000008;
             onChanged();
             return this;
+          }
+
+          private com.google.protobuf.Struct structData_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>
+              structDataBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           *
+           * @return Whether the structData field is set.
+           */
+          public boolean hasStructData() {
+            return ((bitField0_ & 0x00000010) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           *
+           * @return The structData.
+           */
+          public com.google.protobuf.Struct getStructData() {
+            if (structDataBuilder_ == null) {
+              return structData_ == null
+                  ? com.google.protobuf.Struct.getDefaultInstance()
+                  : structData_;
+            } else {
+              return structDataBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public Builder setStructData(com.google.protobuf.Struct value) {
+            if (structDataBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              structData_ = value;
+            } else {
+              structDataBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public Builder setStructData(com.google.protobuf.Struct.Builder builderForValue) {
+            if (structDataBuilder_ == null) {
+              structData_ = builderForValue.build();
+            } else {
+              structDataBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public Builder mergeStructData(com.google.protobuf.Struct value) {
+            if (structDataBuilder_ == null) {
+              if (((bitField0_ & 0x00000010) != 0)
+                  && structData_ != null
+                  && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+                getStructDataBuilder().mergeFrom(value);
+              } else {
+                structData_ = value;
+              }
+            } else {
+              structDataBuilder_.mergeFrom(value);
+            }
+            if (structData_ != null) {
+              bitField0_ |= 0x00000010;
+              onChanged();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public Builder clearStructData() {
+            bitField0_ = (bitField0_ & ~0x00000010);
+            structData_ = null;
+            if (structDataBuilder_ != null) {
+              structDataBuilder_.dispose();
+              structDataBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public com.google.protobuf.Struct.Builder getStructDataBuilder() {
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return getStructDataFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          public com.google.protobuf.StructOrBuilder getStructDataOrBuilder() {
+            if (structDataBuilder_ != null) {
+              return structDataBuilder_.getMessageOrBuilder();
+            } else {
+              return structData_ == null
+                  ? com.google.protobuf.Struct.getDefaultInstance()
+                  : structData_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The structured JSON metadata for the document.
+           * It is populated from the struct data from the Chunk in search result.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct struct_data = 5;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>
+              getStructDataFieldBuilder() {
+            if (structDataBuilder_ == null) {
+              structDataBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.Struct,
+                      com.google.protobuf.Struct.Builder,
+                      com.google.protobuf.StructOrBuilder>(
+                      getStructData(), getParentForChildren(), isClean());
+              structData_ = null;
+            }
+            return structDataBuilder_;
           }
 
           @java.lang.Override
@@ -20664,7 +21322,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -20688,7 +21346,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -22183,7 +22841,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -22206,7 +22864,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -22229,7 +22887,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -22251,7 +22909,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -22269,7 +22927,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/&#42;&#47;answers/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

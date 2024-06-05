@@ -137,7 +137,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -153,7 +153,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -172,7 +172,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -188,7 +188,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -208,7 +208,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -418,7 +418,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -446,7 +446,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -465,7 +465,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -492,7 +492,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Additional Document metadata / annotations.
+     * Additional Document metadata or annotations.
      *
      * Possible values:
      *
@@ -1352,7 +1352,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1380,7 +1380,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1399,7 +1399,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1426,7 +1426,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1459,7 +1459,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1487,7 +1487,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1513,7 +1513,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *
@@ -1540,7 +1540,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Additional Document metadata / annotations.
+       * Additional Document metadata or annotations.
        *
        * Possible values:
        *

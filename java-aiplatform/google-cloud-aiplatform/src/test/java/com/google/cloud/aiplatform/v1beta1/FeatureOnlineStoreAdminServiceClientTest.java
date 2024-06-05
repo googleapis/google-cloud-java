@@ -125,6 +125,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -190,6 +191,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -255,6 +257,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -305,6 +308,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -443,6 +447,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setDedicatedServingEndpoint(
                 FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

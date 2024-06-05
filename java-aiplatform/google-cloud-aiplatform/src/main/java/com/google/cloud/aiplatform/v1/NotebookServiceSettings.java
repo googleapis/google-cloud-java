@@ -133,6 +133,13 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
         .deleteNotebookRuntimeTemplateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateNotebookRuntimeTemplate. */
+  public UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .updateNotebookRuntimeTemplateSettings();
+  }
+
   /** Returns the object with the settings used for calls to assignNotebookRuntime. */
   public UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings() {
@@ -370,6 +377,12 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
         deleteNotebookRuntimeTemplateOperationSettings() {
       return getStubSettingsBuilder().deleteNotebookRuntimeTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNotebookRuntimeTemplate. */
+    public UnaryCallSettings.Builder<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings() {
+      return getStubSettingsBuilder().updateNotebookRuntimeTemplateSettings();
     }
 
     /** Returns the builder for the settings used for calls to assignNotebookRuntime. */

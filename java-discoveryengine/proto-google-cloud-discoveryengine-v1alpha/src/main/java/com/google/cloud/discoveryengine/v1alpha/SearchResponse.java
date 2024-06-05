@@ -109,7 +109,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -122,7 +122,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -135,7 +135,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -368,7 +368,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -384,7 +384,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -402,7 +402,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The document data snippet in the search response. Only fields that are
-     * marked as retrievable are populated.
+     * marked as `retrievable` are populated.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1211,7 +1211,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1226,7 +1226,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1247,7 +1247,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1270,7 +1270,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1291,7 +1291,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1320,7 +1320,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1340,7 +1340,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1355,7 +1355,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1374,7 +1374,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The document data snippet in the search response. Only fields that are
-       * marked as retrievable are populated.
+       * marked as `retrievable` are populated.
        * </pre>
        *
        * <code>.google.cloud.discoveryengine.v1alpha.Document document = 2;</code>
@@ -1935,7 +1935,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The key for this facet. E.g., "colors" or "price". It matches
+     * The key for this facet. For example, `"colors"` or `"price"`. It matches
      * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
      * </pre>
      *
@@ -1948,7 +1948,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The key for this facet. E.g., "colors" or "price". It matches
+     * The key for this facet. For example, `"colors"` or `"price"`. It matches
      * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
      * </pre>
      *
@@ -3371,7 +3371,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The key for this facet. E.g., "colors" or "price". It matches
+     * The key for this facet. For example, `"colors"` or `"price"`. It matches
      * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
      * </pre>
      *
@@ -3395,7 +3395,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The key for this facet. E.g., "colors" or "price". It matches
+     * The key for this facet. For example, `"colors"` or `"price"`. It matches
      * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
      * </pre>
      *
@@ -3973,7 +3973,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The key for this facet. E.g., "colors" or "price". It matches
+       * The key for this facet. For example, `"colors"` or `"price"`. It matches
        * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
        * </pre>
        *
@@ -3996,7 +3996,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The key for this facet. E.g., "colors" or "price". It matches
+       * The key for this facet. For example, `"colors"` or `"price"`. It matches
        * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
        * </pre>
        *
@@ -4019,7 +4019,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The key for this facet. E.g., "colors" or "price". It matches
+       * The key for this facet. For example, `"colors"` or `"price"`. It matches
        * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
        * </pre>
        *
@@ -4041,7 +4041,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The key for this facet. E.g., "colors" or "price". It matches
+       * The key for this facet. For example, `"colors"` or `"price"`. It matches
        * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
        * </pre>
        *
@@ -4059,7 +4059,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The key for this facet. E.g., "colors" or "price". It matches
+       * The key for this facet. For example, `"colors"` or `"price"`. It matches
        * [SearchRequest.FacetSpec.FacetKey.key][google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.FacetKey.key].
        * </pre>
        *
@@ -4801,7 +4801,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute key used to refine the results e.g. 'movie_type'.
+       * Attribute key used to refine the results. For example, `"movie_type"`.
        * </pre>
        *
        * <code>string attribute_key = 1;</code>
@@ -4813,7 +4813,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute key used to refine the results e.g. 'movie_type'.
+       * Attribute key used to refine the results. For example, `"movie_type"`.
        * </pre>
        *
        * <code>string attribute_key = 1;</code>
@@ -4826,7 +4826,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute value used to refine the results e.g. 'drama'.
+       * Attribute value used to refine the results. For example, `"drama"`.
        * </pre>
        *
        * <code>string attribute_value = 2;</code>
@@ -4838,7 +4838,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute value used to refine the results e.g. 'drama'.
+       * Attribute value used to refine the results. For example, `"drama"`.
        * </pre>
        *
        * <code>string attribute_value = 2;</code>
@@ -4903,7 +4903,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute key used to refine the results e.g. 'movie_type'.
+       * Attribute key used to refine the results. For example, `"movie_type"`.
        * </pre>
        *
        * <code>string attribute_key = 1;</code>
@@ -4926,7 +4926,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute key used to refine the results e.g. 'movie_type'.
+       * Attribute key used to refine the results. For example, `"movie_type"`.
        * </pre>
        *
        * <code>string attribute_key = 1;</code>
@@ -4954,7 +4954,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute value used to refine the results e.g. 'drama'.
+       * Attribute value used to refine the results. For example, `"drama"`.
        * </pre>
        *
        * <code>string attribute_value = 2;</code>
@@ -4977,7 +4977,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Attribute value used to refine the results e.g. 'drama'.
+       * Attribute value used to refine the results. For example, `"drama"`.
        * </pre>
        *
        * <code>string attribute_value = 2;</code>
@@ -5432,7 +5432,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute key used to refine the results e.g. 'movie_type'.
+         * Attribute key used to refine the results. For example, `"movie_type"`.
          * </pre>
          *
          * <code>string attribute_key = 1;</code>
@@ -5454,7 +5454,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute key used to refine the results e.g. 'movie_type'.
+         * Attribute key used to refine the results. For example, `"movie_type"`.
          * </pre>
          *
          * <code>string attribute_key = 1;</code>
@@ -5476,7 +5476,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute key used to refine the results e.g. 'movie_type'.
+         * Attribute key used to refine the results. For example, `"movie_type"`.
          * </pre>
          *
          * <code>string attribute_key = 1;</code>
@@ -5497,7 +5497,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute key used to refine the results e.g. 'movie_type'.
+         * Attribute key used to refine the results. For example, `"movie_type"`.
          * </pre>
          *
          * <code>string attribute_key = 1;</code>
@@ -5514,7 +5514,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute key used to refine the results e.g. 'movie_type'.
+         * Attribute key used to refine the results. For example, `"movie_type"`.
          * </pre>
          *
          * <code>string attribute_key = 1;</code>
@@ -5538,7 +5538,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute value used to refine the results e.g. 'drama'.
+         * Attribute value used to refine the results. For example, `"drama"`.
          * </pre>
          *
          * <code>string attribute_value = 2;</code>
@@ -5560,7 +5560,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute value used to refine the results e.g. 'drama'.
+         * Attribute value used to refine the results. For example, `"drama"`.
          * </pre>
          *
          * <code>string attribute_value = 2;</code>
@@ -5582,7 +5582,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute value used to refine the results e.g. 'drama'.
+         * Attribute value used to refine the results. For example, `"drama"`.
          * </pre>
          *
          * <code>string attribute_value = 2;</code>
@@ -5603,7 +5603,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute value used to refine the results e.g. 'drama'.
+         * Attribute value used to refine the results. For example, `"drama"`.
          * </pre>
          *
          * <code>string attribute_value = 2;</code>
@@ -5620,7 +5620,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Attribute value used to refine the results e.g. 'drama'.
+         * Attribute value used to refine the results. For example, `"drama"`.
          * </pre>
          *
          * <code>string attribute_value = 2;</code>
@@ -7222,7 +7222,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Summary of the top N search result specified by the summary spec.
+   * Summary of the top N search results specified by the summary spec.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1alpha.SearchResponse.Summary}
@@ -16700,7 +16700,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Summary of the top N search result specified by the summary spec.
+     * Summary of the top N search results specified by the summary spec.
      * </pre>
      *
      * Protobuf type {@code google.cloud.discoveryengine.v1alpha.SearchResponse.Summary}

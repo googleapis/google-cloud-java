@@ -176,6 +176,62 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         : resourceManagerTags_;
   }
 
+  public static final int NODE_KUBELET_CONFIG_FIELD_NUMBER = 3;
+  private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   *
+   * @return Whether the nodeKubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeKubeletConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   *
+   * @return The nodeKubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig() {
+    return nodeKubeletConfig_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+        : nodeKubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder() {
+    return nodeKubeletConfig_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+        : nodeKubeletConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -196,6 +252,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getResourceManagerTags());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getNodeKubeletConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +269,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResourceManagerTags());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getNodeKubeletConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -235,6 +297,10 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (hasResourceManagerTags()) {
       if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
     }
+    if (hasNodeKubeletConfig() != other.hasNodeKubeletConfig()) return false;
+    if (hasNodeKubeletConfig()) {
+      if (!getNodeKubeletConfig().equals(other.getNodeKubeletConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +319,10 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (hasResourceManagerTags()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceManagerTags().hashCode();
+    }
+    if (hasNodeKubeletConfig()) {
+      hash = (37 * hash) + NODE_KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeKubeletConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -397,6 +467,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNetworkTagsFieldBuilder();
         getResourceManagerTagsFieldBuilder();
+        getNodeKubeletConfigFieldBuilder();
       }
     }
 
@@ -413,6 +484,11 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
         resourceManagerTagsBuilder_ = null;
+      }
+      nodeKubeletConfig_ = null;
+      if (nodeKubeletConfigBuilder_ != null) {
+        nodeKubeletConfigBuilder_.dispose();
+        nodeKubeletConfigBuilder_ = null;
       }
       return this;
     }
@@ -462,6 +538,13 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodeKubeletConfig_ =
+            nodeKubeletConfigBuilder_ == null
+                ? nodeKubeletConfig_
+                : nodeKubeletConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -518,6 +601,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       if (other.hasResourceManagerTags()) {
         mergeResourceManagerTags(other.getResourceManagerTags());
       }
+      if (other.hasNodeKubeletConfig()) {
+        mergeNodeKubeletConfig(other.getNodeKubeletConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -557,6 +643,13 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getNodeKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -986,6 +1079,211 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         resourceManagerTags_ = null;
       }
       return resourceManagerTagsBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeKubeletConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
+        nodeKubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     *
+     * @return Whether the nodeKubeletConfig field is set.
+     */
+    public boolean hasNodeKubeletConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     *
+     * @return The nodeKubeletConfig.
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig getNodeKubeletConfig() {
+      if (nodeKubeletConfigBuilder_ == null) {
+        return nodeKubeletConfig_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+            : nodeKubeletConfig_;
+      } else {
+        return nodeKubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public Builder setNodeKubeletConfig(com.google.container.v1beta1.NodeKubeletConfig value) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeKubeletConfig_ = value;
+      } else {
+        nodeKubeletConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public Builder setNodeKubeletConfig(
+        com.google.container.v1beta1.NodeKubeletConfig.Builder builderForValue) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        nodeKubeletConfig_ = builderForValue.build();
+      } else {
+        nodeKubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public Builder mergeNodeKubeletConfig(com.google.container.v1beta1.NodeKubeletConfig value) {
+      if (nodeKubeletConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && nodeKubeletConfig_ != null
+            && nodeKubeletConfig_
+                != com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()) {
+          getNodeKubeletConfigBuilder().mergeFrom(value);
+        } else {
+          nodeKubeletConfig_ = value;
+        }
+      } else {
+        nodeKubeletConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeKubeletConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public Builder clearNodeKubeletConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      nodeKubeletConfig_ = null;
+      if (nodeKubeletConfigBuilder_ != null) {
+        nodeKubeletConfigBuilder_.dispose();
+        nodeKubeletConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig.Builder getNodeKubeletConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getNodeKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder() {
+      if (nodeKubeletConfigBuilder_ != null) {
+        return nodeKubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeKubeletConfig_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
+            : nodeKubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
+     *
+     * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodeKubeletConfig node_kubelet_config = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodeKubeletConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
+        getNodeKubeletConfigFieldBuilder() {
+      if (nodeKubeletConfigBuilder_ == null) {
+        nodeKubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodeKubeletConfig,
+                com.google.container.v1beta1.NodeKubeletConfig.Builder,
+                com.google.container.v1beta1.NodeKubeletConfigOrBuilder>(
+                getNodeKubeletConfig(), getParentForChildren(), isClean());
+        nodeKubeletConfig_ = null;
+      }
+      return nodeKubeletConfigBuilder_;
     }
 
     @java.lang.Override

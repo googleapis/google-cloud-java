@@ -31,6 +31,8 @@ import com.google.cloud.aiplatform.v1beta1.GetReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngine;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -82,6 +84,17 @@ public abstract class ReasoningEngineServiceStub implements BackgroundResource {
   public UnaryCallable<ListReasoningEnginesRequest, ListReasoningEnginesResponse>
       listReasoningEnginesCallable() {
     throw new UnsupportedOperationException("Not implemented: listReasoningEnginesCallable()");
+  }
+
+  public OperationCallable<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateReasoningEngineOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateReasoningEngineRequest, Operation> updateReasoningEngineCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateReasoningEngineCallable()");
   }
 
   public OperationCallable<DeleteReasoningEngineRequest, Empty, DeleteOperationMetadata>

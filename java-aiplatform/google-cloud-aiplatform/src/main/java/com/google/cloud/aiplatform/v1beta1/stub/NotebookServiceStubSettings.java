@@ -49,6 +49,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookExecutionJobRequest;
@@ -70,6 +72,7 @@ import com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeResponse;
@@ -156,6 +159,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
   private final OperationCallSettings<
           DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
       deleteNotebookRuntimeTemplateOperationSettings;
+  private final UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings;
   private final UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings;
   private final OperationCallSettings<
@@ -186,6 +191,13 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           StartNotebookRuntimeResponse,
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationSettings;
+  private final UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobSettings;
+  private final OperationCallSettings<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationSettings;
   private final UnaryCallSettings<GetNotebookExecutionJobRequest, NotebookExecutionJob>
       getNotebookExecutionJobSettings;
   private final PagedCallSettings<
@@ -523,6 +535,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return deleteNotebookRuntimeTemplateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateNotebookRuntimeTemplate. */
+  public UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings() {
+    return updateNotebookRuntimeTemplateSettings;
+  }
+
   /** Returns the object with the settings used for calls to assignNotebookRuntime. */
   public UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings() {
@@ -590,6 +608,21 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           StartNotebookRuntimeOperationMetadata>
       startNotebookRuntimeOperationSettings() {
     return startNotebookRuntimeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobSettings() {
+    return createNotebookExecutionJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public OperationCallSettings<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationSettings() {
+    return createNotebookExecutionJobOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getNotebookExecutionJob. */
@@ -738,6 +771,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
         settingsBuilder.deleteNotebookRuntimeTemplateSettings().build();
     deleteNotebookRuntimeTemplateOperationSettings =
         settingsBuilder.deleteNotebookRuntimeTemplateOperationSettings().build();
+    updateNotebookRuntimeTemplateSettings =
+        settingsBuilder.updateNotebookRuntimeTemplateSettings().build();
     assignNotebookRuntimeSettings = settingsBuilder.assignNotebookRuntimeSettings().build();
     assignNotebookRuntimeOperationSettings =
         settingsBuilder.assignNotebookRuntimeOperationSettings().build();
@@ -752,6 +787,10 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     startNotebookRuntimeSettings = settingsBuilder.startNotebookRuntimeSettings().build();
     startNotebookRuntimeOperationSettings =
         settingsBuilder.startNotebookRuntimeOperationSettings().build();
+    createNotebookExecutionJobSettings =
+        settingsBuilder.createNotebookExecutionJobSettings().build();
+    createNotebookExecutionJobOperationSettings =
+        settingsBuilder.createNotebookExecutionJobOperationSettings().build();
     getNotebookExecutionJobSettings = settingsBuilder.getNotebookExecutionJobSettings().build();
     listNotebookExecutionJobsSettings = settingsBuilder.listNotebookExecutionJobsSettings().build();
     deleteNotebookExecutionJobSettings =
@@ -788,6 +827,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     private final OperationCallSettings.Builder<
             DeleteNotebookRuntimeTemplateRequest, Empty, DeleteOperationMetadata>
         deleteNotebookRuntimeTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings;
     private final UnaryCallSettings.Builder<AssignNotebookRuntimeRequest, Operation>
         assignNotebookRuntimeSettings;
     private final OperationCallSettings.Builder<
@@ -819,6 +861,13 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
             StartNotebookRuntimeResponse,
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings;
+    private final UnaryCallSettings.Builder<CreateNotebookExecutionJobRequest, Operation>
+        createNotebookExecutionJobSettings;
+    private final OperationCallSettings.Builder<
+            CreateNotebookExecutionJobRequest,
+            NotebookExecutionJob,
+            CreateNotebookExecutionJobOperationMetadata>
+        createNotebookExecutionJobOperationSettings;
     private final UnaryCallSettings.Builder<GetNotebookExecutionJobRequest, NotebookExecutionJob>
         getNotebookExecutionJobSettings;
     private final PagedCallSettings.Builder<
@@ -873,6 +922,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           PagedCallSettings.newBuilder(LIST_NOTEBOOK_RUNTIME_TEMPLATES_PAGE_STR_FACT);
       deleteNotebookRuntimeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNotebookRuntimeTemplateOperationSettings = OperationCallSettings.newBuilder();
+      updateNotebookRuntimeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       assignNotebookRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       assignNotebookRuntimeOperationSettings = OperationCallSettings.newBuilder();
       getNotebookRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -884,6 +934,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       upgradeNotebookRuntimeOperationSettings = OperationCallSettings.newBuilder();
       startNotebookRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       startNotebookRuntimeOperationSettings = OperationCallSettings.newBuilder();
+      createNotebookExecutionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createNotebookExecutionJobOperationSettings = OperationCallSettings.newBuilder();
       getNotebookExecutionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listNotebookExecutionJobsSettings =
           PagedCallSettings.newBuilder(LIST_NOTEBOOK_EXECUTION_JOBS_PAGE_STR_FACT);
@@ -901,12 +953,14 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getNotebookRuntimeTemplateSettings,
               listNotebookRuntimeTemplatesSettings,
               deleteNotebookRuntimeTemplateSettings,
+              updateNotebookRuntimeTemplateSettings,
               assignNotebookRuntimeSettings,
               getNotebookRuntimeSettings,
               listNotebookRuntimesSettings,
               deleteNotebookRuntimeSettings,
               upgradeNotebookRuntimeSettings,
               startNotebookRuntimeSettings,
+              createNotebookExecutionJobSettings,
               getNotebookExecutionJobSettings,
               listNotebookExecutionJobsSettings,
               deleteNotebookExecutionJobSettings,
@@ -932,6 +986,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           settings.deleteNotebookRuntimeTemplateSettings.toBuilder();
       deleteNotebookRuntimeTemplateOperationSettings =
           settings.deleteNotebookRuntimeTemplateOperationSettings.toBuilder();
+      updateNotebookRuntimeTemplateSettings =
+          settings.updateNotebookRuntimeTemplateSettings.toBuilder();
       assignNotebookRuntimeSettings = settings.assignNotebookRuntimeSettings.toBuilder();
       assignNotebookRuntimeOperationSettings =
           settings.assignNotebookRuntimeOperationSettings.toBuilder();
@@ -946,6 +1002,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       startNotebookRuntimeSettings = settings.startNotebookRuntimeSettings.toBuilder();
       startNotebookRuntimeOperationSettings =
           settings.startNotebookRuntimeOperationSettings.toBuilder();
+      createNotebookExecutionJobSettings = settings.createNotebookExecutionJobSettings.toBuilder();
+      createNotebookExecutionJobOperationSettings =
+          settings.createNotebookExecutionJobOperationSettings.toBuilder();
       getNotebookExecutionJobSettings = settings.getNotebookExecutionJobSettings.toBuilder();
       listNotebookExecutionJobsSettings = settings.listNotebookExecutionJobsSettings.toBuilder();
       deleteNotebookExecutionJobSettings = settings.deleteNotebookExecutionJobSettings.toBuilder();
@@ -963,12 +1022,14 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getNotebookRuntimeTemplateSettings,
               listNotebookRuntimeTemplatesSettings,
               deleteNotebookRuntimeTemplateSettings,
+              updateNotebookRuntimeTemplateSettings,
               assignNotebookRuntimeSettings,
               getNotebookRuntimeSettings,
               listNotebookRuntimesSettings,
               deleteNotebookRuntimeSettings,
               upgradeNotebookRuntimeSettings,
               startNotebookRuntimeSettings,
+              createNotebookExecutionJobSettings,
               getNotebookExecutionJobSettings,
               listNotebookExecutionJobsSettings,
               deleteNotebookExecutionJobSettings,
@@ -1013,6 +1074,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .updateNotebookRuntimeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .assignNotebookRuntimeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1039,6 +1105,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
 
       builder
           .startNotebookRuntimeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createNotebookExecutionJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1235,6 +1306,32 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
                       .build()));
 
       builder
+          .createNotebookExecutionJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateNotebookExecutionJobRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(NotebookExecutionJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateNotebookExecutionJobOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteNotebookExecutionJobOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1320,6 +1417,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       return deleteNotebookRuntimeTemplateOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateNotebookRuntimeTemplate. */
+    public UnaryCallSettings.Builder<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings() {
+      return updateNotebookRuntimeTemplateSettings;
+    }
+
     /** Returns the builder for the settings used for calls to assignNotebookRuntime. */
     public UnaryCallSettings.Builder<AssignNotebookRuntimeRequest, Operation>
         assignNotebookRuntimeSettings() {
@@ -1389,6 +1492,21 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return startNotebookRuntimeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<CreateNotebookExecutionJobRequest, Operation>
+        createNotebookExecutionJobSettings() {
+      return createNotebookExecutionJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            CreateNotebookExecutionJobRequest,
+            NotebookExecutionJob,
+            CreateNotebookExecutionJobOperationMetadata>
+        createNotebookExecutionJobOperationSettings() {
+      return createNotebookExecutionJobOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getNotebookExecutionJob. */

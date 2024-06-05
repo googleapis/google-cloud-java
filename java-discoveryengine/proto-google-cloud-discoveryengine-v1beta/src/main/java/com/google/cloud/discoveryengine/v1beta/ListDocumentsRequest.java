@@ -145,7 +145,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to 100. The maximum allowed value is
-   * 1000. Values above 1000 will be coerced to 1000.
+   * 1000. Values above 1000 are set to 1000.
    *
    * If this field is negative, an `INVALID_ARGUMENT` error is returned.
    * </pre>
@@ -785,7 +785,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to 100. The maximum allowed value is
-     * 1000. Values above 1000 will be coerced to 1000.
+     * 1000. Values above 1000 are set to 1000.
      *
      * If this field is negative, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -804,7 +804,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to 100. The maximum allowed value is
-     * 1000. Values above 1000 will be coerced to 1000.
+     * 1000. Values above 1000 are set to 1000.
      *
      * If this field is negative, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -827,7 +827,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to 100. The maximum allowed value is
-     * 1000. Values above 1000 will be coerced to 1000.
+     * 1000. Values above 1000 are set to 1000.
      *
      * If this field is negative, an `INVALID_ARGUMENT` error is returned.
      * </pre>

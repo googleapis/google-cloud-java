@@ -225,6 +225,27 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
   }
 
   @Override
+  public void updateDatasetVersion(
+      UpdateDatasetVersionRequest request, StreamObserver<DatasetVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DatasetVersion) {
+      requests.add(request);
+      responseObserver.onNext(((DatasetVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDatasetVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DatasetVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteDatasetVersion(
       DeleteDatasetVersionRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

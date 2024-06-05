@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.container.v1beta1.AcceleratorConfig;
 import com.google.container.v1beta1.AddonsConfig;
 import com.google.container.v1beta1.AuthenticatorGroupsConfig;
 import com.google.container.v1beta1.Autopilot;
@@ -41,7 +42,9 @@ import com.google.container.v1beta1.ClusterTelemetry;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
+import com.google.container.v1beta1.CompliancePostureConfig;
 import com.google.container.v1beta1.ConfidentialNodes;
+import com.google.container.v1beta1.ContainerdConfig;
 import com.google.container.v1beta1.CostManagementConfig;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
@@ -318,6 +321,9 @@ public class ClusterManagerClientTest {
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .setSecretManagerConfig(SecretManagerConfig.newBuilder().build())
+            .setCompliancePostureConfig(CompliancePostureConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -518,10 +524,12 @@ public class ClusterManagerClientTest {
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
             .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+            .addAllAccelerators(new ArrayList<AcceleratorConfig>())
             .setMachineType("machineType-218117087")
             .setDiskType("diskType279771767")
             .setDiskSizeGb(-757478089)
             .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+            .setContainerdConfig(ContainerdConfig.newBuilder().build())
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .build();
 
@@ -557,10 +565,12 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
     Assert.assertEquals(request.getWindowsNodeConfig(), actualRequest.getWindowsNodeConfig());
+    Assert.assertEquals(request.getAcceleratorsList(), actualRequest.getAcceleratorsList());
     Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
     Assert.assertEquals(request.getDiskType(), actualRequest.getDiskType());
     Assert.assertEquals(request.getDiskSizeGb(), actualRequest.getDiskSizeGb());
     Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
+    Assert.assertEquals(request.getContainerdConfig(), actualRequest.getContainerdConfig());
     Assert.assertEquals(request.getQueuedProvisioning(), actualRequest.getQueuedProvisioning());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -600,10 +610,12 @@ public class ClusterManagerClientTest {
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+              .addAllAccelerators(new ArrayList<AcceleratorConfig>())
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+              .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
               .build();
       client.updateNodePool(request);

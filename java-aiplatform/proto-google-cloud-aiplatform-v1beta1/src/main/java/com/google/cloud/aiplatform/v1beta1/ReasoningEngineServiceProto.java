@@ -41,6 +41,14 @@ public final class ReasoningEngineServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GetReasoningEngineRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_fieldAccessorTable;
@@ -70,60 +78,76 @@ public final class ReasoningEngineServiceProto {
           + "beta1/operation.proto\0326google/cloud/aipl"
           + "atform/v1beta1/reasoning_engine.proto\032#g"
           + "oogle/longrunning/operations.proto\032\033goog"
-          + "le/protobuf/empty.proto\"\252\001\n\034CreateReason"
-          + "ingEngineRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#"
-          + "\n!locations.googleapis.com/Location\022O\n\020r"
-          + "easoning_engine\030\002 \001(\01320.google.cloud.aip"
-          + "latform.v1beta1.ReasoningEngineB\003\340A\002\"}\n&"
-          + "CreateReasoningEngineOperationMetadata\022S"
-          + "\n\020generic_metadata\030\001 \001(\01329.google.cloud."
-          + "aiplatform.v1beta1.GenericOperationMetad"
-          + "ata\"\\\n\031GetReasoningEngineRequest\022?\n\004name"
-          + "\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.googleapis.co"
-          + "m/ReasoningEngine\"\236\001\n\033ListReasoningEngin"
-          + "esRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locat"
-          + "ions.googleapis.com/Location\022\023\n\006filter\030\002"
-          + " \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npag"
-          + "e_token\030\004 \001(\tB\003\340A\001\"\204\001\n\034ListReasoningEngi"
-          + "nesResponse\022K\n\021reasoning_engines\030\001 \003(\01320"
-          + ".google.cloud.aiplatform.v1beta1.Reasoni"
-          + "ngEngine\022\027\n\017next_page_token\030\002 \001(\t\"_\n\034Del"
-          + "eteReasoningEngineRequest\022?\n\004name\030\001 \001(\tB"
-          + "1\340A\002\372A+\n)aiplatform.googleapis.com/Reaso"
-          + "ningEngine2\261\010\n\026ReasoningEngineService\022\241\002"
-          + "\n\025CreateReasoningEngine\022=.google.cloud.a"
-          + "iplatform.v1beta1.CreateReasoningEngineR"
-          + "equest\032\035.google.longrunning.Operation\"\251\001"
-          + "\312A9\n\017ReasoningEngine\022&CreateReasoningEng"
-          + "ineOperationMetadata\332A\027parent,reasoning_"
-          + "engine\202\323\344\223\002M\"9/v1beta1/{parent=projects/"
-          + "*/locations/*}/reasoningEngines:\020reasoni"
-          + "ng_engine\022\314\001\n\022GetReasoningEngine\022:.googl"
-          + "e.cloud.aiplatform.v1beta1.GetReasoningE"
-          + "ngineRequest\0320.google.cloud.aiplatform.v"
-          + "1beta1.ReasoningEngine\"H\332A\004name\202\323\344\223\002;\0229/"
-          + "v1beta1/{name=projects/*/locations/*/rea"
-          + "soningEngines/*}\022\337\001\n\024ListReasoningEngine"
-          + "s\022<.google.cloud.aiplatform.v1beta1.List"
-          + "ReasoningEnginesRequest\032=.google.cloud.a"
-          + "iplatform.v1beta1.ListReasoningEnginesRe"
-          + "sponse\"J\332A\006parent\202\323\344\223\002;\0229/v1beta1/{paren"
-          + "t=projects/*/locations/*}/reasoningEngin"
-          + "es\022\362\001\n\025DeleteReasoningEngine\022=.google.cl"
-          + "oud.aiplatform.v1beta1.DeleteReasoningEn"
-          + "gineRequest\032\035.google.longrunning.Operati"
-          + "on\"{\312A0\n\025google.protobuf.Empty\022\027DeleteOp"
-          + "erationMetadata\332A\004name\202\323\344\223\002;*9/v1beta1/{"
-          + "name=projects/*/locations/*/reasoningEng"
-          + "ines/*}\032M\312A\031aiplatform.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\362\001\n#com.google.cloud.aiplatform.v"
-          + "1beta1B\033ReasoningEngineServiceProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
-          + "rm::V1beta1b\006proto3"
+          + "le/protobuf/empty.proto\032 google/protobuf"
+          + "/field_mask.proto\"\252\001\n\034CreateReasoningEng"
+          + "ineRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loca"
+          + "tions.googleapis.com/Location\022O\n\020reasoni"
+          + "ng_engine\030\002 \001(\01320.google.cloud.aiplatfor"
+          + "m.v1beta1.ReasoningEngineB\003\340A\002\"}\n&Create"
+          + "ReasoningEngineOperationMetadata\022S\n\020gene"
+          + "ric_metadata\030\001 \001(\01329.google.cloud.aiplat"
+          + "form.v1beta1.GenericOperationMetadata\"\\\n"
+          + "\031GetReasoningEngineRequest\022?\n\004name\030\001 \001(\t"
+          + "B1\340A\002\372A+\n)aiplatform.googleapis.com/Reas"
+          + "oningEngine\"\245\001\n\034UpdateReasoningEngineReq"
+          + "uest\022O\n\020reasoning_engine\030\001 \001(\01320.google."
+          + "cloud.aiplatform.v1beta1.ReasoningEngine"
+          + "B\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.prot"
+          + "obuf.FieldMaskB\003\340A\002\"}\n&UpdateReasoningEn"
+          + "gineOperationMetadata\022S\n\020generic_metadat"
+          + "a\030\001 \001(\01329.google.cloud.aiplatform.v1beta"
+          + "1.GenericOperationMetadata\"\236\001\n\033ListReaso"
+          + "ningEnginesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!locations.googleapis.com/Location\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340"
+          + "A\001\022\027\n\npage_token\030\004 \001(\tB\003\340A\001\"\204\001\n\034ListReas"
+          + "oningEnginesResponse\022K\n\021reasoning_engine"
+          + "s\030\001 \003(\01320.google.cloud.aiplatform.v1beta"
+          + "1.ReasoningEngine\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"_\n\034DeleteReasoningEngineRequest\022?\n\004na"
+          + "me\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.googleapis."
+          + "com/ReasoningEngine2\353\n\n\026ReasoningEngineS"
+          + "ervice\022\241\002\n\025CreateReasoningEngine\022=.googl"
+          + "e.cloud.aiplatform.v1beta1.CreateReasoni"
+          + "ngEngineRequest\032\035.google.longrunning.Ope"
+          + "ration\"\251\001\312A9\n\017ReasoningEngine\022&CreateRea"
+          + "soningEngineOperationMetadata\332A\027parent,r"
+          + "easoning_engine\202\323\344\223\002M\"9/v1beta1/{parent="
+          + "projects/*/locations/*}/reasoningEngines"
+          + ":\020reasoning_engine\022\314\001\n\022GetReasoningEngin"
+          + "e\022:.google.cloud.aiplatform.v1beta1.GetR"
+          + "easoningEngineRequest\0320.google.cloud.aip"
+          + "latform.v1beta1.ReasoningEngine\"H\332A\004name"
+          + "\202\323\344\223\002;\0229/v1beta1/{name=projects/*/locati"
+          + "ons/*/reasoningEngines/*}\022\337\001\n\024ListReason"
+          + "ingEngines\022<.google.cloud.aiplatform.v1b"
+          + "eta1.ListReasoningEnginesRequest\032=.googl"
+          + "e.cloud.aiplatform.v1beta1.ListReasoning"
+          + "EnginesResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1bet"
+          + "a1/{parent=projects/*/locations/*}/reaso"
+          + "ningEngines\022\267\002\n\025UpdateReasoningEngine\022=."
+          + "google.cloud.aiplatform.v1beta1.UpdateRe"
+          + "asoningEngineRequest\032\035.google.longrunnin"
+          + "g.Operation\"\277\001\312A9\n\017ReasoningEngine\022&Upda"
+          + "teReasoningEngineOperationMetadata\332A\034rea"
+          + "soning_engine,update_mask\202\323\344\223\002^2J/v1beta"
+          + "1/{reasoning_engine.name=projects/*/loca"
+          + "tions/*/reasoningEngines/*}:\020reasoning_e"
+          + "ngine\022\362\001\n\025DeleteReasoningEngine\022=.google"
+          + ".cloud.aiplatform.v1beta1.DeleteReasonin"
+          + "gEngineRequest\032\035.google.longrunning.Oper"
+          + "ation\"{\312A0\n\025google.protobuf.Empty\022\027Delet"
+          + "eOperationMetadata\332A\004name\202\323\344\223\002;*9/v1beta"
+          + "1/{name=projects/*/locations/*/reasoning"
+          + "Engines/*}\032M\312A\031aiplatform.googleapis.com"
+          + "\322A.https://www.googleapis.com/auth/cloud"
+          + "-platformB\362\001\n#com.google.cloud.aiplatfor"
+          + "m.v1beta1B\033ReasoningEngineServiceProtoP\001"
+          + "ZCcloud.google.com/go/aiplatform/apiv1be"
+          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
+          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
+          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
+          + "tform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -137,6 +161,7 @@ public final class ReasoningEngineServiceProto {
               com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateReasoningEngineRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -162,8 +187,24 @@ public final class ReasoningEngineServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineRequest_descriptor,
+            new java.lang.String[] {
+              "ReasoningEngine", "UpdateMask",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateReasoningEngineOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesRequest_descriptor,
@@ -171,7 +212,7 @@ public final class ReasoningEngineServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListReasoningEnginesResponse_descriptor,
@@ -179,7 +220,7 @@ public final class ReasoningEngineServiceProto {
               "ReasoningEngines", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeleteReasoningEngineRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteReasoningEngineRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteReasoningEngineRequest_descriptor,
@@ -205,6 +246,7 @@ public final class ReasoningEngineServiceProto {
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
