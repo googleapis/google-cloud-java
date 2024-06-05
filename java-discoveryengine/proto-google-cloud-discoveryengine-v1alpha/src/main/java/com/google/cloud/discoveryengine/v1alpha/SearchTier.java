@@ -155,7 +155,7 @@ public enum SearchTier implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(3);
   }
 
   private static final SearchTier[] VALUES = values();

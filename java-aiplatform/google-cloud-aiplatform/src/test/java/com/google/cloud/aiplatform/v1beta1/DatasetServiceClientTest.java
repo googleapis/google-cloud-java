@@ -129,6 +129,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -190,6 +191,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -251,6 +253,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -301,6 +304,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -351,6 +355,7 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -758,6 +763,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -816,6 +822,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -874,6 +881,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1012,6 +1020,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1060,6 +1069,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1194,6 +1204,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1251,6 +1262,7 @@ public class DatasetServiceClientTest {
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
             .setDisplayName("displayName1714148973")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

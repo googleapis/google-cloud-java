@@ -167,6 +167,31 @@ public interface TrainCustomModelRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder getErrorConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * If not provided, a UUID will be generated.
+   * </pre>
+   *
+   * <code>string model_id = 5;</code>
+   *
+   * @return The modelId.
+   */
+  java.lang.String getModelId();
+  /**
+   *
+   *
+   * <pre>
+   * If not provided, a UUID will be generated.
+   * </pre>
+   *
+   * <code>string model_id = 5;</code>
+   *
+   * @return The bytes for modelId.
+   */
+  com.google.protobuf.ByteString getModelIdBytes();
+
   com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest.TrainingInputCase
       getTrainingInputCase();
 }

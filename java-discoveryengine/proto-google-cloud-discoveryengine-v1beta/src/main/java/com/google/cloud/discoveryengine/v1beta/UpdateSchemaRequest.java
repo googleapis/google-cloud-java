@@ -131,8 +131,8 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * If set to true, and the
    * [Schema][google.cloud.discoveryengine.v1beta.Schema] is not found, a new
-   * [Schema][google.cloud.discoveryengine.v1beta.Schema] will be created. In
-   * this situation, `update_mask` is ignored.
+   * [Schema][google.cloud.discoveryengine.v1beta.Schema] is created. In this
+   * situation, `update_mask` is ignored.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>
@@ -750,8 +750,8 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * If set to true, and the
      * [Schema][google.cloud.discoveryengine.v1beta.Schema] is not found, a new
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] will be created. In
-     * this situation, `update_mask` is ignored.
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] is created. In this
+     * situation, `update_mask` is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -768,8 +768,8 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * If set to true, and the
      * [Schema][google.cloud.discoveryengine.v1beta.Schema] is not found, a new
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] will be created. In
-     * this situation, `update_mask` is ignored.
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] is created. In this
+     * situation, `update_mask` is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -790,8 +790,8 @@ public final class UpdateSchemaRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * If set to true, and the
      * [Schema][google.cloud.discoveryengine.v1beta.Schema] is not found, a new
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] will be created. In
-     * this situation, `update_mask` is ignored.
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] is created. In this
+     * situation, `update_mask` is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>

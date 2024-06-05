@@ -117,6 +117,9 @@ public class DeploymentResourcePoolServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]")
                     .toString())
             .setDedicatedResources(DedicatedResources.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -182,6 +185,9 @@ public class DeploymentResourcePoolServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]")
                     .toString())
             .setDedicatedResources(DedicatedResources.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -247,6 +253,9 @@ public class DeploymentResourcePoolServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]")
                     .toString())
             .setDedicatedResources(DedicatedResources.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockDeploymentResourcePoolService.addResponse(expectedResponse);
@@ -293,6 +302,9 @@ public class DeploymentResourcePoolServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]")
                     .toString())
             .setDedicatedResources(DedicatedResources.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setDisableContainerLogging(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockDeploymentResourcePoolService.addResponse(expectedResponse);

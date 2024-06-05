@@ -235,9 +235,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
    * or
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+   * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -261,9 +261,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+   * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
    * or
-   * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+   * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1091,9 +1091,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
      * or
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+     * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1116,9 +1116,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
      * or
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+     * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1141,9 +1141,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
      * or
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+     * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1165,9 +1165,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
      * or
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+     * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1185,9 +1185,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Fully qualified name
-     * `project/&#42;&#47;locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
+     * `projects/{project}/locations/global/collections/{collection}/dataStore/&#42;&#47;conversations/&#42;`
      * or
-     * `project/&#42;&#47;locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
+     * `projects/{project}/locations/global/collections/{collection}/engines/&#42;&#47;conversations/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

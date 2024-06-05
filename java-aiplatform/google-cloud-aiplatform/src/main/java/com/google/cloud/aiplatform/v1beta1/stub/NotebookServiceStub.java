@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.AssignNotebookRuntimeRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateNotebookExecutionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteNotebookExecutionJobRequest;
@@ -48,6 +50,7 @@ import com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1beta1.UpgradeNotebookRuntimeResponse;
@@ -125,6 +128,12 @@ public abstract class NotebookServiceStub implements BackgroundResource {
         "Not implemented: deleteNotebookRuntimeTemplateCallable()");
   }
 
+  public UnaryCallable<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateNotebookRuntimeTemplateCallable()");
+  }
+
   public OperationCallable<
           AssignNotebookRuntimeRequest, NotebookRuntime, AssignNotebookRuntimeOperationMetadata>
       assignNotebookRuntimeOperationCallable() {
@@ -184,6 +193,21 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeCallable() {
     throw new UnsupportedOperationException("Not implemented: startNotebookRuntimeCallable()");
+  }
+
+  public OperationCallable<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createNotebookExecutionJobOperationCallable()");
+  }
+
+  public UnaryCallable<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createNotebookExecutionJobCallable()");
   }
 
   public UnaryCallable<GetNotebookExecutionJobRequest, NotebookExecutionJob>

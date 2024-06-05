@@ -20,6 +20,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsRequest;
+import com.google.cloud.discoveryengine.v1alpha.ListCustomModelsResponse;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelMetadata;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelRequest;
 import com.google.cloud.discoveryengine.v1alpha.TrainCustomModelResponse;
@@ -53,6 +55,11 @@ public abstract class SearchTuningServiceStub implements BackgroundResource {
 
   public UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable() {
     throw new UnsupportedOperationException("Not implemented: trainCustomModelCallable()");
+  }
+
+  public UnaryCallable<ListCustomModelsRequest, ListCustomModelsResponse>
+      listCustomModelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCustomModelsCallable()");
   }
 
   @Override

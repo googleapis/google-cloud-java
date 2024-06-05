@@ -446,6 +446,17 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(

@@ -76,7 +76,7 @@ public interface ListDocumentsRequestOrBuilder
    * Maximum number of
    * [Document][google.cloud.discoveryengine.v1alpha.Document]s to return. If
    * unspecified, defaults to 100. The maximum allowed value is 1000. Values
-   * above 1000 will be coerced to 1000.
+   * above 1000 are set to 1000.
    *
    * If this field is negative, an `INVALID_ARGUMENT` error is returned.
    * </pre>

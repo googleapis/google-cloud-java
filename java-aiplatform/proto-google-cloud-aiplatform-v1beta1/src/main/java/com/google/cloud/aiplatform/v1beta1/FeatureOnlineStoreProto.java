@@ -68,53 +68,56 @@ public final class FeatureOnlineStoreProto {
       "\n:google/cloud/aiplatform/v1beta1/featur"
           + "e_online_store.proto\022\037google.cloud.aipla"
           + "tform.v1beta1\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\0328googl"
-          + "e/cloud/aiplatform/v1beta1/service_netwo"
-          + "rking.proto\032\037google/protobuf/timestamp.p"
-          + "roto\"\314\013\n\022FeatureOnlineStore\022P\n\010bigtable\030"
-          + "\010 \001(\0132<.google.cloud.aiplatform.v1beta1."
-          + "FeatureOnlineStore.BigtableH\000\022R\n\toptimiz"
-          + "ed\030\014 \001(\0132=.google.cloud.aiplatform.v1bet"
-          + "a1.FeatureOnlineStore.OptimizedH\000\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\010\0224\n\013create_time\030\003 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0224\n\013update_tim"
-          + "e\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\022\021\n\004etag\030\005 \001(\tB\003\340A\001\022T\n\006labels\030\006 \003(\0132?.go"
+          + ".proto\032\031google/api/resource.proto\0325googl"
+          + "e/cloud/aiplatform/v1beta1/encryption_sp"
+          + "ec.proto\0328google/cloud/aiplatform/v1beta"
+          + "1/service_networking.proto\032\037google/proto"
+          + "buf/timestamp.proto\"\233\014\n\022FeatureOnlineSto"
+          + "re\022P\n\010bigtable\030\010 \001(\0132<.google.cloud.aipl"
+          + "atform.v1beta1.FeatureOnlineStore.Bigtab"
+          + "leH\000\022R\n\toptimized\030\014 \001(\0132=.google.cloud.a"
+          + "iplatform.v1beta1.FeatureOnlineStore.Opt"
+          + "imizedH\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013update_time\030\004 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022\021\n\004etag\030\005 \001(\tB\003\340A\001\022T\n\006la"
+          + "bels\030\006 \003(\0132?.google.cloud.aiplatform.v1b"
+          + "eta1.FeatureOnlineStore.LabelsEntryB\003\340A\001"
+          + "\022M\n\005state\030\007 \001(\01629.google.cloud.aiplatfor"
+          + "m.v1beta1.FeatureOnlineStore.StateB\003\340A\003\022"
+          + "u\n\032dedicated_serving_endpoint\030\n \001(\0132L.go"
           + "ogle.cloud.aiplatform.v1beta1.FeatureOnl"
-          + "ineStore.LabelsEntryB\003\340A\001\022M\n\005state\030\007 \001(\016"
-          + "29.google.cloud.aiplatform.v1beta1.Featu"
-          + "reOnlineStore.StateB\003\340A\003\022u\n\032dedicated_se"
-          + "rving_endpoint\030\n \001(\0132L.google.cloud.aipl"
-          + "atform.v1beta1.FeatureOnlineStore.Dedica"
-          + "tedServingEndpointB\003\340A\001\022l\n\024embedding_man"
-          + "agement\030\013 \001(\0132G.google.cloud.aiplatform."
-          + "v1beta1.FeatureOnlineStore.EmbeddingMana"
-          + "gementB\005\030\001\340A\001\032\335\001\n\010Bigtable\022c\n\014auto_scali"
-          + "ng\030\001 \001(\0132H.google.cloud.aiplatform.v1bet"
-          + "a1.FeatureOnlineStore.Bigtable.AutoScali"
-          + "ngB\003\340A\002\032l\n\013AutoScaling\022\033\n\016min_node_count"
-          + "\030\001 \001(\005B\003\340A\002\022\033\n\016max_node_count\030\002 \001(\005B\003\340A\002"
-          + "\022#\n\026cpu_utilization_target\030\003 \001(\005B\003\340A\001\032\013\n"
-          + "\tOptimized\032\320\001\n\030DedicatedServingEndpoint\022"
-          + "(\n\033public_endpoint_domain_name\030\002 \001(\tB\003\340A"
-          + "\003\022i\n\036private_service_connect_config\030\003 \001("
-          + "\0132<.google.cloud.aiplatform.v1beta1.Priv"
-          + "ateServiceConnectConfigB\003\340A\001\022\037\n\022service_"
-          + "attachment\030\004 \001(\tB\003\340A\003\0322\n\023EmbeddingManage"
-          + "ment\022\027\n\007enabled\030\001 \001(\010B\006\340A\001\340A\005:\002\030\001\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"8\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006STAB"
-          + "LE\020\001\022\014\n\010UPDATING\020\002:\206\001\352A\202\001\n,aiplatform.go"
-          + "ogleapis.com/FeatureOnlineStore\022Rproject"
-          + "s/{project}/locations/{location}/feature"
-          + "OnlineStores/{feature_online_store}B\016\n\014s"
-          + "torage_typeB\356\001\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\027FeatureOnlineStoreProtoP\001ZC"
-          + "cloud.google.com/go/aiplatform/apiv1beta"
-          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + "ineStore.DedicatedServingEndpointB\003\340A\001\022l"
+          + "\n\024embedding_management\030\013 \001(\0132G.google.cl"
+          + "oud.aiplatform.v1beta1.FeatureOnlineStor"
+          + "e.EmbeddingManagementB\005\030\001\340A\001\022M\n\017encrypti"
+          + "on_spec\030\r \001(\0132/.google.cloud.aiplatform."
+          + "v1beta1.EncryptionSpecB\003\340A\001\032\335\001\n\010Bigtable"
+          + "\022c\n\014auto_scaling\030\001 \001(\0132H.google.cloud.ai"
+          + "platform.v1beta1.FeatureOnlineStore.Bigt"
+          + "able.AutoScalingB\003\340A\002\032l\n\013AutoScaling\022\033\n\016"
+          + "min_node_count\030\001 \001(\005B\003\340A\002\022\033\n\016max_node_co"
+          + "unt\030\002 \001(\005B\003\340A\002\022#\n\026cpu_utilization_target"
+          + "\030\003 \001(\005B\003\340A\001\032\013\n\tOptimized\032\320\001\n\030DedicatedSe"
+          + "rvingEndpoint\022(\n\033public_endpoint_domain_"
+          + "name\030\002 \001(\tB\003\340A\003\022i\n\036private_service_conne"
+          + "ct_config\030\003 \001(\0132<.google.cloud.aiplatfor"
+          + "m.v1beta1.PrivateServiceConnectConfigB\003\340"
+          + "A\001\022\037\n\022service_attachment\030\004 \001(\tB\003\340A\003\0322\n\023E"
+          + "mbeddingManagement\022\027\n\007enabled\030\001 \001(\010B\006\340A\001"
+          + "\340A\005:\002\030\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_UNSPECI"
+          + "FIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:\206\001\352A\202\001\n"
+          + ",aiplatform.googleapis.com/FeatureOnline"
+          + "Store\022Rprojects/{project}/locations/{loc"
+          + "ation}/featureOnlineStores/{feature_onli"
+          + "ne_store}B\016\n\014storage_typeB\356\001\n#com.google"
+          + ".cloud.aiplatform.v1beta1B\027FeatureOnline"
+          + "StoreProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -122,6 +125,7 @@ public final class FeatureOnlineStoreProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ServiceNetworkingProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -141,6 +145,7 @@ public final class FeatureOnlineStoreProto {
               "State",
               "DedicatedServingEndpoint",
               "EmbeddingManagement",
+              "EncryptionSpec",
               "StorageType",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_descriptor =
@@ -209,6 +214,7 @@ public final class FeatureOnlineStoreProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ServiceNetworkingProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

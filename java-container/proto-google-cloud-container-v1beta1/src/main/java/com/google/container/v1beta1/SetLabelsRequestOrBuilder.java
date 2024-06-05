@@ -37,7 +37,7 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4542
+   *     google/container/v1beta1/cluster_service.proto;l=4692
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -55,7 +55,7 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4542
+   *     google/container/v1beta1/cluster_service.proto;l=4692
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -74,7 +74,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4549
+   *     google/container/v1beta1/cluster_service.proto;l=4699
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface SetLabelsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4549
+   *     google/container/v1beta1/cluster_service.proto;l=4699
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -110,7 +110,7 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4553
+   *     google/container/v1beta1/cluster_service.proto;l=4703
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface SetLabelsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLabelsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4553
+   *     google/container/v1beta1/cluster_service.proto;l=4703
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

@@ -43,6 +43,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
   private TrainCustomModelRequest() {
     dataStore_ = "";
     modelType_ = "";
+    modelId_ = "";
   }
 
   @java.lang.Override
@@ -1830,6 +1831,57 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         : errorConfig_;
   }
 
+  public static final int MODEL_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * If not provided, a UUID will be generated.
+   * </pre>
+   *
+   * <code>string model_id = 5;</code>
+   *
+   * @return The modelId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelId() {
+    java.lang.Object ref = modelId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If not provided, a UUID will be generated.
+   * </pre>
+   *
+   * <code>string model_id = 5;</code>
+   *
+   * @return The bytes for modelId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelIdBytes() {
+    java.lang.Object ref = modelId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1859,6 +1911,9 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getErrorConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1884,6 +1939,9 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getErrorConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modelId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1906,6 +1964,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
     if (hasErrorConfig()) {
       if (!getErrorConfig().equals(other.getErrorConfig())) return false;
     }
+    if (!getModelId().equals(other.getModelId())) return false;
     if (!getTrainingInputCase().equals(other.getTrainingInputCase())) return false;
     switch (trainingInputCase_) {
       case 2:
@@ -1933,6 +1992,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       hash = (37 * hash) + ERROR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getErrorConfig().hashCode();
     }
+    hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelId().hashCode();
     switch (trainingInputCase_) {
       case 2:
         hash = (37 * hash) + GCS_TRAINING_INPUT_FIELD_NUMBER;
@@ -2102,6 +2163,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
+      modelId_ = "";
       trainingInputCase_ = 0;
       trainingInput_ = null;
       return this;
@@ -2154,6 +2216,9 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         result.errorConfig_ =
             errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.modelId_ = modelId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2228,6 +2293,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
       if (other.hasErrorConfig()) {
         mergeErrorConfig(other.getErrorConfig());
       }
+      if (!other.getModelId().isEmpty()) {
+        modelId_ = other.modelId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       switch (other.getTrainingInputCase()) {
         case GCS_TRAINING_INPUT:
           {
@@ -2290,6 +2360,12 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                modelId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3014,6 +3090,112 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
         errorConfig_ = null;
       }
       return errorConfigBuilder_;
+    }
+
+    private java.lang.Object modelId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If not provided, a UUID will be generated.
+     * </pre>
+     *
+     * <code>string model_id = 5;</code>
+     *
+     * @return The modelId.
+     */
+    public java.lang.String getModelId() {
+      java.lang.Object ref = modelId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not provided, a UUID will be generated.
+     * </pre>
+     *
+     * <code>string model_id = 5;</code>
+     *
+     * @return The bytes for modelId.
+     */
+    public com.google.protobuf.ByteString getModelIdBytes() {
+      java.lang.Object ref = modelId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not provided, a UUID will be generated.
+     * </pre>
+     *
+     * <code>string model_id = 5;</code>
+     *
+     * @param value The modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      modelId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not provided, a UUID will be generated.
+     * </pre>
+     *
+     * <code>string model_id = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelId() {
+      modelId_ = getDefaultInstance().getModelId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not provided, a UUID will be generated.
+     * </pre>
+     *
+     * <code>string model_id = 5;</code>
+     *
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      modelId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -43,6 +43,7 @@ public class AsyncWriteUserEvent {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       ApiFuture<UserEvent> future =
           userEventServiceClient.writeUserEventCallable().futureCall(request);

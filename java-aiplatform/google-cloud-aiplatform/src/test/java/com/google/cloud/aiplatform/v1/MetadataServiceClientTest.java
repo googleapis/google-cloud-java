@@ -121,6 +121,7 @@ public class MetadataServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setDescription("description-1724546052")
             .setState(MetadataStore.MetadataStoreState.newBuilder().build())
+            .setDataplexConfig(MetadataStore.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class MetadataServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setDescription("description-1724546052")
             .setState(MetadataStore.MetadataStoreState.newBuilder().build())
+            .setDataplexConfig(MetadataStore.DataplexConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -237,6 +239,7 @@ public class MetadataServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setDescription("description-1724546052")
             .setState(MetadataStore.MetadataStoreState.newBuilder().build())
+            .setDataplexConfig(MetadataStore.DataplexConfig.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
 
@@ -280,6 +283,7 @@ public class MetadataServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setDescription("description-1724546052")
             .setState(MetadataStore.MetadataStoreState.newBuilder().build())
+            .setDataplexConfig(MetadataStore.DataplexConfig.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
 

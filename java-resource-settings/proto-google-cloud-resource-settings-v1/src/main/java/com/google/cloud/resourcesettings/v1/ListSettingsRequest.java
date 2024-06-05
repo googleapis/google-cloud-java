@@ -73,8 +73,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the setting. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that parents the setting. Must be in one of
+   * the following forms:
    *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
@@ -104,8 +104,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the setting. Must be in one of the
-   * following forms:
+   * Required. The Cloud resource that parents the setting. Must be in one of
+   * the following forms:
    *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
@@ -654,8 +654,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the setting. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that parents the setting. Must be in one of
+     * the following forms:
      *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
@@ -684,8 +684,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the setting. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that parents the setting. Must be in one of
+     * the following forms:
      *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
@@ -714,8 +714,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the setting. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that parents the setting. Must be in one of
+     * the following forms:
      *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
@@ -743,8 +743,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the setting. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that parents the setting. Must be in one of
+     * the following forms:
      *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
@@ -768,8 +768,8 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the setting. Must be in one of the
-     * following forms:
+     * Required. The Cloud resource that parents the setting. Must be in one of
+     * the following forms:
      *
      * * `projects/{project_number}`
      * * `projects/{project_id}`

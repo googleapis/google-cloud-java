@@ -588,6 +588,7 @@ public class ConversationalSearchServiceClientTest {
         AnswerQueryResponse.newBuilder()
             .setAnswer(Answer.newBuilder().build())
             .setSession(Session.newBuilder().build())
+            .setAnswerQueryToken("answerQueryToken758314095")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 

@@ -240,6 +240,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= GenAiCacheServiceClient =======================
+ *
+ * <p>Service Description: Service for managing Vertex AI's CachedContent resource.
+ *
+ * <p>Sample for GenAiCacheServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GenAiCacheServiceClient genAiCacheServiceClient = GenAiCacheServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   CachedContent cachedContent = CachedContent.newBuilder().build();
+ *   CachedContent response = genAiCacheServiceClient.createCachedContent(parent, cachedContent);
+ * }
+ * }</pre>
+ *
  * <p>======================= GenAiTuningServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing GenAI Tuning Jobs.

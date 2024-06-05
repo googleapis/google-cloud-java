@@ -37,6 +37,10 @@ public final class MatchServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_RRF_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_RRF_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_fieldAccessorTable;
@@ -70,52 +74,55 @@ public final class MatchServiceProto {
           + "ogle/api/annotations.proto\032\027google/api/c"
           + "lient.proto\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\032&google/"
-          + "cloud/aiplatform/v1/index.proto\"\313\003\n\024Find"
+          + "cloud/aiplatform/v1/index.proto\"\301\004\n\024Find"
           + "NeighborsRequest\022G\n\016index_endpoint\030\001 \001(\t"
           + "B/\340A\002\372A)\n\'aiplatform.googleapis.com/Inde"
           + "xEndpoint\022\031\n\021deployed_index_id\030\002 \001(\t\022G\n\007"
           + "queries\030\003 \003(\01326.google.cloud.aiplatform."
           + "v1.FindNeighborsRequest.Query\022\035\n\025return_"
-          + "full_datapoint\030\004 \001(\010\032\346\001\n\005Query\022B\n\tdatapo"
+          + "full_datapoint\030\004 \001(\010\032\334\002\n\005Query\022N\n\003rrf\030\006 "
+          + "\001(\0132:.google.cloud.aiplatform.v1.FindNei"
+          + "ghborsRequest.Query.RRFB\003\340A\001H\000\022B\n\tdatapo"
           + "int\030\001 \001(\0132*.google.cloud.aiplatform.v1.I"
           + "ndexDatapointB\003\340A\002\022\026\n\016neighbor_count\030\002 \001"
           + "(\005\022-\n%per_crowding_attribute_neighbor_co"
           + "unt\030\003 \001(\005\022\"\n\032approximate_neighbor_count\030"
           + "\004 \001(\005\022.\n&fraction_leaf_nodes_to_search_o"
-          + "verride\030\005 \001(\001\"\302\002\n\025FindNeighborsResponse\022"
-          + "]\n\021nearest_neighbors\030\001 \003(\0132B.google.clou"
-          + "d.aiplatform.v1.FindNeighborsResponse.Ne"
-          + "arestNeighbors\032[\n\010Neighbor\022=\n\tdatapoint\030"
-          + "\001 \001(\0132*.google.cloud.aiplatform.v1.Index"
-          + "Datapoint\022\020\n\010distance\030\002 \001(\001\032m\n\020NearestNe"
-          + "ighbors\022\n\n\002id\030\001 \001(\t\022M\n\tneighbors\030\002 \003(\0132:"
-          + ".google.cloud.aiplatform.v1.FindNeighbor"
-          + "sResponse.Neighbor\"\215\001\n\032ReadIndexDatapoin"
-          + "tsRequest\022G\n\016index_endpoint\030\001 \001(\tB/\340A\002\372A"
-          + ")\n\'aiplatform.googleapis.com/IndexEndpoi"
-          + "nt\022\031\n\021deployed_index_id\030\002 \001(\t\022\013\n\003ids\030\003 \003"
-          + "(\t\"]\n\033ReadIndexDatapointsResponse\022>\n\ndat"
-          + "apoints\030\001 \003(\0132*.google.cloud.aiplatform."
-          + "v1.IndexDatapoint2\221\004\n\014MatchService\022\313\001\n\rF"
-          + "indNeighbors\0220.google.cloud.aiplatform.v"
-          + "1.FindNeighborsRequest\0321.google.cloud.ai"
-          + "platform.v1.FindNeighborsResponse\"U\202\323\344\223\002"
-          + "O\"J/v1/{index_endpoint=projects/*/locati"
-          + "ons/*/indexEndpoints/*}:findNeighbors:\001*"
-          + "\022\343\001\n\023ReadIndexDatapoints\0226.google.cloud."
-          + "aiplatform.v1.ReadIndexDatapointsRequest"
-          + "\0327.google.cloud.aiplatform.v1.ReadIndexD"
-          + "atapointsResponse\"[\202\323\344\223\002U\"P/v1/{index_en"
-          + "dpoint=projects/*/locations/*/indexEndpo"
-          + "ints/*}:readIndexDatapoints:\001*\032M\312A\031aipla"
-          + "tform.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\317\001\n\036com.go"
-          + "ogle.cloud.aiplatform.v1B\021MatchServicePr"
-          + "otoP\001Z>cloud.google.com/go/aiplatform/ap"
-          + "iv1/aiplatformpb;aiplatformpb\252\002\032Google.C"
-          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
-          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
-          + "\006proto3"
+          + "verride\030\005 \001(\001\032\031\n\003RRF\022\022\n\005alpha\030\001 \001(\002B\003\340A\002"
+          + "B\t\n\007ranking\"\333\002\n\025FindNeighborsResponse\022]\n"
+          + "\021nearest_neighbors\030\001 \003(\0132B.google.cloud."
+          + "aiplatform.v1.FindNeighborsResponse.Near"
+          + "estNeighbors\032t\n\010Neighbor\022=\n\tdatapoint\030\001 "
+          + "\001(\0132*.google.cloud.aiplatform.v1.IndexDa"
+          + "tapoint\022\020\n\010distance\030\002 \001(\001\022\027\n\017sparse_dist"
+          + "ance\030\003 \001(\001\032m\n\020NearestNeighbors\022\n\n\002id\030\001 \001"
+          + "(\t\022M\n\tneighbors\030\002 \003(\0132:.google.cloud.aip"
+          + "latform.v1.FindNeighborsResponse.Neighbo"
+          + "r\"\215\001\n\032ReadIndexDatapointsRequest\022G\n\016inde"
+          + "x_endpoint\030\001 \001(\tB/\340A\002\372A)\n\'aiplatform.goo"
+          + "gleapis.com/IndexEndpoint\022\031\n\021deployed_in"
+          + "dex_id\030\002 \001(\t\022\013\n\003ids\030\003 \003(\t\"]\n\033ReadIndexDa"
+          + "tapointsResponse\022>\n\ndatapoints\030\001 \003(\0132*.g"
+          + "oogle.cloud.aiplatform.v1.IndexDatapoint"
+          + "2\221\004\n\014MatchService\022\313\001\n\rFindNeighbors\0220.go"
+          + "ogle.cloud.aiplatform.v1.FindNeighborsRe"
+          + "quest\0321.google.cloud.aiplatform.v1.FindN"
+          + "eighborsResponse\"U\202\323\344\223\002O\"J/v1/{index_end"
+          + "point=projects/*/locations/*/indexEndpoi"
+          + "nts/*}:findNeighbors:\001*\022\343\001\n\023ReadIndexDat"
+          + "apoints\0226.google.cloud.aiplatform.v1.Rea"
+          + "dIndexDatapointsRequest\0327.google.cloud.a"
+          + "iplatform.v1.ReadIndexDatapointsResponse"
+          + "\"[\202\323\344\223\002U\"P/v1/{index_endpoint=projects/*"
+          + "/locations/*/indexEndpoints/*}:readIndex"
+          + "Datapoints:\001*\032M\312A\031aiplatform.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB\317\001\n\036com.google.cloud.aiplat"
+          + "form.v1B\021MatchServiceProtoP\001Z>cloud.goog"
+          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
+          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -143,11 +150,23 @@ public final class MatchServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_descriptor,
             new java.lang.String[] {
+              "Rrf",
               "Datapoint",
               "NeighborCount",
               "PerCrowdingAttributeNeighborCount",
               "ApproximateNeighborCount",
               "FractionLeafNodesToSearchOverride",
+              "Ranking",
+            });
+    internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_RRF_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_RRF_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FindNeighborsRequest_Query_RRF_descriptor,
+            new java.lang.String[] {
+              "Alpha",
             });
     internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -165,7 +184,7 @@ public final class MatchServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_Neighbor_descriptor,
             new java.lang.String[] {
-              "Datapoint", "Distance",
+              "Datapoint", "Distance", "SparseDistance",
             });
     internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_NearestNeighbors_descriptor =
         internal_static_google_cloud_aiplatform_v1_FindNeighborsResponse_descriptor

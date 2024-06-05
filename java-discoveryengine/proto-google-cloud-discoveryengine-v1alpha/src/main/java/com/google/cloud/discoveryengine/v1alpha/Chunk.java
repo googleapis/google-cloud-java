@@ -3869,6 +3869,45 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RELEVANCE_SCORE_FIELD_NUMBER = 8;
+  private double relevanceScore_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * The relevance score based on similarity.
+   * Higher score indicates higher chunk relevance.
+   * The score is in range [-1.0, 1.0].
+   * Only populated on [SearchService.SearchResponse][].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the relevanceScore field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelevanceScore() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The relevance score based on similarity.
+   * Higher score indicates higher chunk relevance.
+   * The score is in range [-1.0, 1.0].
+   * Only populated on [SearchService.SearchResponse][].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The relevanceScore.
+   */
+  @java.lang.Override
+  public double getRelevanceScore() {
+    return relevanceScore_;
+  }
+
   public static final int DOCUMENT_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata documentMetadata_;
   /**
@@ -3885,7 +3924,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentMetadata() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -3941,7 +3980,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDerivedStructData() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -3997,7 +4036,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPageSpan() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -4049,7 +4088,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasChunkMetadata() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -4112,17 +4151,20 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getDerivedStructData());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getDocumentMetadata());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getPageSpan());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getChunkMetadata());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(8, relevanceScore_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4142,17 +4184,20 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDerivedStructData());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDocumentMetadata());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPageSpan());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getChunkMetadata());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, relevanceScore_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4173,6 +4218,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getId().equals(other.getId())) return false;
     if (!getContent().equals(other.getContent())) return false;
+    if (hasRelevanceScore() != other.hasRelevanceScore()) return false;
+    if (hasRelevanceScore()) {
+      if (java.lang.Double.doubleToLongBits(getRelevanceScore())
+          != java.lang.Double.doubleToLongBits(other.getRelevanceScore())) return false;
+    }
     if (hasDocumentMetadata() != other.hasDocumentMetadata()) return false;
     if (hasDocumentMetadata()) {
       if (!getDocumentMetadata().equals(other.getDocumentMetadata())) return false;
@@ -4206,6 +4256,13 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
+    if (hasRelevanceScore()) {
+      hash = (37 * hash) + RELEVANCE_SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRelevanceScore()));
+    }
     if (hasDocumentMetadata()) {
       hash = (37 * hash) + DOCUMENT_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getDocumentMetadata().hashCode();
@@ -4377,6 +4434,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       id_ = "";
       content_ = "";
+      relevanceScore_ = 0D;
       documentMetadata_ = null;
       if (documentMetadataBuilder_ != null) {
         documentMetadataBuilder_.dispose();
@@ -4444,25 +4502,29 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.documentMetadata_ =
-            documentMetadataBuilder_ == null ? documentMetadata_ : documentMetadataBuilder_.build();
+        result.relevanceScore_ = relevanceScore_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.documentMetadata_ =
+            documentMetadataBuilder_ == null ? documentMetadata_ : documentMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.derivedStructData_ =
             derivedStructDataBuilder_ == null
                 ? derivedStructData_
                 : derivedStructDataBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.chunkMetadata_ =
             chunkMetadataBuilder_ == null ? chunkMetadata_ : chunkMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4527,6 +4589,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasRelevanceScore()) {
+        setRelevanceScore(other.getRelevanceScore());
+      }
       if (other.hasDocumentMetadata()) {
         mergeDocumentMetadata(other.getDocumentMetadata());
       }
@@ -4587,28 +4652,34 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getDerivedStructDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getDocumentMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getPageSpanFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getChunkMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
+            case 65:
+              {
+                relevanceScore_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 65
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4971,6 +5042,90 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private double relevanceScore_;
+    /**
+     *
+     *
+     * <pre>
+     * The relevance score based on similarity.
+     * Higher score indicates higher chunk relevance.
+     * The score is in range [-1.0, 1.0].
+     * Only populated on [SearchService.SearchResponse][].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the relevanceScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasRelevanceScore() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance score based on similarity.
+     * Higher score indicates higher chunk relevance.
+     * The score is in range [-1.0, 1.0].
+     * Only populated on [SearchService.SearchResponse][].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The relevanceScore.
+     */
+    @java.lang.Override
+    public double getRelevanceScore() {
+      return relevanceScore_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance score based on similarity.
+     * Higher score indicates higher chunk relevance.
+     * The score is in range [-1.0, 1.0].
+     * Only populated on [SearchService.SearchResponse][].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The relevanceScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceScore(double value) {
+
+      relevanceScore_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relevance score based on similarity.
+     * Higher score indicates higher chunk relevance.
+     * The score is in range [-1.0, 1.0].
+     * Only populated on [SearchService.SearchResponse][].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelevanceScore() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      relevanceScore_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata documentMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata,
@@ -4990,7 +5145,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentMetadata field is set.
      */
     public boolean hasDocumentMetadata() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -5033,7 +5188,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5054,7 +5209,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5071,7 +5226,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentMetadata(
         com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata value) {
       if (documentMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && documentMetadata_ != null
             && documentMetadata_
                 != com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata
@@ -5084,7 +5239,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         documentMetadataBuilder_.mergeFrom(value);
       }
       if (documentMetadata_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -5100,7 +5255,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       documentMetadata_ = null;
       if (documentMetadataBuilder_ != null) {
         documentMetadataBuilder_.dispose();
@@ -5121,7 +5276,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.Chunk.DocumentMetadata.Builder
         getDocumentMetadataBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDocumentMetadataFieldBuilder().getBuilder();
     }
@@ -5193,7 +5348,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the derivedStructData field is set.
      */
     public boolean hasDerivedStructData() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -5239,7 +5394,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         derivedStructDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5261,7 +5416,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         derivedStructDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5279,7 +5434,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDerivedStructData(com.google.protobuf.Struct value) {
       if (derivedStructDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && derivedStructData_ != null
             && derivedStructData_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getDerivedStructDataBuilder().mergeFrom(value);
@@ -5290,7 +5445,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         derivedStructDataBuilder_.mergeFrom(value);
       }
       if (derivedStructData_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -5308,7 +5463,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDerivedStructData() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       derivedStructData_ = null;
       if (derivedStructDataBuilder_ != null) {
         derivedStructDataBuilder_.dispose();
@@ -5330,7 +5485,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getDerivedStructDataBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDerivedStructDataFieldBuilder().getBuilder();
     }
@@ -5402,7 +5557,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pageSpan field is set.
      */
     public boolean hasPageSpan() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -5442,7 +5597,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         pageSpanBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5462,7 +5617,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         pageSpanBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5477,7 +5632,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePageSpan(com.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan value) {
       if (pageSpanBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && pageSpan_ != null
             && pageSpan_
                 != com.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan.getDefaultInstance()) {
@@ -5489,7 +5644,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         pageSpanBuilder_.mergeFrom(value);
       }
       if (pageSpan_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -5504,7 +5659,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan page_span = 6;</code>
      */
     public Builder clearPageSpan() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       pageSpan_ = null;
       if (pageSpanBuilder_ != null) {
         pageSpanBuilder_.dispose();
@@ -5523,7 +5678,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan page_span = 6;</code>
      */
     public com.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan.Builder getPageSpanBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPageSpanFieldBuilder().getBuilder();
     }
@@ -5591,7 +5746,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the chunkMetadata field is set.
      */
     public boolean hasChunkMetadata() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -5636,7 +5791,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         chunkMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5658,7 +5813,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       } else {
         chunkMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5676,7 +5831,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeChunkMetadata(
         com.google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata value) {
       if (chunkMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && chunkMetadata_ != null
             && chunkMetadata_
                 != com.google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata
@@ -5689,7 +5844,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         chunkMetadataBuilder_.mergeFrom(value);
       }
       if (chunkMetadata_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -5706,7 +5861,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearChunkMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       chunkMetadata_ = null;
       if (chunkMetadataBuilder_ != null) {
         chunkMetadataBuilder_.dispose();
@@ -5728,7 +5883,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata.Builder
         getChunkMetadataBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getChunkMetadataFieldBuilder().getBuilder();
     }

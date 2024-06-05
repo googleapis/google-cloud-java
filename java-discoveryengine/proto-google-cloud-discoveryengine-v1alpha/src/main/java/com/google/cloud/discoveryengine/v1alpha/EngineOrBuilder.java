@@ -644,7 +644,7 @@ public interface EngineOrBuilder
    * The restriction of the Engine industry vertical is based on
    * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
    * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-   * of the DataStore liniked to the engine.
+   * of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>
@@ -660,7 +660,7 @@ public interface EngineOrBuilder
    * The restriction of the Engine industry vertical is based on
    * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]: If
    * unspecified, default to `GENERIC`. Vertical on Engine has to match vertical
-   * of the DataStore liniked to the engine.
+   * of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.IndustryVertical industry_vertical = 16;</code>

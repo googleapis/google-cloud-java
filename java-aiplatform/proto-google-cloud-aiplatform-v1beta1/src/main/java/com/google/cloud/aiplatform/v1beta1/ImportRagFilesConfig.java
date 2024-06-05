@@ -280,6 +280,29 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         : ragFileChunkingConfig_;
   }
 
+  public static final int MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 5;
+  private int maxEmbeddingRequestsPerMin_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max number of queries per minute that this job is allowed to
+   * make to the embedding model specified on the corpus. This value is specific
+   * to this job and not shared across other import jobs. Consult the Quotas
+   * page on the project to set an appropriate value here.
+   * If unspecified, a default value of 1,000 QPM would be used.
+   * </pre>
+   *
+   * <code>int32 max_embedding_requests_per_min = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxEmbeddingRequestsPerMin.
+   */
+  @java.lang.Override
+  public int getMaxEmbeddingRequestsPerMin() {
+    return maxEmbeddingRequestsPerMin_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -302,6 +325,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getRagFileChunkingConfig());
+    }
+    if (maxEmbeddingRequestsPerMin_ != 0) {
+      output.writeInt32(5, maxEmbeddingRequestsPerMin_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -326,6 +352,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRagFileChunkingConfig());
     }
+    if (maxEmbeddingRequestsPerMin_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(5, maxEmbeddingRequestsPerMin_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -346,6 +376,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileChunkingConfig()) {
       if (!getRagFileChunkingConfig().equals(other.getRagFileChunkingConfig())) return false;
     }
+    if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
     if (!getImportSourceCase().equals(other.getImportSourceCase())) return false;
     switch (importSourceCase_) {
       case 2:
@@ -372,6 +403,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagFileChunkingConfig().hashCode();
     }
+    hash = (37 * hash) + MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
     switch (importSourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -544,6 +577,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileChunkingConfigBuilder_.dispose();
         ragFileChunkingConfigBuilder_ = null;
       }
+      maxEmbeddingRequestsPerMin_ = 0;
       importSourceCase_ = 0;
       importSource_ = null;
       return this;
@@ -590,6 +624,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 ? ragFileChunkingConfig_
                 : ragFileChunkingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -655,6 +692,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (other.hasRagFileChunkingConfig()) {
         mergeRagFileChunkingConfig(other.getRagFileChunkingConfig());
       }
+      if (other.getMaxEmbeddingRequestsPerMin() != 0) {
+        setMaxEmbeddingRequestsPerMin(other.getMaxEmbeddingRequestsPerMin());
+      }
       switch (other.getImportSourceCase()) {
         case GCS_SOURCE:
           {
@@ -717,6 +757,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 40:
+              {
+                maxEmbeddingRequestsPerMin_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1409,6 +1455,74 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileChunkingConfig_ = null;
       }
       return ragFileChunkingConfigBuilder_;
+    }
+
+    private int maxEmbeddingRequestsPerMin_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that this job is allowed to
+     * make to the embedding model specified on the corpus. This value is specific
+     * to this job and not shared across other import jobs. Consult the Quotas
+     * page on the project to set an appropriate value here.
+     * If unspecified, a default value of 1,000 QPM would be used.
+     * </pre>
+     *
+     * <code>int32 max_embedding_requests_per_min = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxEmbeddingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getMaxEmbeddingRequestsPerMin() {
+      return maxEmbeddingRequestsPerMin_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that this job is allowed to
+     * make to the embedding model specified on the corpus. This value is specific
+     * to this job and not shared across other import jobs. Consult the Quotas
+     * page on the project to set an appropriate value here.
+     * If unspecified, a default value of 1,000 QPM would be used.
+     * </pre>
+     *
+     * <code>int32 max_embedding_requests_per_min = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The maxEmbeddingRequestsPerMin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxEmbeddingRequestsPerMin(int value) {
+
+      maxEmbeddingRequestsPerMin_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that this job is allowed to
+     * make to the embedding model specified on the corpus. This value is specific
+     * to this job and not shared across other import jobs. Consult the Quotas
+     * page on the project to set an appropriate value here.
+     * If unspecified, a default value of 1,000 QPM would be used.
+     * </pre>
+     *
+     * <code>int32 max_embedding_requests_per_min = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxEmbeddingRequestsPerMin() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxEmbeddingRequestsPerMin_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

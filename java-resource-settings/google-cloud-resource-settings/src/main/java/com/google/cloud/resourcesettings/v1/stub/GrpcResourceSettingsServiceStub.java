@@ -42,7 +42,10 @@ import javax.annotation.Generated;
  * gRPC stub implementation for the ResourceSettingsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcResourceSettingsServiceStub extends ResourceSettingsServiceStub {
   private static final MethodDescriptor<ListSettingsRequest, ListSettingsResponse>
