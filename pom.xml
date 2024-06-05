@@ -133,6 +133,7 @@
     <module>java-network-management</module>
     <module>java-network-security</module>
     <module>java-networkconnectivity</module>
+    <module>java-networkservices</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
     <module>java-optimization</module>

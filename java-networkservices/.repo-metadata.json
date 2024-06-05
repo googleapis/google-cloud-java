@@ -1,0 +1,16 @@
+{
+  "api_shortname": "networkservices",
+  "name_pretty": "Network Services API",
+  "product_documentation": "https://cloud.google.com/products/networking",
+  "api_description": "Google Cloud offers a broad portfolio of networking services built on top of planet-scale infrastructure that leverages automation, advanced AI, and programmability, enabling enterprises to connect, scale, secure, modernize and optimize their infrastructure.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-networkservices",
+  "distribution_name": "com.google.cloud:google-cloud-networkservices",
+  "api_id": "networkservices.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
