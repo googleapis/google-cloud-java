@@ -583,6 +583,9 @@ google-cloud-dns:2.42.0:2.43.0-SNAPSHOT
 google-maps-routing:1.29.0:1.30.0-SNAPSHOT
 proto-google-maps-routing-v2:1.29.0:1.30.0-SNAPSHOT
 grpc-google-maps-routing-v2:1.29.0:1.30.0-SNAPSHOT
+google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-vmwareengine:0.38.0:0.39.0-SNAPSHOT
 proto-google-cloud-vmwareengine-v1:0.38.0:0.39.0-SNAPSHOT
 grpc-google-cloud-vmwareengine-v1:0.38.0:0.39.0-SNAPSHOT
@@ -782,6 +785,3 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
-google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
-proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
-grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
