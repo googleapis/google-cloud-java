@@ -110,6 +110,7 @@
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
+    <module>java-java-maps-fleetengine</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
@@ -246,7 +247,7 @@
             <!-- The root project runs nexus-staging:release task -->
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.7.0</version>
+            <version>1.6.13</version>
             <extensions>true</extensions>
             <configuration>
               <serverId>sonatype-nexus-staging</serverId>

@@ -1,0 +1,16 @@
+{
+  "api_shortname": "fleetengine",
+  "name_pretty": "Last Mile Fleet Solution Delivery API",
+  "product_documentation": "https://developers.google.com/maps/documentation/transportation-logistics/mobility",
+  "api_description": "Enables Fleet Engine for access to the On Demand Rides and Deliveries and     Last Mile Fleet Solution APIs.  Customer's use of Google Maps Content in     the Cloud Logging Services is subject to the Google Maps Platform Terms of     Service located at https://cloud.google.com/maps-platform/terms.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-fleetengine/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-java-maps-fleetengine",
+  "distribution_name": "com.google.maps:google-maps-fleetengine",
+  "api_id": "fleetengine.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

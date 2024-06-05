@@ -782,3 +782,6 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
+google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
