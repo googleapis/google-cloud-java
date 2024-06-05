@@ -104,8 +104,8 @@ public interface CreateSchemaRequestOrBuilder
    *
    * <pre>
    * Required. The ID to use for the
-   * [Schema][google.cloud.discoveryengine.v1alpha.Schema], which will become
-   * the final component of the
+   * [Schema][google.cloud.discoveryengine.v1alpha.Schema], which becomes the
+   * final component of the
    * [Schema.name][google.cloud.discoveryengine.v1alpha.Schema.name].
    *
    * This field should conform to
@@ -123,8 +123,8 @@ public interface CreateSchemaRequestOrBuilder
    *
    * <pre>
    * Required. The ID to use for the
-   * [Schema][google.cloud.discoveryengine.v1alpha.Schema], which will become
-   * the final component of the
+   * [Schema][google.cloud.discoveryengine.v1alpha.Schema], which becomes the
+   * final component of the
    * [Schema.name][google.cloud.discoveryengine.v1alpha.Schema.name].
    *
    * This field should conform to

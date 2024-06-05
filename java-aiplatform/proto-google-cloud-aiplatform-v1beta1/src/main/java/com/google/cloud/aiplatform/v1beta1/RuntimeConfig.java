@@ -1022,69 +1022,59 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Deprecated] Please use app_id instead.
-     * Vertex AI Search serving config name. Format:
+     * Optional. Vertex AI Search serving config name. Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
      * </pre>
      *
-     * <code>string serving_config_name = 1 [deprecated = true];</code>
+     * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @deprecated
-     *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
      * @return The servingConfigName.
      */
-    @java.lang.Deprecated
     java.lang.String getServingConfigName();
     /**
      *
      *
      * <pre>
-     * [Deprecated] Please use app_id instead.
-     * Vertex AI Search serving config name. Format:
+     * Optional. Vertex AI Search serving config name. Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
      * </pre>
      *
-     * <code>string serving_config_name = 1 [deprecated = true];</code>
+     * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @deprecated
-     *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
      * @return The bytes for servingConfigName.
      */
-    @java.lang.Deprecated
     com.google.protobuf.ByteString getServingConfigNameBytes();
 
     /**
      *
      *
      * <pre>
-     * Vertex AI Search App ID. This is used to construct the search request. By
-     * setting this app_id, API will construct the serving config which is
-     * required to call search API for the user.
-     * The app_id and serving_config_name cannot both be empty at the same time.
+     * Optional. Vertex AI Search engine ID. This is used to construct the
+     * search request. By setting this engine_id, API will construct the serving
+     * config using the default value to call search API for the user. The
+     * engine_id and serving_config_name cannot both be empty at the same time.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
+     * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The appId.
+     * @return The engineId.
      */
-    java.lang.String getAppId();
+    java.lang.String getEngineId();
     /**
      *
      *
      * <pre>
-     * Vertex AI Search App ID. This is used to construct the search request. By
-     * setting this app_id, API will construct the serving config which is
-     * required to call search API for the user.
-     * The app_id and serving_config_name cannot both be empty at the same time.
+     * Optional. Vertex AI Search engine ID. This is used to construct the
+     * search request. By setting this engine_id, API will construct the serving
+     * config using the default value to call search API for the user. The
+     * engine_id and serving_config_name cannot both be empty at the same time.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
+     * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The bytes for appId.
+     * @return The bytes for engineId.
      */
-    com.google.protobuf.ByteString getAppIdBytes();
+    com.google.protobuf.ByteString getEngineIdBytes();
   }
   /**
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig}
@@ -1102,7 +1092,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
     private VertexAISearchRuntimeConfig() {
       servingConfigName_ = "";
-      appId_ = "";
+      engineId_ = "";
     }
 
     @java.lang.Override
@@ -1135,20 +1125,15 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Deprecated] Please use app_id instead.
-     * Vertex AI Search serving config name. Format:
+     * Optional. Vertex AI Search serving config name. Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
      * </pre>
      *
-     * <code>string serving_config_name = 1 [deprecated = true];</code>
+     * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @deprecated
-     *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
      * @return The servingConfigName.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public java.lang.String getServingConfigName() {
       java.lang.Object ref = servingConfigName_;
       if (ref instanceof java.lang.String) {
@@ -1164,20 +1149,15 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Deprecated] Please use app_id instead.
-     * Vertex AI Search serving config name. Format:
+     * Optional. Vertex AI Search serving config name. Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
      * </pre>
      *
-     * <code>string serving_config_name = 1 [deprecated = true];</code>
+     * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @deprecated
-     *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
      * @return The bytes for servingConfigName.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.protobuf.ByteString getServingConfigNameBytes() {
       java.lang.Object ref = servingConfigName_;
       if (ref instanceof java.lang.String) {
@@ -1190,33 +1170,33 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    public static final int APP_ID_FIELD_NUMBER = 2;
+    public static final int ENGINE_ID_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private volatile java.lang.Object appId_ = "";
+    private volatile java.lang.Object engineId_ = "";
     /**
      *
      *
      * <pre>
-     * Vertex AI Search App ID. This is used to construct the search request. By
-     * setting this app_id, API will construct the serving config which is
-     * required to call search API for the user.
-     * The app_id and serving_config_name cannot both be empty at the same time.
+     * Optional. Vertex AI Search engine ID. This is used to construct the
+     * search request. By setting this engine_id, API will construct the serving
+     * config using the default value to call search API for the user. The
+     * engine_id and serving_config_name cannot both be empty at the same time.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
+     * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The appId.
+     * @return The engineId.
      */
     @java.lang.Override
-    public java.lang.String getAppId() {
-      java.lang.Object ref = appId_;
+    public java.lang.String getEngineId() {
+      java.lang.Object ref = engineId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        appId_ = s;
+        engineId_ = s;
         return s;
       }
     }
@@ -1224,23 +1204,23 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Vertex AI Search App ID. This is used to construct the search request. By
-     * setting this app_id, API will construct the serving config which is
-     * required to call search API for the user.
-     * The app_id and serving_config_name cannot both be empty at the same time.
+     * Optional. Vertex AI Search engine ID. This is used to construct the
+     * search request. By setting this engine_id, API will construct the serving
+     * config using the default value to call search API for the user. The
+     * engine_id and serving_config_name cannot both be empty at the same time.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
+     * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @return The bytes for appId.
+     * @return The bytes for engineId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getAppIdBytes() {
-      java.lang.Object ref = appId_;
+    public com.google.protobuf.ByteString getEngineIdBytes() {
+      java.lang.Object ref = engineId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        appId_ = b;
+        engineId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1264,8 +1244,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servingConfigName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, servingConfigName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(engineId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, engineId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1279,8 +1259,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servingConfigName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, servingConfigName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(engineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, engineId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1301,7 +1281,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig) obj;
 
       if (!getServingConfigName().equals(other.getServingConfigName())) return false;
-      if (!getAppId().equals(other.getAppId())) return false;
+      if (!getEngineId().equals(other.getEngineId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1315,8 +1295,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVING_CONFIG_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getServingConfigName().hashCode();
-      hash = (37 * hash) + APP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAppId().hashCode();
+      hash = (37 * hash) + ENGINE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEngineId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1463,7 +1443,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         servingConfigName_ = "";
-        appId_ = "";
+        engineId_ = "";
         return this;
       }
 
@@ -1509,7 +1489,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           result.servingConfigName_ = servingConfigName_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.appId_ = appId_;
+          result.engineId_ = engineId_;
         }
       }
 
@@ -1572,8 +1552,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getAppId().isEmpty()) {
-          appId_ = other.appId_;
+        if (!other.getEngineId().isEmpty()) {
+          engineId_ = other.engineId_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
@@ -1611,7 +1591,7 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
                 } // case 10
               case 18:
                 {
-                  appId_ = input.readStringRequireUtf8();
+                  engineId_ = input.readStringRequireUtf8();
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
@@ -1639,19 +1619,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Deprecated] Please use app_id instead.
-       * Vertex AI Search serving config name. Format:
+       * Optional. Vertex AI Search serving config name. Format:
        * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
        * </pre>
        *
-       * <code>string serving_config_name = 1 [deprecated = true];</code>
+       * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @deprecated
-       *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
        * @return The servingConfigName.
        */
-      @java.lang.Deprecated
       public java.lang.String getServingConfigName() {
         java.lang.Object ref = servingConfigName_;
         if (!(ref instanceof java.lang.String)) {
@@ -1667,19 +1642,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Deprecated] Please use app_id instead.
-       * Vertex AI Search serving config name. Format:
+       * Optional. Vertex AI Search serving config name. Format:
        * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
        * </pre>
        *
-       * <code>string serving_config_name = 1 [deprecated = true];</code>
+       * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @deprecated
-       *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
        * @return The bytes for servingConfigName.
        */
-      @java.lang.Deprecated
       public com.google.protobuf.ByteString getServingConfigNameBytes() {
         java.lang.Object ref = servingConfigName_;
         if (ref instanceof String) {
@@ -1695,20 +1665,15 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Deprecated] Please use app_id instead.
-       * Vertex AI Search serving config name. Format:
+       * Optional. Vertex AI Search serving config name. Format:
        * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
        * </pre>
        *
-       * <code>string serving_config_name = 1 [deprecated = true];</code>
+       * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @deprecated
-       *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
        * @param value The servingConfigName to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated
       public Builder setServingConfigName(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1722,19 +1687,14 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Deprecated] Please use app_id instead.
-       * Vertex AI Search serving config name. Format:
+       * Optional. Vertex AI Search serving config name. Format:
        * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
        * </pre>
        *
-       * <code>string serving_config_name = 1 [deprecated = true];</code>
+       * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @deprecated
-       *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated
       public Builder clearServingConfigName() {
         servingConfigName_ = getDefaultInstance().getServingConfigName();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1745,20 +1705,15 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Deprecated] Please use app_id instead.
-       * Vertex AI Search serving config name. Format:
+       * Optional. Vertex AI Search serving config name. Format:
        * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}`
        * </pre>
        *
-       * <code>string serving_config_name = 1 [deprecated = true];</code>
+       * <code>string serving_config_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @deprecated
-       *     google.cloud.aiplatform.v1beta1.RuntimeConfig.VertexAISearchRuntimeConfig.serving_config_name
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/extension.proto;l=346
        * @param value The bytes for servingConfigName to set.
        * @return This builder for chaining.
        */
-      @java.lang.Deprecated
       public Builder setServingConfigNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1770,27 +1725,27 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private java.lang.Object appId_ = "";
+      private java.lang.Object engineId_ = "";
       /**
        *
        *
        * <pre>
-       * Vertex AI Search App ID. This is used to construct the search request. By
-       * setting this app_id, API will construct the serving config which is
-       * required to call search API for the user.
-       * The app_id and serving_config_name cannot both be empty at the same time.
+       * Optional. Vertex AI Search engine ID. This is used to construct the
+       * search request. By setting this engine_id, API will construct the serving
+       * config using the default value to call search API for the user. The
+       * engine_id and serving_config_name cannot both be empty at the same time.
        * </pre>
        *
-       * <code>string app_id = 2;</code>
+       * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @return The appId.
+       * @return The engineId.
        */
-      public java.lang.String getAppId() {
-        java.lang.Object ref = appId_;
+      public java.lang.String getEngineId() {
+        java.lang.Object ref = engineId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          appId_ = s;
+          engineId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1800,22 +1755,22 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Vertex AI Search App ID. This is used to construct the search request. By
-       * setting this app_id, API will construct the serving config which is
-       * required to call search API for the user.
-       * The app_id and serving_config_name cannot both be empty at the same time.
+       * Optional. Vertex AI Search engine ID. This is used to construct the
+       * search request. By setting this engine_id, API will construct the serving
+       * config using the default value to call search API for the user. The
+       * engine_id and serving_config_name cannot both be empty at the same time.
        * </pre>
        *
-       * <code>string app_id = 2;</code>
+       * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @return The bytes for appId.
+       * @return The bytes for engineId.
        */
-      public com.google.protobuf.ByteString getAppIdBytes() {
-        java.lang.Object ref = appId_;
+      public com.google.protobuf.ByteString getEngineIdBytes() {
+        java.lang.Object ref = engineId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          appId_ = b;
+          engineId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1825,22 +1780,22 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Vertex AI Search App ID. This is used to construct the search request. By
-       * setting this app_id, API will construct the serving config which is
-       * required to call search API for the user.
-       * The app_id and serving_config_name cannot both be empty at the same time.
+       * Optional. Vertex AI Search engine ID. This is used to construct the
+       * search request. By setting this engine_id, API will construct the serving
+       * config using the default value to call search API for the user. The
+       * engine_id and serving_config_name cannot both be empty at the same time.
        * </pre>
        *
-       * <code>string app_id = 2;</code>
+       * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @param value The appId to set.
+       * @param value The engineId to set.
        * @return This builder for chaining.
        */
-      public Builder setAppId(java.lang.String value) {
+      public Builder setEngineId(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        appId_ = value;
+        engineId_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
@@ -1849,18 +1804,18 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Vertex AI Search App ID. This is used to construct the search request. By
-       * setting this app_id, API will construct the serving config which is
-       * required to call search API for the user.
-       * The app_id and serving_config_name cannot both be empty at the same time.
+       * Optional. Vertex AI Search engine ID. This is used to construct the
+       * search request. By setting this engine_id, API will construct the serving
+       * config using the default value to call search API for the user. The
+       * engine_id and serving_config_name cannot both be empty at the same time.
        * </pre>
        *
-       * <code>string app_id = 2;</code>
+       * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
-      public Builder clearAppId() {
-        appId_ = getDefaultInstance().getAppId();
+      public Builder clearEngineId() {
+        engineId_ = getDefaultInstance().getEngineId();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -1869,23 +1824,23 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Vertex AI Search App ID. This is used to construct the search request. By
-       * setting this app_id, API will construct the serving config which is
-       * required to call search API for the user.
-       * The app_id and serving_config_name cannot both be empty at the same time.
+       * Optional. Vertex AI Search engine ID. This is used to construct the
+       * search request. By setting this engine_id, API will construct the serving
+       * config using the default value to call search API for the user. The
+       * engine_id and serving_config_name cannot both be empty at the same time.
        * </pre>
        *
-       * <code>string app_id = 2;</code>
+       * <code>string engine_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
-       * @param value The bytes for appId to set.
+       * @param value The bytes for engineId to set.
        * @return This builder for chaining.
        */
-      public Builder setAppIdBytes(com.google.protobuf.ByteString value) {
+      public Builder setEngineIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-        appId_ = value;
+        engineId_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;

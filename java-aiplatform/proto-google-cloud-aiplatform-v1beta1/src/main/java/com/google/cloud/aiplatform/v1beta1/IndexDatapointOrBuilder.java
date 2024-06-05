@@ -53,8 +53,8 @@ public interface IndexDatapointOrBuilder
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -66,8 +66,8 @@ public interface IndexDatapointOrBuilder
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -79,8 +79,8 @@ public interface IndexDatapointOrBuilder
    *
    *
    * <pre>
-   * Required. Feature embedding vector. An array of numbers with the length of
-   * [NearestNeighborSearchConfig.dimensions].
+   * Required. Feature embedding vector for dense index. An array of numbers
+   * with the length of [NearestNeighborSearchConfig.dimensions].
    * </pre>
    *
    * <code>repeated float feature_vector = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -89,6 +89,48 @@ public interface IndexDatapointOrBuilder
    * @return The featureVector at the given index.
    */
   float getFeatureVector(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sparseEmbedding field is set.
+   */
+  boolean hasSparseEmbedding();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sparseEmbedding.
+   */
+  com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding getSparseEmbedding();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature embedding vector for sparse index.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbedding sparse_embedding = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.IndexDatapoint.SparseEmbeddingOrBuilder
+      getSparseEmbeddingOrBuilder();
 
   /**
    *

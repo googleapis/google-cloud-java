@@ -84,6 +84,19 @@ public interface FactChunkOrBuilder
    *
    *
    * <pre>
+   * The index of this chunk. Currently, only used for the streaming mode.
+   * </pre>
+   *
+   * <code>int32 index = 4;</code>
+   *
+   * @return The index.
+   */
+  int getIndex();
+
+  /**
+   *
+   *
+   * <pre>
    * More fine-grained information for the source reference.
    * </pre>
    *

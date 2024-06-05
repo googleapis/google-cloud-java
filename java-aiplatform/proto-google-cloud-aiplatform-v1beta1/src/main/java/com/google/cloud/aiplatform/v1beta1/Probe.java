@@ -961,7 +961,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Exec specifies the action to take.
+   * ExecAction probes the health of a container by executing a command.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -976,7 +976,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Exec specifies the action to take.
+   * ExecAction probes the health of a container by executing a command.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -994,7 +994,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Exec specifies the action to take.
+   * ExecAction probes the health of a container by executing a command.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1489,7 +1489,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1504,7 +1504,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1529,7 +1529,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1551,7 +1551,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1571,7 +1571,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1604,7 +1604,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1629,7 +1629,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1641,7 +1641,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>
@@ -1661,7 +1661,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Exec specifies the action to take.
+     * ExecAction probes the health of a container by executing a command.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Probe.ExecAction exec = 1;</code>

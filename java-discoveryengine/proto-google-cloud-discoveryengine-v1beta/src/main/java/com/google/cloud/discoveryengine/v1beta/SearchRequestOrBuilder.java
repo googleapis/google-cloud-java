@@ -241,7 +241,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -254,7 +257,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -266,7 +272,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -278,7 +287,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -292,7 +304,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * A list of data store specs to apply on a search call.
+   * Specs defining dataStores to filter on in a search call and configurations
+   * for those dataStores. This is only considered for engines with multiple
+   * dataStores use case. For single dataStore within an engine, they should
+   * use the specs at the top level.
    * </pre>
    *
    * <code>
@@ -409,7 +424,9 @@ public interface SearchRequestOrBuilder
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive. For more information on ordering, see
+   * case-sensitive.
+   *
+   * For more information on ordering for retail search, see
    * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -427,7 +444,9 @@ public interface SearchRequestOrBuilder
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive. For more information on ordering, see
+   * case-sensitive.
+   *
+   * For more information on ordering for retail search, see
    * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
@@ -563,7 +582,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -577,7 +596,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -591,7 +610,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * Boost specification to boost certain documents.
    * For more information on boosting, see
-   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -608,8 +627,7 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -617,8 +635,7 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -634,8 +651,7 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -643,8 +659,7 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -663,8 +678,7 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -672,8 +686,7 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -689,8 +702,7 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -698,8 +710,7 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -719,8 +730,7 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
-   *    Example:
-   *    user_country_code: "au"
+   *    For example, `user_country_code: "au"`
    *
    *    For available codes see [Country
    *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
@@ -728,8 +738,7 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *    depending on the value. The only valid non-default value is 1,
    *    which enables image searching.
-   *    Example:
-   *    search_type: 1
+   *    For example, `search_type: 1`
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>

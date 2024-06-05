@@ -406,6 +406,64 @@ public class ReasoningEngineServiceClientTest {
   }
 
   @Test
+  public void updateReasoningEngineTest() throws Exception {
+    ReasoningEngine expectedResponse =
+        ReasoningEngine.newBuilder()
+            .setName(
+                ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setSpec(ReasoningEngineSpec.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateReasoningEngineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockReasoningEngineService.addResponse(resultOperation);
+
+    ReasoningEngine reasoningEngine = ReasoningEngine.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ReasoningEngine actualResponse =
+        client.updateReasoningEngineAsync(reasoningEngine, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReasoningEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateReasoningEngineRequest actualRequest =
+        ((UpdateReasoningEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(reasoningEngine, actualRequest.getReasoningEngine());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateReasoningEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReasoningEngineService.addException(exception);
+
+    try {
+      ReasoningEngine reasoningEngine = ReasoningEngine.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateReasoningEngineAsync(reasoningEngine, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteReasoningEngineTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =

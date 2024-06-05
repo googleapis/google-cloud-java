@@ -136,6 +136,13 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
         .deleteNotebookRuntimeTemplateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateNotebookRuntimeTemplate. */
+  public UnaryCallSettings<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .updateNotebookRuntimeTemplateSettings();
+  }
+
   /** Returns the object with the settings used for calls to assignNotebookRuntime. */
   public UnaryCallSettings<AssignNotebookRuntimeRequest, Operation>
       assignNotebookRuntimeSettings() {
@@ -207,6 +214,22 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       startNotebookRuntimeOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
         .startNotebookRuntimeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public UnaryCallSettings<CreateNotebookExecutionJobRequest, Operation>
+      createNotebookExecutionJobSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).createNotebookExecutionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
+  public OperationCallSettings<
+          CreateNotebookExecutionJobRequest,
+          NotebookExecutionJob,
+          CreateNotebookExecutionJobOperationMetadata>
+      createNotebookExecutionJobOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings())
+        .createNotebookExecutionJobOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getNotebookExecutionJob. */
@@ -403,6 +426,12 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       return getStubSettingsBuilder().deleteNotebookRuntimeTemplateOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateNotebookRuntimeTemplate. */
+    public UnaryCallSettings.Builder<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplateSettings() {
+      return getStubSettingsBuilder().updateNotebookRuntimeTemplateSettings();
+    }
+
     /** Returns the builder for the settings used for calls to assignNotebookRuntime. */
     public UnaryCallSettings.Builder<AssignNotebookRuntimeRequest, Operation>
         assignNotebookRuntimeSettings() {
@@ -472,6 +501,21 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return getStubSettingsBuilder().startNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public UnaryCallSettings.Builder<CreateNotebookExecutionJobRequest, Operation>
+        createNotebookExecutionJobSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */
+    public OperationCallSettings.Builder<
+            CreateNotebookExecutionJobRequest,
+            NotebookExecutionJob,
+            CreateNotebookExecutionJobOperationMetadata>
+        createNotebookExecutionJobOperationSettings() {
+      return getStubSettingsBuilder().createNotebookExecutionJobOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNotebookExecutionJob. */

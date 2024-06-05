@@ -160,6 +160,50 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the layoutConfig field is set.
+   */
+  boolean hasLayoutConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The layoutConfig.
+   */
+  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig getLayoutConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`.
+   * Returns error if set on other processor types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.LayoutConfig layout_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder getLayoutConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Override the schema of the
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]. Will
    * return an Invalid Argument error if this field is set when the underlying

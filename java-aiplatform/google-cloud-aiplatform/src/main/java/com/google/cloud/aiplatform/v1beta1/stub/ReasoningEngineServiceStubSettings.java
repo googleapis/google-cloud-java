@@ -53,6 +53,8 @@ import com.google.cloud.aiplatform.v1beta1.GetReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngine;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -131,6 +133,11 @@ public class ReasoningEngineServiceStubSettings
           ListReasoningEnginesResponse,
           ListReasoningEnginesPagedResponse>
       listReasoningEnginesSettings;
+  private final UnaryCallSettings<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineSettings;
+  private final OperationCallSettings<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationSettings;
   private final UnaryCallSettings<DeleteReasoningEngineRequest, Operation>
       deleteReasoningEngineSettings;
   private final OperationCallSettings<DeleteReasoningEngineRequest, Empty, DeleteOperationMetadata>
@@ -290,6 +297,19 @@ public class ReasoningEngineServiceStubSettings
     return listReasoningEnginesSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateReasoningEngine. */
+  public UnaryCallSettings<UpdateReasoningEngineRequest, Operation>
+      updateReasoningEngineSettings() {
+    return updateReasoningEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateReasoningEngine. */
+  public OperationCallSettings<
+          UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+      updateReasoningEngineOperationSettings() {
+    return updateReasoningEngineOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteReasoningEngine. */
   public UnaryCallSettings<DeleteReasoningEngineRequest, Operation>
       deleteReasoningEngineSettings() {
@@ -414,6 +434,9 @@ public class ReasoningEngineServiceStubSettings
         settingsBuilder.createReasoningEngineOperationSettings().build();
     getReasoningEngineSettings = settingsBuilder.getReasoningEngineSettings().build();
     listReasoningEnginesSettings = settingsBuilder.listReasoningEnginesSettings().build();
+    updateReasoningEngineSettings = settingsBuilder.updateReasoningEngineSettings().build();
+    updateReasoningEngineOperationSettings =
+        settingsBuilder.updateReasoningEngineOperationSettings().build();
     deleteReasoningEngineSettings = settingsBuilder.deleteReasoningEngineSettings().build();
     deleteReasoningEngineOperationSettings =
         settingsBuilder.deleteReasoningEngineOperationSettings().build();
@@ -440,6 +463,11 @@ public class ReasoningEngineServiceStubSettings
             ListReasoningEnginesResponse,
             ListReasoningEnginesPagedResponse>
         listReasoningEnginesSettings;
+    private final UnaryCallSettings.Builder<UpdateReasoningEngineRequest, Operation>
+        updateReasoningEngineSettings;
+    private final OperationCallSettings.Builder<
+            UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+        updateReasoningEngineOperationSettings;
     private final UnaryCallSettings.Builder<DeleteReasoningEngineRequest, Operation>
         deleteReasoningEngineSettings;
     private final OperationCallSettings.Builder<
@@ -485,6 +513,8 @@ public class ReasoningEngineServiceStubSettings
       getReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReasoningEnginesSettings =
           PagedCallSettings.newBuilder(LIST_REASONING_ENGINES_PAGE_STR_FACT);
+      updateReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateReasoningEngineOperationSettings = OperationCallSettings.newBuilder();
       deleteReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteReasoningEngineOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -498,6 +528,7 @@ public class ReasoningEngineServiceStubSettings
               createReasoningEngineSettings,
               getReasoningEngineSettings,
               listReasoningEnginesSettings,
+              updateReasoningEngineSettings,
               deleteReasoningEngineSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -515,6 +546,9 @@ public class ReasoningEngineServiceStubSettings
           settings.createReasoningEngineOperationSettings.toBuilder();
       getReasoningEngineSettings = settings.getReasoningEngineSettings.toBuilder();
       listReasoningEnginesSettings = settings.listReasoningEnginesSettings.toBuilder();
+      updateReasoningEngineSettings = settings.updateReasoningEngineSettings.toBuilder();
+      updateReasoningEngineOperationSettings =
+          settings.updateReasoningEngineOperationSettings.toBuilder();
       deleteReasoningEngineSettings = settings.deleteReasoningEngineSettings.toBuilder();
       deleteReasoningEngineOperationSettings =
           settings.deleteReasoningEngineOperationSettings.toBuilder();
@@ -529,6 +563,7 @@ public class ReasoningEngineServiceStubSettings
               createReasoningEngineSettings,
               getReasoningEngineSettings,
               listReasoningEnginesSettings,
+              updateReasoningEngineSettings,
               deleteReasoningEngineSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -562,6 +597,11 @@ public class ReasoningEngineServiceStubSettings
 
       builder
           .listReasoningEnginesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateReasoningEngineSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -608,6 +648,31 @@ public class ReasoningEngineServiceStubSettings
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   CreateReasoningEngineOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateReasoningEngineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateReasoningEngineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ReasoningEngine.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateReasoningEngineOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -688,6 +753,19 @@ public class ReasoningEngineServiceStubSettings
             ListReasoningEnginesPagedResponse>
         listReasoningEnginesSettings() {
       return listReasoningEnginesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReasoningEngine. */
+    public UnaryCallSettings.Builder<UpdateReasoningEngineRequest, Operation>
+        updateReasoningEngineSettings() {
+      return updateReasoningEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReasoningEngine. */
+    public OperationCallSettings.Builder<
+            UpdateReasoningEngineRequest, ReasoningEngine, UpdateReasoningEngineOperationMetadata>
+        updateReasoningEngineOperationSettings() {
+      return updateReasoningEngineOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteReasoningEngine. */

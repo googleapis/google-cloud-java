@@ -25,6 +25,7 @@ import com.google.cloud.discoveryengine.v1alpha.GroundedGenerationServiceClient;
 import com.google.cloud.discoveryengine.v1alpha.GroundingConfigName;
 import com.google.cloud.discoveryengine.v1alpha.GroundingFact;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncCheckGrounding {
 
@@ -48,6 +49,7 @@ public class AsyncCheckGrounding {
               .setAnswerCandidate("answerCandidate-292402331")
               .addAllFacts(new ArrayList<GroundingFact>())
               .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       ApiFuture<CheckGroundingResponse> future =
           groundedGenerationServiceClient.checkGroundingCallable().futureCall(request);

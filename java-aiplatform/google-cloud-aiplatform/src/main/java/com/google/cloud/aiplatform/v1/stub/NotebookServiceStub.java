@@ -41,6 +41,7 @@ import com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeResponse;
@@ -115,6 +116,12 @@ public abstract class NotebookServiceStub implements BackgroundResource {
       deleteNotebookRuntimeTemplateCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteNotebookRuntimeTemplateCallable()");
+  }
+
+  public UnaryCallable<UpdateNotebookRuntimeTemplateRequest, NotebookRuntimeTemplate>
+      updateNotebookRuntimeTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateNotebookRuntimeTemplateCallable()");
   }
 
   public OperationCallable<

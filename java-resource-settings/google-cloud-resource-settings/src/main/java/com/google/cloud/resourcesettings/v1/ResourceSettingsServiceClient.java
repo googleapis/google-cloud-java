@@ -45,7 +45,9 @@ import javax.annotation.Generated;
  * <p>For all requests, returns a `google.rpc.Status` with `google.rpc.Code.PERMISSION_DENIED` if
  * the IAM check fails or the `parent` resource is not in a Cloud Organization. For all requests,
  * returns a `google.rpc.Status` with `google.rpc.Code.INVALID_ARGUMENT` if the request is
- * malformed.
+ * malformed. (== deprecation_description Resource Settings is deprecated. As of November 7, 2023,
+ * no organizations will be onboarded for any of the enabled settings, and the service will be shut
+ * down on October 1, 2024. ==)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -189,7 +191,10 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class ResourceSettingsServiceClient implements BackgroundResource {
   private final ResourceSettingsServiceSettings settings;

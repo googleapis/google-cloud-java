@@ -29,6 +29,14 @@ public final class SearchTuningServiceProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_fieldAccessorTable;
@@ -62,52 +70,65 @@ public final class SearchTuningServiceProto {
           + ".discoveryengine.v1alpha\032\034google/api/ann"
           + "otations.proto\032\027google/api/client.proto\032"
           + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/resource.proto\0328google/cloud/discov"
-          + "eryengine/v1alpha/import_config.proto\032#g"
-          + "oogle/longrunning/operations.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\032\027google/rpc/"
-          + "status.proto\"\272\003\n\027TrainCustomModelRequest"
-          + "\022l\n\022gcs_training_input\030\002 \001(\0132N.google.cl"
-          + "oud.discoveryengine.v1alpha.TrainCustomM"
-          + "odelRequest.GcsTrainingInputH\000\022D\n\ndata_s"
-          + "tore\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.goog"
-          + "leapis.com/DataStore\022\022\n\nmodel_type\030\003 \001(\t"
-          + "\022M\n\014error_config\030\004 \001(\01327.google.cloud.di"
-          + "scoveryengine.v1alpha.ImportErrorConfig\032"
+          + "/api/resource.proto\032>google/cloud/discov"
+          + "eryengine/v1alpha/custom_tuning_model.pr"
+          + "oto\0328google/cloud/discoveryengine/v1alph"
+          + "a/import_config.proto\032#google/longrunnin"
+          + "g/operations.proto\032\037google/protobuf/time"
+          + "stamp.proto\032\027google/rpc/status.proto\"_\n\027"
+          + "ListCustomModelsRequest\022D\n\ndata_store\030\001 "
+          + "\001(\tB0\340A\002\372A*\n(discoveryengine.googleapis."
+          + "com/DataStore\"c\n\030ListCustomModelsRespons"
+          + "e\022G\n\006models\030\001 \003(\01327.google.cloud.discove"
+          + "ryengine.v1alpha.CustomTuningModel\"\314\003\n\027T"
+          + "rainCustomModelRequest\022l\n\022gcs_training_i"
+          + "nput\030\002 \001(\0132N.google.cloud.discoveryengin"
+          + "e.v1alpha.TrainCustomModelRequest.GcsTra"
+          + "iningInputH\000\022D\n\ndata_store\030\001 \001(\tB0\340A\002\372A*"
+          + "\n(discoveryengine.googleapis.com/DataSto"
+          + "re\022\022\n\nmodel_type\030\003 \001(\t\022M\n\014error_config\030\004"
+          + " \001(\01327.google.cloud.discoveryengine.v1al"
+          + "pha.ImportErrorConfig\022\020\n\010model_id\030\005 \001(\t\032"
           + "v\n\020GcsTrainingInput\022\030\n\020corpus_data_path\030"
           + "\001 \001(\t\022\027\n\017query_data_path\030\002 \001(\t\022\027\n\017train_"
           + "data_path\030\003 \001(\t\022\026\n\016test_data_path\030\004 \001(\tB"
-          + "\020\n\016training_input\"\270\002\n\030TrainCustomModelRe"
+          + "\020\n\016training_input\"\314\002\n\030TrainCustomModelRe"
           + "sponse\022)\n\rerror_samples\030\001 \003(\0132\022.google.r"
           + "pc.Status\022M\n\014error_config\030\002 \001(\01327.google"
           + ".cloud.discoveryengine.v1alpha.ImportErr"
           + "orConfig\022\024\n\014model_status\030\003 \001(\t\022\\\n\007metric"
           + "s\030\004 \003(\0132K.google.cloud.discoveryengine.v"
           + "1alpha.TrainCustomModelResponse.MetricsE"
-          + "ntry\032.\n\014MetricsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\001:\0028\001\"|\n\030TrainCustomModelMetadata"
-          + "\022/\n\013create_time\030\001 \001(\0132\032.google.protobuf."
-          + "Timestamp\022/\n\013update_time\030\002 \001(\0132\032.google."
-          + "protobuf.Timestamp2\303\003\n\023SearchTuningServi"
-          + "ce\022\327\002\n\020TrainCustomModel\022=.google.cloud.d"
-          + "iscoveryengine.v1alpha.TrainCustomModelR"
-          + "equest\032\035.google.longrunning.Operation\"\344\001"
-          + "\312A~\n=google.cloud.discoveryengine.v1alph"
-          + "a.TrainCustomModelResponse\022=google.cloud"
-          + ".discoveryengine.v1alpha.TrainCustomMode"
-          + "lMetadata\202\323\344\223\002]\"X/v1alpha/{data_store=pr"
-          + "ojects/*/locations/*/collections/*/dataS"
-          + "tores/*}:trainCustomModel:\001*\032R\312A\036discove"
-          + "ryengine.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\244\002\n(com"
-          + ".google.cloud.discoveryengine.v1alphaB\030S"
-          + "earchTuningServiceProtoP\001ZRcloud.google."
-          + "com/go/discoveryengine/apiv1alpha/discov"
-          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
-          + "YENGINE\252\002$Google.Cloud.DiscoveryEngine.V"
-          + "1Alpha\312\002$Google\\Cloud\\DiscoveryEngine\\V1"
-          + "alpha\352\002\'Google::Cloud::DiscoveryEngine::"
-          + "V1alphab\006proto3"
+          + "ntry\022\022\n\nmodel_name\030\005 \001(\t\032.\n\014MetricsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\"|\n\030Trai"
+          + "nCustomModelMetadata\022/\n\013create_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022/\n\013update_"
+          + "time\030\002 \001(\0132\032.google.protobuf.Timestamp2\265"
+          + "\005\n\023SearchTuningService\022\327\002\n\020TrainCustomMo"
+          + "del\022=.google.cloud.discoveryengine.v1alp"
+          + "ha.TrainCustomModelRequest\032\035.google.long"
+          + "running.Operation\"\344\001\312A~\n=google.cloud.di"
+          + "scoveryengine.v1alpha.TrainCustomModelRe"
+          + "sponse\022=google.cloud.discoveryengine.v1a"
+          + "lpha.TrainCustomModelMetadata\202\323\344\223\002]\"X/v1"
+          + "alpha/{data_store=projects/*/locations/*"
+          + "/collections/*/dataStores/*}:trainCustom"
+          + "Model:\001*\022\357\001\n\020ListCustomModels\022=.google.c"
+          + "loud.discoveryengine.v1alpha.ListCustomM"
+          + "odelsRequest\032>.google.cloud.discoveryeng"
+          + "ine.v1alpha.ListCustomModelsResponse\"\\\202\323"
+          + "\344\223\002V\022T/v1alpha/{data_store=projects/*/lo"
+          + "cations/*/collections/*/dataStores/*}/cu"
+          + "stomModels\032R\312A\036discoveryengine.googleapi"
+          + "s.com\322A.https://www.googleapis.com/auth/"
+          + "cloud-platformB\244\002\n(com.google.cloud.disc"
+          + "overyengine.v1alphaB\030SearchTuningService"
+          + "ProtoP\001ZRcloud.google.com/go/discoveryen"
+          + "gine/apiv1alpha/discoveryenginepb;discov"
+          + "eryenginepb\242\002\017DISCOVERYENGINE\252\002$Google.C"
+          + "loud.DiscoveryEngine.V1Alpha\312\002$Google\\Cl"
+          + "oud\\DiscoveryEngine\\V1alpha\352\002\'Google::Cl"
+          + "oud::DiscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -117,18 +138,40 @@ public final class SearchTuningServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.CustomTuningModelProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1alpha.ImportConfigProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
-    internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_descriptor =
+    internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsRequest_descriptor,
+            new java.lang.String[] {
+              "DataStore",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_ListCustomModelsResponse_descriptor,
+            new java.lang.String[] {
+              "Models",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_descriptor,
             new java.lang.String[] {
-              "GcsTrainingInput", "DataStore", "ModelType", "ErrorConfig", "TrainingInput",
+              "GcsTrainingInput",
+              "DataStore",
+              "ModelType",
+              "ErrorConfig",
+              "ModelId",
+              "TrainingInput",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_GcsTrainingInput_descriptor =
         internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelRequest_descriptor
@@ -141,12 +184,12 @@ public final class SearchTuningServiceProto {
               "CorpusDataPath", "QueryDataPath", "TrainDataPath", "TestDataPath",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_descriptor,
             new java.lang.String[] {
-              "ErrorSamples", "ErrorConfig", "ModelStatus", "Metrics",
+              "ErrorSamples", "ErrorConfig", "ModelStatus", "Metrics", "ModelName",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_MetricsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelResponse_descriptor
@@ -159,7 +202,7 @@ public final class SearchTuningServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_TrainCustomModelMetadata_descriptor,
@@ -180,6 +223,7 @@ public final class SearchTuningServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.CustomTuningModelProto.getDescriptor();
     com.google.cloud.discoveryengine.v1alpha.ImportConfigProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

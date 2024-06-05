@@ -47,25 +47,31 @@ public final class DataSourceProto {
     java.lang.String[] descriptorData = {
       "\n5google/maps/mapsplatformdatasets/v1/da"
           + "ta_source.proto\022#google.maps.mapsplatfor"
-          + "mdatasets.v1\"i\n\017LocalFileSource\022\020\n\010filen"
-          + "ame\030\001 \001(\t\022D\n\013file_format\030\002 \001(\0162/.google."
-          + "maps.mapsplatformdatasets.v1.FileFormat\""
-          + "d\n\tGcsSource\022\021\n\tinput_uri\030\001 \001(\t\022D\n\013file_"
-          + "format\030\002 \001(\0162/.google.maps.mapsplatformd"
-          + "atasets.v1.FileFormat*l\n\nFileFormat\022\033\n\027F"
-          + "ILE_FORMAT_UNSPECIFIED\020\000\022\027\n\023FILE_FORMAT_"
-          + "GEOJSON\020\001\022\023\n\017FILE_FORMAT_KML\020\002\022\023\n\017FILE_F"
-          + "ORMAT_CSV\020\003B\362\001\n\'com.google.maps.mapsplat"
-          + "formdatasets.v1B\017DataSourceProtoP\001Zaclou"
-          + "d.google.com/go/maps/mapsplatformdataset"
-          + "s/apiv1/mapsplatformdatasetspb;mapsplatf"
-          + "ormdatasetspb\242\002\004MDV1\252\002#Google.Maps.MapsP"
-          + "latformDatasets.V1\312\002#Google\\Maps\\MapsPla"
-          + "tformDatasets\\V1b\006proto3"
+          + "mdatasets.v1\032\037google/api/field_behavior."
+          + "proto\032\031google/api/resource.proto\"i\n\017Loca"
+          + "lFileSource\022\020\n\010filename\030\001 \001(\t\022D\n\013file_fo"
+          + "rmat\030\002 \001(\0162/.google.maps.mapsplatformdat"
+          + "asets.v1.FileFormat\"d\n\tGcsSource\022\021\n\tinpu"
+          + "t_uri\030\001 \001(\t\022D\n\013file_format\030\002 \001(\0162/.googl"
+          + "e.maps.mapsplatformdatasets.v1.FileForma"
+          + "t*l\n\nFileFormat\022\033\n\027FILE_FORMAT_UNSPECIFI"
+          + "ED\020\000\022\027\n\023FILE_FORMAT_GEOJSON\020\001\022\023\n\017FILE_FO"
+          + "RMAT_KML\020\002\022\023\n\017FILE_FORMAT_CSV\020\003B\362\001\n\'com."
+          + "google.maps.mapsplatformdatasets.v1B\017Dat"
+          + "aSourceProtoP\001Zacloud.google.com/go/maps"
+          + "/mapsplatformdatasets/apiv1/mapsplatform"
+          + "datasetspb;mapsplatformdatasetspb\242\002\004MDV1"
+          + "\252\002#Google.Maps.MapsPlatformDatasets.V1\312\002"
+          + "#Google\\Maps\\MapsPlatformDatasets\\V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+            });
     internal_static_google_maps_mapsplatformdatasets_v1_LocalFileSource_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_maps_mapsplatformdatasets_v1_LocalFileSource_fieldAccessorTable =
@@ -82,6 +88,8 @@ public final class DataSourceProto {
             new java.lang.String[] {
               "InputUri", "FileFormat",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

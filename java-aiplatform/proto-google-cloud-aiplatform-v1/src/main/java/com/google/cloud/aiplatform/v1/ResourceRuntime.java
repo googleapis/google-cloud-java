@@ -51,6 +51,18 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
         .internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 1:
+        return internalGetAccessUris();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -59,6 +71,132 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1.ResourceRuntime.class,
             com.google.cloud.aiplatform.v1.ResourceRuntime.Builder.class);
+  }
+
+  public static final int ACCESS_URIS_FIELD_NUMBER = 1;
+
+  private static final class AccessUrisDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1.PersistentResourceProto
+                .internal_static_google_cloud_aiplatform_v1_ResourceRuntime_AccessUrisEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> accessUris_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAccessUris() {
+    if (accessUris_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AccessUrisDefaultEntryHolder.defaultEntry);
+    }
+    return accessUris_;
+  }
+
+  public int getAccessUrisCount() {
+    return internalGetAccessUris().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for user to connect to the Cluster.
+   * Example:
+   * {
+   *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+   *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+   * }
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAccessUris(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAccessUris().getMap().containsKey(key);
+  }
+  /** Use {@link #getAccessUrisMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAccessUris() {
+    return getAccessUrisMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for user to connect to the Cluster.
+   * Example:
+   * {
+   *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+   *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+   * }
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAccessUrisMap() {
+    return internalGetAccessUris().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for user to connect to the Cluster.
+   * Example:
+   * {
+   *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+   *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+   * }
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAccessUrisOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URIs for user to connect to the Cluster.
+   * Example:
+   * {
+   *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+   *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+   * }
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAccessUrisOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -75,6 +213,8 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAccessUris(), AccessUrisDefaultEntryHolder.defaultEntry, 1);
     getUnknownFields().writeTo(output);
   }
 
@@ -84,6 +224,16 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAccessUris().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> accessUris__ =
+          AccessUrisDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, accessUris__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -100,6 +250,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.aiplatform.v1.ResourceRuntime other =
         (com.google.cloud.aiplatform.v1.ResourceRuntime) obj;
 
+    if (!internalGetAccessUris().equals(other.internalGetAccessUris())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,6 +262,10 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (!internalGetAccessUris().getMap().isEmpty()) {
+      hash = (37 * hash) + ACCESS_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAccessUris().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -229,6 +384,28 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
           .internal_static_google_cloud_aiplatform_v1_ResourceRuntime_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetAccessUris();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetMutableAccessUris();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -249,6 +426,8 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      internalGetMutableAccessUris().clear();
       return this;
     }
 
@@ -276,8 +455,19 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1.ResourceRuntime buildPartial() {
       com.google.cloud.aiplatform.v1.ResourceRuntime result =
           new com.google.cloud.aiplatform.v1.ResourceRuntime(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.ResourceRuntime result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessUris_ = internalGetAccessUris();
+        result.accessUris_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -325,6 +515,8 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1.ResourceRuntime other) {
       if (other == com.google.cloud.aiplatform.v1.ResourceRuntime.getDefaultInstance()) return this;
+      internalGetMutableAccessUris().mergeFrom(other.internalGetAccessUris());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -351,6 +543,18 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> accessUris__ =
+                    input.readMessage(
+                        AccessUrisDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAccessUris()
+                    .getMutableMap()
+                    .put(accessUris__.getKey(), accessUris__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -365,6 +569,216 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> accessUris_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAccessUris() {
+      if (accessUris_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AccessUrisDefaultEntryHolder.defaultEntry);
+      }
+      return accessUris_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAccessUris() {
+      if (accessUris_ == null) {
+        accessUris_ =
+            com.google.protobuf.MapField.newMapField(AccessUrisDefaultEntryHolder.defaultEntry);
+      }
+      if (!accessUris_.isMutable()) {
+        accessUris_ = accessUris_.copy();
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return accessUris_;
+    }
+
+    public int getAccessUrisCount() {
+      return internalGetAccessUris().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAccessUris(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAccessUris().getMap().containsKey(key);
+    }
+    /** Use {@link #getAccessUrisMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAccessUris() {
+      return getAccessUrisMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAccessUrisMap() {
+      return internalGetAccessUris().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAccessUrisOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAccessUrisOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAccessUris().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAccessUris() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableAccessUris().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAccessUris(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAccessUris().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAccessUris() {
+      bitField0_ |= 0x00000001;
+      return internalGetMutableAccessUris().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAccessUris(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAccessUris().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URIs for user to connect to the Cluster.
+     * Example:
+     * {
+     *   "RAY_HEAD_NODE_INTERNAL_IP": "head-node-IP:10001"
+     *   "RAY_DASHBOARD_URI": "ray-dashboard-address:8888"
+     * }
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; access_uris = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllAccessUris(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAccessUris().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

@@ -72,7 +72,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+   * Required. The name of the setting to get. See
+   * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
    * requirements.
    * </pre>
    *
@@ -98,7 +99,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+   * Required. The name of the setting to get. See
+   * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
    * requirements.
    * </pre>
    *
@@ -528,7 +530,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+     * Required. The name of the setting to get. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
      * requirements.
      * </pre>
      *
@@ -553,7 +556,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+     * Required. The name of the setting to get. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
      * requirements.
      * </pre>
      *
@@ -578,7 +582,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+     * Required. The name of the setting to get. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
      * requirements.
      * </pre>
      *
@@ -602,7 +607,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+     * Required. The name of the setting to get. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
      * requirements.
      * </pre>
      *
@@ -622,7 +628,8 @@ public final class GetSettingRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+     * Required. The name of the setting to get. See
+     * [Setting][google.cloud.resourcesettings.v1.Setting] for naming
      * requirements.
      * </pre>
      *

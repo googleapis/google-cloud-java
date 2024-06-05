@@ -624,6 +624,48 @@ public interface NotebookRuntimeOrBuilder
    *
    *
    * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the idleShutdownConfig field is set.
+   */
+  boolean hasIdleShutdownConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The idleShutdownConfig.
+   */
+  com.google.cloud.aiplatform.v1.NotebookIdleShutdownConfig getIdleShutdownConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.NotebookIdleShutdownConfigOrBuilder
+      getIdleShutdownConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The Compute Engine tags to add to runtime (see [Tagging
    * instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
    * </pre>
@@ -674,4 +716,71 @@ public interface NotebookRuntimeOrBuilder
    * @return The bytes of the networkTags at the given index.
    */
   com.google.protobuf.ByteString getNetworkTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

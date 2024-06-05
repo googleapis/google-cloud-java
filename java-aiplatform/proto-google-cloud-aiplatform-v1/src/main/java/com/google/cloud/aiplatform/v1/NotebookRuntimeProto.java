@@ -56,82 +56,90 @@ public final class NotebookRuntimeProto {
       "\n1google/cloud/aiplatform/v1/notebook_ru"
           + "ntime.proto\022\032google.cloud.aiplatform.v1\032"
           + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/resource.proto\0322google/cloud/aiplat"
-          + "form/v1/machine_resources.proto\032-google/"
-          + "cloud/aiplatform/v1/network_spec.proto\0324"
-          + "google/cloud/aiplatform/v1/notebook_euc_"
-          + "config.proto\032>google/cloud/aiplatform/v1"
-          + "/notebook_idle_shutdown_config.proto\032>go"
-          + "ogle/cloud/aiplatform/v1/notebook_runtim"
-          + "e_template_ref.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"\334\010\n\027NotebookRuntimeTemplat"
-          + "e\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB\003\340"
-          + "A\002\022\023\n\013description\030\003 \001(\t\022\027\n\nis_default\030\004 "
-          + "\001(\010B\003\340A\003\022E\n\014machine_spec\030\005 \001(\0132\'.google."
-          + "cloud.aiplatform.v1.MachineSpecB\006\340A\001\340A\005\022"
-          + "V\n\031data_persistent_disk_spec\030\010 \001(\0132..goo"
-          + "gle.cloud.aiplatform.v1.PersistentDiskSp"
-          + "ecB\003\340A\001\022B\n\014network_spec\030\014 \001(\0132\'.google.c"
-          + "loud.aiplatform.v1.NetworkSpecB\003\340A\001\022\027\n\017s"
-          + "ervice_account\030\r \001(\t\022\014\n\004etag\030\016 \001(\t\022O\n\006la"
-          + "bels\030\017 \003(\0132?.google.cloud.aiplatform.v1."
-          + "NotebookRuntimeTemplate.LabelsEntry\022T\n\024i"
-          + "dle_shutdown_config\030\021 \001(\01326.google.cloud"
-          + ".aiplatform.v1.NotebookIdleShutdownConfi"
-          + "g\022A\n\neuc_config\030\022 \001(\0132-.google.cloud.aip"
-          + "latform.v1.NotebookEucConfig\0224\n\013create_t"
-          + "ime\030\n \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0224\n\013update_time\030\013 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022V\n\025notebook_runtime_typ"
-          + "e\030\023 \001(\0162/.google.cloud.aiplatform.v1.Not"
-          + "ebookRuntimeTypeB\006\340A\001\340A\005\022P\n\022shielded_vm_"
-          + "config\030\024 \001(\0132,.google.cloud.aiplatform.v"
-          + "1.ShieldedVmConfigB\006\340A\001\340A\005\022\031\n\014network_ta"
-          + "gs\030\025 \003(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n1aiplatform."
-          + "googleapis.com/NotebookRuntimeTemplate\022\\"
-          + "projects/{project}/locations/{location}/"
-          + "notebookRuntimeTemplates/{notebook_runti"
-          + "me_template}\"\325\t\n\017NotebookRuntime\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\031\n\014runtime_user\030\002 \001(\tB\003\340A\002\022b"
-          + "\n\035notebook_runtime_template_ref\030\003 \001(\01326."
-          + "google.cloud.aiplatform.v1.NotebookRunti"
-          + "meTemplateRefB\003\340A\003\022\026\n\tproxy_uri\030\005 \001(\tB\003\340"
-          + "A\003\0224\n\013create_time\030\006 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022R\n\014health"
-          + "_state\030\010 \001(\01627.google.cloud.aiplatform.v"
-          + "1.NotebookRuntime.HealthStateB\003\340A\003\022\031\n\014di"
-          + "splay_name\030\n \001(\tB\003\340A\002\022\023\n\013description\030\013 \001"
-          + "(\t\022\034\n\017service_account\030\r \001(\tB\003\340A\003\022T\n\rrunt"
-          + "ime_state\030\016 \001(\01628.google.cloud.aiplatfor"
-          + "m.v1.NotebookRuntime.RuntimeStateB\003\340A\003\022\032"
-          + "\n\ris_upgradable\030\017 \001(\010B\003\340A\003\022G\n\006labels\030\020 \003"
-          + "(\01327.google.cloud.aiplatform.v1.Notebook"
-          + "Runtime.LabelsEntry\0228\n\017expiration_time\030\021"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\024\n"
-          + "\007version\030\022 \001(\tB\003\340A\003\022S\n\025notebook_runtime_"
-          + "type\030\023 \001(\0162/.google.cloud.aiplatform.v1."
-          + "NotebookRuntimeTypeB\003\340A\003\022\031\n\014network_tags"
-          + "\030\031 \003(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001\"G\n\013HealthState\022\034\n\030HEA"
-          + "LTH_STATE_UNSPECIFIED\020\000\022\013\n\007HEALTHY\020\001\022\r\n\t"
-          + "UNHEALTHY\020\002\"\231\001\n\014RuntimeState\022\035\n\031RUNTIME_"
-          + "STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\021\n\rBEIN"
-          + "G_STARTED\020\002\022\021\n\rBEING_STOPPED\020\003\022\013\n\007STOPPE"
-          + "D\020\004\022\022\n\016BEING_UPGRADED\020\005\022\t\n\005ERROR\020d\022\013\n\007IN"
-          + "VALID\020e:{\352Ax\n)aiplatform.googleapis.com/"
-          + "NotebookRuntime\022Kprojects/{project}/loca"
-          + "tions/{location}/notebookRuntimes/{noteb"
-          + "ook_runtime}*]\n\023NotebookRuntimeType\022%\n!N"
-          + "OTEBOOK_RUNTIME_TYPE_UNSPECIFIED\020\000\022\020\n\014US"
-          + "ER_DEFINED\020\001\022\r\n\tONE_CLICK\020\002B\322\001\n\036com.goog"
-          + "le.cloud.aiplatform.v1B\024NotebookRuntimeP"
-          + "rotoP\001Z>cloud.google.com/go/aiplatform/a"
-          + "piv1/aiplatformpb;aiplatformpb\252\002\032Google."
-          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
-          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
-          + "b\006proto3"
+          + "/api/resource.proto\0320google/cloud/aiplat"
+          + "form/v1/encryption_spec.proto\0322google/cl"
+          + "oud/aiplatform/v1/machine_resources.prot"
+          + "o\032-google/cloud/aiplatform/v1/network_sp"
+          + "ec.proto\0324google/cloud/aiplatform/v1/not"
+          + "ebook_euc_config.proto\032>google/cloud/aip"
+          + "latform/v1/notebook_idle_shutdown_config"
+          + ".proto\032>google/cloud/aiplatform/v1/noteb"
+          + "ook_runtime_template_ref.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\241\t\n\027NotebookRunt"
+          + "imeTemplate\022\014\n\004name\030\001 \001(\t\022\031\n\014display_nam"
+          + "e\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022\027\n\nis_"
+          + "default\030\004 \001(\010B\003\340A\003\022E\n\014machine_spec\030\005 \001(\013"
+          + "2\'.google.cloud.aiplatform.v1.MachineSpe"
+          + "cB\006\340A\001\340A\005\022V\n\031data_persistent_disk_spec\030\010"
+          + " \001(\0132..google.cloud.aiplatform.v1.Persis"
+          + "tentDiskSpecB\003\340A\001\022B\n\014network_spec\030\014 \001(\0132"
+          + "\'.google.cloud.aiplatform.v1.NetworkSpec"
+          + "B\003\340A\001\022\027\n\017service_account\030\r \001(\t\022\014\n\004etag\030\016"
+          + " \001(\t\022O\n\006labels\030\017 \003(\0132?.google.cloud.aipl"
+          + "atform.v1.NotebookRuntimeTemplate.Labels"
+          + "Entry\022T\n\024idle_shutdown_config\030\021 \001(\01326.go"
+          + "ogle.cloud.aiplatform.v1.NotebookIdleShu"
+          + "tdownConfig\022A\n\neuc_config\030\022 \001(\0132-.google"
+          + ".cloud.aiplatform.v1.NotebookEucConfig\0224"
+          + "\n\013create_time\030\n \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0224\n\013update_time\030\013 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022V\n\025notebook_r"
+          + "untime_type\030\023 \001(\0162/.google.cloud.aiplatf"
+          + "orm.v1.NotebookRuntimeTypeB\006\340A\001\340A\005\022P\n\022sh"
+          + "ielded_vm_config\030\024 \001(\0132,.google.cloud.ai"
+          + "platform.v1.ShieldedVmConfigB\006\340A\001\340A\005\022\031\n\014"
+          + "network_tags\030\025 \003(\tB\003\340A\001\022C\n\017encryption_sp"
+          + "ec\030\027 \001(\0132*.google.cloud.aiplatform.v1.En"
+          + "cryptionSpec\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n1aiplatform.g"
+          + "oogleapis.com/NotebookRuntimeTemplate\022\\p"
+          + "rojects/{project}/locations/{location}/n"
+          + "otebookRuntimeTemplates/{notebook_runtim"
+          + "e_template}\"\262\013\n\017NotebookRuntime\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\003\022\031\n\014runtime_user\030\002 \001(\tB\003\340A\002\022b\n"
+          + "\035notebook_runtime_template_ref\030\003 \001(\01326.g"
+          + "oogle.cloud.aiplatform.v1.NotebookRuntim"
+          + "eTemplateRefB\003\340A\003\022\026\n\tproxy_uri\030\005 \001(\tB\003\340A"
+          + "\003\0224\n\013create_time\030\006 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\022R\n\014health_"
+          + "state\030\010 \001(\01627.google.cloud.aiplatform.v1"
+          + ".NotebookRuntime.HealthStateB\003\340A\003\022\031\n\014dis"
+          + "play_name\030\n \001(\tB\003\340A\002\022\023\n\013description\030\013 \001("
+          + "\t\022\034\n\017service_account\030\r \001(\tB\003\340A\003\022T\n\rrunti"
+          + "me_state\030\016 \001(\01628.google.cloud.aiplatform"
+          + ".v1.NotebookRuntime.RuntimeStateB\003\340A\003\022\032\n"
+          + "\ris_upgradable\030\017 \001(\010B\003\340A\003\022G\n\006labels\030\020 \003("
+          + "\01327.google.cloud.aiplatform.v1.NotebookR"
+          + "untime.LabelsEntry\0228\n\017expiration_time\030\021 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\024\n\007"
+          + "version\030\022 \001(\tB\003\340A\003\022S\n\025notebook_runtime_t"
+          + "ype\030\023 \001(\0162/.google.cloud.aiplatform.v1.N"
+          + "otebookRuntimeTypeB\003\340A\003\022Y\n\024idle_shutdown"
+          + "_config\030\027 \001(\01326.google.cloud.aiplatform."
+          + "v1.NotebookIdleShutdownConfigB\003\340A\003\022\031\n\014ne"
+          + "twork_tags\030\031 \003(\tB\003\340A\001\022H\n\017encryption_spec"
+          + "\030\034 \001(\0132*.google.cloud.aiplatform.v1.Encr"
+          + "yptionSpecB\003\340A\003\022\032\n\rsatisfies_pzs\030\035 \001(\010B\003"
+          + "\340A\003\022\032\n\rsatisfies_pzi\030\036 \001(\010B\003\340A\003\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"G"
+          + "\n\013HealthState\022\034\n\030HEALTH_STATE_UNSPECIFIE"
+          + "D\020\000\022\013\n\007HEALTHY\020\001\022\r\n\tUNHEALTHY\020\002\"\231\001\n\014Runt"
+          + "imeState\022\035\n\031RUNTIME_STATE_UNSPECIFIED\020\000\022"
+          + "\013\n\007RUNNING\020\001\022\021\n\rBEING_STARTED\020\002\022\021\n\rBEING"
+          + "_STOPPED\020\003\022\013\n\007STOPPED\020\004\022\022\n\016BEING_UPGRADE"
+          + "D\020\005\022\t\n\005ERROR\020d\022\013\n\007INVALID\020e:{\352Ax\n)aiplat"
+          + "form.googleapis.com/NotebookRuntime\022Kpro"
+          + "jects/{project}/locations/{location}/not"
+          + "ebookRuntimes/{notebook_runtime}*]\n\023Note"
+          + "bookRuntimeType\022%\n!NOTEBOOK_RUNTIME_TYPE"
+          + "_UNSPECIFIED\020\000\022\020\n\014USER_DEFINED\020\001\022\r\n\tONE_"
+          + "CLICK\020\002B\322\001\n\036com.google.cloud.aiplatform."
+          + "v1B\024NotebookRuntimeProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,6 +147,7 @@ public final class NotebookRuntimeProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.NetworkSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.NotebookEucConfigProto.getDescriptor(),
@@ -169,6 +178,7 @@ public final class NotebookRuntimeProto {
               "NotebookRuntimeType",
               "ShieldedVmConfig",
               "NetworkTags",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1_NotebookRuntimeTemplate_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_NotebookRuntimeTemplate_descriptor
@@ -202,7 +212,11 @@ public final class NotebookRuntimeProto {
               "ExpirationTime",
               "Version",
               "NotebookRuntimeType",
+              "IdleShutdownConfig",
               "NetworkTags",
+              "EncryptionSpec",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     internal_static_google_cloud_aiplatform_v1_NotebookRuntime_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_NotebookRuntime_descriptor
@@ -222,6 +236,7 @@ public final class NotebookRuntimeProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1.MachineResourcesProto.getDescriptor();
     com.google.cloud.aiplatform.v1.NetworkSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1.NotebookEucConfigProto.getDescriptor();

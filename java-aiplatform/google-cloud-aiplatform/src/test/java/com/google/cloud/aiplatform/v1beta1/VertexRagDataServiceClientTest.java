@@ -114,6 +114,7 @@ public class VertexRagDataServiceClientTest {
             .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -167,6 +168,7 @@ public class VertexRagDataServiceClientTest {
             .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -220,6 +222,7 @@ public class VertexRagDataServiceClientTest {
             .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -262,6 +265,7 @@ public class VertexRagDataServiceClientTest {
             .setName(RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setRagEmbeddingModelConfig(RagEmbeddingModelConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();

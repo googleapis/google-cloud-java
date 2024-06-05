@@ -31,12 +31,16 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * resource is not in a Cloud Organization.
  * For all requests, returns a `google.rpc.Status` with
  * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+ * (== deprecation_description Resource Settings is deprecated. As of November
+ * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+ * and the service will be shut down on October 1, 2024. ==)
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/resourcesettings/v1/resource_settings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class ResourceSettingsServiceGrpc {
 
   private ResourceSettingsServiceGrpc() {}
@@ -239,8 +243,12 @@ public final class ResourceSettingsServiceGrpc {
    * resource is not in a Cloud Organization.
    * For all requests, returns a `google.rpc.Status` with
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * (== deprecation_description Resource Settings is deprecated. As of November
+   * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+   * and the service will be shut down on October 1, 2024. ==)
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -316,8 +324,12 @@ public final class ResourceSettingsServiceGrpc {
    * resource is not in a Cloud Organization.
    * For all requests, returns a `google.rpc.Status` with
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * (== deprecation_description Resource Settings is deprecated. As of November
+   * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+   * and the service will be shut down on October 1, 2024. ==)
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class ResourceSettingsServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -341,8 +353,12 @@ public final class ResourceSettingsServiceGrpc {
    * resource is not in a Cloud Organization.
    * For all requests, returns a `google.rpc.Status` with
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * (== deprecation_description Resource Settings is deprecated. As of November
+   * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+   * and the service will be shut down on October 1, 2024. ==)
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class ResourceSettingsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ResourceSettingsServiceStub> {
     private ResourceSettingsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -433,8 +449,12 @@ public final class ResourceSettingsServiceGrpc {
    * resource is not in a Cloud Organization.
    * For all requests, returns a `google.rpc.Status` with
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * (== deprecation_description Resource Settings is deprecated. As of November
+   * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+   * and the service will be shut down on October 1, 2024. ==)
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class ResourceSettingsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ResourceSettingsServiceBlockingStub> {
     private ResourceSettingsServiceBlockingStub(
@@ -517,8 +537,12 @@ public final class ResourceSettingsServiceGrpc {
    * resource is not in a Cloud Organization.
    * For all requests, returns a `google.rpc.Status` with
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * (== deprecation_description Resource Settings is deprecated. As of November
+   * 7, 2023, no organizations will be onboarded for any of the enabled settings,
+   * and the service will be shut down on October 1, 2024. ==)
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class ResourceSettingsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ResourceSettingsServiceFutureStub> {
     private ResourceSettingsServiceFutureStub(

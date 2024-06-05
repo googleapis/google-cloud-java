@@ -44,6 +44,7 @@ public class SyncTrainCustomModel {
                       .toString())
               .setModelType("modelType-2010627581")
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setModelId("modelId1226956324")
               .build();
       TrainCustomModelResponse response =
           searchTuningServiceClient.trainCustomModelAsync(request).get();

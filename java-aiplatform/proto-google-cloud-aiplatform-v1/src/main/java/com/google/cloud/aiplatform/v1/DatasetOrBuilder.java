@@ -569,4 +569,31 @@ public interface DatasetOrBuilder
    * @return The bytes for metadataArtifact.
    */
   com.google.protobuf.ByteString getMetadataArtifactBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reference to the public base model last used by the dataset. Only
+   * set for prompt datasets.
+   * </pre>
+   *
+   * <code>string model_reference = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelReference.
+   */
+  java.lang.String getModelReference();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reference to the public base model last used by the dataset. Only
+   * set for prompt datasets.
+   * </pre>
+   *
+   * <code>string model_reference = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelReference.
+   */
+  com.google.protobuf.ByteString getModelReferenceBytes();
 }

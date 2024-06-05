@@ -245,6 +245,59 @@ public final class NotebookServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+      getUpdateNotebookRuntimeTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNotebookRuntimeTemplate",
+      requestType = com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+      getUpdateNotebookRuntimeTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+            com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+        getUpdateNotebookRuntimeTemplateMethod;
+    if ((getUpdateNotebookRuntimeTemplateMethod =
+            NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getUpdateNotebookRuntimeTemplateMethod =
+                NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod)
+            == null) {
+          NotebookServiceGrpc.getUpdateNotebookRuntimeTemplateMethod =
+              getUpdateNotebookRuntimeTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+                          com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateNotebookRuntimeTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier(
+                              "UpdateNotebookRuntimeTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateNotebookRuntimeTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.AssignNotebookRuntimeRequest,
           com.google.longrunning.Operation>
       getAssignNotebookRuntimeMethod;
@@ -650,6 +703,21 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    default void updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNotebookRuntimeTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -839,6 +907,23 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public void updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateNotebookRuntimeTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -1011,6 +1096,19 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate updateNotebookRuntimeTemplate(
+        com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotebookRuntimeTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -1170,6 +1268,22 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Updates a NotebookRuntimeTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>
+        updateNotebookRuntimeTemplate(
+            com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateNotebookRuntimeTemplateMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Assigns a NotebookRuntime to a user for a particular Notebook file. This
      * method will either returns an existing assignment or generates a new one.
      * </pre>
@@ -1253,12 +1367,13 @@ public final class NotebookServiceGrpc {
   private static final int METHODID_GET_NOTEBOOK_RUNTIME_TEMPLATE = 1;
   private static final int METHODID_LIST_NOTEBOOK_RUNTIME_TEMPLATES = 2;
   private static final int METHODID_DELETE_NOTEBOOK_RUNTIME_TEMPLATE = 3;
-  private static final int METHODID_ASSIGN_NOTEBOOK_RUNTIME = 4;
-  private static final int METHODID_GET_NOTEBOOK_RUNTIME = 5;
-  private static final int METHODID_LIST_NOTEBOOK_RUNTIMES = 6;
-  private static final int METHODID_DELETE_NOTEBOOK_RUNTIME = 7;
-  private static final int METHODID_UPGRADE_NOTEBOOK_RUNTIME = 8;
-  private static final int METHODID_START_NOTEBOOK_RUNTIME = 9;
+  private static final int METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE = 4;
+  private static final int METHODID_ASSIGN_NOTEBOOK_RUNTIME = 5;
+  private static final int METHODID_GET_NOTEBOOK_RUNTIME = 6;
+  private static final int METHODID_LIST_NOTEBOOK_RUNTIMES = 7;
+  private static final int METHODID_DELETE_NOTEBOOK_RUNTIME = 8;
+  private static final int METHODID_UPGRADE_NOTEBOOK_RUNTIME = 9;
+  private static final int METHODID_START_NOTEBOOK_RUNTIME = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1299,6 +1414,12 @@ public final class NotebookServiceGrpc {
           serviceImpl.deleteNotebookRuntimeTemplate(
               (com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE:
+          serviceImpl.updateNotebookRuntimeTemplate(
+              (com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>)
+                  responseObserver);
           break;
         case METHODID_ASSIGN_NOTEBOOK_RUNTIME:
           serviceImpl.assignNotebookRuntime(
@@ -1379,6 +1500,13 @@ public final class NotebookServiceGrpc {
                     com.google.cloud.aiplatform.v1.DeleteNotebookRuntimeTemplateRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_NOTEBOOK_RUNTIME_TEMPLATE)))
+        .addMethod(
+            getUpdateNotebookRuntimeTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest,
+                    com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate>(
+                    service, METHODID_UPDATE_NOTEBOOK_RUNTIME_TEMPLATE)))
         .addMethod(
             getAssignNotebookRuntimeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1472,6 +1600,7 @@ public final class NotebookServiceGrpc {
                       .addMethod(getGetNotebookRuntimeTemplateMethod())
                       .addMethod(getListNotebookRuntimeTemplatesMethod())
                       .addMethod(getDeleteNotebookRuntimeTemplateMethod())
+                      .addMethod(getUpdateNotebookRuntimeTemplateMethod())
                       .addMethod(getAssignNotebookRuntimeMethod())
                       .addMethod(getGetNotebookRuntimeMethod())
                       .addMethod(getListNotebookRuntimesMethod())

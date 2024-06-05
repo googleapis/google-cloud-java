@@ -44,24 +44,29 @@ public final class DeploymentResourcePoolProto {
       "\n>google/cloud/aiplatform/v1beta1/deploy"
           + "ment_resource_pool.proto\022\037google.cloud.a"
           + "iplatform.v1beta1\032\037google/api/field_beha"
-          + "vior.proto\032\031google/api/resource.proto\0327g"
-          + "oogle/cloud/aiplatform/v1beta1/machine_r"
-          + "esources.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\315\002\n\026DeploymentResourcePool\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\005\022U\n\023dedicated_resources\030\002 \001"
-          + "(\01323.google.cloud.aiplatform.v1beta1.Ded"
-          + "icatedResourcesB\003\340A\002\0224\n\013create_time\030\004 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003:\222\001\352A\216"
-          + "\001\n0aiplatform.googleapis.com/DeploymentR"
-          + "esourcePool\022Zprojects/{project}/location"
-          + "s/{location}/deploymentResourcePools/{de"
-          + "ployment_resource_pool}B\362\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\033DeploymentResou"
-          + "rcePoolProtoP\001ZCcloud.google.com/go/aipl"
-          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
-          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
-          + "::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "vior.proto\032\031google/api/resource.proto\0325g"
+          + "oogle/cloud/aiplatform/v1beta1/encryptio"
+          + "n_spec.proto\0327google/cloud/aiplatform/v1"
+          + "beta1/machine_resources.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\"\323\003\n\026DeploymentRes"
+          + "ourcePool\022\021\n\004name\030\001 \001(\tB\003\340A\005\022U\n\023dedicate"
+          + "d_resources\030\002 \001(\01323.google.cloud.aiplatf"
+          + "orm.v1beta1.DedicatedResourcesB\003\340A\002\022H\n\017e"
+          + "ncryption_spec\030\005 \001(\0132/.google.cloud.aipl"
+          + "atform.v1beta1.EncryptionSpec\022\027\n\017service"
+          + "_account\030\006 \001(\t\022!\n\031disable_container_logg"
+          + "ing\030\007 \001(\010\0224\n\013create_time\030\004 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003:\222\001\352A\216\001\n0aiplatfo"
+          + "rm.googleapis.com/DeploymentResourcePool"
+          + "\022Zprojects/{project}/locations/{location"
+          + "}/deploymentResourcePools/{deployment_re"
+          + "source_pool}B\362\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\033DeploymentResourcePoolProt"
+          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
+          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,6 +74,7 @@ public final class DeploymentResourcePoolProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -78,7 +84,12 @@ public final class DeploymentResourcePoolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeploymentResourcePool_descriptor,
             new java.lang.String[] {
-              "Name", "DedicatedResources", "CreateTime",
+              "Name",
+              "DedicatedResources",
+              "EncryptionSpec",
+              "ServiceAccount",
+              "DisableContainerLogging",
+              "CreateTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -88,6 +99,7 @@ public final class DeploymentResourcePoolProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

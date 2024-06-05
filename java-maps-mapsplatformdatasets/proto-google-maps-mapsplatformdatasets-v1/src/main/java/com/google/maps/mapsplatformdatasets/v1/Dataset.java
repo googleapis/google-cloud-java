@@ -23,7 +23,7 @@ package com.google.maps.mapsplatformdatasets.v1;
  *
  *
  * <pre>
- * A representation of a Maps Dataset resource.
+ * A representation of a dataset resource.
  * </pre>
  *
  * Protobuf type {@code google.maps.mapsplatformdatasets.v1.Dataset}
@@ -126,8 +126,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name,
-   * projects/{project}/datasets/{dataset_id}
+   * Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -150,8 +150,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name,
-   * projects/{project}/datasets/{dataset_id}
+   * Resource name.
+   * Format: projects/{project}/datasets/{dataset_id}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -179,7 +179,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human readable name, shown in the console UI .
+   * Human readable name, shown in the console UI.
+   *
+   * Must be unique within a project.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -202,7 +204,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human readable name, shown in the console UI .
+   * Human readable name, shown in the console UI.
+   *
+   * Must be unique within a project.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -230,7 +234,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of this dataset .
+   * A description of this dataset.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -253,7 +257,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of this dataset .
+   * A description of this dataset.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -686,7 +690,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>
@@ -703,7 +707,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>
@@ -722,7 +726,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when the data was uploaded.
+   * Output only. Time when this version was created.
    * </pre>
    *
    * <code>
@@ -1108,7 +1112,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of a Maps Dataset resource.
+   * A representation of a dataset resource.
    * </pre>
    *
    * Protobuf type {@code google.maps.mapsplatformdatasets.v1.Dataset}
@@ -1545,8 +1549,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name,
-     * projects/{project}/datasets/{dataset_id}
+     * Resource name.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1568,8 +1572,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name,
-     * projects/{project}/datasets/{dataset_id}
+     * Resource name.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1591,8 +1595,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name,
-     * projects/{project}/datasets/{dataset_id}
+     * Resource name.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1613,8 +1617,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name,
-     * projects/{project}/datasets/{dataset_id}
+     * Resource name.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1631,8 +1635,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name,
-     * projects/{project}/datasets/{dataset_id}
+     * Resource name.
+     * Format: projects/{project}/datasets/{dataset_id}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1656,7 +1660,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable name, shown in the console UI .
+     * Human readable name, shown in the console UI.
+     *
+     * Must be unique within a project.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1678,7 +1684,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable name, shown in the console UI .
+     * Human readable name, shown in the console UI.
+     *
+     * Must be unique within a project.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1700,7 +1708,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable name, shown in the console UI .
+     * Human readable name, shown in the console UI.
+     *
+     * Must be unique within a project.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1721,7 +1731,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable name, shown in the console UI .
+     * Human readable name, shown in the console UI.
+     *
+     * Must be unique within a project.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1738,7 +1750,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human readable name, shown in the console UI .
+     * Human readable name, shown in the console UI.
+     *
+     * Must be unique within a project.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1762,7 +1776,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of this dataset .
+     * A description of this dataset.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1784,7 +1798,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of this dataset .
+     * A description of this dataset.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1806,7 +1820,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of this dataset .
+     * A description of this dataset.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1827,7 +1841,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of this dataset .
+     * A description of this dataset.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1844,7 +1858,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of this dataset .
+     * A description of this dataset.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -3235,7 +3249,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3251,7 +3265,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3273,7 +3287,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3297,7 +3311,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3318,7 +3332,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3347,7 +3361,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3368,7 +3382,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3384,7 +3398,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>
@@ -3404,7 +3418,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when the data was uploaded.
+     * Output only. Time when this version was created.
      * </pre>
      *
      * <code>

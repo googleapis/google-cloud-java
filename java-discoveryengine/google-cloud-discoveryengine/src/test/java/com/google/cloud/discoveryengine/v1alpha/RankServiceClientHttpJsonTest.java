@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1alpha.stub.HttpJsonRankServiceStub;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -87,6 +88,7 @@ public class RankServiceClientHttpJsonTest {
             .setQuery("query107944136")
             .addAllRecords(new ArrayList<RankingRecord>())
             .setIgnoreRecordDetailsInResponse(true)
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     RankResponse actualResponse = client.rank(request);
@@ -124,6 +126,7 @@ public class RankServiceClientHttpJsonTest {
               .setQuery("query107944136")
               .addAllRecords(new ArrayList<RankingRecord>())
               .setIgnoreRecordDetailsInResponse(true)
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.rank(request);
       Assert.fail("No exception raised");

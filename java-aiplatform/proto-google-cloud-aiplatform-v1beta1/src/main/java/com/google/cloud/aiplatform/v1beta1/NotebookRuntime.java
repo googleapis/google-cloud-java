@@ -1419,6 +1419,63 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int IDLE_SHUTDOWN_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idleShutdownConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the idleShutdownConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdleShutdownConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The idleShutdownConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig getIdleShutdownConfig() {
+    return idleShutdownConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
+        : idleShutdownConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The idle shutdown configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder
+      getIdleShutdownConfigOrBuilder() {
+    return idleShutdownConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
+        : idleShutdownConfig_;
+  }
+
   public static final int NETWORK_TAGS_FIELD_NUMBER = 25;
 
   @SuppressWarnings("serial")
@@ -1485,6 +1542,98 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    */
   public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
     return networkTags_.getByteString(index);
+  }
+
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 28;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Customer-managed encryption key spec for the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 29;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 30;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1555,8 +1704,20 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(19, notebookRuntimeType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(23, getIdleShutdownConfig());
+    }
     for (int i = 0; i < networkTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, networkTags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(28, getEncryptionSpec());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(29, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(30, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1631,6 +1792,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, notebookRuntimeType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getIdleShutdownConfig());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < networkTags_.size(); i++) {
@@ -1638,6 +1802,15 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       size += dataSize;
       size += 2 * getNetworkTagsList().size();
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getEncryptionSpec());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzi_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1684,7 +1857,17 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (!getVersion().equals(other.getVersion())) return false;
     if (notebookRuntimeType_ != other.notebookRuntimeType_) return false;
+    if (hasIdleShutdownConfig() != other.hasIdleShutdownConfig()) return false;
+    if (hasIdleShutdownConfig()) {
+      if (!getIdleShutdownConfig().equals(other.getIdleShutdownConfig())) return false;
+    }
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1738,10 +1921,22 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + NOTEBOOK_RUNTIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + notebookRuntimeType_;
+    if (hasIdleShutdownConfig()) {
+      hash = (37 * hash) + IDLE_SHUTDOWN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIdleShutdownConfig().hashCode();
+    }
     if (getNetworkTagsCount() > 0) {
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTagsList().hashCode();
     }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1910,6 +2105,8 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getExpirationTimeFieldBuilder();
+        getIdleShutdownConfigFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -1949,7 +2146,19 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       version_ = "";
       notebookRuntimeType_ = 0;
+      idleShutdownConfig_ = null;
+      if (idleShutdownConfigBuilder_ != null) {
+        idleShutdownConfigBuilder_.dispose();
+        idleShutdownConfigBuilder_ = null;
+      }
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -2045,8 +2254,26 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         result.notebookRuntimeType_ = notebookRuntimeType_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.idleShutdownConfig_ =
+            idleShutdownConfigBuilder_ == null
+                ? idleShutdownConfig_
+                : idleShutdownConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         networkTags_.makeImmutable();
         result.networkTags_ = networkTags_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2158,15 +2385,27 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       if (other.notebookRuntimeType_ != 0) {
         setNotebookRuntimeTypeValue(other.getNotebookRuntimeTypeValue());
       }
+      if (other.hasIdleShutdownConfig()) {
+        mergeIdleShutdownConfig(other.getIdleShutdownConfig());
+      }
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00020000;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
         }
         onChanged();
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2297,6 +2536,13 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00008000;
                 break;
               } // case 152
+            case 186:
+              {
+                input.readMessage(
+                    getIdleShutdownConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 186
             case 202:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2304,6 +2550,24 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
                 networkTags_.add(s);
                 break;
               } // case 202
+            case 226:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 226
+            case 232:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 232
+            case 240:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4585,6 +4849,216 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idleShutdownConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig,
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder>
+        idleShutdownConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the idleShutdownConfig field is set.
+     */
+    public boolean hasIdleShutdownConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The idleShutdownConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig getIdleShutdownConfig() {
+      if (idleShutdownConfigBuilder_ == null) {
+        return idleShutdownConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
+            : idleShutdownConfig_;
+      } else {
+        return idleShutdownConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdleShutdownConfig(
+        com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig value) {
+      if (idleShutdownConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idleShutdownConfig_ = value;
+      } else {
+        idleShutdownConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdleShutdownConfig(
+        com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder builderForValue) {
+      if (idleShutdownConfigBuilder_ == null) {
+        idleShutdownConfig_ = builderForValue.build();
+      } else {
+        idleShutdownConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIdleShutdownConfig(
+        com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig value) {
+      if (idleShutdownConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && idleShutdownConfig_ != null
+            && idleShutdownConfig_
+                != com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig
+                    .getDefaultInstance()) {
+          getIdleShutdownConfigBuilder().mergeFrom(value);
+        } else {
+          idleShutdownConfig_ = value;
+        }
+      } else {
+        idleShutdownConfigBuilder_.mergeFrom(value);
+      }
+      if (idleShutdownConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIdleShutdownConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      idleShutdownConfig_ = null;
+      if (idleShutdownConfigBuilder_ != null) {
+        idleShutdownConfigBuilder_.dispose();
+        idleShutdownConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder
+        getIdleShutdownConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getIdleShutdownConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder
+        getIdleShutdownConfigOrBuilder() {
+      if (idleShutdownConfigBuilder_ != null) {
+        return idleShutdownConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return idleShutdownConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
+            : idleShutdownConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The idle shutdown configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idle_shutdown_config = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig,
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder>
+        getIdleShutdownConfigFieldBuilder() {
+      if (idleShutdownConfigBuilder_ == null) {
+        idleShutdownConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig,
+                com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder>(
+                getIdleShutdownConfig(), getParentForChildren(), isClean());
+        idleShutdownConfig_ = null;
+      }
+      return idleShutdownConfigBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList networkTags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -4592,7 +5066,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
     }
     /**
      *
@@ -4677,7 +5151,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4700,7 +5174,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4720,7 +5194,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4738,7 +5212,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       ;
       onChanged();
       return this;
@@ -4763,7 +5237,319 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Customer-managed encryption key spec for the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }

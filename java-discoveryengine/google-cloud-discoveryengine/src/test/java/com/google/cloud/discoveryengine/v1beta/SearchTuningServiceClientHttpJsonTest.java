@@ -22,6 +22,7 @@ import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1beta.stub.HttpJsonSearchTuningServiceStub;
@@ -84,6 +85,7 @@ public class SearchTuningServiceClientHttpJsonTest {
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .setModelStatus("modelStatus488502395")
             .putAllMetrics(new HashMap<String, Double>())
+            .setModelName("modelName-2010829484")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -101,6 +103,7 @@ public class SearchTuningServiceClientHttpJsonTest {
                     .toString())
             .setModelType("modelType-2010627581")
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setModelId("modelId1226956324")
             .build();
 
     TrainCustomModelResponse actualResponse = client.trainCustomModelAsync(request).get();
@@ -137,10 +140,67 @@ public class SearchTuningServiceClientHttpJsonTest {
                       .toString())
               .setModelType("modelType-2010627581")
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setModelId("modelId1226956324")
               .build();
       client.trainCustomModelAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listCustomModelsTest() throws Exception {
+    ListCustomModelsResponse expectedResponse =
+        ListCustomModelsResponse.newBuilder()
+            .addAllModels(new ArrayList<CustomTuningModel>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListCustomModelsRequest request =
+        ListCustomModelsRequest.newBuilder()
+            .setDataStore(
+                DataStoreName.ofProjectLocationCollectionDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                    .toString())
+            .build();
+
+    ListCustomModelsResponse actualResponse = client.listCustomModels(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomModelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListCustomModelsRequest request =
+          ListCustomModelsRequest.newBuilder()
+              .setDataStore(
+                  DataStoreName.ofProjectLocationCollectionDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+                      .toString())
+              .build();
+      client.listCustomModels(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

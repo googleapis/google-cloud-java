@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_PredictionService_GenerateContent_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1beta1.CachedContentName;
 import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentResponse;
@@ -46,6 +47,8 @@ public class AsyncGenerateContent {
               .setModel("model104069929")
               .addAllContents(new ArrayList<Content>())
               .setSystemInstruction(Content.newBuilder().build())
+              .setCachedContent(
+                  CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
               .addAllTools(new ArrayList<Tool>())
               .setToolConfig(ToolConfig.newBuilder().build())
               .addAllSafetySettings(new ArrayList<SafetySetting>())

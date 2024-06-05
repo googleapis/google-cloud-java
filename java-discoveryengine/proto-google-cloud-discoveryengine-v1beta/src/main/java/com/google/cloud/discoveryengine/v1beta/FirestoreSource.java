@@ -182,8 +182,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The Firestore collection to copy the data from with a length
-   * limit of 1,500 characters.
+   * Required. The Firestore collection (or entity) to copy the data from with a
+   * length limit of 1,500 characters.
    * </pre>
    *
    * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,8 +206,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The Firestore collection to copy the data from with a length
-   * limit of 1,500 characters.
+   * Required. The Firestore collection (or entity) to copy the data from with a
+   * length limit of 1,500 characters.
    * </pre>
    *
    * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -935,8 +935,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Firestore collection to copy the data from with a length
-     * limit of 1,500 characters.
+     * Required. The Firestore collection (or entity) to copy the data from with a
+     * length limit of 1,500 characters.
      * </pre>
      *
      * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -958,8 +958,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Firestore collection to copy the data from with a length
-     * limit of 1,500 characters.
+     * Required. The Firestore collection (or entity) to copy the data from with a
+     * length limit of 1,500 characters.
      * </pre>
      *
      * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -981,8 +981,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Firestore collection to copy the data from with a length
-     * limit of 1,500 characters.
+     * Required. The Firestore collection (or entity) to copy the data from with a
+     * length limit of 1,500 characters.
      * </pre>
      *
      * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1003,8 +1003,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Firestore collection to copy the data from with a length
-     * limit of 1,500 characters.
+     * Required. The Firestore collection (or entity) to copy the data from with a
+     * length limit of 1,500 characters.
      * </pre>
      *
      * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1021,8 +1021,8 @@ public final class FirestoreSource extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The Firestore collection to copy the data from with a length
-     * limit of 1,500 characters.
+     * Required. The Firestore collection (or entity) to copy the data from with a
+     * length limit of 1,500 characters.
      * </pre>
      *
      * <code>string collection_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
