@@ -642,6 +642,9 @@ proto-google-cloud-rapidmigrationassessment-v1:0.27.0:0.28.0-SNAPSHOT
 grpc-google-cloud-rapidmigrationassessment-v1:0.27.0:0.28.0-SNAPSHOT
 proto-google-maps-mapsplatformdatasets-v1:0.33.0:0.34.0-SNAPSHOT
 grpc-google-maps-mapsplatformdatasets-v1:0.33.0:0.34.0-SNAPSHOT
+google-shopping-merchant-accounts:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-discoveryengine-v1:0.40.0:0.41.0-SNAPSHOT
 grpc-google-cloud-discoveryengine-v1:0.40.0:0.41.0-SNAPSHOT
 google-cloud-migrationcenter:0.26.0:0.27.0-SNAPSHOT
@@ -782,6 +785,3 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
-google-shopping-merchant-accounts:0.0.0:0.0.1-SNAPSHOT
-proto-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
-grpc-google-shopping-merchant-accounts-v1beta:0.0.0:0.0.1-SNAPSHOT
