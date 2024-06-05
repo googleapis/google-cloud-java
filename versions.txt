@@ -782,3 +782,6 @@ grpc-google-cloud-iap-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-managedkafka:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-managedkafka-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-privilegedaccessmanager:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-privilegedaccessmanager-v1:0.0.0:0.0.1-SNAPSHOT
