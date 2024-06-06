@@ -1139,7 +1139,7 @@ libraries:
   cloud_api: false
   GAPICs:
   - proto_path: google/shopping/merchant/products/v1beta
-  library_name: java-shopping-merchant-products
+  library_name: shopping-merchant-products
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -1154,7 +1154,7 @@ libraries:
   cloud_api: false
   GAPICs:
   - proto_path: google/shopping/merchant/datasources/v1beta
-  library_name: java-shopping-merchant-datasources
+  library_name: shopping-merchant-datasources
   requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
@@ -1170,7 +1170,7 @@ libraries:
   cloud_api: false
   GAPICs:
   - proto_path: google/shopping/merchant/accounts/v1beta
-  library_name: java-shopping-merchant-accounts
+  library_name: shopping-merchant-accounts
   requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
@@ -1186,7 +1186,7 @@ libraries:
   cloud_api: false
   GAPICs:
   - proto_path: google/shopping/merchant/promotions/v1beta
-  library_name: java-shopping-merchant-promotions
+  library_name: shopping-merchant-promotions
   requires_billing: true
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
