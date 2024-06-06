@@ -69,7 +69,7 @@ public class DeleteModelIT {
             + "`"
             + "OPTIONS ( "
             + "model_type='linear_reg', "
-            + "max_iteration=1, "
+            + "max_iterations=1, "
             + "learn_rate=0.4, "
             + "learn_rate_strategy='constant' "
             + ") AS ( "
