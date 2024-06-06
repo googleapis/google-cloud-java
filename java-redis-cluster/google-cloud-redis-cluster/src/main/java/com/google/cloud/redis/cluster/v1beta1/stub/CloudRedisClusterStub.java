@@ -27,9 +27,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
@@ -92,6 +94,12 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
 
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterCallable()");
+  }
+
+  public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getClusterCertificateAuthorityCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

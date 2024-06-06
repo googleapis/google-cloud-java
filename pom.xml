@@ -110,10 +110,8 @@
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
-    <module>java-shopping-merchant-accounts</module>
-    <module>java-shopping-merchant-datasources</module>
-    <module>java-shopping-merchant-products</module>
-    <module>java-shopping-merchant-promotions</module>
+    <module>java-java-shopping-merchant-accounts</module>
+    <module>java-java-shopping-merchant-datasources</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
@@ -179,10 +177,14 @@
     <module>java-servicehealth</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
+    <module>java-shopping-merchant-accounts</module>
     <module>java-shopping-merchant-conversions</module>
+    <module>java-shopping-merchant-datasources</module>
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-lfp</module>
     <module>java-shopping-merchant-notifications</module>
+    <module>java-shopping-merchant-products</module>
+    <module>java-shopping-merchant-promotions</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>

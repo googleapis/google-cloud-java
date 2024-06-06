@@ -156,7 +156,7 @@ public enum TransitEncryptionMode implements com.google.protobuf.ProtocolMessage
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final TransitEncryptionMode[] VALUES = values();

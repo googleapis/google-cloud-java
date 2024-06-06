@@ -204,6 +204,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -259,6 +265,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -314,6 +326,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -337,6 +355,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -380,6 +404,12 @@ public class CloudRedisClusterClientHttpJsonTest {
               .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
               .addAllPscConnections(new ArrayList<PscConnection>())
               .setStateInfo(Cluster.StateInfo.newBuilder().build())
+              .setNodeType(NodeType.forNumber(0))
+              .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+              .putAllRedisConfigs(new HashMap<String, String>())
+              .setPreciseSizeGb(1342268405)
+              .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+              .setDeletionProtectionEnabled(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -494,6 +524,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -558,6 +594,12 @@ public class CloudRedisClusterClientHttpJsonTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -603,6 +645,98 @@ public class CloudRedisClusterClientHttpJsonTest {
       client.createClusterAsync(parent, cluster, clusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityTest() throws Exception {
+    CertificateAuthority expectedResponse =
+        CertificateAuthority.newBuilder()
+            .setName(CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CertificateAuthorityName name =
+        CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    CertificateAuthority actualResponse = client.getClusterCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CertificateAuthorityName name =
+          CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.getClusterCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityTest2() throws Exception {
+    CertificateAuthority expectedResponse =
+        CertificateAuthority.newBuilder()
+            .setName(CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4382/locations/location-4382/clusters/cluster-4382/certificateAuthority";
+
+    CertificateAuthority actualResponse = client.getClusterCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4382/locations/location-4382/clusters/cluster-4382/certificateAuthority";
+      client.getClusterCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -208,6 +208,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetClusterCertificateAuthority</td>
+ *      <td><p> Gets the details of certificate authority information for Redis cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getClusterCertificateAuthority(GetClusterCertificateAuthorityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getClusterCertificateAuthority(CertificateAuthorityName name)
+ *           <li><p> getClusterCertificateAuthority(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getClusterCertificateAuthorityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1197,6 +1216,128 @@ public class CloudRedisClusterClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of certificate authority information for Redis cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   CertificateAuthorityName name =
+   *       CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   CertificateAuthority response = cloudRedisClusterClient.getClusterCertificateAuthority(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis cluster certificate authority resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}/certificateAuthority`
+   *     where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateAuthority getClusterCertificateAuthority(CertificateAuthorityName name) {
+    GetClusterCertificateAuthorityRequest request =
+        GetClusterCertificateAuthorityRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getClusterCertificateAuthority(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of certificate authority information for Redis cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   CertificateAuthority response = cloudRedisClusterClient.getClusterCertificateAuthority(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis cluster certificate authority resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}/certificateAuthority`
+   *     where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateAuthority getClusterCertificateAuthority(String name) {
+    GetClusterCertificateAuthorityRequest request =
+        GetClusterCertificateAuthorityRequest.newBuilder().setName(name).build();
+    return getClusterCertificateAuthority(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of certificate authority information for Redis cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetClusterCertificateAuthorityRequest request =
+   *       GetClusterCertificateAuthorityRequest.newBuilder()
+   *           .setName(
+   *               CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .build();
+   *   CertificateAuthority response =
+   *       cloudRedisClusterClient.getClusterCertificateAuthority(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateAuthority getClusterCertificateAuthority(
+      GetClusterCertificateAuthorityRequest request) {
+    return getClusterCertificateAuthorityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of certificate authority information for Redis cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetClusterCertificateAuthorityRequest request =
+   *       GetClusterCertificateAuthorityRequest.newBuilder()
+   *           .setName(
+   *               CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<CertificateAuthority> future =
+   *       cloudRedisClusterClient.getClusterCertificateAuthorityCallable().futureCall(request);
+   *   // Do something.
+   *   CertificateAuthority response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable() {
+    return stub.getClusterCertificateAuthorityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

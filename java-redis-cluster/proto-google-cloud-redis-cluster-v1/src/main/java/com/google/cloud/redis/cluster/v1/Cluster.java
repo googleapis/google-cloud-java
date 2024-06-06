@@ -47,6 +47,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     pscConfigs_ = java.util.Collections.emptyList();
     discoveryEndpoints_ = java.util.Collections.emptyList();
     pscConnections_ = java.util.Collections.emptyList();
+    nodeType_ = 0;
   }
 
   @java.lang.Override
@@ -58,6 +59,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.cluster.v1.CloudRedisClusterProto
         .internal_static_google_cloud_redis_cluster_v1_Cluster_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 21:
+        return internalGetRedisConfigs();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -2209,7 +2222,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Redis memory size in GB for the entire cluster.
+   * Output only. Redis memory size in GB for the entire cluster rounded up to
+   * the next integer.
    * </pre>
    *
    * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2224,7 +2238,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Redis memory size in GB for the entire cluster.
+   * Output only. Redis memory size in GB for the entire cluster rounded up to
+   * the next integer.
    * </pre>
    *
    * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2591,6 +2606,342 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : stateInfo_;
   }
 
+  public static final int NODE_TYPE_FIELD_NUMBER = 19;
+  private int nodeType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of a redis node in the cluster. NodeType determines the
+   * underlying machine-type of a redis node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for nodeType.
+   */
+  @java.lang.Override
+  public int getNodeTypeValue() {
+    return nodeType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of a redis node in the cluster. NodeType determines the
+   * underlying machine-type of a redis node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeType.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.NodeType getNodeType() {
+    com.google.cloud.redis.cluster.v1.NodeType result =
+        com.google.cloud.redis.cluster.v1.NodeType.forNumber(nodeType_);
+    return result == null ? com.google.cloud.redis.cluster.v1.NodeType.UNRECOGNIZED : result;
+  }
+
+  public static final int PERSISTENCE_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistenceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersistenceConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig getPersistenceConfig() {
+    return persistenceConfig_ == null
+        ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.getDefaultInstance()
+        : persistenceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder
+      getPersistenceConfigOrBuilder() {
+    return persistenceConfig_ == null
+        ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.getDefaultInstance()
+        : persistenceConfig_;
+  }
+
+  public static final int REDIS_CONFIGS_FIELD_NUMBER = 21;
+
+  private static final class RedisConfigsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.redis.cluster.v1.CloudRedisClusterProto
+                .internal_static_google_cloud_redis_cluster_v1_Cluster_RedisConfigsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> redisConfigs_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRedisConfigs() {
+    if (redisConfigs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          RedisConfigsDefaultEntryHolder.defaultEntry);
+    }
+    return redisConfigs_;
+  }
+
+  public int getRedisConfigsCount() {
+    return internalGetRedisConfigs().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsRedisConfigs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetRedisConfigs().getMap().containsKey(key);
+  }
+  /** Use {@link #getRedisConfigsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
+    return getRedisConfigsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
+    return internalGetRedisConfigs().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getRedisConfigsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int PRECISE_SIZE_GB_FIELD_NUMBER = 22;
+  private double preciseSizeGb_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Precise value of redis memory size in GB for the entire
+   * cluster.
+   * </pre>
+   *
+   * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the preciseSizeGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreciseSizeGb() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Precise value of redis memory size in GB for the entire
+   * cluster.
+   * </pre>
+   *
+   * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The preciseSizeGb.
+   */
+  @java.lang.Override
+  public double getPreciseSizeGb() {
+    return preciseSizeGb_;
+  }
+
+  public static final int ZONE_DISTRIBUTION_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.redis.cluster.v1.ZoneDistributionConfig zoneDistributionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the zoneDistributionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasZoneDistributionConfig() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The zoneDistributionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.ZoneDistributionConfig getZoneDistributionConfig() {
+    return zoneDistributionConfig_ == null
+        ? com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.getDefaultInstance()
+        : zoneDistributionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder
+      getZoneDistributionConfigOrBuilder() {
+    return zoneDistributionConfig_ == null
+        ? com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.getDefaultInstance()
+        : zoneDistributionConfig_;
+  }
+
+  public static final int DELETION_PROTECTION_ENABLED_FIELD_NUMBER = 25;
+  private boolean deletionProtectionEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delete operation will fail when the value is set to true.
+   * </pre>
+   *
+   * <code>optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deletionProtectionEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletionProtectionEnabled() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delete operation will fail when the value is set to true.
+   * </pre>
+   *
+   * <code>optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deletionProtectionEnabled.
+   */
+  @java.lang.Override
+  public boolean getDeletionProtectionEnabled() {
+    return deletionProtectionEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2648,6 +2999,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(18, getStateInfo());
     }
+    if (nodeType_ != com.google.cloud.redis.cluster.v1.NodeType.NODE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, nodeType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(20, getPersistenceConfig());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetRedisConfigs(), RedisConfigsDefaultEntryHolder.defaultEntry, 21);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeDouble(22, preciseSizeGb_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(23, getZoneDistributionConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(25, deletionProtectionEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2701,6 +3069,32 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getStateInfo());
     }
+    if (nodeType_ != com.google.cloud.redis.cluster.v1.NodeType.NODE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, nodeType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getPersistenceConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetRedisConfigs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> redisConfigs__ =
+          RedisConfigsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, redisConfigs__);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(22, preciseSizeGb_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getZoneDistributionConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, deletionProtectionEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2744,6 +3138,25 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasStateInfo() != other.hasStateInfo()) return false;
     if (hasStateInfo()) {
       if (!getStateInfo().equals(other.getStateInfo())) return false;
+    }
+    if (nodeType_ != other.nodeType_) return false;
+    if (hasPersistenceConfig() != other.hasPersistenceConfig()) return false;
+    if (hasPersistenceConfig()) {
+      if (!getPersistenceConfig().equals(other.getPersistenceConfig())) return false;
+    }
+    if (!internalGetRedisConfigs().equals(other.internalGetRedisConfigs())) return false;
+    if (hasPreciseSizeGb() != other.hasPreciseSizeGb()) return false;
+    if (hasPreciseSizeGb()) {
+      if (java.lang.Double.doubleToLongBits(getPreciseSizeGb())
+          != java.lang.Double.doubleToLongBits(other.getPreciseSizeGb())) return false;
+    }
+    if (hasZoneDistributionConfig() != other.hasZoneDistributionConfig()) return false;
+    if (hasZoneDistributionConfig()) {
+      if (!getZoneDistributionConfig().equals(other.getZoneDistributionConfig())) return false;
+    }
+    if (hasDeletionProtectionEnabled() != other.hasDeletionProtectionEnabled()) return false;
+    if (hasDeletionProtectionEnabled()) {
+      if (getDeletionProtectionEnabled() != other.getDeletionProtectionEnabled()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2797,6 +3210,31 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasStateInfo()) {
       hash = (37 * hash) + STATE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getStateInfo().hashCode();
+    }
+    hash = (37 * hash) + NODE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + nodeType_;
+    if (hasPersistenceConfig()) {
+      hash = (37 * hash) + PERSISTENCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPersistenceConfig().hashCode();
+    }
+    if (!internalGetRedisConfigs().getMap().isEmpty()) {
+      hash = (37 * hash) + REDIS_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetRedisConfigs().hashCode();
+    }
+    if (hasPreciseSizeGb()) {
+      hash = (37 * hash) + PRECISE_SIZE_GB_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPreciseSizeGb()));
+    }
+    if (hasZoneDistributionConfig()) {
+      hash = (37 * hash) + ZONE_DISTRIBUTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getZoneDistributionConfig().hashCode();
+    }
+    if (hasDeletionProtectionEnabled()) {
+      hash = (37 * hash) + DELETION_PROTECTION_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtectionEnabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2916,6 +3354,28 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_redis_cluster_v1_Cluster_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 21:
+          return internalGetRedisConfigs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 21:
+          return internalGetMutableRedisConfigs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2943,6 +3403,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getDiscoveryEndpointsFieldBuilder();
         getPscConnectionsFieldBuilder();
         getStateInfoFieldBuilder();
+        getPersistenceConfigFieldBuilder();
+        getZoneDistributionConfigFieldBuilder();
       }
     }
 
@@ -2989,6 +3451,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         stateInfoBuilder_.dispose();
         stateInfoBuilder_ = null;
       }
+      nodeType_ = 0;
+      persistenceConfig_ = null;
+      if (persistenceConfigBuilder_ != null) {
+        persistenceConfigBuilder_.dispose();
+        persistenceConfigBuilder_ = null;
+      }
+      internalGetMutableRedisConfigs().clear();
+      preciseSizeGb_ = 0D;
+      zoneDistributionConfig_ = null;
+      if (zoneDistributionConfigBuilder_ != null) {
+        zoneDistributionConfigBuilder_.dispose();
+        zoneDistributionConfigBuilder_ = null;
+      }
+      deletionProtectionEnabled_ = false;
       return this;
     }
 
@@ -3091,6 +3567,35 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.stateInfo_ = stateInfoBuilder_ == null ? stateInfo_ : stateInfoBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.nodeType_ = nodeType_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.persistenceConfig_ =
+            persistenceConfigBuilder_ == null
+                ? persistenceConfig_
+                : persistenceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.redisConfigs_ = internalGetRedisConfigs();
+        result.redisConfigs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.preciseSizeGb_ = preciseSizeGb_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.zoneDistributionConfig_ =
+            zoneDistributionConfigBuilder_ == null
+                ? zoneDistributionConfig_
+                : zoneDistributionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.deletionProtectionEnabled_ = deletionProtectionEnabled_;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3255,6 +3760,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStateInfo()) {
         mergeStateInfo(other.getStateInfo());
       }
+      if (other.nodeType_ != 0) {
+        setNodeTypeValue(other.getNodeTypeValue());
+      }
+      if (other.hasPersistenceConfig()) {
+        mergePersistenceConfig(other.getPersistenceConfig());
+      }
+      internalGetMutableRedisConfigs().mergeFrom(other.internalGetRedisConfigs());
+      bitField0_ |= 0x00008000;
+      if (other.hasPreciseSizeGb()) {
+        setPreciseSizeGb(other.getPreciseSizeGb());
+      }
+      if (other.hasZoneDistributionConfig()) {
+        mergeZoneDistributionConfig(other.getZoneDistributionConfig());
+      }
+      if (other.hasDeletionProtectionEnabled()) {
+        setDeletionProtectionEnabled(other.getDeletionProtectionEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3382,6 +3904,50 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 146
+            case 152:
+              {
+                nodeType_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 152
+            case 162:
+              {
+                input.readMessage(
+                    getPersistenceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 162
+            case 170:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> redisConfigs__ =
+                    input.readMessage(
+                        RedisConfigsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableRedisConfigs()
+                    .getMutableMap()
+                    .put(redisConfigs__.getKey(), redisConfigs__.getValue());
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 170
+            case 177:
+              {
+                preciseSizeGb_ = input.readDouble();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 177
+            case 186:
+              {
+                input.readMessage(
+                    getZoneDistributionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
+            case 200:
+              {
+                deletionProtectionEnabled_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 200
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4219,7 +4785,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Redis memory size in GB for the entire cluster.
+     * Output only. Redis memory size in GB for the entire cluster rounded up to
+     * the next integer.
      * </pre>
      *
      * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4234,7 +4801,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Redis memory size in GB for the entire cluster.
+     * Output only. Redis memory size in GB for the entire cluster rounded up to
+     * the next integer.
      * </pre>
      *
      * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4249,7 +4817,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Redis memory size in GB for the entire cluster.
+     * Output only. Redis memory size in GB for the entire cluster rounded up to
+     * the next integer.
      * </pre>
      *
      * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4268,7 +4837,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Redis memory size in GB for the entire cluster.
+     * Output only. Redis memory size in GB for the entire cluster rounded up to
+     * the next integer.
      * </pre>
      *
      * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5808,6 +6378,864 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         stateInfo_ = null;
       }
       return stateInfoBuilder_;
+    }
+
+    private int nodeType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of a redis node in the cluster. NodeType determines the
+     * underlying machine-type of a redis node.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for nodeType.
+     */
+    @java.lang.Override
+    public int getNodeTypeValue() {
+      return nodeType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of a redis node in the cluster. NodeType determines the
+     * underlying machine-type of a redis node.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for nodeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeTypeValue(int value) {
+      nodeType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of a redis node in the cluster. NodeType determines the
+     * underlying machine-type of a redis node.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nodeType.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1.NodeType getNodeType() {
+      com.google.cloud.redis.cluster.v1.NodeType result =
+          com.google.cloud.redis.cluster.v1.NodeType.forNumber(nodeType_);
+      return result == null ? com.google.cloud.redis.cluster.v1.NodeType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of a redis node in the cluster. NodeType determines the
+     * underlying machine-type of a redis node.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The nodeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeType(com.google.cloud.redis.cluster.v1.NodeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      nodeType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of a redis node in the cluster. NodeType determines the
+     * underlying machine-type of a redis node.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      nodeType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistenceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig,
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.Builder,
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder>
+        persistenceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the persistenceConfig field is set.
+     */
+    public boolean hasPersistenceConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The persistenceConfig.
+     */
+    public com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig getPersistenceConfig() {
+      if (persistenceConfigBuilder_ == null) {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      } else {
+        return persistenceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(
+        com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        persistenceConfig_ = value;
+      } else {
+        persistenceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(
+        com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.Builder builderForValue) {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfig_ = builderForValue.build();
+      } else {
+        persistenceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePersistenceConfig(
+        com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && persistenceConfig_ != null
+            && persistenceConfig_
+                != com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig
+                    .getDefaultInstance()) {
+          getPersistenceConfigBuilder().mergeFrom(value);
+        } else {
+          persistenceConfig_ = value;
+        }
+      } else {
+        persistenceConfigBuilder_.mergeFrom(value);
+      }
+      if (persistenceConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPersistenceConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      persistenceConfig_ = null;
+      if (persistenceConfigBuilder_ != null) {
+        persistenceConfigBuilder_.dispose();
+        persistenceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.Builder
+        getPersistenceConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getPersistenceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder
+        getPersistenceConfigOrBuilder() {
+      if (persistenceConfigBuilder_ != null) {
+        return persistenceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence config (RDB, AOF) for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig,
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.Builder,
+            com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder>
+        getPersistenceConfigFieldBuilder() {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig,
+                com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig.Builder,
+                com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder>(
+                getPersistenceConfig(), getParentForChildren(), isClean());
+        persistenceConfig_ = null;
+      }
+      return persistenceConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> redisConfigs_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRedisConfigs() {
+      if (redisConfigs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RedisConfigsDefaultEntryHolder.defaultEntry);
+      }
+      return redisConfigs_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRedisConfigs() {
+      if (redisConfigs_ == null) {
+        redisConfigs_ =
+            com.google.protobuf.MapField.newMapField(RedisConfigsDefaultEntryHolder.defaultEntry);
+      }
+      if (!redisConfigs_.isMutable()) {
+        redisConfigs_ = redisConfigs_.copy();
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return redisConfigs_;
+    }
+
+    public int getRedisConfigsCount() {
+      return internalGetRedisConfigs().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsRedisConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetRedisConfigs().getMap().containsKey(key);
+    }
+    /** Use {@link #getRedisConfigsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
+      return getRedisConfigsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
+      return internalGetRedisConfigs().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getRedisConfigsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearRedisConfigs() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      internalGetMutableRedisConfigs().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeRedisConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableRedisConfigs().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableRedisConfigs() {
+      bitField0_ |= 0x00008000;
+      return internalGetMutableRedisConfigs().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putRedisConfigs(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableRedisConfigs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllRedisConfigs(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableRedisConfigs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+
+    private double preciseSizeGb_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Precise value of redis memory size in GB for the entire
+     * cluster.
+     * </pre>
+     *
+     * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the preciseSizeGb field is set.
+     */
+    @java.lang.Override
+    public boolean hasPreciseSizeGb() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Precise value of redis memory size in GB for the entire
+     * cluster.
+     * </pre>
+     *
+     * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The preciseSizeGb.
+     */
+    @java.lang.Override
+    public double getPreciseSizeGb() {
+      return preciseSizeGb_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Precise value of redis memory size in GB for the entire
+     * cluster.
+     * </pre>
+     *
+     * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The preciseSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreciseSizeGb(double value) {
+
+      preciseSizeGb_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Precise value of redis memory size in GB for the entire
+     * cluster.
+     * </pre>
+     *
+     * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreciseSizeGb() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      preciseSizeGb_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.cluster.v1.ZoneDistributionConfig zoneDistributionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfig,
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.Builder,
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder>
+        zoneDistributionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the zoneDistributionConfig field is set.
+     */
+    public boolean hasZoneDistributionConfig() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The zoneDistributionConfig.
+     */
+    public com.google.cloud.redis.cluster.v1.ZoneDistributionConfig getZoneDistributionConfig() {
+      if (zoneDistributionConfigBuilder_ == null) {
+        return zoneDistributionConfig_ == null
+            ? com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.getDefaultInstance()
+            : zoneDistributionConfig_;
+      } else {
+        return zoneDistributionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setZoneDistributionConfig(
+        com.google.cloud.redis.cluster.v1.ZoneDistributionConfig value) {
+      if (zoneDistributionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        zoneDistributionConfig_ = value;
+      } else {
+        zoneDistributionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setZoneDistributionConfig(
+        com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.Builder builderForValue) {
+      if (zoneDistributionConfigBuilder_ == null) {
+        zoneDistributionConfig_ = builderForValue.build();
+      } else {
+        zoneDistributionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeZoneDistributionConfig(
+        com.google.cloud.redis.cluster.v1.ZoneDistributionConfig value) {
+      if (zoneDistributionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && zoneDistributionConfig_ != null
+            && zoneDistributionConfig_
+                != com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.getDefaultInstance()) {
+          getZoneDistributionConfigBuilder().mergeFrom(value);
+        } else {
+          zoneDistributionConfig_ = value;
+        }
+      } else {
+        zoneDistributionConfigBuilder_.mergeFrom(value);
+      }
+      if (zoneDistributionConfig_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearZoneDistributionConfig() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      zoneDistributionConfig_ = null;
+      if (zoneDistributionConfigBuilder_ != null) {
+        zoneDistributionConfigBuilder_.dispose();
+        zoneDistributionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.Builder
+        getZoneDistributionConfigBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getZoneDistributionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder
+        getZoneDistributionConfigOrBuilder() {
+      if (zoneDistributionConfigBuilder_ != null) {
+        return zoneDistributionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return zoneDistributionConfig_ == null
+            ? com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.getDefaultInstance()
+            : zoneDistributionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This config will be used to determine how the customer wants us
+     * to distribute cluster resources within the region.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfig,
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.Builder,
+            com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder>
+        getZoneDistributionConfigFieldBuilder() {
+      if (zoneDistributionConfigBuilder_ == null) {
+        zoneDistributionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.cluster.v1.ZoneDistributionConfig,
+                com.google.cloud.redis.cluster.v1.ZoneDistributionConfig.Builder,
+                com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder>(
+                getZoneDistributionConfig(), getParentForChildren(), isClean());
+        zoneDistributionConfig_ = null;
+      }
+      return zoneDistributionConfigBuilder_;
+    }
+
+    private boolean deletionProtectionEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delete operation will fail when the value is set to true.
+     * </pre>
+     *
+     * <code>
+     * optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deletionProtectionEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeletionProtectionEnabled() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delete operation will fail when the value is set to true.
+     * </pre>
+     *
+     * <code>
+     * optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deletionProtectionEnabled.
+     */
+    @java.lang.Override
+    public boolean getDeletionProtectionEnabled() {
+      return deletionProtectionEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delete operation will fail when the value is set to true.
+     * </pre>
+     *
+     * <code>
+     * optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deletionProtectionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtectionEnabled(boolean value) {
+
+      deletionProtectionEnabled_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delete operation will fail when the value is set to true.
+     * </pre>
+     *
+     * <code>
+     * optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionProtectionEnabled() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      deletionProtectionEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

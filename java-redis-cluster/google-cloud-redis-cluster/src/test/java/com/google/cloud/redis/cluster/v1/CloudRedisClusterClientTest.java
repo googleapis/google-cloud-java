@@ -199,6 +199,12 @@ public class CloudRedisClusterClientTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -248,6 +254,12 @@ public class CloudRedisClusterClientTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -297,6 +309,12 @@ public class CloudRedisClusterClientTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -441,6 +459,12 @@ public class CloudRedisClusterClientTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -504,6 +528,12 @@ public class CloudRedisClusterClientTest {
             .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
             .addAllPscConnections(new ArrayList<PscConnection>())
             .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -548,6 +578,86 @@ public class CloudRedisClusterClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityTest() throws Exception {
+    CertificateAuthority expectedResponse =
+        CertificateAuthority.newBuilder()
+            .setName(CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    CertificateAuthorityName name =
+        CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    CertificateAuthority actualResponse = client.getClusterCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetClusterCertificateAuthorityRequest actualRequest =
+        ((GetClusterCertificateAuthorityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      CertificateAuthorityName name =
+          CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.getClusterCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityTest2() throws Exception {
+    CertificateAuthority expectedResponse =
+        CertificateAuthority.newBuilder()
+            .setName(CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CertificateAuthority actualResponse = client.getClusterCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetClusterCertificateAuthorityRequest actualRequest =
+        ((GetClusterCertificateAuthorityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getClusterCertificateAuthorityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getClusterCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
