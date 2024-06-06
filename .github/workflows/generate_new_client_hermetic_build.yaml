@@ -41,7 +41,7 @@ on:
           type: string
           description: |
             `library_name`: The directory name of the new library. By default it's
-            java-<api_shortname>
+            java-<api_shortname>. **Do not include `java-` as it will be automatically prepended**
         distribution_name:
           required: false
           type: string
