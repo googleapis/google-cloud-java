@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.products.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.products.v1beta",
+  "services": {
+    "ProductInputsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductInputsServiceClient",
+          "rpcs": {
+            "DeleteProductInput": {
+              "methods": ["deleteProductInput", "deleteProductInput", "deleteProductInput", "deleteProductInputCallable"]
+            },
+            "InsertProductInput": {
+              "methods": ["insertProductInput", "insertProductInputCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProductsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductsServiceClient",
+          "rpcs": {
+            "GetProduct": {
+              "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
+            },
+            "ListProducts": {
+              "methods": ["listProducts", "listProducts", "listProducts", "listProductsPagedCallable", "listProductsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
