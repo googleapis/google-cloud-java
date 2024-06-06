@@ -538,7 +538,8 @@ public final class GenerativeModel {
             .addAllTools(tools);
 
     if (systemInstruction.isPresent()) {
-      requestBuilder.setSystemInstruction(systemInstruction.get());
+      requestBuilder.setSystemInstruction(
+          removeRoleInSystemInstructionContent(systemInstruction.get()));
     }
 
     return requestBuilder.build();
