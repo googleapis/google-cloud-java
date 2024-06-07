@@ -133,7 +133,7 @@ public interface ImportMetadataOrBuilder
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2beta/import_config.proto;l=330
+   *     google/cloud/retail/v2beta/import_config.proto;l=336
    * @return The requestId.
    */
   @java.lang.Deprecated
@@ -148,7 +148,7 @@ public interface ImportMetadataOrBuilder
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2beta/import_config.proto;l=330
+   *     google/cloud/retail/v2beta/import_config.proto;l=336
    * @return The bytes for requestId.
    */
   @java.lang.Deprecated

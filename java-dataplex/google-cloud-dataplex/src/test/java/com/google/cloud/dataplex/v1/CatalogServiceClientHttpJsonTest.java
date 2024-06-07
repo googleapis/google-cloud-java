@@ -2125,7 +2125,7 @@ public class CatalogServiceClientHttpJsonTest {
   public void lookupEntryTest() throws Exception {
     Entry expectedResponse =
         Entry.newBuilder()
-            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setName("name3373707")
             .setEntryType("entryType-479362356")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())

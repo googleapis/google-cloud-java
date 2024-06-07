@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest;
 import com.google.cloud.aiplatform.v1.TensorboardServiceClient;
 import com.google.cloud.aiplatform.v1.TensorboardTimeSeries;
-import com.google.cloud.aiplatform.v1.TensorboardTimeSeriesName;
 
 public class AsyncCreateTensorboardTimeSeries {
 
@@ -38,15 +37,7 @@ public class AsyncCreateTensorboardTimeSeries {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardTimeSeriesRequest request =
           CreateTensorboardTimeSeriesRequest.newBuilder()
-              .setParent(
-                  TensorboardTimeSeriesName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[TENSORBOARD]",
-                          "[EXPERIMENT]",
-                          "[RUN]",
-                          "[TIME_SERIES]")
-                      .toString())
+              .setParent("parent-995424086")
               .setTensorboardTimeSeriesId("tensorboardTimeSeriesId-913380692")
               .setTensorboardTimeSeries(TensorboardTimeSeries.newBuilder().build())
               .build();

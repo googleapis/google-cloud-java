@@ -56,7 +56,7 @@
               "methods": ["listNodePools", "listNodePools", "listNodePools", "listNodePoolsCallable"]
             },
             "ListOperations": {
-              "methods": ["listOperations", "listOperations", "listOperationsCallable"]
+              "methods": ["listOperations", "listOperations", "listOperations", "listOperationsCallable"]
             },
             "ListUsableSubnetworks": {
               "methods": ["listUsableSubnetworks", "listUsableSubnetworksPagedCallable", "listUsableSubnetworksCallable"]

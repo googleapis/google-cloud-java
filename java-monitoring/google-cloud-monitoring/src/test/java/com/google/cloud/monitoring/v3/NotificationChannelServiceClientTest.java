@@ -691,10 +691,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType("type3575610")
-            .setName(
-                NotificationChannelName.ofProjectNotificationChannelName(
-                        "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
@@ -745,10 +742,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType("type3575610")
-            .setName(
-                NotificationChannelName.ofProjectNotificationChannelName(
-                        "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
@@ -799,10 +793,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType("type3575610")
-            .setName(
-                NotificationChannelName.ofProjectNotificationChannelName(
-                        "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
@@ -853,10 +844,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType("type3575610")
-            .setName(
-                NotificationChannelName.ofProjectNotificationChannelName(
-                        "[PROJECT]", "[NOTIFICATION_CHANNEL]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())

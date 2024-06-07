@@ -21,7 +21,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.notebooks.v1.DiagnoseInstanceRequest;
 import com.google.cloud.notebooks.v1.DiagnosticConfig;
 import com.google.cloud.notebooks.v1.Instance;
-import com.google.cloud.notebooks.v1.InstanceName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.OperationMetadata;
 
@@ -40,7 +39,7 @@ public class AsyncDiagnoseInstanceLRO {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DiagnoseInstanceRequest request =
           DiagnoseInstanceRequest.newBuilder()
-              .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+              .setName("name3373707")
               .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
               .build();
       OperationFuture<Instance, OperationMetadata> future =

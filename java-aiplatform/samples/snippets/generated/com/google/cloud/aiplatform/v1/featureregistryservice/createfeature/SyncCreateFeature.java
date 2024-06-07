@@ -18,8 +18,8 @@ package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_FeatureRegistryService_CreateFeature_sync]
 import com.google.cloud.aiplatform.v1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1.EntityTypeName;
 import com.google.cloud.aiplatform.v1.Feature;
+import com.google.cloud.aiplatform.v1.FeatureGroupName;
 import com.google.cloud.aiplatform.v1.FeatureRegistryServiceClient;
 
 public class SyncCreateFeature {
@@ -39,8 +39,7 @@ public class SyncCreateFeature {
       CreateFeatureRequest request =
           CreateFeatureRequest.newBuilder()
               .setParent(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-                      .toString())
+                  FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
               .setFeature(Feature.newBuilder().build())
               .setFeatureId("featureId-420503887")
               .build();

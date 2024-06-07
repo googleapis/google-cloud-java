@@ -22,7 +22,6 @@ import com.google.cloud.notebooks.v1.CreateRuntimeRequest;
 import com.google.cloud.notebooks.v1.ManagedNotebookServiceClient;
 import com.google.cloud.notebooks.v1.OperationMetadata;
 import com.google.cloud.notebooks.v1.Runtime;
-import com.google.cloud.notebooks.v1.RuntimeName;
 
 public class AsyncCreateRuntimeLRO {
 
@@ -40,7 +39,7 @@ public class AsyncCreateRuntimeLRO {
         ManagedNotebookServiceClient.create()) {
       CreateRuntimeRequest request =
           CreateRuntimeRequest.newBuilder()
-              .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+              .setParent("parent-995424086")
               .setRuntimeId("runtimeId121455379")
               .setRuntime(Runtime.newBuilder().build())
               .setRequestId("requestId693933066")

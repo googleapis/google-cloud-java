@@ -4663,7 +4663,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
    *   SearchEvaluationsRequest request =
    *       SearchEvaluationsRequest.newBuilder()
-   *           .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -4696,7 +4696,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
    *   SearchEvaluationsRequest request =
    *       SearchEvaluationsRequest.newBuilder()
-   *           .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -4730,7 +4730,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
    *   SearchEvaluationsRequest request =
    *       SearchEvaluationsRequest.newBuilder()
-   *           .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

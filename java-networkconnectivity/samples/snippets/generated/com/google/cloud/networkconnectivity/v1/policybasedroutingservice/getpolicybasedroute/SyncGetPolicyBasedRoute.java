@@ -19,7 +19,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_GetPolicyBasedRoute_sync]
 import com.google.cloud.networkconnectivity.v1.GetPolicyBasedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoute;
-import com.google.cloud.networkconnectivity.v1.PolicyBasedRouteName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 
 public class SyncGetPolicyBasedRoute {
@@ -37,9 +36,7 @@ public class SyncGetPolicyBasedRoute {
     try (PolicyBasedRoutingServiceClient policyBasedRoutingServiceClient =
         PolicyBasedRoutingServiceClient.create()) {
       GetPolicyBasedRouteRequest request =
-          GetPolicyBasedRouteRequest.newBuilder()
-              .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
-              .build();
+          GetPolicyBasedRouteRequest.newBuilder().setName("name3373707").build();
       PolicyBasedRoute response = policyBasedRoutingServiceClient.getPolicyBasedRoute(request);
     }
   }

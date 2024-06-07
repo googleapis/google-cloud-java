@@ -42,6 +42,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PredictionServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockPredictionService mockPredictionService;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -50,9 +51,11 @@ public class PredictionServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPredictionService = new MockPredictionService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPredictionService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockPredictionService, mockLocations));
     mockServiceHelper.start();
   }
 

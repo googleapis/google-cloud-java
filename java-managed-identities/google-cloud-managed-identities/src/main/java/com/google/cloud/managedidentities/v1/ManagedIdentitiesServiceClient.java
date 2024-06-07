@@ -510,7 +510,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -542,7 +542,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -576,7 +576,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
    *       CreateMicrosoftAdDomainRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setDomainName("domainName-1244085905")
    *           .setDomain(Domain.newBuilder().build())
    *           .build();
@@ -667,9 +667,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ResetAdminPasswordRequest request =
-   *       ResetAdminPasswordRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *       ResetAdminPasswordRequest.newBuilder().setName("name3373707").build();
    *   ResetAdminPasswordResponse response =
    *       managedIdentitiesServiceClient.resetAdminPassword(request);
    * }
@@ -697,9 +695,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ResetAdminPasswordRequest request =
-   *       ResetAdminPasswordRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *       ResetAdminPasswordRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ResetAdminPasswordResponse> future =
    *       managedIdentitiesServiceClient.resetAdminPasswordCallable().futureCall(request);
    *   // Do something.
@@ -791,7 +787,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -826,7 +822,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -862,7 +858,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
    *       ListDomainsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -959,10 +955,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   GetDomainRequest request =
-   *       GetDomainRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *   GetDomainRequest request = GetDomainRequest.newBuilder().setName("name3373707").build();
    *   Domain response = managedIdentitiesServiceClient.getDomain(request);
    * }
    * }</pre>
@@ -988,10 +981,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   GetDomainRequest request =
-   *       GetDomainRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *   GetDomainRequest request = GetDomainRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Domain> future =
    *       managedIdentitiesServiceClient.getDomainCallable().futureCall(request);
    *   // Do something.
@@ -1200,10 +1190,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   DeleteDomainRequest request =
-   *       DeleteDomainRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *   DeleteDomainRequest request = DeleteDomainRequest.newBuilder().setName("name3373707").build();
    *   managedIdentitiesServiceClient.deleteDomainAsync(request).get();
    * }
    * }</pre>
@@ -1229,10 +1216,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   DeleteDomainRequest request =
-   *       DeleteDomainRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *   DeleteDomainRequest request = DeleteDomainRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Empty, OpMetadata> future =
    *       managedIdentitiesServiceClient.deleteDomainOperationCallable().futureCall(request);
    *   // Do something.
@@ -1259,10 +1243,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
-   *   DeleteDomainRequest request =
-   *       DeleteDomainRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-   *           .build();
+   *   DeleteDomainRequest request = DeleteDomainRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future =
    *       managedIdentitiesServiceClient.deleteDomainCallable().futureCall(request);
    *   // Do something.
@@ -1355,7 +1336,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
    *       AttachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   Domain response = managedIdentitiesServiceClient.attachTrustAsync(request).get();
@@ -1385,7 +1366,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
    *       AttachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   OperationFuture<Domain, OpMetadata> future =
@@ -1416,7 +1397,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
    *       AttachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1532,7 +1513,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
    *       ReconfigureTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTargetDomainName("targetDomainName2065239520")
    *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
    *           .build();
@@ -1564,7 +1545,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
    *       ReconfigureTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTargetDomainName("targetDomainName2065239520")
    *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
    *           .build();
@@ -1596,7 +1577,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
    *       ReconfigureTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTargetDomainName("targetDomainName2065239520")
    *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
    *           .build();
@@ -1692,7 +1673,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
    *       DetachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   Domain response = managedIdentitiesServiceClient.detachTrustAsync(request).get();
@@ -1722,7 +1703,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
    *       DetachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   OperationFuture<Domain, OpMetadata> future =
@@ -1753,7 +1734,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
    *       DetachTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1852,7 +1833,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
    *       ValidateTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   Domain response = managedIdentitiesServiceClient.validateTrustAsync(request).get();
@@ -1884,7 +1865,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
    *       ValidateTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   OperationFuture<Domain, OpMetadata> future =
@@ -1916,7 +1897,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
    *       ValidateTrustRequest.newBuilder()
-   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setName("name3373707")
    *           .setTrust(Trust.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =

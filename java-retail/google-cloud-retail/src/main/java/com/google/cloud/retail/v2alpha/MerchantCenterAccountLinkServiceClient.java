@@ -281,7 +281,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param parent Required. The parent Catalog of the resource. It must match this format:
-   *     projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}
+   *     `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMerchantCenterAccountLinksResponse listMerchantCenterAccountLinks(
@@ -315,7 +315,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param parent Required. The parent Catalog of the resource. It must match this format:
-   *     projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}
+   *     `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMerchantCenterAccountLinksResponse listMerchantCenterAccountLinks(
@@ -416,7 +416,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param parent Required. The branch resource where this MerchantCenterAccountLink will be
-   *     created. Format: projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   *     created. Format: `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * @param merchantCenterAccountLink Required. The
    *     [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink] to
    *     create.
@@ -461,7 +461,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param parent Required. The branch resource where this MerchantCenterAccountLink will be
-   *     created. Format: projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   *     created. Format: `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * @param merchantCenterAccountLink Required. The
    *     [MerchantCenterAccountLink][google.cloud.retail.v2alpha.MerchantCenterAccountLink] to
    *     create.
@@ -608,7 +608,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param name Required. Full resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMerchantCenterAccountLink(MerchantCenterAccountLinkName name) {
@@ -644,7 +644,7 @@ public class MerchantCenterAccountLinkServiceClient implements BackgroundResourc
    * }</pre>
    *
    * @param name Required. Full resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteMerchantCenterAccountLink(String name) {

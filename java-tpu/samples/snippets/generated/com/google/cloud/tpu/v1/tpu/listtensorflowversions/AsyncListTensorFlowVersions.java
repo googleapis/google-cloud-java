@@ -20,7 +20,6 @@ package com.google.cloud.tpu.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest;
 import com.google.cloud.tpu.v1.TensorFlowVersion;
-import com.google.cloud.tpu.v1.TensorFlowVersionName;
 import com.google.cloud.tpu.v1.TpuClient;
 
 public class AsyncListTensorFlowVersions {
@@ -38,9 +37,7 @@ public class AsyncListTensorFlowVersions {
     try (TpuClient tpuClient = TpuClient.create()) {
       ListTensorFlowVersionsRequest request =
           ListTensorFlowVersionsRequest.newBuilder()
-              .setParent(
-                  TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-                      .toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

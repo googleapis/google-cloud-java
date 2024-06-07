@@ -1278,9 +1278,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
-   *           .setParent(
-   *               TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1315,9 +1313,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
-   *           .setParent(
-   *               TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1352,9 +1348,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
-   *           .setParent(
-   *               TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1453,11 +1447,7 @@ public class TpuClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetTensorFlowVersionRequest request =
-   *       GetTensorFlowVersionRequest.newBuilder()
-   *           .setName(
-   *               TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-   *                   .toString())
-   *           .build();
+   *       GetTensorFlowVersionRequest.newBuilder().setName("name3373707").build();
    *   TensorFlowVersion response = tpuClient.getTensorFlowVersion(request);
    * }
    * }</pre>
@@ -1483,11 +1473,7 @@ public class TpuClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetTensorFlowVersionRequest request =
-   *       GetTensorFlowVersionRequest.newBuilder()
-   *           .setName(
-   *               TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-   *                   .toString())
-   *           .build();
+   *       GetTensorFlowVersionRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<TensorFlowVersion> future =
    *       tpuClient.getTensorFlowVersionCallable().futureCall(request);
    *   // Do something.
@@ -1577,9 +1563,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
-   *           .setParent(
-   *               AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1614,9 +1598,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
-   *           .setParent(
-   *               AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1651,9 +1633,7 @@ public class TpuClient implements BackgroundResource {
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
-   *           .setParent(
-   *               AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")

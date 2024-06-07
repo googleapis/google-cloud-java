@@ -30,7 +30,7 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * <pre>
    * Required. The branch resource where this MerchantCenterAccountLink will be
    * created. Format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface CreateMerchantCenterAccountLinkRequestOrBuilder
    * <pre>
    * Required. The branch resource where this MerchantCenterAccountLink will be
    * created. Format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>

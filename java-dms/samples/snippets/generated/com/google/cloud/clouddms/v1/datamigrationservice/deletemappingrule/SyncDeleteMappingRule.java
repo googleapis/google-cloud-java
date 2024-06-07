@@ -17,7 +17,6 @@
 package com.google.cloud.clouddms.v1.samples;
 
 // [START datamigration_v1_generated_DataMigrationService_DeleteMappingRule_sync]
-import com.google.cloud.clouddms.v1.ConversionWorkspaceName;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.DeleteMappingRuleRequest;
 import com.google.protobuf.Empty;
@@ -38,9 +37,7 @@ public class SyncDeleteMappingRule {
         DataMigrationServiceClient.create()) {
       DeleteMappingRuleRequest request =
           DeleteMappingRuleRequest.newBuilder()
-              .setName(
-                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
-                      .toString())
+              .setName("name3373707")
               .setRequestId("requestId693933066")
               .build();
       dataMigrationServiceClient.deleteMappingRule(request);

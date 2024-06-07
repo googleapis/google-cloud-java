@@ -416,7 +416,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   ListPolicyBasedRoutesRequest request =
    *       ListPolicyBasedRoutesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -453,7 +453,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   ListPolicyBasedRoutesRequest request =
    *       ListPolicyBasedRoutesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -489,7 +489,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   ListPolicyBasedRoutesRequest request =
    *       ListPolicyBasedRoutesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -589,9 +589,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * try (PolicyBasedRoutingServiceClient policyBasedRoutingServiceClient =
    *     PolicyBasedRoutingServiceClient.create()) {
    *   GetPolicyBasedRouteRequest request =
-   *       GetPolicyBasedRouteRequest.newBuilder()
-   *           .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
-   *           .build();
+   *       GetPolicyBasedRouteRequest.newBuilder().setName("name3373707").build();
    *   PolicyBasedRoute response = policyBasedRoutingServiceClient.getPolicyBasedRoute(request);
    * }
    * }</pre>
@@ -618,9 +616,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * try (PolicyBasedRoutingServiceClient policyBasedRoutingServiceClient =
    *     PolicyBasedRoutingServiceClient.create()) {
    *   GetPolicyBasedRouteRequest request =
-   *       GetPolicyBasedRouteRequest.newBuilder()
-   *           .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
-   *           .build();
+   *       GetPolicyBasedRouteRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<PolicyBasedRoute> future =
    *       policyBasedRoutingServiceClient.getPolicyBasedRouteCallable().futureCall(request);
    *   // Do something.
@@ -729,7 +725,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   CreatePolicyBasedRouteRequest request =
    *       CreatePolicyBasedRouteRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPolicyBasedRouteId("policyBasedRouteId-18034589")
    *           .setPolicyBasedRoute(PolicyBasedRoute.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -763,7 +759,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   CreatePolicyBasedRouteRequest request =
    *       CreatePolicyBasedRouteRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPolicyBasedRouteId("policyBasedRouteId-18034589")
    *           .setPolicyBasedRoute(PolicyBasedRoute.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -798,7 +794,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   CreatePolicyBasedRouteRequest request =
    *       CreatePolicyBasedRouteRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPolicyBasedRouteId("policyBasedRouteId-18034589")
    *           .setPolicyBasedRoute(PolicyBasedRoute.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -890,7 +886,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   DeletePolicyBasedRouteRequest request =
    *       DeletePolicyBasedRouteRequest.newBuilder()
-   *           .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+   *           .setName("name3373707")
    *           .setRequestId("requestId693933066")
    *           .build();
    *   policyBasedRoutingServiceClient.deletePolicyBasedRouteAsync(request).get();
@@ -921,7 +917,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   DeletePolicyBasedRouteRequest request =
    *       DeletePolicyBasedRouteRequest.newBuilder()
-   *           .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+   *           .setName("name3373707")
    *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
@@ -954,7 +950,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    *     PolicyBasedRoutingServiceClient.create()) {
    *   DeletePolicyBasedRouteRequest request =
    *       DeletePolicyBasedRouteRequest.newBuilder()
-   *           .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+   *           .setName("name3373707")
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =

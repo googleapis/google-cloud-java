@@ -39,9 +39,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
@@ -266,6 +268,43 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetClusterCertificateAuthority")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetClusterCertificateAuthorityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*/certificateAuthority}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetClusterCertificateAuthorityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetClusterCertificateAuthorityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CertificateAuthority>newBuilder()
+                      .setDefaultInstance(CertificateAuthority.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -346,6 +385,8 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -476,6 +517,19 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthorityTransportSettings =
+            HttpJsonCallSettings
+                .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+                .setMethodDescriptor(getClusterCertificateAuthorityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -536,6 +590,11 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getClusterCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getClusterCertificateAuthorityTransportSettings,
+            settings.getClusterCertificateAuthoritySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -558,6 +617,7 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     methodDescriptors.add(updateClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
+    methodDescriptors.add(getClusterCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -610,6 +670,12 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable() {
+    return getClusterCertificateAuthorityCallable;
   }
 
   @Override

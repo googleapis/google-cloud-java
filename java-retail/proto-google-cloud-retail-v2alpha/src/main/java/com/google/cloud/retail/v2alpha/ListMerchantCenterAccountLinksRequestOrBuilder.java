@@ -30,7 +30,7 @@ public interface ListMerchantCenterAccountLinksRequestOrBuilder
    * <pre>
    * Required. The parent Catalog of the resource.
    * It must match this format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ListMerchantCenterAccountLinksRequestOrBuilder
    * <pre>
    * Required. The parent Catalog of the resource.
    * It must match this format:
-   * projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}
+   * `projects/{PROJECT_NUMBER}/locations/global/catalogs/{CATALOG_ID}`
    * </pre>
    *
    * <code>

@@ -997,9 +997,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveSettingsRequest request =
-   *       CalculateEffectiveSettingsRequest.newBuilder()
-   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
-   *           .build();
+   *       CalculateEffectiveSettingsRequest.newBuilder().setName("name3373707").build();
    *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(request);
    * }
    * }</pre>
@@ -1031,9 +1029,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveSettingsRequest request =
-   *       CalculateEffectiveSettingsRequest.newBuilder()
-   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
-   *           .build();
+   *       CalculateEffectiveSettingsRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Settings> future =
    *       securityCenterSettingsServiceClient
    *           .calculateEffectiveSettingsCallable()
@@ -1522,11 +1518,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveComponentSettingsRequest request =
-   *       CalculateEffectiveComponentSettingsRequest.newBuilder()
-   *           .setName(
-   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
-   *                   .toString())
-   *           .build();
+   *       CalculateEffectiveComponentSettingsRequest.newBuilder().setName("name3373707").build();
    *   ComponentSettings response =
    *       securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(request);
    * }
@@ -1555,11 +1547,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveComponentSettingsRequest request =
-   *       CalculateEffectiveComponentSettingsRequest.newBuilder()
-   *           .setName(
-   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
-   *                   .toString())
-   *           .build();
+   *       CalculateEffectiveComponentSettingsRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ComponentSettings> future =
    *       securityCenterSettingsServiceClient
    *           .calculateEffectiveComponentSettingsCallable()

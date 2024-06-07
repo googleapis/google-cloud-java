@@ -21,7 +21,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.OperationMetadata;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 import com.google.cloud.notebooks.v1.TriggerScheduleRequest;
 
 public class AsyncTriggerScheduleLRO {
@@ -38,9 +37,7 @@ public class AsyncTriggerScheduleLRO {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       TriggerScheduleRequest request =
-          TriggerScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+          TriggerScheduleRequest.newBuilder().setName("name3373707").build();
       OperationFuture<Schedule, OperationMetadata> future =
           notebookServiceClient.triggerScheduleOperationCallable().futureCall(request);
       // Do something.

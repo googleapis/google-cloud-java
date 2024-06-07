@@ -100,6 +100,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -158,6 +159,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -216,6 +218,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -263,6 +266,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -310,6 +314,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -357,6 +362,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -404,6 +410,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -607,6 +614,7 @@ public class ModelServiceClientTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

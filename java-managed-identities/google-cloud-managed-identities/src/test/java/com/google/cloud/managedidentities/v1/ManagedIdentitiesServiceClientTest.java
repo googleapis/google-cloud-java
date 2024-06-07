@@ -378,7 +378,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void getDomainTest() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -426,7 +426,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void getDomainTest2() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -617,7 +617,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void attachTrustTest() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -676,7 +676,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void attachTrustTest2() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -735,7 +735,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void reconfigureTrustTest() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -798,7 +798,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void reconfigureTrustTest2() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -861,7 +861,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void detachTrustTest() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -920,7 +920,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void detachTrustTest2() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -979,7 +979,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void validateTrustTest() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")
@@ -1038,7 +1038,7 @@ public class ManagedIdentitiesServiceClientTest {
   public void validateTrustTest2() throws Exception {
     Domain expectedResponse =
         Domain.newBuilder()
-            .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+            .setName("name3373707")
             .putAllLabels(new HashMap<String, String>())
             .addAllAuthorizedNetworks(new ArrayList<String>())
             .setReservedIpRange("reservedIpRange575015950")

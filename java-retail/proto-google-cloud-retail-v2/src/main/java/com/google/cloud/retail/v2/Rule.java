@@ -1022,10 +1022,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
-     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
      * more
-     *   details at the Retail Search
-     *   [user guide](/retail/search/docs/filter-and-order#filter).
+     *   information, see [Filter](/retail/docs/filter-and-order#filter).
      * * To filter products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -1047,10 +1046,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
-     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
      * more
-     *   details at the Retail Search
-     *   [user guide](/retail/search/docs/filter-and-order#filter).
+     *   information, see [Filter](/retail/docs/filter-and-order#filter).
      * * To filter products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -1070,17 +1068,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * * Rule Condition:
-   *   - No
-   *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
-   *   provided is a global match.
-   *   - 1 or more
-   *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
-   *   provided are combined with OR operator.
+   *     - No
+   *     [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+   *     provided is a global match.
+   *     - 1 or more
+   *     [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+   *     provided are combined with OR operator.
+   *
    * * Action Input: The request query and filter that are applied to the
    * retrieved products, in addition to any filters already provided with the
    * SearchRequest. The AND operator is used to combine the query's existing
    * filters with the filter rule(s). NOTE: May result in 0 results when
    * filters conflict.
+   *
    * * Action Result: Filters the returned objects to be ONLY those that passed
    * the filter.
    * </pre>
@@ -1134,10 +1134,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
-     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
      * more
-     *   details at the Retail Search
-     *   [user guide](/retail/search/docs/filter-and-order#filter).
+     *   information, see [Filter](/retail/docs/filter-and-order#filter).
      * * To filter products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -1170,10 +1169,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
-     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+     * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
      * more
-     *   details at the Retail Search
-     *   [user guide](/retail/search/docs/filter-and-order#filter).
+     *   information, see [Filter](/retail/docs/filter-and-order#filter).
      * * To filter products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -1364,17 +1362,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * * Rule Condition:
-     *   - No
-     *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
-     *   provided is a global match.
-     *   - 1 or more
-     *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
-     *   provided are combined with OR operator.
+     *     - No
+     *     [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+     *     provided is a global match.
+     *     - 1 or more
+     *     [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+     *     provided are combined with OR operator.
+     *
      * * Action Input: The request query and filter that are applied to the
      * retrieved products, in addition to any filters already provided with the
      * SearchRequest. The AND operator is used to combine the query's existing
      * filters with the filter rule(s). NOTE: May result in 0 results when
      * filters conflict.
+     *
      * * Action Result: Filters the returned objects to be ONLY those that passed
      * the filter.
      * </pre>
@@ -1566,10 +1566,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
-       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
        * more
-       *   details at the Retail Search
-       *   [user guide](/retail/search/docs/filter-and-order#filter).
+       *   information, see [Filter](/retail/docs/filter-and-order#filter).
        * * To filter products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -1601,10 +1600,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
-       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
        * more
-       *   details at the Retail Search
-       *   [user guide](/retail/search/docs/filter-and-order#filter).
+       *   information, see [Filter](/retail/docs/filter-and-order#filter).
        * * To filter products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -1636,10 +1634,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
-       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
        * more
-       *   details at the Retail Search
-       *   [user guide](/retail/search/docs/filter-and-order#filter).
+       *   information, see [Filter](/retail/docs/filter-and-order#filter).
        * * To filter products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -1670,10 +1667,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
-       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
        * more
-       *   details at the Retail Search
-       *   [user guide](/retail/search/docs/filter-and-order#filter).
+       *   information, see [Filter](/retail/docs/filter-and-order#filter).
        * * To filter products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -1700,10 +1696,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
-       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
+       * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. For
        * more
-       *   details at the Retail Search
-       *   [user guide](/retail/search/docs/filter-and-order#filter).
+       *   information, see [Filter](/retail/docs/filter-and-order#filter).
        * * To filter products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -1829,7 +1824,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * Redirects a shopper to a specific page.
    *
    * * Rule Condition:
-   *   - Must specify
+   *   Must specify
    *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms].
    * * Action Input: Request Query
    * * Action Result: Redirects shopper to provided uri.
@@ -2090,7 +2085,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Redirects a shopper to a specific page.
      *
      * * Rule Condition:
-     *   - Must specify
+     *   Must specify
      *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms].
      * * Action Input: Request Query
      * * Action Result: Redirects shopper to provided uri.
@@ -8214,6 +8209,2844 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ForceReturnFacetActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2.Rule.ForceReturnFacetAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
+        getFacetPositionAdjustmentsList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+        getFacetPositionAdjustments(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    int getFacetPositionAdjustmentsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                    .FacetPositionAdjustmentOrBuilder>
+        getFacetPositionAdjustmentsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder
+        getFacetPositionAdjustmentsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute/facet in the request around a certain position
+   * or above.
+   *
+   * * Rule Condition:
+   *   Must specify non-empty
+   *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+   *   (for search only) or
+   *   [Condition.page_categories][google.cloud.retail.v2.Condition.page_categories]
+   *   (for browse only), but can't specify both.
+   *
+   * * Action Inputs: attribute name, position
+   *
+   * * Action Result: Will force return a facet key around a certain position
+   * or above if the condition is satisfied.
+   *
+   * Example: Suppose the query is "shoes", the
+   * [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms] is
+   * "shoes", the
+   * [ForceReturnFacetAction.FacetPositionAdjustment.attribute_name][google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.attribute_name]
+   * is "size" and the
+   * [ForceReturnFacetAction.FacetPositionAdjustment.position][google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.position]
+   * is 8.
+   *
+   * Two cases: a) The facet key "size" is not already in the top 8 slots, then
+   * the facet "size" will appear at a position close to 8. b) The facet key
+   * "size" in among the top 8 positions in the request, then it will stay at
+   * its current rank.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2.Rule.ForceReturnFacetAction}
+   */
+  public static final class ForceReturnFacetAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Rule.ForceReturnFacetAction)
+      ForceReturnFacetActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ForceReturnFacetAction.newBuilder() to construct.
+    private ForceReturnFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ForceReturnFacetAction() {
+      facetPositionAdjustments_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ForceReturnFacetAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2.CommonProto
+          .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2.CommonProto
+          .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.class,
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder.class);
+    }
+
+    public interface FacetPositionAdjustmentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The attribute name to force return as a facet. Each attribute name
+       * should be a valid attribute name, be non-empty and contain at most 80
+       * characters long.
+       * </pre>
+       *
+       * <code>string attribute_name = 1;</code>
+       *
+       * @return The attributeName.
+       */
+      java.lang.String getAttributeName();
+      /**
+       *
+       *
+       * <pre>
+       * The attribute name to force return as a facet. Each attribute name
+       * should be a valid attribute name, be non-empty and contain at most 80
+       * characters long.
+       * </pre>
+       *
+       * <code>string attribute_name = 1;</code>
+       *
+       * @return The bytes for attributeName.
+       */
+      com.google.protobuf.ByteString getAttributeNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * This is the position in the request as explained above. It should be
+       * strictly positive be at most 100.
+       * </pre>
+       *
+       * <code>int32 position = 2;</code>
+       *
+       * @return The position.
+       */
+      int getPosition();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each facet position adjustment consists of a single attribute name (i.e.
+     * facet key) along with a specified position.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment}
+     */
+    public static final class FacetPositionAdjustment extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+        FacetPositionAdjustmentOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use FacetPositionAdjustment.newBuilder() to construct.
+      private FacetPositionAdjustment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FacetPositionAdjustment() {
+        attributeName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new FacetPositionAdjustment();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_FacetPositionAdjustment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                    .class,
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                    .Builder.class);
+      }
+
+      public static final int ATTRIBUTE_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object attributeName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The attribute name to force return as a facet. Each attribute name
+       * should be a valid attribute name, be non-empty and contain at most 80
+       * characters long.
+       * </pre>
+       *
+       * <code>string attribute_name = 1;</code>
+       *
+       * @return The attributeName.
+       */
+      @java.lang.Override
+      public java.lang.String getAttributeName() {
+        java.lang.Object ref = attributeName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          attributeName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute name to force return as a facet. Each attribute name
+       * should be a valid attribute name, be non-empty and contain at most 80
+       * characters long.
+       * </pre>
+       *
+       * <code>string attribute_name = 1;</code>
+       *
+       * @return The bytes for attributeName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAttributeNameBytes() {
+        java.lang.Object ref = attributeName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          attributeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int POSITION_FIELD_NUMBER = 2;
+      private int position_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * This is the position in the request as explained above. It should be
+       * strictly positive be at most 100.
+       * </pre>
+       *
+       * <code>int32 position = 2;</code>
+       *
+       * @return The position.
+       */
+      @java.lang.Override
+      public int getPosition() {
+        return position_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attributeName_);
+        }
+        if (position_ != 0) {
+          output.writeInt32(2, position_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attributeName_);
+        }
+        if (position_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, position_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment other =
+            (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment) obj;
+
+        if (!getAttributeName().equals(other.getAttributeName())) return false;
+        if (getPosition() != other.getPosition()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ATTRIBUTE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getAttributeName().hashCode();
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each facet position adjustment consists of a single attribute name (i.e.
+       * facet key) along with a specified position.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2.CommonProto
+              .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2.CommonProto
+              .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_FacetPositionAdjustment_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                      .class,
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          attributeName_ = "";
+          position_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2.CommonProto
+              .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+            build() {
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+            buildPartial() {
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment result =
+              new com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.attributeName_ = attributeName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.position_ = position_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment other) {
+          if (other
+              == com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                  .getDefaultInstance()) return this;
+          if (!other.getAttributeName().isEmpty()) {
+            attributeName_ = other.attributeName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.getPosition() != 0) {
+            setPosition(other.getPosition());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    attributeName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    position_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object attributeName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The attribute name to force return as a facet. Each attribute name
+         * should be a valid attribute name, be non-empty and contain at most 80
+         * characters long.
+         * </pre>
+         *
+         * <code>string attribute_name = 1;</code>
+         *
+         * @return The attributeName.
+         */
+        public java.lang.String getAttributeName() {
+          java.lang.Object ref = attributeName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            attributeName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The attribute name to force return as a facet. Each attribute name
+         * should be a valid attribute name, be non-empty and contain at most 80
+         * characters long.
+         * </pre>
+         *
+         * <code>string attribute_name = 1;</code>
+         *
+         * @return The bytes for attributeName.
+         */
+        public com.google.protobuf.ByteString getAttributeNameBytes() {
+          java.lang.Object ref = attributeName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            attributeName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The attribute name to force return as a facet. Each attribute name
+         * should be a valid attribute name, be non-empty and contain at most 80
+         * characters long.
+         * </pre>
+         *
+         * <code>string attribute_name = 1;</code>
+         *
+         * @param value The attributeName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributeName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attributeName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The attribute name to force return as a facet. Each attribute name
+         * should be a valid attribute name, be non-empty and contain at most 80
+         * characters long.
+         * </pre>
+         *
+         * <code>string attribute_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAttributeName() {
+          attributeName_ = getDefaultInstance().getAttributeName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The attribute name to force return as a facet. Each attribute name
+         * should be a valid attribute name, be non-empty and contain at most 80
+         * characters long.
+         * </pre>
+         *
+         * <code>string attribute_name = 1;</code>
+         *
+         * @param value The bytes for attributeName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributeNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          attributeName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int position_;
+        /**
+         *
+         *
+         * <pre>
+         * This is the position in the request as explained above. It should be
+         * strictly positive be at most 100.
+         * </pre>
+         *
+         * <code>int32 position = 2;</code>
+         *
+         * @return The position.
+         */
+        @java.lang.Override
+        public int getPosition() {
+          return position_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This is the position in the request as explained above. It should be
+         * strictly positive be at most 100.
+         * </pre>
+         *
+         * <code>int32 position = 2;</code>
+         *
+         * @param value The position to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPosition(int value) {
+
+          position_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * This is the position in the request as explained above. It should be
+         * strictly positive be at most 100.
+         * </pre>
+         *
+         * <code>int32 position = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPosition() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          position_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment)
+      private static final com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+              .FacetPositionAdjustment
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment();
+      }
+
+      public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FacetPositionAdjustment> PARSER =
+          new com.google.protobuf.AbstractParser<FacetPositionAdjustment>() {
+            @java.lang.Override
+            public FacetPositionAdjustment parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FacetPositionAdjustment> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FacetPositionAdjustment> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int FACET_POSITION_ADJUSTMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
+        facetPositionAdjustments_;
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
+        getFacetPositionAdjustmentsList() {
+      return facetPositionAdjustments_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                    .FacetPositionAdjustmentOrBuilder>
+        getFacetPositionAdjustmentsOrBuilderList() {
+      return facetPositionAdjustments_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getFacetPositionAdjustmentsCount() {
+      return facetPositionAdjustments_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+        getFacetPositionAdjustments(int index) {
+      return facetPositionAdjustments_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance corresponds to a force return attribute for the given
+     * condition. There can't be more 3 instances here.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder
+        getFacetPositionAdjustmentsOrBuilder(int index) {
+      return facetPositionAdjustments_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < facetPositionAdjustments_.size(); i++) {
+        output.writeMessage(1, facetPositionAdjustments_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < facetPositionAdjustments_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, facetPositionAdjustments_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2.Rule.ForceReturnFacetAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2.Rule.ForceReturnFacetAction other =
+          (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) obj;
+
+      if (!getFacetPositionAdjustmentsList().equals(other.getFacetPositionAdjustmentsList()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFacetPositionAdjustmentsCount() > 0) {
+        hash = (37 * hash) + FACET_POSITION_ADJUSTMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getFacetPositionAdjustmentsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute/facet in the request around a certain position
+     * or above.
+     *
+     * * Rule Condition:
+     *   Must specify non-empty
+     *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+     *   (for search only) or
+     *   [Condition.page_categories][google.cloud.retail.v2.Condition.page_categories]
+     *   (for browse only), but can't specify both.
+     *
+     * * Action Inputs: attribute name, position
+     *
+     * * Action Result: Will force return a facet key around a certain position
+     * or above if the condition is satisfied.
+     *
+     * Example: Suppose the query is "shoes", the
+     * [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms] is
+     * "shoes", the
+     * [ForceReturnFacetAction.FacetPositionAdjustment.attribute_name][google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.attribute_name]
+     * is "size" and the
+     * [ForceReturnFacetAction.FacetPositionAdjustment.position][google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.position]
+     * is 8.
+     *
+     * Two cases: a) The facet key "size" is not already in the top 8 slots, then
+     * the facet "size" will appear at a position close to 8. b) The facet key
+     * "size" in among the top 8 positions in the request, then it will stay at
+     * its current rank.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2.Rule.ForceReturnFacetAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2.Rule.ForceReturnFacetAction)
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.class,
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          facetPositionAdjustments_ = java.util.Collections.emptyList();
+        } else {
+          facetPositionAdjustments_ = null;
+          facetPositionAdjustmentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_ForceReturnFacetAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction build() {
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction buildPartial() {
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction result =
+            new com.google.cloud.retail.v2.Rule.ForceReturnFacetAction(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction result) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            facetPositionAdjustments_ =
+                java.util.Collections.unmodifiableList(facetPositionAdjustments_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.facetPositionAdjustments_ = facetPositionAdjustments_;
+        } else {
+          result.facetPositionAdjustments_ = facetPositionAdjustmentsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2.Rule.ForceReturnFacetAction result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) {
+          return mergeFrom((com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.retail.v2.Rule.ForceReturnFacetAction other) {
+        if (other == com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance())
+          return this;
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          if (!other.facetPositionAdjustments_.isEmpty()) {
+            if (facetPositionAdjustments_.isEmpty()) {
+              facetPositionAdjustments_ = other.facetPositionAdjustments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFacetPositionAdjustmentsIsMutable();
+              facetPositionAdjustments_.addAll(other.facetPositionAdjustments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.facetPositionAdjustments_.isEmpty()) {
+            if (facetPositionAdjustmentsBuilder_.isEmpty()) {
+              facetPositionAdjustmentsBuilder_.dispose();
+              facetPositionAdjustmentsBuilder_ = null;
+              facetPositionAdjustments_ = other.facetPositionAdjustments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              facetPositionAdjustmentsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFacetPositionAdjustmentsFieldBuilder()
+                      : null;
+            } else {
+              facetPositionAdjustmentsBuilder_.addAllMessages(other.facetPositionAdjustments_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment m =
+                      input.readMessage(
+                          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                              .FacetPositionAdjustment.parser(),
+                          extensionRegistry);
+                  if (facetPositionAdjustmentsBuilder_ == null) {
+                    ensureFacetPositionAdjustmentsIsMutable();
+                    facetPositionAdjustments_.add(m);
+                  } else {
+                    facetPositionAdjustmentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
+          facetPositionAdjustments_ = java.util.Collections.emptyList();
+
+      private void ensureFacetPositionAdjustmentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          facetPositionAdjustments_ =
+              new java.util.ArrayList<
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>(
+                  facetPositionAdjustments_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment,
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                  .Builder,
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                  .FacetPositionAdjustmentOrBuilder>
+          facetPositionAdjustmentsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment>
+          getFacetPositionAdjustmentsList() {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(facetPositionAdjustments_);
+        } else {
+          return facetPositionAdjustmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public int getFacetPositionAdjustmentsCount() {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          return facetPositionAdjustments_.size();
+        } else {
+          return facetPositionAdjustmentsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+          getFacetPositionAdjustments(int index) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          return facetPositionAdjustments_.get(index);
+        } else {
+          return facetPositionAdjustmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder setFacetPositionAdjustments(
+          int index,
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment value) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.set(index, value);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder setFacetPositionAdjustments(
+          int index,
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+              builderForValue) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder addFacetPositionAdjustments(
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment value) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.add(value);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder addFacetPositionAdjustments(
+          int index,
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment value) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.add(index, value);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder addFacetPositionAdjustments(
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+              builderForValue) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder addFacetPositionAdjustments(
+          int index,
+          com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+              builderForValue) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder addAllFacetPositionAdjustments(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                          .FacetPositionAdjustment>
+              values) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          ensureFacetPositionAdjustmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, facetPositionAdjustments_);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder clearFacetPositionAdjustments() {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          facetPositionAdjustments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public Builder removeFacetPositionAdjustments(int index) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          ensureFacetPositionAdjustmentsIsMutable();
+          facetPositionAdjustments_.remove(index);
+          onChanged();
+        } else {
+          facetPositionAdjustmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+          getFacetPositionAdjustmentsBuilder(int index) {
+        return getFacetPositionAdjustmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustmentOrBuilder
+          getFacetPositionAdjustmentsOrBuilder(int index) {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          return facetPositionAdjustments_.get(index);
+        } else {
+          return facetPositionAdjustmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                      .FacetPositionAdjustmentOrBuilder>
+          getFacetPositionAdjustmentsOrBuilderList() {
+        if (facetPositionAdjustmentsBuilder_ != null) {
+          return facetPositionAdjustmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(facetPositionAdjustments_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+          addFacetPositionAdjustmentsBuilder() {
+        return getFacetPositionAdjustmentsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment.Builder
+          addFacetPositionAdjustmentsBuilder(int index) {
+        return getFacetPositionAdjustmentsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance corresponds to a force return attribute for the given
+       * condition. There can't be more 3 instances here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment facet_position_adjustments = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                  .Builder>
+          getFacetPositionAdjustmentsBuilderList() {
+        return getFacetPositionAdjustmentsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment,
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                  .Builder,
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                  .FacetPositionAdjustmentOrBuilder>
+          getFacetPositionAdjustmentsFieldBuilder() {
+        if (facetPositionAdjustmentsBuilder_ == null) {
+          facetPositionAdjustmentsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment,
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.FacetPositionAdjustment
+                      .Builder,
+                  com.google.cloud.retail.v2.Rule.ForceReturnFacetAction
+                      .FacetPositionAdjustmentOrBuilder>(
+                  facetPositionAdjustments_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          facetPositionAdjustments_ = null;
+        }
+        return facetPositionAdjustmentsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2.Rule.ForceReturnFacetAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2.Rule.ForceReturnFacetAction)
+    private static final com.google.cloud.retail.v2.Rule.ForceReturnFacetAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2.Rule.ForceReturnFacetAction();
+    }
+
+    public static com.google.cloud.retail.v2.Rule.ForceReturnFacetAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ForceReturnFacetAction> PARSER =
+        new com.google.protobuf.AbstractParser<ForceReturnFacetAction>() {
+          @java.lang.Override
+          public ForceReturnFacetAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ForceReturnFacetAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ForceReturnFacetAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RemoveFacetActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2.Rule.RemoveFacetAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @return A list containing the attributeNames.
+     */
+    java.util.List<java.lang.String> getAttributeNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @return The count of attributeNames.
+     */
+    int getAttributeNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The attributeNames at the given index.
+     */
+    java.lang.String getAttributeNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the attributeNames at the given index.
+     */
+    com.google.protobuf.ByteString getAttributeNamesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Removes an attribute/facet in the request if is present.
+   *
+   * * Rule Condition:
+   *   Must specify non-empty
+   *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+   *   (for search only) or
+   *   [Condition.page_categories][google.cloud.retail.v2.Condition.page_categories]
+   *   (for browse only), but can't specify both.
+   *
+   * * Action Input: attribute name
+   *
+   * * Action Result: Will remove the attribute (as a facet) from the request
+   * if it is present.
+   *
+   * Example: Suppose the query is "shoes", the
+   * [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms] is
+   * "shoes" and the attribute name "size", then facet key "size" will be
+   * removed from the request (if it is present).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2.Rule.RemoveFacetAction}
+   */
+  public static final class RemoveFacetAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Rule.RemoveFacetAction)
+      RemoveFacetActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RemoveFacetAction.newBuilder() to construct.
+    private RemoveFacetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemoveFacetAction() {
+      attributeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RemoveFacetAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2.CommonProto
+          .internal_static_google_cloud_retail_v2_Rule_RemoveFacetAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2.CommonProto
+          .internal_static_google_cloud_retail_v2_Rule_RemoveFacetAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2.Rule.RemoveFacetAction.class,
+              com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder.class);
+    }
+
+    public static final int ATTRIBUTE_NAMES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList attributeNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @return A list containing the attributeNames.
+     */
+    public com.google.protobuf.ProtocolStringList getAttributeNamesList() {
+      return attributeNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @return The count of attributeNames.
+     */
+    public int getAttributeNamesCount() {
+      return attributeNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The attributeNames at the given index.
+     */
+    public java.lang.String getAttributeNames(int index) {
+      return attributeNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The attribute names (i.e. facet keys) to remove from the dynamic facets
+     * (if present in the request). There can't be more 3 attribute names.
+     * Each attribute name should be a valid attribute name, be non-empty and
+     * contain at most 80 characters.
+     * </pre>
+     *
+     * <code>repeated string attribute_names = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the attributeNames at the given index.
+     */
+    public com.google.protobuf.ByteString getAttributeNamesBytes(int index) {
+      return attributeNames_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < attributeNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attributeNames_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < attributeNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(attributeNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAttributeNamesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2.Rule.RemoveFacetAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2.Rule.RemoveFacetAction other =
+          (com.google.cloud.retail.v2.Rule.RemoveFacetAction) obj;
+
+      if (!getAttributeNamesList().equals(other.getAttributeNamesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAttributeNamesCount() > 0) {
+        hash = (37 * hash) + ATTRIBUTE_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getAttributeNamesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.retail.v2.Rule.RemoveFacetAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Removes an attribute/facet in the request if is present.
+     *
+     * * Rule Condition:
+     *   Must specify non-empty
+     *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms]
+     *   (for search only) or
+     *   [Condition.page_categories][google.cloud.retail.v2.Condition.page_categories]
+     *   (for browse only), but can't specify both.
+     *
+     * * Action Input: attribute name
+     *
+     * * Action Result: Will remove the attribute (as a facet) from the request
+     * if it is present.
+     *
+     * Example: Suppose the query is "shoes", the
+     * [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms] is
+     * "shoes" and the attribute name "size", then facet key "size" will be
+     * removed from the request (if it is present).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2.Rule.RemoveFacetAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2.Rule.RemoveFacetAction)
+        com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_RemoveFacetAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_RemoveFacetAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2.Rule.RemoveFacetAction.class,
+                com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.retail.v2.Rule.RemoveFacetAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        attributeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2.CommonProto
+            .internal_static_google_cloud_retail_v2_Rule_RemoveFacetAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.RemoveFacetAction getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.RemoveFacetAction build() {
+        com.google.cloud.retail.v2.Rule.RemoveFacetAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.Rule.RemoveFacetAction buildPartial() {
+        com.google.cloud.retail.v2.Rule.RemoveFacetAction result =
+            new com.google.cloud.retail.v2.Rule.RemoveFacetAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.retail.v2.Rule.RemoveFacetAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          attributeNames_.makeImmutable();
+          result.attributeNames_ = attributeNames_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2.Rule.RemoveFacetAction) {
+          return mergeFrom((com.google.cloud.retail.v2.Rule.RemoveFacetAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.retail.v2.Rule.RemoveFacetAction other) {
+        if (other == com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance())
+          return this;
+        if (!other.attributeNames_.isEmpty()) {
+          if (attributeNames_.isEmpty()) {
+            attributeNames_ = other.attributeNames_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureAttributeNamesIsMutable();
+            attributeNames_.addAll(other.attributeNames_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAttributeNamesIsMutable();
+                  attributeNames_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList attributeNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAttributeNamesIsMutable() {
+        if (!attributeNames_.isModifiable()) {
+          attributeNames_ = new com.google.protobuf.LazyStringArrayList(attributeNames_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @return A list containing the attributeNames.
+       */
+      public com.google.protobuf.ProtocolStringList getAttributeNamesList() {
+        attributeNames_.makeImmutable();
+        return attributeNames_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @return The count of attributeNames.
+       */
+      public int getAttributeNamesCount() {
+        return attributeNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The attributeNames at the given index.
+       */
+      public java.lang.String getAttributeNames(int index) {
+        return attributeNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the attributeNames at the given index.
+       */
+      public com.google.protobuf.ByteString getAttributeNamesBytes(int index) {
+        return attributeNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The attributeNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttributeNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttributeNamesIsMutable();
+        attributeNames_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param value The attributeNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAttributeNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttributeNamesIsMutable();
+        attributeNames_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param values The attributeNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAttributeNames(java.lang.Iterable<java.lang.String> values) {
+        ensureAttributeNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, attributeNames_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAttributeNames() {
+        attributeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The attribute names (i.e. facet keys) to remove from the dynamic facets
+       * (if present in the request). There can't be more 3 attribute names.
+       * Each attribute name should be a valid attribute name, be non-empty and
+       * contain at most 80 characters.
+       * </pre>
+       *
+       * <code>repeated string attribute_names = 1;</code>
+       *
+       * @param value The bytes of the attributeNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAttributeNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAttributeNamesIsMutable();
+        attributeNames_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2.Rule.RemoveFacetAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2.Rule.RemoveFacetAction)
+    private static final com.google.cloud.retail.v2.Rule.RemoveFacetAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2.Rule.RemoveFacetAction();
+    }
+
+    public static com.google.cloud.retail.v2.Rule.RemoveFacetAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveFacetAction> PARSER =
+        new com.google.protobuf.AbstractParser<RemoveFacetAction>() {
+          @java.lang.Override
+          public RemoveFacetAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemoveFacetAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveFacetAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.RemoveFacetAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int actionCase_ = 0;
 
@@ -8232,6 +11065,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     IGNORE_ACTION(9),
     FILTER_ACTION(10),
     TWOWAY_SYNONYMS_ACTION(11),
+    FORCE_RETURN_FACET_ACTION(12),
+    REMOVE_FACET_ACTION(13),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -8266,6 +11101,10 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return FILTER_ACTION;
         case 11:
           return TWOWAY_SYNONYMS_ACTION;
+        case 12:
+          return FORCE_RETURN_FACET_ACTION;
+        case 13:
+          return REMOVE_FACET_ACTION;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -8697,6 +11536,113 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.retail.v2.Rule.TwowaySynonymsAction.getDefaultInstance();
   }
 
+  public static final int FORCE_RETURN_FACET_ACTION_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   *
+   * @return Whether the forceReturnFacetAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasForceReturnFacetAction() {
+    return actionCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   *
+   * @return The forceReturnFacetAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction getForceReturnFacetAction() {
+    if (actionCase_ == 12) {
+      return (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_;
+    }
+    return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder
+      getForceReturnFacetActionOrBuilder() {
+    if (actionCase_ == 12) {
+      return (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_;
+    }
+    return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+  }
+
+  public static final int REMOVE_FACET_ACTION_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   *
+   * @return Whether the removeFacetAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoveFacetAction() {
+    return actionCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   *
+   * @return The removeFacetAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Rule.RemoveFacetAction getRemoveFacetAction() {
+    if (actionCase_ == 13) {
+      return (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_;
+    }
+    return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder
+      getRemoveFacetActionOrBuilder() {
+    if (actionCase_ == 13) {
+      return (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_;
+    }
+    return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+  }
+
   public static final int CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2.Condition condition_;
   /**
@@ -8797,6 +11743,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     if (actionCase_ == 11) {
       output.writeMessage(11, (com.google.cloud.retail.v2.Rule.TwowaySynonymsAction) action_);
     }
+    if (actionCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_);
+    }
+    if (actionCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8849,6 +11801,16 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.cloud.retail.v2.Rule.TwowaySynonymsAction) action_);
     }
+    if (actionCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_);
+    }
+    if (actionCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8893,6 +11855,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         break;
       case 11:
         if (!getTwowaySynonymsAction().equals(other.getTwowaySynonymsAction())) return false;
+        break;
+      case 12:
+        if (!getForceReturnFacetAction().equals(other.getForceReturnFacetAction())) return false;
+        break;
+      case 13:
+        if (!getRemoveFacetAction().equals(other.getRemoveFacetAction())) return false;
         break;
       case 0:
       default:
@@ -8944,6 +11912,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + TWOWAY_SYNONYMS_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getTwowaySynonymsAction().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + FORCE_RETURN_FACET_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getForceReturnFacetAction().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + REMOVE_FACET_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoveFacetAction().hashCode();
         break;
       case 0:
       default:
@@ -9123,6 +12099,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (twowaySynonymsActionBuilder_ != null) {
         twowaySynonymsActionBuilder_.clear();
       }
+      if (forceReturnFacetActionBuilder_ != null) {
+        forceReturnFacetActionBuilder_.clear();
+      }
+      if (removeFacetActionBuilder_ != null) {
+        removeFacetActionBuilder_.clear();
+      }
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -9167,7 +12149,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.retail.v2.Rule result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -9200,6 +12182,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       if (actionCase_ == 11 && twowaySynonymsActionBuilder_ != null) {
         result.action_ = twowaySynonymsActionBuilder_.build();
+      }
+      if (actionCase_ == 12 && forceReturnFacetActionBuilder_ != null) {
+        result.action_ = forceReturnFacetActionBuilder_.build();
+      }
+      if (actionCase_ == 13 && removeFacetActionBuilder_ != null) {
+        result.action_ = removeFacetActionBuilder_.build();
       }
     }
 
@@ -9292,6 +12280,16 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             mergeTwowaySynonymsAction(other.getTwowaySynonymsAction());
             break;
           }
+        case FORCE_RETURN_FACET_ACTION:
+          {
+            mergeForceReturnFacetAction(other.getForceReturnFacetAction());
+            break;
+          }
+        case REMOVE_FACET_ACTION:
+          {
+            mergeRemoveFacetAction(other.getRemoveFacetAction());
+            break;
+          }
         case ACTION_NOT_SET:
           {
             break;
@@ -9326,7 +12324,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 10
             case 18:
@@ -9381,6 +12379,20 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 actionCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getForceReturnFacetActionFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getRemoveFacetActionFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11111,6 +14123,439 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return twowaySynonymsActionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction,
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder,
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder>
+        forceReturnFacetActionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     *
+     * @return Whether the forceReturnFacetAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasForceReturnFacetAction() {
+      return actionCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     *
+     * @return The forceReturnFacetAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction getForceReturnFacetAction() {
+      if (forceReturnFacetActionBuilder_ == null) {
+        if (actionCase_ == 12) {
+          return (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_;
+        }
+        return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+      } else {
+        if (actionCase_ == 12) {
+          return forceReturnFacetActionBuilder_.getMessage();
+        }
+        return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    public Builder setForceReturnFacetAction(
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction value) {
+      if (forceReturnFacetActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        forceReturnFacetActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    public Builder setForceReturnFacetAction(
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder builderForValue) {
+      if (forceReturnFacetActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        forceReturnFacetActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    public Builder mergeForceReturnFacetAction(
+        com.google.cloud.retail.v2.Rule.ForceReturnFacetAction value) {
+      if (forceReturnFacetActionBuilder_ == null) {
+        if (actionCase_ == 12
+            && action_
+                != com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance()) {
+          action_ =
+              com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.newBuilder(
+                      (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 12) {
+          forceReturnFacetActionBuilder_.mergeFrom(value);
+        } else {
+          forceReturnFacetActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    public Builder clearForceReturnFacetAction() {
+      if (forceReturnFacetActionBuilder_ == null) {
+        if (actionCase_ == 12) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 12) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        forceReturnFacetActionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder
+        getForceReturnFacetActionBuilder() {
+      return getForceReturnFacetActionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder
+        getForceReturnFacetActionOrBuilder() {
+      if ((actionCase_ == 12) && (forceReturnFacetActionBuilder_ != null)) {
+        return forceReturnFacetActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 12) {
+          return (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_;
+        }
+        return com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Force returns an attribute as a facet in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction,
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder,
+            com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder>
+        getForceReturnFacetActionFieldBuilder() {
+      if (forceReturnFacetActionBuilder_ == null) {
+        if (!(actionCase_ == 12)) {
+          action_ = com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.getDefaultInstance();
+        }
+        forceReturnFacetActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction,
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetAction.Builder,
+                com.google.cloud.retail.v2.Rule.ForceReturnFacetActionOrBuilder>(
+                (com.google.cloud.retail.v2.Rule.ForceReturnFacetAction) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 12;
+      onChanged();
+      return forceReturnFacetActionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rule.RemoveFacetAction,
+            com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder,
+            com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder>
+        removeFacetActionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     *
+     * @return Whether the removeFacetAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoveFacetAction() {
+      return actionCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     *
+     * @return The removeFacetAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.RemoveFacetAction getRemoveFacetAction() {
+      if (removeFacetActionBuilder_ == null) {
+        if (actionCase_ == 13) {
+          return (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_;
+        }
+        return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+      } else {
+        if (actionCase_ == 13) {
+          return removeFacetActionBuilder_.getMessage();
+        }
+        return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    public Builder setRemoveFacetAction(com.google.cloud.retail.v2.Rule.RemoveFacetAction value) {
+      if (removeFacetActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        removeFacetActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    public Builder setRemoveFacetAction(
+        com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder builderForValue) {
+      if (removeFacetActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        removeFacetActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    public Builder mergeRemoveFacetAction(com.google.cloud.retail.v2.Rule.RemoveFacetAction value) {
+      if (removeFacetActionBuilder_ == null) {
+        if (actionCase_ == 13
+            && action_ != com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance()) {
+          action_ =
+              com.google.cloud.retail.v2.Rule.RemoveFacetAction.newBuilder(
+                      (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 13) {
+          removeFacetActionBuilder_.mergeFrom(value);
+        } else {
+          removeFacetActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    public Builder clearRemoveFacetAction() {
+      if (removeFacetActionBuilder_ == null) {
+        if (actionCase_ == 13) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 13) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        removeFacetActionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    public com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder getRemoveFacetActionBuilder() {
+      return getRemoveFacetActionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder
+        getRemoveFacetActionOrBuilder() {
+      if ((actionCase_ == 13) && (removeFacetActionBuilder_ != null)) {
+        return removeFacetActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 13) {
+          return (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_;
+        }
+        return com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Remove an attribute as a facet in the request (if present).
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.Rule.RemoveFacetAction,
+            com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder,
+            com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder>
+        getRemoveFacetActionFieldBuilder() {
+      if (removeFacetActionBuilder_ == null) {
+        if (!(actionCase_ == 13)) {
+          action_ = com.google.cloud.retail.v2.Rule.RemoveFacetAction.getDefaultInstance();
+        }
+        removeFacetActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.Rule.RemoveFacetAction,
+                com.google.cloud.retail.v2.Rule.RemoveFacetAction.Builder,
+                com.google.cloud.retail.v2.Rule.RemoveFacetActionOrBuilder>(
+                (com.google.cloud.retail.v2.Rule.RemoveFacetAction) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 13;
+      onChanged();
+      return removeFacetActionBuilder_;
+    }
+
     private com.google.cloud.retail.v2.Condition condition_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2.Condition,
@@ -11132,7 +14577,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -11178,7 +14623,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11200,7 +14645,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11218,7 +14663,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCondition(com.google.cloud.retail.v2.Condition value) {
       if (conditionBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && condition_ != null
             && condition_ != com.google.cloud.retail.v2.Condition.getDefaultInstance()) {
           getConditionBuilder().mergeFrom(value);
@@ -11229,7 +14674,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.mergeFrom(value);
       }
       if (condition_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -11247,7 +14692,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCondition() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -11269,7 +14714,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.retail.v2.Condition.Builder getConditionBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }

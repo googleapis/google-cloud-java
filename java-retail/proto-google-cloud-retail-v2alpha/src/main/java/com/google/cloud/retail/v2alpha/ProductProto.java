@@ -99,15 +99,12 @@ public final class ProductProto {
           + "googleapis.com/Product\022_projects/{projec"
           + "t}/locations/{location}/catalogs/{catalo"
           + "g}/branches/{branch}/products/{product}B"
-          + "\014\n\nexpirationB\277\002\n\037com.google.cloud.retai"
+          + "\014\n\nexpirationB\320\001\n\037com.google.cloud.retai"
           + "l.v2alphaB\014ProductProtoP\001Z7cloud.google."
           + "com/go/retail/apiv2alpha/retailpb;retail"
           + "pb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Alph"
           + "a\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Google"
-          + "::Cloud::Retail::V2alpha\352Al\n\034retail.goog"
-          + "leapis.com/Branch\022Lprojects/{project}/lo"
-          + "cations/{location}/catalogs/{catalog}/br"
-          + "anches/{branch}b\006proto3"
+          + "::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -176,7 +173,6 @@ public final class ProductProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

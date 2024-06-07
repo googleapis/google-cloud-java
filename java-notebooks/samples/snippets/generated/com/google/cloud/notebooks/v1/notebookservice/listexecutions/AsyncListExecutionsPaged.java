@@ -18,7 +18,6 @@ package com.google.cloud.notebooks.v1.samples;
 
 // [START notebooks_v1_generated_NotebookService_ListExecutions_Paged_async]
 import com.google.cloud.notebooks.v1.Execution;
-import com.google.cloud.notebooks.v1.ExecutionName;
 import com.google.cloud.notebooks.v1.ListExecutionsRequest;
 import com.google.cloud.notebooks.v1.ListExecutionsResponse;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
@@ -39,7 +38,7 @@ public class AsyncListExecutionsPaged {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       ListExecutionsRequest request =
           ListExecutionsRequest.newBuilder()
-              .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

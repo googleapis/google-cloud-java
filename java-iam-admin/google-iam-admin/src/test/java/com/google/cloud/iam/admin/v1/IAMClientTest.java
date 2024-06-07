@@ -328,7 +328,7 @@ public class IAMClientTest {
   public void createServiceAccountTest() throws Exception {
     ServiceAccount expectedResponse =
         ServiceAccount.newBuilder()
-            .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setName("name3373707")
             .setProjectId("projectId-894832108")
             .setUniqueId("uniqueId-294460212")
             .setEmail("email96619420")
@@ -381,7 +381,7 @@ public class IAMClientTest {
   public void createServiceAccountTest2() throws Exception {
     ServiceAccount expectedResponse =
         ServiceAccount.newBuilder()
-            .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setName("name3373707")
             .setProjectId("projectId-894832108")
             .setUniqueId("uniqueId-294460212")
             .setEmail("email96619420")
@@ -934,7 +934,7 @@ public class IAMClientTest {
   public void createServiceAccountKeyTest() throws Exception {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
-            .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setName("name3373707")
             .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
             .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
@@ -988,7 +988,7 @@ public class IAMClientTest {
   public void createServiceAccountKeyTest2() throws Exception {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
-            .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setName("name3373707")
             .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
             .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
@@ -1042,7 +1042,7 @@ public class IAMClientTest {
   public void uploadServiceAccountKeyTest() throws Exception {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
-            .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setName("name3373707")
             .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
             .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
@@ -1840,8 +1840,7 @@ public class IAMClientTest {
             .build();
     mockIAM.addResponse(expectedResponse);
 
-    GetRoleRequest request =
-        GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+    GetRoleRequest request = GetRoleRequest.newBuilder().setName("name3373707").build();
 
     Role actualResponse = client.getRole(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1863,8 +1862,7 @@ public class IAMClientTest {
     mockIAM.addException(exception);
 
     try {
-      GetRoleRequest request =
-          GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+      GetRoleRequest request = GetRoleRequest.newBuilder().setName("name3373707").build();
       client.getRole(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1942,7 +1940,7 @@ public class IAMClientTest {
 
     UpdateRoleRequest request =
         UpdateRoleRequest.newBuilder()
-            .setName("UpdateRoleRequest230834320".toString())
+            .setName("name3373707")
             .setRole(Role.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1971,7 +1969,7 @@ public class IAMClientTest {
     try {
       UpdateRoleRequest request =
           UpdateRoleRequest.newBuilder()
-              .setName("UpdateRoleRequest230834320".toString())
+              .setName("name3373707")
               .setRole(Role.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1996,10 +1994,7 @@ public class IAMClientTest {
     mockIAM.addResponse(expectedResponse);
 
     DeleteRoleRequest request =
-        DeleteRoleRequest.newBuilder()
-            .setName("DeleteRoleRequest1468559982".toString())
-            .setEtag(ByteString.EMPTY)
-            .build();
+        DeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
 
     Role actualResponse = client.deleteRole(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2023,10 +2018,7 @@ public class IAMClientTest {
 
     try {
       DeleteRoleRequest request =
-          DeleteRoleRequest.newBuilder()
-              .setName("DeleteRoleRequest1468559982".toString())
-              .setEtag(ByteString.EMPTY)
-              .build();
+          DeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
       client.deleteRole(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2048,10 +2040,7 @@ public class IAMClientTest {
     mockIAM.addResponse(expectedResponse);
 
     UndeleteRoleRequest request =
-        UndeleteRoleRequest.newBuilder()
-            .setName("UndeleteRoleRequest755355893".toString())
-            .setEtag(ByteString.EMPTY)
-            .build();
+        UndeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
 
     Role actualResponse = client.undeleteRole(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2075,10 +2064,7 @@ public class IAMClientTest {
 
     try {
       UndeleteRoleRequest request =
-          UndeleteRoleRequest.newBuilder()
-              .setName("UndeleteRoleRequest755355893".toString())
-              .setEtag(ByteString.EMPTY)
-              .build();
+          UndeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
       client.undeleteRole(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

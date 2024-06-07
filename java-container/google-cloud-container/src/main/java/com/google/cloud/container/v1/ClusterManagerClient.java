@@ -358,6 +358,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listOperations(String parent)
  *           <li><p> listOperations(String projectId, String zone)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -748,6 +749,20 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ClusterManagerSettings clusterManagerSettings =
  *     ClusterManagerSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * ClusterManagerClient clusterManagerClient = ClusterManagerClient.create(clusterManagerSettings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ClusterManagerSettings clusterManagerSettings =
+ *     ClusterManagerSettings.newHttpJsonBuilder().build();
  * ClusterManagerClient clusterManagerClient = ClusterManagerClient.create(clusterManagerSettings);
  * }</pre>
  *
@@ -2543,6 +2558,34 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all operations in a project in a specific zone or all zones.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String parent = "parent-995424086";
+   *   ListOperationsResponse response = clusterManagerClient.listOperations(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent The parent (project and location) where the operations will be listed. Specified
+   *     in the format `projects/&#42;/locations/&#42;`. Location "-" matches all zones and all
+   *     regions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOperationsResponse listOperations(String parent) {
+    ListOperationsRequest request = ListOperationsRequest.newBuilder().setParent(parent).build();
+    return listOperations(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

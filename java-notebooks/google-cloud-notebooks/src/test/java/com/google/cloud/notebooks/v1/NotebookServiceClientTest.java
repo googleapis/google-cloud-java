@@ -157,7 +157,7 @@ public class NotebookServiceClientTest {
   public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -386,7 +386,7 @@ public class NotebookServiceClientTest {
   public void setInstanceAcceleratorTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -471,7 +471,7 @@ public class NotebookServiceClientTest {
   public void setInstanceMachineTypeTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -555,7 +555,7 @@ public class NotebookServiceClientTest {
   public void updateInstanceConfigTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -639,7 +639,7 @@ public class NotebookServiceClientTest {
   public void updateShieldedInstanceConfigTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -724,7 +724,7 @@ public class NotebookServiceClientTest {
   public void setInstanceLabelsTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -898,7 +898,7 @@ public class NotebookServiceClientTest {
   public void startInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -973,7 +973,7 @@ public class NotebookServiceClientTest {
   public void stopInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1047,7 +1047,7 @@ public class NotebookServiceClientTest {
   public void resetInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1122,7 +1122,7 @@ public class NotebookServiceClientTest {
   public void reportInstanceInfoTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1335,7 +1335,7 @@ public class NotebookServiceClientTest {
   public void upgradeInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1418,7 +1418,7 @@ public class NotebookServiceClientTest {
   public void rollbackInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1501,7 +1501,7 @@ public class NotebookServiceClientTest {
   public void diagnoseInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1578,7 +1578,7 @@ public class NotebookServiceClientTest {
   public void diagnoseInstanceTest2() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -1655,7 +1655,7 @@ public class NotebookServiceClientTest {
   public void upgradeInstanceInternalTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setName("name3373707")
             .setPostStartupScript("postStartupScript870779112")
             .setProxyUri("proxyUri-985185250")
             .addAllInstanceOwners(new ArrayList<String>())
@@ -2015,7 +2015,7 @@ public class NotebookServiceClientTest {
   public void getScheduleTest() throws Exception {
     Schedule expectedResponse =
         Schedule.newBuilder()
-            .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setCronSchedule("cronSchedule-1022672059")
@@ -2061,7 +2061,7 @@ public class NotebookServiceClientTest {
   public void getScheduleTest2() throws Exception {
     Schedule expectedResponse =
         Schedule.newBuilder()
-            .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setCronSchedule("cronSchedule-1022672059")
@@ -2311,7 +2311,7 @@ public class NotebookServiceClientTest {
   public void triggerScheduleTest() throws Exception {
     Schedule expectedResponse =
         Schedule.newBuilder()
-            .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setCronSchedule("cronSchedule-1022672059")
@@ -2330,9 +2330,7 @@ public class NotebookServiceClientTest {
     mockNotebookService.addResponse(resultOperation);
 
     TriggerScheduleRequest request =
-        TriggerScheduleRequest.newBuilder()
-            .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-            .build();
+        TriggerScheduleRequest.newBuilder().setName("name3373707").build();
 
     Schedule actualResponse = client.triggerScheduleAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2355,9 +2353,7 @@ public class NotebookServiceClientTest {
 
     try {
       TriggerScheduleRequest request =
-          TriggerScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+          TriggerScheduleRequest.newBuilder().setName("name3373707").build();
       client.triggerScheduleAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -2460,7 +2456,7 @@ public class NotebookServiceClientTest {
     Execution expectedResponse =
         Execution.newBuilder()
             .setExecutionTemplate(ExecutionTemplate.newBuilder().build())
-            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -2505,7 +2501,7 @@ public class NotebookServiceClientTest {
     Execution expectedResponse =
         Execution.newBuilder()
             .setExecutionTemplate(ExecutionTemplate.newBuilder().build())
-            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())

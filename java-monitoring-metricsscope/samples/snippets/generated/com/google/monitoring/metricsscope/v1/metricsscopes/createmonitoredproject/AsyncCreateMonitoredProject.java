@@ -20,7 +20,6 @@ package com.google.monitoring.metricsscope.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.longrunning.Operation;
 import com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest;
-import com.google.monitoring.metricsscope.v1.MetricsScopeName;
 import com.google.monitoring.metricsscope.v1.MetricsScopesClient;
 import com.google.monitoring.metricsscope.v1.MonitoredProject;
 
@@ -39,7 +38,7 @@ public class AsyncCreateMonitoredProject {
     try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
       CreateMonitoredProjectRequest request =
           CreateMonitoredProjectRequest.newBuilder()
-              .setParent(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+              .setParent("parent-995424086")
               .setMonitoredProject(MonitoredProject.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

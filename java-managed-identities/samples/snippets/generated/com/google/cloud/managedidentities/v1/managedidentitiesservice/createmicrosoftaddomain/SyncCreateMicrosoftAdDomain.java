@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1.samples;
 // [START managedidentities_v1_generated_ManagedIdentitiesService_CreateMicrosoftAdDomain_sync]
 import com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest;
 import com.google.cloud.managedidentities.v1.Domain;
-import com.google.cloud.managedidentities.v1.LocationName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 
 public class SyncCreateMicrosoftAdDomain {
@@ -38,7 +37,7 @@ public class SyncCreateMicrosoftAdDomain {
         ManagedIdentitiesServiceClient.create()) {
       CreateMicrosoftAdDomainRequest request =
           CreateMicrosoftAdDomainRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setDomainName("domainName-1244085905")
               .setDomain(Domain.newBuilder().build())
               .build();

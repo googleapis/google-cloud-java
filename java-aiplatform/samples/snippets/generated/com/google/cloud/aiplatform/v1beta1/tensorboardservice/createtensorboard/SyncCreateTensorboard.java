@@ -19,7 +19,6 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_TensorboardService_CreateTensorboard_sync]
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
 import com.google.cloud.aiplatform.v1beta1.Tensorboard;
-import com.google.cloud.aiplatform.v1beta1.TensorboardName;
 import com.google.cloud.aiplatform.v1beta1.TensorboardServiceClient;
 
 public class SyncCreateTensorboard {
@@ -37,7 +36,7 @@ public class SyncCreateTensorboard {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardRequest request =
           CreateTensorboardRequest.newBuilder()
-              .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+              .setParent("parent-995424086")
               .setTensorboard(Tensorboard.newBuilder().build())
               .build();
       Tensorboard response = tensorboardServiceClient.createTensorboardAsync(request).get();

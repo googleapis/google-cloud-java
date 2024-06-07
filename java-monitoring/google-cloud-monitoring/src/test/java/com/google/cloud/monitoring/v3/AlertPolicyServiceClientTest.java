@@ -375,8 +375,7 @@ public class AlertPolicyServiceClientTest {
   public void createAlertPolicyTest() throws Exception {
     AlertPolicy expectedResponse =
         AlertPolicy.newBuilder()
-            .setName(
-                AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
@@ -427,8 +426,7 @@ public class AlertPolicyServiceClientTest {
   public void createAlertPolicyTest2() throws Exception {
     AlertPolicy expectedResponse =
         AlertPolicy.newBuilder()
-            .setName(
-                AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
@@ -479,8 +477,7 @@ public class AlertPolicyServiceClientTest {
   public void createAlertPolicyTest3() throws Exception {
     AlertPolicy expectedResponse =
         AlertPolicy.newBuilder()
-            .setName(
-                AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
@@ -531,8 +528,7 @@ public class AlertPolicyServiceClientTest {
   public void createAlertPolicyTest4() throws Exception {
     AlertPolicy expectedResponse =
         AlertPolicy.newBuilder()
-            .setName(
-                AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())

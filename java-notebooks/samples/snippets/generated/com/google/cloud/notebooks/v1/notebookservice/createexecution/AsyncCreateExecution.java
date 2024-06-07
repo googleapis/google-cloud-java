@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.CreateExecutionRequest;
 import com.google.cloud.notebooks.v1.Execution;
-import com.google.cloud.notebooks.v1.ExecutionName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.longrunning.Operation;
 
@@ -39,7 +38,7 @@ public class AsyncCreateExecution {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       CreateExecutionRequest request =
           CreateExecutionRequest.newBuilder()
-              .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+              .setParent("parent-995424086")
               .setExecutionId("executionId-454906285")
               .setExecution(Execution.newBuilder().build())
               .build();

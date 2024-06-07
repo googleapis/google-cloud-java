@@ -901,7 +901,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardRequest request =
    *       CreateTensorboardRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboard(Tensorboard.newBuilder().build())
    *           .build();
    *   Tensorboard response = tensorboardServiceClient.createTensorboardAsync(request).get();
@@ -931,7 +931,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardRequest request =
    *       CreateTensorboardRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboard(Tensorboard.newBuilder().build())
    *           .build();
    *   OperationFuture<Tensorboard, CreateTensorboardOperationMetadata> future =
@@ -962,7 +962,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardRequest request =
    *       CreateTensorboardRequest.newBuilder()
-   *           .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboard(Tensorboard.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1881,10 +1881,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardExperimentRequest request =
    *       CreateTensorboardExperimentRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardExperiment(TensorboardExperiment.newBuilder().build())
    *           .setTensorboardExperimentId("tensorboardExperimentId1267328197")
    *           .build();
@@ -1916,10 +1913,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardExperimentRequest request =
    *       CreateTensorboardExperimentRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardExperimentName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardExperiment(TensorboardExperiment.newBuilder().build())
    *           .setTensorboardExperimentId("tensorboardExperimentId1267328197")
    *           .build();
@@ -2605,10 +2599,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardRunRequest request =
    *       CreateTensorboardRunRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardRunName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardRun(TensorboardRun.newBuilder().build())
    *           .setTensorboardRunId("tensorboardRunId-407822631")
    *           .build();
@@ -2638,10 +2629,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardRunRequest request =
    *       CreateTensorboardRunRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardRunName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardRun(TensorboardRun.newBuilder().build())
    *           .setTensorboardRunId("tensorboardRunId-407822631")
    *           .build();
@@ -3627,15 +3615,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardTimeSeriesRequest request =
    *       CreateTensorboardTimeSeriesRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardTimeSeriesName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[TENSORBOARD]",
-   *                       "[EXPERIMENT]",
-   *                       "[RUN]",
-   *                       "[TIME_SERIES]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardTimeSeriesId("tensorboardTimeSeriesId-913380692")
    *           .setTensorboardTimeSeries(TensorboardTimeSeries.newBuilder().build())
    *           .build();
@@ -3667,15 +3647,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
    *   CreateTensorboardTimeSeriesRequest request =
    *       CreateTensorboardTimeSeriesRequest.newBuilder()
-   *           .setParent(
-   *               TensorboardTimeSeriesName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[TENSORBOARD]",
-   *                       "[EXPERIMENT]",
-   *                       "[RUN]",
-   *                       "[TIME_SERIES]")
-   *                   .toString())
+   *           .setParent("parent-995424086")
    *           .setTensorboardTimeSeriesId("tensorboardTimeSeriesId-913380692")
    *           .setTensorboardTimeSeries(TensorboardTimeSeries.newBuilder().build())
    *           .build();

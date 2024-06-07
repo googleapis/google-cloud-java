@@ -832,9 +832,7 @@ public class TpuClientTest {
   public void getTensorFlowVersionTest() throws Exception {
     TensorFlowVersion expectedResponse =
         TensorFlowVersion.newBuilder()
-            .setName(
-                TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-                    .toString())
+            .setName("name3373707")
             .setVersion("version351608024")
             .build();
     mockTpu.addResponse(expectedResponse);
@@ -876,9 +874,7 @@ public class TpuClientTest {
   public void getTensorFlowVersionTest2() throws Exception {
     TensorFlowVersion expectedResponse =
         TensorFlowVersion.newBuilder()
-            .setName(
-                TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-                    .toString())
+            .setName("name3373707")
             .setVersion("version351608024")
             .build();
     mockTpu.addResponse(expectedResponse);

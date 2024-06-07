@@ -63,7 +63,7 @@ public final class BusinessInfoProto {
           + "address.proto\"\214\004\n\014BusinessInfo\022\021\n\004name\030\001"
           + " \001(\tB\003\340A\010\0225\n\007address\030\002 \001(\0132\032.google.type"
           + ".PostalAddressB\003\340A\001H\000\210\001\001\0221\n\005phone\030\003 \001(\0132"
-          + "\030.google.type.PhoneNumberB\003\340A\001H\001\210\001\001\022l\n\030p"
+          + "\030.google.type.PhoneNumberB\003\340A\003H\001\210\001\001\022l\n\030p"
           + "hone_verification_state\030\004 \001(\0162@.google.s"
           + "hopping.merchant.accounts.v1beta.PhoneVe"
           + "rificationStateB\003\340A\003H\002\210\001\001\022]\n\020customer_se"

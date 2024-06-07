@@ -19,7 +19,6 @@ package com.google.cloud.datalabeling.v1beta1.samples;
 // [START datalabeling_v1beta1_generated_DataLabelingService_SearchEvaluations_Paged_async]
 import com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient;
 import com.google.cloud.datalabeling.v1beta1.Evaluation;
-import com.google.cloud.datalabeling.v1beta1.EvaluationName;
 import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest;
 import com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse;
 import com.google.common.base.Strings;
@@ -39,7 +38,7 @@ public class AsyncSearchEvaluationsPaged {
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       SearchEvaluationsRequest request =
           SearchEvaluationsRequest.newBuilder()
-              .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+              .setParent("parent-995424086")
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

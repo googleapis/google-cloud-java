@@ -18,7 +18,6 @@ package com.google.cloud.notebooks.v1.samples;
 
 // [START notebooks_v1_generated_NotebookService_GetExecution_sync]
 import com.google.cloud.notebooks.v1.Execution;
-import com.google.cloud.notebooks.v1.ExecutionName;
 import com.google.cloud.notebooks.v1.GetExecutionRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 
@@ -35,10 +34,7 @@ public class SyncGetExecution {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-      GetExecutionRequest request =
-          GetExecutionRequest.newBuilder()
-              .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-              .build();
+      GetExecutionRequest request = GetExecutionRequest.newBuilder().setName("name3373707").build();
       Execution response = notebookServiceClient.getExecution(request);
     }
   }

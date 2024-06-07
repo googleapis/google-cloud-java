@@ -199,8 +199,8 @@ public interface CompletionConfigOrBuilder
    * Output only. Name of the LRO corresponding to the latest suggestion terms
    * list import.
    *
-   * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
-   * retrieve the latest state of the Long Running Operation.
+   * Can use [GetOperation][google.longrunning.Operations.GetOperation] API
+   * method to retrieve the latest state of the Long Running Operation.
    * </pre>
    *
    * <code>
@@ -217,8 +217,8 @@ public interface CompletionConfigOrBuilder
    * Output only. Name of the LRO corresponding to the latest suggestion terms
    * list import.
    *
-   * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
-   * retrieve the latest state of the Long Running Operation.
+   * Can use [GetOperation][google.longrunning.Operations.GetOperation] API
+   * method to retrieve the latest state of the Long Running Operation.
    * </pre>
    *
    * <code>

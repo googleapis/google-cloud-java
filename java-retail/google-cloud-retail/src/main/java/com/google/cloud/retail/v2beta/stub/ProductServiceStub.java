@@ -37,6 +37,9 @@ import com.google.cloud.retail.v2beta.ImportProductsResponse;
 import com.google.cloud.retail.v2beta.ListProductsRequest;
 import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.PurgeProductsMetadata;
+import com.google.cloud.retail.v2beta.PurgeProductsRequest;
+import com.google.cloud.retail.v2beta.PurgeProductsResponse;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
@@ -92,6 +95,15 @@ public abstract class ProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteProductCallable()");
+  }
+
+  public OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsCallable()");
   }
 
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>

@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1.DeploymentResourcePool;
 import com.google.cloud.aiplatform.v1.DeploymentResourcePoolServiceClient;
 import com.google.cloud.aiplatform.v1.ListDeploymentResourcePoolsRequest;
-import com.google.cloud.aiplatform.v1.ProjectName;
 
 public class AsyncListDeploymentResourcePools {
 
@@ -39,7 +38,7 @@ public class AsyncListDeploymentResourcePools {
         DeploymentResourcePoolServiceClient.create()) {
       ListDeploymentResourcePoolsRequest request =
           ListDeploymentResourcePoolsRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

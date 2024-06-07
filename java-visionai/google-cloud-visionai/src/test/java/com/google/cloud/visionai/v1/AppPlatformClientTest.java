@@ -1251,9 +1251,7 @@ public class AppPlatformClientTest {
   public void deleteApplicationInstancesTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(
-                InstanceName.of("[PROJECT]", "[LOCATION]", "[APPLICATION]", "[INSTANCE]")
-                    .toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -1307,9 +1305,7 @@ public class AppPlatformClientTest {
   public void deleteApplicationInstancesTest2() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(
-                InstanceName.of("[PROJECT]", "[LOCATION]", "[APPLICATION]", "[INSTANCE]")
-                    .toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())

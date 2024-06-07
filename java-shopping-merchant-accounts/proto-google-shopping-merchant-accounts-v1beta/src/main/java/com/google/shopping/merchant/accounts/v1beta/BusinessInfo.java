@@ -176,10 +176,10 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the phone field is set.
@@ -192,10 +192,10 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The phone.
@@ -208,10 +208,10 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1137,10 +1137,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the phone field is set.
@@ -1152,10 +1153,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The phone.
@@ -1171,10 +1173,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPhone(com.google.type.PhoneNumber value) {
@@ -1194,10 +1197,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPhone(com.google.type.PhoneNumber.Builder builderForValue) {
@@ -1214,10 +1218,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergePhone(com.google.type.PhoneNumber value) {
@@ -1242,10 +1247,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearPhone() {
@@ -1262,10 +1268,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.type.PhoneNumber.Builder getPhoneBuilder() {
@@ -1277,10 +1284,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.type.PhoneNumberOrBuilder getPhoneOrBuilder() {
@@ -1294,10 +1302,11 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone number of the business.
+     * Output only. The phone number of the business.
      * </pre>
      *
-     * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

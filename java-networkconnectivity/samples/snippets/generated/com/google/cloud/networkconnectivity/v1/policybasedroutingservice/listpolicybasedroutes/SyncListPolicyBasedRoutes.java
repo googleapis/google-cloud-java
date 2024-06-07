@@ -18,7 +18,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_ListPolicyBasedRoutes_sync]
 import com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest;
-import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoute;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 
@@ -38,7 +37,7 @@ public class SyncListPolicyBasedRoutes {
         PolicyBasedRoutingServiceClient.create()) {
       ListPolicyBasedRoutesRequest request =
           ListPolicyBasedRoutesRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

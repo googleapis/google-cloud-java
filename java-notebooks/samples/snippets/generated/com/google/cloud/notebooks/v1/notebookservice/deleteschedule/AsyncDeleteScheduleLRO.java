@@ -21,7 +21,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.notebooks.v1.DeleteScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.OperationMetadata;
-import com.google.cloud.notebooks.v1.ScheduleName;
 import com.google.protobuf.Empty;
 
 public class AsyncDeleteScheduleLRO {
@@ -38,9 +37,7 @@ public class AsyncDeleteScheduleLRO {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DeleteScheduleRequest request =
-          DeleteScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+          DeleteScheduleRequest.newBuilder().setName("name3373707").build();
       OperationFuture<Empty, OperationMetadata> future =
           notebookServiceClient.deleteScheduleOperationCallable().futureCall(request);
       // Do something.

@@ -19,7 +19,6 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_TensorboardService_CreateTensorboardRun_sync]
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest;
 import com.google.cloud.aiplatform.v1beta1.TensorboardRun;
-import com.google.cloud.aiplatform.v1beta1.TensorboardRunName;
 import com.google.cloud.aiplatform.v1beta1.TensorboardServiceClient;
 
 public class SyncCreateTensorboardRun {
@@ -37,10 +36,7 @@ public class SyncCreateTensorboardRun {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardRunRequest request =
           CreateTensorboardRunRequest.newBuilder()
-              .setParent(
-                  TensorboardRunName.of(
-                          "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]", "[RUN]")
-                      .toString())
+              .setParent("parent-995424086")
               .setTensorboardRun(TensorboardRun.newBuilder().build())
               .setTensorboardRunId("tensorboardRunId-407822631")
               .build();

@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.ListSchedulesRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 
 public class AsyncListSchedules {
 
@@ -38,7 +37,7 @@ public class AsyncListSchedules {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       ListSchedulesRequest request =
           ListSchedulesRequest.newBuilder()
-              .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

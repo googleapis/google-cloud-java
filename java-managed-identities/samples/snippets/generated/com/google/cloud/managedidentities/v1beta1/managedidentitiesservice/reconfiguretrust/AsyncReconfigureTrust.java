@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_ReconfigureTrust_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest;
 import com.google.longrunning.Operation;
@@ -40,7 +39,7 @@ public class AsyncReconfigureTrust {
         ManagedIdentitiesServiceClient.create()) {
       ReconfigureTrustRequest request =
           ReconfigureTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTargetDomainName("targetDomainName2065239520")
               .addAllTargetDnsIpAddresses(new ArrayList<String>())
               .build();

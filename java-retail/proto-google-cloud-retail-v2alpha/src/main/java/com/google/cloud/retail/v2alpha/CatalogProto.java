@@ -37,6 +37,26 @@ public final class CatalogProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_CatalogAttribute_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2alpha_AttributesConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_AttributesConfig_fieldAccessorTable;
@@ -78,96 +98,118 @@ public final class CatalogProto {
           + "/api/field_behavior.proto\032\031google/api/re"
           + "source.proto\032(google/cloud/retail/v2alph"
           + "a/common.proto\032/google/cloud/retail/v2al"
-          + "pha/import_config.proto\"^\n\022ProductLevelC"
-          + "onfig\022\036\n\026ingestion_product_type\030\001 \001(\t\022(\n"
-          + " merchant_center_product_id_field\030\002 \001(\t\""
-          + "\304\n\n\020CatalogAttribute\022\020\n\003key\030\001 \001(\tB\003\340A\002\022\023"
-          + "\n\006in_use\030\t \001(\010B\003\340A\003\022N\n\004type\030\n \001(\0162;.goog"
-          + "le.cloud.retail.v2alpha.CatalogAttribute"
-          + ".AttributeTypeB\003\340A\003\022W\n\020indexable_option\030"
-          + "\005 \001(\0162=.google.cloud.retail.v2alpha.Cata"
-          + "logAttribute.IndexableOption\022f\n\030dynamic_"
-          + "facetable_option\030\006 \001(\0162D.google.cloud.re"
-          + "tail.v2alpha.CatalogAttribute.DynamicFac"
-          + "etableOption\022Y\n\021searchable_option\030\007 \001(\0162"
-          + ">.google.cloud.retail.v2alpha.CatalogAtt"
-          + "ribute.SearchableOption\022e\n recommendatio"
-          + "ns_filtering_option\030\010 \001(\0162;.google.cloud"
-          + ".retail.v2alpha.RecommendationsFiltering"
-          + "Option\022d\n\027exact_searchable_option\030\013 \001(\0162"
-          + "C.google.cloud.retail.v2alpha.CatalogAtt"
-          + "ribute.ExactSearchableOption\022[\n\022retrieva"
-          + "ble_option\030\014 \001(\0162?.google.cloud.retail.v"
-          + "2alpha.CatalogAttribute.RetrievableOptio"
-          + "n\"8\n\rAttributeType\022\013\n\007UNKNOWN\020\000\022\013\n\007TEXTU"
-          + "AL\020\001\022\r\n\tNUMERICAL\020\002\"b\n\017IndexableOption\022 "
-          + "\n\034INDEXABLE_OPTION_UNSPECIFIED\020\000\022\025\n\021INDE"
-          + "XABLE_ENABLED\020\001\022\026\n\022INDEXABLE_DISABLED\020\002\""
-          + "\201\001\n\026DynamicFacetableOption\022(\n$DYNAMIC_FA"
-          + "CETABLE_OPTION_UNSPECIFIED\020\000\022\035\n\031DYNAMIC_"
-          + "FACETABLE_ENABLED\020\001\022\036\n\032DYNAMIC_FACETABLE"
-          + "_DISABLED\020\002\"f\n\020SearchableOption\022!\n\035SEARC"
-          + "HABLE_OPTION_UNSPECIFIED\020\000\022\026\n\022SEARCHABLE"
-          + "_ENABLED\020\001\022\027\n\023SEARCHABLE_DISABLED\020\002\"}\n\025E"
-          + "xactSearchableOption\022\'\n#EXACT_SEARCHABLE"
-          + "_OPTION_UNSPECIFIED\020\000\022\034\n\030EXACT_SEARCHABL"
-          + "E_ENABLED\020\001\022\035\n\031EXACT_SEARCHABLE_DISABLED"
-          + "\020\002\"j\n\021RetrievableOption\022\"\n\036RETRIEVABLE_O"
-          + "PTION_UNSPECIFIED\020\000\022\027\n\023RETRIEVABLE_ENABL"
-          + "ED\020\001\022\030\n\024RETRIEVABLE_DISABLED\020\002\"\305\003\n\020Attri"
-          + "butesConfig\022\024\n\004name\030\001 \001(\tB\006\340A\002\340A\005\022`\n\022cat"
-          + "alog_attributes\030\002 \003(\0132D.google.cloud.ret"
-          + "ail.v2alpha.AttributesConfig.CatalogAttr"
-          + "ibutesEntry\022V\n\026attribute_config_level\030\003 "
-          + "\001(\01621.google.cloud.retail.v2alpha.Attrib"
-          + "uteConfigLevelB\003\340A\003\032g\n\026CatalogAttributes"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.goog"
-          + "le.cloud.retail.v2alpha.CatalogAttribute"
-          + ":\0028\001:x\352Au\n&retail.googleapis.com/Attribu"
-          + "tesConfig\022Kprojects/{project}/locations/"
-          + "{location}/catalogs/{catalog}/attributes"
-          + "Config\"\250\005\n\020CompletionConfig\022\024\n\004name\030\001 \001("
-          + "\tB\006\340A\002\340A\005\022\026\n\016matching_order\030\002 \001(\t\022\027\n\017max"
-          + "_suggestions\030\003 \001(\005\022\031\n\021min_prefix_length\030"
-          + "\004 \001(\005\022\025\n\rauto_learning\030\013 \001(\010\022]\n\030suggesti"
-          + "ons_input_config\030\005 \001(\01326.google.cloud.re"
-          + "tail.v2alpha.CompletionDataInputConfigB\003"
-          + "\340A\003\022.\n!last_suggestions_import_operation"
-          + "\030\006 \001(\tB\003\340A\003\022Z\n\025denylist_input_config\030\007 \001"
-          + "(\01326.google.cloud.retail.v2alpha.Complet"
-          + "ionDataInputConfigB\003\340A\003\022+\n\036last_denylist"
-          + "_import_operation\030\010 \001(\tB\003\340A\003\022[\n\026allowlis"
-          + "t_input_config\030\t \001(\01326.google.cloud.reta"
-          + "il.v2alpha.CompletionDataInputConfigB\003\340A"
-          + "\003\022,\n\037last_allowlist_import_operation\030\n \001"
-          + "(\tB\003\340A\003:x\352Au\n&retail.googleapis.com/Comp"
-          + "letionConfig\022Kprojects/{project}/locatio"
-          + "ns/{location}/catalogs/{catalog}/complet"
-          + "ionConfig\"\330\001\n\022MerchantCenterLink\022\'\n\032merc"
-          + "hant_center_account_id\030\001 \001(\003B\003\340A\002\022\021\n\tbra"
-          + "nch_id\030\002 \001(\t\022\024\n\014destinations\030\003 \003(\t\022\023\n\013re"
-          + "gion_code\030\004 \001(\t\022\025\n\rlanguage_code\030\005 \001(\t\022D"
-          + "\n\005feeds\030\006 \003(\01325.google.cloud.retail.v2al"
-          + "pha.MerchantCenterFeedFilter\"N\n\030Merchant"
-          + "CenterFeedFilter\022\027\n\017primary_feed_id\030\001 \001("
-          + "\003\022\031\n\021primary_feed_name\030\002 \001(\t\"]\n\033Merchant"
-          + "CenterLinkingConfig\022>\n\005links\030\001 \003(\0132/.goo"
-          + "gle.cloud.retail.v2alpha.MerchantCenterL"
-          + "ink\"\323\002\n\007Catalog\022\024\n\004name\030\001 \001(\tB\006\340A\002\340A\005\022\034\n"
-          + "\014display_name\030\002 \001(\tB\006\340A\002\340A\005\022R\n\024product_l"
-          + "evel_config\030\004 \001(\0132/.google.cloud.retail."
-          + "v2alpha.ProductLevelConfigB\003\340A\002\022`\n\036merch"
-          + "ant_center_linking_config\030\006 \001(\01328.google"
-          + ".cloud.retail.v2alpha.MerchantCenterLink"
-          + "ingConfig:^\352A[\n\035retail.googleapis.com/Ca"
-          + "talog\022:projects/{project}/locations/{loc"
-          + "ation}/catalogs/{catalog}B\320\001\n\037com.google"
-          + ".cloud.retail.v2alphaB\014CatalogProtoP\001Z7c"
-          + "loud.google.com/go/retail/apiv2alpha/ret"
-          + "ailpb;retailpb\242\002\006RETAIL\252\002\033Google.Cloud.R"
-          + "etail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2al"
-          + "pha\352\002\036Google::Cloud::Retail::V2alphab\006pr"
-          + "oto3"
+          + "pha/import_config.proto\032\037google/protobuf"
+          + "/timestamp.proto\"^\n\022ProductLevelConfig\022\036"
+          + "\n\026ingestion_product_type\030\001 \001(\t\022(\n mercha"
+          + "nt_center_product_id_field\030\002 \001(\t\"\232\021\n\020Cat"
+          + "alogAttribute\022\020\n\003key\030\001 \001(\tB\003\340A\002\022\023\n\006in_us"
+          + "e\030\t \001(\010B\003\340A\003\022N\n\004type\030\n \001(\0162;.google.clou"
+          + "d.retail.v2alpha.CatalogAttribute.Attrib"
+          + "uteTypeB\003\340A\003\022W\n\020indexable_option\030\005 \001(\0162="
+          + ".google.cloud.retail.v2alpha.CatalogAttr"
+          + "ibute.IndexableOption\022f\n\030dynamic_facetab"
+          + "le_option\030\006 \001(\0162D.google.cloud.retail.v2"
+          + "alpha.CatalogAttribute.DynamicFacetableO"
+          + "ption\022Y\n\021searchable_option\030\007 \001(\0162>.googl"
+          + "e.cloud.retail.v2alpha.CatalogAttribute."
+          + "SearchableOption\022e\n recommendations_filt"
+          + "ering_option\030\010 \001(\0162;.google.cloud.retail"
+          + ".v2alpha.RecommendationsFilteringOption\022"
+          + "d\n\027exact_searchable_option\030\013 \001(\0162C.googl"
+          + "e.cloud.retail.v2alpha.CatalogAttribute."
+          + "ExactSearchableOption\022[\n\022retrievable_opt"
+          + "ion\030\014 \001(\0162?.google.cloud.retail.v2alpha."
+          + "CatalogAttribute.RetrievableOption\022O\n\014fa"
+          + "cet_config\030\r \001(\01329.google.cloud.retail.v"
+          + "2alpha.CatalogAttribute.FacetConfig\032\202\006\n\013"
+          + "FacetConfig\022>\n\017facet_intervals\030\001 \003(\0132%.g"
+          + "oogle.cloud.retail.v2alpha.Interval\022j\n\024i"
+          + "gnored_facet_values\030\002 \003(\0132L.google.cloud"
+          + ".retail.v2alpha.CatalogAttribute.FacetCo"
+          + "nfig.IgnoredFacetValues\022g\n\023merged_facet_"
+          + "values\030\003 \003(\0132J.google.cloud.retail.v2alp"
+          + "ha.CatalogAttribute.FacetConfig.MergedFa"
+          + "cetValue\022[\n\014merged_facet\030\004 \001(\0132E.google."
+          + "cloud.retail.v2alpha.CatalogAttribute.Fa"
+          + "cetConfig.MergedFacet\022]\n\rrerank_config\030\005"
+          + " \001(\0132F.google.cloud.retail.v2alpha.Catal"
+          + "ogAttribute.FacetConfig.RerankConfig\032\202\001\n"
+          + "\022IgnoredFacetValues\022\016\n\006values\030\001 \003(\t\022.\n\ns"
+          + "tart_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022,\n\010end_time\030\003 \001(\0132\032.google.protobuf."
+          + "Timestamp\0328\n\020MergedFacetValue\022\016\n\006values\030"
+          + "\001 \003(\t\022\024\n\014merged_value\030\002 \001(\t\032\'\n\013MergedFac"
+          + "et\022\030\n\020merged_facet_key\030\001 \001(\t\032:\n\014RerankCo"
+          + "nfig\022\024\n\014rerank_facet\030\001 \001(\010\022\024\n\014facet_valu"
+          + "es\030\002 \003(\t\"8\n\rAttributeType\022\013\n\007UNKNOWN\020\000\022\013"
+          + "\n\007TEXTUAL\020\001\022\r\n\tNUMERICAL\020\002\"b\n\017IndexableO"
+          + "ption\022 \n\034INDEXABLE_OPTION_UNSPECIFIED\020\000\022"
+          + "\025\n\021INDEXABLE_ENABLED\020\001\022\026\n\022INDEXABLE_DISA"
+          + "BLED\020\002\"\201\001\n\026DynamicFacetableOption\022(\n$DYN"
+          + "AMIC_FACETABLE_OPTION_UNSPECIFIED\020\000\022\035\n\031D"
+          + "YNAMIC_FACETABLE_ENABLED\020\001\022\036\n\032DYNAMIC_FA"
+          + "CETABLE_DISABLED\020\002\"f\n\020SearchableOption\022!"
+          + "\n\035SEARCHABLE_OPTION_UNSPECIFIED\020\000\022\026\n\022SEA"
+          + "RCHABLE_ENABLED\020\001\022\027\n\023SEARCHABLE_DISABLED"
+          + "\020\002\"}\n\025ExactSearchableOption\022\'\n#EXACT_SEA"
+          + "RCHABLE_OPTION_UNSPECIFIED\020\000\022\034\n\030EXACT_SE"
+          + "ARCHABLE_ENABLED\020\001\022\035\n\031EXACT_SEARCHABLE_D"
+          + "ISABLED\020\002\"j\n\021RetrievableOption\022\"\n\036RETRIE"
+          + "VABLE_OPTION_UNSPECIFIED\020\000\022\027\n\023RETRIEVABL"
+          + "E_ENABLED\020\001\022\030\n\024RETRIEVABLE_DISABLED\020\002\"\305\003"
+          + "\n\020AttributesConfig\022\024\n\004name\030\001 \001(\tB\006\340A\002\340A\005"
+          + "\022`\n\022catalog_attributes\030\002 \003(\0132D.google.cl"
+          + "oud.retail.v2alpha.AttributesConfig.Cata"
+          + "logAttributesEntry\022V\n\026attribute_config_l"
+          + "evel\030\003 \001(\01621.google.cloud.retail.v2alpha"
+          + ".AttributeConfigLevelB\003\340A\003\032g\n\026CatalogAtt"
+          + "ributesEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\013"
+          + "2-.google.cloud.retail.v2alpha.CatalogAt"
+          + "tribute:\0028\001:x\352Au\n&retail.googleapis.com/"
+          + "AttributesConfig\022Kprojects/{project}/loc"
+          + "ations/{location}/catalogs/{catalog}/att"
+          + "ributesConfig\"\250\005\n\020CompletionConfig\022\024\n\004na"
+          + "me\030\001 \001(\tB\006\340A\002\340A\005\022\026\n\016matching_order\030\002 \001(\t"
+          + "\022\027\n\017max_suggestions\030\003 \001(\005\022\031\n\021min_prefix_"
+          + "length\030\004 \001(\005\022\025\n\rauto_learning\030\013 \001(\010\022]\n\030s"
+          + "uggestions_input_config\030\005 \001(\01326.google.c"
+          + "loud.retail.v2alpha.CompletionDataInputC"
+          + "onfigB\003\340A\003\022.\n!last_suggestions_import_op"
+          + "eration\030\006 \001(\tB\003\340A\003\022Z\n\025denylist_input_con"
+          + "fig\030\007 \001(\01326.google.cloud.retail.v2alpha."
+          + "CompletionDataInputConfigB\003\340A\003\022+\n\036last_d"
+          + "enylist_import_operation\030\010 \001(\tB\003\340A\003\022[\n\026a"
+          + "llowlist_input_config\030\t \001(\01326.google.clo"
+          + "ud.retail.v2alpha.CompletionDataInputCon"
+          + "figB\003\340A\003\022,\n\037last_allowlist_import_operat"
+          + "ion\030\n \001(\tB\003\340A\003:x\352Au\n&retail.googleapis.c"
+          + "om/CompletionConfig\022Kprojects/{project}/"
+          + "locations/{location}/catalogs/{catalog}/"
+          + "completionConfig\"\330\001\n\022MerchantCenterLink\022"
+          + "\'\n\032merchant_center_account_id\030\001 \001(\003B\003\340A\002"
+          + "\022\021\n\tbranch_id\030\002 \001(\t\022\024\n\014destinations\030\003 \003("
+          + "\t\022\023\n\013region_code\030\004 \001(\t\022\025\n\rlanguage_code\030"
+          + "\005 \001(\t\022D\n\005feeds\030\006 \003(\01325.google.cloud.reta"
+          + "il.v2alpha.MerchantCenterFeedFilter\"N\n\030M"
+          + "erchantCenterFeedFilter\022\027\n\017primary_feed_"
+          + "id\030\001 \001(\003\022\031\n\021primary_feed_name\030\002 \001(\t\"]\n\033M"
+          + "erchantCenterLinkingConfig\022>\n\005links\030\001 \003("
+          + "\0132/.google.cloud.retail.v2alpha.Merchant"
+          + "CenterLink\"\323\002\n\007Catalog\022\024\n\004name\030\001 \001(\tB\006\340A"
+          + "\002\340A\005\022\034\n\014display_name\030\002 \001(\tB\006\340A\002\340A\005\022R\n\024pr"
+          + "oduct_level_config\030\004 \001(\0132/.google.cloud."
+          + "retail.v2alpha.ProductLevelConfigB\003\340A\002\022`"
+          + "\n\036merchant_center_linking_config\030\006 \001(\01328"
+          + ".google.cloud.retail.v2alpha.MerchantCen"
+          + "terLinkingConfig:^\352A[\n\035retail.googleapis"
+          + ".com/Catalog\022:projects/{project}/locatio"
+          + "ns/{location}/catalogs/{catalog}B\320\001\n\037com"
+          + ".google.cloud.retail.v2alphaB\014CatalogPro"
+          + "toP\001Z7cloud.google.com/go/retail/apiv2al"
+          + "pha/retailpb;retailpb\242\002\006RETAIL\252\002\033Google."
+          + "Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Reta"
+          + "il\\V2alpha\352\002\036Google::Cloud::Retail::V2al"
+          + "phab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -177,6 +219,7 @@ public final class CatalogProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.retail.v2alpha.CommonProto.getDescriptor(),
               com.google.cloud.retail.v2alpha.ImportConfigProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2alpha_ProductLevelConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -201,6 +244,61 @@ public final class CatalogProto {
               "RecommendationsFilteringOption",
               "ExactSearchableOption",
               "RetrievableOption",
+              "FacetConfig",
+            });
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor =
+        internal_static_google_cloud_retail_v2alpha_CatalogAttribute_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor,
+            new java.lang.String[] {
+              "FacetIntervals",
+              "IgnoredFacetValues",
+              "MergedFacetValues",
+              "MergedFacet",
+              "RerankConfig",
+            });
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor =
+        internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor,
+            new java.lang.String[] {
+              "Values", "StartTime", "EndTime",
+            });
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor =
+        internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor,
+            new java.lang.String[] {
+              "Values", "MergedValue",
+            });
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor =
+        internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor,
+            new java.lang.String[] {
+              "MergedFacetKey",
+            });
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor =
+        internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor,
+            new java.lang.String[] {
+              "RerankFacet", "FacetValues",
             });
     internal_static_google_cloud_retail_v2alpha_AttributesConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -285,6 +383,7 @@ public final class CatalogProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2alpha.CommonProto.getDescriptor();
     com.google.cloud.retail.v2alpha.ImportConfigProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

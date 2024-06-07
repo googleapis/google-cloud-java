@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1.samples;
 
 // [START managedidentities_v1_generated_ManagedIdentitiesService_DeleteDomain_sync]
 import com.google.cloud.managedidentities.v1.DeleteDomainRequest;
-import com.google.cloud.managedidentities.v1.DomainName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 import com.google.protobuf.Empty;
 
@@ -36,10 +35,7 @@ public class SyncDeleteDomain {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
         ManagedIdentitiesServiceClient.create()) {
-      DeleteDomainRequest request =
-          DeleteDomainRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-              .build();
+      DeleteDomainRequest request = DeleteDomainRequest.newBuilder().setName("name3373707").build();
       managedIdentitiesServiceClient.deleteDomainAsync(request).get();
     }
   }

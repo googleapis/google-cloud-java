@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1.samples;
 
 // [START managedidentities_v1_generated_ManagedIdentitiesService_GetDomain_sync]
 import com.google.cloud.managedidentities.v1.Domain;
-import com.google.cloud.managedidentities.v1.DomainName;
 import com.google.cloud.managedidentities.v1.GetDomainRequest;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 
@@ -36,10 +35,7 @@ public class SyncGetDomain {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
         ManagedIdentitiesServiceClient.create()) {
-      GetDomainRequest request =
-          GetDomainRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-              .build();
+      GetDomainRequest request = GetDomainRequest.newBuilder().setName("name3373707").build();
       Domain response = managedIdentitiesServiceClient.getDomain(request);
     }
   }

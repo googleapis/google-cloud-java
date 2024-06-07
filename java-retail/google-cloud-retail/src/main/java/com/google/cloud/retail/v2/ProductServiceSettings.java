@@ -104,6 +104,17 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     return ((ProductServiceStubSettings) getStubSettings()).deleteProductSettings();
   }
 
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).purgeProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public OperationCallSettings<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).purgeProductsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to importProducts. */
   public UnaryCallSettings<ImportProductsRequest, Operation> importProductsSettings() {
     return ((ProductServiceStubSettings) getStubSettings()).importProductsSettings();
@@ -319,6 +330,18 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     /** Returns the builder for the settings used for calls to deleteProduct. */
     public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
       return getStubSettingsBuilder().deleteProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return getStubSettingsBuilder().purgeProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public OperationCallSettings.Builder<
+            PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+        purgeProductsOperationSettings() {
+      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importProducts. */

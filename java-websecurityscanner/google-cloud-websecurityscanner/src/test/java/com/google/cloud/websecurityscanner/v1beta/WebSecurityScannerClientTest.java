@@ -484,7 +484,7 @@ public class WebSecurityScannerClientTest {
   public void startScanRunTest() throws Exception {
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]").toString())
+            .setName("name3373707")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setUrlsCrawledCount(-1749797253)
@@ -530,7 +530,7 @@ public class WebSecurityScannerClientTest {
   public void startScanRunTest2() throws Exception {
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]").toString())
+            .setName("name3373707")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setUrlsCrawledCount(-1749797253)
