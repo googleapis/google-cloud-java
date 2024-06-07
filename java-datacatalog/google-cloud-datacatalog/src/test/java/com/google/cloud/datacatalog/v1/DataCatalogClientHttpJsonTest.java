@@ -1110,7 +1110,7 @@ public class DataCatalogClientHttpJsonTest {
   public void getEntryTest() throws Exception {
     Entry expectedResponse =
         Entry.newBuilder()
-            .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setName("name3373707")
             .setLinkedResource("linkedResource-495606457")
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
@@ -1165,7 +1165,7 @@ public class DataCatalogClientHttpJsonTest {
   public void getEntryTest2() throws Exception {
     Entry expectedResponse =
         Entry.newBuilder()
-            .setName(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setName("name3373707")
             .setLinkedResource("linkedResource-495606457")
             .setFullyQualifiedName("fullyQualifiedName288467357")
             .setDisplayName("displayName1714148973")
@@ -2335,9 +2335,7 @@ public class DataCatalogClientHttpJsonTest {
   public void renameTagTemplateFieldEnumValueTest() throws Exception {
     TagTemplateField expectedResponse =
         TagTemplateField.newBuilder()
-            .setName(
-                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
@@ -2401,9 +2399,7 @@ public class DataCatalogClientHttpJsonTest {
   public void renameTagTemplateFieldEnumValueTest2() throws Exception {
     TagTemplateField expectedResponse =
         TagTemplateField.newBuilder()
-            .setName(
-                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
-                    .toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)

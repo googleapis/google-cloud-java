@@ -303,9 +303,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
    *   GetMetricsScopeRequest request =
-   *       GetMetricsScopeRequest.newBuilder()
-   *           .setName(MetricsScopeName.of("[METRICS_SCOPE]").toString())
-   *           .build();
+   *       GetMetricsScopeRequest.newBuilder().setName("name3373707").build();
    *   MetricsScope response = metricsScopesClient.getMetricsScope(request);
    * }
    * }</pre>
@@ -331,9 +329,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
    *   GetMetricsScopeRequest request =
-   *       GetMetricsScopeRequest.newBuilder()
-   *           .setName(MetricsScopeName.of("[METRICS_SCOPE]").toString())
-   *           .build();
+   *       GetMetricsScopeRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<MetricsScope> future =
    *       metricsScopesClient.getMetricsScopeCallable().futureCall(request);
    *   // Do something.
@@ -500,7 +496,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
    *   CreateMonitoredProjectRequest request =
    *       CreateMonitoredProjectRequest.newBuilder()
-   *           .setParent(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+   *           .setParent("parent-995424086")
    *           .setMonitoredProject(MonitoredProject.newBuilder().build())
    *           .build();
    *   MonitoredProject response = metricsScopesClient.createMonitoredProjectAsync(request).get();
@@ -530,7 +526,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
    *   CreateMonitoredProjectRequest request =
    *       CreateMonitoredProjectRequest.newBuilder()
-   *           .setParent(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+   *           .setParent("parent-995424086")
    *           .setMonitoredProject(MonitoredProject.newBuilder().build())
    *           .build();
    *   OperationFuture<MonitoredProject, OperationMetadata> future =
@@ -560,7 +556,7 @@ public class MetricsScopesClient implements BackgroundResource {
    * try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
    *   CreateMonitoredProjectRequest request =
    *       CreateMonitoredProjectRequest.newBuilder()
-   *           .setParent(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+   *           .setParent("parent-995424086")
    *           .setMonitoredProject(MonitoredProject.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =

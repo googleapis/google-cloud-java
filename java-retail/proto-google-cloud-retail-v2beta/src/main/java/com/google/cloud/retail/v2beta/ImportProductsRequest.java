@@ -465,7 +465,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported `products` to update. If
-   * not set, all fields are updated.
+   * not set, all fields are updated. If provided, only the existing product
+   * fields are updated. Missing products will not be created.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -481,7 +482,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported `products` to update. If
-   * not set, all fields are updated.
+   * not set, all fields are updated. If provided, only the existing product
+   * fields are updated. Missing products will not be created.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -497,7 +499,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Indicates which fields in the provided imported `products` to update. If
-   * not set, all fields are updated.
+   * not set, all fields are updated. If provided, only the existing product
+   * fields are updated. Missing products will not be created.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -570,9 +573,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-   * Make sure that `service-&lt;project
-   * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-   * `pubsub.topics.publish` IAM permission on the topic.
+   * Make sure that both
+   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+   * have the `pubsub.topics.publish` IAM permission on the topic.
+   *
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
    * </pre>
    *
    * <code>string notification_pubsub_topic = 7;</code>
@@ -603,9 +611,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-   * Make sure that `service-&lt;project
-   * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-   * `pubsub.topics.publish` IAM permission on the topic.
+   * Make sure that both
+   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+   * have the `pubsub.topics.publish` IAM permission on the topic.
+   *
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
    * </pre>
    *
    * <code>string notification_pubsub_topic = 7;</code>
@@ -1814,7 +1827,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1829,7 +1843,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1850,7 +1865,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1873,7 +1889,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1893,7 +1910,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1921,7 +1939,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1941,7 +1960,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1956,7 +1976,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -1975,7 +1996,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Indicates which fields in the provided imported `products` to update. If
-     * not set, all fields are updated.
+     * not set, all fields are updated. If provided, only the existing product
+     * fields are updated. Missing products will not be created.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -2125,9 +2147,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
      * to be within the same project as
      * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-     * Make sure that `service-&lt;project
-     * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-     * `pubsub.topics.publish` IAM permission on the topic.
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
+     *
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>string notification_pubsub_topic = 7;</code>
@@ -2157,9 +2184,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
      * to be within the same project as
      * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-     * Make sure that `service-&lt;project
-     * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-     * `pubsub.topics.publish` IAM permission on the topic.
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
+     *
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>string notification_pubsub_topic = 7;</code>
@@ -2189,9 +2221,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
      * to be within the same project as
      * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-     * Make sure that `service-&lt;project
-     * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-     * `pubsub.topics.publish` IAM permission on the topic.
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
+     *
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>string notification_pubsub_topic = 7;</code>
@@ -2220,9 +2257,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
      * to be within the same project as
      * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-     * Make sure that `service-&lt;project
-     * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-     * `pubsub.topics.publish` IAM permission on the topic.
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
+     *
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>string notification_pubsub_topic = 7;</code>
@@ -2247,9 +2289,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
      * to be within the same project as
      * [ImportProductsRequest.parent][google.cloud.retail.v2beta.ImportProductsRequest.parent].
-     * Make sure that `service-&lt;project
-     * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
-     * `pubsub.topics.publish` IAM permission on the topic.
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
+     *
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>string notification_pubsub_topic = 7;</code>

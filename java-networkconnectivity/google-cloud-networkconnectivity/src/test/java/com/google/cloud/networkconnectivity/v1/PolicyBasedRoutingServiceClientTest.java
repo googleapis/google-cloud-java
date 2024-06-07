@@ -201,7 +201,7 @@ public class PolicyBasedRoutingServiceClientTest {
   public void getPolicyBasedRouteTest() throws Exception {
     PolicyBasedRoute expectedResponse =
         PolicyBasedRoute.newBuilder()
-            .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -249,7 +249,7 @@ public class PolicyBasedRoutingServiceClientTest {
   public void getPolicyBasedRouteTest2() throws Exception {
     PolicyBasedRoute expectedResponse =
         PolicyBasedRoute.newBuilder()
-            .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())

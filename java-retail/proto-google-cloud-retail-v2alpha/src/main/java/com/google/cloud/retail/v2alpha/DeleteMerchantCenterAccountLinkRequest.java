@@ -76,7 +76,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
    *
    * <pre>
    * Required. Full resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
    *
    * <pre>
    * Required. Full resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
    * </pre>
    *
    * <code>
@@ -484,7 +484,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
      *
      * <pre>
      * Required. Full resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
      * </pre>
      *
      * <code>
@@ -509,7 +509,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
      *
      * <pre>
      * Required. Full resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
      * </pre>
      *
      * <code>
@@ -534,7 +534,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
      *
      * <pre>
      * Required. Full resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
      * </pre>
      *
      * <code>
@@ -558,7 +558,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
      *
      * <pre>
      * Required. Full resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
      * </pre>
      *
      * <code>
@@ -578,7 +578,7 @@ public final class DeleteMerchantCenterAccountLinkRequest
      *
      * <pre>
      * Required. Full resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/merchantCenterAccountLinks/{merchant_center_account_link_id}`
      * </pre>
      *
      * <code>

@@ -33,6 +33,18 @@ public final class PurgeConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_PurgeMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_PurgeProductsMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_PurgeProductsMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_PurgeProductsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_PurgeProductsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_PurgeProductsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_PurgeProductsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_fieldAccessorTable;
@@ -52,16 +64,27 @@ public final class PurgeConfigProto {
       "\n)google/cloud/retail/v2/purge_config.pr"
           + "oto\022\026google.cloud.retail.v2\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\"\017\n\rPurgeMetadata\"s\n\026PurgeUserEve"
-          + "ntsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035reta"
-          + "il.googleapis.com/Catalog\022\023\n\006filter\030\002 \001("
-          + "\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUserEvents"
-          + "Response\022\033\n\023purged_events_count\030\001 \001(\003B\273\001"
-          + "\n\032com.google.cloud.retail.v2B\020PurgeConfi"
-          + "gProtoP\001Z2cloud.google.com/go/retail/api"
-          + "v2/retailpb;retailpb\242\002\006RETAIL\252\002\026Google.C"
-          + "loud.Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352"
-          + "\002\031Google::Cloud::Retail::V2b\006proto3"
+          + "e.proto\032\037google/protobuf/timestamp.proto"
+          + "\"\017\n\rPurgeMetadata\"\247\001\n\025PurgeProductsMetad"
+          + "ata\022/\n\013create_time\030\001 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022\025\n\rsuccess_count\030\003"
+          + " \001(\003\022\025\n\rfailure_count\030\004 \001(\003\"p\n\024PurgeProd"
+          + "uctsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034ret"
+          + "ail.googleapis.com/Branch\022\023\n\006filter\030\002 \001("
+          + "\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"f\n\025PurgeProductsRe"
+          + "sponse\022\023\n\013purge_count\030\001 \001(\003\0228\n\014purge_sam"
+          + "ple\030\002 \003(\tB\"\372A\037\n\035retail.googleapis.com/Pr"
+          + "oduct\"s\n\026PurgeUserEventsRequest\0225\n\006paren"
+          + "t\030\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com/C"
+          + "atalog\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001"
+          + "(\010\"6\n\027PurgeUserEventsResponse\022\033\n\023purged_"
+          + "events_count\030\001 \001(\003B\273\001\n\032com.google.cloud."
+          + "retail.v2B\020PurgeConfigProtoP\001Z2cloud.goo"
+          + "gle.com/go/retail/apiv2/retailpb;retailp"
+          + "b\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Go"
+          + "ogle\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Re"
+          + "tail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,6 +92,7 @@ public final class PurgeConfigProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2_PurgeMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,8 +100,32 @@ public final class PurgeConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_PurgeMetadata_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_descriptor =
+    internal_static_google_cloud_retail_v2_PurgeProductsMetadata_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_retail_v2_PurgeProductsMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_PurgeProductsMetadata_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
+            });
+    internal_static_google_cloud_retail_v2_PurgeProductsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_retail_v2_PurgeProductsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_PurgeProductsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "Force",
+            });
+    internal_static_google_cloud_retail_v2_PurgeProductsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_retail_v2_PurgeProductsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_PurgeProductsResponse_descriptor,
+            new java.lang.String[] {
+              "PurgeCount", "PurgeSample",
+            });
+    internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_PurgeUserEventsRequest_descriptor,
@@ -85,7 +133,7 @@ public final class PurgeConfigProto {
               "Parent", "Filter", "Force",
             });
     internal_static_google_cloud_retail_v2_PurgeUserEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_retail_v2_PurgeUserEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_PurgeUserEventsResponse_descriptor,
@@ -100,6 +148,7 @@ public final class PurgeConfigProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

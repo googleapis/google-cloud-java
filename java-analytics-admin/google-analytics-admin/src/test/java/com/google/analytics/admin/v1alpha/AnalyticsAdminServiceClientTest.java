@@ -5519,9 +5519,7 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
     ArchiveAudienceRequest request =
-        ArchiveAudienceRequest.newBuilder()
-            .setName(PropertyName.of("[PROPERTY]").toString())
-            .build();
+        ArchiveAudienceRequest.newBuilder().setName("name3373707").build();
 
     client.archiveAudience(request);
 
@@ -5543,9 +5541,7 @@ public class AnalyticsAdminServiceClientTest {
 
     try {
       ArchiveAudienceRequest request =
-          ArchiveAudienceRequest.newBuilder()
-              .setName(PropertyName.of("[PROPERTY]").toString())
-              .build();
+          ArchiveAudienceRequest.newBuilder().setName("name3373707").build();
       client.archiveAudience(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

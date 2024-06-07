@@ -36,7 +36,7 @@ public interface BinaryAuthorizationOrBuilder
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1461
+   *     google/container/v1/cluster_service.proto;l=1462
    * @return The enabled.
    */
   @java.lang.Deprecated

@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1.samples;
 // [START managedidentities_v1_generated_ManagedIdentitiesService_DetachTrust_sync]
 import com.google.cloud.managedidentities.v1.DetachTrustRequest;
 import com.google.cloud.managedidentities.v1.Domain;
-import com.google.cloud.managedidentities.v1.DomainName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1.Trust;
 
@@ -39,7 +38,7 @@ public class SyncDetachTrust {
         ManagedIdentitiesServiceClient.create()) {
       DetachTrustRequest request =
           DetachTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTrust(Trust.newBuilder().build())
               .build();
       Domain response = managedIdentitiesServiceClient.detachTrustAsync(request).get();

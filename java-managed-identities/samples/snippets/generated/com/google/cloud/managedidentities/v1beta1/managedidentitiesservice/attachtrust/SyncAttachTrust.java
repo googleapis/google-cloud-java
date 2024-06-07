@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_AttachTrust_sync]
 import com.google.cloud.managedidentities.v1beta1.AttachTrustRequest;
 import com.google.cloud.managedidentities.v1beta1.Domain;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.Trust;
 
@@ -39,7 +38,7 @@ public class SyncAttachTrust {
         ManagedIdentitiesServiceClient.create()) {
       AttachTrustRequest request =
           AttachTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTrust(Trust.newBuilder().build())
               .build();
       Domain response = managedIdentitiesServiceClient.attachTrustAsync(request).get();

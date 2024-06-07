@@ -37,10 +37,7 @@ public class AsyncDeleteRole {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IAMClient iAMClient = IAMClient.create()) {
       DeleteRoleRequest request =
-          DeleteRoleRequest.newBuilder()
-              .setName("DeleteRoleRequest1468559982".toString())
-              .setEtag(ByteString.EMPTY)
-              .build();
+          DeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
       ApiFuture<Role> future = iAMClient.deleteRoleCallable().futureCall(request);
       // Do something.
       Role response = future.get();

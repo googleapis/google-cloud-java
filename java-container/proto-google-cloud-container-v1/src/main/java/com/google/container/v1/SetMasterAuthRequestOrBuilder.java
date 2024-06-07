@@ -36,7 +36,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3001
+   *     google/container/v1/cluster_service.proto;l=3002
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3001
+   *     google/container/v1/cluster_service.proto;l=3002
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3007
+   *     google/container/v1/cluster_service.proto;l=3008
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3007
+   *     google/container/v1/cluster_service.proto;l=3008
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3011
+   *     google/container/v1/cluster_service.proto;l=3012
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface SetMasterAuthRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3011
+   *     google/container/v1/cluster_service.proto;l=3012
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

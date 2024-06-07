@@ -20,7 +20,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.networkconnectivity.v1.GetPolicyBasedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoute;
-import com.google.cloud.networkconnectivity.v1.PolicyBasedRouteName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 
 public class AsyncGetPolicyBasedRoute {
@@ -38,9 +37,7 @@ public class AsyncGetPolicyBasedRoute {
     try (PolicyBasedRoutingServiceClient policyBasedRoutingServiceClient =
         PolicyBasedRoutingServiceClient.create()) {
       GetPolicyBasedRouteRequest request =
-          GetPolicyBasedRouteRequest.newBuilder()
-              .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
-              .build();
+          GetPolicyBasedRouteRequest.newBuilder().setName("name3373707").build();
       ApiFuture<PolicyBasedRoute> future =
           policyBasedRoutingServiceClient.getPolicyBasedRouteCallable().futureCall(request);
       // Do something.

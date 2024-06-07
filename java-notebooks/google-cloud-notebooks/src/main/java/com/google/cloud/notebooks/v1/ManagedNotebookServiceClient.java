@@ -883,7 +883,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   CreateRuntimeRequest request =
    *       CreateRuntimeRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent("parent-995424086")
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -916,7 +916,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   CreateRuntimeRequest request =
    *       CreateRuntimeRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent("parent-995424086")
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -949,7 +949,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     ManagedNotebookServiceClient.create()) {
    *   CreateRuntimeRequest request =
    *       CreateRuntimeRequest.newBuilder()
-   *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setParent("parent-995424086")
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
    *           .setRequestId("requestId693933066")

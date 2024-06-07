@@ -53,7 +53,7 @@ public final class MerchantCenterAccountLinkProto {
           + "enter_account_link.proto\022\033google.cloud.r"
           + "etail.v2alpha\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\306\005\n\031MerchantC"
+          + "e/protobuf/timestamp.proto\"\333\005\n\031MerchantC"
           + "enterAccountLink\022\024\n\004name\030\001 \001(\tB\006\340A\005\340A\003\022\022"
           + "\n\002id\030\010 \001(\tB\006\340A\005\340A\003\022\'\n\032merchant_center_ac"
           + "count_id\030\002 \001(\003B\003\340A\002\022\026\n\tbranch_id\030\003 \001(\tB\003"
@@ -63,24 +63,25 @@ public final class MerchantCenterAccountLinkProto {
           + "Link.MerchantCenterFeedFilter\022P\n\005state\030\007"
           + " \001(\0162<.google.cloud.retail.v2alpha.Merch"
           + "antCenterAccountLink.StateB\003\340A\003\022\027\n\nproje"
-          + "ct_id\030\t \001(\tB\003\340A\003\032N\n\030MerchantCenterFeedFi"
-          + "lter\022\027\n\017primary_feed_id\030\001 \001(\003\022\031\n\021primary"
-          + "_feed_name\030\002 \001(\t\"C\n\005State\022\025\n\021STATE_UNSPE"
-          + "CIFIED\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\n\n\006FAI"
-          + "LED\020\003:\253\001\352A\247\001\n/retail.googleapis.com/Merc"
-          + "hantCenterAccountLink\022tprojects/{project"
-          + "}/locations/{location}/catalogs/{catalog"
-          + "}/merchantCenterAccountLinks/{merchant_c"
-          + "enter_account_link}\"\213\001\n\'CreateMerchantCe"
-          + "nterAccountLinkMetadata\022/\n\013create_time\030\001"
-          + " \001(\0132\032.google.protobuf.Timestamp\022/\n\013upda"
-          + "te_time\030\002 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\342\001\n\037com.google.cloud.retail.v2alphaB\036M"
-          + "erchantCenterAccountLinkProtoP\001Z7cloud.g"
-          + "oogle.com/go/retail/apiv2alpha/retailpb;"
-          + "retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail."
-          + "V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036"
-          + "Google::Cloud::Retail::V2alphab\006proto3"
+          + "ct_id\030\t \001(\tB\003\340A\003\022\023\n\006source\030\n \001(\tB\003\340A\001\032N\n"
+          + "\030MerchantCenterFeedFilter\022\027\n\017primary_fee"
+          + "d_id\030\001 \001(\003\022\031\n\021primary_feed_name\030\002 \001(\t\"C\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007PENDING"
+          + "\020\001\022\n\n\006ACTIVE\020\002\022\n\n\006FAILED\020\003:\253\001\352A\247\001\n/retai"
+          + "l.googleapis.com/MerchantCenterAccountLi"
+          + "nk\022tprojects/{project}/locations/{locati"
+          + "on}/catalogs/{catalog}/merchantCenterAcc"
+          + "ountLinks/{merchant_center_account_link}"
+          + "\"\213\001\n\'CreateMerchantCenterAccountLinkMeta"
+          + "data\022/\n\013create_time\030\001 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\342\001\n\037com.google.cl"
+          + "oud.retail.v2alphaB\036MerchantCenterAccoun"
+          + "tLinkProtoP\001Z7cloud.google.com/go/retail"
+          + "/apiv2alpha/retailpb;retailpb\242\002\006RETAIL\252\002"
+          + "\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\Cl"
+          + "oud\\Retail\\V2alpha\352\002\036Google::Cloud::Reta"
+          + "il::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,6 +106,7 @@ public final class MerchantCenterAccountLinkProto {
               "FeedFilters",
               "State",
               "ProjectId",
+              "Source",
             });
     internal_static_google_cloud_retail_v2alpha_MerchantCenterAccountLink_MerchantCenterFeedFilter_descriptor =
         internal_static_google_cloud_retail_v2alpha_MerchantCenterAccountLink_descriptor

@@ -19,6 +19,9 @@
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
             },
+            "GetClusterCertificateAuthority": {
+              "methods": ["getClusterCertificateAuthority", "getClusterCertificateAuthority", "getClusterCertificateAuthority", "getClusterCertificateAuthorityCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },

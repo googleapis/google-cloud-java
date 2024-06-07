@@ -320,6 +320,80 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   *
+   * @return Whether the forceReturnFacetAction field is set.
+   */
+  boolean hasForceReturnFacetAction();
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   *
+   * @return The forceReturnFacetAction.
+   */
+  com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction getForceReturnFacetAction();
+  /**
+   *
+   *
+   * <pre>
+   * Force returns an attribute as a facet in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.ForceReturnFacetAction force_return_facet_action = 12;
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.Rule.ForceReturnFacetActionOrBuilder
+      getForceReturnFacetActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   *
+   * @return Whether the removeFacetAction field is set.
+   */
+  boolean hasRemoveFacetAction();
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   *
+   * @return The removeFacetAction.
+   */
+  com.google.cloud.retail.v2alpha.Rule.RemoveFacetAction getRemoveFacetAction();
+  /**
+   *
+   *
+   * <pre>
+   * Remove an attribute as a facet in the request (if present).
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.Rule.RemoveFacetAction remove_facet_action = 13;</code>
+   */
+  com.google.cloud.retail.v2alpha.Rule.RemoveFacetActionOrBuilder getRemoveFacetActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The condition that triggers the rule.
    * If the condition is empty, the rule will always apply.
    * </pre>

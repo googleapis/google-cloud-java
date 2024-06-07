@@ -19,7 +19,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_CreatePolicyBasedRoute_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest;
-import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoute;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 import com.google.longrunning.Operation;
@@ -40,7 +39,7 @@ public class AsyncCreatePolicyBasedRoute {
         PolicyBasedRoutingServiceClient.create()) {
       CreatePolicyBasedRouteRequest request =
           CreatePolicyBasedRouteRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setPolicyBasedRouteId("policyBasedRouteId-18034589")
               .setPolicyBasedRoute(PolicyBasedRoute.newBuilder().build())
               .setRequestId("requestId693933066")

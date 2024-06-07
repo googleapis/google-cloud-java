@@ -36,10 +36,7 @@ public class SyncUndeleteRole {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IAMClient iAMClient = IAMClient.create()) {
       UndeleteRoleRequest request =
-          UndeleteRoleRequest.newBuilder()
-              .setName("UndeleteRoleRequest755355893".toString())
-              .setEtag(ByteString.EMPTY)
-              .build();
+          UndeleteRoleRequest.newBuilder().setName("name3373707").setEtag(ByteString.EMPTY).build();
       Role response = iAMClient.undeleteRole(request);
     }
   }

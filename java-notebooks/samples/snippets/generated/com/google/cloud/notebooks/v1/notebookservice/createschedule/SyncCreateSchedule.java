@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.cloud.notebooks.v1.CreateScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 
 public class SyncCreateSchedule {
 
@@ -37,7 +36,7 @@ public class SyncCreateSchedule {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       CreateScheduleRequest request =
           CreateScheduleRequest.newBuilder()
-              .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+              .setParent("parent-995424086")
               .setScheduleId("scheduleId-687058414")
               .setSchedule(Schedule.newBuilder().build())
               .build();

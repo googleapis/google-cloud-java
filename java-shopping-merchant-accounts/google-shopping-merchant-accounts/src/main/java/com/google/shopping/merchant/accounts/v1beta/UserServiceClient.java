@@ -721,7 +721,7 @@ public class UserServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of users. Format:
-   *     `accounts/{account}
+   *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUsersPagedResponse listUsers(AccountName parent) {
@@ -751,7 +751,7 @@ public class UserServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of users. Format:
-   *     `accounts/{account}
+   *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUsersPagedResponse listUsers(String parent) {

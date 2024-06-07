@@ -20,7 +20,6 @@ package com.google.cloud.managedidentities.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest;
 import com.google.cloud.managedidentities.v1.Domain;
-import com.google.cloud.managedidentities.v1.LocationName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 import com.google.longrunning.Operation;
 
@@ -40,7 +39,7 @@ public class AsyncCreateMicrosoftAdDomain {
         ManagedIdentitiesServiceClient.create()) {
       CreateMicrosoftAdDomainRequest request =
           CreateMicrosoftAdDomainRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setDomainName("domainName-1244085905")
               .setDomain(Domain.newBuilder().build())
               .build();

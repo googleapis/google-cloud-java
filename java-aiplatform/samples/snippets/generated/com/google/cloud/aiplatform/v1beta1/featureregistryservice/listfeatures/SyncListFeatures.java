@@ -17,8 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_FeatureRegistryService_ListFeatures_sync]
-import com.google.cloud.aiplatform.v1beta1.EntityTypeName;
 import com.google.cloud.aiplatform.v1beta1.Feature;
+import com.google.cloud.aiplatform.v1beta1.FeatureGroupName;
 import com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.protobuf.FieldMask;
@@ -40,8 +40,7 @@ public class SyncListFeatures {
       ListFeaturesRequest request =
           ListFeaturesRequest.newBuilder()
               .setParent(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-                      .toString())
+                  FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

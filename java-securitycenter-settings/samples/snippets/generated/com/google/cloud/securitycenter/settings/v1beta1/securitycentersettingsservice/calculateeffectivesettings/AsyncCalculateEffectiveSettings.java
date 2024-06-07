@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest;
 import com.google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsServiceClient;
 import com.google.cloud.securitycenter.settings.v1beta1.Settings;
-import com.google.cloud.securitycenter.settings.v1beta1.SettingsName;
 
 public class AsyncCalculateEffectiveSettings {
 
@@ -38,9 +37,7 @@ public class AsyncCalculateEffectiveSettings {
     try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
         SecurityCenterSettingsServiceClient.create()) {
       CalculateEffectiveSettingsRequest request =
-          CalculateEffectiveSettingsRequest.newBuilder()
-              .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
-              .build();
+          CalculateEffectiveSettingsRequest.newBuilder().setName("name3373707").build();
       ApiFuture<Settings> future =
           securityCenterSettingsServiceClient
               .calculateEffectiveSettingsCallable()

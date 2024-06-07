@@ -749,7 +749,7 @@ public class JobsClientHttpJsonTest {
   public void runJobTest() throws Exception {
     Execution expectedResponse =
         Execution.newBuilder()
-            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setName("name3373707")
             .setUid("uid115792")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
@@ -824,7 +824,7 @@ public class JobsClientHttpJsonTest {
   public void runJobTest2() throws Exception {
     Execution expectedResponse =
         Execution.newBuilder()
-            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setName("name3373707")
             .setUid("uid115792")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())

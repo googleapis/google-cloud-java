@@ -20,7 +20,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.Hub;
 import com.google.cloud.networkconnectivity.v1.HubServiceClient;
-import com.google.cloud.networkconnectivity.v1.LocationName;
 
 public class SyncCreateHub {
 
@@ -37,7 +36,7 @@ public class SyncCreateHub {
     try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
       CreateHubRequest request =
           CreateHubRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setHubId("hubId99628272")
               .setHub(Hub.newBuilder().build())
               .setRequestId("requestId693933066")

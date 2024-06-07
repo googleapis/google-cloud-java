@@ -17,8 +17,8 @@
 package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_FeatureRegistryService_ListFeatures_Paged_async]
-import com.google.cloud.aiplatform.v1.EntityTypeName;
 import com.google.cloud.aiplatform.v1.Feature;
+import com.google.cloud.aiplatform.v1.FeatureGroupName;
 import com.google.cloud.aiplatform.v1.FeatureRegistryServiceClient;
 import com.google.cloud.aiplatform.v1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1.ListFeaturesResponse;
@@ -42,8 +42,7 @@ public class AsyncListFeaturesPaged {
       ListFeaturesRequest request =
           ListFeaturesRequest.newBuilder()
               .setParent(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-                      .toString())
+                  FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

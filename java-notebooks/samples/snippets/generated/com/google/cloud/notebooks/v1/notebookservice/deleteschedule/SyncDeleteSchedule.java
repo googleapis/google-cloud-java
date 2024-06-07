@@ -19,7 +19,6 @@ package com.google.cloud.notebooks.v1.samples;
 // [START notebooks_v1_generated_NotebookService_DeleteSchedule_sync]
 import com.google.cloud.notebooks.v1.DeleteScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
-import com.google.cloud.notebooks.v1.ScheduleName;
 import com.google.protobuf.Empty;
 
 public class SyncDeleteSchedule {
@@ -36,9 +35,7 @@ public class SyncDeleteSchedule {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DeleteScheduleRequest request =
-          DeleteScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+          DeleteScheduleRequest.newBuilder().setName("name3373707").build();
       notebookServiceClient.deleteScheduleAsync(request).get();
     }
   }

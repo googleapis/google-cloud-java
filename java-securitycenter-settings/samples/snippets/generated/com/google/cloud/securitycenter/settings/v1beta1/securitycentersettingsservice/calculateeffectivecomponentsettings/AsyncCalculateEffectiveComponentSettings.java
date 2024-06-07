@@ -20,7 +20,6 @@ package com.google.cloud.securitycenter.settings.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveComponentSettingsRequest;
 import com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings;
-import com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsName;
 import com.google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsServiceClient;
 
 public class AsyncCalculateEffectiveComponentSettings {
@@ -38,11 +37,7 @@ public class AsyncCalculateEffectiveComponentSettings {
     try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
         SecurityCenterSettingsServiceClient.create()) {
       CalculateEffectiveComponentSettingsRequest request =
-          CalculateEffectiveComponentSettingsRequest.newBuilder()
-              .setName(
-                  ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
-                      .toString())
-              .build();
+          CalculateEffectiveComponentSettingsRequest.newBuilder().setName("name3373707").build();
       ApiFuture<ComponentSettings> future =
           securityCenterSettingsServiceClient
               .calculateEffectiveComponentSettingsCallable()

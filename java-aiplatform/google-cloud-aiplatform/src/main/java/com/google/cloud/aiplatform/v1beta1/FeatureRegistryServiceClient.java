@@ -1392,8 +1392,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFeature(Feature.newBuilder().build())
    *           .setFeatureId("featureId-420503887")
    *           .build();
@@ -1426,8 +1425,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFeature(Feature.newBuilder().build())
    *           .setFeatureId("featureId-420503887")
    *           .build();
@@ -1460,8 +1458,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFeature(Feature.newBuilder().build())
    *           .setFeatureId("featureId-420503887")
    *           .build();
@@ -1731,8 +1728,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1770,8 +1766,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1810,8 +1805,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
    *           .setParent(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-   *                   .toString())
+   *               FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

@@ -238,7 +238,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Redis memory size in GB for the entire cluster.
+   * Output only. Redis memory size in GB for the entire cluster rounded up to
+   * the next integer.
    * </pre>
    *
    * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -250,7 +251,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Redis memory size in GB for the entire cluster.
+   * Output only. Redis memory size in GB for the entire cluster rounded up to
+   * the next integer.
    * </pre>
    *
    * <code>optional int32 size_gb = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -531,4 +533,239 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.Cluster.StateInfoOrBuilder getStateInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of a redis node in the cluster. NodeType determines the
+   * underlying machine-type of a redis node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for nodeType.
+   */
+  int getNodeTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of a redis node in the cluster. NodeType determines the
+   * underlying machine-type of a redis node.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.NodeType node_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeType.
+   */
+  com.google.cloud.redis.cluster.v1.NodeType getNodeType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  boolean hasPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig getPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence config (RDB, AOF) for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ClusterPersistenceConfig persistence_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1.ClusterPersistenceConfigOrBuilder
+      getPersistenceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getRedisConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsRedisConfigs(java.lang.String key);
+  /** Use {@link #getRedisConfigsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getRedisConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getRedisConfigsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Key/Value pairs of customer overrides for mutable Redis Configs
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; redis_configs = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getRedisConfigsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Precise value of redis memory size in GB for the entire
+   * cluster.
+   * </pre>
+   *
+   * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the preciseSizeGb field is set.
+   */
+  boolean hasPreciseSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Precise value of redis memory size in GB for the entire
+   * cluster.
+   * </pre>
+   *
+   * <code>optional double precise_size_gb = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The preciseSizeGb.
+   */
+  double getPreciseSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the zoneDistributionConfig field is set.
+   */
+  boolean hasZoneDistributionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The zoneDistributionConfig.
+   */
+  com.google.cloud.redis.cluster.v1.ZoneDistributionConfig getZoneDistributionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This config will be used to determine how the customer wants us
+   * to distribute cluster resources within the region.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.ZoneDistributionConfig zone_distribution_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1.ZoneDistributionConfigOrBuilder
+      getZoneDistributionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delete operation will fail when the value is set to true.
+   * </pre>
+   *
+   * <code>optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deletionProtectionEnabled field is set.
+   */
+  boolean hasDeletionProtectionEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delete operation will fail when the value is set to true.
+   * </pre>
+   *
+   * <code>optional bool deletion_protection_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deletionProtectionEnabled.
+   */
+  boolean getDeletionProtectionEnabled();
 }

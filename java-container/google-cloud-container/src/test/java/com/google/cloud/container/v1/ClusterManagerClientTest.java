@@ -1657,6 +1657,45 @@ public class ClusterManagerClientTest {
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
+    String parent = "parent-995424086";
+
+    ListOperationsResponse actualResponse = client.listOperations(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOperationsRequest actualRequest = ((ListOperationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOperationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listOperations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOperationsTest2() throws Exception {
+    ListOperationsResponse expectedResponse =
+        ListOperationsResponse.newBuilder()
+            .addAllOperations(new ArrayList<Operation>())
+            .addAllMissingZones(new ArrayList<String>())
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
     String projectId = "projectId-894832108";
     String zone = "zone3744684";
 
@@ -1676,7 +1715,7 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  public void listOperationsExceptionTest() throws Exception {
+  public void listOperationsExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 

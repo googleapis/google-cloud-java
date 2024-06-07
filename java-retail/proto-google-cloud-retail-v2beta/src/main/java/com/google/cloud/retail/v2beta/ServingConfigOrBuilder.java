@@ -1180,6 +1180,20 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
+   * When the flag is enabled, the products in the denylist will not be filtered
+   * out in the recommendation filtering results.
+   * </pre>
+   *
+   * <code>bool ignore_recs_denylist = 24;</code>
+   *
+   * @return The ignoreRecsDenylist.
+   */
+  boolean getIgnoreRecsDenylist();
+
+  /**
+   *
+   *
+   * <pre>
    * The specification for personalization spec.
    *
    * Can only be set if

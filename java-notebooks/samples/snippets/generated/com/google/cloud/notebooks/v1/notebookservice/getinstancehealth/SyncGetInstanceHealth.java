@@ -19,7 +19,6 @@ package com.google.cloud.notebooks.v1.samples;
 // [START notebooks_v1_generated_NotebookService_GetInstanceHealth_sync]
 import com.google.cloud.notebooks.v1.GetInstanceHealthRequest;
 import com.google.cloud.notebooks.v1.GetInstanceHealthResponse;
-import com.google.cloud.notebooks.v1.InstanceName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 
 public class SyncGetInstanceHealth {
@@ -36,9 +35,7 @@ public class SyncGetInstanceHealth {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       GetInstanceHealthRequest request =
-          GetInstanceHealthRequest.newBuilder()
-              .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
-              .build();
+          GetInstanceHealthRequest.newBuilder().setName("name3373707").build();
       GetInstanceHealthResponse response = notebookServiceClient.getInstanceHealth(request);
     }
   }

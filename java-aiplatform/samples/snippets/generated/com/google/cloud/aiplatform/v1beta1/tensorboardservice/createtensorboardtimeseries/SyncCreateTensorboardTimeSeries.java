@@ -20,7 +20,6 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest;
 import com.google.cloud.aiplatform.v1beta1.TensorboardServiceClient;
 import com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries;
-import com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesName;
 
 public class SyncCreateTensorboardTimeSeries {
 
@@ -37,15 +36,7 @@ public class SyncCreateTensorboardTimeSeries {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardTimeSeriesRequest request =
           CreateTensorboardTimeSeriesRequest.newBuilder()
-              .setParent(
-                  TensorboardTimeSeriesName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[TENSORBOARD]",
-                          "[EXPERIMENT]",
-                          "[RUN]",
-                          "[TIME_SERIES]")
-                      .toString())
+              .setParent("parent-995424086")
               .setTensorboardTimeSeriesId("tensorboardTimeSeriesId-913380692")
               .setTensorboardTimeSeries(TensorboardTimeSeries.newBuilder().build())
               .build();

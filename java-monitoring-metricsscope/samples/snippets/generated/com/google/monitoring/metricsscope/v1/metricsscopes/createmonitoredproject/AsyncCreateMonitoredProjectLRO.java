@@ -19,7 +19,6 @@ package com.google.monitoring.metricsscope.v1.samples;
 // [START monitoring_v1_generated_MetricsScopes_CreateMonitoredProject_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest;
-import com.google.monitoring.metricsscope.v1.MetricsScopeName;
 import com.google.monitoring.metricsscope.v1.MetricsScopesClient;
 import com.google.monitoring.metricsscope.v1.MonitoredProject;
 import com.google.monitoring.metricsscope.v1.OperationMetadata;
@@ -39,7 +38,7 @@ public class AsyncCreateMonitoredProjectLRO {
     try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
       CreateMonitoredProjectRequest request =
           CreateMonitoredProjectRequest.newBuilder()
-              .setParent(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+              .setParent("parent-995424086")
               .setMonitoredProject(MonitoredProject.newBuilder().build())
               .build();
       OperationFuture<MonitoredProject, OperationMetadata> future =

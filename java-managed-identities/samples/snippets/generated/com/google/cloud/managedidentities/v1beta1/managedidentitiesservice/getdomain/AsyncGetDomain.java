@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_GetDomain_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.managedidentities.v1beta1.Domain;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.GetDomainRequest;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 
@@ -37,10 +36,7 @@ public class AsyncGetDomain {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
         ManagedIdentitiesServiceClient.create()) {
-      GetDomainRequest request =
-          GetDomainRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-              .build();
+      GetDomainRequest request = GetDomainRequest.newBuilder().setName("name3373707").build();
       ApiFuture<Domain> future =
           managedIdentitiesServiceClient.getDomainCallable().futureCall(request);
       // Do something.

@@ -214,8 +214,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -228,8 +228,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -242,8 +242,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -256,8 +256,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -271,8 +271,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -285,8 +285,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Total number of products associated with a search with this suggestion.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this product count information, reach out to the Retail support
+     * team.
      * </pre>
      *
      * <code>int32 total_product_count = 4;</code>
@@ -562,8 +563,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -579,8 +580,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -597,8 +598,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -614,8 +615,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -631,8 +632,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Facet information for the suggestion term. Gives the number of items
      * resulting from a search with this suggestion term for each facet.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this facet information, reach out to the Retail support team.
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -651,8 +652,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Total number of products associated with a search with this suggestion.
      *
-     * This is an experimental feature for limited customers. Please reach out
-     * to the support team if you would like to receive this information.
+     * This is an experimental feature for limited customers. If you want to
+     * receive this product count information, reach out to the Retail support
+     * team.
      * </pre>
      *
      * <code>int32 total_product_count = 4;</code>
@@ -1619,8 +1621,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1639,8 +1641,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1659,8 +1661,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1679,8 +1681,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1706,8 +1708,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1730,8 +1732,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1756,8 +1758,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1783,8 +1785,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1807,8 +1809,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1831,8 +1833,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1856,8 +1858,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1879,8 +1881,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1902,8 +1904,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1919,8 +1921,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1940,8 +1942,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1961,8 +1963,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1978,8 +1980,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -1997,8 +1999,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * Facet information for the suggestion term. Gives the number of items
        * resulting from a search with this suggestion term for each facet.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this facet information, reach out to the Retail support team.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 3;</code>
@@ -2032,8 +2034,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Total number of products associated with a search with this suggestion.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this product count information, reach out to the Retail support
+       * team.
        * </pre>
        *
        * <code>int32 total_product_count = 4;</code>
@@ -2050,8 +2053,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Total number of products associated with a search with this suggestion.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this product count information, reach out to the Retail support
+       * team.
        * </pre>
        *
        * <code>int32 total_product_count = 4;</code>
@@ -2072,8 +2076,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Total number of products associated with a search with this suggestion.
        *
-       * This is an experimental feature for limited customers. Please reach out
-       * to the support team if you would like to receive this information.
+       * This is an experimental feature for limited customers. If you want to
+       * receive this product count information, reach out to the Retail support
+       * team.
        * </pre>
        *
        * <code>int32 total_product_count = 4;</code>
@@ -2155,6 +2160,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
   }
 
+  @java.lang.Deprecated
   public interface RecentSearchResultOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult)
@@ -2189,11 +2195,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Recent search of this user.
+   * Deprecated: Recent search of this user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult}
    */
+  @java.lang.Deprecated
   public static final class RecentSearchResult extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult)
@@ -2453,7 +2460,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Recent search of this user.
+     * Deprecated: Recent search of this user.
      * </pre>
      *
      * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult}
@@ -3755,9 +3762,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -3779,10 +3786,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult>
       getRecentSearchResultsList() {
     return recentSearchResults_;
@@ -3791,9 +3799,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -3815,10 +3823,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<
           ? extends
               com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResultOrBuilder>
@@ -3829,9 +3838,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -3853,10 +3862,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getRecentSearchResultsCount() {
     return recentSearchResults_.size();
   }
@@ -3864,9 +3874,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -3888,10 +3898,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult
       getRecentSearchResults(int index) {
     return recentSearchResults_.get(index);
@@ -3900,9 +3911,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -3924,10 +3935,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResultOrBuilder
       getRecentSearchResultsOrBuilder(int index) {
     return recentSearchResults_.get(index);
@@ -5223,9 +5235,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5247,9 +5259,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult>
         getRecentSearchResultsList() {
       if (recentSearchResultsBuilder_ == null) {
@@ -5262,9 +5275,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5286,9 +5299,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public int getRecentSearchResultsCount() {
       if (recentSearchResultsBuilder_ == null) {
         return recentSearchResults_.size();
@@ -5300,9 +5314,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5324,9 +5338,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult
         getRecentSearchResults(int index) {
       if (recentSearchResultsBuilder_ == null) {
@@ -5339,9 +5354,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5363,9 +5378,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRecentSearchResults(
         int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult value) {
       if (recentSearchResultsBuilder_ == null) {
@@ -5384,9 +5400,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5408,9 +5424,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRecentSearchResults(
         int index,
         com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
@@ -5428,9 +5445,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5452,9 +5469,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addRecentSearchResults(
         com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult value) {
       if (recentSearchResultsBuilder_ == null) {
@@ -5473,9 +5491,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5497,9 +5515,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addRecentSearchResults(
         int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult value) {
       if (recentSearchResultsBuilder_ == null) {
@@ -5518,9 +5537,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5542,9 +5561,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addRecentSearchResults(
         com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
             builderForValue) {
@@ -5561,9 +5581,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5585,9 +5605,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addRecentSearchResults(
         int index,
         com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
@@ -5605,9 +5626,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5629,9 +5650,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllRecentSearchResults(
         java.lang.Iterable<
                 ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult>
@@ -5649,9 +5671,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5673,9 +5695,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRecentSearchResults() {
       if (recentSearchResultsBuilder_ == null) {
         recentSearchResults_ = java.util.Collections.emptyList();
@@ -5690,9 +5713,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5714,9 +5737,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder removeRecentSearchResults(int index) {
       if (recentSearchResultsBuilder_ == null) {
         ensureRecentSearchResultsIsMutable();
@@ -5731,9 +5755,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5755,9 +5779,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
         getRecentSearchResultsBuilder(int index) {
       return getRecentSearchResultsFieldBuilder().getBuilder(index);
@@ -5766,9 +5791,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5790,9 +5815,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResultOrBuilder
         getRecentSearchResultsOrBuilder(int index) {
       if (recentSearchResultsBuilder_ == null) {
@@ -5805,9 +5831,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5829,9 +5855,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<
             ? extends
                 com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResultOrBuilder>
@@ -5846,9 +5873,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5870,9 +5897,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
         addRecentSearchResultsBuilder() {
       return getRecentSearchResultsFieldBuilder()
@@ -5884,9 +5912,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5908,9 +5936,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder
         addRecentSearchResultsBuilder(int index) {
       return getRecentSearchResultsFieldBuilder()
@@ -5923,9 +5952,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Matched recent searches of this user. The maximum number of recent searches
-     * is 10. This field is a restricted feature. Contact Retail Search support
-     * team if you are interested in enabling it.
+     * Deprecated. Matched recent searches of this user. The maximum number of
+     * recent searches is 10. This field is a restricted feature. If you want to
+     * enable it, contact Retail Search support.
      *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
@@ -5947,9 +5976,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<
             com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResult.Builder>
         getRecentSearchResultsBuilderList() {

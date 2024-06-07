@@ -19,7 +19,6 @@ package com.google.analytics.admin.v1alpha.samples;
 // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_ArchiveAudience_sync]
 import com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient;
 import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
-import com.google.analytics.admin.v1alpha.PropertyName;
 import com.google.protobuf.Empty;
 
 public class SyncArchiveAudience {
@@ -37,9 +36,7 @@ public class SyncArchiveAudience {
     try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
         AnalyticsAdminServiceClient.create()) {
       ArchiveAudienceRequest request =
-          ArchiveAudienceRequest.newBuilder()
-              .setName(PropertyName.of("[PROPERTY]").toString())
-              .build();
+          ArchiveAudienceRequest.newBuilder().setName("name3373707").build();
       analyticsAdminServiceClient.archiveAudience(request);
     }
   }

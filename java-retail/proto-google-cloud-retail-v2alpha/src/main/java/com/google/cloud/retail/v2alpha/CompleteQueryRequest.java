@@ -551,10 +551,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The entity for customers that may run multiple different entities, domains,
-   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * The entity for customers who run multiple entities, domains, sites, or
+   * regions, for example, `Google US`, `Google Ads`, `Waymo`,
    * `google.com`, `youtube.com`, etc.
-   * If this is set, it should be exactly matched with
+   * If this is set, it must be an exact match with
    * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
    * per-entity autocomplete results.
    * </pre>
@@ -579,10 +579,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The entity for customers that may run multiple different entities, domains,
-   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * The entity for customers who run multiple entities, domains, sites, or
+   * regions, for example, `Google US`, `Google Ads`, `Waymo`,
    * `google.com`, `youtube.com`, etc.
-   * If this is set, it should be exactly matched with
+   * If this is set, it must be an exact match with
    * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
    * per-entity autocomplete results.
    * </pre>
@@ -2256,10 +2256,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The entity for customers that may run multiple different entities, domains,
-     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * The entity for customers who run multiple entities, domains, sites, or
+     * regions, for example, `Google US`, `Google Ads`, `Waymo`,
      * `google.com`, `youtube.com`, etc.
-     * If this is set, it should be exactly matched with
+     * If this is set, it must be an exact match with
      * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
      * per-entity autocomplete results.
      * </pre>
@@ -2283,10 +2283,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The entity for customers that may run multiple different entities, domains,
-     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * The entity for customers who run multiple entities, domains, sites, or
+     * regions, for example, `Google US`, `Google Ads`, `Waymo`,
      * `google.com`, `youtube.com`, etc.
-     * If this is set, it should be exactly matched with
+     * If this is set, it must be an exact match with
      * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
      * per-entity autocomplete results.
      * </pre>
@@ -2310,10 +2310,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The entity for customers that may run multiple different entities, domains,
-     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * The entity for customers who run multiple entities, domains, sites, or
+     * regions, for example, `Google US`, `Google Ads`, `Waymo`,
      * `google.com`, `youtube.com`, etc.
-     * If this is set, it should be exactly matched with
+     * If this is set, it must be an exact match with
      * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
      * per-entity autocomplete results.
      * </pre>
@@ -2336,10 +2336,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The entity for customers that may run multiple different entities, domains,
-     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * The entity for customers who run multiple entities, domains, sites, or
+     * regions, for example, `Google US`, `Google Ads`, `Waymo`,
      * `google.com`, `youtube.com`, etc.
-     * If this is set, it should be exactly matched with
+     * If this is set, it must be an exact match with
      * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
      * per-entity autocomplete results.
      * </pre>
@@ -2358,10 +2358,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The entity for customers that may run multiple different entities, domains,
-     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * The entity for customers who run multiple entities, domains, sites, or
+     * regions, for example, `Google US`, `Google Ads`, `Waymo`,
      * `google.com`, `youtube.com`, etc.
-     * If this is set, it should be exactly matched with
+     * If this is set, it must be an exact match with
      * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
      * per-entity autocomplete results.
      * </pre>

@@ -19,7 +19,6 @@ package com.google.cloud.tpu.v1.samples;
 // [START tpu_v1_generated_Tpu_GetTensorFlowVersion_sync]
 import com.google.cloud.tpu.v1.GetTensorFlowVersionRequest;
 import com.google.cloud.tpu.v1.TensorFlowVersion;
-import com.google.cloud.tpu.v1.TensorFlowVersionName;
 import com.google.cloud.tpu.v1.TpuClient;
 
 public class SyncGetTensorFlowVersion {
@@ -36,11 +35,7 @@ public class SyncGetTensorFlowVersion {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
       GetTensorFlowVersionRequest request =
-          GetTensorFlowVersionRequest.newBuilder()
-              .setName(
-                  TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]")
-                      .toString())
-              .build();
+          GetTensorFlowVersionRequest.newBuilder().setName("name3373707").build();
       TensorFlowVersion response = tpuClient.getTensorFlowVersion(request);
     }
   }

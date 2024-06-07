@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1.samples;
 
 // [START managedidentities_v1_generated_ManagedIdentitiesService_ValidateTrust_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.managedidentities.v1.DomainName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1.Trust;
 import com.google.cloud.managedidentities.v1.ValidateTrustRequest;
@@ -40,7 +39,7 @@ public class AsyncValidateTrust {
         ManagedIdentitiesServiceClient.create()) {
       ValidateTrustRequest request =
           ValidateTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTrust(Trust.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

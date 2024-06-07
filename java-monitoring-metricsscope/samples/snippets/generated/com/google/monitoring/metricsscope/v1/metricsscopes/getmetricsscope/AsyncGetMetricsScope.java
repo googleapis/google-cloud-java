@@ -20,7 +20,6 @@ package com.google.monitoring.metricsscope.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest;
 import com.google.monitoring.metricsscope.v1.MetricsScope;
-import com.google.monitoring.metricsscope.v1.MetricsScopeName;
 import com.google.monitoring.metricsscope.v1.MetricsScopesClient;
 
 public class AsyncGetMetricsScope {
@@ -37,9 +36,7 @@ public class AsyncGetMetricsScope {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (MetricsScopesClient metricsScopesClient = MetricsScopesClient.create()) {
       GetMetricsScopeRequest request =
-          GetMetricsScopeRequest.newBuilder()
-              .setName(MetricsScopeName.of("[METRICS_SCOPE]").toString())
-              .build();
+          GetMetricsScopeRequest.newBuilder().setName("name3373707").build();
       ApiFuture<MetricsScope> future =
           metricsScopesClient.getMetricsScopeCallable().futureCall(request);
       // Do something.

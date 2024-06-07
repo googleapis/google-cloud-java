@@ -2811,7 +2811,7 @@ public class DlpServiceClientHttpJsonTest {
   public void activateJobTriggerTest() throws Exception {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
-            .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setName("name3373707")
             .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())

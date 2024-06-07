@@ -33,7 +33,7 @@ public interface SearchRequestOrBuilder
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving config name and the set
-   * of models that will be used to make the search.
+   * of models that are used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50,7 +50,7 @@ public interface SearchRequestOrBuilder
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving config name and the set
-   * of models that will be used to make the search.
+   * of models that are used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -290,8 +290,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+   * expression is case-sensitive. For more information, see
+   * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -307,8 +307,8 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
+   * expression is case-sensitive. For more information, see
+   * [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -327,14 +327,14 @@ public interface SearchRequestOrBuilder
    * checking any filters on the search page.
    *
    * The filter applied to every search request when quality improvement such as
-   * query expansion is needed. For example, if a query does not have enough
-   * results, an expanded query with
-   * [SearchRequest.canonical_filter][google.cloud.retail.v2beta.SearchRequest.canonical_filter]
-   * will be returned as a supplement of the original query. This field is
-   * strongly recommended to achieve high search quality.
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
    *
-   * See [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter]
-   * for more details about filter syntax.
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter].
    * </pre>
    *
    * <code>string canonical_filter = 28;</code>
@@ -350,14 +350,14 @@ public interface SearchRequestOrBuilder
    * checking any filters on the search page.
    *
    * The filter applied to every search request when quality improvement such as
-   * query expansion is needed. For example, if a query does not have enough
-   * results, an expanded query with
-   * [SearchRequest.canonical_filter][google.cloud.retail.v2beta.SearchRequest.canonical_filter]
-   * will be returned as a supplement of the original query. This field is
-   * strongly recommended to achieve high search quality.
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
    *
-   * See [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter]
-   * for more details about filter syntax.
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter].
    * </pre>
    *
    * <code>string canonical_filter = 28;</code>
@@ -372,9 +372,9 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2beta.Product] object. Leave
-   * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+   * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+   * more information, see
+   * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -390,9 +390,9 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2beta.Product] object. Leave
-   * it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
+   * it unset if ordered by relevance. OrderBy expression is case-sensitive. For
+   * more information, see
+   * [Order](https://cloud.google.com/retail/docs/filter-and-order#order).
    *
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
@@ -535,8 +535,8 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
@@ -556,8 +556,8 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
@@ -577,8 +577,8 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Boost specification to boost certain products. For more information, see
+   * [Boost results](https://cloud.google.com/retail/docs/boosting).
    *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
@@ -598,8 +598,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -613,8 +613,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -628,8 +628,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
+   * query expansion occurs. For more information, see [Query
+   * expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;
@@ -1171,9 +1171,9 @@ public interface SearchRequestOrBuilder
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -1197,9 +1197,9 @@ public interface SearchRequestOrBuilder
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -1226,9 +1226,9 @@ public interface SearchRequestOrBuilder
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -1252,9 +1252,9 @@ public interface SearchRequestOrBuilder
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
@@ -1282,9 +1282,9 @@ public interface SearchRequestOrBuilder
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
    *
-   * See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
-   * for more details.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * in the Resource Manager documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>

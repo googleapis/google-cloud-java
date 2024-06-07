@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.cloud.notebooks.v1.DiagnoseInstanceRequest;
 import com.google.cloud.notebooks.v1.DiagnosticConfig;
 import com.google.cloud.notebooks.v1.Instance;
-import com.google.cloud.notebooks.v1.InstanceName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 
 public class SyncDiagnoseInstance {
@@ -38,7 +37,7 @@ public class SyncDiagnoseInstance {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DiagnoseInstanceRequest request =
           DiagnoseInstanceRequest.newBuilder()
-              .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+              .setName("name3373707")
               .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
               .build();
       Instance response = notebookServiceClient.diagnoseInstanceAsync(request).get();

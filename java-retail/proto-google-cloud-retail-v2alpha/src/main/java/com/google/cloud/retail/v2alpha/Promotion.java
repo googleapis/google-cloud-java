@@ -78,8 +78,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
    * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    *
-   * Google Merchant Center property
-   * [promotion](https://support.google.com/merchants/answer/7050148).
+   * Corresponds to Google Merchant Center property
+   * [promotion_id](https://support.google.com/merchants/answer/7050148).
    * </pre>
    *
    * <code>string promotion_id = 1;</code>
@@ -109,8 +109,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
    * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    *
-   * Google Merchant Center property
-   * [promotion](https://support.google.com/merchants/answer/7050148).
+   * Corresponds to Google Merchant Center property
+   * [promotion_id](https://support.google.com/merchants/answer/7050148).
    * </pre>
    *
    * <code>string promotion_id = 1;</code>
@@ -483,8 +483,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      *
-     * Google Merchant Center property
-     * [promotion](https://support.google.com/merchants/answer/7050148).
+     * Corresponds to Google Merchant Center property
+     * [promotion_id](https://support.google.com/merchants/answer/7050148).
      * </pre>
      *
      * <code>string promotion_id = 1;</code>
@@ -513,8 +513,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      *
-     * Google Merchant Center property
-     * [promotion](https://support.google.com/merchants/answer/7050148).
+     * Corresponds to Google Merchant Center property
+     * [promotion_id](https://support.google.com/merchants/answer/7050148).
      * </pre>
      *
      * <code>string promotion_id = 1;</code>
@@ -543,8 +543,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      *
-     * Google Merchant Center property
-     * [promotion](https://support.google.com/merchants/answer/7050148).
+     * Corresponds to Google Merchant Center property
+     * [promotion_id](https://support.google.com/merchants/answer/7050148).
      * </pre>
      *
      * <code>string promotion_id = 1;</code>
@@ -572,8 +572,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      *
-     * Google Merchant Center property
-     * [promotion](https://support.google.com/merchants/answer/7050148).
+     * Corresponds to Google Merchant Center property
+     * [promotion_id](https://support.google.com/merchants/answer/7050148).
      * </pre>
      *
      * <code>string promotion_id = 1;</code>
@@ -597,8 +597,8 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      *
-     * Google Merchant Center property
-     * [promotion](https://support.google.com/merchants/answer/7050148).
+     * Corresponds to Google Merchant Center property
+     * [promotion_id](https://support.google.com/merchants/answer/7050148).
      * </pre>
      *
      * <code>string promotion_id = 1;</code>

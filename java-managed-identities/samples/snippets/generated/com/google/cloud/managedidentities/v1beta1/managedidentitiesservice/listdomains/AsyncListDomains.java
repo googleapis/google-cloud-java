@@ -20,7 +20,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.managedidentities.v1beta1.Domain;
 import com.google.cloud.managedidentities.v1beta1.ListDomainsRequest;
-import com.google.cloud.managedidentities.v1beta1.LocationName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 
 public class AsyncListDomains {
@@ -39,7 +38,7 @@ public class AsyncListDomains {
         ManagedIdentitiesServiceClient.create()) {
       ListDomainsRequest request =
           ListDomainsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

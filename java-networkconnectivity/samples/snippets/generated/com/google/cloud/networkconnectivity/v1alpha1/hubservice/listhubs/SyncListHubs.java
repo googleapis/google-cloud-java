@@ -20,7 +20,6 @@ package com.google.cloud.networkconnectivity.v1alpha1.samples;
 import com.google.cloud.networkconnectivity.v1alpha1.Hub;
 import com.google.cloud.networkconnectivity.v1alpha1.HubServiceClient;
 import com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest;
-import com.google.cloud.networkconnectivity.v1alpha1.LocationName;
 
 public class SyncListHubs {
 
@@ -37,7 +36,7 @@ public class SyncListHubs {
     try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
       ListHubsRequest request =
           ListHubsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

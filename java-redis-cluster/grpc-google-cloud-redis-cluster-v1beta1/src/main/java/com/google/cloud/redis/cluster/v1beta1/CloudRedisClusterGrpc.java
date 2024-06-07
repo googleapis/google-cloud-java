@@ -283,6 +283,61 @@ public final class CloudRedisClusterGrpc {
     return getCreateClusterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest,
+          com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+      getGetClusterCertificateAuthorityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetClusterCertificateAuthority",
+      requestType =
+          com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.CertificateAuthority.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest,
+          com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+      getGetClusterCertificateAuthorityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest,
+            com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+        getGetClusterCertificateAuthorityMethod;
+    if ((getGetClusterCertificateAuthorityMethod =
+            CloudRedisClusterGrpc.getGetClusterCertificateAuthorityMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetClusterCertificateAuthorityMethod =
+                CloudRedisClusterGrpc.getGetClusterCertificateAuthorityMethod)
+            == null) {
+          CloudRedisClusterGrpc.getGetClusterCertificateAuthorityMethod =
+              getGetClusterCertificateAuthorityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1
+                              .GetClusterCertificateAuthorityRequest,
+                          com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetClusterCertificateAuthority"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1
+                                  .GetClusterCertificateAuthorityRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.CertificateAuthority
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier(
+                              "GetClusterCertificateAuthority"))
+                      .build();
+        }
+      }
+    }
+    return getGetClusterCertificateAuthorityMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisClusterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterStub> factory =
@@ -433,6 +488,21 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of certificate authority information for Redis cluster.
+     * </pre>
+     */
+    default void getClusterCertificateAuthority(
+        com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetClusterCertificateAuthorityMethod(), responseObserver);
     }
   }
 
@@ -597,6 +667,23 @@ public final class CloudRedisClusterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of certificate authority information for Redis cluster.
+     * </pre>
+     */
+    public void getClusterCertificateAuthority(
+        com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetClusterCertificateAuthorityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -713,6 +800,20 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of certificate authority information for Redis cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.CertificateAuthority
+        getClusterCertificateAuthority(
+            com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
     }
   }
 
@@ -832,6 +933,22 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of certificate authority information for Redis cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>
+        getClusterCertificateAuthority(
+            com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetClusterCertificateAuthorityMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -839,6 +956,7 @@ public final class CloudRedisClusterGrpc {
   private static final int METHODID_UPDATE_CLUSTER = 2;
   private static final int METHODID_DELETE_CLUSTER = 3;
   private static final int METHODID_CREATE_CLUSTER = 4;
+  private static final int METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -884,6 +1002,14 @@ public final class CloudRedisClusterGrpc {
           serviceImpl.createCluster(
               (com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY:
+          serviceImpl.getClusterCertificateAuthority(
+              (com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -934,6 +1060,13 @@ public final class CloudRedisClusterGrpc {
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_CLUSTER)))
+        .addMethod(
+            getGetClusterCertificateAuthorityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest,
+                    com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>(
+                    service, METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY)))
         .build();
   }
 
@@ -990,6 +1123,7 @@ public final class CloudRedisClusterGrpc {
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getCreateClusterMethod())
+                      .addMethod(getGetClusterCertificateAuthorityMethod())
                       .build();
         }
       }

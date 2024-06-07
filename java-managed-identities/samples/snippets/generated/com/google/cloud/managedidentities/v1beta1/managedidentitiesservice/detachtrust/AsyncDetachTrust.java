@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_DetachTrust_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.managedidentities.v1beta1.DetachTrustRequest;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.Trust;
 import com.google.longrunning.Operation;
@@ -40,7 +39,7 @@ public class AsyncDetachTrust {
         ManagedIdentitiesServiceClient.create()) {
       DetachTrustRequest request =
           DetachTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTrust(Trust.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

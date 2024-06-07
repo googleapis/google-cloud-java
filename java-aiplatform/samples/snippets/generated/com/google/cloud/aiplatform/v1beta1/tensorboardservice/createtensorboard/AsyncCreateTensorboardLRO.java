@@ -21,7 +21,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
 import com.google.cloud.aiplatform.v1beta1.Tensorboard;
-import com.google.cloud.aiplatform.v1beta1.TensorboardName;
 import com.google.cloud.aiplatform.v1beta1.TensorboardServiceClient;
 
 public class AsyncCreateTensorboardLRO {
@@ -39,7 +38,7 @@ public class AsyncCreateTensorboardLRO {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardRequest request =
           CreateTensorboardRequest.newBuilder()
-              .setParent(TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+              .setParent("parent-995424086")
               .setTensorboard(Tensorboard.newBuilder().build())
               .build();
       OperationFuture<Tensorboard, CreateTensorboardOperationMetadata> future =

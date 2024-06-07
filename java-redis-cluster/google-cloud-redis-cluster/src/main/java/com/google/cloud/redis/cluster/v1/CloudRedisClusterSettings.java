@@ -127,6 +127,13 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     return ((CloudRedisClusterStubSettings) getStubSettings()).createClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getClusterCertificateAuthority. */
+  public UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthoritySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .getClusterCertificateAuthoritySettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -293,6 +300,12 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getClusterCertificateAuthority. */
+    public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthoritySettings() {
+      return getStubSettingsBuilder().getClusterCertificateAuthoritySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

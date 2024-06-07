@@ -18,7 +18,6 @@ package com.google.cloud.billing.budgets.v1beta1.samples;
 
 // [START billingbudgets_v1beta1_generated_BudgetService_ListBudgets_sync]
 import com.google.cloud.billing.budgets.v1beta1.Budget;
-import com.google.cloud.billing.budgets.v1beta1.BudgetName;
 import com.google.cloud.billing.budgets.v1beta1.BudgetServiceClient;
 import com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest;
 
@@ -37,7 +36,7 @@ public class SyncListBudgets {
     try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
       ListBudgetsRequest request =
           ListBudgetsRequest.newBuilder()
-              .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+              .setParent("parent-995424086")
               .setScope("scope109264468")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

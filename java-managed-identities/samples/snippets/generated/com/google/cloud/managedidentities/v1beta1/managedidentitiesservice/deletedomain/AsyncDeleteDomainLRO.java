@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_DeleteDomain_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.OpMetadata;
 import com.google.protobuf.Empty;
@@ -38,10 +37,7 @@ public class AsyncDeleteDomainLRO {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
         ManagedIdentitiesServiceClient.create()) {
-      DeleteDomainRequest request =
-          DeleteDomainRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-              .build();
+      DeleteDomainRequest request = DeleteDomainRequest.newBuilder().setName("name3373707").build();
       OperationFuture<Empty, OpMetadata> future =
           managedIdentitiesServiceClient.deleteDomainOperationCallable().futureCall(request);
       // Do something.

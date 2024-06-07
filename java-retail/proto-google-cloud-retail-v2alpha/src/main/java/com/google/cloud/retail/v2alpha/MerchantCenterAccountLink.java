@@ -24,8 +24,8 @@ package com.google.cloud.retail.v2alpha;
  *
  * <pre>
  * Represents a link between a Merchant Center account and a branch.
- * Once a link is established, products from the linked merchant center account
- * will be streamed to the linked branch.
+ * After a link is established, products from the linked Merchant Center account
+ * are streamed to the linked branch.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.MerchantCenterAccountLink}
@@ -49,6 +49,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     feedFilters_ = java.util.Collections.emptyList();
     state_ = 0;
     projectId_ = "";
+    source_ = "";
   }
 
   @java.lang.Override
@@ -1201,12 +1202,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+   * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1229,12 +1230,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+   * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1529,7 +1530,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. GCP project ID.
+   * Output only. Google Cloud project ID.
    * </pre>
    *
    * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1552,7 +1553,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. GCP project ID.
+   * Output only. Google Cloud project ID.
    * </pre>
    *
    * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1566,6 +1567,59 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional arbitrary string that could be used as a tag for
+   * tracking link source.
+   * </pre>
+   *
+   * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The source.
+   */
+  @java.lang.Override
+  public java.lang.String getSource() {
+    java.lang.Object ref = source_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      source_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional arbitrary string that could be used as a tag for
+   * tracking link source.
+   * </pre>
+   *
+   * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for source.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceBytes() {
+    java.lang.Object ref = source_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      source_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1615,6 +1669,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, projectId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1653,6 +1710,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, projectId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(source_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1678,6 +1738,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     if (!getFeedFiltersList().equals(other.getFeedFiltersList())) return false;
     if (state_ != other.state_) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getSource().equals(other.getSource())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1709,6 +1770,8 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     hash = (53 * hash) + state_;
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getSource().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1815,8 +1878,8 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    *
    * <pre>
    * Represents a link between a Merchant Center account and a branch.
-   * Once a link is established, products from the linked merchant center account
-   * will be streamed to the linked branch.
+   * After a link is established, products from the linked Merchant Center account
+   * are streamed to the linked branch.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.MerchantCenterAccountLink}
@@ -1866,6 +1929,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       projectId_ = "";
+      source_ = "";
       return this;
     }
 
@@ -1939,6 +2003,9 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.source_ = source_;
       }
     }
 
@@ -2051,6 +2118,11 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getSource().isEmpty()) {
+        source_ = other.source_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2141,6 +2213,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                source_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2496,12 +2574,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+     * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2523,12 +2601,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+     * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2550,12 +2628,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+     * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2576,12 +2654,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+     * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2598,12 +2676,12 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The branch id (e.g. 0/1/2) within the catalog that products from
+     * Required. The branch ID (e.g. 0/1/2) within the catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3468,7 +3546,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. GCP project ID.
+     * Output only. Google Cloud project ID.
      * </pre>
      *
      * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3490,7 +3568,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. GCP project ID.
+     * Output only. Google Cloud project ID.
      * </pre>
      *
      * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3512,7 +3590,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. GCP project ID.
+     * Output only. Google Cloud project ID.
      * </pre>
      *
      * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3533,7 +3611,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. GCP project ID.
+     * Output only. Google Cloud project ID.
      * </pre>
      *
      * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3550,7 +3628,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. GCP project ID.
+     * Output only. Google Cloud project ID.
      * </pre>
      *
      * <code>string project_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3565,6 +3643,117 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       projectId_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object source_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional arbitrary string that could be used as a tag for
+     * tracking link source.
+     * </pre>
+     *
+     * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The source.
+     */
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional arbitrary string that could be used as a tag for
+     * tracking link source.
+     * </pre>
+     *
+     * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for source.
+     */
+    public com.google.protobuf.ByteString getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional arbitrary string that could be used as a tag for
+     * tracking link source.
+     * </pre>
+     *
+     * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The source to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      source_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional arbitrary string that could be used as a tag for
+     * tracking link source.
+     * </pre>
+     *
+     * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSource() {
+      source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional arbitrary string that could be used as a tag for
+     * tracking link source.
+     * </pre>
+     *
+     * <code>string source = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for source to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      source_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

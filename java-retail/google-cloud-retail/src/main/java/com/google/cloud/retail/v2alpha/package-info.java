@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Retail API
+ * A client to Vertex AI Search for Retail API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -41,6 +41,29 @@
  *           .build();
  *   ExportAnalyticsMetricsResponse response =
  *       analyticsServiceClient.exportAnalyticsMetricsAsync(request).get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= BranchServiceClient =======================
+ *
+ * <p>Service Description: Service for [Branch][google.cloud.retail.v2alpha.Branch] Management
+ *
+ * <p>[Branch][google.cloud.retail.v2alpha.Branch]es are automatically created when a
+ * [Catalog][google.cloud.retail.v2alpha.Catalog] is created. There are fixed three branches in each
+ * catalog, and may use [ListBranches][google.cloud.retail.v2alpha.BranchService.ListBranches]
+ * method to get the details of all branches.
+ *
+ * <p>Sample for BranchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BranchServiceClient branchServiceClient = BranchServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   ListBranchesResponse response = branchServiceClient.listBranches(parent);
  * }
  * }</pre>
  *
@@ -212,6 +235,24 @@
  *   Product product = Product.newBuilder().build();
  *   String productId = "productId-1051830678";
  *   Product response = productServiceClient.createProduct(parent, product, productId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ProjectServiceClient =======================
+ *
+ * <p>Service Description: Service for settings at Project level.
+ *
+ * <p>Sample for ProjectServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectServiceClient projectServiceClient = ProjectServiceClient.create()) {
+ *   RetailProjectName name = RetailProjectName.of("[PROJECT]");
+ *   Project response = projectServiceClient.getProject(name);
  * }
  * }</pre>
  *
