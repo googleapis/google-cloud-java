@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 (None)
+
+* No change
+
+
 ## 0.3.0 (2024-05-23)
 
 ### Features
