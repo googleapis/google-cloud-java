@@ -63,42 +63,43 @@ public class HttpJsonLlmUtilityServiceStub extends LlmUtilityServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
   private static final ApiMethodDescriptor<CountTokensRequest, CountTokensResponse>
+      // TODO(b/317255628): switch back to the google.cloud.aiplatform.v1.LlmUtilityServiceClient
       countTokensMethodDescriptor =
-          ApiMethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1.LlmUtilityService/CountTokens")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CountTokensRequest>newBuilder()
-                      .setPath(
-                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:countTokens",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CountTokensRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "endpoint", request.getEndpoint());
-                            return fields;
-                          })
-                      .setAdditionalPaths(
-                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:countTokens")
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CountTokensRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<CountTokensResponse>newBuilder()
-                      .setDefaultInstance(CountTokensResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
+      ApiMethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<CountTokensRequest>newBuilder()
+                  .setPath(
+                      "/v1/{endpoint=projects/*/locations/*/endpoints/*}:countTokens",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<CountTokensRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "endpoint", request.getEndpoint());
+                        return fields;
+                      })
+                  .setAdditionalPaths(
+                      "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:countTokens")
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<CountTokensRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearEndpoint().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<CountTokensResponse>newBuilder()
+                  .setDefaultInstance(CountTokensResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
 
   private static final ApiMethodDescriptor<ComputeTokensRequest, ComputeTokensResponse>
       computeTokensMethodDescriptor =

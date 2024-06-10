@@ -28,6 +28,7 @@ import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FunctionCall;
 import com.google.cloud.vertexai.api.FunctionDeclaration;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
@@ -40,8 +41,11 @@ import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
 import com.google.cloud.vertexai.api.Schema;
 import com.google.cloud.vertexai.api.Tool;
 import com.google.cloud.vertexai.api.Type;
+import com.google.protobuf.Struct;
+import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.Before;
@@ -58,6 +62,10 @@ import org.mockito.junit.MockitoRule;
 public final class ChatSessionTest {
   private static final String PROJECT = "test_project";
   private static final String LOCATION = "test_location";
+
+  private static final String FUNCTION_CALL_MESSAGE = "What is the current weather in Boston?";
+  private static final String FUNCTION_CALL_NAME = "getCurrentWeather";
+  private static final String FUNCTION_CALL_PARAMETER_NAME = "location";
 
   private static final String SAMPLE_MESSAGE1 = "how are you?";
   private static final String RESPONSE_STREAM_CHUNK1_TEXT = "I do not have any feelings";
@@ -117,6 +125,30 @@ public final class ChatSessionTest {
                   .setContent(
                       Content.newBuilder().addParts(Part.newBuilder().setText(FULL_RESPONSE_TEXT))))
           .build();
+  private static final GenerateContentResponse RESPONSE_WITH_FUNCTION_CALL =
+      GenerateContentResponse.newBuilder()
+          .addCandidates(
+              Candidate.newBuilder()
+                  .setFinishReason(FinishReason.STOP)
+                  .setContent(
+                      Content.newBuilder()
+                          .addParts(
+                              Part.newBuilder()
+                                  .setFunctionCall(
+                                      FunctionCall.newBuilder()
+                                          .setName(FUNCTION_CALL_NAME)
+                                          .setArgs(
+                                              Struct.newBuilder()
+                                                  .putFields(
+                                                      FUNCTION_CALL_PARAMETER_NAME,
+                                                      Value.newBuilder()
+                                                          .setStringValue("Boston")
+                                                          .build()))))))
+          .build();
+  private static final Content FUNCTION_RESPONSE_CONTENT =
+      ContentMaker.fromMultiModalData(
+          PartMaker.fromFunctionResponse(
+              FUNCTION_CALL_NAME, Collections.singletonMap("result", "snowing")));
 
   private static final GenerationConfig GENERATION_CONFIG =
       GenerationConfig.newBuilder().setCandidateCount(1).build();
@@ -155,6 +187,17 @@ public final class ChatSessionTest {
   @Mock private GenerateContentResponse mockGenerateContentResponse;
 
   private ChatSession chat;
+
+  /** Callable function getCurrentWeather for testing automatic function calling. */
+  public static String getCurrentWeather(String location) {
+    if (location.equals("Boston")) {
+      return "snowing";
+    } else if (location.equals("Vancouver")) {
+      return "raining";
+    } else {
+      return "sunny";
+    }
+  }
 
   @Before
   public void doBeforeEachTest() {
@@ -295,6 +338,151 @@ public final class ChatSessionTest {
 
     // (Act & Assert) get history and assert IllegalStateException for not having the right finish
     // reason.
+    IllegalStateException thrown =
+        assertThrows(IllegalStateException.class, () -> chat.getHistory());
+    assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");
+    // Assert that the history can be fetched again and it's empty.
+    List<Content> history = chat.getHistory();
+    assertThat(history.size()).isEqualTo(0);
+  }
+
+  @Test
+  public void sendMessageWithAutomaticFunctionCallingResponder_autoRespondsToFunctionCalls()
+      throws IOException, NoSuchMethodException {
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(FUNCTION_CALL_MESSAGE))))
+        .thenReturn(RESPONSE_WITH_FUNCTION_CALL);
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(
+                ContentMaker.fromString(FUNCTION_CALL_MESSAGE),
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT)))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL);
+
+    // (Act) Send text message via sendMessage
+    AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
+    responder.addCallableFunction(
+        FUNCTION_CALL_NAME,
+        ChatSessionTest.class.getMethod(FUNCTION_CALL_NAME, String.class),
+        FUNCTION_CALL_PARAMETER_NAME);
+    GenerateContentResponse response =
+        chat.withAutomaticFunctionCallingResponder(responder).sendMessage(FUNCTION_CALL_MESSAGE);
+
+    // (Act & Assert) get history and assert that the history contains 4 contents and the response
+    // is the final response instead of the intermediate one.
+    assertThat(chat.getHistory().size()).isEqualTo(4);
+    assertThat(response).isEqualTo(RESPONSE_FROM_UNARY_CALL);
+  }
+
+  @Test
+  public void sendMessageWithAutomaticFunctionCallingResponderIOException_chatHistoryGetReverted()
+      throws IOException, NoSuchMethodException {
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(FUNCTION_CALL_MESSAGE))))
+        .thenReturn(RESPONSE_WITH_FUNCTION_CALL);
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(
+                ContentMaker.fromString(FUNCTION_CALL_MESSAGE),
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT)))
+        .thenThrow(new IOException("Server error"));
+
+    // (Act) Send text message via sendMessage
+    AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
+    responder.addCallableFunction(
+        FUNCTION_CALL_NAME,
+        ChatSessionTest.class.getMethod(FUNCTION_CALL_NAME, String.class),
+        FUNCTION_CALL_PARAMETER_NAME);
+
+    IOException thrown =
+        assertThrows(
+            IOException.class,
+            () ->
+                chat.withAutomaticFunctionCallingResponder(responder)
+                    .sendMessage(FUNCTION_CALL_MESSAGE));
+    assertThat(thrown).hasMessageThat().isEqualTo("Server error");
+
+    // (Act & Assert) get history and assert that the history contains no contents since the
+    // intermediate response got an error and all contents got reverted.
+    assertThat(chat.getHistory().size()).isEqualTo(0);
+  }
+
+  @Test
+  public void
+      sendMessageWithAutomaticFunctionCallingResponderIllegalStateException_chatHistoryGetReverted()
+          throws IOException, NoSuchMethodException {
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(FUNCTION_CALL_MESSAGE))))
+        .thenReturn(RESPONSE_WITH_FUNCTION_CALL);
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(
+                ContentMaker.fromString(FUNCTION_CALL_MESSAGE),
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT)))
+        .thenReturn(RESPONSE_WITH_FUNCTION_CALL);
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(
+                ContentMaker.fromString(FUNCTION_CALL_MESSAGE),
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT,
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT)))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL);
+
+    // (Act) Send text message via sendMessage
+    AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
+    responder.addCallableFunction(
+        FUNCTION_CALL_NAME,
+        ChatSessionTest.class.getMethod(FUNCTION_CALL_NAME, String.class),
+        FUNCTION_CALL_PARAMETER_NAME);
+
+    // After mocking, there should be 2 consecutive auto function calls, but the max number of
+    // function calls in the responder is 1, so an IllegalStateException will be thrown.
+    IllegalStateException thrown =
+        assertThrows(
+            IllegalStateException.class,
+            () ->
+                chat.withAutomaticFunctionCallingResponder(responder)
+                    .sendMessage(FUNCTION_CALL_MESSAGE));
+    assertThat(thrown)
+        .hasMessageThat()
+        .contains("Exceeded the maximum number of continuous automatic function calls");
+
+    // (Act & Assert) get history and assert that the history contains no contents since the
+    // intermediate response got an error and all contents got reverted.
+    assertThat(chat.getHistory().size()).isEqualTo(0);
+  }
+
+  @Test
+  public void
+      sendMessageWithAutomaticFunctionCallingResponderFinishReasonNotStop_chatHistoryGetReverted()
+          throws IOException, NoSuchMethodException {
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(FUNCTION_CALL_MESSAGE))))
+        .thenReturn(RESPONSE_WITH_FUNCTION_CALL);
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(
+                ContentMaker.fromString(FUNCTION_CALL_MESSAGE),
+                ResponseHandler.getContent(RESPONSE_WITH_FUNCTION_CALL),
+                FUNCTION_RESPONSE_CONTENT)))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON);
+
+    // (Act) Send text message via sendMessage
+    AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
+    responder.addCallableFunction(
+        FUNCTION_CALL_NAME,
+        ChatSessionTest.class.getMethod(FUNCTION_CALL_NAME, String.class),
+        FUNCTION_CALL_PARAMETER_NAME);
+    GenerateContentResponse response =
+        chat.withAutomaticFunctionCallingResponder(responder).sendMessage(FUNCTION_CALL_MESSAGE);
+
+    // (Act & Assert) get history will throw since the final response stopped with error. The
+    // history should be reverted.
+    assertThat(response).isEqualTo(RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON);
     IllegalStateException thrown =
         assertThrows(IllegalStateException.class, () -> chat.getHistory());
     assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");

@@ -272,50 +272,6 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Tool config. This config is shared for all tools provided in the
-   * request.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the toolConfig field is set.
-   */
-  boolean hasToolConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Tool config. This config is shared for all tools provided in the
-   * request.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The toolConfig.
-   */
-  com.google.cloud.vertexai.api.ToolConfig getToolConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Tool config. This config is shared for all tools provided in the
-   * request.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.vertexai.v1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.vertexai.api.ToolConfigOrBuilder getToolConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. Per request settings for blocking unsafe content.
    * Enforced on GenerateContentResponse.candidates.
    * </pre>

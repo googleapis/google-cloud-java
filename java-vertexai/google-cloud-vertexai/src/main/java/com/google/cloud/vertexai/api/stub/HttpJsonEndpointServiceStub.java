@@ -691,16 +691,6 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/ui/{name=projects/*/locations/*/agents/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/ui/{name=projects/*/locations/*/apps/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
                                     "/ui/{name=projects/*/locations/*/datasets/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
@@ -1077,15 +1067,6 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/ui/{name=projects/*/locations/*/operations/*}")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/ui/{name=projects/*/locations/*/agents/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete("/ui/{name=projects/*/locations/*/apps/*/operations/*}")
-                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
@@ -1495,14 +1476,6 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/ui/{name=projects/*/locations/*/operations/*}")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet("/ui/{name=projects/*/locations/*/agents/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet("/ui/{name=projects/*/locations/*/apps/*/operations/*}")
-                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet("/ui/{name=projects/*/locations/*/datasets/*/operations/*}")
@@ -1921,14 +1894,6 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .setGet("/ui/{name=projects/*/locations/*}/operations")
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/ui/{name=projects/*/locations/*/agents/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet("/ui/{name=projects/*/locations/*/apps/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
                                 .setGet("/ui/{name=projects/*/locations/*/datasets/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -2329,16 +2294,6 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                     "google.longrunning.Operations.WaitOperation",
                     HttpRule.newBuilder()
                         .setPost("/ui/{name=projects/*/locations/*/operations/*}:wait")
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/ui/{name=projects/*/locations/*/agents/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/ui/{name=projects/*/locations/*/apps/*/operations/*}:wait")
-                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(

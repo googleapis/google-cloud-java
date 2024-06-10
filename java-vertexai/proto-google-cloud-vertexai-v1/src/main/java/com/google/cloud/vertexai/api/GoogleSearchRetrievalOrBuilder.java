@@ -22,4 +22,20 @@ package com.google.cloud.vertexai.api;
 public interface GoogleSearchRetrievalOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.GoogleSearchRetrieval)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disable using the result from this tool in detecting grounding
+   * attribution. This does not affect how the result is given to the model for
+   * generation.
+   * </pre>
+   *
+   * <code>bool disable_attribution = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableAttribution.
+   */
+  boolean getDisableAttribution();
+}
