@@ -116,6 +116,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -183,6 +184,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -250,6 +252,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -319,6 +322,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -388,6 +392,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -450,6 +455,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -610,6 +616,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -632,6 +639,7 @@ public class EndpointServiceClientHttpJsonTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
@@ -681,6 +689,7 @@ public class EndpointServiceClientHttpJsonTest {
               .setEncryptionSpec(EncryptionSpec.newBuilder().build())
               .setNetwork("network1843485230")
               .setEnablePrivateServiceConnect(true)
+              .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
               .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
               .setPredictRequestResponseLoggingConfig(
                   PredictRequestResponseLoggingConfig.newBuilder().build())

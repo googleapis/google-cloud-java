@@ -159,6 +159,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V4_POD = 10;</code>
    */
   TPU_V4_POD(10),
+  /**
+   *
+   *
+   * <pre>
+   * TPU v5.
+   * </pre>
+   *
+   * <code>TPU_V5_LITEPOD = 12;</code>
+   */
+  TPU_V5_LITEPOD(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -292,6 +302,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V4_POD = 10;</code>
    */
   public static final int TPU_V4_POD_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * TPU v5.
+   * </pre>
+   *
+   * <code>TPU_V5_LITEPOD = 12;</code>
+   */
+  public static final int TPU_V5_LITEPOD_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -343,6 +363,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return TPU_V3;
       case 10:
         return TPU_V4_POD;
+      case 12:
+        return TPU_V5_LITEPOD;
       default:
         return null;
     }

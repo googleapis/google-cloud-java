@@ -125,7 +125,10 @@ import javax.annotation.Generated;
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .build();
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
@@ -326,15 +329,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
-  }
-
-  /** Returns the endpoint set by the user or the the service's default endpoint. */
-  @Override
-  public String getEndpoint() {
-    if (super.getEndpoint() != null) {
-      return super.getEndpoint();
-    }
-    return getDefaultEndpoint();
   }
 
   /** Returns the default service name. */
@@ -804,15 +798,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the endpoint set by the user or the the service's default endpoint. */
-    @Override
-    public String getEndpoint() {
-      if (super.getEndpoint() != null) {
-        return super.getEndpoint();
-      }
-      return getDefaultEndpoint();
     }
 
     @Override

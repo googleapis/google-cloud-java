@@ -98,9 +98,7 @@ public final class GenerativeModelTest {
                           .addRequired("location")))
           .build();
   private static final Tool GOOGLE_SEARCH_TOOL =
-      Tool.newBuilder()
-          .setGoogleSearchRetrieval(GoogleSearchRetrieval.newBuilder().setDisableAttribution(false))
-          .build();
+      Tool.newBuilder().setGoogleSearchRetrieval(GoogleSearchRetrieval.newBuilder()).build();
   private static final Tool VERTEX_AI_SEARCH_TOOL =
       Tool.newBuilder()
           .setRetrieval(
