@@ -486,7 +486,8 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   Value.fromProto(mod.getAddToCell().getTimestamp()),
                   Value.fromProto(mod.getAddToCell().getInput()));
             }
-            throw new IllegalStateException("AWAITING_NEW_DATA_CHANGE: Unexpected mod type");
+            throw new IllegalStateException(
+                "Received unknown mod type. You may need to upgrade your Bigtable client.");
           }
 
           // After adding all mods from this DataChange to the state machine, finish the current
