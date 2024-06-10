@@ -31,6 +31,7 @@ import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensRequest;
 import com.google.cloud.vertexai.api.CountTokensResponse;
+import com.google.cloud.vertexai.api.FunctionCallingConfig;
 import com.google.cloud.vertexai.api.FunctionDeclaration;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
@@ -44,6 +45,7 @@ import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
 import com.google.cloud.vertexai.api.Schema;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.api.ToolConfig;
 import com.google.cloud.vertexai.api.Type;
 import com.google.cloud.vertexai.api.VertexAISearch;
 import java.util.ArrayList;
@@ -95,6 +97,13 @@ public final class GenerativeModelTest {
                                   .setDescription("location")
                                   .build())
                           .addRequired("location")))
+          .build();
+  private static final ToolConfig DEFAULT_TOOL_CONFIG =
+      ToolConfig.newBuilder()
+          .setFunctionCallingConfig(
+              FunctionCallingConfig.newBuilder()
+                  .setMode(FunctionCallingConfig.Mode.ANY)
+                  .addAllowedFunctionNames("getCurrentWeather"))
           .build();
   private static final Content DEFAULT_SYSTEM_INSTRUCTION =
       ContentMaker.fromString(
@@ -405,6 +414,25 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void generateContent_withDefaultToolConfig_requestHasCorrectToolConfigAndText()
+      throws Exception {
+    model =
+        new GenerativeModel.Builder()
+            .setModelName(MODEL_NAME)
+            .setVertexAi(vertexAi)
+            .setToolConfig(DEFAULT_TOOL_CONFIG)
+            .build();
+
+    GenerateContentResponse unused = model.generateContent(TEXT);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).call(request.capture());
+    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
+    assertThat(request.getValue().getToolConfig()).isEqualTo(DEFAULT_TOOL_CONFIG);
+  }
+
+  @Test
   public void
       generateContent_withDefaultSystemInstruction_requestHasCorrectSystemInstructionAndText()
           throws Exception {
@@ -433,6 +461,7 @@ public final class GenerativeModelTest {
             .withGenerationConfig(GENERATION_CONFIG)
             .withSafetySettings(safetySettings)
             .withTools(tools)
+            .withToolConfig(DEFAULT_TOOL_CONFIG)
             .withSystemInstruction(DEFAULT_SYSTEM_INSTRUCTION)
             .generateContent(TEXT);
 
@@ -444,6 +473,7 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
+    assertThat(request.getValue().getToolConfig()).isEqualTo(DEFAULT_TOOL_CONFIG);
     assertThat(request.getValue().getSystemInstruction()).isEqualTo(expectedSystemInstruction);
   }
 
@@ -547,6 +577,24 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void generateContentStream_withDefaultToolConfig_requestHasCorrectToolConfig()
+      throws Exception {
+    model =
+        new GenerativeModel.Builder()
+            .setModelName(MODEL_NAME)
+            .setVertexAi(vertexAi)
+            .setToolConfig(DEFAULT_TOOL_CONFIG)
+            .build();
+
+    ResponseStream unused = model.generateContentStream(TEXT);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockServerStreamCallable).call(request.capture());
+    assertThat(request.getValue().getToolConfig()).isEqualTo(DEFAULT_TOOL_CONFIG);
+  }
+
+  @Test
   public void
       generateContentStream_withDefaultSystemInstruction_requestHasCorrectSystemInstruction()
           throws Exception {
@@ -576,6 +624,7 @@ public final class GenerativeModelTest {
             .withGenerationConfig(GENERATION_CONFIG)
             .withSafetySettings(safetySettings)
             .withTools(tools)
+            .withToolConfig(DEFAULT_TOOL_CONFIG)
             .withSystemInstruction(DEFAULT_SYSTEM_INSTRUCTION)
             .generateContentStream(TEXT);
 
@@ -587,6 +636,7 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
+    assertThat(request.getValue().getToolConfig()).isEqualTo(DEFAULT_TOOL_CONFIG);
     assertThat(request.getValue().getSystemInstruction()).isEqualTo(expectedSystemInstruction);
   }
 
