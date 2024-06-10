@@ -167,6 +167,23 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PurgeProducts</td>
+ *      <td><p> Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+ * <p>  This process is asynchronous. If the request is valid, the removal will be enqueued and processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could take hours to complete. Before the operation completes, some [Product][google.cloud.retail.v2.Product]s may still be returned by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that would be deleted, set [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeProductsAsync(PurgeProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeProductsOperationCallable()
+ *           <li><p> purgeProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ImportProducts</td>
  *      <td><p> Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
  * <p>  Request processing may be synchronous. Non-existing items are created.
@@ -211,7 +228,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AddFulfillmentPlaces</td>
- *      <td><p> It is recommended to use the [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] method instead of [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]. [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ *      <td><p> We recommend that you use the [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] method instead of the [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces] method. [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
  * <p>  Incrementally adds place IDs to [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
  * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
  * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
@@ -235,7 +252,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RemoveFulfillmentPlaces</td>
- *      <td><p> It is recommended to use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] method instead of [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]. [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ *      <td><p> We recommend that you use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] method instead of the [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces] method. [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
  * <p>  Incrementally removes place IDs from a [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
  * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
  * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
@@ -1144,6 +1161,137 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeProductsResponse response = productServiceClient.purgeProductsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeProductsResponse, PurgeProductsMetadata> purgeProductsAsync(
+      PurgeProductsRequest request) {
+    return purgeProductsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeProductsResponse, PurgeProductsMetadata> future =
+   *       productServiceClient.purgeProductsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeProductsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    return stub.purgeProductsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.purgeProductsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return stub.purgeProductsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
    *
    * <p>Request processing may be synchronous. Non-existing items are created.
@@ -1597,10 +1745,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1659,10 +1808,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1720,10 +1870,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1781,10 +1932,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1842,10 +1994,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1902,10 +2055,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1964,10 +2118,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2025,10 +2180,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2086,10 +2242,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2149,10 +2306,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.

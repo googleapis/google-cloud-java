@@ -40,7 +40,6 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
 
   private PlaybookInput() {
     precedingConversationSummary_ = "";
-    parameters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -64,6 +63,7 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PRECEDING_CONVERSATION_SUMMARY_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -119,87 +119,57 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PARAMETERS_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter> parameters_;
+  public static final int ACTION_PARAMETERS_FIELD_NUMBER = 3;
+  private com.google.protobuf.Struct actionParameters_;
   /**
    *
    *
    * <pre>
-   * Optional. A list of input parameters for the invocation.
+   * Optional. A list of input parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the actionParameters field is set.
    */
   @java.lang.Override
-  public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter>
-      getParametersList() {
-    return parameters_;
+  public boolean hasActionParameters() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Optional. A list of input parameters for the invocation.
+   * Optional. A list of input parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The actionParameters.
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>
-      getParametersOrBuilderList() {
-    return parameters_;
+  public com.google.protobuf.Struct getActionParameters() {
+    return actionParameters_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : actionParameters_;
   }
   /**
    *
    *
    * <pre>
-   * Optional. A list of input parameters for the invocation.
+   * Optional. A list of input parameters for the action.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public int getParametersCount() {
-    return parameters_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of input parameters for the invocation.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.cx.v3beta1.ActionParameter getParameters(int index) {
-    return parameters_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of input parameters for the invocation.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder getParametersOrBuilder(
-      int index) {
-    return parameters_.get(index);
+  public com.google.protobuf.StructOrBuilder getActionParametersOrBuilder() {
+    return actionParameters_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : actionParameters_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -219,8 +189,8 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(precedingConversationSummary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, precedingConversationSummary_);
     }
-    for (int i = 0; i < parameters_.size(); i++) {
-      output.writeMessage(2, parameters_.get(i));
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getActionParameters());
     }
     getUnknownFields().writeTo(output);
   }
@@ -236,8 +206,8 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               1, precedingConversationSummary_);
     }
-    for (int i = 0; i < parameters_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, parameters_.get(i));
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getActionParameters());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -257,7 +227,10 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPrecedingConversationSummary().equals(other.getPrecedingConversationSummary()))
       return false;
-    if (!getParametersList().equals(other.getParametersList())) return false;
+    if (hasActionParameters() != other.hasActionParameters()) return false;
+    if (hasActionParameters()) {
+      if (!getActionParameters().equals(other.getActionParameters())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -271,9 +244,9 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PRECEDING_CONVERSATION_SUMMARY_FIELD_NUMBER;
     hash = (53 * hash) + getPrecedingConversationSummary().hashCode();
-    if (getParametersCount() > 0) {
-      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + getParametersList().hashCode();
+    if (hasActionParameters()) {
+      hash = (37 * hash) + ACTION_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getActionParameters().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -404,10 +377,19 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getActionParametersFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -415,13 +397,11 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       precedingConversationSummary_ = "";
-      if (parametersBuilder_ == null) {
-        parameters_ = java.util.Collections.emptyList();
-      } else {
-        parameters_ = null;
-        parametersBuilder_.clear();
+      actionParameters_ = null;
+      if (actionParametersBuilder_ != null) {
+        actionParametersBuilder_.dispose();
+        actionParametersBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -449,7 +429,6 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput result =
           new com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -457,24 +436,18 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput result) {
-      if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          parameters_ = java.util.Collections.unmodifiableList(parameters_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.parameters_ = parameters_;
-      } else {
-        result.parameters_ = parametersBuilder_.build();
-      }
-    }
-
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.precedingConversationSummary_ = precedingConversationSummary_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.actionParameters_ =
+            actionParametersBuilder_ == null ? actionParameters_ : actionParametersBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -528,32 +501,8 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (parametersBuilder_ == null) {
-        if (!other.parameters_.isEmpty()) {
-          if (parameters_.isEmpty()) {
-            parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureParametersIsMutable();
-            parameters_.addAll(other.parameters_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.parameters_.isEmpty()) {
-          if (parametersBuilder_.isEmpty()) {
-            parametersBuilder_.dispose();
-            parametersBuilder_ = null;
-            parameters_ = other.parameters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            parametersBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getParametersFieldBuilder()
-                    : null;
-          } else {
-            parametersBuilder_.addAllMessages(other.parameters_);
-          }
-        }
+      if (other.hasActionParameters()) {
+        mergeActionParameters(other.getActionParameters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -587,20 +536,13 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 18:
+            case 26:
               {
-                com.google.cloud.dialogflow.cx.v3beta1.ActionParameter m =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.parser(),
-                        extensionRegistry);
-                if (parametersBuilder_ == null) {
-                  ensureParametersIsMutable();
-                  parameters_.add(m);
-                } else {
-                  parametersBuilder_.addMessage(m);
-                }
+                input.readMessage(
+                    getActionParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
                 break;
-              } // case 18
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -736,101 +678,121 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter> parameters_ =
-        java.util.Collections.emptyList();
-
-    private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        parameters_ =
-            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter>(
-                parameters_);
+    private com.google.protobuf.Struct actionParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        actionParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the actionParameters field is set.
+     */
+    public boolean hasActionParameters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The actionParameters.
+     */
+    public com.google.protobuf.Struct getActionParameters() {
+      if (actionParametersBuilder_ == null) {
+        return actionParameters_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : actionParameters_;
+      } else {
+        return actionParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActionParameters(com.google.protobuf.Struct value) {
+      if (actionParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionParameters_ = value;
+      } else {
+        actionParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActionParameters(com.google.protobuf.Struct.Builder builderForValue) {
+      if (actionParametersBuilder_ == null) {
+        actionParameters_ = builderForValue.build();
+      } else {
+        actionParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeActionParameters(com.google.protobuf.Struct value) {
+      if (actionParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && actionParameters_ != null
+            && actionParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getActionParametersBuilder().mergeFrom(value);
+        } else {
+          actionParameters_ = value;
+        }
+      } else {
+        actionParametersBuilder_.mergeFrom(value);
+      }
+      if (actionParameters_ != null) {
         bitField0_ |= 0x00000002;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameter,
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>
-        parametersBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter>
-        getParametersList() {
-      if (parametersBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(parameters_);
-      } else {
-        return parametersBuilder_.getMessageList();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public int getParametersCount() {
-      if (parametersBuilder_ == null) {
-        return parameters_.size();
-      } else {
-        return parametersBuilder_.getCount();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ActionParameter getParameters(int index) {
-      if (parametersBuilder_ == null) {
-        return parameters_.get(index);
-      } else {
-        return parametersBuilder_.getMessage(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setParameters(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.ActionParameter value) {
-      if (parametersBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParametersIsMutable();
-        parameters_.set(index, value);
         onChanged();
-      } else {
-        parametersBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -838,298 +800,85 @@ public final class PlaybookInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of input parameters for the invocation.
+     * Optional. A list of input parameters for the action.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setParameters(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder builderForValue) {
-      if (parametersBuilder_ == null) {
-        ensureParametersIsMutable();
-        parameters_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        parametersBuilder_.setMessage(index, builderForValue.build());
+    public Builder clearActionParameters() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      actionParameters_ = null;
+      if (actionParametersBuilder_ != null) {
+        actionParametersBuilder_.dispose();
+        actionParametersBuilder_ = null;
       }
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. A list of input parameters for the invocation.
+     * Optional. A list of input parameters for the action.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder addParameters(com.google.cloud.dialogflow.cx.v3beta1.ActionParameter value) {
-      if (parametersBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParametersIsMutable();
-        parameters_.add(value);
-        onChanged();
+    public com.google.protobuf.Struct.Builder getActionParametersBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getActionParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of input parameters for the action.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getActionParametersOrBuilder() {
+      if (actionParametersBuilder_ != null) {
+        return actionParametersBuilder_.getMessageOrBuilder();
       } else {
-        parametersBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addParameters(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.ActionParameter value) {
-      if (parametersBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParametersIsMutable();
-        parameters_.add(index, value);
-        onChanged();
-      } else {
-        parametersBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addParameters(
-        com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder builderForValue) {
-      if (parametersBuilder_ == null) {
-        ensureParametersIsMutable();
-        parameters_.add(builderForValue.build());
-        onChanged();
-      } else {
-        parametersBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addParameters(
-        int index, com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder builderForValue) {
-      if (parametersBuilder_ == null) {
-        ensureParametersIsMutable();
-        parameters_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        parametersBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addAllParameters(
-        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.ActionParameter>
-            values) {
-      if (parametersBuilder_ == null) {
-        ensureParametersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
-        onChanged();
-      } else {
-        parametersBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearParameters() {
-      if (parametersBuilder_ == null) {
-        parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-      } else {
-        parametersBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder removeParameters(int index) {
-      if (parametersBuilder_ == null) {
-        ensureParametersIsMutable();
-        parameters_.remove(index);
-        onChanged();
-      } else {
-        parametersBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder getParametersBuilder(
-        int index) {
-      return getParametersFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder getParametersOrBuilder(
-        int index) {
-      if (parametersBuilder_ == null) {
-        return parameters_.get(index);
-      } else {
-        return parametersBuilder_.getMessageOrBuilder(index);
+        return actionParameters_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : actionParameters_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. A list of input parameters for the invocation.
+     * Optional. A list of input parameters for the action.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Struct action_parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>
-        getParametersOrBuilderList() {
-      if (parametersBuilder_ != null) {
-        return parametersBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(parameters_);
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getActionParametersFieldBuilder() {
+      if (actionParametersBuilder_ == null) {
+        actionParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getActionParameters(), getParentForChildren(), isClean());
+        actionParameters_ = null;
       }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder addParametersBuilder() {
-      return getParametersFieldBuilder()
-          .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder addParametersBuilder(
-        int index) {
-      return getParametersFieldBuilder()
-          .addBuilder(
-              index, com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A list of input parameters for the invocation.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3beta1.ActionParameter parameters = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder>
-        getParametersBuilderList() {
-      return getParametersFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameter,
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>
-        getParametersFieldBuilder() {
-      if (parametersBuilder_ == null) {
-        parametersBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.dialogflow.cx.v3beta1.ActionParameter,
-                com.google.cloud.dialogflow.cx.v3beta1.ActionParameter.Builder,
-                com.google.cloud.dialogflow.cx.v3beta1.ActionParameterOrBuilder>(
-                parameters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
-        parameters_ = null;
-      }
-      return parametersBuilder_;
+      return actionParametersBuilder_;
     }
 
     @java.lang.Override

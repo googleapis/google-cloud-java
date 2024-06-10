@@ -93,4 +93,80 @@ public interface NodeConfigDefaultsOrBuilder
    * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
    */
   com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  boolean hasContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 4;</code>
+   *
+   * @return The containerdConfig.
+   */
+  com.google.container.v1.ContainerdConfig getContainerdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 4;</code>
+   */
+  com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return Whether the nodeKubeletConfig field is set.
+   */
+  boolean hasNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   *
+   * @return The nodeKubeletConfig.
+   */
+  com.google.container.v1.NodeKubeletConfig getNodeKubeletConfig();
+  /**
+   *
+   *
+   * <pre>
+   * NodeKubeletConfig controls the defaults for new node-pools.
+   *
+   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig node_kubelet_config = 6;</code>
+   */
+  com.google.container.v1.NodeKubeletConfigOrBuilder getNodeKubeletConfigOrBuilder();
 }

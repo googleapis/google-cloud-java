@@ -93,8 +93,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -143,8 +141,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -347,8 +343,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -395,8 +389,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -444,8 +436,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -454,8 +444,6 @@ public class ToolsClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -490,8 +478,6 @@ public class ToolsClientHttpJsonTest {
               .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
-              .addAllActions(new ArrayList<String>())
-              .addAllSchemas(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTool(tool, updateMask);

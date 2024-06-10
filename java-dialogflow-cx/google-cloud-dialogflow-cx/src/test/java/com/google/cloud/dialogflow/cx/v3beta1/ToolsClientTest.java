@@ -100,8 +100,6 @@ public class ToolsClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockTools.addResponse(expectedResponse);
 
@@ -145,8 +143,6 @@ public class ToolsClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockTools.addResponse(expectedResponse);
 
@@ -333,8 +329,6 @@ public class ToolsClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockTools.addResponse(expectedResponse);
 
@@ -375,8 +369,6 @@ public class ToolsClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockTools.addResponse(expectedResponse);
 
@@ -417,8 +409,6 @@ public class ToolsClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllActions(new ArrayList<String>())
-            .addAllSchemas(new ArrayList<String>())
             .build();
     mockTools.addResponse(expectedResponse);
 

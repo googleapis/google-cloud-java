@@ -2238,6 +2238,56 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : soleTenantConfig_;
   }
 
+  public static final int CONTAINERD_CONFIG_FIELD_NUMBER = 43;
+  private com.google.container.v1.ContainerdConfig containerdConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return Whether the containerdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainerdConfig() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   *
+   * @return The containerdConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfig getContainerdConfig() {
+    return containerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for containerd customization.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+    return containerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : containerdConfig_;
+  }
+
   public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 45;
   private com.google.container.v1.ResourceManagerTags resourceManagerTags_;
   /**
@@ -2253,7 +2303,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceManagerTags() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -2395,7 +2445,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSecondaryBootDiskUpdateStrategy() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2550,6 +2600,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(42, getSoleTenantConfig());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(43, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(45, getResourceManagerTags());
     }
     if (enableConfidentialStorage_ != false) {
@@ -2558,7 +2611,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < secondaryBootDisks_.size(); i++) {
       output.writeMessage(48, secondaryBootDisks_.get(i));
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(50, getSecondaryBootDiskUpdateStrategy());
     }
     getUnknownFields().writeTo(output);
@@ -2713,6 +2766,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSoleTenantConfig());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(45, getResourceManagerTags());
     }
@@ -2723,7 +2779,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, secondaryBootDisks_.get(i));
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               50, getSecondaryBootDiskUpdateStrategy());
@@ -2826,6 +2882,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSoleTenantConfig() != other.hasSoleTenantConfig()) return false;
     if (hasSoleTenantConfig()) {
       if (!getSoleTenantConfig().equals(other.getSoleTenantConfig())) return false;
+    }
+    if (hasContainerdConfig() != other.hasContainerdConfig()) return false;
+    if (hasContainerdConfig()) {
+      if (!getContainerdConfig().equals(other.getContainerdConfig())) return false;
     }
     if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
     if (hasResourceManagerTags()) {
@@ -2963,6 +3023,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSoleTenantConfig()) {
       hash = (37 * hash) + SOLE_TENANT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSoleTenantConfig().hashCode();
+    }
+    if (hasContainerdConfig()) {
+      hash = (37 * hash) + CONTAINERD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getContainerdConfig().hashCode();
     }
     if (hasResourceManagerTags()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
@@ -3170,6 +3234,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getLocalNvmeSsdBlockConfigFieldBuilder();
         getEphemeralStorageLocalSsdConfigFieldBuilder();
         getSoleTenantConfigFieldBuilder();
+        getContainerdConfigFieldBuilder();
         getResourceManagerTagsFieldBuilder();
         getSecondaryBootDisksFieldBuilder();
         getSecondaryBootDiskUpdateStrategyFieldBuilder();
@@ -3291,6 +3356,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         soleTenantConfigBuilder_.dispose();
         soleTenantConfigBuilder_ = null;
       }
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
+      }
       resourceManagerTags_ = null;
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
@@ -3303,7 +3373,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDisks_ = null;
         secondaryBootDisksBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
@@ -3366,9 +3436,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.taints_ = taintsBuilder_.build();
       }
       if (secondaryBootDisksBuilder_ == null) {
-        if (((bitField1_ & 0x00000010) != 0)) {
+        if (((bitField1_ & 0x00000020) != 0)) {
           secondaryBootDisks_ = java.util.Collections.unmodifiableList(secondaryBootDisks_);
-          bitField1_ = (bitField1_ & ~0x00000010);
+          bitField1_ = (bitField1_ & ~0x00000020);
         }
         result.secondaryBootDisks_ = secondaryBootDisks_;
       } else {
@@ -3532,21 +3602,26 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.containerdConfig_ =
+            containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.resourceManagerTags_ =
             resourceManagerTagsBuilder_ == null
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
-        to_bitField0_ |= 0x00010000;
+        to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
-      if (((from_bitField1_ & 0x00000020) != 0)) {
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         result.secondaryBootDiskUpdateStrategy_ =
             secondaryBootDiskUpdateStrategyBuilder_ == null
                 ? secondaryBootDiskUpdateStrategy_
                 : secondaryBootDiskUpdateStrategyBuilder_.build();
-        to_bitField0_ |= 0x00020000;
+        to_bitField0_ |= 0x00040000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3771,6 +3846,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSoleTenantConfig()) {
         mergeSoleTenantConfig(other.getSoleTenantConfig());
       }
+      if (other.hasContainerdConfig()) {
+        mergeContainerdConfig(other.getContainerdConfig());
+      }
       if (other.hasResourceManagerTags()) {
         mergeResourceManagerTags(other.getResourceManagerTags());
       }
@@ -3781,7 +3859,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.secondaryBootDisks_.isEmpty()) {
           if (secondaryBootDisks_.isEmpty()) {
             secondaryBootDisks_ = other.secondaryBootDisks_;
-            bitField1_ = (bitField1_ & ~0x00000010);
+            bitField1_ = (bitField1_ & ~0x00000020);
           } else {
             ensureSecondaryBootDisksIsMutable();
             secondaryBootDisks_.addAll(other.secondaryBootDisks_);
@@ -3794,7 +3872,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             secondaryBootDisksBuilder_.dispose();
             secondaryBootDisksBuilder_ = null;
             secondaryBootDisks_ = other.secondaryBootDisks_;
-            bitField1_ = (bitField1_ & ~0x00000010);
+            bitField1_ = (bitField1_ & ~0x00000020);
             secondaryBootDisksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecondaryBootDisksFieldBuilder()
@@ -4081,17 +4159,24 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000002;
                 break;
               } // case 338
+            case 346:
+              {
+                input.readMessage(
+                    getContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 346
             case 362:
               {
                 input.readMessage(
                     getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 362
             case 368:
               {
                 enableConfidentialStorage_ = input.readBool();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 368
             case 386:
@@ -4112,7 +4197,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 402
             default:
@@ -10365,6 +10450,192 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return soleTenantConfigBuilder_;
     }
 
+    private com.google.container.v1.ContainerdConfig containerdConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        containerdConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     *
+     * @return Whether the containerdConfig field is set.
+     */
+    public boolean hasContainerdConfig() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     *
+     * @return The containerdConfig.
+     */
+    public com.google.container.v1.ContainerdConfig getContainerdConfig() {
+      if (containerdConfigBuilder_ == null) {
+        return containerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      } else {
+        return containerdConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public Builder setContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        containerdConfig_ = value;
+      } else {
+        containerdConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public Builder setContainerdConfig(
+        com.google.container.v1.ContainerdConfig.Builder builderForValue) {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfig_ = builderForValue.build();
+      } else {
+        containerdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public Builder mergeContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (containerdConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && containerdConfig_ != null
+            && containerdConfig_ != com.google.container.v1.ContainerdConfig.getDefaultInstance()) {
+          getContainerdConfigBuilder().mergeFrom(value);
+        } else {
+          containerdConfig_ = value;
+        }
+      } else {
+        containerdConfigBuilder_.mergeFrom(value);
+      }
+      if (containerdConfig_ != null) {
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public Builder clearContainerdConfig() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      containerdConfig_ = null;
+      if (containerdConfigBuilder_ != null) {
+        containerdConfigBuilder_.dispose();
+        containerdConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public com.google.container.v1.ContainerdConfig.Builder getContainerdConfigBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return getContainerdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    public com.google.container.v1.ContainerdConfigOrBuilder getContainerdConfigOrBuilder() {
+      if (containerdConfigBuilder_ != null) {
+        return containerdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return containerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : containerdConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for containerd customization.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        getContainerdConfigFieldBuilder() {
+      if (containerdConfigBuilder_ == null) {
+        containerdConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ContainerdConfig,
+                com.google.container.v1.ContainerdConfig.Builder,
+                com.google.container.v1.ContainerdConfigOrBuilder>(
+                getContainerdConfig(), getParentForChildren(), isClean());
+        containerdConfig_ = null;
+      }
+      return containerdConfigBuilder_;
+    }
+
     private com.google.container.v1.ResourceManagerTags resourceManagerTags_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.ResourceManagerTags,
@@ -10383,7 +10654,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceManagerTags field is set.
      */
     public boolean hasResourceManagerTags() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -10423,7 +10694,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10443,7 +10714,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10458,7 +10729,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResourceManagerTags(com.google.container.v1.ResourceManagerTags value) {
       if (resourceManagerTagsBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && resourceManagerTags_ != null
             && resourceManagerTags_
                 != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
@@ -10470,7 +10741,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         resourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (resourceManagerTags_ != null) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -10485,7 +10756,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
      */
     public Builder clearResourceManagerTags() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       resourceManagerTags_ = null;
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
@@ -10504,7 +10775,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
      */
     public com.google.container.v1.ResourceManagerTags.Builder getResourceManagerTagsBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return getResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -10583,7 +10854,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableConfidentialStorage(boolean value) {
 
       enableConfidentialStorage_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -10599,7 +10870,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableConfidentialStorage() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       enableConfidentialStorage_ = false;
       onChanged();
       return this;
@@ -10609,10 +10880,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecondaryBootDisksIsMutable() {
-      if (!((bitField1_ & 0x00000010) != 0)) {
+      if (!((bitField1_ & 0x00000020) != 0)) {
         secondaryBootDisks_ =
             new java.util.ArrayList<com.google.container.v1.SecondaryBootDisk>(secondaryBootDisks_);
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000020;
       }
     }
 
@@ -10830,7 +11101,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecondaryBootDisks() {
       if (secondaryBootDisksBuilder_ == null) {
         secondaryBootDisks_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000010);
+        bitField1_ = (bitField1_ & ~0x00000020);
         onChanged();
       } else {
         secondaryBootDisksBuilder_.clear();
@@ -10956,7 +11227,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.SecondaryBootDisk.Builder,
                 com.google.container.v1.SecondaryBootDiskOrBuilder>(
                 secondaryBootDisks_,
-                ((bitField1_ & 0x00000010) != 0),
+                ((bitField1_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryBootDisks_ = null;
@@ -10985,7 +11256,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondaryBootDiskUpdateStrategy field is set.
      */
     public boolean hasSecondaryBootDiskUpdateStrategy() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
@@ -11031,7 +11302,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11053,7 +11324,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11071,7 +11342,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSecondaryBootDiskUpdateStrategy(
         com.google.container.v1.SecondaryBootDiskUpdateStrategy value) {
       if (secondaryBootDiskUpdateStrategyBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000040) != 0)
             && secondaryBootDiskUpdateStrategy_ != null
             && secondaryBootDiskUpdateStrategy_
                 != com.google.container.v1.SecondaryBootDiskUpdateStrategy.getDefaultInstance()) {
@@ -11083,7 +11354,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDiskUpdateStrategyBuilder_.mergeFrom(value);
       }
       if (secondaryBootDiskUpdateStrategy_ != null) {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -11100,7 +11371,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSecondaryBootDiskUpdateStrategy() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000040);
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
@@ -11122,7 +11393,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1.SecondaryBootDiskUpdateStrategy.Builder
         getSecondaryBootDiskUpdateStrategyBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return getSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder();
     }

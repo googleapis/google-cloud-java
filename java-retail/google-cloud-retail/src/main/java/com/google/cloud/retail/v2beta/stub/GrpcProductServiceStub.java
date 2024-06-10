@@ -42,6 +42,9 @@ import com.google.cloud.retail.v2beta.ImportProductsResponse;
 import com.google.cloud.retail.v2beta.ListProductsRequest;
 import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.PurgeProductsMetadata;
+import com.google.cloud.retail.v2beta.PurgeProductsRequest;
+import com.google.cloud.retail.v2beta.PurgeProductsResponse;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
@@ -116,6 +119,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ImportProductsRequest, Operation>
       importProductsMethodDescriptor =
           MethodDescriptor.<ImportProductsRequest, Operation>newBuilder()
@@ -183,6 +196,10 @@ public class GrpcProductServiceStub extends ProductServiceStub {
       listProductsPagedCallable;
   private final UnaryCallable<UpdateProductRequest, Product> updateProductCallable;
   private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<
+          PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable;
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
@@ -306,6 +323,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         GrpcCallSettings.<ImportProductsRequest, Operation>newBuilder()
             .setMethodDescriptor(importProductsMethodDescriptor)
@@ -387,6 +414,15 @@ public class GrpcProductServiceStub extends ProductServiceStub {
     this.deleteProductCallable =
         callableFactory.createUnaryCallable(
             deleteProductTransportSettings, settings.deleteProductSettings(), clientContext);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.importProductsCallable =
         callableFactory.createUnaryCallable(
             importProductsTransportSettings, settings.importProductsSettings(), clientContext);
@@ -486,6 +522,17 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   @Override
   public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return deleteProductCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
   }
 
   @Override

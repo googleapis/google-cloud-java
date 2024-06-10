@@ -42,6 +42,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     clusterDns_ = 0;
     clusterDnsScope_ = 0;
     clusterDnsDomain_ = "";
+    additiveVpcScopeDnsDomain_ = "";
   }
 
   @java.lang.Override
@@ -522,6 +523,59 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ADDITIVE_VPC_SCOPE_DNS_DOMAIN_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object additiveVpcScopeDnsDomain_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The domain used in Additive VPC scope.
+   * </pre>
+   *
+   * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The additiveVpcScopeDnsDomain.
+   */
+  @java.lang.Override
+  public java.lang.String getAdditiveVpcScopeDnsDomain() {
+    java.lang.Object ref = additiveVpcScopeDnsDomain_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      additiveVpcScopeDnsDomain_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The domain used in Additive VPC scope.
+   * </pre>
+   *
+   * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for additiveVpcScopeDnsDomain.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdditiveVpcScopeDnsDomainBytes() {
+    java.lang.Object ref = additiveVpcScopeDnsDomain_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      additiveVpcScopeDnsDomain_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -547,6 +601,9 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterDnsDomain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterDnsDomain_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(additiveVpcScopeDnsDomain_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, additiveVpcScopeDnsDomain_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -567,6 +624,10 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterDnsDomain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterDnsDomain_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(additiveVpcScopeDnsDomain_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(5, additiveVpcScopeDnsDomain_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -585,6 +646,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     if (clusterDns_ != other.clusterDns_) return false;
     if (clusterDnsScope_ != other.clusterDnsScope_) return false;
     if (!getClusterDnsDomain().equals(other.getClusterDnsDomain())) return false;
+    if (!getAdditiveVpcScopeDnsDomain().equals(other.getAdditiveVpcScopeDnsDomain())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -602,6 +664,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + clusterDnsScope_;
     hash = (37 * hash) + CLUSTER_DNS_DOMAIN_FIELD_NUMBER;
     hash = (53 * hash) + getClusterDnsDomain().hashCode();
+    hash = (37 * hash) + ADDITIVE_VPC_SCOPE_DNS_DOMAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getAdditiveVpcScopeDnsDomain().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -743,6 +807,7 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       clusterDns_ = 0;
       clusterDnsScope_ = 0;
       clusterDnsDomain_ = "";
+      additiveVpcScopeDnsDomain_ = "";
       return this;
     }
 
@@ -786,6 +851,9 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.clusterDnsDomain_ = clusterDnsDomain_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.additiveVpcScopeDnsDomain_ = additiveVpcScopeDnsDomain_;
       }
     }
 
@@ -845,6 +913,11 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getAdditiveVpcScopeDnsDomain().isEmpty()) {
+        additiveVpcScopeDnsDomain_ = other.additiveVpcScopeDnsDomain_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -889,6 +962,12 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                additiveVpcScopeDnsDomain_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1190,6 +1269,117 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       clusterDnsDomain_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object additiveVpcScopeDnsDomain_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The domain used in Additive VPC scope.
+     * </pre>
+     *
+     * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The additiveVpcScopeDnsDomain.
+     */
+    public java.lang.String getAdditiveVpcScopeDnsDomain() {
+      java.lang.Object ref = additiveVpcScopeDnsDomain_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additiveVpcScopeDnsDomain_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The domain used in Additive VPC scope.
+     * </pre>
+     *
+     * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for additiveVpcScopeDnsDomain.
+     */
+    public com.google.protobuf.ByteString getAdditiveVpcScopeDnsDomainBytes() {
+      java.lang.Object ref = additiveVpcScopeDnsDomain_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        additiveVpcScopeDnsDomain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The domain used in Additive VPC scope.
+     * </pre>
+     *
+     * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The additiveVpcScopeDnsDomain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditiveVpcScopeDnsDomain(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      additiveVpcScopeDnsDomain_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The domain used in Additive VPC scope.
+     * </pre>
+     *
+     * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditiveVpcScopeDnsDomain() {
+      additiveVpcScopeDnsDomain_ = getDefaultInstance().getAdditiveVpcScopeDnsDomain();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The domain used in Additive VPC scope.
+     * </pre>
+     *
+     * <code>string additive_vpc_scope_dns_domain = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for additiveVpcScopeDnsDomain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditiveVpcScopeDnsDomainBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      additiveVpcScopeDnsDomain_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -46,6 +46,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   private Condition() {
     queryTerms_ = java.util.Collections.emptyList();
     activeTimeRange_ = java.util.Collections.emptyList();
+    pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -2064,6 +2065,82 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     return activeTimeRange_.get(index);
   }
 
+  public static final int PAGE_CATEGORIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList pageCategories_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @return A list containing the pageCategories.
+   */
+  public com.google.protobuf.ProtocolStringList getPageCategoriesList() {
+    return pageCategories_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @return The count of pageCategories.
+   */
+  public int getPageCategoriesCount() {
+    return pageCategories_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The pageCategories at the given index.
+   */
+  public java.lang.String getPageCategories(int index) {
+    return pageCategories_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used to support browse uses cases.
+   * A list (up to 10 entries) of categories or departments.
+   * The format should be the same as
+   * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+   * </pre>
+   *
+   * <code>repeated string page_categories = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the pageCategories at the given index.
+   */
+  public com.google.protobuf.ByteString getPageCategoriesBytes(int index) {
+    return pageCategories_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2084,6 +2161,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < activeTimeRange_.size(); i++) {
       output.writeMessage(3, activeTimeRange_.get(i));
     }
+    for (int i = 0; i < pageCategories_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageCategories_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2098,6 +2178,14 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < activeTimeRange_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, activeTimeRange_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < pageCategories_.size(); i++) {
+        dataSize += computeStringSizeNoTag(pageCategories_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPageCategoriesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2116,6 +2204,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     if (!getQueryTermsList().equals(other.getQueryTermsList())) return false;
     if (!getActiveTimeRangeList().equals(other.getActiveTimeRangeList())) return false;
+    if (!getPageCategoriesList().equals(other.getPageCategoriesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2134,6 +2223,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     if (getActiveTimeRangeCount() > 0) {
       hash = (37 * hash) + ACTIVE_TIME_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getActiveTimeRangeList().hashCode();
+    }
+    if (getPageCategoriesCount() > 0) {
+      hash = (37 * hash) + PAGE_CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getPageCategoriesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2292,6 +2385,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         activeTimeRangeBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2349,6 +2443,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.retail.v2.Condition result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        pageCategories_.makeImmutable();
+        result.pageCategories_ = pageCategories_;
+      }
     }
 
     @java.lang.Override
@@ -2450,6 +2548,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.pageCategories_.isEmpty()) {
+        if (pageCategories_.isEmpty()) {
+          pageCategories_ = other.pageCategories_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensurePageCategoriesIsMutable();
+          pageCategories_.addAll(other.pageCategories_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2502,6 +2610,13 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePageCategoriesIsMutable();
+                pageCategories_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3303,6 +3418,207 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         activeTimeRange_ = null;
       }
       return activeTimeRangeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList pageCategories_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePageCategoriesIsMutable() {
+      if (!pageCategories_.isModifiable()) {
+        pageCategories_ = new com.google.protobuf.LazyStringArrayList(pageCategories_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @return A list containing the pageCategories.
+     */
+    public com.google.protobuf.ProtocolStringList getPageCategoriesList() {
+      pageCategories_.makeImmutable();
+      return pageCategories_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @return The count of pageCategories.
+     */
+    public int getPageCategoriesCount() {
+      return pageCategories_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The pageCategories at the given index.
+     */
+    public java.lang.String getPageCategories(int index) {
+      return pageCategories_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pageCategories at the given index.
+     */
+    public com.google.protobuf.ByteString getPageCategoriesBytes(int index) {
+      return pageCategories_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The pageCategories to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageCategories(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePageCategoriesIsMutable();
+      pageCategories_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param value The pageCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPageCategories(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePageCategoriesIsMutable();
+      pageCategories_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param values The pageCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPageCategories(java.lang.Iterable<java.lang.String> values) {
+      ensurePageCategoriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pageCategories_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageCategories() {
+      pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to support browse uses cases.
+     * A list (up to 10 entries) of categories or departments.
+     * The format should be the same as
+     * [UserEvent.page_categories][google.cloud.retail.v2.UserEvent.page_categories];
+     * </pre>
+     *
+     * <code>repeated string page_categories = 4;</code>
+     *
+     * @param value The bytes of the pageCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPageCategoriesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePageCategoriesIsMutable();
+      pageCategories_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

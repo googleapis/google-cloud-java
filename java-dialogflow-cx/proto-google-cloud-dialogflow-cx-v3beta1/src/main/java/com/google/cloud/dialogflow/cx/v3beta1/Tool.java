@@ -45,8 +45,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     description_ = "";
-    actions_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    schemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
     toolType_ = 0;
   }
 
@@ -12435,158 +12433,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ACTIONS_FIELD_NUMBER = 6;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList actions_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived action names for the tool.
-   * </pre>
-   *
-   * <code>repeated string actions = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-   * @return A list containing the actions.
-   */
-  @java.lang.Deprecated
-  public com.google.protobuf.ProtocolStringList getActionsList() {
-    return actions_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived action names for the tool.
-   * </pre>
-   *
-   * <code>repeated string actions = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-   * @return The count of actions.
-   */
-  @java.lang.Deprecated
-  public int getActionsCount() {
-    return actions_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived action names for the tool.
-   * </pre>
-   *
-   * <code>repeated string actions = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-   * @param index The index of the element to return.
-   * @return The actions at the given index.
-   */
-  @java.lang.Deprecated
-  public java.lang.String getActions(int index) {
-    return actions_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived action names for the tool.
-   * </pre>
-   *
-   * <code>repeated string actions = 6 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-   * @param index The index of the value to return.
-   * @return The bytes of the actions at the given index.
-   */
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getActionsBytes(int index) {
-    return actions_.getByteString(index);
-  }
-
-  public static final int SCHEMAS_FIELD_NUMBER = 7;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList schemas_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived type schemas for the tool.
-   * </pre>
-   *
-   * <code>repeated string schemas = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-   * @return A list containing the schemas.
-   */
-  @java.lang.Deprecated
-  public com.google.protobuf.ProtocolStringList getSchemasList() {
-    return schemas_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived type schemas for the tool.
-   * </pre>
-   *
-   * <code>repeated string schemas = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-   * @return The count of schemas.
-   */
-  @java.lang.Deprecated
-  public int getSchemasCount() {
-    return schemas_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived type schemas for the tool.
-   * </pre>
-   *
-   * <code>repeated string schemas = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-   * @param index The index of the element to return.
-   * @return The schemas at the given index.
-   */
-  @java.lang.Deprecated
-  public java.lang.String getSchemas(int index) {
-    return schemas_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of derived type schemas for the tool.
-   * </pre>
-   *
-   * <code>repeated string schemas = 7 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-   * @param index The index of the value to return.
-   * @return The bytes of the schemas at the given index.
-   */
-  @java.lang.Deprecated
-  public com.google.protobuf.ByteString getSchemasBytes(int index) {
-    return schemas_.getByteString(index);
-  }
-
   public static final int OPEN_API_SPEC_FIELD_NUMBER = 4;
   /**
    *
@@ -12863,12 +12709,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           4, (com.google.cloud.dialogflow.cx.v3beta1.Tool.OpenApiTool) specification_);
     }
-    for (int i = 0; i < actions_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, actions_.getRaw(i));
-    }
-    for (int i = 0; i < schemas_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, schemas_.getRaw(i));
-    }
     if (specificationCase_ == 8) {
       output.writeMessage(
           8, (com.google.cloud.dialogflow.cx.v3beta1.Tool.DataStoreTool) specification_);
@@ -12908,22 +12748,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.dialogflow.cx.v3beta1.Tool.OpenApiTool) specification_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < actions_.size(); i++) {
-        dataSize += computeStringSizeNoTag(actions_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getActionsList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < schemas_.size(); i++) {
-        dataSize += computeStringSizeNoTag(schemas_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getSchemasList().size();
-    }
     if (specificationCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -12962,8 +12786,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
-    if (!getActionsList().equals(other.getActionsList())) return false;
-    if (!getSchemasList().equals(other.getSchemasList())) return false;
     if (toolType_ != other.toolType_) return false;
     if (!getSpecificationCase().equals(other.getSpecificationCase())) return false;
     switch (specificationCase_) {
@@ -12999,14 +12821,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    if (getActionsCount() > 0) {
-      hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getActionsList().hashCode();
-    }
-    if (getSchemasCount() > 0) {
-      hash = (37 * hash) + SCHEMAS_FIELD_NUMBER;
-      hash = (53 * hash) + getSchemasList().hashCode();
-    }
     hash = (37 * hash) + TOOL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + toolType_;
     switch (specificationCase_) {
@@ -13174,8 +12988,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       displayName_ = "";
       description_ = "";
-      actions_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      schemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (openApiSpecBuilder_ != null) {
         openApiSpecBuilder_.clear();
       }
@@ -13237,15 +13049,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        actions_.makeImmutable();
-        result.actions_ = actions_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        schemas_.makeImmutable();
-        result.schemas_ = schemas_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.toolType_ = toolType_;
       }
     }
@@ -13327,26 +13131,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.actions_.isEmpty()) {
-        if (actions_.isEmpty()) {
-          actions_ = other.actions_;
-          bitField0_ |= 0x00000008;
-        } else {
-          ensureActionsIsMutable();
-          actions_.addAll(other.actions_);
-        }
-        onChanged();
-      }
-      if (!other.schemas_.isEmpty()) {
-        if (schemas_.isEmpty()) {
-          schemas_ = other.schemas_;
-          bitField0_ |= 0x00000010;
-        } else {
-          ensureSchemasIsMutable();
-          schemas_.addAll(other.schemas_);
-        }
-        onChanged();
-      }
       if (other.toolType_ != 0) {
         setToolTypeValue(other.getToolTypeValue());
       }
@@ -13426,20 +13210,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 specificationCase_ = 4;
                 break;
               } // case 34
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureActionsIsMutable();
-                actions_.add(s);
-                break;
-              } // case 50
-            case 58:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureSchemasIsMutable();
-                schemas_.add(s);
-                break;
-              } // case 58
             case 66:
               {
                 input.readMessage(getDataStoreSpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -13455,7 +13225,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 toolType_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 96
             case 106:
@@ -13821,408 +13591,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       description_ = value;
       bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringArrayList actions_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    private void ensureActionsIsMutable() {
-      if (!actions_.isModifiable()) {
-        actions_ = new com.google.protobuf.LazyStringArrayList(actions_);
-      }
-      bitField0_ |= 0x00000008;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @return A list containing the actions.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ProtocolStringList getActionsList() {
-      actions_.makeImmutable();
-      return actions_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @return The count of actions.
-     */
-    @java.lang.Deprecated
-    public int getActionsCount() {
-      return actions_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param index The index of the element to return.
-     * @return The actions at the given index.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getActions(int index) {
-      return actions_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param index The index of the value to return.
-     * @return The bytes of the actions at the given index.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getActionsBytes(int index) {
-      return actions_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param index The index to set the value at.
-     * @param value The actions to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setActions(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureActionsIsMutable();
-      actions_.set(index, value);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param value The actions to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addActions(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureActionsIsMutable();
-      actions_.add(value);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param values The actions to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addAllActions(java.lang.Iterable<java.lang.String> values) {
-      ensureActionsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actions_);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearActions() {
-      actions_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      ;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived action names for the tool.
-     * </pre>
-     *
-     * <code>repeated string actions = 6 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.actions is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=458
-     * @param value The bytes of the actions to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addActionsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureActionsIsMutable();
-      actions_.add(value);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringArrayList schemas_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    private void ensureSchemasIsMutable() {
-      if (!schemas_.isModifiable()) {
-        schemas_ = new com.google.protobuf.LazyStringArrayList(schemas_);
-      }
-      bitField0_ |= 0x00000010;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @return A list containing the schemas.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ProtocolStringList getSchemasList() {
-      schemas_.makeImmutable();
-      return schemas_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @return The count of schemas.
-     */
-    @java.lang.Deprecated
-    public int getSchemasCount() {
-      return schemas_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param index The index of the element to return.
-     * @return The schemas at the given index.
-     */
-    @java.lang.Deprecated
-    public java.lang.String getSchemas(int index) {
-      return schemas_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param index The index of the value to return.
-     * @return The bytes of the schemas at the given index.
-     */
-    @java.lang.Deprecated
-    public com.google.protobuf.ByteString getSchemasBytes(int index) {
-      return schemas_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param index The index to set the value at.
-     * @param value The schemas to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setSchemas(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSchemasIsMutable();
-      schemas_.set(index, value);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param value The schemas to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addSchemas(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSchemasIsMutable();
-      schemas_.add(value);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param values The schemas to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addAllSchemas(java.lang.Iterable<java.lang.String> values) {
-      ensureSchemasIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemas_);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearSchemas() {
-      schemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      ;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of derived type schemas for the tool.
-     * </pre>
-     *
-     * <code>repeated string schemas = 7 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.dialogflow.cx.v3beta1.Tool.schemas is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/tool.proto;l=461
-     * @param value The bytes of the schemas to add.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder addSchemasBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureSchemasIsMutable();
-      schemas_.add(value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -15117,7 +14485,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setToolTypeValue(int value) {
       toolType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -15160,7 +14528,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       toolType_ = value.getNumber();
       onChanged();
       return this;
@@ -15179,7 +14547,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearToolType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       toolType_ = 0;
       onChanged();
       return this;

@@ -262,6 +262,49 @@ public final class ProductServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeProducts",
+      requestType = com.google.cloud.retail.v2beta.PurgeProductsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2beta.PurgeProductsRequest, com.google.longrunning.Operation>
+        getPurgeProductsMethod;
+    if ((getPurgeProductsMethod = ProductServiceGrpc.getPurgeProductsMethod) == null) {
+      synchronized (ProductServiceGrpc.class) {
+        if ((getPurgeProductsMethod = ProductServiceGrpc.getPurgeProductsMethod) == null) {
+          ProductServiceGrpc.getPurgeProductsMethod =
+              getPurgeProductsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2beta.PurgeProductsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeProducts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2beta.PurgeProductsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductServiceMethodDescriptorSupplier("PurgeProducts"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeProductsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2beta.ImportProductsRequest, com.google.longrunning.Operation>
       getImportProductsMethod;
 
@@ -667,6 +710,34 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Permanently deletes all selected
+     * [Product][google.cloud.retail.v2beta.Product]s under a branch.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed offline. Depending on the number of
+     * [Product][google.cloud.retail.v2beta.Product]s, this operation could take
+     * hours to complete. Before the operation completes, some
+     * [Product][google.cloud.retail.v2beta.Product]s may still be returned by
+     * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+     * Depending on the number of [Product][google.cloud.retail.v2beta.Product]s,
+     * this operation could take hours to complete. To get a sample of
+     * [Product][google.cloud.retail.v2beta.Product]s that would be deleted, set
+     * [PurgeProductsRequest.force][google.cloud.retail.v2beta.PurgeProductsRequest.force]
+     * to false.
+     * </pre>
+     */
+    default void purgeProducts(
+        com.google.cloud.retail.v2beta.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeProductsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Bulk import of multiple [Product][google.cloud.retail.v2beta.Product]s.
      * Request processing may be synchronous.
      * Non-existing items are created.
@@ -740,10 +811,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
-     * method instead of
-     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+     * method.
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -778,10 +850,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * method instead of
-     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+     * method.
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1004,6 +1077,36 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Permanently deletes all selected
+     * [Product][google.cloud.retail.v2beta.Product]s under a branch.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed offline. Depending on the number of
+     * [Product][google.cloud.retail.v2beta.Product]s, this operation could take
+     * hours to complete. Before the operation completes, some
+     * [Product][google.cloud.retail.v2beta.Product]s may still be returned by
+     * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+     * Depending on the number of [Product][google.cloud.retail.v2beta.Product]s,
+     * this operation could take hours to complete. To get a sample of
+     * [Product][google.cloud.retail.v2beta.Product]s that would be deleted, set
+     * [PurgeProductsRequest.force][google.cloud.retail.v2beta.PurgeProductsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public void purgeProducts(
+        com.google.cloud.retail.v2beta.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeProductsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Bulk import of multiple [Product][google.cloud.retail.v2beta.Product]s.
      * Request processing may be synchronous.
      * Non-existing items are created.
@@ -1081,10 +1184,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
-     * method instead of
-     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+     * method.
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1121,10 +1225,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * method instead of
-     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+     * method.
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1323,6 +1428,33 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Permanently deletes all selected
+     * [Product][google.cloud.retail.v2beta.Product]s under a branch.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed offline. Depending on the number of
+     * [Product][google.cloud.retail.v2beta.Product]s, this operation could take
+     * hours to complete. Before the operation completes, some
+     * [Product][google.cloud.retail.v2beta.Product]s may still be returned by
+     * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+     * Depending on the number of [Product][google.cloud.retail.v2beta.Product]s,
+     * this operation could take hours to complete. To get a sample of
+     * [Product][google.cloud.retail.v2beta.Product]s that would be deleted, set
+     * [PurgeProductsRequest.force][google.cloud.retail.v2beta.PurgeProductsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeProducts(
+        com.google.cloud.retail.v2beta.PurgeProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Bulk import of multiple [Product][google.cloud.retail.v2beta.Product]s.
      * Request processing may be synchronous.
      * Non-existing items are created.
@@ -1394,10 +1526,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
-     * method instead of
-     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+     * method.
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1431,10 +1564,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * method instead of
-     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+     * method.
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1628,6 +1762,33 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * Permanently deletes all selected
+     * [Product][google.cloud.retail.v2beta.Product]s under a branch.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed offline. Depending on the number of
+     * [Product][google.cloud.retail.v2beta.Product]s, this operation could take
+     * hours to complete. Before the operation completes, some
+     * [Product][google.cloud.retail.v2beta.Product]s may still be returned by
+     * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+     * Depending on the number of [Product][google.cloud.retail.v2beta.Product]s,
+     * this operation could take hours to complete. To get a sample of
+     * [Product][google.cloud.retail.v2beta.Product]s that would be deleted, set
+     * [PurgeProductsRequest.force][google.cloud.retail.v2beta.PurgeProductsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeProducts(com.google.cloud.retail.v2beta.PurgeProductsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeProductsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Bulk import of multiple [Product][google.cloud.retail.v2beta.Product]s.
      * Request processing may be synchronous.
      * Non-existing items are created.
@@ -1699,10 +1860,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
-     * method instead of
-     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+     * method.
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1736,10 +1898,11 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
-     * It is recommended to use the
+     * We recommend that you use the
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * method instead of
-     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
+     * method instead of the
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+     * method.
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
      * achieves the same results but provides more fine-grained control over
      * ingesting local inventory data.
@@ -1847,12 +2010,13 @@ public final class ProductServiceGrpc {
   private static final int METHODID_LIST_PRODUCTS = 2;
   private static final int METHODID_UPDATE_PRODUCT = 3;
   private static final int METHODID_DELETE_PRODUCT = 4;
-  private static final int METHODID_IMPORT_PRODUCTS = 5;
-  private static final int METHODID_SET_INVENTORY = 6;
-  private static final int METHODID_ADD_FULFILLMENT_PLACES = 7;
-  private static final int METHODID_REMOVE_FULFILLMENT_PLACES = 8;
-  private static final int METHODID_ADD_LOCAL_INVENTORIES = 9;
-  private static final int METHODID_REMOVE_LOCAL_INVENTORIES = 10;
+  private static final int METHODID_PURGE_PRODUCTS = 5;
+  private static final int METHODID_IMPORT_PRODUCTS = 6;
+  private static final int METHODID_SET_INVENTORY = 7;
+  private static final int METHODID_ADD_FULFILLMENT_PLACES = 8;
+  private static final int METHODID_REMOVE_FULFILLMENT_PLACES = 9;
+  private static final int METHODID_ADD_LOCAL_INVENTORIES = 10;
+  private static final int METHODID_REMOVE_LOCAL_INVENTORIES = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1899,6 +2063,11 @@ public final class ProductServiceGrpc {
           serviceImpl.deleteProduct(
               (com.google.cloud.retail.v2beta.DeleteProductRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_PURGE_PRODUCTS:
+          serviceImpl.purgeProducts(
+              (com.google.cloud.retail.v2beta.PurgeProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_IMPORT_PRODUCTS:
           serviceImpl.importProducts(
@@ -1979,6 +2148,12 @@ public final class ProductServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.retail.v2beta.DeleteProductRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_PRODUCT)))
+        .addMethod(
+            getPurgeProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.PurgeProductsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_PRODUCTS)))
         .addMethod(
             getImportProductsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2071,6 +2246,7 @@ public final class ProductServiceGrpc {
                       .addMethod(getListProductsMethod())
                       .addMethod(getUpdateProductMethod())
                       .addMethod(getDeleteProductMethod())
+                      .addMethod(getPurgeProductsMethod())
                       .addMethod(getImportProductsMethod())
                       .addMethod(getSetInventoryMethod())
                       .addMethod(getAddFulfillmentPlacesMethod())

@@ -198,9 +198,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -265,9 +262,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -332,9 +326,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -401,9 +392,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -470,9 +458,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -499,9 +484,6 @@ public class AgentsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setStartPlaybook(
-                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -554,9 +536,6 @@ public class AgentsClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setAvatarUri("avatarUri-428646061")
               .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-              .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-              .setStartPlaybook(
-                  PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
               .setSecuritySettings(
                   SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                       .toString())

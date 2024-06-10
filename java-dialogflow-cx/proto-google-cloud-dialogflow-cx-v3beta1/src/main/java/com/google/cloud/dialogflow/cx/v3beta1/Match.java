@@ -145,6 +145,17 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT = 6;</code>
      */
     EVENT(6),
+    /**
+     *
+     *
+     * <pre>
+     * The query was handled by a
+     * [`Playbook`][google.cloud.dialogflow.cx.v3beta1.Playbook].
+     * </pre>
+     *
+     * <code>PLAYBOOK = 9;</code>
+     */
+    PLAYBOOK(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -218,6 +229,17 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT = 6;</code>
      */
     public static final int EVENT_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The query was handled by a
+     * [`Playbook`][google.cloud.dialogflow.cx.v3beta1.Playbook].
+     * </pre>
+     *
+     * <code>PLAYBOOK = 9;</code>
+     */
+    public static final int PLAYBOOK_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -257,6 +279,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           return NO_INPUT;
         case 6:
           return EVENT;
+        case 9:
+          return PLAYBOOK;
         default:
           return null;
       }

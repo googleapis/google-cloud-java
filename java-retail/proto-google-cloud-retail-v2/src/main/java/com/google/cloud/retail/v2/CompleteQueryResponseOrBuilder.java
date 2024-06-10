@@ -129,9 +129,9 @@ public interface CompleteQueryResponseOrBuilder
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
@@ -153,18 +153,19 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult>
       getRecentSearchResultsList();
   /**
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
@@ -186,18 +187,19 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult getRecentSearchResults(
       int index);
   /**
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
@@ -219,17 +221,18 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   int getRecentSearchResultsCount();
   /**
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
@@ -251,9 +254,10 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<
           ? extends com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResultOrBuilder>
       getRecentSearchResultsOrBuilderList();
@@ -261,9 +265,9 @@ public interface CompleteQueryResponseOrBuilder
    *
    *
    * <pre>
-   * Matched recent searches of this user. The maximum number of recent searches
-   * is 10. This field is a restricted feature. Contact Retail Search support
-   * team if you are interested in enabling it.
+   * Deprecated. Matched recent searches of this user. The maximum number of
+   * recent searches is 10. This field is a restricted feature. If you want to
+   * enable it, contact Retail Search support.
    *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
@@ -285,9 +289,10 @@ public interface CompleteQueryResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3;
+   * repeated .google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResult recent_search_results = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.retail.v2.CompleteQueryResponse.RecentSearchResultOrBuilder
       getRecentSearchResultsOrBuilder(int index);
 }

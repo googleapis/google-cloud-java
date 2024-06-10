@@ -24,8 +24,8 @@ package com.google.cloud.retail.v2alpha;
  *
  * <pre>
  * Represents a link between a Merchant Center account and a branch.
- * Once a link is established, products from the linked merchant center account
- * will be streamed to the linked branch.
+ * After a link is established, products from the linked Merchant Center account
+ * are streamed to the linked branch.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.MerchantCenterLink}
@@ -75,7 +75,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The linked [Merchant center account
+   * Required. The linked [Merchant Center account
    * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
    * The account must be a standalone account or a sub-account of a MCA.
    * </pre>
@@ -102,7 +102,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch ID can only have one linked merchant center account ID.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -130,7 +130,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
    *
-   * A single branch ID can only have one linked merchant center account ID.
+   * A single branch ID can only have one linked Merchant Center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -666,8 +666,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Represents a link between a Merchant Center account and a branch.
-   * Once a link is established, products from the linked merchant center account
-   * will be streamed to the linked branch.
+   * After a link is established, products from the linked Merchant Center account
+   * are streamed to the linked branch.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.MerchantCenterLink}
@@ -978,7 +978,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The linked [Merchant center account
+     * Required. The linked [Merchant Center account
      * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
@@ -995,7 +995,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The linked [Merchant center account
+     * Required. The linked [Merchant Center account
      * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
@@ -1016,7 +1016,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The linked [Merchant center account
+     * Required. The linked [Merchant Center account
      * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
@@ -1042,7 +1042,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch ID can only have one linked merchant center account ID.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -1069,7 +1069,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch ID can only have one linked merchant center account ID.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -1096,7 +1096,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch ID can only have one linked merchant center account ID.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -1122,7 +1122,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch ID can only have one linked merchant center account ID.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -1144,7 +1144,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
      *
-     * A single branch ID can only have one linked merchant center account ID.
+     * A single branch ID can only have one linked Merchant Center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>

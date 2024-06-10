@@ -239,58 +239,36 @@ public interface PlaybookOrBuilder
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+   *
+   * @return Whether the instruction field is set.
    */
-  java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> getStepsList();
+  boolean hasInstruction();
   /**
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
+   *
+   * @return The instruction.
    */
-  com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step getSteps(int index);
+  com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getInstruction();
   /**
    *
    *
    * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
+   * Instruction to accomplish target goal.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction instruction = 17;</code>
    */
-  int getStepsCount();
-  /**
-   *
-   *
-   * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-   */
-  java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>
-      getStepsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Ordered list of step by step execution instructions to accomplish
-   * target goal.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Playbook.Step steps = 4;</code>
-   */
-  com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder getStepsOrBuilder(int index);
+  com.google.cloud.dialogflow.cx.v3beta1.Playbook.InstructionOrBuilder getInstructionOrBuilder();
 
   /**
    *

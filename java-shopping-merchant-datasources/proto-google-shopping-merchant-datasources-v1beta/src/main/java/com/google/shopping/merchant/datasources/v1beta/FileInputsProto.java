@@ -69,12 +69,15 @@ public final class FileInputsProto {
           + "\022\023\n\017FREQUENCY_DAILY\020\001\022\024\n\020FREQUENCY_WEEKL"
           + "Y\020\002\022\025\n\021FREQUENCY_MONTHLY\020\003\"Z\n\rFileInputT"
           + "ype\022\037\n\033FILE_INPUT_TYPE_UNSPECIFIED\020\000\022\n\n\006"
-          + "UPLOAD\020\001\022\t\n\005FETCH\020\002\022\021\n\rGOOGLE_SHEETS\020\003B\235"
-          + "\001\n/com.google.shopping.merchant.datasour"
+          + "UPLOAD\020\001\022\t\n\005FETCH\020\002\022\021\n\rGOOGLE_SHEETS\020\003B\253"
+          + "\002\n/com.google.shopping.merchant.datasour"
           + "ces.v1betaB\017FileInputsProtoP\001ZWcloud.goo"
           + "gle.com/go/shopping/merchant/datasources"
-          + "/apiv1beta/datasourcespb;datasourcespbb\006"
-          + "proto3"
+          + "/apiv1beta/datasourcespb;datasourcespb\252\002"
+          + "+Google.Shopping.Merchant.DataSources.V1"
+          + "Beta\312\002+Google\\Shopping\\Merchant\\DataSour"
+          + "ces\\V1beta\352\002/Google::Shopping::Merchant:"
+          + ":DataSources::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

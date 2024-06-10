@@ -77,6 +77,18 @@ public final class CommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_Rule_IgnoreAction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_FacetPositionAdjustment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_Rule_RemoveFacetAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Rule_RemoveFacetAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2beta_Audience_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_Audience_fieldAccessorTable;
@@ -136,98 +148,109 @@ public final class CommonProto {
       "\n\'google/cloud/retail/v2beta/common.prot"
           + "o\022\032google.cloud.retail.v2beta\032\037google/ap"
           + "i/field_behavior.proto\032\037google/protobuf/"
-          + "timestamp.proto\"\270\002\n\tCondition\022D\n\013query_t"
+          + "timestamp.proto\"\321\002\n\tCondition\022D\n\013query_t"
           + "erms\030\001 \003(\0132/.google.cloud.retail.v2beta."
           + "Condition.QueryTerm\022J\n\021active_time_range"
           + "\030\003 \003(\0132/.google.cloud.retail.v2beta.Cond"
-          + "ition.TimeRange\032.\n\tQueryTerm\022\r\n\005value\030\001 "
-          + "\001(\t\022\022\n\nfull_match\030\002 \001(\010\032i\n\tTimeRange\022.\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf"
-          + ".Timestamp\"\241\t\n\004Rule\022D\n\014boost_action\030\002 \001("
-          + "\0132,.google.cloud.retail.v2beta.Rule.Boos"
-          + "tActionH\000\022J\n\017redirect_action\030\003 \001(\0132/.goo"
-          + "gle.cloud.retail.v2beta.Rule.RedirectAct"
-          + "ionH\000\022W\n\026oneway_synonyms_action\030\006 \001(\01325."
-          + "google.cloud.retail.v2beta.Rule.OnewaySy"
-          + "nonymsActionH\000\022X\n\027do_not_associate_actio"
-          + "n\030\007 \001(\01325.google.cloud.retail.v2beta.Rul"
-          + "e.DoNotAssociateActionH\000\022P\n\022replacement_"
-          + "action\030\010 \001(\01322.google.cloud.retail.v2bet"
-          + "a.Rule.ReplacementActionH\000\022F\n\rignore_act"
-          + "ion\030\t \001(\0132-.google.cloud.retail.v2beta.R"
-          + "ule.IgnoreActionH\000\022F\n\rfilter_action\030\n \001("
-          + "\0132-.google.cloud.retail.v2beta.Rule.Filt"
-          + "erActionH\000\022W\n\026twoway_synonyms_action\030\013 \001"
-          + "(\01325.google.cloud.retail.v2beta.Rule.Two"
-          + "waySynonymsActionH\000\022=\n\tcondition\030\001 \001(\0132%"
-          + ".google.cloud.retail.v2beta.ConditionB\003\340"
-          + "A\002\0325\n\013BoostAction\022\r\n\005boost\030\001 \001(\002\022\027\n\017prod"
-          + "ucts_filter\030\002 \001(\t\032\036\n\014FilterAction\022\016\n\006fil"
-          + "ter\030\001 \001(\t\032&\n\016RedirectAction\022\024\n\014redirect_"
-          + "uri\030\001 \001(\t\032(\n\024TwowaySynonymsAction\022\020\n\010syn"
-          + "onyms\030\001 \003(\t\032S\n\024OnewaySynonymsAction\022\023\n\013q"
-          + "uery_terms\030\003 \003(\t\022\020\n\010synonyms\030\004 \003(\t\022\024\n\014on"
-          + "eway_terms\030\002 \003(\t\032Z\n\024DoNotAssociateAction"
-          + "\022\023\n\013query_terms\030\002 \003(\t\022\036\n\026do_not_associat"
-          + "e_terms\030\003 \003(\t\022\r\n\005terms\030\001 \003(\t\032P\n\021Replacem"
-          + "entAction\022\023\n\013query_terms\030\002 \003(\t\022\030\n\020replac"
-          + "ement_term\030\003 \001(\t\022\014\n\004term\030\001 \001(\t\032$\n\014Ignore"
-          + "Action\022\024\n\014ignore_terms\030\001 \003(\tB\010\n\006action\"/"
-          + "\n\010Audience\022\017\n\007genders\030\001 \003(\t\022\022\n\nage_group"
-          + "s\030\002 \003(\t\"3\n\tColorInfo\022\026\n\016color_families\030\001"
-          + " \003(\t\022\016\n\006colors\030\002 \003(\t\"\206\001\n\017CustomAttribute"
-          + "\022\014\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\022\033\n\nsearc"
-          + "hable\030\003 \001(\010B\002\030\001H\000\210\001\001\022\032\n\tindexable\030\004 \001(\010B"
-          + "\002\030\001H\001\210\001\001B\r\n\013_searchableB\014\n\n_indexable\"2\n"
-          + "\017FulfillmentInfo\022\014\n\004type\030\001 \001(\t\022\021\n\tplace_"
-          + "ids\030\002 \003(\t\"8\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\016\n\006"
-          + "height\030\002 \001(\005\022\r\n\005width\030\003 \001(\005\"x\n\010Interval\022"
-          + "\021\n\007minimum\030\001 \001(\001H\000\022\033\n\021exclusive_minimum\030"
-          + "\002 \001(\001H\000\022\021\n\007maximum\030\003 \001(\001H\001\022\033\n\021exclusive_"
-          + "maximum\030\004 \001(\001H\001B\005\n\003minB\005\n\003max\"\225\003\n\tPriceI"
-          + "nfo\022\025\n\rcurrency_code\030\001 \001(\t\022\r\n\005price\030\002 \001("
-          + "\002\022\026\n\016original_price\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022"
-          + "8\n\024price_effective_time\030\005 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\0225\n\021price_expire_time\030\006"
-          + " \001(\0132\032.google.protobuf.Timestamp\022J\n\013pric"
-          + "e_range\030\007 \001(\01320.google.cloud.retail.v2be"
-          + "ta.PriceInfo.PriceRangeB\003\340A\003\032\177\n\nPriceRan"
-          + "ge\0223\n\005price\030\001 \001(\0132$.google.cloud.retail."
-          + "v2beta.Interval\022<\n\016original_price\030\002 \001(\0132"
-          + "$.google.cloud.retail.v2beta.Interval\"P\n"
-          + "\006Rating\022\024\n\014rating_count\030\001 \001(\005\022\026\n\016average"
-          + "_rating\030\002 \001(\002\022\030\n\020rating_histogram\030\003 \003(\005\""
-          + "`\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nip_addre"
-          + "ss\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\033\n\023direct_u"
-          + "ser_request\030\004 \001(\010\"\255\002\n\016LocalInventory\022\020\n\010"
-          + "place_id\030\001 \001(\t\0229\n\nprice_info\030\002 \001(\0132%.goo"
-          + "gle.cloud.retail.v2beta.PriceInfo\022N\n\natt"
-          + "ributes\030\003 \003(\0132:.google.cloud.retail.v2be"
-          + "ta.LocalInventory.AttributesEntry\022\036\n\021ful"
-          + "fillment_types\030\004 \003(\tB\003\340A\004\032^\n\017AttributesE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+.googl"
-          + "e.cloud.retail.v2beta.CustomAttribute:\0028"
-          + "\001*\206\001\n\024AttributeConfigLevel\022&\n\"ATTRIBUTE_"
-          + "CONFIG_LEVEL_UNSPECIFIED\020\000\022\"\n\036PRODUCT_LE"
-          + "VEL_ATTRIBUTE_CONFIG\020\001\022\"\n\036CATALOG_LEVEL_"
-          + "ATTRIBUTE_CONFIG\020\002*i\n\014SolutionType\022\035\n\031SO"
-          + "LUTION_TYPE_UNSPECIFIED\020\000\022 \n\034SOLUTION_TY"
-          + "PE_RECOMMENDATION\020\001\022\030\n\024SOLUTION_TYPE_SEA"
-          + "RCH\020\002*\241\001\n\036RecommendationsFilteringOption"
-          + "\0220\n,RECOMMENDATIONS_FILTERING_OPTION_UNS"
-          + "PECIFIED\020\000\022&\n\"RECOMMENDATIONS_FILTERING_"
-          + "DISABLED\020\001\022%\n!RECOMMENDATIONS_FILTERING_"
-          + "ENABLED\020\003*\213\001\n\025SearchSolutionUseCase\022(\n$S"
-          + "EARCH_SOLUTION_USE_CASE_UNSPECIFIED\020\000\022#\n"
-          + "\037SEARCH_SOLUTION_USE_CASE_SEARCH\020\001\022#\n\037SE"
-          + "ARCH_SOLUTION_USE_CASE_BROWSE\020\002B\312\001\n\036com."
-          + "google.cloud.retail.v2betaB\013CommonProtoP"
-          + "\001Z6cloud.google.com/go/retail/apiv2beta/"
-          + "retailpb;retailpb\242\002\006RETAIL\252\002\032Google.Clou"
-          + "d.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2"
-          + "beta\352\002\035Google::Cloud::Retail::V2betab\006pr"
-          + "oto3"
+          + "ition.TimeRange\022\027\n\017page_categories\030\004 \003(\t"
+          + "\032.\n\tQueryTerm\022\r\n\005value\030\001 \001(\t\022\022\n\nfull_mat"
+          + "ch\030\002 \001(\010\032i\n\tTimeRange\022.\n\nstart_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022,\n\010end_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.Timestamp\"\325\014\n\004"
+          + "Rule\022D\n\014boost_action\030\002 \001(\0132,.google.clou"
+          + "d.retail.v2beta.Rule.BoostActionH\000\022J\n\017re"
+          + "direct_action\030\003 \001(\0132/.google.cloud.retai"
+          + "l.v2beta.Rule.RedirectActionH\000\022W\n\026oneway"
+          + "_synonyms_action\030\006 \001(\01325.google.cloud.re"
+          + "tail.v2beta.Rule.OnewaySynonymsActionH\000\022"
+          + "X\n\027do_not_associate_action\030\007 \001(\01325.googl"
+          + "e.cloud.retail.v2beta.Rule.DoNotAssociat"
+          + "eActionH\000\022P\n\022replacement_action\030\010 \001(\01322."
+          + "google.cloud.retail.v2beta.Rule.Replacem"
+          + "entActionH\000\022F\n\rignore_action\030\t \001(\0132-.goo"
+          + "gle.cloud.retail.v2beta.Rule.IgnoreActio"
+          + "nH\000\022F\n\rfilter_action\030\n \001(\0132-.google.clou"
+          + "d.retail.v2beta.Rule.FilterActionH\000\022W\n\026t"
+          + "woway_synonyms_action\030\013 \001(\01325.google.clo"
+          + "ud.retail.v2beta.Rule.TwowaySynonymsActi"
+          + "onH\000\022\\\n\031force_return_facet_action\030\014 \001(\0132"
+          + "7.google.cloud.retail.v2beta.Rule.ForceR"
+          + "eturnFacetActionH\000\022Q\n\023remove_facet_actio"
+          + "n\030\r \001(\01322.google.cloud.retail.v2beta.Rul"
+          + "e.RemoveFacetActionH\000\022=\n\tcondition\030\001 \001(\013"
+          + "2%.google.cloud.retail.v2beta.ConditionB"
+          + "\003\340A\002\0325\n\013BoostAction\022\r\n\005boost\030\001 \001(\002\022\027\n\017pr"
+          + "oducts_filter\030\002 \001(\t\032\036\n\014FilterAction\022\016\n\006f"
+          + "ilter\030\001 \001(\t\032&\n\016RedirectAction\022\024\n\014redirec"
+          + "t_uri\030\001 \001(\t\032(\n\024TwowaySynonymsAction\022\020\n\010s"
+          + "ynonyms\030\001 \003(\t\032S\n\024OnewaySynonymsAction\022\023\n"
+          + "\013query_terms\030\003 \003(\t\022\020\n\010synonyms\030\004 \003(\t\022\024\n\014"
+          + "oneway_terms\030\002 \003(\t\032Z\n\024DoNotAssociateActi"
+          + "on\022\023\n\013query_terms\030\002 \003(\t\022\036\n\026do_not_associ"
+          + "ate_terms\030\003 \003(\t\022\r\n\005terms\030\001 \003(\t\032P\n\021Replac"
+          + "ementAction\022\023\n\013query_terms\030\002 \003(\t\022\030\n\020repl"
+          + "acement_term\030\003 \001(\t\022\014\n\004term\030\001 \001(\t\032$\n\014Igno"
+          + "reAction\022\024\n\014ignore_terms\030\001 \003(\t\032\322\001\n\026Force"
+          + "ReturnFacetAction\022s\n\032facet_position_adju"
+          + "stments\030\001 \003(\0132O.google.cloud.retail.v2be"
+          + "ta.Rule.ForceReturnFacetAction.FacetPosi"
+          + "tionAdjustment\032C\n\027FacetPositionAdjustmen"
+          + "t\022\026\n\016attribute_name\030\001 \001(\t\022\020\n\010position\030\002 "
+          + "\001(\005\032,\n\021RemoveFacetAction\022\027\n\017attribute_na"
+          + "mes\030\001 \003(\tB\010\n\006action\"/\n\010Audience\022\017\n\007gende"
+          + "rs\030\001 \003(\t\022\022\n\nage_groups\030\002 \003(\t\"3\n\tColorInf"
+          + "o\022\026\n\016color_families\030\001 \003(\t\022\016\n\006colors\030\002 \003("
+          + "\t\"\206\001\n\017CustomAttribute\022\014\n\004text\030\001 \003(\t\022\017\n\007n"
+          + "umbers\030\002 \003(\001\022\033\n\nsearchable\030\003 \001(\010B\002\030\001H\000\210\001"
+          + "\001\022\032\n\tindexable\030\004 \001(\010B\002\030\001H\001\210\001\001B\r\n\013_search"
+          + "ableB\014\n\n_indexable\"2\n\017FulfillmentInfo\022\014\n"
+          + "\004type\030\001 \001(\t\022\021\n\tplace_ids\030\002 \003(\t\"8\n\005Image\022"
+          + "\020\n\003uri\030\001 \001(\tB\003\340A\002\022\016\n\006height\030\002 \001(\005\022\r\n\005wid"
+          + "th\030\003 \001(\005\"x\n\010Interval\022\021\n\007minimum\030\001 \001(\001H\000\022"
+          + "\033\n\021exclusive_minimum\030\002 \001(\001H\000\022\021\n\007maximum\030"
+          + "\003 \001(\001H\001\022\033\n\021exclusive_maximum\030\004 \001(\001H\001B\005\n\003"
+          + "minB\005\n\003max\"\225\003\n\tPriceInfo\022\025\n\rcurrency_cod"
+          + "e\030\001 \001(\t\022\r\n\005price\030\002 \001(\002\022\026\n\016original_price"
+          + "\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\0228\n\024price_effective_"
+          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\0225"
+          + "\n\021price_expire_time\030\006 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022J\n\013price_range\030\007 \001(\01320.goo"
+          + "gle.cloud.retail.v2beta.PriceInfo.PriceR"
+          + "angeB\003\340A\003\032\177\n\nPriceRange\0223\n\005price\030\001 \001(\0132$"
+          + ".google.cloud.retail.v2beta.Interval\022<\n\016"
+          + "original_price\030\002 \001(\0132$.google.cloud.reta"
+          + "il.v2beta.Interval\"P\n\006Rating\022\024\n\014rating_c"
+          + "ount\030\001 \001(\005\022\026\n\016average_rating\030\002 \001(\002\022\030\n\020ra"
+          + "ting_histogram\030\003 \003(\005\"`\n\010UserInfo\022\017\n\007user"
+          + "_id\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\022\n\nuser_ag"
+          + "ent\030\003 \001(\t\022\033\n\023direct_user_request\030\004 \001(\010\"\255"
+          + "\002\n\016LocalInventory\022\020\n\010place_id\030\001 \001(\t\0229\n\np"
+          + "rice_info\030\002 \001(\0132%.google.cloud.retail.v2"
+          + "beta.PriceInfo\022N\n\nattributes\030\003 \003(\0132:.goo"
+          + "gle.cloud.retail.v2beta.LocalInventory.A"
+          + "ttributesEntry\022\036\n\021fulfillment_types\030\004 \003("
+          + "\tB\003\340A\004\032^\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022:"
+          + "\n\005value\030\002 \001(\0132+.google.cloud.retail.v2be"
+          + "ta.CustomAttribute:\0028\001*\206\001\n\024AttributeConf"
+          + "igLevel\022&\n\"ATTRIBUTE_CONFIG_LEVEL_UNSPEC"
+          + "IFIED\020\000\022\"\n\036PRODUCT_LEVEL_ATTRIBUTE_CONFI"
+          + "G\020\001\022\"\n\036CATALOG_LEVEL_ATTRIBUTE_CONFIG\020\002*"
+          + "i\n\014SolutionType\022\035\n\031SOLUTION_TYPE_UNSPECI"
+          + "FIED\020\000\022 \n\034SOLUTION_TYPE_RECOMMENDATION\020\001"
+          + "\022\030\n\024SOLUTION_TYPE_SEARCH\020\002*\241\001\n\036Recommend"
+          + "ationsFilteringOption\0220\n,RECOMMENDATIONS"
+          + "_FILTERING_OPTION_UNSPECIFIED\020\000\022&\n\"RECOM"
+          + "MENDATIONS_FILTERING_DISABLED\020\001\022%\n!RECOM"
+          + "MENDATIONS_FILTERING_ENABLED\020\003*\213\001\n\025Searc"
+          + "hSolutionUseCase\022(\n$SEARCH_SOLUTION_USE_"
+          + "CASE_UNSPECIFIED\020\000\022#\n\037SEARCH_SOLUTION_US"
+          + "E_CASE_SEARCH\020\001\022#\n\037SEARCH_SOLUTION_USE_C"
+          + "ASE_BROWSE\020\002B\312\001\n\036com.google.cloud.retail"
+          + ".v2betaB\013CommonProtoP\001Z6cloud.google.com"
+          + "/go/retail/apiv2beta/retailpb;retailpb\242\002"
+          + "\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032G"
+          + "oogle\\Cloud\\Retail\\V2beta\352\002\035Google::Clou"
+          + "d::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -242,7 +265,7 @@ public final class CommonProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_Condition_descriptor,
             new java.lang.String[] {
-              "QueryTerms", "ActiveTimeRange",
+              "QueryTerms", "ActiveTimeRange", "PageCategories",
             });
     internal_static_google_cloud_retail_v2beta_Condition_QueryTerm_descriptor =
         internal_static_google_cloud_retail_v2beta_Condition_descriptor.getNestedTypes().get(0);
@@ -274,6 +297,8 @@ public final class CommonProto {
               "IgnoreAction",
               "FilterAction",
               "TwowaySynonymsAction",
+              "ForceReturnFacetAction",
+              "RemoveFacetAction",
               "Condition",
               "Action",
             });
@@ -340,6 +365,32 @@ public final class CommonProto {
             internal_static_google_cloud_retail_v2beta_Rule_IgnoreAction_descriptor,
             new java.lang.String[] {
               "IgnoreTerms",
+            });
+    internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_descriptor =
+        internal_static_google_cloud_retail_v2beta_Rule_descriptor.getNestedTypes().get(8);
+    internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_descriptor,
+            new java.lang.String[] {
+              "FacetPositionAdjustments",
+            });
+    internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor =
+        internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_FacetPositionAdjustment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_Rule_ForceReturnFacetAction_FacetPositionAdjustment_descriptor,
+            new java.lang.String[] {
+              "AttributeName", "Position",
+            });
+    internal_static_google_cloud_retail_v2beta_Rule_RemoveFacetAction_descriptor =
+        internal_static_google_cloud_retail_v2beta_Rule_descriptor.getNestedTypes().get(9);
+    internal_static_google_cloud_retail_v2beta_Rule_RemoveFacetAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_Rule_RemoveFacetAction_descriptor,
+            new java.lang.String[] {
+              "AttributeNames",
             });
     internal_static_google_cloud_retail_v2beta_Audience_descriptor =
         getDescriptor().getMessageTypes().get(2);

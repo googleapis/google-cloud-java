@@ -28,24 +28,22 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
-   * Note that this is only applicable to
-   * [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY] and
-   * [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION],
-   * and ignored for
-   * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]. In
-   * general, we suggest the users to delete the stale products explicitly,
-   * instead of using this field to determine staleness.
+   * Note that this field is applied in the following ways:
    *
-   * If it is set, the [Product][google.cloud.retail.v2alpha.Product] is not
-   * available for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search]
-   * after [expire_time][google.cloud.retail.v2alpha.Product.expire_time].
-   * However, the product can still be retrieved by
-   * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
-   * and
-   * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is already
+   * expired when it is uploaded, this product
+   *   is not indexed for search.
+   *
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is not expired
+   * when it is uploaded, only the
+   *   [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]'s and
+   *   [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]'s
+   *   expireTime is respected, and
+   *   [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]'s
+   *   expireTime is not used.
+   *
+   * In general, we suggest the users to delete the stale
+   * products explicitly, instead of using this field to determine staleness.
    *
    * [expire_time][google.cloud.retail.v2alpha.Product.expire_time] must be
    * later than
@@ -66,24 +64,22 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
-   * Note that this is only applicable to
-   * [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY] and
-   * [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION],
-   * and ignored for
-   * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]. In
-   * general, we suggest the users to delete the stale products explicitly,
-   * instead of using this field to determine staleness.
+   * Note that this field is applied in the following ways:
    *
-   * If it is set, the [Product][google.cloud.retail.v2alpha.Product] is not
-   * available for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search]
-   * after [expire_time][google.cloud.retail.v2alpha.Product.expire_time].
-   * However, the product can still be retrieved by
-   * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
-   * and
-   * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is already
+   * expired when it is uploaded, this product
+   *   is not indexed for search.
+   *
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is not expired
+   * when it is uploaded, only the
+   *   [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]'s and
+   *   [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]'s
+   *   expireTime is respected, and
+   *   [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]'s
+   *   expireTime is not used.
+   *
+   * In general, we suggest the users to delete the stale
+   * products explicitly, instead of using this field to determine staleness.
    *
    * [expire_time][google.cloud.retail.v2alpha.Product.expire_time] must be
    * later than
@@ -104,24 +100,22 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
-   * Note that this is only applicable to
-   * [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY] and
-   * [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION],
-   * and ignored for
-   * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]. In
-   * general, we suggest the users to delete the stale products explicitly,
-   * instead of using this field to determine staleness.
+   * Note that this field is applied in the following ways:
    *
-   * If it is set, the [Product][google.cloud.retail.v2alpha.Product] is not
-   * available for
-   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search]
-   * after [expire_time][google.cloud.retail.v2alpha.Product.expire_time].
-   * However, the product can still be retrieved by
-   * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
-   * and
-   * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is already
+   * expired when it is uploaded, this product
+   *   is not indexed for search.
+   *
+   * * If the [Product][google.cloud.retail.v2alpha.Product] is not expired
+   * when it is uploaded, only the
+   *   [Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]'s and
+   *   [Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]'s
+   *   expireTime is respected, and
+   *   [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]'s
+   *   expireTime is not used.
+   *
+   * In general, we suggest the users to delete the stale
+   * products explicitly, instead of using this field to determine staleness.
    *
    * [expire_time][google.cloud.retail.v2alpha.Product.expire_time] must be
    * later than
@@ -594,9 +588,10 @@ public interface ProductOrBuilder
    * INVALID_ARGUMENT error is returned.
    *
    * At most 250 values are allowed per
-   * [Product][google.cloud.retail.v2alpha.Product]. Empty values are not
-   * allowed. Each value must be a UTF-8 encoded string with a length limit of
-   * 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * [Product][google.cloud.retail.v2alpha.Product] unless overridden through
+   * the Google Cloud console. Empty values are not allowed. Each value must be
+   * a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise,
+   * an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
@@ -640,9 +635,10 @@ public interface ProductOrBuilder
    * INVALID_ARGUMENT error is returned.
    *
    * At most 250 values are allowed per
-   * [Product][google.cloud.retail.v2alpha.Product]. Empty values are not
-   * allowed. Each value must be a UTF-8 encoded string with a length limit of
-   * 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * [Product][google.cloud.retail.v2alpha.Product] unless overridden through
+   * the Google Cloud console. Empty values are not allowed. Each value must be
+   * a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise,
+   * an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
@@ -686,9 +682,10 @@ public interface ProductOrBuilder
    * INVALID_ARGUMENT error is returned.
    *
    * At most 250 values are allowed per
-   * [Product][google.cloud.retail.v2alpha.Product]. Empty values are not
-   * allowed. Each value must be a UTF-8 encoded string with a length limit of
-   * 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * [Product][google.cloud.retail.v2alpha.Product] unless overridden through
+   * the Google Cloud console. Empty values are not allowed. Each value must be
+   * a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise,
+   * an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
@@ -733,9 +730,10 @@ public interface ProductOrBuilder
    * INVALID_ARGUMENT error is returned.
    *
    * At most 250 values are allowed per
-   * [Product][google.cloud.retail.v2alpha.Product]. Empty values are not
-   * allowed. Each value must be a UTF-8 encoded string with a length limit of
-   * 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * [Product][google.cloud.retail.v2alpha.Product] unless overridden through
+   * the Google Cloud console. Empty values are not allowed. Each value must be
+   * a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise,
+   * an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
@@ -797,9 +795,10 @@ public interface ProductOrBuilder
    * <pre>
    * The brands of the product.
    *
-   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
-   * string with a length limit of 1,000 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * A maximum of 30 brands are allowed unless overridden through the Google
+   * Cloud console. Each
+   * brand must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
@@ -817,9 +816,10 @@ public interface ProductOrBuilder
    * <pre>
    * The brands of the product.
    *
-   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
-   * string with a length limit of 1,000 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * A maximum of 30 brands are allowed unless overridden through the Google
+   * Cloud console. Each
+   * brand must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
@@ -837,9 +837,10 @@ public interface ProductOrBuilder
    * <pre>
    * The brands of the product.
    *
-   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
-   * string with a length limit of 1,000 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * A maximum of 30 brands are allowed unless overridden through the Google
+   * Cloud console. Each
+   * brand must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
@@ -858,9 +859,10 @@ public interface ProductOrBuilder
    * <pre>
    * The brands of the product.
    *
-   * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
-   * string with a length limit of 1,000 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * A maximum of 30 brands are allowed unless overridden through the Google
+   * Cloud console. Each
+   * brand must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    *
    * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
@@ -2331,7 +2333,7 @@ public interface ProductOrBuilder
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2alpha/product.proto;l=574
+   *     google/cloud/retail/v2alpha/product.proto;l=570
    * @return Whether the retrievableFields field is set.
    */
   @java.lang.Deprecated
@@ -2406,7 +2408,7 @@ public interface ProductOrBuilder
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2alpha/product.proto;l=574
+   *     google/cloud/retail/v2alpha/product.proto;l=570
    * @return The retrievableFields.
    */
   @java.lang.Deprecated

@@ -134,9 +134,9 @@ public interface CatalogOrBuilder
    *
    * <pre>
    * The Merchant Center linking configuration.
-   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * After a link is added, the data stream from Merchant Center to Cloud Retail
    * will be enabled automatically. The requester must have access to the
-   * merchant center account in order to make changes to this field.
+   * Merchant Center account in order to make changes to this field.
    * </pre>
    *
    * <code>
@@ -151,9 +151,9 @@ public interface CatalogOrBuilder
    *
    * <pre>
    * The Merchant Center linking configuration.
-   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * After a link is added, the data stream from Merchant Center to Cloud Retail
    * will be enabled automatically. The requester must have access to the
-   * merchant center account in order to make changes to this field.
+   * Merchant Center account in order to make changes to this field.
    * </pre>
    *
    * <code>
@@ -168,9 +168,9 @@ public interface CatalogOrBuilder
    *
    * <pre>
    * The Merchant Center linking configuration.
-   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * After a link is added, the data stream from Merchant Center to Cloud Retail
    * will be enabled automatically. The requester must have access to the
-   * merchant center account in order to make changes to this field.
+   * Merchant Center account in order to make changes to this field.
    * </pre>
    *
    * <code>

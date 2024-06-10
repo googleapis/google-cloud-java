@@ -228,7 +228,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AddFulfillmentPlaces</td>
- *      <td><p> It is recommended to use the [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories] method instead of [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]. [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ *      <td><p> We recommend that you use the [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories] method instead of the [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces] method. [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
  * <p>  Incrementally adds place IDs to [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
  * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2alpha.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the [Product][google.cloud.retail.v2alpha.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
  * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
@@ -252,7 +252,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RemoveFulfillmentPlaces</td>
- *      <td><p> It is recommended to use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories] method instead of [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]. [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ *      <td><p> We recommend that you use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories] method instead of the [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces] method. [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
  * <p>  Incrementally removes place IDs from a [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
  * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2alpha.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the [Product][google.cloud.retail.v2alpha.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
  * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
@@ -1765,10 +1765,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1827,10 +1828,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1888,10 +1890,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1949,10 +1952,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2010,10 +2014,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2070,10 +2075,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2132,10 +2138,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2193,10 +2200,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2254,10 +2262,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -2317,10 +2326,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.

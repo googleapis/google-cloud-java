@@ -181,4 +181,45 @@ public interface LinuxNodeConfigOrBuilder
    * @return The cgroupMode.
    */
   com.google.container.v1.LinuxNodeConfig.CgroupMode getCgroupMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hugepages field is set.
+   */
+  boolean hasHugepages();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hugepages.
+   */
+  com.google.container.v1.LinuxNodeConfig.HugepagesConfig getHugepages();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder getHugepagesOrBuilder();
 }

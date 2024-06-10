@@ -1578,6 +1578,76 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return The bytes for finishDigit.
      */
     com.google.protobuf.ByteString getFinishDigitBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     *
+     * @return Whether the interdigitTimeoutDuration field is set.
+     */
+    boolean hasInterdigitTimeoutDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     *
+     * @return The interdigitTimeoutDuration.
+     */
+    com.google.protobuf.Duration getInterdigitTimeoutDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getInterdigitTimeoutDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     *
+     * @return Whether the endpointingTimeoutDuration field is set.
+     */
+    boolean hasEndpointingTimeoutDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     *
+     * @return The endpointingTimeoutDuration.
+     */
+    com.google.protobuf.Duration getEndpointingTimeoutDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getEndpointingTimeoutDurationOrBuilder();
   }
   /**
    *
@@ -1623,6 +1693,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
     /**
@@ -1715,6 +1786,106 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int INTERDIGIT_TIMEOUT_DURATION_FIELD_NUMBER = 6;
+    private com.google.protobuf.Duration interdigitTimeoutDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     *
+     * @return Whether the interdigitTimeoutDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasInterdigitTimeoutDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     *
+     * @return The interdigitTimeoutDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getInterdigitTimeoutDuration() {
+      return interdigitTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : interdigitTimeoutDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Interdigit timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getInterdigitTimeoutDurationOrBuilder() {
+      return interdigitTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : interdigitTimeoutDuration_;
+    }
+
+    public static final int ENDPOINTING_TIMEOUT_DURATION_FIELD_NUMBER = 7;
+    private com.google.protobuf.Duration endpointingTimeoutDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     *
+     * @return Whether the endpointingTimeoutDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndpointingTimeoutDuration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     *
+     * @return The endpointingTimeoutDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getEndpointingTimeoutDuration() {
+      return endpointingTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : endpointingTimeoutDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint timeout setting for matching dtmf input to regex.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getEndpointingTimeoutDurationOrBuilder() {
+      return endpointingTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : endpointingTimeoutDuration_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1738,6 +1909,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finishDigit_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, finishDigit_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getInterdigitTimeoutDuration());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getEndpointingTimeoutDuration());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1755,6 +1932,16 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finishDigit_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, finishDigit_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, getInterdigitTimeoutDuration());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, getEndpointingTimeoutDuration());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1775,6 +1962,16 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (getEnabled() != other.getEnabled()) return false;
       if (getMaxDigits() != other.getMaxDigits()) return false;
       if (!getFinishDigit().equals(other.getFinishDigit())) return false;
+      if (hasInterdigitTimeoutDuration() != other.hasInterdigitTimeoutDuration()) return false;
+      if (hasInterdigitTimeoutDuration()) {
+        if (!getInterdigitTimeoutDuration().equals(other.getInterdigitTimeoutDuration()))
+          return false;
+      }
+      if (hasEndpointingTimeoutDuration() != other.hasEndpointingTimeoutDuration()) return false;
+      if (hasEndpointingTimeoutDuration()) {
+        if (!getEndpointingTimeoutDuration().equals(other.getEndpointingTimeoutDuration()))
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1792,6 +1989,14 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getMaxDigits();
       hash = (37 * hash) + FINISH_DIGIT_FIELD_NUMBER;
       hash = (53 * hash) + getFinishDigit().hashCode();
+      if (hasInterdigitTimeoutDuration()) {
+        hash = (37 * hash) + INTERDIGIT_TIMEOUT_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getInterdigitTimeoutDuration().hashCode();
+      }
+      if (hasEndpointingTimeoutDuration()) {
+        hash = (37 * hash) + ENDPOINTING_TIMEOUT_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getEndpointingTimeoutDuration().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1926,10 +2131,20 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getInterdigitTimeoutDurationFieldBuilder();
+          getEndpointingTimeoutDurationFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1939,6 +2154,16 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         enabled_ = false;
         maxDigits_ = 0;
         finishDigit_ = "";
+        interdigitTimeoutDuration_ = null;
+        if (interdigitTimeoutDurationBuilder_ != null) {
+          interdigitTimeoutDurationBuilder_.dispose();
+          interdigitTimeoutDurationBuilder_ = null;
+        }
+        endpointingTimeoutDuration_ = null;
+        if (endpointingTimeoutDurationBuilder_ != null) {
+          endpointingTimeoutDurationBuilder_.dispose();
+          endpointingTimeoutDurationBuilder_ = null;
+        }
         return this;
       }
 
@@ -1988,6 +2213,22 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.finishDigit_ = finishDigit_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.interdigitTimeoutDuration_ =
+              interdigitTimeoutDurationBuilder_ == null
+                  ? interdigitTimeoutDuration_
+                  : interdigitTimeoutDurationBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.endpointingTimeoutDuration_ =
+              endpointingTimeoutDurationBuilder_ == null
+                  ? endpointingTimeoutDuration_
+                  : endpointingTimeoutDurationBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2052,6 +2293,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (other.hasInterdigitTimeoutDuration()) {
+          mergeInterdigitTimeoutDuration(other.getInterdigitTimeoutDuration());
+        }
+        if (other.hasEndpointingTimeoutDuration()) {
+          mergeEndpointingTimeoutDuration(other.getEndpointingTimeoutDuration());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2096,6 +2343,20 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 50:
+                {
+                  input.readMessage(
+                      getInterdigitTimeoutDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getEndpointingTimeoutDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2340,6 +2601,378 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Duration interdigitTimeoutDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          interdigitTimeoutDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       *
+       * @return Whether the interdigitTimeoutDuration field is set.
+       */
+      public boolean hasInterdigitTimeoutDuration() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       *
+       * @return The interdigitTimeoutDuration.
+       */
+      public com.google.protobuf.Duration getInterdigitTimeoutDuration() {
+        if (interdigitTimeoutDurationBuilder_ == null) {
+          return interdigitTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : interdigitTimeoutDuration_;
+        } else {
+          return interdigitTimeoutDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public Builder setInterdigitTimeoutDuration(com.google.protobuf.Duration value) {
+        if (interdigitTimeoutDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          interdigitTimeoutDuration_ = value;
+        } else {
+          interdigitTimeoutDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public Builder setInterdigitTimeoutDuration(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (interdigitTimeoutDurationBuilder_ == null) {
+          interdigitTimeoutDuration_ = builderForValue.build();
+        } else {
+          interdigitTimeoutDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public Builder mergeInterdigitTimeoutDuration(com.google.protobuf.Duration value) {
+        if (interdigitTimeoutDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && interdigitTimeoutDuration_ != null
+              && interdigitTimeoutDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getInterdigitTimeoutDurationBuilder().mergeFrom(value);
+          } else {
+            interdigitTimeoutDuration_ = value;
+          }
+        } else {
+          interdigitTimeoutDurationBuilder_.mergeFrom(value);
+        }
+        if (interdigitTimeoutDuration_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public Builder clearInterdigitTimeoutDuration() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        interdigitTimeoutDuration_ = null;
+        if (interdigitTimeoutDurationBuilder_ != null) {
+          interdigitTimeoutDurationBuilder_.dispose();
+          interdigitTimeoutDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public com.google.protobuf.Duration.Builder getInterdigitTimeoutDurationBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getInterdigitTimeoutDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getInterdigitTimeoutDurationOrBuilder() {
+        if (interdigitTimeoutDurationBuilder_ != null) {
+          return interdigitTimeoutDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return interdigitTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : interdigitTimeoutDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Interdigit timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration interdigit_timeout_duration = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getInterdigitTimeoutDurationFieldBuilder() {
+        if (interdigitTimeoutDurationBuilder_ == null) {
+          interdigitTimeoutDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getInterdigitTimeoutDuration(), getParentForChildren(), isClean());
+          interdigitTimeoutDuration_ = null;
+        }
+        return interdigitTimeoutDurationBuilder_;
+      }
+
+      private com.google.protobuf.Duration endpointingTimeoutDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          endpointingTimeoutDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       *
+       * @return Whether the endpointingTimeoutDuration field is set.
+       */
+      public boolean hasEndpointingTimeoutDuration() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       *
+       * @return The endpointingTimeoutDuration.
+       */
+      public com.google.protobuf.Duration getEndpointingTimeoutDuration() {
+        if (endpointingTimeoutDurationBuilder_ == null) {
+          return endpointingTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : endpointingTimeoutDuration_;
+        } else {
+          return endpointingTimeoutDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public Builder setEndpointingTimeoutDuration(com.google.protobuf.Duration value) {
+        if (endpointingTimeoutDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endpointingTimeoutDuration_ = value;
+        } else {
+          endpointingTimeoutDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public Builder setEndpointingTimeoutDuration(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (endpointingTimeoutDurationBuilder_ == null) {
+          endpointingTimeoutDuration_ = builderForValue.build();
+        } else {
+          endpointingTimeoutDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public Builder mergeEndpointingTimeoutDuration(com.google.protobuf.Duration value) {
+        if (endpointingTimeoutDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && endpointingTimeoutDuration_ != null
+              && endpointingTimeoutDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getEndpointingTimeoutDurationBuilder().mergeFrom(value);
+          } else {
+            endpointingTimeoutDuration_ = value;
+          }
+        } else {
+          endpointingTimeoutDurationBuilder_.mergeFrom(value);
+        }
+        if (endpointingTimeoutDuration_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public Builder clearEndpointingTimeoutDuration() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        endpointingTimeoutDuration_ = null;
+        if (endpointingTimeoutDurationBuilder_ != null) {
+          endpointingTimeoutDurationBuilder_.dispose();
+          endpointingTimeoutDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public com.google.protobuf.Duration.Builder getEndpointingTimeoutDurationBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getEndpointingTimeoutDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getEndpointingTimeoutDurationOrBuilder() {
+        if (endpointingTimeoutDurationBuilder_ != null) {
+          return endpointingTimeoutDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return endpointingTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : endpointingTimeoutDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Endpoint timeout setting for matching dtmf input to regex.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration endpointing_timeout_duration = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getEndpointingTimeoutDurationFieldBuilder() {
+        if (endpointingTimeoutDurationBuilder_ == null) {
+          endpointingTimeoutDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getEndpointingTimeoutDuration(), getParentForChildren(), isClean());
+          endpointingTimeoutDuration_ = null;
+        }
+        return endpointingTimeoutDurationBuilder_;
       }
 
       @java.lang.Override

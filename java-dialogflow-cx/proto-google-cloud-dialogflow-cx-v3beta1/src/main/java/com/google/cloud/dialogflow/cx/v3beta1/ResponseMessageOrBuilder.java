@@ -477,6 +477,44 @@ public interface ResponseMessageOrBuilder
    *
    *
    * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   *
+   * @return Whether the toolCall field is set.
+   */
+  boolean hasToolCall();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   *
+   * @return The toolCall.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ToolCall getToolCall();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the definition of a tool call that should be executed by the
+   * client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.ToolCall tool_call = 22;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ToolCallOrBuilder getToolCallOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel which the response is associated with. Clients can specify the
    * channel via
    * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],

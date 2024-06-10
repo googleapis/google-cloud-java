@@ -1181,7 +1181,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -1196,7 +1201,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -1213,7 +1223,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The desired private cluster configuration.
+   * The desired private cluster configuration. master_global_access_config is
+   * the only field that can be changed via this field.
+   * See also
+   * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+   * for modifying other fields within
+   * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
    * </pre>
    *
    * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -2681,6 +2696,56 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredK8SBetaApis_;
   }
 
+  public static final int DESIRED_CONTAINERD_CONFIG_FIELD_NUMBER = 134;
+  private com.google.container.v1.ContainerdConfig desiredContainerdConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return Whether the desiredContainerdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredContainerdConfig() {
+    return ((bitField1_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   *
+   * @return The desiredContainerdConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfig getDesiredContainerdConfig() {
+    return desiredContainerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : desiredContainerdConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired containerd config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ContainerdConfigOrBuilder getDesiredContainerdConfigOrBuilder() {
+    return desiredContainerdConfig_ == null
+        ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+        : desiredContainerdConfig_;
+  }
+
   public static final int DESIRED_ENABLE_MULTI_NETWORKING_FIELD_NUMBER = 135;
   private boolean desiredEnableMultiNetworking_ = false;
   /**
@@ -2696,7 +2761,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredEnableMultiNetworking() {
-    return ((bitField1_ & 0x00000040) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
   /**
    *
@@ -2732,7 +2797,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
-    return ((bitField1_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00000100) != 0);
   }
   /**
    *
@@ -2792,7 +2857,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredInTransitEncryptionConfig() {
-    return ((bitField1_ & 0x00000100) != 0);
+    return ((bitField1_ & 0x00000200) != 0);
   }
   /**
    *
@@ -2847,7 +2912,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
-    return ((bitField1_ & 0x00000200) != 0);
+    return ((bitField1_ & 0x00000400) != 0);
   }
   /**
    *
@@ -2863,6 +2928,116 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
     return desiredEnableCiliumClusterwideNetworkPolicy_;
+  }
+
+  public static final int DESIRED_NODE_KUBELET_CONFIG_FIELD_NUMBER = 141;
+  private com.google.container.v1.NodeKubeletConfig desiredNodeKubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return Whether the desiredNodeKubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodeKubeletConfig() {
+    return ((bitField1_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   *
+   * @return The desiredNodeKubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfig getDesiredNodeKubeletConfig() {
+    return desiredNodeKubeletConfig_ == null
+        ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+        : desiredNodeKubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfigOrBuilder getDesiredNodeKubeletConfigOrBuilder() {
+    return desiredNodeKubeletConfig_ == null
+        ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+        : desiredNodeKubeletConfig_;
+  }
+
+  public static final int DESIRED_NODE_POOL_AUTO_CONFIG_KUBELET_CONFIG_FIELD_NUMBER = 142;
+  private com.google.container.v1.NodeKubeletConfig desiredNodePoolAutoConfigKubeletConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigKubeletConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolAutoConfigKubeletConfig() {
+    return ((bitField1_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigKubeletConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfig getDesiredNodePoolAutoConfigKubeletConfig() {
+    return desiredNodePoolAutoConfigKubeletConfig_ == null
+        ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+        : desiredNodePoolAutoConfigKubeletConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node kubelet config for all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeKubeletConfigOrBuilder
+      getDesiredNodePoolAutoConfigKubeletConfigOrBuilder() {
+    return desiredNodePoolAutoConfigKubeletConfig_ == null
+        ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+        : desiredNodePoolAutoConfigKubeletConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3030,16 +3205,25 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(131, getDesiredK8SBetaApis());
     }
     if (((bitField1_ & 0x00000040) != 0)) {
-      output.writeBool(135, desiredEnableMultiNetworking_);
+      output.writeMessage(134, getDesiredContainerdConfig());
     }
     if (((bitField1_ & 0x00000080) != 0)) {
-      output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
+      output.writeBool(135, desiredEnableMultiNetworking_);
     }
     if (((bitField1_ & 0x00000100) != 0)) {
-      output.writeEnum(137, desiredInTransitEncryptionConfig_);
+      output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
     if (((bitField1_ & 0x00000200) != 0)) {
+      output.writeEnum(137, desiredInTransitEncryptionConfig_);
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
       output.writeBool(138, desiredEnableCiliumClusterwideNetworkPolicy_);
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      output.writeMessage(141, getDesiredNodeKubeletConfig());
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      output.writeMessage(142, getDesiredNodePoolAutoConfigKubeletConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3271,22 +3455,37 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000040) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(135, desiredEnableMultiNetworking_);
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              134, getDesiredContainerdConfig());
     }
     if (((bitField1_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(135, desiredEnableMultiNetworking_);
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
-    if (((bitField1_ & 0x00000100) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               137, desiredInTransitEncryptionConfig_);
     }
-    if (((bitField1_ & 0x00000200) != 0)) {
+    if (((bitField1_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               138, desiredEnableCiliumClusterwideNetworkPolicy_);
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              141, getDesiredNodeKubeletConfig());
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              142, getDesiredNodePoolAutoConfigKubeletConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3503,6 +3702,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       if (!getDesiredK8SBetaApis().equals(other.getDesiredK8SBetaApis())) return false;
     }
+    if (hasDesiredContainerdConfig() != other.hasDesiredContainerdConfig()) return false;
+    if (hasDesiredContainerdConfig()) {
+      if (!getDesiredContainerdConfig().equals(other.getDesiredContainerdConfig())) return false;
+    }
     if (hasDesiredEnableMultiNetworking() != other.hasDesiredEnableMultiNetworking()) return false;
     if (hasDesiredEnableMultiNetworking()) {
       if (getDesiredEnableMultiNetworking() != other.getDesiredEnableMultiNetworking())
@@ -3525,6 +3728,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
       if (getDesiredEnableCiliumClusterwideNetworkPolicy()
           != other.getDesiredEnableCiliumClusterwideNetworkPolicy()) return false;
+    }
+    if (hasDesiredNodeKubeletConfig() != other.hasDesiredNodeKubeletConfig()) return false;
+    if (hasDesiredNodeKubeletConfig()) {
+      if (!getDesiredNodeKubeletConfig().equals(other.getDesiredNodeKubeletConfig())) return false;
+    }
+    if (hasDesiredNodePoolAutoConfigKubeletConfig()
+        != other.hasDesiredNodePoolAutoConfigKubeletConfig()) return false;
+    if (hasDesiredNodePoolAutoConfigKubeletConfig()) {
+      if (!getDesiredNodePoolAutoConfigKubeletConfig()
+          .equals(other.getDesiredNodePoolAutoConfigKubeletConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3716,6 +3929,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_K8S_BETA_APIS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredK8SBetaApis().hashCode();
     }
+    if (hasDesiredContainerdConfig()) {
+      hash = (37 * hash) + DESIRED_CONTAINERD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredContainerdConfig().hashCode();
+    }
     if (hasDesiredEnableMultiNetworking()) {
       hash = (37 * hash) + DESIRED_ENABLE_MULTI_NETWORKING_FIELD_NUMBER;
       hash =
@@ -3735,6 +3952,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(
                   getDesiredEnableCiliumClusterwideNetworkPolicy());
+    }
+    if (hasDesiredNodeKubeletConfig()) {
+      hash = (37 * hash) + DESIRED_NODE_KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodeKubeletConfig().hashCode();
+    }
+    if (hasDesiredNodePoolAutoConfigKubeletConfig()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_KUBELET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolAutoConfigKubeletConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3913,7 +4138,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredNetworkPerformanceConfigFieldBuilder();
         getDesiredAutopilotWorkloadPolicyConfigFieldBuilder();
         getDesiredK8SBetaApisFieldBuilder();
+        getDesiredContainerdConfigFieldBuilder();
         getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder();
+        getDesiredNodeKubeletConfigFieldBuilder();
+        getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder();
       }
     }
 
@@ -4115,6 +4343,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredK8SBetaApisBuilder_.dispose();
         desiredK8SBetaApisBuilder_ = null;
       }
+      desiredContainerdConfig_ = null;
+      if (desiredContainerdConfigBuilder_ != null) {
+        desiredContainerdConfigBuilder_.dispose();
+        desiredContainerdConfigBuilder_ = null;
+      }
       desiredEnableMultiNetworking_ = false;
       desiredNodePoolAutoConfigResourceManagerTags_ = null;
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
@@ -4123,6 +4356,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       desiredInTransitEncryptionConfig_ = 0;
       desiredEnableCiliumClusterwideNetworkPolicy_ = false;
+      desiredNodeKubeletConfig_ = null;
+      if (desiredNodeKubeletConfigBuilder_ != null) {
+        desiredNodeKubeletConfigBuilder_.dispose();
+        desiredNodeKubeletConfigBuilder_ = null;
+      }
+      desiredNodePoolAutoConfigKubeletConfig_ = null;
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ != null) {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_.dispose();
+        desiredNodePoolAutoConfigKubeletConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4461,24 +4704,45 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         to_bitField1_ |= 0x00000020;
       }
       if (((from_bitField1_ & 0x00020000) != 0)) {
-        result.desiredEnableMultiNetworking_ = desiredEnableMultiNetworking_;
+        result.desiredContainerdConfig_ =
+            desiredContainerdConfigBuilder_ == null
+                ? desiredContainerdConfig_
+                : desiredContainerdConfigBuilder_.build();
         to_bitField1_ |= 0x00000040;
       }
       if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.desiredEnableMultiNetworking_ = desiredEnableMultiNetworking_;
+        to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
         result.desiredNodePoolAutoConfigResourceManagerTags_ =
             desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null
                 ? desiredNodePoolAutoConfigResourceManagerTags_
                 : desiredNodePoolAutoConfigResourceManagerTagsBuilder_.build();
-        to_bitField1_ |= 0x00000080;
-      }
-      if (((from_bitField1_ & 0x00080000) != 0)) {
-        result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
         to_bitField1_ |= 0x00000100;
       }
       if (((from_bitField1_ & 0x00100000) != 0)) {
+        result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
+        to_bitField1_ |= 0x00000200;
+      }
+      if (((from_bitField1_ & 0x00200000) != 0)) {
         result.desiredEnableCiliumClusterwideNetworkPolicy_ =
             desiredEnableCiliumClusterwideNetworkPolicy_;
-        to_bitField1_ |= 0x00000200;
+        to_bitField1_ |= 0x00000400;
+      }
+      if (((from_bitField1_ & 0x00400000) != 0)) {
+        result.desiredNodeKubeletConfig_ =
+            desiredNodeKubeletConfigBuilder_ == null
+                ? desiredNodeKubeletConfig_
+                : desiredNodeKubeletConfigBuilder_.build();
+        to_bitField1_ |= 0x00000800;
+      }
+      if (((from_bitField1_ & 0x00800000) != 0)) {
+        result.desiredNodePoolAutoConfigKubeletConfig_ =
+            desiredNodePoolAutoConfigKubeletConfigBuilder_ == null
+                ? desiredNodePoolAutoConfigKubeletConfig_
+                : desiredNodePoolAutoConfigKubeletConfigBuilder_.build();
+        to_bitField1_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4698,6 +4962,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredK8SBetaApis()) {
         mergeDesiredK8SBetaApis(other.getDesiredK8SBetaApis());
       }
+      if (other.hasDesiredContainerdConfig()) {
+        mergeDesiredContainerdConfig(other.getDesiredContainerdConfig());
+      }
       if (other.hasDesiredEnableMultiNetworking()) {
         setDesiredEnableMultiNetworking(other.getDesiredEnableMultiNetworking());
       }
@@ -4711,6 +4978,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
         setDesiredEnableCiliumClusterwideNetworkPolicy(
             other.getDesiredEnableCiliumClusterwideNetworkPolicy());
+      }
+      if (other.hasDesiredNodeKubeletConfig()) {
+        mergeDesiredNodeKubeletConfig(other.getDesiredNodeKubeletConfig());
+      }
+      if (other.hasDesiredNodePoolAutoConfigKubeletConfig()) {
+        mergeDesiredNodePoolAutoConfigKubeletConfig(
+            other.getDesiredNodePoolAutoConfigKubeletConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5077,10 +5351,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00010000;
                 break;
               } // case 1050
+            case 1074:
+              {
+                input.readMessage(
+                    getDesiredContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00020000;
+                break;
+              } // case 1074
             case 1080:
               {
                 desiredEnableMultiNetworking_ = input.readBool();
-                bitField1_ |= 0x00020000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 1080
             case 1090:
@@ -5088,21 +5369,36 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00040000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 1090
             case 1096:
               {
                 desiredInTransitEncryptionConfig_ = input.readEnum();
-                bitField1_ |= 0x00080000;
+                bitField1_ |= 0x00100000;
                 break;
               } // case 1096
             case 1104:
               {
                 desiredEnableCiliumClusterwideNetworkPolicy_ = input.readBool();
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 1104
+            case 1130:
+              {
+                input.readMessage(
+                    getDesiredNodeKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00400000;
+                break;
+              } // case 1130
+            case 1138:
+              {
+                input.readMessage(
+                    getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00800000;
+                break;
+              } // case 1138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8624,7 +8920,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8638,7 +8939,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8658,7 +8964,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8681,7 +8992,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8701,7 +9017,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8730,7 +9051,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8749,7 +9075,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8764,7 +9095,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -8783,7 +9119,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The desired private cluster configuration.
+     * The desired private cluster configuration. master_global_access_config is
+     * the only field that can be changed via this field.
+     * See also
+     * [ClusterUpdate.desired_enable_private_endpoint][google.container.v1.ClusterUpdate.desired_enable_private_endpoint]
+     * for modifying other fields within
+     * [PrivateClusterConfig][google.container.v1.PrivateClusterConfig].
      * </pre>
      *
      * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
@@ -13844,6 +14185,193 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredK8SBetaApisBuilder_;
     }
 
+    private com.google.container.v1.ContainerdConfig desiredContainerdConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        desiredContainerdConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     *
+     * @return Whether the desiredContainerdConfig field is set.
+     */
+    public boolean hasDesiredContainerdConfig() {
+      return ((bitField1_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     *
+     * @return The desiredContainerdConfig.
+     */
+    public com.google.container.v1.ContainerdConfig getDesiredContainerdConfig() {
+      if (desiredContainerdConfigBuilder_ == null) {
+        return desiredContainerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : desiredContainerdConfig_;
+      } else {
+        return desiredContainerdConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public Builder setDesiredContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (desiredContainerdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredContainerdConfig_ = value;
+      } else {
+        desiredContainerdConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public Builder setDesiredContainerdConfig(
+        com.google.container.v1.ContainerdConfig.Builder builderForValue) {
+      if (desiredContainerdConfigBuilder_ == null) {
+        desiredContainerdConfig_ = builderForValue.build();
+      } else {
+        desiredContainerdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public Builder mergeDesiredContainerdConfig(com.google.container.v1.ContainerdConfig value) {
+      if (desiredContainerdConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00020000) != 0)
+            && desiredContainerdConfig_ != null
+            && desiredContainerdConfig_
+                != com.google.container.v1.ContainerdConfig.getDefaultInstance()) {
+          getDesiredContainerdConfigBuilder().mergeFrom(value);
+        } else {
+          desiredContainerdConfig_ = value;
+        }
+      } else {
+        desiredContainerdConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredContainerdConfig_ != null) {
+        bitField1_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public Builder clearDesiredContainerdConfig() {
+      bitField1_ = (bitField1_ & ~0x00020000);
+      desiredContainerdConfig_ = null;
+      if (desiredContainerdConfigBuilder_ != null) {
+        desiredContainerdConfigBuilder_.dispose();
+        desiredContainerdConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public com.google.container.v1.ContainerdConfig.Builder getDesiredContainerdConfigBuilder() {
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return getDesiredContainerdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    public com.google.container.v1.ContainerdConfigOrBuilder getDesiredContainerdConfigOrBuilder() {
+      if (desiredContainerdConfigBuilder_ != null) {
+        return desiredContainerdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredContainerdConfig_ == null
+            ? com.google.container.v1.ContainerdConfig.getDefaultInstance()
+            : desiredContainerdConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired containerd config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ContainerdConfig desired_containerd_config = 134;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ContainerdConfig,
+            com.google.container.v1.ContainerdConfig.Builder,
+            com.google.container.v1.ContainerdConfigOrBuilder>
+        getDesiredContainerdConfigFieldBuilder() {
+      if (desiredContainerdConfigBuilder_ == null) {
+        desiredContainerdConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ContainerdConfig,
+                com.google.container.v1.ContainerdConfig.Builder,
+                com.google.container.v1.ContainerdConfigOrBuilder>(
+                getDesiredContainerdConfig(), getParentForChildren(), isClean());
+        desiredContainerdConfig_ = null;
+      }
+      return desiredContainerdConfigBuilder_;
+    }
+
     private boolean desiredEnableMultiNetworking_;
     /**
      *
@@ -13858,7 +14386,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDesiredEnableMultiNetworking() {
-      return ((bitField1_ & 0x00020000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
     /**
      *
@@ -13890,7 +14418,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder setDesiredEnableMultiNetworking(boolean value) {
 
       desiredEnableMultiNetworking_ = value;
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -13906,7 +14434,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredEnableMultiNetworking() {
-      bitField1_ = (bitField1_ & ~0x00020000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       desiredEnableMultiNetworking_ = false;
       onChanged();
       return this;
@@ -13934,7 +14462,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
      */
     public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
-      return ((bitField1_ & 0x00040000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
     /**
      *
@@ -13982,7 +14510,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -14005,7 +14533,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -14024,7 +14552,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDesiredNodePoolAutoConfigResourceManagerTags(
         com.google.container.v1.ResourceManagerTags value) {
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
-        if (((bitField1_ & 0x00040000) != 0)
+        if (((bitField1_ & 0x00080000) != 0)
             && desiredNodePoolAutoConfigResourceManagerTags_ != null
             && desiredNodePoolAutoConfigResourceManagerTags_
                 != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
@@ -14036,7 +14564,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (desiredNodePoolAutoConfigResourceManagerTags_ != null) {
-        bitField1_ |= 0x00040000;
+        bitField1_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -14054,7 +14582,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDesiredNodePoolAutoConfigResourceManagerTags() {
-      bitField1_ = (bitField1_ & ~0x00040000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       desiredNodePoolAutoConfigResourceManagerTags_ = null;
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
@@ -14077,7 +14605,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1.ResourceManagerTags.Builder
         getDesiredNodePoolAutoConfigResourceManagerTagsBuilder() {
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -14150,7 +14678,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDesiredInTransitEncryptionConfig() {
-      return ((bitField1_ & 0x00080000) != 0);
+      return ((bitField1_ & 0x00100000) != 0);
     }
     /**
      *
@@ -14185,7 +14713,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDesiredInTransitEncryptionConfigValue(int value) {
       desiredInTransitEncryptionConfig_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -14230,7 +14758,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00100000;
       desiredInTransitEncryptionConfig_ = value.getNumber();
       onChanged();
       return this;
@@ -14249,7 +14777,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredInTransitEncryptionConfig() {
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       desiredInTransitEncryptionConfig_ = 0;
       onChanged();
       return this;
@@ -14269,7 +14797,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
     /**
      *
@@ -14301,7 +14829,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder setDesiredEnableCiliumClusterwideNetworkPolicy(boolean value) {
 
       desiredEnableCiliumClusterwideNetworkPolicy_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -14317,10 +14845,416 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredEnableCiliumClusterwideNetworkPolicy() {
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       desiredEnableCiliumClusterwideNetworkPolicy_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.NodeKubeletConfig desiredNodeKubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        desiredNodeKubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     *
+     * @return Whether the desiredNodeKubeletConfig field is set.
+     */
+    public boolean hasDesiredNodeKubeletConfig() {
+      return ((bitField1_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     *
+     * @return The desiredNodeKubeletConfig.
+     */
+    public com.google.container.v1.NodeKubeletConfig getDesiredNodeKubeletConfig() {
+      if (desiredNodeKubeletConfigBuilder_ == null) {
+        return desiredNodeKubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : desiredNodeKubeletConfig_;
+      } else {
+        return desiredNodeKubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public Builder setDesiredNodeKubeletConfig(com.google.container.v1.NodeKubeletConfig value) {
+      if (desiredNodeKubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodeKubeletConfig_ = value;
+      } else {
+        desiredNodeKubeletConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public Builder setDesiredNodeKubeletConfig(
+        com.google.container.v1.NodeKubeletConfig.Builder builderForValue) {
+      if (desiredNodeKubeletConfigBuilder_ == null) {
+        desiredNodeKubeletConfig_ = builderForValue.build();
+      } else {
+        desiredNodeKubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public Builder mergeDesiredNodeKubeletConfig(com.google.container.v1.NodeKubeletConfig value) {
+      if (desiredNodeKubeletConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00400000) != 0)
+            && desiredNodeKubeletConfig_ != null
+            && desiredNodeKubeletConfig_
+                != com.google.container.v1.NodeKubeletConfig.getDefaultInstance()) {
+          getDesiredNodeKubeletConfigBuilder().mergeFrom(value);
+        } else {
+          desiredNodeKubeletConfig_ = value;
+        }
+      } else {
+        desiredNodeKubeletConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredNodeKubeletConfig_ != null) {
+        bitField1_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public Builder clearDesiredNodeKubeletConfig() {
+      bitField1_ = (bitField1_ & ~0x00400000);
+      desiredNodeKubeletConfig_ = null;
+      if (desiredNodeKubeletConfigBuilder_ != null) {
+        desiredNodeKubeletConfigBuilder_.dispose();
+        desiredNodeKubeletConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public com.google.container.v1.NodeKubeletConfig.Builder getDesiredNodeKubeletConfigBuilder() {
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return getDesiredNodeKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    public com.google.container.v1.NodeKubeletConfigOrBuilder
+        getDesiredNodeKubeletConfigOrBuilder() {
+      if (desiredNodeKubeletConfigBuilder_ != null) {
+        return desiredNodeKubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodeKubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : desiredNodeKubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeKubeletConfig desired_node_kubelet_config = 141;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        getDesiredNodeKubeletConfigFieldBuilder() {
+      if (desiredNodeKubeletConfigBuilder_ == null) {
+        desiredNodeKubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeKubeletConfig,
+                com.google.container.v1.NodeKubeletConfig.Builder,
+                com.google.container.v1.NodeKubeletConfigOrBuilder>(
+                getDesiredNodeKubeletConfig(), getParentForChildren(), isClean());
+        desiredNodeKubeletConfig_ = null;
+      }
+      return desiredNodeKubeletConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodeKubeletConfig desiredNodePoolAutoConfigKubeletConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        desiredNodePoolAutoConfigKubeletConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolAutoConfigKubeletConfig field is set.
+     */
+    public boolean hasDesiredNodePoolAutoConfigKubeletConfig() {
+      return ((bitField1_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     *
+     * @return The desiredNodePoolAutoConfigKubeletConfig.
+     */
+    public com.google.container.v1.NodeKubeletConfig getDesiredNodePoolAutoConfigKubeletConfig() {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ == null) {
+        return desiredNodePoolAutoConfigKubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : desiredNodePoolAutoConfigKubeletConfig_;
+      } else {
+        return desiredNodePoolAutoConfigKubeletConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigKubeletConfig(
+        com.google.container.v1.NodeKubeletConfig value) {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolAutoConfigKubeletConfig_ = value;
+      } else {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigKubeletConfig(
+        com.google.container.v1.NodeKubeletConfig.Builder builderForValue) {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ == null) {
+        desiredNodePoolAutoConfigKubeletConfig_ = builderForValue.build();
+      } else {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolAutoConfigKubeletConfig(
+        com.google.container.v1.NodeKubeletConfig value) {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00800000) != 0)
+            && desiredNodePoolAutoConfigKubeletConfig_ != null
+            && desiredNodePoolAutoConfigKubeletConfig_
+                != com.google.container.v1.NodeKubeletConfig.getDefaultInstance()) {
+          getDesiredNodePoolAutoConfigKubeletConfigBuilder().mergeFrom(value);
+        } else {
+          desiredNodePoolAutoConfigKubeletConfig_ = value;
+        }
+      } else {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredNodePoolAutoConfigKubeletConfig_ != null) {
+        bitField1_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolAutoConfigKubeletConfig() {
+      bitField1_ = (bitField1_ & ~0x00800000);
+      desiredNodePoolAutoConfigKubeletConfig_ = null;
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ != null) {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_.dispose();
+        desiredNodePoolAutoConfigKubeletConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public com.google.container.v1.NodeKubeletConfig.Builder
+        getDesiredNodePoolAutoConfigKubeletConfigBuilder() {
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    public com.google.container.v1.NodeKubeletConfigOrBuilder
+        getDesiredNodePoolAutoConfigKubeletConfigOrBuilder() {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ != null) {
+        return desiredNodePoolAutoConfigKubeletConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolAutoConfigKubeletConfig_ == null
+            ? com.google.container.v1.NodeKubeletConfig.getDefaultInstance()
+            : desiredNodePoolAutoConfigKubeletConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node kubelet config for all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeKubeletConfig desired_node_pool_auto_config_kubelet_config = 142;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeKubeletConfig,
+            com.google.container.v1.NodeKubeletConfig.Builder,
+            com.google.container.v1.NodeKubeletConfigOrBuilder>
+        getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder() {
+      if (desiredNodePoolAutoConfigKubeletConfigBuilder_ == null) {
+        desiredNodePoolAutoConfigKubeletConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeKubeletConfig,
+                com.google.container.v1.NodeKubeletConfig.Builder,
+                com.google.container.v1.NodeKubeletConfigOrBuilder>(
+                getDesiredNodePoolAutoConfigKubeletConfig(), getParentForChildren(), isClean());
+        desiredNodePoolAutoConfigKubeletConfig_ = null;
+      }
+      return desiredNodePoolAutoConfigKubeletConfigBuilder_;
     }
 
     @java.lang.Override

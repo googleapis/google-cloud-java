@@ -79,12 +79,15 @@ public final class DatasourcetypesProto {
           + "urce\022\032\n\nfeed_label\030\004 \001(\tB\006\340A\002\340A\005\022 \n\020cont"
           + "ent_language\030\005 \001(\tB\006\340A\002\340A\005\"W\n\023PromotionD"
           + "ataSource\022\036\n\016target_country\030\001 \001(\tB\006\340A\002\340A"
-          + "\005\022 \n\020content_language\030\002 \001(\tB\006\340A\002\340A\005B\242\001\n/"
+          + "\005\022 \n\020content_language\030\002 \001(\tB\006\340A\002\340A\005B\260\002\n/"
           + "com.google.shopping.merchant.datasources"
           + ".v1betaB\024DatasourcetypesProtoP\001ZWcloud.g"
           + "oogle.com/go/shopping/merchant/datasourc"
           + "es/apiv1beta/datasourcespb;datasourcespb"
-          + "b\006proto3"
+          + "\252\002+Google.Shopping.Merchant.DataSources."
+          + "V1Beta\312\002+Google\\Shopping\\Merchant\\DataSo"
+          + "urces\\V1beta\352\002/Google::Shopping::Merchan"
+          + "t::DataSources::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

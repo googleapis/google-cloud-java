@@ -96,10 +96,10 @@ public interface BusinessInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the phone field is set.
@@ -109,10 +109,10 @@ public interface BusinessInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The phone.
@@ -122,10 +122,10 @@ public interface BusinessInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. The phone number of the business.
+   * Output only. The phone number of the business.
    * </pre>
    *
-   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>optional .google.type.PhoneNumber phone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.type.PhoneNumberOrBuilder getPhoneOrBuilder();

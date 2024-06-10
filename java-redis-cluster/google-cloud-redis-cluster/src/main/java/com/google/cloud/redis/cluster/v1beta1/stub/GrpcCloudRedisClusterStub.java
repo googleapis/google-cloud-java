@@ -32,9 +32,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
@@ -110,6 +112,18 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityMethodDescriptor =
+          MethodDescriptor.<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetClusterCertificateAuthority")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetClusterCertificateAuthorityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CertificateAuthority.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -141,6 +155,8 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -240,6 +256,18 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+        getClusterCertificateAuthorityTransportSettings =
+            GrpcCallSettings
+                .<GetClusterCertificateAuthorityRequest, CertificateAuthority>newBuilder()
+                .setMethodDescriptor(getClusterCertificateAuthorityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -297,6 +325,11 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.getClusterCertificateAuthorityCallable =
+        callableFactory.createUnaryCallable(
+            getClusterCertificateAuthorityTransportSettings,
+            settings.getClusterCertificateAuthoritySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -358,6 +391,12 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
+      getClusterCertificateAuthorityCallable() {
+    return getClusterCertificateAuthorityCallable;
   }
 
   @Override

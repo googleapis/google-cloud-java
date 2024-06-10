@@ -1032,6 +1032,7900 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption)
   }
 
+  public interface FacetConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    java.util.List<com.google.cloud.retail.v2alpha.Interval> getFacetIntervalsList();
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    com.google.cloud.retail.v2alpha.Interval getFacetIntervals(int index);
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    int getFacetIntervalsCount();
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    java.util.List<? extends com.google.cloud.retail.v2alpha.IntervalOrBuilder>
+        getFacetIntervalsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    com.google.cloud.retail.v2alpha.IntervalOrBuilder getFacetIntervalsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    java.util.List<com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>
+        getIgnoredFacetValuesList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+        getIgnoredFacetValues(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    int getIgnoredFacetValuesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                    .IgnoredFacetValuesOrBuilder>
+        getIgnoredFacetValuesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValuesOrBuilder
+        getIgnoredFacetValuesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+        getMergedFacetValuesList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+        getMergedFacetValues(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    int getMergedFacetValuesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                    .MergedFacetValueOrBuilder>
+        getMergedFacetValuesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValueOrBuilder
+        getMergedFacetValuesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     *
+     * @return Whether the mergedFacet field is set.
+     */
+    boolean hasMergedFacet();
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     *
+     * @return The mergedFacet.
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet getMergedFacet();
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder
+        getMergedFacetOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     *
+     * @return Whether the rerankConfig field is set.
+     */
+    boolean hasRerankConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     *
+     * @return The rerankConfig.
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig getRerankConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     */
+    com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder
+        getRerankConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Possible options for the facet that corresponds to the current attribute
+   * config.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig}
+   */
+  public static final class FacetConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)
+      FacetConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FacetConfig.newBuilder() to construct.
+    private FacetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FacetConfig() {
+      facetIntervals_ = java.util.Collections.emptyList();
+      ignoredFacetValues_ = java.util.Collections.emptyList();
+      mergedFacetValues_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FacetConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.CatalogProto
+          .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2alpha.CatalogProto
+          .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.class,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder.class);
+    }
+
+    public interface IgnoredFacetValuesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return A list containing the values.
+       */
+      java.util.List<java.lang.String> getValuesList();
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return The count of values.
+       */
+      int getValuesCount();
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      java.lang.String getValues(int index);
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      com.google.protobuf.ByteString getValuesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      boolean hasStartTime();
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return The startTime.
+       */
+      com.google.protobuf.Timestamp getStartTime();
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       *
+       * @return Whether the endTime field is set.
+       */
+      boolean hasEndTime();
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       *
+       * @return The endTime.
+       */
+      com.google.protobuf.Timestamp getEndTime();
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Facet values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+     * to ignore on [facets][google.cloud.retail.v2alpha.SearchResponse.Facet]
+     * during the specified time range for the given
+     * [SearchResponse.Facet.key][google.cloud.retail.v2alpha.SearchResponse.Facet.key]
+     * attribute.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues}
+     */
+    public static final class IgnoredFacetValues extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+        IgnoredFacetValuesOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use IgnoredFacetValues.newBuilder() to construct.
+      private IgnoredFacetValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private IgnoredFacetValues() {
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new IgnoredFacetValues();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                    .class,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                    .Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return A list containing the values.
+       */
+      public com.google.protobuf.ProtocolStringList getValuesList() {
+        return values_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of facet values to ignore for the following time range. The facet
+       * values are the same as the attribute values. There is a limit of 10
+       * values per instance of IgnoredFacetValues. Each value can have at most
+       * 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      public com.google.protobuf.ByteString getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+
+      public static final int START_TIME_FIELD_NUMBER = 2;
+      private com.google.protobuf.Timestamp startTime_;
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       *
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getStartTime() {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Time range for the current list of facet values to ignore.
+       * If multiple time ranges are specified for an facet value for the
+       * current attribute, consider all of them. If both are empty, ignore
+       * always. If start time and end time are set, then start time
+       * must be before end time.
+       * If start time is not empty and end time is empty, then will ignore
+       * these facet values after the start time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+
+      public static final int END_TIME_FIELD_NUMBER = 3;
+      private com.google.protobuf.Timestamp endTime_;
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       *
+       * @return Whether the endTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       *
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getEndTime() {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If start time is empty and end time is not empty, then ignore these
+       * facet values before end time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < values_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getStartTime());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(3, getEndTime());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < values_.size(); i++) {
+            dataSize += computeStringSizeNoTag(values_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getValuesList().size();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartTime());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndTime());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues other =
+            (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues) obj;
+
+        if (!getValuesList().equals(other.getValuesList())) return false;
+        if (hasStartTime() != other.hasStartTime()) return false;
+        if (hasStartTime()) {
+          if (!getStartTime().equals(other.getStartTime())) return false;
+        }
+        if (hasEndTime() != other.hasEndTime()) return false;
+        if (hasEndTime()) {
+          if (!getEndTime().equals(other.getEndTime())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getValuesCount() > 0) {
+          hash = (37 * hash) + VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getValuesList().hashCode();
+        }
+        if (hasStartTime()) {
+          hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getStartTime().hashCode();
+        }
+        if (hasEndTime()) {
+          hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getEndTime().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Facet values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+       * to ignore on [facets][google.cloud.retail.v2alpha.SearchResponse.Facet]
+       * during the specified time range for the given
+       * [SearchResponse.Facet.key][google.cloud.retail.v2alpha.SearchResponse.Facet.key]
+       * attribute.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValuesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                      .class,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getStartTimeFieldBuilder();
+            getEndTimeFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          startTime_ = null;
+          if (startTimeBuilder_ != null) {
+            startTimeBuilder_.dispose();
+            startTimeBuilder_ = null;
+          }
+          endTime_ = null;
+          if (endTimeBuilder_ != null) {
+            endTimeBuilder_.dispose();
+            endTimeBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_IgnoredFacetValues_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+            build() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+            buildPartial() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues result =
+              new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            values_.makeImmutable();
+            result.values_ = values_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues other) {
+          if (other
+              == com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                  .getDefaultInstance()) return this;
+          if (!other.values_.isEmpty()) {
+            if (values_.isEmpty()) {
+              values_ = other.values_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureValuesIsMutable();
+              values_.addAll(other.values_);
+            }
+            onChanged();
+          }
+          if (other.hasStartTime()) {
+            mergeStartTime(other.getStartTime());
+          }
+          if (other.hasEndTime()) {
+            mergeEndTime(other.getEndTime());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureValuesIsMutable();
+                    values_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureValuesIsMutable() {
+          if (!values_.isModifiable()) {
+            values_ = new com.google.protobuf.LazyStringArrayList(values_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return A list containing the values.
+         */
+        public com.google.protobuf.ProtocolStringList getValuesList() {
+          values_.makeImmutable();
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public java.lang.String getValues(int index) {
+          return values_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        public com.google.protobuf.ByteString getValuesBytes(int index) {
+          return values_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The values to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValues(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param value The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValues(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param values The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
+          ensureValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValues() {
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of facet values to ignore for the following time range. The facet
+         * values are the same as the attribute values. There is a limit of 10
+         * values per instance of IgnoredFacetValues. Each value can have at most
+         * 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param value The bytes of the values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValuesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureValuesIsMutable();
+          values_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Timestamp startTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            startTimeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         *
+         * @return Whether the startTime field is set.
+         */
+        public boolean hasStartTime() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         *
+         * @return The startTime.
+         */
+        public com.google.protobuf.Timestamp getStartTime() {
+          if (startTimeBuilder_ == null) {
+            return startTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : startTime_;
+          } else {
+            return startTimeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public Builder setStartTime(com.google.protobuf.Timestamp value) {
+          if (startTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            startTime_ = value;
+          } else {
+            startTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (startTimeBuilder_ == null) {
+            startTime_ = builderForValue.build();
+          } else {
+            startTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+          if (startTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && startTime_ != null
+                && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getStartTimeBuilder().mergeFrom(value);
+            } else {
+              startTime_ = value;
+            }
+          } else {
+            startTimeBuilder_.mergeFrom(value);
+          }
+          if (startTime_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public Builder clearStartTime() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          startTime_ = null;
+          if (startTimeBuilder_ != null) {
+            startTimeBuilder_.dispose();
+            startTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getStartTimeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+          if (startTimeBuilder_ != null) {
+            return startTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return startTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : startTime_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time range for the current list of facet values to ignore.
+         * If multiple time ranges are specified for an facet value for the
+         * current attribute, consider all of them. If both are empty, ignore
+         * always. If start time and end time are set, then start time
+         * must be before end time.
+         * If start time is not empty and end time is empty, then will ignore
+         * these facet values after the start time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp start_time = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getStartTimeFieldBuilder() {
+          if (startTimeBuilder_ == null) {
+            startTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getStartTime(), getParentForChildren(), isClean());
+            startTime_ = null;
+          }
+          return startTimeBuilder_;
+        }
+
+        private com.google.protobuf.Timestamp endTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            endTimeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         *
+         * @return Whether the endTime field is set.
+         */
+        public boolean hasEndTime() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         *
+         * @return The endTime.
+         */
+        public com.google.protobuf.Timestamp getEndTime() {
+          if (endTimeBuilder_ == null) {
+            return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+          } else {
+            return endTimeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public Builder setEndTime(com.google.protobuf.Timestamp value) {
+          if (endTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            endTime_ = value;
+          } else {
+            endTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (endTimeBuilder_ == null) {
+            endTime_ = builderForValue.build();
+          } else {
+            endTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+          if (endTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && endTime_ != null
+                && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getEndTimeBuilder().mergeFrom(value);
+            } else {
+              endTime_ = value;
+            }
+          } else {
+            endTimeBuilder_.mergeFrom(value);
+          }
+          if (endTime_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public Builder clearEndTime() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          endTime_ = null;
+          if (endTimeBuilder_ != null) {
+            endTimeBuilder_.dispose();
+            endTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getEndTimeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+          if (endTimeBuilder_ != null) {
+            return endTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If start time is empty and end time is not empty, then ignore these
+         * facet values before end time.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp end_time = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getEndTimeFieldBuilder() {
+          if (endTimeBuilder_ == null) {
+            endTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getEndTime(), getParentForChildren(), isClean());
+            endTime_ = null;
+          }
+          return endTimeBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues)
+      private static final com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+              .IgnoredFacetValues
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues();
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<IgnoredFacetValues> PARSER =
+          new com.google.protobuf.AbstractParser<IgnoredFacetValues>() {
+            @java.lang.Override
+            public IgnoredFacetValues parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<IgnoredFacetValues> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<IgnoredFacetValues> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MergedFacetValueOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return A list containing the values.
+       */
+      java.util.List<java.lang.String> getValuesList();
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return The count of values.
+       */
+      int getValuesCount();
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      java.lang.String getValues(int index);
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      com.google.protobuf.ByteString getValuesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * All the previous values are replaced by this merged facet value.
+       * This merged_value must be non-empty and can have up to 128 characters.
+       * </pre>
+       *
+       * <code>string merged_value = 2;</code>
+       *
+       * @return The mergedValue.
+       */
+      java.lang.String getMergedValue();
+      /**
+       *
+       *
+       * <pre>
+       * All the previous values are replaced by this merged facet value.
+       * This merged_value must be non-empty and can have up to 128 characters.
+       * </pre>
+       *
+       * <code>string merged_value = 2;</code>
+       *
+       * @return The bytes for mergedValue.
+       */
+      com.google.protobuf.ByteString getMergedValueBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replaces a set of textual facet values by the same (possibly different)
+     * merged facet value. Each facet value should appear at most once as a
+     * value per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]. This
+     * feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue}
+     */
+    public static final class MergedFacetValue extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+        MergedFacetValueOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use MergedFacetValue.newBuilder() to construct.
+      private MergedFacetValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MergedFacetValue() {
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        mergedValue_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MergedFacetValue();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.class,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                    .Builder.class);
+      }
+
+      public static final int VALUES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return A list containing the values.
+       */
+      public com.google.protobuf.ProtocolStringList getValuesList() {
+        return values_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All the facet values that are replaces by the same
+       * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+       * that follows. The maximum number of values per MergedFacetValue is 25.
+       * Each value can have up to 128 characters.
+       * </pre>
+       *
+       * <code>repeated string values = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      public com.google.protobuf.ByteString getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+
+      public static final int MERGED_VALUE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mergedValue_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * All the previous values are replaced by this merged facet value.
+       * This merged_value must be non-empty and can have up to 128 characters.
+       * </pre>
+       *
+       * <code>string merged_value = 2;</code>
+       *
+       * @return The mergedValue.
+       */
+      @java.lang.Override
+      public java.lang.String getMergedValue() {
+        java.lang.Object ref = mergedValue_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mergedValue_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All the previous values are replaced by this merged facet value.
+       * This merged_value must be non-empty and can have up to 128 characters.
+       * </pre>
+       *
+       * <code>string merged_value = 2;</code>
+       *
+       * @return The bytes for mergedValue.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMergedValueBytes() {
+        java.lang.Object ref = mergedValue_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mergedValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < values_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergedValue_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mergedValue_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < values_.size(); i++) {
+            dataSize += computeStringSizeNoTag(values_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getValuesList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergedValue_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mergedValue_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue other =
+            (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue) obj;
+
+        if (!getValuesList().equals(other.getValuesList())) return false;
+        if (!getMergedValue().equals(other.getMergedValue())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getValuesCount() > 0) {
+          hash = (37 * hash) + VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getValuesList().hashCode();
+        }
+        hash = (37 * hash) + MERGED_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getMergedValue().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Replaces a set of textual facet values by the same (possibly different)
+       * merged facet value. Each facet value should appear at most once as a
+       * value per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]. This
+       * feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValueOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                      .class,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          mergedValue_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacetValue_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+            build() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+            buildPartial() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue result =
+              new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            values_.makeImmutable();
+            result.values_ = values_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.mergedValue_ = mergedValue_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue other) {
+          if (other
+              == com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                  .getDefaultInstance()) return this;
+          if (!other.values_.isEmpty()) {
+            if (values_.isEmpty()) {
+              values_ = other.values_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureValuesIsMutable();
+              values_.addAll(other.values_);
+            }
+            onChanged();
+          }
+          if (!other.getMergedValue().isEmpty()) {
+            mergedValue_ = other.mergedValue_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureValuesIsMutable();
+                    values_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    mergedValue_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureValuesIsMutable() {
+          if (!values_.isModifiable()) {
+            values_ = new com.google.protobuf.LazyStringArrayList(values_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return A list containing the values.
+         */
+        public com.google.protobuf.ProtocolStringList getValuesList() {
+          values_.makeImmutable();
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public java.lang.String getValues(int index) {
+          return values_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        public com.google.protobuf.ByteString getValuesBytes(int index) {
+          return values_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The values to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValues(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param value The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValues(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param values The values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
+          ensureValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValues() {
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the facet values that are replaces by the same
+         * [merged_value][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.merged_value]
+         * that follows. The maximum number of values per MergedFacetValue is 25.
+         * Each value can have up to 128 characters.
+         * </pre>
+         *
+         * <code>repeated string values = 1;</code>
+         *
+         * @param value The bytes of the values to add.
+         * @return This builder for chaining.
+         */
+        public Builder addValuesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureValuesIsMutable();
+          values_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object mergedValue_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * All the previous values are replaced by this merged facet value.
+         * This merged_value must be non-empty and can have up to 128 characters.
+         * </pre>
+         *
+         * <code>string merged_value = 2;</code>
+         *
+         * @return The mergedValue.
+         */
+        public java.lang.String getMergedValue() {
+          java.lang.Object ref = mergedValue_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mergedValue_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the previous values are replaced by this merged facet value.
+         * This merged_value must be non-empty and can have up to 128 characters.
+         * </pre>
+         *
+         * <code>string merged_value = 2;</code>
+         *
+         * @return The bytes for mergedValue.
+         */
+        public com.google.protobuf.ByteString getMergedValueBytes() {
+          java.lang.Object ref = mergedValue_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mergedValue_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the previous values are replaced by this merged facet value.
+         * This merged_value must be non-empty and can have up to 128 characters.
+         * </pre>
+         *
+         * <code>string merged_value = 2;</code>
+         *
+         * @param value The mergedValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMergedValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mergedValue_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the previous values are replaced by this merged facet value.
+         * This merged_value must be non-empty and can have up to 128 characters.
+         * </pre>
+         *
+         * <code>string merged_value = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMergedValue() {
+          mergedValue_ = getDefaultInstance().getMergedValue();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * All the previous values are replaced by this merged facet value.
+         * This merged_value must be non-empty and can have up to 128 characters.
+         * </pre>
+         *
+         * <code>string merged_value = 2;</code>
+         *
+         * @param value The bytes for mergedValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMergedValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          mergedValue_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue)
+      private static final com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+              .MergedFacetValue
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue();
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MergedFacetValue> PARSER =
+          new com.google.protobuf.AbstractParser<MergedFacetValue>() {
+            @java.lang.Override
+            public MergedFacetValue parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MergedFacetValue> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MergedFacetValue> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MergedFacetOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The merged facet key should be a valid facet key that is different than
+       * the facet key of the current catalog attribute. We refer this is
+       * merged facet key as the child of the current catalog attribute. This
+       * merged facet key can't be a parent of another facet key (i.e. no
+       * directed path of length 2). This merged facet key needs to be either a
+       * textual custom attribute or a numerical custom attribute.
+       * </pre>
+       *
+       * <code>string merged_facet_key = 1;</code>
+       *
+       * @return The mergedFacetKey.
+       */
+      java.lang.String getMergedFacetKey();
+      /**
+       *
+       *
+       * <pre>
+       * The merged facet key should be a valid facet key that is different than
+       * the facet key of the current catalog attribute. We refer this is
+       * merged facet key as the child of the current catalog attribute. This
+       * merged facet key can't be a parent of another facet key (i.e. no
+       * directed path of length 2). This merged facet key needs to be either a
+       * textual custom attribute or a numerical custom attribute.
+       * </pre>
+       *
+       * <code>string merged_facet_key = 1;</code>
+       *
+       * @return The bytes for mergedFacetKey.
+       */
+      com.google.protobuf.ByteString getMergedFacetKeyBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current facet key (i.e. attribute config) maps into the
+     * [merged_facet_key][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.merged_facet_key].
+     * A facet key can have at most one child. The current facet key and the
+     * merged facet key need both to be textual custom attributes or both
+     * numerical custom attributes (same type).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet}
+     */
+    public static final class MergedFacet extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)
+        MergedFacetOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use MergedFacet.newBuilder() to construct.
+      private MergedFacet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MergedFacet() {
+        mergedFacetKey_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MergedFacet();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.class,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder
+                    .class);
+      }
+
+      public static final int MERGED_FACET_KEY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mergedFacetKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The merged facet key should be a valid facet key that is different than
+       * the facet key of the current catalog attribute. We refer this is
+       * merged facet key as the child of the current catalog attribute. This
+       * merged facet key can't be a parent of another facet key (i.e. no
+       * directed path of length 2). This merged facet key needs to be either a
+       * textual custom attribute or a numerical custom attribute.
+       * </pre>
+       *
+       * <code>string merged_facet_key = 1;</code>
+       *
+       * @return The mergedFacetKey.
+       */
+      @java.lang.Override
+      public java.lang.String getMergedFacetKey() {
+        java.lang.Object ref = mergedFacetKey_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mergedFacetKey_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The merged facet key should be a valid facet key that is different than
+       * the facet key of the current catalog attribute. We refer this is
+       * merged facet key as the child of the current catalog attribute. This
+       * merged facet key can't be a parent of another facet key (i.e. no
+       * directed path of length 2). This merged facet key needs to be either a
+       * textual custom attribute or a numerical custom attribute.
+       * </pre>
+       *
+       * <code>string merged_facet_key = 1;</code>
+       *
+       * @return The bytes for mergedFacetKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMergedFacetKeyBytes() {
+        java.lang.Object ref = mergedFacetKey_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mergedFacetKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergedFacetKey_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mergedFacetKey_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergedFacetKey_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mergedFacetKey_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet other =
+            (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet) obj;
+
+        if (!getMergedFacetKey().equals(other.getMergedFacetKey())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MERGED_FACET_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getMergedFacetKey().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The current facet key (i.e. attribute config) maps into the
+       * [merged_facet_key][google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.merged_facet_key].
+       * A facet key can have at most one child. The current facet key and the
+       * merged facet key need both to be textual custom attributes or both
+       * numerical custom attributes (same type).
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.class,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          mergedFacetKey_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_MergedFacet_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet build() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+            buildPartial() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet result =
+              new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.mergedFacetKey_ = mergedFacetKey_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet other) {
+          if (other
+              == com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+                  .getDefaultInstance()) return this;
+          if (!other.getMergedFacetKey().isEmpty()) {
+            mergedFacetKey_ = other.mergedFacetKey_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    mergedFacetKey_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object mergedFacetKey_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The merged facet key should be a valid facet key that is different than
+         * the facet key of the current catalog attribute. We refer this is
+         * merged facet key as the child of the current catalog attribute. This
+         * merged facet key can't be a parent of another facet key (i.e. no
+         * directed path of length 2). This merged facet key needs to be either a
+         * textual custom attribute or a numerical custom attribute.
+         * </pre>
+         *
+         * <code>string merged_facet_key = 1;</code>
+         *
+         * @return The mergedFacetKey.
+         */
+        public java.lang.String getMergedFacetKey() {
+          java.lang.Object ref = mergedFacetKey_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mergedFacetKey_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The merged facet key should be a valid facet key that is different than
+         * the facet key of the current catalog attribute. We refer this is
+         * merged facet key as the child of the current catalog attribute. This
+         * merged facet key can't be a parent of another facet key (i.e. no
+         * directed path of length 2). This merged facet key needs to be either a
+         * textual custom attribute or a numerical custom attribute.
+         * </pre>
+         *
+         * <code>string merged_facet_key = 1;</code>
+         *
+         * @return The bytes for mergedFacetKey.
+         */
+        public com.google.protobuf.ByteString getMergedFacetKeyBytes() {
+          java.lang.Object ref = mergedFacetKey_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mergedFacetKey_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The merged facet key should be a valid facet key that is different than
+         * the facet key of the current catalog attribute. We refer this is
+         * merged facet key as the child of the current catalog attribute. This
+         * merged facet key can't be a parent of another facet key (i.e. no
+         * directed path of length 2). This merged facet key needs to be either a
+         * textual custom attribute or a numerical custom attribute.
+         * </pre>
+         *
+         * <code>string merged_facet_key = 1;</code>
+         *
+         * @param value The mergedFacetKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMergedFacetKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mergedFacetKey_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The merged facet key should be a valid facet key that is different than
+         * the facet key of the current catalog attribute. We refer this is
+         * merged facet key as the child of the current catalog attribute. This
+         * merged facet key can't be a parent of another facet key (i.e. no
+         * directed path of length 2). This merged facet key needs to be either a
+         * textual custom attribute or a numerical custom attribute.
+         * </pre>
+         *
+         * <code>string merged_facet_key = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMergedFacetKey() {
+          mergedFacetKey_ = getDefaultInstance().getMergedFacetKey();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The merged facet key should be a valid facet key that is different than
+         * the facet key of the current catalog attribute. We refer this is
+         * merged facet key as the child of the current catalog attribute. This
+         * merged facet key can't be a parent of another facet key (i.e. no
+         * directed path of length 2). This merged facet key needs to be either a
+         * textual custom attribute or a numerical custom attribute.
+         * </pre>
+         *
+         * <code>string merged_facet_key = 1;</code>
+         *
+         * @param value The bytes for mergedFacetKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMergedFacetKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          mergedFacetKey_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet)
+      private static final com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet();
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MergedFacet> PARSER =
+          new com.google.protobuf.AbstractParser<MergedFacet>() {
+            @java.lang.Override
+            public MergedFacet parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MergedFacet> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MergedFacet> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RerankConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * If set to true, then we also rerank the dynamic facets based on the
+       * facet values engaged by the user for the current attribute key during
+       * serving.
+       * </pre>
+       *
+       * <code>bool rerank_facet = 1;</code>
+       *
+       * @return The rerankFacet.
+       */
+      boolean getRerankFacet();
+
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @return A list containing the facetValues.
+       */
+      java.util.List<java.lang.String> getFacetValuesList();
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @return The count of facetValues.
+       */
+      int getFacetValuesCount();
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The facetValues at the given index.
+       */
+      java.lang.String getFacetValues(int index);
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the facetValues at the given index.
+       */
+      com.google.protobuf.ByteString getFacetValuesBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to rerank based on facet values engaged by the user for the
+     * current key. That key needs to be a custom textual key and facetable.
+     * To use this control, you also need to pass all the facet keys engaged by
+     * the user in the request using the field [SearchRequest.FacetSpec]. In
+     * particular, if you don't pass the facet keys engaged that you want to
+     * rerank on, this control won't be effective. Moreover, to obtain better
+     * results, the facet values that you want to rerank on should be close to
+     * English (ideally made of words, underscores, and spaces).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig}
+     */
+    public static final class RerankConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)
+        RerankConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RerankConfig.newBuilder() to construct.
+      private RerankConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RerankConfig() {
+        facetValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RerankConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.class,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder
+                    .class);
+      }
+
+      public static final int RERANK_FACET_FIELD_NUMBER = 1;
+      private boolean rerankFacet_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * If set to true, then we also rerank the dynamic facets based on the
+       * facet values engaged by the user for the current attribute key during
+       * serving.
+       * </pre>
+       *
+       * <code>bool rerank_facet = 1;</code>
+       *
+       * @return The rerankFacet.
+       */
+      @java.lang.Override
+      public boolean getRerankFacet() {
+        return rerankFacet_;
+      }
+
+      public static final int FACET_VALUES_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList facetValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @return A list containing the facetValues.
+       */
+      public com.google.protobuf.ProtocolStringList getFacetValuesList() {
+        return facetValues_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @return The count of facetValues.
+       */
+      public int getFacetValuesCount() {
+        return facetValues_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The facetValues at the given index.
+       */
+      public java.lang.String getFacetValues(int index) {
+        return facetValues_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If empty, rerank on all facet values for the current key. Otherwise,
+       * will rerank on the facet values from this list only.
+       * </pre>
+       *
+       * <code>repeated string facet_values = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the facetValues at the given index.
+       */
+      public com.google.protobuf.ByteString getFacetValuesBytes(int index) {
+        return facetValues_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (rerankFacet_ != false) {
+          output.writeBool(1, rerankFacet_);
+        }
+        for (int i = 0; i < facetValues_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, facetValues_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (rerankFacet_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, rerankFacet_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < facetValues_.size(); i++) {
+            dataSize += computeStringSizeNoTag(facetValues_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getFacetValuesList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig other =
+            (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig) obj;
+
+        if (getRerankFacet() != other.getRerankFacet()) return false;
+        if (!getFacetValuesList().equals(other.getFacetValuesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RERANK_FACET_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRerankFacet());
+        if (getFacetValuesCount() > 0) {
+          hash = (37 * hash) + FACET_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getFacetValuesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Options to rerank based on facet values engaged by the user for the
+       * current key. That key needs to be a custom textual key and facetable.
+       * To use this control, you also need to pass all the facet keys engaged by
+       * the user in the request using the field [SearchRequest.FacetSpec]. In
+       * particular, if you don't pass the facet keys engaged that you want to
+       * rerank on, this control won't be effective. Moreover, to obtain better
+       * results, the facet values that you want to rerank on should be close to
+       * English (ideally made of words, underscores, and spaces).
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.class,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          rerankFacet_ = false;
+          facetValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.retail.v2alpha.CatalogProto
+              .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_RerankConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig build() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+            buildPartial() {
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig result =
+              new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.rerankFacet_ = rerankFacet_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            facetValues_.makeImmutable();
+            result.facetValues_ = facetValues_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig) {
+            return mergeFrom(
+                (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig other) {
+          if (other
+              == com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+                  .getDefaultInstance()) return this;
+          if (other.getRerankFacet() != false) {
+            setRerankFacet(other.getRerankFacet());
+          }
+          if (!other.facetValues_.isEmpty()) {
+            if (facetValues_.isEmpty()) {
+              facetValues_ = other.facetValues_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensureFacetValuesIsMutable();
+              facetValues_.addAll(other.facetValues_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    rerankFacet_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureFacetValuesIsMutable();
+                    facetValues_.add(s);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean rerankFacet_;
+        /**
+         *
+         *
+         * <pre>
+         * If set to true, then we also rerank the dynamic facets based on the
+         * facet values engaged by the user for the current attribute key during
+         * serving.
+         * </pre>
+         *
+         * <code>bool rerank_facet = 1;</code>
+         *
+         * @return The rerankFacet.
+         */
+        @java.lang.Override
+        public boolean getRerankFacet() {
+          return rerankFacet_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If set to true, then we also rerank the dynamic facets based on the
+         * facet values engaged by the user for the current attribute key during
+         * serving.
+         * </pre>
+         *
+         * <code>bool rerank_facet = 1;</code>
+         *
+         * @param value The rerankFacet to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRerankFacet(boolean value) {
+
+          rerankFacet_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If set to true, then we also rerank the dynamic facets based on the
+         * facet values engaged by the user for the current attribute key during
+         * serving.
+         * </pre>
+         *
+         * <code>bool rerank_facet = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRerankFacet() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          rerankFacet_ = false;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList facetValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureFacetValuesIsMutable() {
+          if (!facetValues_.isModifiable()) {
+            facetValues_ = new com.google.protobuf.LazyStringArrayList(facetValues_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @return A list containing the facetValues.
+         */
+        public com.google.protobuf.ProtocolStringList getFacetValuesList() {
+          facetValues_.makeImmutable();
+          return facetValues_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @return The count of facetValues.
+         */
+        public int getFacetValuesCount() {
+          return facetValues_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The facetValues at the given index.
+         */
+        public java.lang.String getFacetValues(int index) {
+          return facetValues_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the facetValues at the given index.
+         */
+        public com.google.protobuf.ByteString getFacetValuesBytes(int index) {
+          return facetValues_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The facetValues to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFacetValues(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetValuesIsMutable();
+          facetValues_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param value The facetValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addFacetValues(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetValuesIsMutable();
+          facetValues_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param values The facetValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllFacetValues(java.lang.Iterable<java.lang.String> values) {
+          ensureFacetValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, facetValues_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFacetValues() {
+          facetValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If empty, rerank on all facet values for the current key. Otherwise,
+         * will rerank on the facet values from this list only.
+         * </pre>
+         *
+         * <code>repeated string facet_values = 2;</code>
+         *
+         * @param value The bytes of the facetValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addFacetValuesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureFacetValuesIsMutable();
+          facetValues_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig)
+      private static final com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig();
+      }
+
+      public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RerankConfig> PARSER =
+          new com.google.protobuf.AbstractParser<RerankConfig>() {
+            @java.lang.Override
+            public RerankConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RerankConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RerankConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int FACET_INTERVALS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.retail.v2alpha.Interval> facetIntervals_;
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.retail.v2alpha.Interval> getFacetIntervalsList() {
+      return facetIntervals_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.retail.v2alpha.IntervalOrBuilder>
+        getFacetIntervalsOrBuilderList() {
+      return facetIntervals_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    @java.lang.Override
+    public int getFacetIntervalsCount() {
+      return facetIntervals_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.Interval getFacetIntervals(int index) {
+      return facetIntervals_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you don't set the facet
+     * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+     * in the request to a numerical attribute, then we use the computed
+     * intervals with rounded bounds obtained from all its product numerical
+     * attribute values. The computed intervals might not be ideal for some
+     * attributes. Therefore, we give you the option to overwrite them with the
+     * facet_intervals field. The maximum of facet intervals per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+     * Each interval must have a lower bound or an upper bound. If both bounds
+     * are provided, then the lower bound must be smaller or equal than the
+     * upper bound.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.IntervalOrBuilder getFacetIntervalsOrBuilder(int index) {
+      return facetIntervals_.get(index);
+    }
+
+    public static final int IGNORED_FACET_VALUES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>
+        ignoredFacetValues_;
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>
+        getIgnoredFacetValuesList() {
+      return ignoredFacetValues_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                    .IgnoredFacetValuesOrBuilder>
+        getIgnoredFacetValuesOrBuilderList() {
+      return ignoredFacetValues_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getIgnoredFacetValuesCount() {
+      return ignoredFacetValues_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+        getIgnoredFacetValues(int index) {
+      return ignoredFacetValues_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance represents a list of attribute values to ignore as facet
+     * values for a specific time range. The maximum number of instances per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValuesOrBuilder
+        getIgnoredFacetValuesOrBuilder(int index) {
+      return ignoredFacetValues_.get(index);
+    }
+
+    public static final int MERGED_FACET_VALUES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+        mergedFacetValues_;
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+        getMergedFacetValuesList() {
+      return mergedFacetValues_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                    .MergedFacetValueOrBuilder>
+        getMergedFacetValuesOrBuilderList() {
+      return mergedFacetValues_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getMergedFacetValuesCount() {
+      return mergedFacetValues_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+        getMergedFacetValues(int index) {
+      return mergedFacetValues_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each instance replaces a list of facet values by a merged facet
+     * value. If a facet value is not in any list, then it will stay the same.
+     * To avoid conflicts, only paths of length 1 are accepted. In other words,
+     * if "dark_blue" merged into "BLUE", then the latter can't merge into
+     * "blues" because this would create a path of length 2. The maximum number
+     * of instances of MergedFacetValue per
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+     * This feature is available only for textual custom attributes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValueOrBuilder
+        getMergedFacetValuesOrBuilder(int index) {
+      return mergedFacetValues_.get(index);
+    }
+
+    public static final int MERGED_FACET_FIELD_NUMBER = 4;
+    private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet mergedFacet_;
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     *
+     * @return Whether the mergedFacet field is set.
+     */
+    @java.lang.Override
+    public boolean hasMergedFacet() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     *
+     * @return The mergedFacet.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+        getMergedFacet() {
+      return mergedFacet_ == null
+          ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+              .getDefaultInstance()
+          : mergedFacet_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use this field only if you want to merge a facet key into another facet
+     * key.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder
+        getMergedFacetOrBuilder() {
+      return mergedFacet_ == null
+          ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+              .getDefaultInstance()
+          : mergedFacet_;
+    }
+
+    public static final int RERANK_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerankConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     *
+     * @return Whether the rerankConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasRerankConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     *
+     * @return The rerankConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+        getRerankConfig() {
+      return rerankConfig_ == null
+          ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+              .getDefaultInstance()
+          : rerankConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set this field only if you want to rerank based on facet values engaged
+     * by the user for the current key. This option is only possible for custom
+     * facetable textual keys.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder
+        getRerankConfigOrBuilder() {
+      return rerankConfig_ == null
+          ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+              .getDefaultInstance()
+          : rerankConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < facetIntervals_.size(); i++) {
+        output.writeMessage(1, facetIntervals_.get(i));
+      }
+      for (int i = 0; i < ignoredFacetValues_.size(); i++) {
+        output.writeMessage(2, ignoredFacetValues_.get(i));
+      }
+      for (int i = 0; i < mergedFacetValues_.size(); i++) {
+        output.writeMessage(3, mergedFacetValues_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getMergedFacet());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(5, getRerankConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < facetIntervals_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, facetIntervals_.get(i));
+      }
+      for (int i = 0; i < ignoredFacetValues_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, ignoredFacetValues_.get(i));
+      }
+      for (int i = 0; i < mergedFacetValues_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, mergedFacetValues_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMergedFacet());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRerankConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig other =
+          (com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig) obj;
+
+      if (!getFacetIntervalsList().equals(other.getFacetIntervalsList())) return false;
+      if (!getIgnoredFacetValuesList().equals(other.getIgnoredFacetValuesList())) return false;
+      if (!getMergedFacetValuesList().equals(other.getMergedFacetValuesList())) return false;
+      if (hasMergedFacet() != other.hasMergedFacet()) return false;
+      if (hasMergedFacet()) {
+        if (!getMergedFacet().equals(other.getMergedFacet())) return false;
+      }
+      if (hasRerankConfig() != other.hasRerankConfig()) return false;
+      if (hasRerankConfig()) {
+        if (!getRerankConfig().equals(other.getRerankConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFacetIntervalsCount() > 0) {
+        hash = (37 * hash) + FACET_INTERVALS_FIELD_NUMBER;
+        hash = (53 * hash) + getFacetIntervalsList().hashCode();
+      }
+      if (getIgnoredFacetValuesCount() > 0) {
+        hash = (37 * hash) + IGNORED_FACET_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getIgnoredFacetValuesList().hashCode();
+      }
+      if (getMergedFacetValuesCount() > 0) {
+        hash = (37 * hash) + MERGED_FACET_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getMergedFacetValuesList().hashCode();
+      }
+      if (hasMergedFacet()) {
+        hash = (37 * hash) + MERGED_FACET_FIELD_NUMBER;
+        hash = (53 * hash) + getMergedFacet().hashCode();
+      }
+      if (hasRerankConfig()) {
+        hash = (37 * hash) + RERANK_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getRerankConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Possible options for the facet that corresponds to the current attribute
+     * config.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.class,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getFacetIntervalsFieldBuilder();
+          getIgnoredFacetValuesFieldBuilder();
+          getMergedFacetValuesFieldBuilder();
+          getMergedFacetFieldBuilder();
+          getRerankConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (facetIntervalsBuilder_ == null) {
+          facetIntervals_ = java.util.Collections.emptyList();
+        } else {
+          facetIntervals_ = null;
+          facetIntervalsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (ignoredFacetValuesBuilder_ == null) {
+          ignoredFacetValues_ = java.util.Collections.emptyList();
+        } else {
+          ignoredFacetValues_ = null;
+          ignoredFacetValuesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (mergedFacetValuesBuilder_ == null) {
+          mergedFacetValues_ = java.util.Collections.emptyList();
+        } else {
+          mergedFacetValues_ = null;
+          mergedFacetValuesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        mergedFacet_ = null;
+        if (mergedFacetBuilder_ != null) {
+          mergedFacetBuilder_.dispose();
+          mergedFacetBuilder_ = null;
+        }
+        rerankConfig_ = null;
+        if (rerankConfigBuilder_ != null) {
+          rerankConfigBuilder_.dispose();
+          rerankConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2alpha.CatalogProto
+            .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_FacetConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig build() {
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig buildPartial() {
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig result =
+            new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig result) {
+        if (facetIntervalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            facetIntervals_ = java.util.Collections.unmodifiableList(facetIntervals_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.facetIntervals_ = facetIntervals_;
+        } else {
+          result.facetIntervals_ = facetIntervalsBuilder_.build();
+        }
+        if (ignoredFacetValuesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            ignoredFacetValues_ = java.util.Collections.unmodifiableList(ignoredFacetValues_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.ignoredFacetValues_ = ignoredFacetValues_;
+        } else {
+          result.ignoredFacetValues_ = ignoredFacetValuesBuilder_.build();
+        }
+        if (mergedFacetValuesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            mergedFacetValues_ = java.util.Collections.unmodifiableList(mergedFacetValues_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.mergedFacetValues_ = mergedFacetValues_;
+        } else {
+          result.mergedFacetValues_ = mergedFacetValuesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.mergedFacet_ =
+              mergedFacetBuilder_ == null ? mergedFacet_ : mergedFacetBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rerankConfig_ =
+              rerankConfigBuilder_ == null ? rerankConfig_ : rerankConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig) {
+          return mergeFrom((com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig other) {
+        if (other
+            == com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance())
+          return this;
+        if (facetIntervalsBuilder_ == null) {
+          if (!other.facetIntervals_.isEmpty()) {
+            if (facetIntervals_.isEmpty()) {
+              facetIntervals_ = other.facetIntervals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFacetIntervalsIsMutable();
+              facetIntervals_.addAll(other.facetIntervals_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.facetIntervals_.isEmpty()) {
+            if (facetIntervalsBuilder_.isEmpty()) {
+              facetIntervalsBuilder_.dispose();
+              facetIntervalsBuilder_ = null;
+              facetIntervals_ = other.facetIntervals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              facetIntervalsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFacetIntervalsFieldBuilder()
+                      : null;
+            } else {
+              facetIntervalsBuilder_.addAllMessages(other.facetIntervals_);
+            }
+          }
+        }
+        if (ignoredFacetValuesBuilder_ == null) {
+          if (!other.ignoredFacetValues_.isEmpty()) {
+            if (ignoredFacetValues_.isEmpty()) {
+              ignoredFacetValues_ = other.ignoredFacetValues_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureIgnoredFacetValuesIsMutable();
+              ignoredFacetValues_.addAll(other.ignoredFacetValues_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ignoredFacetValues_.isEmpty()) {
+            if (ignoredFacetValuesBuilder_.isEmpty()) {
+              ignoredFacetValuesBuilder_.dispose();
+              ignoredFacetValuesBuilder_ = null;
+              ignoredFacetValues_ = other.ignoredFacetValues_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              ignoredFacetValuesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getIgnoredFacetValuesFieldBuilder()
+                      : null;
+            } else {
+              ignoredFacetValuesBuilder_.addAllMessages(other.ignoredFacetValues_);
+            }
+          }
+        }
+        if (mergedFacetValuesBuilder_ == null) {
+          if (!other.mergedFacetValues_.isEmpty()) {
+            if (mergedFacetValues_.isEmpty()) {
+              mergedFacetValues_ = other.mergedFacetValues_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureMergedFacetValuesIsMutable();
+              mergedFacetValues_.addAll(other.mergedFacetValues_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.mergedFacetValues_.isEmpty()) {
+            if (mergedFacetValuesBuilder_.isEmpty()) {
+              mergedFacetValuesBuilder_.dispose();
+              mergedFacetValuesBuilder_ = null;
+              mergedFacetValues_ = other.mergedFacetValues_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              mergedFacetValuesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getMergedFacetValuesFieldBuilder()
+                      : null;
+            } else {
+              mergedFacetValuesBuilder_.addAllMessages(other.mergedFacetValues_);
+            }
+          }
+        }
+        if (other.hasMergedFacet()) {
+          mergeMergedFacet(other.getMergedFacet());
+        }
+        if (other.hasRerankConfig()) {
+          mergeRerankConfig(other.getRerankConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.retail.v2alpha.Interval m =
+                      input.readMessage(
+                          com.google.cloud.retail.v2alpha.Interval.parser(), extensionRegistry);
+                  if (facetIntervalsBuilder_ == null) {
+                    ensureFacetIntervalsIsMutable();
+                    facetIntervals_.add(m);
+                  } else {
+                    facetIntervalsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                      m =
+                          input.readMessage(
+                              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                                  .IgnoredFacetValues.parser(),
+                              extensionRegistry);
+                  if (ignoredFacetValuesBuilder_ == null) {
+                    ensureIgnoredFacetValuesIsMutable();
+                    ignoredFacetValues_.add(m);
+                  } else {
+                    ignoredFacetValuesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue m =
+                      input.readMessage(
+                          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                              .MergedFacetValue.parser(),
+                          extensionRegistry);
+                  if (mergedFacetValuesBuilder_ == null) {
+                    ensureMergedFacetValuesIsMutable();
+                    mergedFacetValues_.add(m);
+                  } else {
+                    mergedFacetValuesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getMergedFacetFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getRerankConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.retail.v2alpha.Interval> facetIntervals_ =
+          java.util.Collections.emptyList();
+
+      private void ensureFacetIntervalsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          facetIntervals_ =
+              new java.util.ArrayList<com.google.cloud.retail.v2alpha.Interval>(facetIntervals_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.Interval,
+              com.google.cloud.retail.v2alpha.Interval.Builder,
+              com.google.cloud.retail.v2alpha.IntervalOrBuilder>
+          facetIntervalsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public java.util.List<com.google.cloud.retail.v2alpha.Interval> getFacetIntervalsList() {
+        if (facetIntervalsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(facetIntervals_);
+        } else {
+          return facetIntervalsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public int getFacetIntervalsCount() {
+        if (facetIntervalsBuilder_ == null) {
+          return facetIntervals_.size();
+        } else {
+          return facetIntervalsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Interval getFacetIntervals(int index) {
+        if (facetIntervalsBuilder_ == null) {
+          return facetIntervals_.get(index);
+        } else {
+          return facetIntervalsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder setFacetIntervals(int index, com.google.cloud.retail.v2alpha.Interval value) {
+        if (facetIntervalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.set(index, value);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder setFacetIntervals(
+          int index, com.google.cloud.retail.v2alpha.Interval.Builder builderForValue) {
+        if (facetIntervalsBuilder_ == null) {
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder addFacetIntervals(com.google.cloud.retail.v2alpha.Interval value) {
+        if (facetIntervalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.add(value);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder addFacetIntervals(int index, com.google.cloud.retail.v2alpha.Interval value) {
+        if (facetIntervalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.add(index, value);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder addFacetIntervals(
+          com.google.cloud.retail.v2alpha.Interval.Builder builderForValue) {
+        if (facetIntervalsBuilder_ == null) {
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.add(builderForValue.build());
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder addFacetIntervals(
+          int index, com.google.cloud.retail.v2alpha.Interval.Builder builderForValue) {
+        if (facetIntervalsBuilder_ == null) {
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder addAllFacetIntervals(
+          java.lang.Iterable<? extends com.google.cloud.retail.v2alpha.Interval> values) {
+        if (facetIntervalsBuilder_ == null) {
+          ensureFacetIntervalsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, facetIntervals_);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder clearFacetIntervals() {
+        if (facetIntervalsBuilder_ == null) {
+          facetIntervals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public Builder removeFacetIntervals(int index) {
+        if (facetIntervalsBuilder_ == null) {
+          ensureFacetIntervalsIsMutable();
+          facetIntervals_.remove(index);
+          onChanged();
+        } else {
+          facetIntervalsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Interval.Builder getFacetIntervalsBuilder(int index) {
+        return getFacetIntervalsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public com.google.cloud.retail.v2alpha.IntervalOrBuilder getFacetIntervalsOrBuilder(
+          int index) {
+        if (facetIntervalsBuilder_ == null) {
+          return facetIntervals_.get(index);
+        } else {
+          return facetIntervalsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public java.util.List<? extends com.google.cloud.retail.v2alpha.IntervalOrBuilder>
+          getFacetIntervalsOrBuilderList() {
+        if (facetIntervalsBuilder_ != null) {
+          return facetIntervalsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(facetIntervals_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Interval.Builder addFacetIntervalsBuilder() {
+        return getFacetIntervalsFieldBuilder()
+            .addBuilder(com.google.cloud.retail.v2alpha.Interval.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public com.google.cloud.retail.v2alpha.Interval.Builder addFacetIntervalsBuilder(int index) {
+        return getFacetIntervalsFieldBuilder()
+            .addBuilder(index, com.google.cloud.retail.v2alpha.Interval.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If you don't set the facet
+       * [SearchRequest.FacetSpec.FacetKey.intervals][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.intervals]
+       * in the request to a numerical attribute, then we use the computed
+       * intervals with rounded bounds obtained from all its product numerical
+       * attribute values. The computed intervals might not be ideal for some
+       * attributes. Therefore, we give you the option to overwrite them with the
+       * facet_intervals field. The maximum of facet intervals per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 40.
+       * Each interval must have a lower bound or an upper bound. If both bounds
+       * are provided, then the lower bound must be smaller or equal than the
+       * upper bound.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.retail.v2alpha.Interval facet_intervals = 1;</code>
+       */
+      public java.util.List<com.google.cloud.retail.v2alpha.Interval.Builder>
+          getFacetIntervalsBuilderList() {
+        return getFacetIntervalsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.Interval,
+              com.google.cloud.retail.v2alpha.Interval.Builder,
+              com.google.cloud.retail.v2alpha.IntervalOrBuilder>
+          getFacetIntervalsFieldBuilder() {
+        if (facetIntervalsBuilder_ == null) {
+          facetIntervalsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.Interval,
+                  com.google.cloud.retail.v2alpha.Interval.Builder,
+                  com.google.cloud.retail.v2alpha.IntervalOrBuilder>(
+                  facetIntervals_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          facetIntervals_ = null;
+        }
+        return facetIntervalsBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>
+          ignoredFacetValues_ = java.util.Collections.emptyList();
+
+      private void ensureIgnoredFacetValuesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          ignoredFacetValues_ =
+              new java.util.ArrayList<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>(
+                  ignoredFacetValues_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                  .Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                  .IgnoredFacetValuesOrBuilder>
+          ignoredFacetValuesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues>
+          getIgnoredFacetValuesList() {
+        if (ignoredFacetValuesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ignoredFacetValues_);
+        } else {
+          return ignoredFacetValuesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public int getIgnoredFacetValuesCount() {
+        if (ignoredFacetValuesBuilder_ == null) {
+          return ignoredFacetValues_.size();
+        } else {
+          return ignoredFacetValuesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+          getIgnoredFacetValues(int index) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          return ignoredFacetValues_.get(index);
+        } else {
+          return ignoredFacetValuesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder setIgnoredFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues value) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.set(index, value);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder setIgnoredFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+              builderForValue) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder addIgnoredFacetValues(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues value) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.add(value);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder addIgnoredFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues value) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.add(index, value);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder addIgnoredFacetValues(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+              builderForValue) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder addIgnoredFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+              builderForValue) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder addAllIgnoredFacetValues(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                          .IgnoredFacetValues>
+              values) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ensureIgnoredFacetValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ignoredFacetValues_);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder clearIgnoredFacetValues() {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ignoredFacetValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public Builder removeIgnoredFacetValues(int index) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ensureIgnoredFacetValuesIsMutable();
+          ignoredFacetValues_.remove(index);
+          onChanged();
+        } else {
+          ignoredFacetValuesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+          getIgnoredFacetValuesBuilder(int index) {
+        return getIgnoredFacetValuesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+              .IgnoredFacetValuesOrBuilder
+          getIgnoredFacetValuesOrBuilder(int index) {
+        if (ignoredFacetValuesBuilder_ == null) {
+          return ignoredFacetValues_.get(index);
+        } else {
+          return ignoredFacetValuesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .IgnoredFacetValuesOrBuilder>
+          getIgnoredFacetValuesOrBuilderList() {
+        if (ignoredFacetValuesBuilder_ != null) {
+          return ignoredFacetValuesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ignoredFacetValues_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+          addIgnoredFacetValuesBuilder() {
+        return getIgnoredFacetValuesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues.Builder
+          addIgnoredFacetValuesBuilder(int index) {
+        return getIgnoredFacetValuesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance represents a list of attribute values to ignore as facet
+       * values for a specific time range. The maximum number of instances per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 25.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues ignored_facet_values = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                  .Builder>
+          getIgnoredFacetValuesBuilderList() {
+        return getIgnoredFacetValuesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                  .Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                  .IgnoredFacetValuesOrBuilder>
+          getIgnoredFacetValuesFieldBuilder() {
+        if (ignoredFacetValuesBuilder_ == null) {
+          ignoredFacetValuesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.IgnoredFacetValues
+                      .Builder,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .IgnoredFacetValuesOrBuilder>(
+                  ignoredFacetValues_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          ignoredFacetValues_ = null;
+        }
+        return ignoredFacetValuesBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+          mergedFacetValues_ = java.util.Collections.emptyList();
+
+      private void ensureMergedFacetValuesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          mergedFacetValues_ =
+              new java.util.ArrayList<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>(
+                  mergedFacetValues_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                  .MergedFacetValueOrBuilder>
+          mergedFacetValuesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+          getMergedFacetValuesList() {
+        if (mergedFacetValuesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(mergedFacetValues_);
+        } else {
+          return mergedFacetValuesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public int getMergedFacetValuesCount() {
+        if (mergedFacetValuesBuilder_ == null) {
+          return mergedFacetValues_.size();
+        } else {
+          return mergedFacetValuesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+          getMergedFacetValues(int index) {
+        if (mergedFacetValuesBuilder_ == null) {
+          return mergedFacetValues_.get(index);
+        } else {
+          return mergedFacetValuesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder setMergedFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue value) {
+        if (mergedFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.set(index, value);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder setMergedFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+              builderForValue) {
+        if (mergedFacetValuesBuilder_ == null) {
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder addMergedFacetValues(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue value) {
+        if (mergedFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.add(value);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder addMergedFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue value) {
+        if (mergedFacetValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.add(index, value);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder addMergedFacetValues(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+              builderForValue) {
+        if (mergedFacetValuesBuilder_ == null) {
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.add(builderForValue.build());
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder addMergedFacetValues(
+          int index,
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+              builderForValue) {
+        if (mergedFacetValuesBuilder_ == null) {
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder addAllMergedFacetValues(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue>
+              values) {
+        if (mergedFacetValuesBuilder_ == null) {
+          ensureMergedFacetValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mergedFacetValues_);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder clearMergedFacetValues() {
+        if (mergedFacetValuesBuilder_ == null) {
+          mergedFacetValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public Builder removeMergedFacetValues(int index) {
+        if (mergedFacetValuesBuilder_ == null) {
+          ensureMergedFacetValuesIsMutable();
+          mergedFacetValues_.remove(index);
+          onChanged();
+        } else {
+          mergedFacetValuesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+          getMergedFacetValuesBuilder(int index) {
+        return getMergedFacetValuesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValueOrBuilder
+          getMergedFacetValuesOrBuilder(int index) {
+        if (mergedFacetValuesBuilder_ == null) {
+          return mergedFacetValues_.get(index);
+        } else {
+          return mergedFacetValuesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .MergedFacetValueOrBuilder>
+          getMergedFacetValuesOrBuilderList() {
+        if (mergedFacetValuesBuilder_ != null) {
+          return mergedFacetValuesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(mergedFacetValues_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+          addMergedFacetValuesBuilder() {
+        return getMergedFacetValuesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder
+          addMergedFacetValuesBuilder(int index) {
+        return getMergedFacetValuesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each instance replaces a list of facet values by a merged facet
+       * value. If a facet value is not in any list, then it will stay the same.
+       * To avoid conflicts, only paths of length 1 are accepted. In other words,
+       * if "dark_blue" merged into "BLUE", then the latter can't merge into
+       * "blues" because this would create a path of length 2. The maximum number
+       * of instances of MergedFacetValue per
+       * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] is 100.
+       * This feature is available only for textual custom attributes.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue merged_facet_values = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder>
+          getMergedFacetValuesBuilderList() {
+        return getMergedFacetValuesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                  .MergedFacetValueOrBuilder>
+          getMergedFacetValuesFieldBuilder() {
+        if (mergedFacetValuesBuilder_ == null) {
+          mergedFacetValuesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetValue
+                      .Builder,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .MergedFacetValueOrBuilder>(
+                  mergedFacetValues_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          mergedFacetValues_ = null;
+        }
+        return mergedFacetValuesBuilder_;
+      }
+
+      private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet mergedFacet_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder>
+          mergedFacetBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       *
+       * @return Whether the mergedFacet field is set.
+       */
+      public boolean hasMergedFacet() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       *
+       * @return The mergedFacet.
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+          getMergedFacet() {
+        if (mergedFacetBuilder_ == null) {
+          return mergedFacet_ == null
+              ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+                  .getDefaultInstance()
+              : mergedFacet_;
+        } else {
+          return mergedFacetBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public Builder setMergedFacet(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet value) {
+        if (mergedFacetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mergedFacet_ = value;
+        } else {
+          mergedFacetBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public Builder setMergedFacet(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder
+              builderForValue) {
+        if (mergedFacetBuilder_ == null) {
+          mergedFacet_ = builderForValue.build();
+        } else {
+          mergedFacetBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public Builder mergeMergedFacet(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet value) {
+        if (mergedFacetBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && mergedFacet_ != null
+              && mergedFacet_
+                  != com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+                      .getDefaultInstance()) {
+            getMergedFacetBuilder().mergeFrom(value);
+          } else {
+            mergedFacet_ = value;
+          }
+        } else {
+          mergedFacetBuilder_.mergeFrom(value);
+        }
+        if (mergedFacet_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public Builder clearMergedFacet() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        mergedFacet_ = null;
+        if (mergedFacetBuilder_ != null) {
+          mergedFacetBuilder_.dispose();
+          mergedFacetBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder
+          getMergedFacetBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getMergedFacetFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder
+          getMergedFacetOrBuilder() {
+        if (mergedFacetBuilder_ != null) {
+          return mergedFacetBuilder_.getMessageOrBuilder();
+        } else {
+          return mergedFacet_ == null
+              ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet
+                  .getDefaultInstance()
+              : mergedFacet_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use this field only if you want to merge a facet key into another facet
+       * key.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet merged_facet = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacetOrBuilder>
+          getMergedFacetFieldBuilder() {
+        if (mergedFacetBuilder_ == null) {
+          mergedFacetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.MergedFacet.Builder,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .MergedFacetOrBuilder>(getMergedFacet(), getParentForChildren(), isClean());
+          mergedFacet_ = null;
+        }
+        return mergedFacetBuilder_;
+      }
+
+      private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          rerankConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder>
+          rerankConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       *
+       * @return Whether the rerankConfig field is set.
+       */
+      public boolean hasRerankConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       *
+       * @return The rerankConfig.
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+          getRerankConfig() {
+        if (rerankConfigBuilder_ == null) {
+          return rerankConfig_ == null
+              ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+                  .getDefaultInstance()
+              : rerankConfig_;
+        } else {
+          return rerankConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public Builder setRerankConfig(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig value) {
+        if (rerankConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rerankConfig_ = value;
+        } else {
+          rerankConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public Builder setRerankConfig(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder
+              builderForValue) {
+        if (rerankConfigBuilder_ == null) {
+          rerankConfig_ = builderForValue.build();
+        } else {
+          rerankConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public Builder mergeRerankConfig(
+          com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig value) {
+        if (rerankConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && rerankConfig_ != null
+              && rerankConfig_
+                  != com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+                      .getDefaultInstance()) {
+            getRerankConfigBuilder().mergeFrom(value);
+          } else {
+            rerankConfig_ = value;
+          }
+        } else {
+          rerankConfigBuilder_.mergeFrom(value);
+        }
+        if (rerankConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public Builder clearRerankConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rerankConfig_ = null;
+        if (rerankConfigBuilder_ != null) {
+          rerankConfigBuilder_.dispose();
+          rerankConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder
+          getRerankConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getRerankConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder
+          getRerankConfigOrBuilder() {
+        if (rerankConfigBuilder_ != null) {
+          return rerankConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return rerankConfig_ == null
+              ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig
+                  .getDefaultInstance()
+              : rerankConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field only if you want to rerank based on facet values engaged
+       * by the user for the current key. This option is only possible for custom
+       * facetable textual keys.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig rerank_config = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder,
+              com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfigOrBuilder>
+          getRerankConfigFieldBuilder() {
+        if (rerankConfigBuilder_ == null) {
+          rerankConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.RerankConfig.Builder,
+                  com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                      .RerankConfigOrBuilder>(getRerankConfig(), getParentForChildren(), isClean());
+          rerankConfig_ = null;
+        }
+        return rerankConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig)
+    private static final com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig();
+    }
+
+    public static com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FacetConfig> PARSER =
+        new com.google.protobuf.AbstractParser<FacetConfig>() {
+          @java.lang.Override
+          public FacetConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FacetConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FacetConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1199,7 +9093,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -1221,7 +9117,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -1309,7 +9207,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
    * as there are no text values associated to numerical attributes.
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified, when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -1336,7 +9236,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
    * as there are no text values associated to numerical attributes.
    *
-   * Must be specified, otherwise throws INVALID_FORMAT error.
+   * Must be specified, when
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -1502,6 +9404,57 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int FACET_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facetConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   *
+   * @return Whether the facetConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFacetConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   *
+   * @return The facetConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig getFacetConfig() {
+    return facetConfig_ == null
+        ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance()
+        : facetConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains facet options.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder
+      getFacetConfigOrBuilder() {
+    return facetConfig_ == null
+        ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance()
+        : facetConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1562,6 +9515,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(12, retrievableOption_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(13, getFacetConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1618,6 +9574,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, retrievableOption_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFacetConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1643,6 +9602,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (recommendationsFilteringOption_ != other.recommendationsFilteringOption_) return false;
     if (exactSearchableOption_ != other.exactSearchableOption_) return false;
     if (retrievableOption_ != other.retrievableOption_) return false;
+    if (hasFacetConfig() != other.hasFacetConfig()) return false;
+    if (hasFacetConfig()) {
+      if (!getFacetConfig().equals(other.getFacetConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1672,6 +9635,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + exactSearchableOption_;
     hash = (37 * hash) + RETRIEVABLE_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + retrievableOption_;
+    if (hasFacetConfig()) {
+      hash = (37 * hash) + FACET_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFacetConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1802,10 +9769,19 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.retail.v2alpha.CatalogAttribute.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFacetConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1821,6 +9797,11 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       recommendationsFilteringOption_ = 0;
       exactSearchableOption_ = 0;
       retrievableOption_ = 0;
+      facetConfig_ = null;
+      if (facetConfigBuilder_ != null) {
+        facetConfigBuilder_.dispose();
+        facetConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1884,6 +9865,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.retrievableOption_ = retrievableOption_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.facetConfig_ =
+            facetConfigBuilder_ == null ? facetConfig_ : facetConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1960,6 +9948,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       }
       if (other.retrievableOption_ != 0) {
         setRetrievableOptionValue(other.getRetrievableOptionValue());
+      }
+      if (other.hasFacetConfig()) {
+        mergeFacetConfig(other.getFacetConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2041,6 +10032,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 96
+            case 106:
+              {
+                input.readMessage(getFacetConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2456,7 +10453,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -2478,7 +10477,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -2503,7 +10504,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -2530,7 +10533,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -2559,7 +10564,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.IndexableOption indexable_option = 5;
@@ -2720,7 +10727,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
      * as there are no text values associated to numerical attributes.
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified, when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -2747,7 +10756,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
      * as there are no text values associated to numerical attributes.
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified, when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -2777,7 +10788,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
      * as there are no text values associated to numerical attributes.
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified, when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -2809,7 +10822,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
      * as there are no text values associated to numerical attributes.
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified, when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -2843,7 +10858,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
      * as there are no text values associated to numerical attributes.
      *
-     * Must be specified, otherwise throws INVALID_FORMAT error.
+     * Must be specified, when
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.CatalogAttribute.SearchableOption searchable_option = 7;
@@ -3226,6 +11243,198 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       retrievableOption_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facetConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig,
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder,
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder>
+        facetConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     *
+     * @return Whether the facetConfig field is set.
+     */
+    public boolean hasFacetConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     *
+     * @return The facetConfig.
+     */
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig getFacetConfig() {
+      if (facetConfigBuilder_ == null) {
+        return facetConfig_ == null
+            ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance()
+            : facetConfig_;
+      } else {
+        return facetConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public Builder setFacetConfig(
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig value) {
+      if (facetConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        facetConfig_ = value;
+      } else {
+        facetConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public Builder setFacetConfig(
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder builderForValue) {
+      if (facetConfigBuilder_ == null) {
+        facetConfig_ = builderForValue.build();
+      } else {
+        facetConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public Builder mergeFacetConfig(
+        com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig value) {
+      if (facetConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && facetConfig_ != null
+            && facetConfig_
+                != com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig
+                    .getDefaultInstance()) {
+          getFacetConfigBuilder().mergeFrom(value);
+        } else {
+          facetConfig_ = value;
+        }
+      } else {
+        facetConfigBuilder_.mergeFrom(value);
+      }
+      if (facetConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public Builder clearFacetConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      facetConfig_ = null;
+      if (facetConfigBuilder_ != null) {
+        facetConfigBuilder_.dispose();
+        facetConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder
+        getFacetConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getFacetConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    public com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder
+        getFacetConfigOrBuilder() {
+      if (facetConfigBuilder_ != null) {
+        return facetConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return facetConfig_ == null
+            ? com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.getDefaultInstance()
+            : facetConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains facet options.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig facet_config = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig,
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder,
+            com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder>
+        getFacetConfigFieldBuilder() {
+      if (facetConfigBuilder_ == null) {
+        facetConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfig.Builder,
+                com.google.cloud.retail.v2alpha.CatalogAttribute.FacetConfigOrBuilder>(
+                getFacetConfig(), getParentForChildren(), isClean());
+        facetConfig_ = null;
+      }
+      return facetConfigBuilder_;
     }
 
     @java.lang.Override

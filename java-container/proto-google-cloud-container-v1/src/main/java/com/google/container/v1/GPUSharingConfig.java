@@ -94,6 +94,16 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * <code>TIME_SHARING = 1;</code>
      */
     TIME_SHARING(1),
+    /**
+     *
+     *
+     * <pre>
+     * GPUs are shared between containers with NVIDIA MPS.
+     * </pre>
+     *
+     * <code>MPS = 2;</code>
+     */
+    MPS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -117,6 +127,16 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
      * <code>TIME_SHARING = 1;</code>
      */
     public static final int TIME_SHARING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * GPUs are shared between containers with NVIDIA MPS.
+     * </pre>
+     *
+     * <code>MPS = 2;</code>
+     */
+    public static final int MPS_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -146,6 +166,8 @@ public final class GPUSharingConfig extends com.google.protobuf.GeneratedMessage
           return GPU_SHARING_STRATEGY_UNSPECIFIED;
         case 1:
           return TIME_SHARING;
+        case 2:
+          return MPS;
         default:
           return null;
       }

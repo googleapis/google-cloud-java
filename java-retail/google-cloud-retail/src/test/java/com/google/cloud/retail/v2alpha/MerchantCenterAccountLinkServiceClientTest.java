@@ -45,6 +45,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class MerchantCenterAccountLinkServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockMerchantCenterAccountLinkService mockMerchantCenterAccountLinkService;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -53,10 +54,11 @@ public class MerchantCenterAccountLinkServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockMerchantCenterAccountLinkService = new MockMerchantCenterAccountLinkService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockMerchantCenterAccountLinkService));
+            Arrays.<MockGrpcService>asList(mockMerchantCenterAccountLinkService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -177,6 +179,7 @@ public class MerchantCenterAccountLinkServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -240,6 +243,7 @@ public class MerchantCenterAccountLinkServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -186,13 +186,13 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. When set to true, only validations (including IAM checks) will
+   * Optional. When set to true, only validations (including IAM checks) will be
    * done for the request (service will not be updated). An OK response
-   * indicates the request is valid while an error response indicates the
-   * request is invalid. Note that a subsequent request to actually update the
-   * service could still fail because 1. the state could have changed (e.g. IAM
-   * permission lost) or
-   * 2. A failure occurred while trying to delete the module.
+   * indicates that the request is valid, while an error response indicates that
+   * the request is invalid. Note that a subsequent request to actually update
+   * the service could still fail for one of the following reasons:
+   * - The state could have changed (e.g. IAM permission lost).
+   * - A failure occurred while trying to delete the module.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1089,13 +1089,13 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will
+     * Optional. When set to true, only validations (including IAM checks) will be
      * done for the request (service will not be updated). An OK response
-     * indicates the request is valid while an error response indicates the
-     * request is invalid. Note that a subsequent request to actually update the
-     * service could still fail because 1. the state could have changed (e.g. IAM
-     * permission lost) or
-     * 2. A failure occurred while trying to delete the module.
+     * indicates that the request is valid, while an error response indicates that
+     * the request is invalid. Note that a subsequent request to actually update
+     * the service could still fail for one of the following reasons:
+     * - The state could have changed (e.g. IAM permission lost).
+     * - A failure occurred while trying to delete the module.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1110,13 +1110,13 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will
+     * Optional. When set to true, only validations (including IAM checks) will be
      * done for the request (service will not be updated). An OK response
-     * indicates the request is valid while an error response indicates the
-     * request is invalid. Note that a subsequent request to actually update the
-     * service could still fail because 1. the state could have changed (e.g. IAM
-     * permission lost) or
-     * 2. A failure occurred while trying to delete the module.
+     * indicates that the request is valid, while an error response indicates that
+     * the request is invalid. Note that a subsequent request to actually update
+     * the service could still fail for one of the following reasons:
+     * - The state could have changed (e.g. IAM permission lost).
+     * - A failure occurred while trying to delete the module.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1135,13 +1135,13 @@ public final class UpdateSecurityCenterServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. When set to true, only validations (including IAM checks) will
+     * Optional. When set to true, only validations (including IAM checks) will be
      * done for the request (service will not be updated). An OK response
-     * indicates the request is valid while an error response indicates the
-     * request is invalid. Note that a subsequent request to actually update the
-     * service could still fail because 1. the state could have changed (e.g. IAM
-     * permission lost) or
-     * 2. A failure occurred while trying to delete the module.
+     * indicates that the request is valid, while an error response indicates that
+     * the request is invalid. Note that a subsequent request to actually update
+     * the service could still fail for one of the following reasons:
+     * - The state could have changed (e.g. IAM permission lost).
+     * - A failure occurred while trying to delete the module.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

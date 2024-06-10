@@ -238,6 +238,752 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.container.v1.LinuxNodeConfig.CgroupMode)
   }
 
+  public interface HugepagesConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.HugepagesConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 2M hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the hugepageSize2m field is set.
+     */
+    boolean hasHugepageSize2M();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 2M hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hugepageSize2m.
+     */
+    int getHugepageSize2M();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 1G hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the hugepageSize1g field is set.
+     */
+    boolean hasHugepageSize1G();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 1G hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hugepageSize1g.
+     */
+    int getHugepageSize1G();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hugepages amount in both 2m and 1g size
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.LinuxNodeConfig.HugepagesConfig}
+   */
+  public static final class HugepagesConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.HugepagesConfig)
+      HugepagesConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use HugepagesConfig.newBuilder() to construct.
+    private HugepagesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HugepagesConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HugepagesConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_HugepagesConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_HugepagesConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.LinuxNodeConfig.HugepagesConfig.class,
+              com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int HUGEPAGE_SIZE2M_FIELD_NUMBER = 1;
+    private int hugepageSize2M_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 2M hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the hugepageSize2m field is set.
+     */
+    @java.lang.Override
+    public boolean hasHugepageSize2M() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 2M hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hugepageSize2m.
+     */
+    @java.lang.Override
+    public int getHugepageSize2M() {
+      return hugepageSize2M_;
+    }
+
+    public static final int HUGEPAGE_SIZE1G_FIELD_NUMBER = 2;
+    private int hugepageSize1G_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 1G hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the hugepageSize1g field is set.
+     */
+    @java.lang.Override
+    public boolean hasHugepageSize1G() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amount of 1G hugepages
+     * </pre>
+     *
+     * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hugepageSize1g.
+     */
+    @java.lang.Override
+    public int getHugepageSize1G() {
+      return hugepageSize1G_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(1, hugepageSize2M_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, hugepageSize1G_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, hugepageSize2M_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, hugepageSize1G_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.HugepagesConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.LinuxNodeConfig.HugepagesConfig other =
+          (com.google.container.v1.LinuxNodeConfig.HugepagesConfig) obj;
+
+      if (hasHugepageSize2M() != other.hasHugepageSize2M()) return false;
+      if (hasHugepageSize2M()) {
+        if (getHugepageSize2M() != other.getHugepageSize2M()) return false;
+      }
+      if (hasHugepageSize1G() != other.hasHugepageSize1G()) return false;
+      if (hasHugepageSize1G()) {
+        if (getHugepageSize1G() != other.getHugepageSize1G()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasHugepageSize2M()) {
+        hash = (37 * hash) + HUGEPAGE_SIZE2M_FIELD_NUMBER;
+        hash = (53 * hash) + getHugepageSize2M();
+      }
+      if (hasHugepageSize1G()) {
+        hash = (37 * hash) + HUGEPAGE_SIZE1G_FIELD_NUMBER;
+        hash = (53 * hash) + getHugepageSize1G();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.LinuxNodeConfig.HugepagesConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hugepages amount in both 2m and 1g size
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.HugepagesConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.HugepagesConfig)
+        com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_HugepagesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_HugepagesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.HugepagesConfig.class,
+                com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.LinuxNodeConfig.HugepagesConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        hugepageSize2M_ = 0;
+        hugepageSize1G_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_HugepagesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.HugepagesConfig getDefaultInstanceForType() {
+        return com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.HugepagesConfig build() {
+        com.google.container.v1.LinuxNodeConfig.HugepagesConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.HugepagesConfig buildPartial() {
+        com.google.container.v1.LinuxNodeConfig.HugepagesConfig result =
+            new com.google.container.v1.LinuxNodeConfig.HugepagesConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.LinuxNodeConfig.HugepagesConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hugepageSize2M_ = hugepageSize2M_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hugepageSize1G_ = hugepageSize1G_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.LinuxNodeConfig.HugepagesConfig) {
+          return mergeFrom((com.google.container.v1.LinuxNodeConfig.HugepagesConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.LinuxNodeConfig.HugepagesConfig other) {
+        if (other == com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance())
+          return this;
+        if (other.hasHugepageSize2M()) {
+          setHugepageSize2M(other.getHugepageSize2M());
+        }
+        if (other.hasHugepageSize1G()) {
+          setHugepageSize1G(other.getHugepageSize1G());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  hugepageSize2M_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  hugepageSize1G_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int hugepageSize2M_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 2M hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the hugepageSize2m field is set.
+       */
+      @java.lang.Override
+      public boolean hasHugepageSize2M() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 2M hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The hugepageSize2m.
+       */
+      @java.lang.Override
+      public int getHugepageSize2M() {
+        return hugepageSize2M_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 2M hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The hugepageSize2m to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHugepageSize2M(int value) {
+
+        hugepageSize2M_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 2M hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size2m = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHugepageSize2M() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        hugepageSize2M_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hugepageSize1G_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 1G hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the hugepageSize1g field is set.
+       */
+      @java.lang.Override
+      public boolean hasHugepageSize1G() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 1G hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The hugepageSize1g.
+       */
+      @java.lang.Override
+      public int getHugepageSize1G() {
+        return hugepageSize1G_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 1G hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The hugepageSize1g to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHugepageSize1G(int value) {
+
+        hugepageSize1G_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Amount of 1G hugepages
+       * </pre>
+       *
+       * <code>optional int32 hugepage_size1g = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHugepageSize1G() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        hugepageSize1G_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.HugepagesConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.HugepagesConfig)
+    private static final com.google.container.v1.LinuxNodeConfig.HugepagesConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.LinuxNodeConfig.HugepagesConfig();
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.HugepagesConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HugepagesConfig> PARSER =
+        new com.google.protobuf.AbstractParser<HugepagesConfig>() {
+          @java.lang.Override
+          public HugepagesConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HugepagesConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HugepagesConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.HugepagesConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int SYSCTLS_FIELD_NUMBER = 1;
 
   private static final class SysctlsDefaultEntryHolder {
@@ -437,6 +1183,62 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int HUGEPAGES_FIELD_NUMBER = 3;
+  private com.google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hugepages field is set.
+   */
+  @java.lang.Override
+  public boolean hasHugepages() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hugepages.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.HugepagesConfig getHugepages() {
+    return hugepages_ == null
+        ? com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()
+        : hugepages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Amounts for 2M and 1G hugepages
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder getHugepagesOrBuilder() {
+    return hugepages_ == null
+        ? com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()
+        : hugepages_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -456,6 +1258,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     if (cgroupMode_
         != com.google.container.v1.LinuxNodeConfig.CgroupMode.CGROUP_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, cgroupMode_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getHugepages());
     }
     getUnknownFields().writeTo(output);
   }
@@ -480,6 +1285,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         != com.google.container.v1.LinuxNodeConfig.CgroupMode.CGROUP_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, cgroupMode_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getHugepages());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -497,6 +1305,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
     if (!internalGetSysctls().equals(other.internalGetSysctls())) return false;
     if (cgroupMode_ != other.cgroupMode_) return false;
+    if (hasHugepages() != other.hasHugepages()) return false;
+    if (hasHugepages()) {
+      if (!getHugepages().equals(other.getHugepages())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -514,6 +1326,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + CGROUP_MODE_FIELD_NUMBER;
     hash = (53 * hash) + cgroupMode_;
+    if (hasHugepages()) {
+      hash = (37 * hash) + HUGEPAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getHugepages().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -665,10 +1481,19 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.container.v1.LinuxNodeConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getHugepagesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -677,6 +1502,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       internalGetMutableSysctls().clear();
       cgroupMode_ = 0;
+      hugepages_ = null;
+      if (hugepagesBuilder_ != null) {
+        hugepagesBuilder_.dispose();
+        hugepagesBuilder_ = null;
+      }
       return this;
     }
 
@@ -720,6 +1550,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.cgroupMode_ = cgroupMode_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hugepages_ = hugepagesBuilder_ == null ? hugepages_ : hugepagesBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -772,6 +1608,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (other.cgroupMode_ != 0) {
         setCgroupModeValue(other.getCgroupModeValue());
       }
+      if (other.hasHugepages()) {
+        mergeHugepages(other.getHugepages());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -816,6 +1655,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                input.readMessage(getHugepagesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1193,6 +2038,212 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       cgroupMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfig,
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder>
+        hugepagesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hugepages field is set.
+     */
+    public boolean hasHugepages() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hugepages.
+     */
+    public com.google.container.v1.LinuxNodeConfig.HugepagesConfig getHugepages() {
+      if (hugepagesBuilder_ == null) {
+        return hugepages_ == null
+            ? com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()
+            : hugepages_;
+      } else {
+        return hugepagesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHugepages(com.google.container.v1.LinuxNodeConfig.HugepagesConfig value) {
+      if (hugepagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hugepages_ = value;
+      } else {
+        hugepagesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHugepages(
+        com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder builderForValue) {
+      if (hugepagesBuilder_ == null) {
+        hugepages_ = builderForValue.build();
+      } else {
+        hugepagesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHugepages(com.google.container.v1.LinuxNodeConfig.HugepagesConfig value) {
+      if (hugepagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && hugepages_ != null
+            && hugepages_
+                != com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()) {
+          getHugepagesBuilder().mergeFrom(value);
+        } else {
+          hugepages_ = value;
+        }
+      } else {
+        hugepagesBuilder_.mergeFrom(value);
+      }
+      if (hugepages_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHugepages() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hugepages_ = null;
+      if (hugepagesBuilder_ != null) {
+        hugepagesBuilder_.dispose();
+        hugepagesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder getHugepagesBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getHugepagesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder
+        getHugepagesOrBuilder() {
+      if (hugepagesBuilder_ != null) {
+        return hugepagesBuilder_.getMessageOrBuilder();
+      } else {
+        return hugepages_ == null
+            ? com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()
+            : hugepages_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Amounts for 2M and 1G hugepages
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfig,
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder>
+        getHugepagesFieldBuilder() {
+      if (hugepagesBuilder_ == null) {
+        hugepagesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LinuxNodeConfig.HugepagesConfig,
+                com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder,
+                com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder>(
+                getHugepages(), getParentForChildren(), isClean());
+        hugepages_ = null;
+      }
+      return hugepagesBuilder_;
     }
 
     @java.lang.Override
