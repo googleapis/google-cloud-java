@@ -2354,9 +2354,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceHealthRequest request =
-   *       GetInstanceHealthRequest.newBuilder()
-   *           .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
-   *           .build();
+   *       GetInstanceHealthRequest.newBuilder().setName("name3373707").build();
    *   GetInstanceHealthResponse response = notebookServiceClient.getInstanceHealth(request);
    * }
    * }</pre>
@@ -2382,9 +2380,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceHealthRequest request =
-   *       GetInstanceHealthRequest.newBuilder()
-   *           .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
-   *           .build();
+   *       GetInstanceHealthRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<GetInstanceHealthResponse> future =
    *       notebookServiceClient.getInstanceHealthCallable().futureCall(request);
    *   // Do something.
@@ -2658,7 +2654,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DiagnoseInstanceRequest request =
    *       DiagnoseInstanceRequest.newBuilder()
-   *           .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setName("name3373707")
    *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
    *           .build();
    *   Instance response = notebookServiceClient.diagnoseInstanceAsync(request).get();
@@ -2688,7 +2684,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DiagnoseInstanceRequest request =
    *       DiagnoseInstanceRequest.newBuilder()
-   *           .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setName("name3373707")
    *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
@@ -2718,7 +2714,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DiagnoseInstanceRequest request =
    *       DiagnoseInstanceRequest.newBuilder()
-   *           .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setName("name3373707")
    *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -3354,7 +3350,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3388,7 +3384,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3423,7 +3419,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -3517,10 +3513,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   GetScheduleRequest request =
-   *       GetScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *   GetScheduleRequest request = GetScheduleRequest.newBuilder().setName("name3373707").build();
    *   Schedule response = notebookServiceClient.getSchedule(request);
    * }
    * }</pre>
@@ -3545,10 +3538,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   GetScheduleRequest request =
-   *       GetScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *   GetScheduleRequest request = GetScheduleRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Schedule> future = notebookServiceClient.getScheduleCallable().futureCall(request);
    *   // Do something.
    *   Schedule response = future.get();
@@ -3628,9 +3618,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
-   *       DeleteScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       DeleteScheduleRequest.newBuilder().setName("name3373707").build();
    *   notebookServiceClient.deleteScheduleAsync(request).get();
    * }
    * }</pre>
@@ -3657,9 +3645,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
-   *       DeleteScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       DeleteScheduleRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       notebookServiceClient.deleteScheduleOperationCallable().futureCall(request);
    *   // Do something.
@@ -3686,9 +3672,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
-   *       DeleteScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       DeleteScheduleRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future =
    *       notebookServiceClient.deleteScheduleCallable().futureCall(request);
    *   // Do something.
@@ -3789,7 +3773,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setScheduleId("scheduleId-687058414")
    *           .setSchedule(Schedule.newBuilder().build())
    *           .build();
@@ -3820,7 +3804,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setScheduleId("scheduleId-687058414")
    *           .setSchedule(Schedule.newBuilder().build())
    *           .build();
@@ -3851,7 +3835,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
-   *           .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+   *           .setParent("parent-995424086")
    *           .setScheduleId("scheduleId-687058414")
    *           .setSchedule(Schedule.newBuilder().build())
    *           .build();
@@ -3880,9 +3864,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
-   *       TriggerScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       TriggerScheduleRequest.newBuilder().setName("name3373707").build();
    *   Schedule response = notebookServiceClient.triggerScheduleAsync(request).get();
    * }
    * }</pre>
@@ -3909,9 +3891,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
-   *       TriggerScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       TriggerScheduleRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Schedule, OperationMetadata> future =
    *       notebookServiceClient.triggerScheduleOperationCallable().futureCall(request);
    *   // Do something.
@@ -3938,9 +3918,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
-   *       TriggerScheduleRequest.newBuilder()
-   *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-   *           .build();
+   *       TriggerScheduleRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future =
    *       notebookServiceClient.triggerScheduleCallable().futureCall(request);
    *   // Do something.
@@ -4026,7 +4004,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -4060,7 +4038,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -4095,7 +4073,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -4190,10 +4168,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   GetExecutionRequest request =
-   *       GetExecutionRequest.newBuilder()
-   *           .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-   *           .build();
+   *   GetExecutionRequest request = GetExecutionRequest.newBuilder().setName("name3373707").build();
    *   Execution response = notebookServiceClient.getExecution(request);
    * }
    * }</pre>
@@ -4218,10 +4193,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   GetExecutionRequest request =
-   *       GetExecutionRequest.newBuilder()
-   *           .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-   *           .build();
+   *   GetExecutionRequest request = GetExecutionRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Execution> future =
    *       notebookServiceClient.getExecutionCallable().futureCall(request);
    *   // Do something.
@@ -4302,9 +4274,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
-   *       DeleteExecutionRequest.newBuilder()
-   *           .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-   *           .build();
+   *       DeleteExecutionRequest.newBuilder().setName("name3373707").build();
    *   notebookServiceClient.deleteExecutionAsync(request).get();
    * }
    * }</pre>
@@ -4331,9 +4301,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
-   *       DeleteExecutionRequest.newBuilder()
-   *           .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-   *           .build();
+   *       DeleteExecutionRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       notebookServiceClient.deleteExecutionOperationCallable().futureCall(request);
    *   // Do something.
@@ -4360,9 +4328,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
-   *       DeleteExecutionRequest.newBuilder()
-   *           .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-   *           .build();
+   *       DeleteExecutionRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future =
    *       notebookServiceClient.deleteExecutionCallable().futureCall(request);
    *   // Do something.
@@ -4463,7 +4429,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setExecutionId("executionId-454906285")
    *           .setExecution(Execution.newBuilder().build())
    *           .build();
@@ -4494,7 +4460,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setExecutionId("executionId-454906285")
    *           .setExecution(Execution.newBuilder().build())
    *           .build();
@@ -4525,7 +4491,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
-   *           .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+   *           .setParent("parent-995424086")
    *           .setExecutionId("executionId-454906285")
    *           .setExecution(Execution.newBuilder().build())
    *           .build();

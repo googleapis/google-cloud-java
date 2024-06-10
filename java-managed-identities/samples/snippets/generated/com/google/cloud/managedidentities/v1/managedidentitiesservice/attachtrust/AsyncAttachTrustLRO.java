@@ -20,7 +20,6 @@ package com.google.cloud.managedidentities.v1.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.managedidentities.v1.AttachTrustRequest;
 import com.google.cloud.managedidentities.v1.Domain;
-import com.google.cloud.managedidentities.v1.DomainName;
 import com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1.OpMetadata;
 import com.google.cloud.managedidentities.v1.Trust;
@@ -41,7 +40,7 @@ public class AsyncAttachTrustLRO {
         ManagedIdentitiesServiceClient.create()) {
       AttachTrustRequest request =
           AttachTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTrust(Trust.newBuilder().build())
               .build();
       OperationFuture<Domain, OpMetadata> future =

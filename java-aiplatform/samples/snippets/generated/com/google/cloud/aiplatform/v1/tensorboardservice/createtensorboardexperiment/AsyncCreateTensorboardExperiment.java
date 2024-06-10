@@ -20,7 +20,6 @@ package com.google.cloud.aiplatform.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest;
 import com.google.cloud.aiplatform.v1.TensorboardExperiment;
-import com.google.cloud.aiplatform.v1.TensorboardExperimentName;
 import com.google.cloud.aiplatform.v1.TensorboardServiceClient;
 
 public class AsyncCreateTensorboardExperiment {
@@ -38,10 +37,7 @@ public class AsyncCreateTensorboardExperiment {
     try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
       CreateTensorboardExperimentRequest request =
           CreateTensorboardExperimentRequest.newBuilder()
-              .setParent(
-                  TensorboardExperimentName.of(
-                          "[PROJECT]", "[LOCATION]", "[TENSORBOARD]", "[EXPERIMENT]")
-                      .toString())
+              .setParent("parent-995424086")
               .setTensorboardExperiment(TensorboardExperiment.newBuilder().build())
               .setTensorboardExperimentId("tensorboardExperimentId1267328197")
               .build();

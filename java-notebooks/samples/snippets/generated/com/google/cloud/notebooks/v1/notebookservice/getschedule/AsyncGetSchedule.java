@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.GetScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 
 public class AsyncGetSchedule {
 
@@ -36,10 +35,7 @@ public class AsyncGetSchedule {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-      GetScheduleRequest request =
-          GetScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+      GetScheduleRequest request = GetScheduleRequest.newBuilder().setName("name3373707").build();
       ApiFuture<Schedule> future = notebookServiceClient.getScheduleCallable().futureCall(request);
       // Do something.
       Schedule response = future.get();

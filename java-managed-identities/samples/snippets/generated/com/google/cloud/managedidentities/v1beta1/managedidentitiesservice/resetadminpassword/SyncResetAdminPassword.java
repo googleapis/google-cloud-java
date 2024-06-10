@@ -17,7 +17,6 @@
 package com.google.cloud.managedidentities.v1beta1.samples;
 
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_ResetAdminPassword_sync]
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest;
 import com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse;
@@ -37,9 +36,7 @@ public class SyncResetAdminPassword {
     try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
         ManagedIdentitiesServiceClient.create()) {
       ResetAdminPasswordRequest request =
-          ResetAdminPasswordRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
-              .build();
+          ResetAdminPasswordRequest.newBuilder().setName("name3373707").build();
       ResetAdminPasswordResponse response =
           managedIdentitiesServiceClient.resetAdminPassword(request);
     }

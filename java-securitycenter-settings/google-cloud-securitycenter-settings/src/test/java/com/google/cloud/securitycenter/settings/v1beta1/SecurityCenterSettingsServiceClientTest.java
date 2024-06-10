@@ -393,7 +393,7 @@ public class SecurityCenterSettingsServiceClientTest {
   public void calculateEffectiveSettingsTest() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+            .setName("name3373707")
             .setBillingSettings(BillingSettings.newBuilder().build())
             .setOrgServiceAccount("orgServiceAccount-1736642116")
             .setSinkSettings(SinkSettings.newBuilder().build())
@@ -439,7 +439,7 @@ public class SecurityCenterSettingsServiceClientTest {
   public void calculateEffectiveSettingsTest2() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+            .setName("name3373707")
             .setBillingSettings(BillingSettings.newBuilder().build())
             .setOrgServiceAccount("orgServiceAccount-1736642116")
             .setSinkSettings(SinkSettings.newBuilder().build())
@@ -726,9 +726,7 @@ public class SecurityCenterSettingsServiceClientTest {
   public void calculateEffectiveComponentSettingsTest() throws Exception {
     ComponentSettings expectedResponse =
         ComponentSettings.newBuilder()
-            .setName(
-                ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
-                    .toString())
+            .setName("name3373707")
             .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
@@ -774,9 +772,7 @@ public class SecurityCenterSettingsServiceClientTest {
   public void calculateEffectiveComponentSettingsTest2() throws Exception {
     ComponentSettings expectedResponse =
         ComponentSettings.newBuilder()
-            .setName(
-                ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
-                    .toString())
+            .setName("name3373707")
             .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())

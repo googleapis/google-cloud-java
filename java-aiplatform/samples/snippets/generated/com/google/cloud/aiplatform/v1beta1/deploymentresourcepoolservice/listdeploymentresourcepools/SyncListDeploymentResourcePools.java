@@ -20,7 +20,6 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool;
 import com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolServiceClient;
 import com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest;
-import com.google.cloud.aiplatform.v1beta1.ProjectName;
 
 public class SyncListDeploymentResourcePools {
 
@@ -38,7 +37,7 @@ public class SyncListDeploymentResourcePools {
         DeploymentResourcePoolServiceClient.create()) {
       ListDeploymentResourcePoolsRequest request =
           ListDeploymentResourcePoolsRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

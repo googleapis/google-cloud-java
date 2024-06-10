@@ -358,7 +358,7 @@ public class GroupServiceClientTest {
   public void createGroupTest() throws Exception {
     Group expectedResponse =
         Group.newBuilder()
-            .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setParentName("parentName-244870571")
             .setFilter("filter-1274492040")
@@ -403,7 +403,7 @@ public class GroupServiceClientTest {
   public void createGroupTest2() throws Exception {
     Group expectedResponse =
         Group.newBuilder()
-            .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setParentName("parentName-244870571")
             .setFilter("filter-1274492040")
@@ -448,7 +448,7 @@ public class GroupServiceClientTest {
   public void createGroupTest3() throws Exception {
     Group expectedResponse =
         Group.newBuilder()
-            .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setParentName("parentName-244870571")
             .setFilter("filter-1274492040")
@@ -493,7 +493,7 @@ public class GroupServiceClientTest {
   public void createGroupTest4() throws Exception {
     Group expectedResponse =
         Group.newBuilder()
-            .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+            .setName("name3373707")
             .setDisplayName("displayName1714148973")
             .setParentName("parentName-244870571")
             .setFilter("filter-1274492040")

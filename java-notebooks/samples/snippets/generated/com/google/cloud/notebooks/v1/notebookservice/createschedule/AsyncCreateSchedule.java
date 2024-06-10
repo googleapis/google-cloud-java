@@ -21,7 +21,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.CreateScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 import com.google.longrunning.Operation;
 
 public class AsyncCreateSchedule {
@@ -39,7 +38,7 @@ public class AsyncCreateSchedule {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       CreateScheduleRequest request =
           CreateScheduleRequest.newBuilder()
-              .setParent(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+              .setParent("parent-995424086")
               .setScheduleId("scheduleId-687058414")
               .setSchedule(Schedule.newBuilder().build())
               .build();

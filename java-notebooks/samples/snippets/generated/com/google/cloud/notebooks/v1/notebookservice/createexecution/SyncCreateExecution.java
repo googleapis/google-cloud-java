@@ -19,7 +19,6 @@ package com.google.cloud.notebooks.v1.samples;
 // [START notebooks_v1_generated_NotebookService_CreateExecution_sync]
 import com.google.cloud.notebooks.v1.CreateExecutionRequest;
 import com.google.cloud.notebooks.v1.Execution;
-import com.google.cloud.notebooks.v1.ExecutionName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 
 public class SyncCreateExecution {
@@ -37,7 +36,7 @@ public class SyncCreateExecution {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       CreateExecutionRequest request =
           CreateExecutionRequest.newBuilder()
-              .setParent(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
+              .setParent("parent-995424086")
               .setExecutionId("executionId-454906285")
               .setExecution(Execution.newBuilder().build())
               .build();

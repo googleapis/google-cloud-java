@@ -40,7 +40,7 @@ public class AsyncListSettingsPaged {
         ResourceSettingsServiceClient.create()) {
       ListSettingsRequest request =
           ListSettingsRequest.newBuilder()
-              .setParent("ListSettingsRequest-286838706".toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setView(SettingView.forNumber(0))

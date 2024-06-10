@@ -19,7 +19,6 @@ package com.google.cloud.notebooks.v1.samples;
 // [START notebooks_v1_generated_NotebookService_DeleteExecution_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.notebooks.v1.DeleteExecutionRequest;
-import com.google.cloud.notebooks.v1.ExecutionName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.OperationMetadata;
 import com.google.protobuf.Empty;
@@ -38,9 +37,7 @@ public class AsyncDeleteExecutionLRO {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DeleteExecutionRequest request =
-          DeleteExecutionRequest.newBuilder()
-              .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString())
-              .build();
+          DeleteExecutionRequest.newBuilder().setName("name3373707").build();
       OperationFuture<Empty, OperationMetadata> future =
           notebookServiceClient.deleteExecutionOperationCallable().futureCall(request);
       // Do something.

@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.cloud.notebooks.v1.GetScheduleRequest;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 
 public class SyncGetSchedule {
 
@@ -35,10 +34,7 @@ public class SyncGetSchedule {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-      GetScheduleRequest request =
-          GetScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+      GetScheduleRequest request = GetScheduleRequest.newBuilder().setName("name3373707").build();
       Schedule response = notebookServiceClient.getSchedule(request);
     }
   }

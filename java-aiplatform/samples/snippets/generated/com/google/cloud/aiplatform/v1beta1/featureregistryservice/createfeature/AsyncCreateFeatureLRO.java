@@ -20,8 +20,8 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.EntityTypeName;
 import com.google.cloud.aiplatform.v1beta1.Feature;
+import com.google.cloud.aiplatform.v1beta1.FeatureGroupName;
 import com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient;
 
 public class AsyncCreateFeatureLRO {
@@ -41,8 +41,7 @@ public class AsyncCreateFeatureLRO {
       CreateFeatureRequest request =
           CreateFeatureRequest.newBuilder()
               .setParent(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
-                      .toString())
+                  FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]").toString())
               .setFeature(Feature.newBuilder().build())
               .setFeatureId("featureId-420503887")
               .build();

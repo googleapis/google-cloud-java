@@ -11634,9 +11634,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveAudienceRequest request =
-   *       ArchiveAudienceRequest.newBuilder()
-   *           .setName(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
+   *       ArchiveAudienceRequest.newBuilder().setName("name3373707").build();
    *   analyticsAdminServiceClient.archiveAudience(request);
    * }
    * }</pre>
@@ -11663,9 +11661,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveAudienceRequest request =
-   *       ArchiveAudienceRequest.newBuilder()
-   *           .setName(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
+   *       ArchiveAudienceRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Empty> future =
    *       analyticsAdminServiceClient.archiveAudienceCallable().futureCall(request);
    *   // Do something.

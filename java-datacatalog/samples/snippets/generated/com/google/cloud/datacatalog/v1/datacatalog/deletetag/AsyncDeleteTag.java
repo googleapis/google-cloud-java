@@ -20,7 +20,6 @@ package com.google.cloud.datacatalog.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.datacatalog.v1.DataCatalogClient;
 import com.google.cloud.datacatalog.v1.DeleteTagRequest;
-import com.google.cloud.datacatalog.v1.EntryName;
 import com.google.protobuf.Empty;
 
 public class AsyncDeleteTag {
@@ -36,11 +35,7 @@ public class AsyncDeleteTag {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-      DeleteTagRequest request =
-          DeleteTagRequest.newBuilder()
-              .setName(
-                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
-              .build();
+      DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
       ApiFuture<Empty> future = dataCatalogClient.deleteTagCallable().futureCall(request);
       // Do something.
       future.get();

@@ -19,7 +19,6 @@ package com.google.cloud.notebooks.v1.samples;
 // [START notebooks_v1_generated_NotebookService_TriggerSchedule_sync]
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1.Schedule;
-import com.google.cloud.notebooks.v1.ScheduleName;
 import com.google.cloud.notebooks.v1.TriggerScheduleRequest;
 
 public class SyncTriggerSchedule {
@@ -36,9 +35,7 @@ public class SyncTriggerSchedule {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       TriggerScheduleRequest request =
-          TriggerScheduleRequest.newBuilder()
-              .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
-              .build();
+          TriggerScheduleRequest.newBuilder().setName("name3373707").build();
       Schedule response = notebookServiceClient.triggerScheduleAsync(request).get();
     }
   }

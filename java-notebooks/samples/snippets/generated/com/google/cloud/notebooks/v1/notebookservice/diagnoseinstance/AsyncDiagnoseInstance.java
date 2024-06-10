@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.DiagnoseInstanceRequest;
 import com.google.cloud.notebooks.v1.DiagnosticConfig;
-import com.google.cloud.notebooks.v1.InstanceName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 import com.google.longrunning.Operation;
 
@@ -39,7 +38,7 @@ public class AsyncDiagnoseInstance {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       DiagnoseInstanceRequest request =
           DiagnoseInstanceRequest.newBuilder()
-              .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+              .setName("name3373707")
               .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

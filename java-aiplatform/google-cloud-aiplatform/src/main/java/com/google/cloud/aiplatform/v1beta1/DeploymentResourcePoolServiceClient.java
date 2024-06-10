@@ -781,7 +781,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
    *       ListDeploymentResourcePoolsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -816,7 +816,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
    *       ListDeploymentResourcePoolsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -853,7 +853,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
    *       ListDeploymentResourcePoolsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

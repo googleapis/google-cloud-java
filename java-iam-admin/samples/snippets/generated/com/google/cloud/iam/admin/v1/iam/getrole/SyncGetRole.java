@@ -34,8 +34,7 @@ public class SyncGetRole {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IAMClient iAMClient = IAMClient.create()) {
-      GetRoleRequest request =
-          GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+      GetRoleRequest request = GetRoleRequest.newBuilder().setName("name3373707").build();
       Role response = iAMClient.getRole(request);
     }
   }

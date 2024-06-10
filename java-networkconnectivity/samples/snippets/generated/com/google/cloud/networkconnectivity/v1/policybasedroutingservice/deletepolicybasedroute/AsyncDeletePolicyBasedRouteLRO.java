@@ -20,7 +20,6 @@ package com.google.cloud.networkconnectivity.v1.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.networkconnectivity.v1.DeletePolicyBasedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
-import com.google.cloud.networkconnectivity.v1.PolicyBasedRouteName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 import com.google.protobuf.Empty;
 
@@ -40,7 +39,7 @@ public class AsyncDeletePolicyBasedRouteLRO {
         PolicyBasedRoutingServiceClient.create()) {
       DeletePolicyBasedRouteRequest request =
           DeletePolicyBasedRouteRequest.newBuilder()
-              .setName(PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]").toString())
+              .setName("name3373707")
               .setRequestId("requestId693933066")
               .build();
       OperationFuture<Empty, OperationMetadata> future =

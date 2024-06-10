@@ -626,7 +626,7 @@ public class GrafeasClientTest {
   public void getOccurrenceNoteTest() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
             .setKind(NoteKind.forNumber(0))
@@ -672,7 +672,7 @@ public class GrafeasClientTest {
   public void getOccurrenceNoteTest2() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
             .setKind(NoteKind.forNumber(0))

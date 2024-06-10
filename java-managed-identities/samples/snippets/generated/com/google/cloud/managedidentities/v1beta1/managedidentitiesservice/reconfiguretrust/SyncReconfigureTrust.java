@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_ReconfigureTrust_sync]
 import com.google.cloud.managedidentities.v1beta1.Domain;
-import com.google.cloud.managedidentities.v1beta1.DomainName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 import com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest;
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class SyncReconfigureTrust {
         ManagedIdentitiesServiceClient.create()) {
       ReconfigureTrustRequest request =
           ReconfigureTrustRequest.newBuilder()
-              .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+              .setName("name3373707")
               .setTargetDomainName("targetDomainName2065239520")
               .addAllTargetDnsIpAddresses(new ArrayList<String>())
               .build();

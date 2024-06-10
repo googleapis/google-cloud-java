@@ -750,7 +750,7 @@ public class AgentsClientHttpJsonTest {
   public void validateAgentTest() throws Exception {
     AgentValidationResult expectedResponse =
         AgentValidationResult.newBuilder()
-            .setName(AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setName("name3373707")
             .addAllFlowValidationResults(new ArrayList<FlowValidationResult>())
             .build();
     mockService.addResponse(expectedResponse);

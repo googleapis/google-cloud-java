@@ -86,7 +86,7 @@ public class MetricsScopesClientTest {
   public void getMetricsScopeTest() throws Exception {
     MetricsScope expectedResponse =
         MetricsScope.newBuilder()
-            .setName(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllMonitoredProjects(new ArrayList<MonitoredProject>())
@@ -127,7 +127,7 @@ public class MetricsScopesClientTest {
   public void getMetricsScopeTest2() throws Exception {
     MetricsScope expectedResponse =
         MetricsScope.newBuilder()
-            .setName(MetricsScopeName.of("[METRICS_SCOPE]").toString())
+            .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllMonitoredProjects(new ArrayList<MonitoredProject>())

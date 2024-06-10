@@ -4816,9 +4816,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   DeleteMappingRuleRequest request =
    *       DeleteMappingRuleRequest.newBuilder()
-   *           .setName(
-   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
-   *                   .toString())
+   *           .setName("name3373707")
    *           .setRequestId("requestId693933066")
    *           .build();
    *   dataMigrationServiceClient.deleteMappingRule(request);
@@ -4848,9 +4846,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *     DataMigrationServiceClient.create()) {
    *   DeleteMappingRuleRequest request =
    *       DeleteMappingRuleRequest.newBuilder()
-   *           .setName(
-   *               ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
-   *                   .toString())
+   *           .setName("name3373707")
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Empty> future =

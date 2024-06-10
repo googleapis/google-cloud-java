@@ -700,7 +700,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   ListHubsRequest request =
    *       ListHubsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -734,7 +734,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   ListHubsRequest request =
    *       ListHubsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -767,7 +767,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   ListHubsRequest request =
    *       ListHubsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -979,7 +979,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   CreateHubRequest request =
    *       CreateHubRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setHubId("hubId99628272")
    *           .setHub(Hub.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1010,7 +1010,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   CreateHubRequest request =
    *       CreateHubRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setHubId("hubId99628272")
    *           .setHub(Hub.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1042,7 +1042,7 @@ public class HubServiceClient implements BackgroundResource {
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
    *   CreateHubRequest request =
    *       CreateHubRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent("parent-995424086")
    *           .setHubId("hubId99628272")
    *           .setHub(Hub.newBuilder().build())
    *           .setRequestId("requestId693933066")

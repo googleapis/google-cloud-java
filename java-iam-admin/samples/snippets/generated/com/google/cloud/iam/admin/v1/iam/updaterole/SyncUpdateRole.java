@@ -37,7 +37,7 @@ public class SyncUpdateRole {
     try (IAMClient iAMClient = IAMClient.create()) {
       UpdateRoleRequest request =
           UpdateRoleRequest.newBuilder()
-              .setName("UpdateRoleRequest230834320".toString())
+              .setName("name3373707")
               .setRole(Role.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

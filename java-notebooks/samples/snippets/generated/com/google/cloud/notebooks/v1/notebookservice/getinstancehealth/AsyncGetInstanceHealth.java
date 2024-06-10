@@ -20,7 +20,6 @@ package com.google.cloud.notebooks.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.notebooks.v1.GetInstanceHealthRequest;
 import com.google.cloud.notebooks.v1.GetInstanceHealthResponse;
-import com.google.cloud.notebooks.v1.InstanceName;
 import com.google.cloud.notebooks.v1.NotebookServiceClient;
 
 public class AsyncGetInstanceHealth {
@@ -37,9 +36,7 @@ public class AsyncGetInstanceHealth {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       GetInstanceHealthRequest request =
-          GetInstanceHealthRequest.newBuilder()
-              .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
-              .build();
+          GetInstanceHealthRequest.newBuilder().setName("name3373707").build();
       ApiFuture<GetInstanceHealthResponse> future =
           notebookServiceClient.getInstanceHealthCallable().futureCall(request);
       // Do something.

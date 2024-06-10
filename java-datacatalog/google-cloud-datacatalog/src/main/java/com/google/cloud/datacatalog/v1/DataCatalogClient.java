@@ -4717,11 +4717,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   DeleteTagRequest request =
-   *       DeleteTagRequest.newBuilder()
-   *           .setName(
-   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
-   *           .build();
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
    *   dataCatalogClient.deleteTag(request);
    * }
    * }</pre>
@@ -4746,11 +4742,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   DeleteTagRequest request =
-   *       DeleteTagRequest.newBuilder()
-   *           .setName(
-   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
-   *           .build();
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Empty> future = dataCatalogClient.deleteTagCallable().futureCall(request);
    *   // Do something.
    *   future.get();

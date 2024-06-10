@@ -577,9 +577,7 @@ public class FlowsClientTest {
   public void validateFlowTest() throws Exception {
     FlowValidationResult expectedResponse =
         FlowValidationResult.newBuilder()
-            .setName(
-                FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]")
-                    .toString())
+            .setName("name3373707")
             .addAllValidationMessages(new ArrayList<ValidationMessage>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();

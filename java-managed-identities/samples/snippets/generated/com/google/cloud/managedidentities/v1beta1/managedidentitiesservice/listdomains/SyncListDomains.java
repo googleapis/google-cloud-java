@@ -19,7 +19,6 @@ package com.google.cloud.managedidentities.v1beta1.samples;
 // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_ListDomains_sync]
 import com.google.cloud.managedidentities.v1beta1.Domain;
 import com.google.cloud.managedidentities.v1beta1.ListDomainsRequest;
-import com.google.cloud.managedidentities.v1beta1.LocationName;
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceClient;
 
 public class SyncListDomains {
@@ -38,7 +37,7 @@ public class SyncListDomains {
         ManagedIdentitiesServiceClient.create()) {
       ListDomainsRequest request =
           ListDomainsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

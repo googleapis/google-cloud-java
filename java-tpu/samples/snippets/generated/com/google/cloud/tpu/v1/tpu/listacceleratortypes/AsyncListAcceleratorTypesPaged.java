@@ -18,7 +18,6 @@ package com.google.cloud.tpu.v1.samples;
 
 // [START tpu_v1_generated_Tpu_ListAcceleratorTypes_Paged_async]
 import com.google.cloud.tpu.v1.AcceleratorType;
-import com.google.cloud.tpu.v1.AcceleratorTypeName;
 import com.google.cloud.tpu.v1.ListAcceleratorTypesRequest;
 import com.google.cloud.tpu.v1.ListAcceleratorTypesResponse;
 import com.google.cloud.tpu.v1.TpuClient;
@@ -39,9 +38,7 @@ public class AsyncListAcceleratorTypesPaged {
     try (TpuClient tpuClient = TpuClient.create()) {
       ListAcceleratorTypesRequest request =
           ListAcceleratorTypesRequest.newBuilder()
-              .setParent(
-                  AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
-                      .toString())
+              .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
