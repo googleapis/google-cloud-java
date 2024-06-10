@@ -72,4 +72,12 @@ public class WritesTest extends MobileTimeSeriesBaseTest {
     assertThat(
         output, CoreMatchers.containsString("Successfully updated row phone#4c410523#20190501"));
   }
+
+  @Test
+  public void test5_WriteAggregate() {
+    WriteAggregate.writeAggregate(projectId, instanceId, TABLE_ID);
+
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("Successfully wrote row page#index.html"));
+  }
 }

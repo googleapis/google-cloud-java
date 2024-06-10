@@ -18,6 +18,7 @@ package com.example.bigtable;
 
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.Type;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -32,6 +33,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   public static final String TABLE_ID = generateResourceId("mobile-time-series");
   public static final String COLUMN_FAMILY_NAME_STATS = "stats_summary";
   public static final String COLUMN_FAMILY_NAME_PLAN = "cell_plan";
+  public static final String COLUMN_FAMILY_NAME_VIEW_COUNT = "view_count";
   public static final Instant CURRENT_TIME = Instant.now();
   public static final long TIMESTAMP = CURRENT_TIME.toEpochMilli() * 1000;
   public static final long TIMESTAMP_MINUS_HR =
@@ -43,7 +45,8 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
       CreateTableRequest createTableRequest =
           CreateTableRequest.of(TABLE_ID)
               .addFamily(COLUMN_FAMILY_NAME_STATS)
-              .addFamily(COLUMN_FAMILY_NAME_PLAN);
+              .addFamily(COLUMN_FAMILY_NAME_PLAN)
+              .addFamily(COLUMN_FAMILY_NAME_VIEW_COUNT, Type.int64Sum());
       adminClient.createTable(createTableRequest);
     } catch (IOException e) {
       System.out.println("Error during createTable: \n" + e.toString());
