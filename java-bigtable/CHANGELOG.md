@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.39.5](https://github.com/googleapis/java-bigtable/compare/v2.39.4...v2.39.5) (2024-06-10)
+
+
+### Bug Fixes
+
+* Make change stream unknown mod error more actionable ([#1938](https://github.com/googleapis/java-bigtable/issues/1938)) ([e7ba045](https://github.com/googleapis/java-bigtable/commit/e7ba045967e837129adcf979ac13cd9097fab56c))
+* Rate limiting should be ineffective when RateLimitInfo is not present ([#2243](https://github.com/googleapis/java-bigtable/issues/2243)) ([a0ec901](https://github.com/googleapis/java-bigtable/commit/a0ec901a84d8d5a2729772d165e2b305d4663824))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2252](https://github.com/googleapis/java-bigtable/issues/2252)) ([0131eb3](https://github.com/googleapis/java-bigtable/commit/0131eb33d09f0c4cb7b4984efed257f6d72b0100))
+
 ## [2.39.4](https://github.com/googleapis/java-bigtable/compare/v2.39.3...v2.39.4) (2024-05-28)
 
 
