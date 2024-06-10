@@ -123,7 +123,7 @@
       <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-bom</artifactId>
-        <version>1.38.0</version>
+        <version>1.39.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
