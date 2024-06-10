@@ -19,49 +19,49 @@
 // Protobuf Java Version: 3.25.3
 package com.google.cloud.vertexai.api;
 
-public interface SegmentOrBuilder
+public interface SearchEntryPointOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.Segment)
+    // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.SearchEntryPoint)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Output only. The index of a Part object within its parent Content object.
+   * Optional. Web content snippet that can be embedded in a web page or an app
+   * webview.
    * </pre>
    *
-   * <code>int32 part_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The partIndex.
+   * @return The renderedContent.
    */
-  int getPartIndex();
+  java.lang.String getRenderedContent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Web content snippet that can be embedded in a web page or an app
+   * webview.
+   * </pre>
+   *
+   * <code>string rendered_content = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for renderedContent.
+   */
+  com.google.protobuf.ByteString getRenderedContentBytes();
 
   /**
    *
    *
    * <pre>
-   * Output only. Start index in the given Part, measured in bytes. Offset from
-   * the start of the Part, inclusive, starting at zero.
+   * Optional. Base64 encoded JSON representing array of &lt;search term, search
+   * url&gt; tuple.
    * </pre>
    *
-   * <code>int32 start_index = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bytes sdk_blob = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The startIndex.
+   * @return The sdkBlob.
    */
-  int getStartIndex();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. End index in the given Part, measured in bytes. Offset from
-   * the start of the Part, exclusive, starting at zero.
-   * </pre>
-   *
-   * <code>int32 end_index = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The endIndex.
-   */
-  int getEndIndex();
+  com.google.protobuf.ByteString getSdkBlob();
 }

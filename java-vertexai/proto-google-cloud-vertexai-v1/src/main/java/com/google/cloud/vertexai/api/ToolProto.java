@@ -56,6 +56,14 @@ public final class ToolProto {
       internal_static_google_cloud_vertexai_v1_GoogleSearchRetrieval_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_GoogleSearchRetrieval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_ToolConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_ToolConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_FunctionCallingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_FunctionCallingConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -87,14 +95,20 @@ public final class ToolProto {
           + "\002 \001(\0132(.google.cloud.vertexai.v1.VertexA"
           + "ISearchH\000\022 \n\023disable_attribution\030\003 \001(\010B\003"
           + "\340A\001B\010\n\006source\"(\n\016VertexAISearch\022\026\n\tdatas"
-          + "tore\030\001 \001(\tB\003\340A\002\"9\n\025GoogleSearchRetrieval"
-          + "\022 \n\023disable_attribution\030\001 \001(\010B\003\340A\001B\306\001\n\035c"
-          + "om.google.cloud.vertexai.apiB\tToolProtoP"
-          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
-          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "tore\030\001 \001(\tB\003\340A\002\"\027\n\025GoogleSearchRetrieval"
+          + "\"c\n\nToolConfig\022U\n\027function_calling_confi"
+          + "g\030\001 \001(\0132/.google.cloud.vertexai.v1.Funct"
+          + "ionCallingConfigB\003\340A\001\"\300\001\n\025FunctionCallin"
+          + "gConfig\022G\n\004mode\030\001 \001(\01624.google.cloud.ver"
+          + "texai.v1.FunctionCallingConfig.ModeB\003\340A\001"
+          + "\022#\n\026allowed_function_names\030\002 \003(\tB\003\340A\001\"9\n"
+          + "\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\010\n\004AUTO\020\001\022\007\n"
+          + "\003ANY\020\002\022\010\n\004NONE\020\003B\306\001\n\035com.google.cloud.ve"
+          + "rtexai.apiB\tToolProtoP\001Z>cloud.google.co"
+          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -158,8 +172,22 @@ public final class ToolProto {
     internal_static_google_cloud_vertexai_v1_GoogleSearchRetrieval_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_GoogleSearchRetrieval_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_vertexai_v1_ToolConfig_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_vertexai_v1_ToolConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_ToolConfig_descriptor,
             new java.lang.String[] {
-              "DisableAttribution",
+              "FunctionCallingConfig",
+            });
+    internal_static_google_cloud_vertexai_v1_FunctionCallingConfig_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_vertexai_v1_FunctionCallingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_FunctionCallingConfig_descriptor,
+            new java.lang.String[] {
+              "Mode", "AllowedFunctionNames",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
