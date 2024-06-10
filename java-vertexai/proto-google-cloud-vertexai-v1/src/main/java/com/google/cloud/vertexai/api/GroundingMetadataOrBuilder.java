@@ -79,62 +79,40 @@ public interface GroundingMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. List of grounding attributions.
+   * Optional. Google search entry for the following-up web searches.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.vertexai.v1.GroundingAttribution grounding_attributions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.vertexai.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return Whether the searchEntryPoint field is set.
    */
-  java.util.List<com.google.cloud.vertexai.api.GroundingAttribution> getGroundingAttributionsList();
+  boolean hasSearchEntryPoint();
   /**
    *
    *
    * <pre>
-   * Optional. List of grounding attributions.
+   * Optional. Google search entry for the following-up web searches.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.vertexai.v1.GroundingAttribution grounding_attributions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.vertexai.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
+   *
+   * @return The searchEntryPoint.
    */
-  com.google.cloud.vertexai.api.GroundingAttribution getGroundingAttributions(int index);
+  com.google.cloud.vertexai.api.SearchEntryPoint getSearchEntryPoint();
   /**
    *
    *
    * <pre>
-   * Optional. List of grounding attributions.
+   * Optional. Google search entry for the following-up web searches.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.vertexai.v1.GroundingAttribution grounding_attributions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.vertexai.v1.SearchEntryPoint search_entry_point = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  int getGroundingAttributionsCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. List of grounding attributions.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.vertexai.v1.GroundingAttribution grounding_attributions = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.util.List<? extends com.google.cloud.vertexai.api.GroundingAttributionOrBuilder>
-      getGroundingAttributionsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. List of grounding attributions.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.vertexai.v1.GroundingAttribution grounding_attributions = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.vertexai.api.GroundingAttributionOrBuilder getGroundingAttributionsOrBuilder(
-      int index);
+  com.google.cloud.vertexai.api.SearchEntryPointOrBuilder getSearchEntryPointOrBuilder();
 }
