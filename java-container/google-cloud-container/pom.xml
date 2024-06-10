@@ -62,7 +62,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
-      <artifactId>gax-http</artifactId>
+      <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
