@@ -76,7 +76,7 @@ if [ -z "${generation_config}" ]; then
 fi
 
 current_branch="generate-libraries-${base_branch}"
-title="chore: update generation configuration at $(date)"
+title="chore: Update generation configuration at $(date)"
 
 # try to find a open pull request associated with the branch
 pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
