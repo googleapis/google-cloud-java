@@ -30,6 +30,7 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.api.ToolConfig;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -46,6 +47,7 @@ public final class GenerativeModel {
   private final GenerationConfig generationConfig;
   private final ImmutableList<SafetySetting> safetySettings;
   private final ImmutableList<Tool> tools;
+  private final Optional<ToolConfig> toolConfig;
   private final Optional<Content> systemInstruction;
 
   /**
@@ -65,6 +67,7 @@ public final class GenerativeModel {
         ImmutableList.of(),
         ImmutableList.of(),
         Optional.empty(),
+        Optional.empty(),
         vertexAi);
   }
 
@@ -79,6 +82,10 @@ public final class GenerativeModel {
    *     that will be used by default for generating response
    * @param tools a list of {@link com.google.cloud.vertexai.api.Tool} instances that can be used by
    *     the model as auxiliary tools to generate content.
+   * @param toolConfig a {@link com.google.cloud.vertexai.api.ToolConfig} instance that will be used
+   *     to specify the tool configuration.
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} instance that will be
+   *     used by default for generating response.
    * @param vertexAi a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
@@ -87,6 +94,7 @@ public final class GenerativeModel {
       GenerationConfig generationConfig,
       ImmutableList<SafetySetting> safetySettings,
       ImmutableList<Tool> tools,
+      Optional<ToolConfig> toolConfig,
       Optional<Content> systemInstruction,
       VertexAI vertexAi) {
     checkArgument(
@@ -98,6 +106,8 @@ public final class GenerativeModel {
     checkNotNull(generationConfig, "GenerationConfig can't be null.");
     checkNotNull(safetySettings, "ImmutableList<SafetySettings> can't be null.");
     checkNotNull(tools, "ImmutableList<Tool> can't be null.");
+    checkNotNull(toolConfig, "Optional<ToolConfig> can't be null.");
+    checkNotNull(systemInstruction, "Optional<Content> can't be null.");
 
     this.resourceName = getResourceName(modelName, vertexAi);
     // reconcileModelName should be called after getResourceName.
@@ -106,6 +116,7 @@ public final class GenerativeModel {
     this.generationConfig = generationConfig;
     this.safetySettings = safetySettings;
     this.tools = tools;
+    this.toolConfig = toolConfig;
     // We remove the role in the system instruction content because it's officially documented
     // to be used without role specified:
     // https://cloud.google.com/vertex-ai/generative-ai/docs/samples/generativeaionvertexai-gemini-system-instruction
@@ -128,6 +139,7 @@ public final class GenerativeModel {
     private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
     private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
     private ImmutableList<Tool> tools = ImmutableList.of();
+    private Optional<ToolConfig> toolConfig = Optional.empty();
     private Optional<Content> systemInstruction = Optional.empty();
 
     public GenerativeModel build() {
@@ -136,7 +148,13 @@ public final class GenerativeModel {
           "modelName is required. Please call setModelName() before building.");
       checkNotNull(vertexAi, "vertexAi is required. Please call setVertexAi() before building.");
       return new GenerativeModel(
-          modelName, generationConfig, safetySettings, tools, systemInstruction, vertexAi);
+          modelName,
+          generationConfig,
+          safetySettings,
+          tools,
+          toolConfig,
+          systemInstruction,
+          vertexAi);
     }
 
     /**
@@ -205,6 +223,19 @@ public final class GenerativeModel {
     }
 
     /**
+     * Sets a {@link com.google.cloud.vertexai.api.ToolConfig} that will be used by default to
+     * interact with the generative model.
+     */
+    @CanIgnoreReturnValue
+    public Builder setToolConfig(ToolConfig toolConfig) {
+      checkNotNull(
+          toolConfig,
+          "toolConfig can't be null. Use Optional.empty() if no tool config is intended.");
+      this.toolConfig = Optional.of(toolConfig);
+      return this;
+    }
+
+    /**
      * Sets a system instruction that will be used by default to interact with the generative model.
      */
     @CanIgnoreReturnValue
@@ -228,7 +259,13 @@ public final class GenerativeModel {
   public GenerativeModel withGenerationConfig(GenerationConfig generationConfig) {
     checkNotNull(generationConfig, "GenerationConfig can't be null.");
     return new GenerativeModel(
-        modelName, generationConfig, safetySettings, tools, systemInstruction, vertexAi);
+        modelName,
+        generationConfig,
+        safetySettings,
+        tools,
+        toolConfig,
+        systemInstruction,
+        vertexAi);
   }
 
   /**
@@ -247,6 +284,7 @@ public final class GenerativeModel {
         generationConfig,
         ImmutableList.copyOf(safetySettings),
         tools,
+        toolConfig,
         systemInstruction,
         vertexAi);
   }
@@ -265,6 +303,28 @@ public final class GenerativeModel {
         generationConfig,
         safetySettings,
         ImmutableList.copyOf(tools),
+        toolConfig,
+        systemInstruction,
+        vertexAi);
+  }
+
+  /**
+   * Creates a copy of the current model with updated tool config.
+   *
+   * @param toolConfig a {@link com.google.cloud.vertexai.api.ToolConfig} that will be used in the
+   *     new model.
+   * @return a new {@link GenerativeModel} instance with the specified tool config.
+   */
+  public GenerativeModel withToolConfig(ToolConfig toolConfig) {
+    checkNotNull(
+        toolConfig,
+        "toolConfig can't be null. Use Optional.empty() if no tool config is intended.");
+    return new GenerativeModel(
+        modelName,
+        generationConfig,
+        safetySettings,
+        tools,
+        Optional.of(toolConfig),
         systemInstruction,
         vertexAi);
   }
@@ -286,6 +346,7 @@ public final class GenerativeModel {
         generationConfig,
         safetySettings,
         tools,
+        toolConfig,
         Optional.of(systemInstruction),
         vertexAi);
   }
@@ -537,6 +598,10 @@ public final class GenerativeModel {
             .addAllSafetySettings(safetySettings)
             .addAllTools(tools);
 
+    if (toolConfig.isPresent()) {
+      requestBuilder.setToolConfig(toolConfig.get());
+    }
+
     if (systemInstruction.isPresent()) {
       requestBuilder.setSystemInstruction(systemInstruction.get());
     }
@@ -566,6 +631,13 @@ public final class GenerativeModel {
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
   public ImmutableList<Tool> getTools() {
     return tools;
+  }
+
+  /**
+   * Returns the optional {@link com.google.cloud.vertexai.api.ToolConfig} of this generative model.
+   */
+  public Optional<ToolConfig> getToolConfig() {
+    return toolConfig;
   }
 
   /** Returns the optional system instruction of this generative model. */
