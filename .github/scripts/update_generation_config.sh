@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 # This script should be run at the root of the repository.
-# This script is used to update parameters in generation
-# configuration at the time of running and create a pull request.
+# This script is used to update googleapis_commitish, gapic_generator_version,
+# and libraries_bom_version in generation configuration at the time of running
+# and create a pull request.
 
 # The following commands need to be installed before running the script:
 # 1. git
@@ -10,13 +11,16 @@ set -e
 # 3. jq
 
 # Utility functions
+
+# Get the major version from a key in the generation config.
 function get_major_version() {
     local key_word=$1
     major=$(grep "${key_word}" "${generation_config}" | cut -d ':' -f 2 | xargs | cut -d '.' -f 1)
     echo "${major}"
 }
 
-function get_latest_release_version() {
+# Get the latest released version within a major version of a Maven artifact.
+function get_latest_released_version() {
     local group_id=$1
     local artifact_id=$2
     local major_version=$3
@@ -24,6 +28,7 @@ function get_latest_release_version() {
     echo "${latest}"
 }
 
+# Update a key to a new value in the generation config.
 function update_config() {
     local key_word=$1
     local new_value=$2
@@ -100,12 +105,12 @@ update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
 
 # update gapic-generator-java version to the latest within a given major version
 major_version=$(get_major_version "gapic_generator_version")
-latest_version=$(get_latest_release_version "com.google.api" "gapic-generator-java" "${major_version}")
+latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-java" "${major_version}")
 update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
 
 # update libraries-bom version to the latest within a given major version
 major_version=$(get_major_version "libraries_bom_version")
-latest_version=$(get_latest_release_version "com.google.cloud" "libraries-bom" "${major_version}")
+latest_version=$(get_latest_released_version "com.google.cloud" "libraries-bom" "${major_version}")
 update_config "libraries_bom_version" "${latest_version}" "${generation_config}"
 
 git add "${generation_config}"
