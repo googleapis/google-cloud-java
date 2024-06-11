@@ -1,12 +1,34 @@
 #!/bin/bash
 set -e
 # This script should be run at the root of the repository.
-# This script is used to update googleapis commit to latest in generation
+# This script is used to update parameters in generation
 # configuration at the time of running and create a pull request.
 
 # The following commands need to be installed before running the script:
 # 1. git
 # 2. gh
+# 3. jq
+
+function get_major_version() {
+    local key_word=$1
+    major=$(grep "${key_word}" "${generation_config}" | cut -d ':' -f 2 | xargs | cut -d '.' -f 1)
+    echo "${major}"
+}
+
+function get_latest_release_version() {
+    local group_id=$1
+    local artifact_id=$2
+    local major_version=$3
+    latest=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${group_id}+AND+a:${artifact_id}&core=gav&rows=500&wt=json" | jq -r '.response.docs[] | select(.v | test("^[0-9]+(\\.[0-9]+)*$")) | .v' | grep ^"${major_version}". | sort -V | tail -n 1)
+    echo "${latest}"
+}
+
+function update_config() {
+    local key_word=$1
+    local new_value=$2
+    local file=$3
+    sed -i -e "s/^${key_word}.*$/${key_word}: ${new_value}/" "${file}"
+}
 
 # The parameters of this script is:
 # 1. base_branch, the base branch of the result pull request.
@@ -72,7 +94,17 @@ git pull
 latest_commit=$(git rev-parse HEAD)
 popd
 rm -rf tmp-googleapis
-sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${latest_commit}/" "${generation_config}"
+update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
+
+# update gapic-generator-java version to the latest within a given major version
+major_version=$(get_major_version "gapic_generator_version")
+latest_version=$(get_latest_release_version "com.google.api" "gapic-generator-java" "${major_version}")
+update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
+
+# update libraries-bom version to the latest within a given major version
+major_version=$(get_major_version "libraries_bom_version")
+latest_version=$(get_latest_release_version "com.google.cloud" "libraries-bom" "${major_version}")
+update_config "libraries_bom_version" "${latest_version}" "${generation_config}"
 
 git add "${generation_config}"
 changed_files=$(git diff --cached --name-only)
