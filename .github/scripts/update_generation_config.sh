@@ -9,6 +9,7 @@ set -e
 # 2. gh
 # 3. jq
 
+# Utility functions
 function get_major_version() {
     local key_word=$1
     major=$(grep "${key_word}" "${generation_config}" | cut -d ':' -f 2 | xargs | cut -d '.' -f 1)
@@ -27,6 +28,7 @@ function update_config() {
     local key_word=$1
     local new_value=$2
     local file=$3
+    echo "Update ${key_word} to ${new_value} in ${file}"
     sed -i -e "s/^${key_word}.*$/${key_word}: ${new_value}/" "${file}"
 }
 
@@ -74,7 +76,7 @@ if [ -z "${generation_config}" ]; then
 fi
 
 current_branch="generate-libraries-${base_branch}"
-title="chore: update googleapis commit at $(date)"
+title="chore: update generation configuration at $(date)"
 
 # try to find a open pull request associated with the branch
 pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
@@ -109,7 +111,7 @@ update_config "libraries_bom_version" "${latest_version}" "${generation_config}"
 git add "${generation_config}"
 changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
-    echo "The latest googleapis commit is not changed."
+    echo "The latest generation config is not changed."
     echo "Skip committing to the pull request."
     exit 0
 fi
