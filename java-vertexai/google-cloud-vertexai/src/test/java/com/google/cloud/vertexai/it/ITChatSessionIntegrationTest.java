@@ -24,6 +24,7 @@ import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.HarmCategory;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.generativeai.AutomaticFunctionCallingResponder;
 import com.google.cloud.vertexai.generativeai.ChatSession;
 import com.google.cloud.vertexai.generativeai.ContentMaker;
 import com.google.cloud.vertexai.generativeai.FunctionDeclarationMaker;
@@ -38,7 +39,6 @@ import java.util.Collections;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -54,6 +54,17 @@ public class ITChatSessionIntegrationTest {
   private VertexAI vertexAi;
   private GenerativeModel model;
   private ChatSession chat;
+
+  /** Callable function getCurrentWeather for testing automatic function calling. */
+  public static String getCurrentWeather(String location) {
+    if (location.equals("Boston")) {
+      return "snowing";
+    } else if (location.equals("Vancouver")) {
+      return "raining";
+    } else {
+      return "sunny";
+    }
+  }
 
   @Before
   public void setUp() throws IOException {
@@ -89,9 +100,6 @@ public class ITChatSessionIntegrationTest {
     }
   }
 
-  @Ignore(
-      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
-          + " the GitHub side.")
   @Test
   public void sendMessageMixedStreamAndUnary_historyOfFour() throws IOException {
     // Arrange
@@ -119,9 +127,6 @@ public class ITChatSessionIntegrationTest {
         ImmutableList.of(expectedFirstContent, expectedThirdContent));
   }
 
-  @Ignore(
-      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
-          + " the GitHub side.")
   @Test
   public void sendMessageWithNewConfigs_historyContainsFullConversation() throws IOException {
     // Arrange
@@ -162,9 +167,6 @@ public class ITChatSessionIntegrationTest {
         ImmutableList.of(expectedFirstContent, expectedThirdContent));
   }
 
-  @Ignore(
-      "TODO(b/335830545): The Gen AI API is too flaky to handle three sets of simultanenous IT on"
-          + " the GitHub side.")
   @Test
   public void sendMessageWithFunctionCalling_functionCallInResponse() throws IOException {
     // Arrange
@@ -231,5 +233,61 @@ public class ITChatSessionIntegrationTest {
             ContentMaker.fromString(firstMessage),
             ContentMaker.fromString(secondMessage),
             functionResponse));
+  }
+
+  @Test
+  public void sendMessageWithAutomaticFunctionCalling_autoRespondToFunctionCall()
+      throws IOException, NoSuchMethodException {
+    // Arrange
+    String message = "What is the weather in Boston?";
+
+    JsonObject locationJsonObject = new JsonObject();
+    locationJsonObject.addProperty("type", "STRING");
+    locationJsonObject.addProperty("description", "location");
+
+    JsonObject propertiesJsonObject = new JsonObject();
+    propertiesJsonObject.add("location", locationJsonObject);
+
+    JsonObject parametersJsonObject = new JsonObject();
+    parametersJsonObject.addProperty("type", "OBJECT");
+    parametersJsonObject.add("properties", propertiesJsonObject);
+
+    JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("name", "getCurrentWeather");
+    jsonObject.addProperty("description", "Get the current weather in a given location");
+    jsonObject.add("parameters", parametersJsonObject);
+    Tool tool =
+        Tool.newBuilder()
+            .addFunctionDeclarations(FunctionDeclarationMaker.fromJsonObject(jsonObject))
+            .build();
+    ImmutableList<Tool> tools = ImmutableList.of(tool);
+
+    AutomaticFunctionCallingResponder responder = new AutomaticFunctionCallingResponder();
+    responder.addCallableFunction(
+        "getCurrentWeather",
+        ITChatSessionIntegrationTest.class.getMethod("getCurrentWeather", String.class),
+        "location");
+
+    // Act
+    chat = model.startChat();
+    GenerateContentResponse response =
+        chat.withTools(tools).withAutomaticFunctionCallingResponder(responder).sendMessage(message);
+
+    // Assert
+    assertThat(response.getCandidatesList()).hasSize(1);
+    // The final response should not contain any function calls since the function was called
+    // automatically.
+    assertThat(ResponseHandler.getFunctionCalls(response)).isEmpty();
+
+    ImmutableList<Content> history = chat.getHistory();
+    Content expectedFunctionResponse =
+        ContentMaker.fromMultiModalData(
+            PartMaker.fromFunctionResponse(
+                "getCurrentWeather", Collections.singletonMap("result", "snowing")));
+    assertSizeAndAlternatingRolesInHistory(
+        Thread.currentThread().getStackTrace()[1].getMethodName(),
+        history,
+        4,
+        ImmutableList.of(ContentMaker.fromString(message), expectedFunctionResponse));
   }
 }

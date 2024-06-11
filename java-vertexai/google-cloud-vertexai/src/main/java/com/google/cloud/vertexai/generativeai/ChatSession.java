@@ -19,10 +19,12 @@ package com.google.cloud.vertexai.generativeai;
 import static com.google.cloud.vertexai.generativeai.ResponseHandler.aggregateStreamIntoResponse;
 import static com.google.cloud.vertexai.generativeai.ResponseHandler.getContent;
 import static com.google.cloud.vertexai.generativeai.ResponseHandler.getFinishReason;
+import static com.google.cloud.vertexai.generativeai.ResponseHandler.getFunctionCalls;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FunctionCall;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.SafetySetting;
@@ -37,6 +39,7 @@ import java.util.Optional;
 public final class ChatSession {
   private final GenerativeModel model;
   private final Optional<ChatSession> rootChatSession;
+  private final Optional<AutomaticFunctionCallingResponder> automaticFunctionCallingResponder;
   private List<Content> history = new ArrayList<>();
   private int previousHistorySize = 0;
   private Optional<ResponseStream<GenerateContentResponse>> currentResponseStream;
@@ -47,7 +50,7 @@ public final class ChatSession {
    * GenerationConfig) inherits from the model.
    */
   public ChatSession(GenerativeModel model) {
-    this(model, Optional.empty());
+    this(model, Optional.empty(), Optional.empty());
   }
 
   /**
@@ -57,12 +60,18 @@ public final class ChatSession {
    * @param model a {@link GenerativeModel} instance that generates contents in the chat.
    * @param rootChatSession a root {@link ChatSession} instance. All the chat history in the current
    *     chat session will be merged to the root chat session.
+   * @param automaticFunctionCallingResponder an {@link AutomaticFunctionCallingResponder} instance
+   *     that can automatically respond to function calls requested by the model.
    * @return a {@link ChatSession} instance.
    */
-  private ChatSession(GenerativeModel model, Optional<ChatSession> rootChatSession) {
+  private ChatSession(
+      GenerativeModel model,
+      Optional<ChatSession> rootChatSession,
+      Optional<AutomaticFunctionCallingResponder> automaticFunctionCallingResponder) {
     checkNotNull(model, "model should not be null");
     this.model = model;
     this.rootChatSession = rootChatSession;
+    this.automaticFunctionCallingResponder = automaticFunctionCallingResponder;
     currentResponseStream = Optional.empty();
     currentResponse = Optional.empty();
   }
@@ -77,7 +86,10 @@ public final class ChatSession {
   public ChatSession withGenerationConfig(GenerationConfig generationConfig) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
-        new ChatSession(model.withGenerationConfig(generationConfig), Optional.of(rootChat));
+        new ChatSession(
+            model.withGenerationConfig(generationConfig),
+            Optional.of(rootChat),
+            automaticFunctionCallingResponder);
     newChatSession.history = history;
     newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
@@ -93,7 +105,10 @@ public final class ChatSession {
   public ChatSession withSafetySettings(List<SafetySetting> safetySettings) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
-        new ChatSession(model.withSafetySettings(safetySettings), Optional.of(rootChat));
+        new ChatSession(
+            model.withSafetySettings(safetySettings),
+            Optional.of(rootChat),
+            automaticFunctionCallingResponder);
     newChatSession.history = history;
     newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
@@ -108,7 +123,28 @@ public final class ChatSession {
    */
   public ChatSession withTools(List<Tool> tools) {
     ChatSession rootChat = rootChatSession.orElse(this);
-    ChatSession newChatSession = new ChatSession(model.withTools(tools), Optional.of(rootChat));
+    ChatSession newChatSession =
+        new ChatSession(
+            model.withTools(tools), Optional.of(rootChat), automaticFunctionCallingResponder);
+    newChatSession.history = history;
+    newChatSession.previousHistorySize = previousHistorySize;
+    return newChatSession;
+  }
+
+  /**
+   * Creates a copy of the current ChatSession with updated AutomaticFunctionCallingResponder.
+   *
+   * @param automaticFunctionCallingResponder an {@link AutomaticFunctionCallingResponder} instance
+   *     that will be used in the new ChatSession.
+   * @return a new {@link ChatSession} instance with the specified
+   *     AutomaticFunctionCallingResponder.
+   */
+  public ChatSession withAutomaticFunctionCallingResponder(
+      AutomaticFunctionCallingResponder automaticFunctionCallingResponder) {
+    ChatSession rootChat = rootChatSession.orElse(this);
+    ChatSession newChatSession =
+        new ChatSession(
+            model, Optional.of(rootChat), Optional.of(automaticFunctionCallingResponder));
     newChatSession.history = history;
     newChatSession.previousHistorySize = previousHistorySize;
     return newChatSession;
@@ -141,12 +177,13 @@ public final class ChatSession {
     try {
       respStream = model.generateContentStream(history);
     } catch (IOException e) {
-      // If the API call fails, remove the last content from the history before throwing.
+      // If the API call fails, revert the history before throwing.
       revertHistory();
       throw e;
     }
     setCurrentResponseStream(Optional.of(respStream));
 
+    // TODO(jayceeli) enable AFC in sendMessageStream
     return respStream;
   }
 
@@ -169,17 +206,51 @@ public final class ChatSession {
   public GenerateContentResponse sendMessage(Content content) throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-
     GenerateContentResponse response;
     try {
       response = model.generateContent(history);
-    } catch (IOException e) {
-      // If the API call fails, remove the last content from the history before throwing.
+      setCurrentResponse(Optional.of(response));
+      return autoRespond(response);
+    } catch (Exception e) {
+      // If any step fails, reset the history and current response.
+      checkLastResponseAndEditHistory();
       revertHistory();
       throw e;
     }
-    setCurrentResponse(Optional.of(response));
+  }
 
+  /**
+   * Automatically responds to the model if there is an AutomaticFunctionCallingResponder and
+   * model's response contains function calls.
+   */
+  private GenerateContentResponse autoRespond(GenerateContentResponse originalResponse)
+      throws IOException {
+    // Return the original response if there is no AFC responder or no function calls in the
+    // response.
+    if (!automaticFunctionCallingResponder.isPresent()) {
+      return originalResponse;
+    }
+    ImmutableList<FunctionCall> functionCalls = getFunctionCalls(originalResponse);
+    if (functionCalls.isEmpty()) {
+      return originalResponse;
+    }
+
+    // Each time we call the `autoRespond`, we add 2 contents(user's functionResponse and model's
+    // functionCall) to the history and update the previousHistorySize during
+    // `checkLastResponseAndEditHistory`. But we shouldn't update the previousHistorySize because we
+    // will revert the whole history if any intermediate step fails. So we offset the
+    // previousHistorySize by 2 here.
+    setPreviousHistorySize(getPreviousHistorySize() - 2);
+    GenerateContentResponse response;
+    try {
+      // Let the responder generate the response content and send it to the model.
+      Content autoRespondedContent =
+          automaticFunctionCallingResponder.get().getContentFromFunctionCalls(functionCalls);
+      response = sendMessage(autoRespondedContent);
+    } finally {
+      // Reset the responder whether it succeeds or fails.
+      automaticFunctionCallingResponder.get().resetRemainingFunctionCalls();
+    }
     return response;
   }
 
@@ -200,7 +271,10 @@ public final class ChatSession {
               setCurrentResponse(Optional.empty());
               checkFinishReasonAndEditHistory(currentResponse);
               history.add(getContent(currentResponse));
-              setPreviousHistorySize(history.size());
+              // If `checkFinishReasonAndEditHistory` passes, we add 2 contents(user's message and
+              // model's response) to the history and then one round of conversation is finished. So
+              // we add 2 to the previousHistorySize.
+              setPreviousHistorySize(getPreviousHistorySize() + 2);
             });
     getCurrentResponseStream()
         .ifPresent(
@@ -212,7 +286,10 @@ public final class ChatSession {
                 GenerateContentResponse response = aggregateStreamIntoResponse(responseStream);
                 checkFinishReasonAndEditHistory(response);
                 history.add(getContent(response));
-                setPreviousHistorySize(history.size());
+                // If `checkFinishReasonAndEditHistory` passes, we add 2 contents(user's message and
+                // model's response) to the history and then one round of conversation is finished.
+                // So we add 2 to the previousHistorySize.
+                setPreviousHistorySize(getPreviousHistorySize() + 2);
               }
             });
   }
