@@ -16,35 +16,63 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.core.InternalApi;
+import com.google.common.truth.Correspondence;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.Assert;
 
 @InternalApi
 public class BuiltinMetricsTestUtils {
+  private static final Correspondence<MetricData, String> METRIC_DATA_BY_NAME =
+      Correspondence.transforming(MetricData::getName, "MetricData name");
 
   private BuiltinMetricsTestUtils() {}
 
-  public static MetricData getMetricData(Collection<MetricData> allMetricData, String metricName) {
-    List<MetricData> metricDataList =
-        allMetricData.stream()
-            .filter(md -> md.getName().equals(BuiltinMetricsConstants.METER_NAME + metricName))
-            .collect(Collectors.toList());
-    if (metricDataList.size() == 0) {
-      allMetricData.stream().forEach(md -> System.out.println(md.getName()));
-    }
-    assertThat(metricDataList.size()).isEqualTo(1);
+  public static MetricData getMetricData(InMemoryMetricReader reader, String metricName) {
+    String fullMetricName = BuiltinMetricsConstants.METER_NAME + metricName;
+    Collection<MetricData> allMetricData = Collections.emptyList();
 
-    return metricDataList.get(0);
+    // Fetch the MetricData with retries
+    for (int attemptsLeft = 10; attemptsLeft > 0; attemptsLeft--) {
+      allMetricData = reader.collectAllMetrics();
+      List<MetricData> matchingMetadata =
+          allMetricData.stream()
+              .filter(md -> METRIC_DATA_BY_NAME.compare(md, fullMetricName))
+              .collect(Collectors.toList());
+      assertWithMessage(
+              "Found multiple MetricData with the same name: %s, in: %s",
+              fullMetricName, matchingMetadata)
+          .that(matchingMetadata.size())
+          .isAtMost(1);
+
+      if (!matchingMetadata.isEmpty()) {
+        return matchingMetadata.get(0);
+      }
+
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException interruptedException) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(interruptedException);
+      }
+    }
+
+    // MetricData was not found, assert on original collection to get a descriptive error message
+    assertThat(allMetricData).comparingElementsUsing(METRIC_DATA_BY_NAME).contains(fullMetricName);
+    throw new IllegalStateException(
+        "MetricData was missing then appeared, this should never happen");
   }
 
   public static long getAggregatedValue(MetricData metricData, Attributes attributes) {

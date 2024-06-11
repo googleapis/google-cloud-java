@@ -64,7 +64,6 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -268,8 +267,6 @@ public class BuiltinMetricsIT {
 
     ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
 
-    Collection<MetricData> fromMetricReader = metricReader.collectAllMetrics();
-
     // Interval is set in the monarch request when query metric timestamps.
     // Restrict it to before we send to request and 3 minute after we send the request. If
     // it turns out to be still flaky we can increase the filter range.
@@ -285,7 +282,7 @@ public class BuiltinMetricsIT {
       if (view.equals("application_blocking_latencies")) {
         otelMetricName = "application_latencies";
       }
-      MetricData dataFromReader = getMetricData(fromMetricReader, otelMetricName);
+      MetricData dataFromReader = getMetricData(metricReader, otelMetricName);
 
       // Filter on instance and method name
       // Verify that metrics are correct for MutateRows request

@@ -43,7 +43,6 @@ import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
@@ -138,10 +137,9 @@ public class ErrorCountPerConnectionTest {
 
     runInterceptorTasksAndAssertCount();
 
-    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
     MetricData metricData =
         BuiltinMetricsTestUtils.getMetricData(
-            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+            metricReader, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
 
     // Make sure the correct bucket is updated with the correct number of data points
     ArrayList<HistogramPointData> histogramPointData =
@@ -179,10 +177,9 @@ public class ErrorCountPerConnectionTest {
 
     long errorCountPerChannel = totalErrorCount / 2;
 
-    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
     MetricData metricData =
         BuiltinMetricsTestUtils.getMetricData(
-            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+            metricReader, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
 
     // The 2 channels should get equal amount of errors, so the totalErrorCount / 2 bucket is
     // updated twice.
@@ -234,10 +231,9 @@ public class ErrorCountPerConnectionTest {
 
     runInterceptorTasksAndAssertCount();
 
-    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
     MetricData metricData =
         BuiltinMetricsTestUtils.getMetricData(
-            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+            metricReader, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
 
     ArrayList<HistogramPointData> histogramPointData =
         new ArrayList<>(metricData.getHistogramData().getPoints());
@@ -261,10 +257,9 @@ public class ErrorCountPerConnectionTest {
       }
     }
     runInterceptorTasksAndAssertCount();
-    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
     MetricData metricData =
         BuiltinMetricsTestUtils.getMetricData(
-            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+            metricReader, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
     long value = BuiltinMetricsTestUtils.getAggregatedValue(metricData, attributes);
     assertThat(value).isEqualTo(0);
   }
