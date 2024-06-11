@@ -29,6 +29,7 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.api.ToolConfig;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,8 +41,8 @@ public final class ChatSession {
   private final GenerativeModel model;
   private final Optional<ChatSession> rootChatSession;
   private final Optional<AutomaticFunctionCallingResponder> automaticFunctionCallingResponder;
-  private List<Content> history = new ArrayList<>();
-  private int previousHistorySize = 0;
+  private List<Content> history;
+  private int previousHistorySize;
   private Optional<ResponseStream<GenerateContentResponse>> currentResponseStream;
   private Optional<GenerateContentResponse> currentResponse;
 
@@ -50,7 +51,7 @@ public final class ChatSession {
    * GenerationConfig) inherits from the model.
    */
   public ChatSession(GenerativeModel model) {
-    this(model, Optional.empty(), Optional.empty());
+    this(model, new ArrayList<>(), 0, Optional.empty(), Optional.empty());
   }
 
   /**
@@ -58,6 +59,9 @@ public final class ChatSession {
    * Configurations of the chat (e.g., GenerationConfig) inherits from the model.
    *
    * @param model a {@link GenerativeModel} instance that generates contents in the chat.
+   * @param history a list of {@link Content} containing interleaving conversation between "user"
+   *     and "model".
+   * @param previousHistorySize the size of the previous history.
    * @param rootChatSession a root {@link ChatSession} instance. All the chat history in the current
    *     chat session will be merged to the root chat session.
    * @param automaticFunctionCallingResponder an {@link AutomaticFunctionCallingResponder} instance
@@ -66,10 +70,14 @@ public final class ChatSession {
    */
   private ChatSession(
       GenerativeModel model,
+      List<Content> history,
+      int previousHistorySize,
       Optional<ChatSession> rootChatSession,
       Optional<AutomaticFunctionCallingResponder> automaticFunctionCallingResponder) {
     checkNotNull(model, "model should not be null");
     this.model = model;
+    this.history = history;
+    this.previousHistorySize = previousHistorySize;
     this.rootChatSession = rootChatSession;
     this.automaticFunctionCallingResponder = automaticFunctionCallingResponder;
     currentResponseStream = Optional.empty();
@@ -84,15 +92,12 @@ public final class ChatSession {
    * @return a new {@link ChatSession} instance with the specified GenerationConfig.
    */
   public ChatSession withGenerationConfig(GenerationConfig generationConfig) {
-    ChatSession rootChat = rootChatSession.orElse(this);
-    ChatSession newChatSession =
-        new ChatSession(
-            model.withGenerationConfig(generationConfig),
-            Optional.of(rootChat),
-            automaticFunctionCallingResponder);
-    newChatSession.history = history;
-    newChatSession.previousHistorySize = previousHistorySize;
-    return newChatSession;
+    return new ChatSession(
+        model.withGenerationConfig(generationConfig),
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        automaticFunctionCallingResponder);
   }
 
   /**
@@ -103,15 +108,12 @@ public final class ChatSession {
    * @return a new {@link ChatSession} instance with the specified SafetySettings.
    */
   public ChatSession withSafetySettings(List<SafetySetting> safetySettings) {
-    ChatSession rootChat = rootChatSession.orElse(this);
-    ChatSession newChatSession =
-        new ChatSession(
-            model.withSafetySettings(safetySettings),
-            Optional.of(rootChat),
-            automaticFunctionCallingResponder);
-    newChatSession.history = history;
-    newChatSession.previousHistorySize = previousHistorySize;
-    return newChatSession;
+    return new ChatSession(
+        model.withSafetySettings(safetySettings),
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        automaticFunctionCallingResponder);
   }
 
   /**
@@ -122,13 +124,44 @@ public final class ChatSession {
    * @return a new {@link ChatSession} instance with the specified Tools.
    */
   public ChatSession withTools(List<Tool> tools) {
-    ChatSession rootChat = rootChatSession.orElse(this);
-    ChatSession newChatSession =
-        new ChatSession(
-            model.withTools(tools), Optional.of(rootChat), automaticFunctionCallingResponder);
-    newChatSession.history = history;
-    newChatSession.previousHistorySize = previousHistorySize;
-    return newChatSession;
+    return new ChatSession(
+        model.withTools(tools),
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        automaticFunctionCallingResponder);
+  }
+
+  /**
+   * Creates a copy of the current ChatSession with updated ToolConfig.
+   *
+   * @param toolConfig a {@link com.google.cloud.vertexai.api.ToolConfig} that will be used in the
+   *     new ChatSession.
+   * @return a new {@link ChatSession} instance with the specified ToolConfigs.
+   */
+  public ChatSession withToolConfig(ToolConfig toolConfig) {
+    return new ChatSession(
+        model.withToolConfig(toolConfig),
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        automaticFunctionCallingResponder);
+  }
+
+  /**
+   * Creates a copy of the current ChatSession with updated SystemInstruction.
+   *
+   * @param systemInstruction a {@link com.google.cloud.vertexai.api.Content} containing system
+   *     instructions.
+   * @return a new {@link ChatSession} instance with the specified ToolConfigs.
+   */
+  public ChatSession withSystemInstruction(Content systemInstruction) {
+    return new ChatSession(
+        model.withSystemInstruction(systemInstruction),
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        automaticFunctionCallingResponder);
   }
 
   /**
@@ -141,13 +174,12 @@ public final class ChatSession {
    */
   public ChatSession withAutomaticFunctionCallingResponder(
       AutomaticFunctionCallingResponder automaticFunctionCallingResponder) {
-    ChatSession rootChat = rootChatSession.orElse(this);
-    ChatSession newChatSession =
-        new ChatSession(
-            model, Optional.of(rootChat), Optional.of(automaticFunctionCallingResponder));
-    newChatSession.history = history;
-    newChatSession.previousHistorySize = previousHistorySize;
-    return newChatSession;
+    return new ChatSession(
+        model,
+        history,
+        previousHistorySize,
+        Optional.of(rootChatSession.orElse(this)),
+        Optional.of(automaticFunctionCallingResponder));
   }
 
   /**
