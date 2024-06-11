@@ -359,7 +359,9 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent("ListSettingsRequest-286838706".toString())
+   *           .setParent(
+   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))
@@ -393,7 +395,9 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent("ListSettingsRequest-286838706".toString())
+   *           .setParent(
+   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))
@@ -428,7 +432,9 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent("ListSettingsRequest-286838706".toString())
+   *           .setParent(
+   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))

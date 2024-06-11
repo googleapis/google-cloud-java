@@ -18,7 +18,7 @@ package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networkconnectivity.v1.GroupName;
+import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -40,7 +40,7 @@ public class AsyncTestIamPermissions {
         PolicyBasedRoutingServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

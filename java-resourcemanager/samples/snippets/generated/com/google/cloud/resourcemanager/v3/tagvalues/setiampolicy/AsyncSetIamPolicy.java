@@ -18,7 +18,7 @@ package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_TagValues_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.resourcemanager.v3.TagValueName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.TagValuesClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,7 +39,7 @@ public class AsyncSetIamPolicy {
     try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(TagValueName.of("[TAG_VALUE]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

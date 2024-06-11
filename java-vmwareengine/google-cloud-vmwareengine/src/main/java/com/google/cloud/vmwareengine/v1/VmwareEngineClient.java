@@ -14004,9 +14004,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -14038,9 +14036,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -14070,9 +14066,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = vmwareEngineClient.getIamPolicy(request);
@@ -14102,9 +14096,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = vmwareEngineClient.getIamPolicyCallable().futureCall(request);
@@ -14137,9 +14129,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = vmwareEngineClient.testIamPermissions(request);
@@ -14173,9 +14163,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

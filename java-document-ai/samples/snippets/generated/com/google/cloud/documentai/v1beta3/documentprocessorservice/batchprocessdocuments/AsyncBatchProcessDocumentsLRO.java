@@ -22,10 +22,10 @@ import com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig;
 import com.google.cloud.documentai.v1beta3.BatchProcessMetadata;
 import com.google.cloud.documentai.v1beta3.BatchProcessRequest;
 import com.google.cloud.documentai.v1beta3.BatchProcessResponse;
+import com.google.cloud.documentai.v1beta3.DatasetName;
 import com.google.cloud.documentai.v1beta3.DocumentOutputConfig;
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1beta3.ProcessOptions;
-import com.google.cloud.documentai.v1beta3.ProcessorName;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -45,7 +45,7 @@ public class AsyncBatchProcessDocumentsLRO {
         DocumentProcessorServiceClient.create()) {
       BatchProcessRequest request =
           BatchProcessRequest.newBuilder()
-              .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
               .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
               .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())

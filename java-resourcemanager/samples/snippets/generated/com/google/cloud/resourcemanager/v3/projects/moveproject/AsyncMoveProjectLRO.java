@@ -18,6 +18,7 @@ package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Projects_MoveProject_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.MoveProjectMetadata;
 import com.google.cloud.resourcemanager.v3.MoveProjectRequest;
 import com.google.cloud.resourcemanager.v3.Project;
@@ -40,7 +41,7 @@ public class AsyncMoveProjectLRO {
       MoveProjectRequest request =
           MoveProjectRequest.newBuilder()
               .setName(ProjectName.of("[PROJECT]").toString())
-              .setDestinationParent(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       OperationFuture<Project, MoveProjectMetadata> future =
           projectsClient.moveProjectOperationCallable().futureCall(request);

@@ -17,7 +17,7 @@
 package com.google.cloud.workstations.v1beta.samples;
 
 // [START workstations_v1beta_generated_Workstations_TestIamPermissions_sync]
-import com.google.cloud.workstations.v1beta.WorkstationName;
+import com.google.cloud.workstations.v1beta.LocationName;
 import com.google.cloud.workstations.v1beta.WorkstationsClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,14 +38,7 @@ public class SyncTestIamPermissions {
     try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  WorkstationName.of(
-                          "[PROJECT]",
-                          "[LOCATION]",
-                          "[WORKSTATION_CLUSTER]",
-                          "[WORKSTATION_CONFIG]",
-                          "[WORKSTATION]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = workstationsClient.testIamPermissions(request);

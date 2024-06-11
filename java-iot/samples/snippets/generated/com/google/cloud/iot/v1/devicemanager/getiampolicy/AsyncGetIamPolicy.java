@@ -19,7 +19,7 @@ package com.google.cloud.iot.v1.samples;
 // [START cloudiot_v1_generated_DeviceManager_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.DeviceManagerClient;
-import com.google.cloud.iot.v1.RegistryName;
+import com.google.cloud.iot.v1.DeviceName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,8 @@ public class AsyncGetIamPolicy {
     try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]").toString())
+              .setResource(
+                  DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = deviceManagerClient.getIamPolicyCallable().futureCall(request);

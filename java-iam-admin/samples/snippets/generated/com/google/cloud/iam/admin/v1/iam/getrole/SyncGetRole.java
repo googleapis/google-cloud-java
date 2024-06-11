@@ -19,6 +19,7 @@ package com.google.cloud.iam.admin.v1.samples;
 // [START iam_v1_generated_IAM_GetRole_sync]
 import com.google.cloud.iam.admin.v1.IAMClient;
 import com.google.iam.admin.v1.GetRoleRequest;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 
 public class SyncGetRole {
@@ -35,7 +36,7 @@ public class SyncGetRole {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IAMClient iAMClient = IAMClient.create()) {
       GetRoleRequest request =
-          GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+          GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
       Role response = iAMClient.getRole(request);
     }
   }

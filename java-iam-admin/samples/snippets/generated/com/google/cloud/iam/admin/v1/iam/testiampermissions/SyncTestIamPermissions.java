@@ -18,7 +18,7 @@ package com.google.cloud.iam.admin.v1.samples;
 
 // [START iam_v1_generated_IAM_TestIamPermissions_sync]
 import com.google.cloud.iam.admin.v1.IAMClient;
-import com.google.iam.admin.v1.ServiceAccountName;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (IAMClient iAMClient = IAMClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = iAMClient.testIamPermissions(request);

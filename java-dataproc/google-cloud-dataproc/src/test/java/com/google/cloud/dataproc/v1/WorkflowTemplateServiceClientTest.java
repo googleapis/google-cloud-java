@@ -269,8 +269,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
-                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -323,8 +323,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
-                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -697,8 +697,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
-                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())

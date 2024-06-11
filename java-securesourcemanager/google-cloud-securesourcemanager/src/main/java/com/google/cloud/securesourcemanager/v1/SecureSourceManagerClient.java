@@ -1817,7 +1817,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = secureSourceManagerClient.getIamPolicyRepo(request);
@@ -1846,7 +1846,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1932,7 +1932,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1962,7 +1962,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2052,7 +2052,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response =
@@ -2083,7 +2083,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -2272,7 +2272,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2304,7 +2304,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2335,7 +2335,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = secureSourceManagerClient.getIamPolicy(request);
@@ -2365,7 +2365,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -2399,7 +2399,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = secureSourceManagerClient.testIamPermissions(request);
@@ -2433,7 +2433,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

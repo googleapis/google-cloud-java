@@ -17,7 +17,7 @@
 package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_TestIamPermissionsRepo_sync]
-import com.google.cloud.securesourcemanager.v1.RepositoryName;
+import com.google.cloud.securesourcemanager.v1.LocationName;
 import com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissionsRepo {
     try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response =

@@ -3132,7 +3132,7 @@ public class CertificateAuthorityServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -3161,7 +3161,7 @@ public class CertificateAuthorityServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -3185,7 +3185,7 @@ public class CertificateAuthorityServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -3212,7 +3212,7 @@ public class CertificateAuthorityServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -3230,7 +3230,7 @@ public class CertificateAuthorityServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -3257,7 +3257,7 @@ public class CertificateAuthorityServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

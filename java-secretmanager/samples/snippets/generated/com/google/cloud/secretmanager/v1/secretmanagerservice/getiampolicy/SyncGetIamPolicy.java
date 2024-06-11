@@ -17,8 +17,8 @@
 package com.google.cloud.secretmanager.v1.samples;
 
 // [START secretmanager_v1_generated_SecretManagerService_GetIamPolicy_sync]
+import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,7 @@ public class SyncGetIamPolicy {
         SecretManagerServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = secretManagerServiceClient.getIamPolicy(request);

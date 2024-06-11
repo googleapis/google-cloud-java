@@ -18,7 +18,7 @@ package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_TagValues_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.resourcemanager.v3.TagValueName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.TagValuesClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(TagValueName.of("[TAG_VALUE]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

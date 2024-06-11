@@ -17,7 +17,7 @@
 package com.google.cloud.kms.v1.samples;
 
 // [START cloudkms_v1_generated_KeyManagementService_TestIamPermissions_sync]
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.AutokeyConfigName;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -39,9 +39,7 @@ public class SyncTestIamPermissions {
         KeyManagementServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(request);

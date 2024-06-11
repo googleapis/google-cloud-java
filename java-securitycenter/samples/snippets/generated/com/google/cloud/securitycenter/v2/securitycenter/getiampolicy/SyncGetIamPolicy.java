@@ -17,8 +17,8 @@
 package com.google.cloud.securitycenter.v2.samples;
 
 // [START securitycenter_v2_generated_SecurityCenter_GetIamPolicy_sync]
+import com.google.cloud.securitycenter.v2.FolderName;
 import com.google.cloud.securitycenter.v2.SecurityCenterClient;
-import com.google.cloud.securitycenter.v2.SourceName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -38,8 +38,7 @@ public class SyncGetIamPolicy {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = securityCenterClient.getIamPolicy(request);

@@ -3931,14 +3931,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3970,14 +3963,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4007,14 +3993,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = workstationsClient.getIamPolicy(request);
@@ -4044,14 +4023,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = workstationsClient.getIamPolicyCallable().futureCall(request);
@@ -4084,14 +4056,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = workstationsClient.testIamPermissions(request);
@@ -4125,14 +4090,7 @@ public class WorkstationsClient implements BackgroundResource {
    * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               WorkstationName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[WORKSTATION_CLUSTER]",
-   *                       "[WORKSTATION_CONFIG]",
-   *                       "[WORKSTATION]")
-   *                   .toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

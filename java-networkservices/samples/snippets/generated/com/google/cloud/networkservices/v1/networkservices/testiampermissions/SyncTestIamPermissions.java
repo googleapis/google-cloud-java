@@ -17,7 +17,7 @@
 package com.google.cloud.networkservices.v1.samples;
 
 // [START networkservices_v1_generated_NetworkServices_TestIamPermissions_sync]
-import com.google.cloud.networkservices.v1.EndpointPolicyName;
+import com.google.cloud.networkservices.v1.LocationName;
 import com.google.cloud.networkservices.v1.NetworkServicesClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,8 +38,7 @@ public class SyncTestIamPermissions {
     try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = networkServicesClient.testIamPermissions(request);

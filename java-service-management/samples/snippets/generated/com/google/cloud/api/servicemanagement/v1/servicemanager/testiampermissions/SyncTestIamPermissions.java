@@ -37,7 +37,7 @@ public class SyncTestIamPermissions {
     try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource("resource-341064690")
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = serviceManagerClient.testIamPermissions(request);

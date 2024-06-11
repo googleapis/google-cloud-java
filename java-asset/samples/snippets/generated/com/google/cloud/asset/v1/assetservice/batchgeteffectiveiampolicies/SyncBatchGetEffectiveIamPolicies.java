@@ -20,7 +20,7 @@ package com.google.cloud.asset.v1.samples;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
-import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.FeedName;
 import java.util.ArrayList;
 
 public class SyncBatchGetEffectiveIamPolicies {
@@ -38,7 +38,7 @@ public class SyncBatchGetEffectiveIamPolicies {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       BatchGetEffectiveIamPoliciesRequest request =
           BatchGetEffectiveIamPoliciesRequest.newBuilder()
-              .setScope(FolderName.of("[FOLDER]").toString())
+              .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
               .addAllNames(new ArrayList<String>())
               .build();
       BatchGetEffectiveIamPoliciesResponse response =

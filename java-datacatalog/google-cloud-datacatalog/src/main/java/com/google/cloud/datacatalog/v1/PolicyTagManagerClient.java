@@ -1662,8 +1662,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = policyTagManagerClient.getIamPolicy(request);
@@ -1693,8 +1692,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = policyTagManagerClient.getIamPolicyCallable().futureCall(request);
@@ -1723,8 +1721,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1755,8 +1752,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1786,8 +1782,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = policyTagManagerClient.testIamPermissions(request);
@@ -1817,8 +1812,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

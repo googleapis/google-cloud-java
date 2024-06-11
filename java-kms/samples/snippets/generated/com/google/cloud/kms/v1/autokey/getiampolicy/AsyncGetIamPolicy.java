@@ -19,7 +19,7 @@ package com.google.cloud.kms.v1.samples;
 // [START cloudkms_v1_generated_Autokey_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.AutokeyClient;
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.AutokeyConfigName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,9 +39,7 @@ public class AsyncGetIamPolicy {
     try (AutokeyClient autokeyClient = AutokeyClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = autokeyClient.getIamPolicyCallable().futureCall(request);

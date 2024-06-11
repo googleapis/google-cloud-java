@@ -18,7 +18,7 @@ package com.google.cloud.datacatalog.v1beta1.samples;
 
 // [START datacatalog_v1beta1_generated_DataCatalog_SetIamPolicy_sync]
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
-import com.google.cloud.datacatalog.v1beta1.EntryGroupName;
+import com.google.cloud.datacatalog.v1beta1.EntryName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -38,7 +38,8 @@ public class SyncSetIamPolicy {
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setResource(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

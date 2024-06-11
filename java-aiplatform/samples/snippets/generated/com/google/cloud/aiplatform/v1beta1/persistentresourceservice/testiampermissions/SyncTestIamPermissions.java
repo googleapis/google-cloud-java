@@ -17,7 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_PersistentResourceService_TestIamPermissions_sync]
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
+import com.google.cloud.aiplatform.v1beta1.AnnotationSpecName;
 import com.google.cloud.aiplatform.v1beta1.PersistentResourceServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -40,8 +40,7 @@ public class SyncTestIamPermissions {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

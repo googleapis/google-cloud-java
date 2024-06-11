@@ -22,8 +22,8 @@ import com.google.cloud.documentai.v1.BatchDocumentsInputConfig;
 import com.google.cloud.documentai.v1.BatchProcessRequest;
 import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.EvaluationName;
 import com.google.cloud.documentai.v1.ProcessOptions;
-import com.google.cloud.documentai.v1.ProcessorName;
 import com.google.longrunning.Operation;
 import java.util.HashMap;
 
@@ -43,7 +43,14 @@ public class AsyncBatchProcessDocuments {
         DocumentProcessorServiceClient.create()) {
       BatchProcessRequest request =
           BatchProcessRequest.newBuilder()
-              .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .setName(
+                  EvaluationName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[PROCESSOR]",
+                          "[PROCESSOR_VERSION]",
+                          "[EVALUATION]")
+                      .toString())
               .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)

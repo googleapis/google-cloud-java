@@ -18,6 +18,7 @@ package com.google.cloud.iam.admin.v1.samples;
 
 // [START iam_v1_generated_IAM_UpdateRole_sync]
 import com.google.cloud.iam.admin.v1.IAMClient;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 import com.google.iam.admin.v1.UpdateRoleRequest;
 import com.google.protobuf.FieldMask;
@@ -37,7 +38,7 @@ public class SyncUpdateRole {
     try (IAMClient iAMClient = IAMClient.create()) {
       UpdateRoleRequest request =
           UpdateRoleRequest.newBuilder()
-              .setName("UpdateRoleRequest230834320".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setRole(Role.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

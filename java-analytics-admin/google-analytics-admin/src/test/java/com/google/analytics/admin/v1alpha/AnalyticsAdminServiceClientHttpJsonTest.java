@@ -6337,7 +6337,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
 
     ArchiveAudienceRequest request =
         ArchiveAudienceRequest.newBuilder()
-            .setName(PropertyName.of("[PROPERTY]").toString())
+            .setName("properties/propertie-2172/audiences/audience-2172")
             .build();
 
     client.archiveAudience(request);
@@ -6367,7 +6367,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       ArchiveAudienceRequest request =
           ArchiveAudienceRequest.newBuilder()
-              .setName(PropertyName.of("[PROPERTY]").toString())
+              .setName("properties/propertie-2172/audiences/audience-2172")
               .build();
       client.archiveAudience(request);
       Assert.fail("No exception raised");

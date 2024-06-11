@@ -2653,7 +2653,10 @@ public class DataformClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -2680,7 +2683,10 @@ public class DataformClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -2698,7 +2704,10 @@ public class DataformClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -2725,7 +2734,10 @@ public class DataformClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

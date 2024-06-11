@@ -17,8 +17,8 @@
 package com.google.cloud.datacatalog.v1.samples;
 
 // [START datacatalog_v1_generated_PolicyTagManager_TestIamPermissions_sync]
+import com.google.cloud.datacatalog.v1.EntryName;
 import com.google.cloud.datacatalog.v1.PolicyTagManagerClient;
-import com.google.cloud.datacatalog.v1.PolicyTagName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,8 +39,7 @@ public class SyncTestIamPermissions {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
-                      .toString())
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = policyTagManagerClient.testIamPermissions(request);

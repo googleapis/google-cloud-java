@@ -17,7 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_TagKeys_TestIamPermissions_sync]
-import com.google.cloud.resourcemanager.v3.TagKeyName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(TagKeyName.of("[TAG_KEY]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = tagKeysClient.testIamPermissions(request);

@@ -20,7 +20,7 @@ package com.google.cloud.asset.v1.samples;
 import com.google.cloud.asset.v1.Asset;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ContentType;
-import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.FeedName;
 import com.google.cloud.asset.v1.ListAssetsRequest;
 import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.common.base.Strings;
@@ -42,7 +42,7 @@ public class AsyncListAssetsPaged {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
-              .setParent(FolderName.of("[FOLDER]").toString())
+              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))

@@ -19,7 +19,7 @@ package com.google.cloud.kms.v1.samples;
 // [START cloudkms_v1_generated_AutokeyAdmin_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.AutokeyAdminClient;
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.AutokeyConfigName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,9 +39,7 @@ public class AsyncSetIamPolicy {
     try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

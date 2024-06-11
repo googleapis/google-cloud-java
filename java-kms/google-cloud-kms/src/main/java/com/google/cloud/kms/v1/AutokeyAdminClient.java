@@ -822,9 +822,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -856,9 +854,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -888,9 +884,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = autokeyAdminClient.getIamPolicy(request);
@@ -920,9 +914,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = autokeyAdminClient.getIamPolicyCallable().futureCall(request);
@@ -955,9 +947,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = autokeyAdminClient.testIamPermissions(request);
@@ -991,9 +981,7 @@ public class AutokeyAdminClient implements BackgroundResource {
    * try (AutokeyAdminClient autokeyAdminClient = AutokeyAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-   *                   .toString())
+   *           .setResource(AutokeyConfigName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -7259,7 +7259,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -7293,7 +7294,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -7325,7 +7327,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -7357,7 +7360,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -7392,7 +7396,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -7428,7 +7433,8 @@ public class CloudDeployClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

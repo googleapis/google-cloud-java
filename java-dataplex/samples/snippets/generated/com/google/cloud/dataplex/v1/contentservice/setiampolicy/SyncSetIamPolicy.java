@@ -17,7 +17,7 @@
 package com.google.cloud.dataplex.v1.samples;
 
 // [START dataplex_v1_generated_ContentService_SetIamPolicy_sync]
-import com.google.cloud.dataplex.v1.ContentName;
+import com.google.cloud.dataplex.v1.AspectTypeName;
 import com.google.cloud.dataplex.v1.ContentServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,8 +38,7 @@ public class SyncSetIamPolicy {
     try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

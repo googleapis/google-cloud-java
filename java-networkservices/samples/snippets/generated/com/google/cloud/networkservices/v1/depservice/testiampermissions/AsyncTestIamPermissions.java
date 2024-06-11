@@ -19,7 +19,7 @@ package com.google.cloud.networkservices.v1.samples;
 // [START networkservices_v1_generated_DepService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.networkservices.v1.DepServiceClient;
-import com.google.cloud.networkservices.v1.EndpointPolicyName;
+import com.google.cloud.networkservices.v1.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,8 +39,7 @@ public class AsyncTestIamPermissions {
     try (DepServiceClient depServiceClient = DepServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

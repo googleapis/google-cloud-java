@@ -18,8 +18,8 @@ package com.google.cloud.securitycenter.v2.samples;
 
 // [START securitycenter_v2_generated_SecurityCenter_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.securitycenter.v2.FolderName;
 import com.google.cloud.securitycenter.v2.SecurityCenterClient;
-import com.google.cloud.securitycenter.v2.SourceName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,8 +39,7 @@ public class AsyncTestIamPermissions {
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

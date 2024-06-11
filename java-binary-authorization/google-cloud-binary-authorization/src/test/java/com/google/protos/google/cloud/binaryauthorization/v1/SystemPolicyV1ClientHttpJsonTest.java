@@ -78,7 +78,7 @@ public class SystemPolicyV1ClientHttpJsonTest {
   public void getSystemPolicyTest() throws Exception {
     Resources.Policy expectedResponse =
         Resources.Policy.newBuilder()
-            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<Resources.AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, Resources.AdmissionRule>())
@@ -132,7 +132,7 @@ public class SystemPolicyV1ClientHttpJsonTest {
   public void getSystemPolicyTest2() throws Exception {
     Resources.Policy expectedResponse =
         Resources.Policy.newBuilder()
-            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
+            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<Resources.AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, Resources.AdmissionRule>())

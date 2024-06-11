@@ -18,7 +18,7 @@ package com.google.cloud.servicedirectory.v1beta1.samples;
 
 // [START servicedirectory_v1beta1_generated_RegistrationService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
+import com.google.cloud.servicedirectory.v1beta1.LocationName;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

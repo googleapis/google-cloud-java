@@ -18,7 +18,7 @@ package com.google.cloud.vmwareengine.v1.samples;
 
 // [START vmwareengine_v1_generated_VmwareEngine_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.vmwareengine.v1.ClusterName;
+import com.google.cloud.vmwareengine.v1.LocationName;
 import com.google.cloud.vmwareengine.v1.VmwareEngineClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,9 +39,7 @@ public class AsyncSetIamPolicy {
     try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

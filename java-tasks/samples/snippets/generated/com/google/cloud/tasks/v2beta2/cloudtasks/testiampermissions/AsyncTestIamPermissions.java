@@ -19,7 +19,7 @@ package com.google.cloud.tasks.v2beta2.samples;
 // [START cloudtasks_v2beta2_generated_CloudTasks_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
-import com.google.cloud.tasks.v2beta2.QueueName;
+import com.google.cloud.tasks.v2beta2.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

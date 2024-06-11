@@ -1298,7 +1298,7 @@ public class SecretManagerServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+            .setResource(ProjectName.of("[PROJECT]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1327,7 +1327,7 @@ public class SecretManagerServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1351,7 +1351,7 @@ public class SecretManagerServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+            .setResource(ProjectName.of("[PROJECT]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -1378,7 +1378,7 @@ public class SecretManagerServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -1396,7 +1396,7 @@ public class SecretManagerServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+            .setResource(ProjectName.of("[PROJECT]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1423,7 +1423,7 @@ public class SecretManagerServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

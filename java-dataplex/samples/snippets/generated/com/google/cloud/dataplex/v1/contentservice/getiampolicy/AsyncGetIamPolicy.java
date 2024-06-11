@@ -18,7 +18,7 @@ package com.google.cloud.dataplex.v1.samples;
 
 // [START dataplex_v1_generated_ContentService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.dataplex.v1.ContentName;
+import com.google.cloud.dataplex.v1.AspectTypeName;
 import com.google.cloud.dataplex.v1.ContentServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,8 +39,7 @@ public class AsyncGetIamPolicy {
     try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString())
+              .setResource(AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = contentServiceClient.getIamPolicyCallable().futureCall(request);

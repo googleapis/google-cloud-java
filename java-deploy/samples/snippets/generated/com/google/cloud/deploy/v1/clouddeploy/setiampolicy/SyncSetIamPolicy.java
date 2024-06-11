@@ -17,8 +17,8 @@
 package com.google.cloud.deploy.v1.samples;
 
 // [START clouddeploy_v1_generated_CloudDeploy_SetIamPolicy_sync]
+import com.google.cloud.deploy.v1.AutomationName;
 import com.google.cloud.deploy.v1.CloudDeployClient;
-import com.google.cloud.deploy.v1.CustomTargetTypeName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,7 +39,8 @@ public class SyncSetIamPolicy {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                  AutomationName.of(
+                          "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())

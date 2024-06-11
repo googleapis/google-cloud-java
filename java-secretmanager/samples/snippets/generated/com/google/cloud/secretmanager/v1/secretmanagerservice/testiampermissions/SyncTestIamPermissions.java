@@ -17,8 +17,8 @@
 package com.google.cloud.secretmanager.v1.samples;
 
 // [START secretmanager_v1_generated_SecretManagerService_TestIamPermissions_sync]
+import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1.SecretName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class SyncTestIamPermissions {
         SecretManagerServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = secretManagerServiceClient.testIamPermissions(request);

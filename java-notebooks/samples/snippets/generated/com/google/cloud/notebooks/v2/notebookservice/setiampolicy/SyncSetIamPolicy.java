@@ -17,7 +17,7 @@
 package com.google.cloud.notebooks.v2.samples;
 
 // [START notebooks_v2_generated_NotebookService_SetIamPolicy_sync]
-import com.google.cloud.notebooks.v2.InstanceName;
+import com.google.cloud.notebooks.v2.LocationName;
 import com.google.cloud.notebooks.v2.NotebookServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,7 +38,7 @@ public class SyncSetIamPolicy {
     try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

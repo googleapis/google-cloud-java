@@ -17,8 +17,8 @@
 package com.google.cloud.deploy.v1.samples;
 
 // [START clouddeploy_v1_generated_CloudDeploy_TestIamPermissions_sync]
+import com.google.cloud.deploy.v1.AutomationName;
 import com.google.cloud.deploy.v1.CloudDeployClient;
-import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -39,7 +39,8 @@ public class SyncTestIamPermissions {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                  AutomationName.of(
+                          "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

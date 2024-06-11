@@ -18,7 +18,7 @@ package com.google.cloud.aiplatform.v1.samples;
 
 // [START aiplatform_v1_generated_PersistentResourceService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.AnnotationSpecName;
 import com.google.cloud.aiplatform.v1.PersistentResourceServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -41,8 +41,7 @@ public class AsyncGetIamPolicy {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EndpointName.ofProjectLocationEndpointName(
-                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                  AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();

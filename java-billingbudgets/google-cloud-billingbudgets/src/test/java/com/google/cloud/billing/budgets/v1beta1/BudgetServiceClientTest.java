@@ -97,7 +97,7 @@ public class BudgetServiceClientTest {
 
     CreateBudgetRequest request =
         CreateBudgetRequest.newBuilder()
-            .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+            .setParent("parent-995424086")
             .setBudget(Budget.newBuilder().build())
             .build();
 
@@ -124,7 +124,7 @@ public class BudgetServiceClientTest {
     try {
       CreateBudgetRequest request =
           CreateBudgetRequest.newBuilder()
-              .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+              .setParent("parent-995424086")
               .setBudget(Budget.newBuilder().build())
               .build();
       client.createBudget(request);
@@ -249,7 +249,7 @@ public class BudgetServiceClientTest {
 
     ListBudgetsRequest request =
         ListBudgetsRequest.newBuilder()
-            .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+            .setParent("parent-995424086")
             .setScope("scope109264468")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -284,7 +284,7 @@ public class BudgetServiceClientTest {
     try {
       ListBudgetsRequest request =
           ListBudgetsRequest.newBuilder()
-              .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+              .setParent("parent-995424086")
               .setScope("scope109264468")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

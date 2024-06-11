@@ -17,8 +17,8 @@
 package com.google.cloud.metastore.v1beta.samples;
 
 // [START metastore_v1beta_generated_DataprocMetastoreFederation_GetIamPolicy_sync]
-import com.google.cloud.metastore.v1beta.BackupName;
 import com.google.cloud.metastore.v1beta.DataprocMetastoreFederationClient;
+import com.google.cloud.metastore.v1beta.LocationName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,8 +39,7 @@ public class SyncGetIamPolicy {
         DataprocMetastoreFederationClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = dataprocMetastoreFederationClient.getIamPolicy(request);

@@ -20,6 +20,7 @@ package com.google.cloud.iam.admin.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iam.admin.v1.IAMClient;
 import com.google.iam.admin.v1.DeleteRoleRequest;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 import com.google.protobuf.ByteString;
 
@@ -38,7 +39,7 @@ public class AsyncDeleteRole {
     try (IAMClient iAMClient = IAMClient.create()) {
       DeleteRoleRequest request =
           DeleteRoleRequest.newBuilder()
-              .setName("DeleteRoleRequest1468559982".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setEtag(ByteString.EMPTY)
               .build();
       ApiFuture<Role> future = iAMClient.deleteRoleCallable().futureCall(request);

@@ -608,9 +608,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -665,9 +663,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1164,7 +1160,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1222,7 +1218,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1624,9 +1620,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1642,9 +1636,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1686,9 +1678,7 @@ public class KeyManagementServiceClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setImportOnly(true)
               .setDestroyScheduledDuration(Duration.newBuilder().build())
-              .setCryptoKeyBackend(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCryptoKey(cryptoKey, updateMask);
@@ -1825,9 +1815,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1884,9 +1872,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 

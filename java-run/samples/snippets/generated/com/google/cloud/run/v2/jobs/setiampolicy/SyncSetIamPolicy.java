@@ -17,8 +17,8 @@
 package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Jobs_SetIamPolicy_sync]
-import com.google.cloud.run.v2.JobName;
 import com.google.cloud.run.v2.JobsClient;
+import com.google.cloud.run.v2.LocationName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -38,7 +38,7 @@ public class SyncSetIamPolicy {
     try (JobsClient jobsClient = JobsClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

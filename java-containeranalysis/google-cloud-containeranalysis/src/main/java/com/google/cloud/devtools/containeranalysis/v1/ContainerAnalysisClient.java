@@ -404,7 +404,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -439,7 +439,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -558,7 +558,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = containerAnalysisClient.getIamPolicy(request);
@@ -592,7 +592,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = containerAnalysisClient.getIamPolicyCallable().futureCall(request);
@@ -724,7 +724,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(request);
@@ -757,7 +757,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -18,6 +18,7 @@ package com.google.cloud.iam.admin.v1.samples;
 
 // [START iam_v1_generated_IAM_UndeleteRole_sync]
 import com.google.cloud.iam.admin.v1.IAMClient;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 import com.google.iam.admin.v1.UndeleteRoleRequest;
 import com.google.protobuf.ByteString;
@@ -37,7 +38,7 @@ public class SyncUndeleteRole {
     try (IAMClient iAMClient = IAMClient.create()) {
       UndeleteRoleRequest request =
           UndeleteRoleRequest.newBuilder()
-              .setName("UndeleteRoleRequest755355893".toString())
+              .setName(ProjectName.of("[PROJECT]").toString())
               .setEtag(ByteString.EMPTY)
               .build();
       Role response = iAMClient.undeleteRole(request);

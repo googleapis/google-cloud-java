@@ -18,7 +18,7 @@ package com.google.cloud.servicedirectory.v1.samples;
 
 // [START servicedirectory_v1_generated_RegistrationService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.servicedirectory.v1.NamespaceName;
+import com.google.cloud.servicedirectory.v1.LocationName;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,7 +39,7 @@ public class AsyncSetIamPolicy {
     try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

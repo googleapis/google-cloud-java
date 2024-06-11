@@ -19,7 +19,7 @@ package com.google.cloud.asset.v1.samples;
 // [START cloudasset_v1_generated_AssetService_QueryAssets_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AssetServiceClient;
-import com.google.cloud.asset.v1.FolderName;
+import com.google.cloud.asset.v1.FeedName;
 import com.google.cloud.asset.v1.QueryAssetsOutputConfig;
 import com.google.cloud.asset.v1.QueryAssetsRequest;
 import com.google.cloud.asset.v1.QueryAssetsResponse;
@@ -40,7 +40,7 @@ public class AsyncQueryAssets {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       QueryAssetsRequest request =
           QueryAssetsRequest.newBuilder()
-              .setParent(FolderName.of("[FOLDER]").toString())
+              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setTimeout(Duration.newBuilder().build())

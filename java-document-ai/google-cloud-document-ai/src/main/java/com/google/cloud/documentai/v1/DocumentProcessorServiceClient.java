@@ -745,7 +745,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
    *       ProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
@@ -778,7 +785,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
    *       ProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
    *           .setProcessOptions(ProcessOptions.newBuilder().build())
@@ -882,7 +896,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
@@ -919,7 +940,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
@@ -957,7 +985,14 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
    *       BatchProcessRequest.newBuilder()
-   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)

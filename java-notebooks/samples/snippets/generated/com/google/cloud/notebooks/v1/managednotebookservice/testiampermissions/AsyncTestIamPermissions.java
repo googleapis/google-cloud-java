@@ -18,8 +18,8 @@ package com.google.cloud.notebooks.v1.samples;
 
 // [START notebooks_v1_generated_ManagedNotebookService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.notebooks.v1.LocationName;
 import com.google.cloud.notebooks.v1.ManagedNotebookServiceClient;
-import com.google.cloud.notebooks.v1.RuntimeName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class AsyncTestIamPermissions {
         ManagedNotebookServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

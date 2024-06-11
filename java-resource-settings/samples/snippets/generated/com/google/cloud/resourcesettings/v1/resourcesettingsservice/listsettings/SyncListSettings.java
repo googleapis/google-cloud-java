@@ -20,6 +20,7 @@ package com.google.cloud.resourcesettings.v1.samples;
 import com.google.cloud.resourcesettings.v1.ListSettingsRequest;
 import com.google.cloud.resourcesettings.v1.ResourceSettingsServiceClient;
 import com.google.cloud.resourcesettings.v1.Setting;
+import com.google.cloud.resourcesettings.v1.SettingName;
 import com.google.cloud.resourcesettings.v1.SettingView;
 
 public class SyncListSettings {
@@ -38,7 +39,9 @@ public class SyncListSettings {
         ResourceSettingsServiceClient.create()) {
       ListSettingsRequest request =
           ListSettingsRequest.newBuilder()
-              .setParent("ListSettingsRequest-286838706".toString())
+              .setParent(
+                  SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+                      .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setView(SettingView.forNumber(0))

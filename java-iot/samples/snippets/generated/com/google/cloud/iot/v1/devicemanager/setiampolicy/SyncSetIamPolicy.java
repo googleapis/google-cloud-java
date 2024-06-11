@@ -18,7 +18,7 @@ package com.google.cloud.iot.v1.samples;
 
 // [START cloudiot_v1_generated_DeviceManager_SetIamPolicy_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
-import com.google.cloud.iot.v1.RegistryName;
+import com.google.cloud.iot.v1.DeviceName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -38,7 +38,8 @@ public class SyncSetIamPolicy {
     try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]").toString())
+              .setResource(
+                  DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

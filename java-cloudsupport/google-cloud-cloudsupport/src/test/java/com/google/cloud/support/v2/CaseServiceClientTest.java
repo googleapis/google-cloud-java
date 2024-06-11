@@ -87,7 +87,7 @@ public class CaseServiceClientTest {
   public void getCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -137,7 +137,7 @@ public class CaseServiceClientTest {
   public void getCaseTest2() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -537,7 +537,7 @@ public class CaseServiceClientTest {
   public void updateCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -590,7 +590,7 @@ public class CaseServiceClientTest {
   public void escalateCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -649,7 +649,7 @@ public class CaseServiceClientTest {
   public void closeCaseTest() throws Exception {
     Case expectedResponse =
         Case.newBuilder()
-            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
+            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())

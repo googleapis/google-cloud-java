@@ -17,7 +17,7 @@
 package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_GetIamPolicy_sync]
-import com.google.cloud.networkconnectivity.v1.GroupName;
+import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,7 +39,7 @@ public class SyncGetIamPolicy {
         PolicyBasedRoutingServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = policyBasedRoutingServiceClient.getIamPolicy(request);

@@ -17,7 +17,7 @@
 package com.google.cloud.vmwareengine.v1.samples;
 
 // [START vmwareengine_v1_generated_VmwareEngine_TestIamPermissions_sync]
-import com.google.cloud.vmwareengine.v1.ClusterName;
+import com.google.cloud.vmwareengine.v1.LocationName;
 import com.google.cloud.vmwareengine.v1.VmwareEngineClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,9 +38,7 @@ public class SyncTestIamPermissions {
     try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = vmwareEngineClient.testIamPermissions(request);

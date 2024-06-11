@@ -158,8 +158,8 @@ public class ConversationModelsClientTest {
     ConversationModel expectedResponse =
         ConversationModel.newBuilder()
             .setName(
-                ConversationModelName.ofProjectConversationModelName(
-                        "[PROJECT]", "[CONVERSATION_MODEL]")
+                ConversationModelName.ofProjectLocationConversationModelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION_MODEL]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())

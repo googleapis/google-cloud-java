@@ -18,12 +18,12 @@ package com.google.cloud.documentai.v1beta3.samples;
 
 // [START documentai_v1beta3_generated_DocumentProcessorService_ProcessDocument_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.documentai.v1beta3.DatasetName;
 import com.google.cloud.documentai.v1beta3.Document;
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1beta3.ProcessOptions;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
-import com.google.cloud.documentai.v1beta3.ProcessorName;
 import com.google.protobuf.FieldMask;
 import java.util.HashMap;
 
@@ -43,7 +43,7 @@ public class AsyncProcessDocument {
         DocumentProcessorServiceClient.create()) {
       ProcessRequest request =
           ProcessRequest.newBuilder()
-              .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setDocument(Document.newBuilder().build())
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())

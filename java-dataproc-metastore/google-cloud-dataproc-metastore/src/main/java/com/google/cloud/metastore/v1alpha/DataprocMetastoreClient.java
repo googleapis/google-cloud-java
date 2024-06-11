@@ -2970,8 +2970,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   RemoveIamPolicyRequest request =
    *       RemoveIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAsynchronous(true)
    *           .build();
    *   RemoveIamPolicyResponse response = dataprocMetastoreClient.removeIamPolicy(request);
@@ -3000,8 +2999,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   RemoveIamPolicyRequest request =
    *       RemoveIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAsynchronous(true)
    *           .build();
    *   ApiFuture<RemoveIamPolicyResponse> future =
@@ -3481,8 +3479,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3514,8 +3511,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3545,8 +3541,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = dataprocMetastoreClient.getIamPolicy(request);
@@ -3576,8 +3571,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = dataprocMetastoreClient.getIamPolicyCallable().futureCall(request);
@@ -3610,8 +3604,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = dataprocMetastoreClient.testIamPermissions(request);
@@ -3645,8 +3638,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

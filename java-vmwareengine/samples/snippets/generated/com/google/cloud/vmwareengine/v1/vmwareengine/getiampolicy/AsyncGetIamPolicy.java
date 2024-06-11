@@ -18,7 +18,7 @@ package com.google.cloud.vmwareengine.v1.samples;
 
 // [START vmwareengine_v1_generated_VmwareEngine_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.vmwareengine.v1.ClusterName;
+import com.google.cloud.vmwareengine.v1.LocationName;
 import com.google.cloud.vmwareengine.v1.VmwareEngineClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,9 +39,7 @@ public class AsyncGetIamPolicy {
     try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  ClusterName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[CLUSTER]")
-                      .toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = vmwareEngineClient.getIamPolicyCallable().futureCall(request);

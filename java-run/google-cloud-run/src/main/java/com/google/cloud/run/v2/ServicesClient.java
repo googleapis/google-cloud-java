@@ -1076,7 +1076,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = servicesClient.getIamPolicy(request);
@@ -1106,7 +1106,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = servicesClient.getIamPolicyCallable().futureCall(request);
@@ -1134,7 +1134,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1164,7 +1164,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1195,7 +1195,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = servicesClient.testIamPermissions(request);
@@ -1226,7 +1226,7 @@ public class ServicesClient implements BackgroundResource {
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

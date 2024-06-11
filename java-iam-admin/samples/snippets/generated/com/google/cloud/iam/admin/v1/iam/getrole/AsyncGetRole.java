@@ -20,6 +20,7 @@ package com.google.cloud.iam.admin.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iam.admin.v1.IAMClient;
 import com.google.iam.admin.v1.GetRoleRequest;
+import com.google.iam.admin.v1.ProjectName;
 import com.google.iam.admin.v1.Role;
 
 public class AsyncGetRole {
@@ -36,7 +37,7 @@ public class AsyncGetRole {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IAMClient iAMClient = IAMClient.create()) {
       GetRoleRequest request =
-          GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+          GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
       ApiFuture<Role> future = iAMClient.getRoleCallable().futureCall(request);
       // Do something.
       Role response = future.get();

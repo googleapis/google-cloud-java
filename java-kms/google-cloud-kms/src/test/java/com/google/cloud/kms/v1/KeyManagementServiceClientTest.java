@@ -556,9 +556,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -607,9 +605,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1048,7 +1044,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1102,7 +1098,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1482,9 +1478,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1597,9 +1591,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1652,9 +1644,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(AutokeyConfigName.of("[FOLDER]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -2810,9 +2800,7 @@ public class KeyManagementServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -2841,9 +2829,7 @@ public class KeyManagementServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -2867,9 +2853,7 @@ public class KeyManagementServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -2896,9 +2880,7 @@ public class KeyManagementServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -2916,9 +2898,7 @@ public class KeyManagementServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setResource(AutokeyConfigName.of("[FOLDER]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -2945,9 +2925,7 @@ public class KeyManagementServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setResource(AutokeyConfigName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

@@ -18,7 +18,7 @@ package com.google.cloud.kms.v1.samples;
 
 // [START cloudkms_v1_generated_KeyManagementService_Encrypt_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.AutokeyConfigName;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
@@ -41,9 +41,7 @@ public class AsyncEncrypt {
         KeyManagementServiceClient.create()) {
       EncryptRequest request =
           EncryptRequest.newBuilder()
-              .setName(
-                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                      .toString())
+              .setName(AutokeyConfigName.of("[FOLDER]").toString())
               .setPlaintext(ByteString.EMPTY)
               .setAdditionalAuthenticatedData(ByteString.EMPTY)
               .setPlaintextCrc32C(Int64Value.newBuilder().build())

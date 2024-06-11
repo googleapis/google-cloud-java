@@ -17,7 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Projects_TestIamPermissions_sync]
-import com.google.cloud.resourcemanager.v3.ProjectName;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +38,7 @@ public class SyncTestIamPermissions {
     try (ProjectsClient projectsClient = ProjectsClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(ProjectName.of("[PROJECT]").toString())
+              .setResource(FolderName.of("[FOLDER]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = projectsClient.testIamPermissions(request);

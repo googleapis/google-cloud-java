@@ -2315,7 +2315,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource("resource-341064690")
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2347,7 +2347,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource("resource-341064690")
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2377,7 +2377,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource("resource-341064690")
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = notebookServiceClient.getIamPolicy(request);
@@ -2407,7 +2407,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource("resource-341064690")
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = notebookServiceClient.getIamPolicyCallable().futureCall(request);
@@ -2440,7 +2440,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource("resource-341064690")
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = notebookServiceClient.testIamPermissions(request);
@@ -2474,7 +2474,7 @@ public class NotebookServiceClient implements BackgroundResource {
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource("resource-341064690")
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

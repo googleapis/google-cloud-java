@@ -1249,7 +1249,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = tagValuesClient.getIamPolicy(request);
@@ -1282,7 +1282,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = tagValuesClient.getIamPolicyCallable().futureCall(request);
@@ -1383,7 +1383,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1415,7 +1415,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1527,7 +1527,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = tagValuesClient.testIamPermissions(request);
@@ -1559,7 +1559,7 @@ public class TagValuesClient implements BackgroundResource {
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(TagValueName.of("[TAG_VALUE]").toString())
+   *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

@@ -18,7 +18,7 @@ package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.securesourcemanager.v1.InstanceName;
+import com.google.cloud.securesourcemanager.v1.LocationName;
 import com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future =

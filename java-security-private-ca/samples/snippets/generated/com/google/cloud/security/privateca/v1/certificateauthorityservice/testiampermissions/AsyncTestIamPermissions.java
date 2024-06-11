@@ -18,8 +18,8 @@ package com.google.cloud.security.privateca.v1.samples;
 
 // [START privateca_v1_generated_CertificateAuthorityService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
+import com.google.cloud.security.privateca.v1.LocationName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class AsyncTestIamPermissions {
         CertificateAuthorityServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

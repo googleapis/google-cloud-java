@@ -18,7 +18,7 @@ package com.google.cloud.tasks.v2beta2.samples;
 
 // [START cloudtasks_v2beta2_generated_CloudTasks_GetIamPolicy_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
-import com.google.cloud.tasks.v2beta2.QueueName;
+import com.google.cloud.tasks.v2beta2.LocationName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -38,7 +38,7 @@ public class SyncGetIamPolicy {
     try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = cloudTasksClient.getIamPolicy(request);

@@ -18,6 +18,7 @@ package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Projects_MoveProject_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.MoveProjectRequest;
 import com.google.cloud.resourcemanager.v3.ProjectName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
@@ -39,7 +40,7 @@ public class AsyncMoveProject {
       MoveProjectRequest request =
           MoveProjectRequest.newBuilder()
               .setName(ProjectName.of("[PROJECT]").toString())
-              .setDestinationParent(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       ApiFuture<Operation> future = projectsClient.moveProjectCallable().futureCall(request);
       // Do something.

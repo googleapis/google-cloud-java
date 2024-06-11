@@ -18,8 +18,8 @@ package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_HubService_GetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networkconnectivity.v1.GroupName;
 import com.google.cloud.networkconnectivity.v1.HubServiceClient;
+import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = hubServiceClient.getIamPolicyCallable().futureCall(request);

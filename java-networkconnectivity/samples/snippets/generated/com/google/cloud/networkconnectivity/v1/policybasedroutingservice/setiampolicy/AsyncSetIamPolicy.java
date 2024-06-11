@@ -18,7 +18,7 @@ package com.google.cloud.networkconnectivity.v1.samples;
 
 // [START networkconnectivity_v1_generated_PolicyBasedRoutingService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networkconnectivity.v1.GroupName;
+import com.google.cloud.networkconnectivity.v1.LocationName;
 import com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -40,7 +40,7 @@ public class AsyncSetIamPolicy {
         PolicyBasedRoutingServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

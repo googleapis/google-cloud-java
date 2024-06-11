@@ -18,7 +18,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 
 // [START artifactregistry_v1_generated_ArtifactRegistry_SetIamPolicy_sync]
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
-import com.google.devtools.artifactregistry.v1.RepositoryName;
+import com.google.devtools.artifactregistry.v1.DockerImageName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -38,7 +38,9 @@ public class SyncSetIamPolicy {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]")
+                      .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

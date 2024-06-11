@@ -17,8 +17,8 @@
 package com.google.cloud.secretmanager.v1beta2.samples;
 
 // [START secretmanager_v1beta2_generated_SecretManagerService_SetIamPolicy_sync]
+import com.google.cloud.secretmanager.v1beta2.ProjectName;
 import com.google.cloud.secretmanager.v1beta2.SecretManagerServiceClient;
-import com.google.cloud.secretmanager.v1beta2.SecretName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -39,7 +39,7 @@ public class SyncSetIamPolicy {
         SecretManagerServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
+              .setResource(ProjectName.of("[PROJECT]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

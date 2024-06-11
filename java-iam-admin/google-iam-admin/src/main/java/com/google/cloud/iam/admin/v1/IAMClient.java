@@ -3030,7 +3030,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = iAMClient.getIamPolicy(request);
@@ -3067,7 +3067,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = iAMClient.getIamPolicyCallable().futureCall(request);
@@ -3207,7 +3207,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3252,7 +3252,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3356,7 +3356,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = iAMClient.testIamPermissions(request);
@@ -3386,7 +3386,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -3670,7 +3670,7 @@ public class IAMClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   GetRoleRequest request =
-   *       GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+   *       GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
    *   Role response = iAMClient.getRole(request);
    * }
    * }</pre>
@@ -3696,7 +3696,7 @@ public class IAMClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   GetRoleRequest request =
-   *       GetRoleRequest.newBuilder().setName("GetRoleRequest84528163".toString()).build();
+   *       GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
    *   ApiFuture<Role> future = iAMClient.getRoleCallable().futureCall(request);
    *   // Do something.
    *   Role response = future.get();
@@ -3781,7 +3781,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   UpdateRoleRequest request =
    *       UpdateRoleRequest.newBuilder()
-   *           .setName("UpdateRoleRequest230834320".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setRole(Role.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3811,7 +3811,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   UpdateRoleRequest request =
    *       UpdateRoleRequest.newBuilder()
-   *           .setName("UpdateRoleRequest230834320".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setRole(Role.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3857,7 +3857,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   DeleteRoleRequest request =
    *       DeleteRoleRequest.newBuilder()
-   *           .setName("DeleteRoleRequest1468559982".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setEtag(ByteString.EMPTY)
    *           .build();
    *   Role response = iAMClient.deleteRole(request);
@@ -3903,7 +3903,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   DeleteRoleRequest request =
    *       DeleteRoleRequest.newBuilder()
-   *           .setName("DeleteRoleRequest1468559982".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setEtag(ByteString.EMPTY)
    *           .build();
    *   ApiFuture<Role> future = iAMClient.deleteRoleCallable().futureCall(request);
@@ -3931,7 +3931,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   UndeleteRoleRequest request =
    *       UndeleteRoleRequest.newBuilder()
-   *           .setName("UndeleteRoleRequest755355893".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setEtag(ByteString.EMPTY)
    *           .build();
    *   Role response = iAMClient.undeleteRole(request);
@@ -3960,7 +3960,7 @@ public class IAMClient implements BackgroundResource {
    * try (IAMClient iAMClient = IAMClient.create()) {
    *   UndeleteRoleRequest request =
    *       UndeleteRoleRequest.newBuilder()
-   *           .setName("UndeleteRoleRequest755355893".toString())
+   *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setEtag(ByteString.EMPTY)
    *           .build();
    *   ApiFuture<Role> future = iAMClient.undeleteRoleCallable().futureCall(request);

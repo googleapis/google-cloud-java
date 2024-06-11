@@ -17,6 +17,7 @@
 package com.google.cloud.resourcemanager.v3.samples;
 
 // [START cloudresourcemanager_v3_generated_Projects_MoveProject_sync]
+import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.MoveProjectRequest;
 import com.google.cloud.resourcemanager.v3.Project;
 import com.google.cloud.resourcemanager.v3.ProjectName;
@@ -38,7 +39,7 @@ public class SyncMoveProject {
       MoveProjectRequest request =
           MoveProjectRequest.newBuilder()
               .setName(ProjectName.of("[PROJECT]").toString())
-              .setDestinationParent(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       Project response = projectsClient.moveProjectAsync(request).get();
     }

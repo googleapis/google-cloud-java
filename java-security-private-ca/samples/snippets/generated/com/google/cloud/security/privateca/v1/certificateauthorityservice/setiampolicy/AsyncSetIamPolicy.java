@@ -18,8 +18,8 @@ package com.google.cloud.security.privateca.v1.samples;
 
 // [START privateca_v1_generated_CertificateAuthorityService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
+import com.google.cloud.security.privateca.v1.LocationName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
@@ -40,7 +40,7 @@ public class AsyncSetIamPolicy {
         CertificateAuthorityServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
+              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
