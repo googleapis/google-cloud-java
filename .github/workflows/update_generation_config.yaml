@@ -13,14 +13,14 @@
 # limitations under the License.
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
-name: Update googleapis commit
+name: Update generation configuration
 on:
   schedule:
   - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
-  update-googleapis-commit:
+  update-generation-config:
     runs-on: ubuntu-22.04
     env:
       # the branch into which the pull request is merged
@@ -29,13 +29,13 @@ jobs:
     - uses: actions/checkout@v4
       with:
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - name: Update googleapis commit to latest
+    - name: Update params in generation config to latest
       shell: bash
       run: |
         set -x
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
-        bash generation/update_googleapis_commit.sh \
+        bash .github/scripts/update_generation_config.sh.sh \
           --base_branch "${base_branch}"\
           --repo ${{ github.repository }}
       env:

@@ -1,12 +1,32 @@
 #!/bin/bash
 set -e
 # This script should be run at the root of the repository.
-# This script is used to update googleapis commit to latest in generation
-# configuration at the time of running and create a pull request.
+# This script is used to update googleapis_commitish, gapic_generator_version,
+# and libraries_bom_version in generation configuration at the time of running
+# and create a pull request.
 
 # The following commands need to be installed before running the script:
 # 1. git
 # 2. gh
+# 3. jq
+
+# Utility functions
+# Get the latest released version of a Maven artifact.
+function get_latest_released_version() {
+    local group_id=$1
+    local artifact_id=$2
+    latest=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${group_id}+AND+a:${artifact_id}&core=gav&rows=500&wt=json" | jq -r '.response.docs[] | select(.v | test("^[0-9]+(\\.[0-9]+)*$")) | .v' | sort -V | tail -n 1)
+    echo "${latest}"
+}
+
+# Update a key to a new value in the generation config.
+function update_config() {
+    local key_word=$1
+    local new_value=$2
+    local file=$3
+    echo "Update ${key_word} to ${new_value} in ${file}"
+    sed -i -e "s/^${key_word}.*$/${key_word}: ${new_value}/" "${file}"
+}
 
 # The parameters of this script is:
 # 1. base_branch, the base branch of the result pull request.
@@ -52,7 +72,7 @@ if [ -z "${generation_config}" ]; then
 fi
 
 current_branch="generate-libraries-${base_branch}"
-title="chore: update googleapis commit at $(date)"
+title="chore: Update generation configuration at $(date)"
 
 # try to find a open pull request associated with the branch
 pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
@@ -72,12 +92,20 @@ git pull
 latest_commit=$(git rev-parse HEAD)
 popd
 rm -rf tmp-googleapis
-sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${latest_commit}/" "${generation_config}"
+update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
+
+# update gapic-generator-java version to the latest
+latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-java")
+update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
+
+# update libraries-bom version to the latest
+latest_version=$(get_latest_released_version "com.google.cloud" "libraries-bom")
+update_config "libraries_bom_version" "${latest_version}" "${generation_config}"
 
 git add "${generation_config}"
 changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
-    echo "The latest googleapis commit is not changed."
+    echo "The latest generation config is not changed."
     echo "Skip committing to the pull request."
     exit 0
 fi
@@ -89,4 +117,5 @@ if [ -z "${pr_num}" ]; then
   gh pr create --title "${title}" --head "${current_branch}" --body "${title}" --base "${base_branch}"
 else
   git push
+  gh pr edit "${pr_num}" --title "${title}" --body "${title}"
 fi
