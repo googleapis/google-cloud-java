@@ -24,10 +24,8 @@
     ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
     ".kokoro/presubmit/graalvm-native*.cfg",
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
-    "generation_config.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/generated_files_sync.yaml",
-    ".github/workflows/hermetic_library_generation.yaml",
     ".github/workflows/unmanaged_dependency_check.yaml"
   ],
   "regexManagers": [
@@ -59,20 +57,8 @@
     },
     {
       "fileMatch": [
-        "generation_config.yaml"
-      ],
-      "matchStrings": [
-        "libraries_bom_version\\s*:\\s*(?<currentValue>.*?)\\n"
-      ],
-      "depNameTemplate": "com.google.cloud:libraries-bom",
-      "datasourceTemplate": "maven"
-    },
-    {
-      "fileMatch": [
         ".github/workflows/ci.yaml",
-        ".github/workflows/generated_files_sync.yaml",
-        ".github/workflows/hermetic_library_generation.yaml",
-        ".github/workflows/unmanaged_dependency_check.yaml"
+        ".github/workflows/generated_files_sync.yaml"
       ],
       "matchStrings": [
         "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
