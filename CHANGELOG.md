@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.6.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.5.2...v3.6.0) (2024-06-11)
+
+
+### Features
+
+* Add ability to write Range values with JSONStreamWriter ([#2498](https://github.com/googleapis/java-bigquerystorage/issues/2498)) ([a5e62be](https://github.com/googleapis/java-bigquerystorage/commit/a5e62bedf35238f440f7b52dc3e1d3c972e4acdd))
+* Add instrumentation for a couple of OpenTelemetry metrics ([#2501](https://github.com/googleapis/java-bigquerystorage/issues/2501)) ([195ea96](https://github.com/googleapis/java-bigquerystorage/commit/195ea96a68cc117974a8a74ae1c031ca30a6ae21))
+
+
+### Dependencies
+
+* Update actions/checkout digest to a5ac7e5 ([#2508](https://github.com/googleapis/java-bigquerystorage/issues/2508)) ([e84e877](https://github.com/googleapis/java-bigquerystorage/commit/e84e877f45e76c14102910d35b5818b49f2b9405))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.40.2 ([#2513](https://github.com/googleapis/java-bigquerystorage/issues/2513)) ([09e3b2f](https://github.com/googleapis/java-bigquerystorage/commit/09e3b2fa5792d5c88239e6713f826ff44a6293fc))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.31.0 ([#2522](https://github.com/googleapis/java-bigquerystorage/issues/2522)) ([72e1450](https://github.com/googleapis/java-bigquerystorage/commit/72e14509bc8f672af082d1dbd3f69e44e259b75c))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.39.0 ([#2524](https://github.com/googleapis/java-bigquerystorage/issues/2524)) ([25341d2](https://github.com/googleapis/java-bigquerystorage/commit/25341d20fa95feb164ae60d854d026a23882763c))
+
 ## [3.5.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.5.1...v3.5.2) (2024-05-24)
 
 
