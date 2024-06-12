@@ -36,9 +36,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -264,6 +264,10 @@ public class DynamicFlowControlCallableTest {
         try {
           Thread.sleep(Integer.valueOf(latencyHeader.get(0)));
         } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          return ApiFutures.immediateFailedFuture(
+              new IllegalStateException(
+                  "Interrupted while sleeping as requested: " + latencyHeader, e));
         }
         if (Integer.valueOf(latencyHeader.get(0)) == DEADLINE_EXCEEDED_LATENCY) {
           return ApiFutures.immediateFailedFuture(
@@ -277,32 +281,30 @@ public class DynamicFlowControlCallableTest {
 
   private void createFlowControlEvent(final FlowController flowController) throws Exception {
     flowController.reserve(INITIAL_ELEMENT, 0);
-    final AtomicBoolean threadStarted = new AtomicBoolean(false);
+    CompletableFuture<Void> threadStarted = new CompletableFuture<>();
+    CompletableFuture<Void> threadReservedOne = new CompletableFuture<>();
     Thread t =
         new Thread(
             new Runnable() {
               @Override
               public void run() {
+                threadStarted.complete(null);
                 try {
-                  threadStarted.set(true);
                   flowController.reserve(1, 0);
+                  threadReservedOne.complete(null);
                 } catch (Exception e) {
+                  threadReservedOne.completeExceptionally(e);
                 }
               }
             });
     t.start();
-    // Wait 5 seconds for the thread to start, and 50 milliseconds after it's started to make sure
+    // Wait 50 milliseconds after the thread has started to make sure
     // flowController.reserve(1, 0) is blocked and creates a throttling event. It should never take
     // so long.
-    for (int i = 0; i < 1000; i++) {
-      if (threadStarted.get()) {
-        break;
-      }
-      Thread.sleep(5);
-    }
+    threadStarted.get();
     Thread.sleep(50);
     flowController.release(INITIAL_ELEMENT, 0);
-    t.join();
+    threadReservedOne.get();
     flowController.release(1, 0);
 
     assertThat(flowController.getFlowControlEventStats().getLastFlowControlEvent()).isNotNull();
