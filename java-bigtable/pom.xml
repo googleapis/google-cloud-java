@@ -226,6 +226,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.7.0</version>
                 <executions>
                     <execution>
                         <id>aggregate</id>
@@ -321,7 +322,7 @@
                             <docletPath>${docletPath}</docletPath>
                             <additionalOptions>
                                 -outputpath ${project.build.directory}/docfx-yml
-                                -projectname ${artifactId}
+                                -projectname ${project.artifactId}
                                 <!-- List of excluded packages as regex, separated by a colon-->
                                 <!-- Exclude generating javadocs for internal implementations for admin and data, which
                                  are under internal/ and .v2.stub/, and exclude all BaseClients and BaseSettings.

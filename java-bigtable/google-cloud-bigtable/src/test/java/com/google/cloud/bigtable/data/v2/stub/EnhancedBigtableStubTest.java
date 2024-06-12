@@ -33,6 +33,7 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
@@ -86,13 +87,11 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -523,8 +522,9 @@ public class EnhancedBigtableStubTest {
     // Test the header is set when the feature is enabled
     EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
     settings.bulkMutateRowsSettings().setServerInitiatedFlowControl(true);
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    stub.bulkMutateRowsCallable().call(bulkMutation);
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      stub.bulkMutateRowsCallable().call(bulkMutation);
+    }
     assertThat(metadataInterceptor.headers).hasSize(1);
     Metadata metadata = metadataInterceptor.headers.take();
     String encodedFlags =
@@ -543,8 +543,9 @@ public class EnhancedBigtableStubTest {
 
     EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
     settings.bulkMutateRowsSettings().setServerInitiatedFlowControl(false);
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    stub.bulkMutateRowsCallable().call(bulkMutation);
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      stub.bulkMutateRowsCallable().call(bulkMutation);
+    }
     assertThat(metadataInterceptor.headers).hasSize(1);
     Metadata metadata = metadataInterceptor.headers.take();
     String encodedFlags =
@@ -553,7 +554,6 @@ public class EnhancedBigtableStubTest {
     FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
     assertThat(featureFlags.getMutateRowsRateLimit()).isFalse();
     assertThat(featureFlags.getMutateRowsRateLimit2()).isFalse();
-    stub.close();
   }
 
   @Test
@@ -564,14 +564,12 @@ public class EnhancedBigtableStubTest {
     settings.setStreamWatchdogProvider(
         InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
 
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    Iterator<Row> iterator =
-        stub.readRowsCallable().call(Query.create(WAIT_TIME_TABLE_ID)).iterator();
-    try {
-      iterator.next();
-      Assert.fail("Should throw watchdog timeout exception");
-    } catch (WatchdogTimeoutException e) {
-      assertThat(e.getMessage()).contains("Canceled due to timeout waiting for next response");
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      ServerStream<Row> results = stub.readRowsCallable().call(Query.create(WAIT_TIME_TABLE_ID));
+      WatchdogTimeoutException ex =
+          assertThrows(WatchdogTimeoutException.class, () -> results.iterator().next());
+
+      assertThat(ex).hasMessageThat().contains("Canceled due to timeout waiting for next response");
     }
   }
 
@@ -583,16 +581,12 @@ public class EnhancedBigtableStubTest {
     settings.setStreamWatchdogProvider(
         InstantiatingWatchdogProvider.create().withCheckInterval(WATCHDOG_CHECK_DURATION));
 
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
-    Iterator<ChangeStreamRecord> iterator =
-        stub.readChangeStreamCallable()
-            .call(ReadChangeStreamQuery.create(WAIT_TIME_TABLE_ID))
-            .iterator();
-    try {
-      iterator.next();
-      Assert.fail("Should throw watchdog timeout exception");
-    } catch (WatchdogTimeoutException e) {
-      assertThat(e.getMessage()).contains("Canceled due to timeout waiting for next response");
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      ServerStream<ChangeStreamRecord> results =
+          stub.readChangeStreamCallable().call(ReadChangeStreamQuery.create(WAIT_TIME_TABLE_ID));
+      WatchdogTimeoutException ex =
+          assertThrows(WatchdogTimeoutException.class, () -> results.iterator().next());
+      assertThat(ex).hasMessageThat().contains("Canceled due to timeout waiting for next response");
     }
   }
 
