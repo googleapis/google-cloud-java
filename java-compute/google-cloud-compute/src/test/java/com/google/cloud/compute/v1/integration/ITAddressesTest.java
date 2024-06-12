@@ -30,8 +30,12 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore(
+    "Temporarily disabling for the flakiness"
+        + " https://github.com/googleapis/google-cloud-java/issues/10902")
 public class ITAddressesTest extends BaseTest {
 
   private static List<Address> addresses;
