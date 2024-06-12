@@ -23,6 +23,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.Field.Mode;
@@ -102,9 +104,14 @@ public class ITBigQueryWriteManualClientTest {
     }
   }
 
+  private static final HeaderProvider USER_AGENT_HEADER_PROVIDER =
+      FixedHeaderProvider.create("User-Agent", "my_product_name/1.0 (GPN:Samples;test)");
+
   @BeforeClass
   public static void beforeClass() throws IOException {
-    client = BigQueryWriteClient.create();
+    BigQueryWriteSettings settings =
+        BigQueryWriteSettings.newBuilder().setHeaderProvider(USER_AGENT_HEADER_PROVIDER).build();
+    client = BigQueryWriteClient.create(settings);
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
